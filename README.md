@@ -7,6 +7,14 @@
 
 <!-- ----------------------------------------------------------------------- -->
 
+## Deadlines
+
+* **25 de Fevereiro:** Entrega 1ª fase;
+* **1 de Abril:** Entrega 2ª fase;
+* **27 de Maio:** Entrega 3ª fase.
+
+<!-- ----------------------------------------------------------------------- -->
+
 ## Doodles
 
 * https://doodle.com/poll/7mg54cngddps994e#calendar
