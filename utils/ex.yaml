@@ -1,0 +1,18 @@
+
+titulo: Identificar cliente
+descricao: Funcionário processa a receita de um cliente
+pre-condicao: Existe papel para imprimir talões
+pos-condicao: Pedido de óculos fica registado
+
+seccoes:
+
+  - tipo: normal
+    passos:
+      - ator: indica nome e/ou data de nascimento
+      - sistema: apresenta lista de clientes correspondentes
+      - ator: seleciona cliente
+      - sistema: apresenta detalhes do cliente
+
+  - tipo: alternativo
+    id-passo: 2
+    condicao: lista de clientes correspondentes tem tamanho 1
