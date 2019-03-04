@@ -1,0 +1,38 @@
+--------------------------------------------------------------------------------
+--- Prefácio
+
+- Ninguém se deu ao trabalho de estudar o que era um "assistente pessoal".
+
+- Não sei para quê:
+    - Escolher uma receita *simples*.
+
+--------------------------------------------------------------------------------
+--- Engenharia de Requisitos
+
+- Elicitação de Requisitos === "Aquisição de Conhecimento"
+
+- Técnicas de elicitação, includiem:
+
+    - Análise das partes interessadas (stackeholders)
+    - Análise de sistemas ou de documentação existentes
+    - Etnografia e análise do discurso do negócio
+    - Questionários, observação de tarefas
+    - Realização de entrevistas e debate de ideias
+    - Integração do cliente no desenvolvimento do produto de software -- Joint
+      Application Development (JAD)
+    - Desenvolvimento de sistema piloto -- protótipos
+    - Definição de casos de uso e cenários de aplicação
+    - Análse de risco
+
+- "O único use case que eu quero ver na apresentação é 'Apresentar Receita'."
+
+- Mostrar o use case de login é sinónimo de chumbar.
+
+- User needs domain information, existing system information, regulation, standards, etc.
+- ==> Requiement elicitation
+- ==> Requiement analysis and negotiation
+- ==> Requiement documentation
+- ==> Requiement validation
+- ==> (Requiement elicitation, loop...)
+
+--------------------------------------------------------------------------------
