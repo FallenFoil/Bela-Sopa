@@ -2,8 +2,7 @@
 
 # UMinho 18/19 – LI4 (grupo 19)
 
-* MyChef – Cook for you
-* MyChef – Soup fanatic
+* MyChef – Bela Sopa
 
 <!-- ----------------------------------------------------------------------- -->
 
