@@ -11,4 +11,4 @@ Fábio:
 César:
 	-Gerar lista ingredientes;
 	-Procurar receitas;
-	-Consultar receitas.
+	-Consultar receita.
