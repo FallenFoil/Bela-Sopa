@@ -12,3 +12,10 @@ César:
 	-Gerar lista ingredientes;
 	-Procurar receitas;
 	-Consultar receita.
+
+Guilherme:
+
+	- Consultar/Editar informa‹o da conta.
+	- Registar conta de cliente
+	- Registar conta de administrador
+	- Apagar Conta.
