@@ -17,3 +17,10 @@
 * https://www.overleaf.com/5339766667vnbrydbtfqmv
 
 <!-- ----------------------------------------------------------------------- -->
+
+## Recursos relevantes
+
+* *Software Engineering*, 9th edition, I. Sommerville
+* https://docs.microsoft.com/en-us/aspnet/overview
+
+<!-- ----------------------------------------------------------------------- -->
