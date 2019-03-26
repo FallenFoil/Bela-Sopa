@@ -18,6 +18,12 @@
 
 <!-- ----------------------------------------------------------------------- -->
 
+## Especificação de Use Cases
+
+* https://docs.google.com/spreadsheets/d/19k830uzsHmWHjpblS5Y0p0oy92OWaZ_lixuiGVNLyqU/edit?usp=sharing
+
+<!-- ----------------------------------------------------------------------- -->
+
 ## Recursos relevantes
 
 * *Software Engineering*, 9th edition, I. Sommerville
