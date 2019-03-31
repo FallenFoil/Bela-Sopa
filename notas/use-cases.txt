@@ -1,0 +1,31 @@
+--------------------------------------------------------------------------------
+
+ Cliente/Administrador
+- Autenticar
+- Sair
+- Consultar/Editar informação da conta.
+- Registar conta
+\guilherme{Registar conta deveria se global visto que os dados são os mesmos} - Registar conta de administrador
+- Apagar Conta.
+- Remover Conta
+
+- Procurar receitas
+- Consultar receita
+- Adiciona/remove receita aos favoritos.
+
+- Iniciar Confeção da receita
+% Acho que isto tudo faz parte do confecionar receita.
+%- Avançar/Retroceder nos processos
+%- Iniciar temporizador
+%- Parar temporizador
+%- Concluir Confeção
+%- Cancelar Confeção da receita
+
+- Gerar ementa semanal
+- Editar ementa semanal
+- Adicionar/remover receita à ementa semanal.
+- Gerar lista de ingredientes
+
+- Aceder a serviços externos (ao domicilio).
+
+--------------------------------------------------------------------------------
