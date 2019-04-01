@@ -1,24 +1,23 @@
 # ---------------------------------------------------------------------------- #
 
-nome: Remover receita dos favoritos
+nome: Pedir ajuda
 pré-condição: Estar autenticado
-pós-condição: Receita foi removida aos favoritos
+pós-condição:
 
 # ---------------------------------------------------------------------------- #
 
 comportamento-normal:
-  - (A) 1. Escolhe remover a receita dos favoritos
-  - (S) 2. Valida remoção
-  - (S) 3. Remove receita dos favoritos
-  - (S) 4. Informa que removeu a receita com sucesso
+  - (A) 1. Solicita ajuda num certo conceito
+  - (S) 2. Procura conceito
+  - (S) 3. Mostra uma descrição, e possivelmente uma imagem e/ou video sobre o conceito
 
 # ---------------------------------------------------------------------------- #
 
 exceções:
 
-  - condição: Receita não se encontra nos favoritos
-    passo-origem: 3
+  - condição: Não existe conceito
+    passo-origem: 2
     passos:
-      - (S) 3.1. Informa que a receita não está nos favoritos
+      - (S) 2.1. Informa que não é possível encontrar esse conceito
 
 # ---------------------------------------------------------------------------- #

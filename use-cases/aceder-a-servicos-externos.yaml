@@ -1,9 +1,8 @@
 # ---------------------------------------------------------------------------- #
 
 nome: Aceder a serviços externos
-descrição:
 pré-condição: Estar autenticado
-pós-condição: Acedeu ao serviço externo,Estado do sistema não é alterado
+pós-condição: Acedeu ao serviço externo e estado do sistema não é alterado
 
 # ---------------------------------------------------------------------------- #
 

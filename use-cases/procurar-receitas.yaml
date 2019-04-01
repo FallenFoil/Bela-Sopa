@@ -1,9 +1,8 @@
 # ---------------------------------------------------------------------------- #
 
 nome: Procurar receitas
-descrição:
 pré-condição: Estar autenticado
-pós-condição: Encontrou mais que uma receita
+pós-condição: Encontrou pelo menos uma receita
 
 # ---------------------------------------------------------------------------- #
 

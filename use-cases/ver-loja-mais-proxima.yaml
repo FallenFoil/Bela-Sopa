@@ -1,0 +1,14 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Ver loja mais próxima
+pré-condição: Estar autenticado e existem lojas
+pós-condição: foi encontrada uma loja
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Solicita ver a loja mais perto de uma determinada localização
+  - (S) 2. Calcula a loja mais perto das conhecidas
+  - (S) 3. Mostra loja
+
+# ---------------------------------------------------------------------------- #
