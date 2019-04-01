@@ -45,6 +45,13 @@ R'''% --------------------------------------------------------------------------
             )
 
         f.write(
+            R'    Descrição: & \multicolumn{2}{l|}{' +
+            data['descrição'] +
+            R'} \\ \hline' +
+            '\n'
+            )
+
+        f.write(
             R'    Pré-condição: & \multicolumn{2}{l|}{' +
             data['pré-condição'] +
             R'} \\ \hline' +
