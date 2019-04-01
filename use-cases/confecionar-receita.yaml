@@ -13,7 +13,7 @@ comportamento-normal:
   - (A) 4. Confirma
   - (S) 5. Recebe o primeiro processo
   - (S) 6. Mostra o processo atual, as tarefas neste e os ingredientes, utensílios e técnicas nas respetivas tarefas
-  - (A) 7. confirma a execuçao de todas as tarefas
+  - (A) 7. Confirma a execução de todas as tarefas
   - (A) 8. Avança
   - (S) 9. Verifica próximo processo
   - (S) 10. Não existe mais processos
@@ -29,14 +29,12 @@ comportamentos-alternativos:
   - condição: Existe um próximo processo
     passo-origem: 10
     passos:
-      - (S) 8.1. Recebe o próximo processo
-      - (S) 8.2. Volta ao passo 6
+      - (S) 10.1. Recebe o próximo processo e volta ao passo 6
 
   - condição: Utilizador retrocede o processo
     passo-origem: 7
     passos:
-      - (S) 7.1. Recebe o próximo anterior
-      - (S) 7.2. Volta ao passo 6
+      - (S) 7.1. Recebe o processo anterior e volta ao passo 6
 
   - condição: Não existe um processo anterior
     passo-origem: '8.1'
