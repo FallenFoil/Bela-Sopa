@@ -39,7 +39,7 @@ R'''% --------------------------------------------------------------------------
 
         f.write(
             R'    \emph{Use case}: & \multicolumn{2}{l|}{' +
-            data['nome'] +
+            (data['nome'] or '') +
             R'} \\ \hline' +
             '\n'
             )
@@ -55,14 +55,14 @@ R'''% --------------------------------------------------------------------------
 
         f.write(
             R'    Pré-condição: & \multicolumn{2}{l|}{' +
-            data['pré-condição'] +
+            (data['pré-condição'] or '') +
             R'} \\ \hline' +
             '\n'
             )
 
         f.write(
             R'    Pós-condição: & \multicolumn{2}{l|}{' +
-            data['pós-condição'] +
+            (data['pós-condição'] or '') +
             R'} \\ \hline' +
             '\n'
             )
