@@ -33,7 +33,7 @@ R'''% --------------------------------------------------------------------------
 
 \begin{table}[ht]
   \centering
-  \begin{tabularx}{\textwidth}{|p{\usecaseleftcolwidth}|X|X|}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{2.5cm}|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|}
     \hline
 ''')
 
@@ -44,12 +44,14 @@ R'''% --------------------------------------------------------------------------
             '\n'
             )
 
-        f.write(
-            R'    Descrição: & \multicolumn{2}{l|}{' +
-            data['descrição'] +
-            R'} \\ \hline' +
-            '\n'
-            )
+        if data['descrição']:
+
+            f.write(
+                R'    Descrição: & \multicolumn{2}{l|}{' +
+                data['descrição'] +
+                R'} \\ \hline' +
+                '\n'
+                )
 
         f.write(
             R'    Pré-condição: & \multicolumn{2}{l|}{' +
@@ -112,7 +114,10 @@ def _write_latex_parte(
             if passo_origem:
                 parte += ' (passo {})'.format(passo_origem)
 
-            col_parte = R'\multirow[t]{{{}}}{{=}}{{{}}}'.format(len(passos), parte)
+            if len(passos) == 1:
+                col_parte = parte
+            else:
+                col_parte = R'\multirow[t]{{{}}}{{=}}{{{}}}'.format(len(passos), parte)
 
         else:
 
