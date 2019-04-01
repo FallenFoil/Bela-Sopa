@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Procurar receitas
+descrição: TODO
+pré-condição: Estar autenticado
+pós-condição: Encontrou mais que uma receita
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Introduz nome de uma receita
+  - (S) 2. Inicia pesquisa da receita pelo nome
+  - (S) 3. Valida pesquisa
+  - (S) 4. Mostra receitas encontradas
+
+# ---------------------------------------------------------------------------- #
+
+comportamentos-alternativos:
+
+  - condição: Ator procura receitas por tag
+    passo-origem: 1
+    passos:
+      - (A) 1.1. Introduz uma tag
+      - (S) 1.2. Inicia pesquisa de receitas pela tag
+      - (S) 1.3. Volta ao passo 3
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Nenhuma receita corresponde à pesquisa
+    passo-origem: 3
+    passos:
+      - (S) 3.1. Indica que nenhuma receita foi encontrada
+
+# ---------------------------------------------------------------------------- #

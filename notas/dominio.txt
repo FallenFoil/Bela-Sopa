@@ -1,0 +1,47 @@
+--------------------------------------------------------------------------------
+
+Entidades:
+
+    - Utensílio
+    - Técnica
+    - Receita
+        - Tarefa
+            - Duração
+        - Dificuldade
+        - Quantidade de Porções
+        - Etiqueta
+        - Ingrediente
+        - Tempo de Preparação
+        - Valores Nutricionais
+    - Cliente
+        - Localização
+    - Administrador
+    - Utilizador
+        - Nome de Utilizador
+        - Palavra-Chave
+        - E-mail
+    - Histórico de Receitas Confecionadas
+    - Loja
+        - Localização
+    - Ementa Semanal
+
+Relacionamentos:
+
+    - Cliente é um Utilizador
+    - Administrador é um Utilizador
+
+    - Receita tem 1 Dificuldade
+    - Receita 1 tem 1..* Tarefa
+    - Receita serve 1 Quantidade de Porções
+    - Receita * é identificada por 1..* Etiqueta
+
+    - Cliente * tem interesse em * Etiqueta
+
+    - Cliente é identificado por 1 Nome de Utilizador
+
+    - Tarefa * faz uso de * Técnica
+
+    - Técnica * requer * Utensílio
+    - Passo * requer * Utensílio
+
+--------------------------------------------------------------------------------
