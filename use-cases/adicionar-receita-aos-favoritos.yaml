@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Adicionar receita aos favoritos
+descrição:
+pré-condição: Estar autenticado
+pós-condição: Receita foi adicionada aos favoritos
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Escolhe adicionar a receita ao favoritos
+  - (S) 2. Valida inserção
+  - (S) 3. Insere receita aos favoritos
+  - (S) 4. Informa que inseriu a receita com sucesso
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Receita já está nos favoritos
+    passo-origem: 3
+    passos:
+      - (S) 3.1. Informa que a receita está nos favoritos
+
+# ---------------------------------------------------------------------------- #

@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Aceder a serviços externos
+descrição:
+pré-condição: Estar autenticado
+pós-condição: Acedeu ao serviço externo,Estado do sistema não é alterado
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Escolhe aceder a serviços externos
+  - (S) 2. Guarda o estado da aplicação
+  - (S) 3. Redireciona para a aplicação dos serviços externos
+
+# ---------------------------------------------------------------------------- #

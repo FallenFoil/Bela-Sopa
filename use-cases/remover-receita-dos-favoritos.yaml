@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Remover receita dos favoritos
+descrição:
+pré-condição: Estar autenticado
+pós-condição: Receita foi removida aos favoritos
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Escolhe remover a receita dos favoritos
+  - (S) 2. Valida remoção
+  - (S) 3. Remove receita dos favoritos
+  - (S) 4. Informa que removeu a receita com sucesso
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Receita não se encontra nos favoritos
+    passo-origem: 3
+    passos:
+      - (S) 3.1. Informa que a receita não está nos favoritos
+
+# ---------------------------------------------------------------------------- #

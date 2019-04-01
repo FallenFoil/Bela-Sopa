@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Consultar/editar informação da conta
+descrição:
+pré-condição: Estar autenticado
+pós-condição: Dados consultados
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Consulta perfil
+  - (S) 2. Mostra o perfil do ator
+  - (A) 3. Conclui consulta
+
+# ---------------------------------------------------------------------------- #
+
+comportamentos-alternativos:
+
+  - condição: Ator edita perfil
+    passo-origem: 3
+    passos:
+      - (A) 2.1. Edita perfil
+      - (S) 2.2. Valida dados
+      - (S) 2.3. Modifica dados
+      - (S) 2.4. Volta para o passo 3
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Dados inválidos
+    passo-origem: '2.2'
+    passos:
+      - (S) 2.2.1. Informa que os dados modificados são inválidos
+
+# ---------------------------------------------------------------------------- #

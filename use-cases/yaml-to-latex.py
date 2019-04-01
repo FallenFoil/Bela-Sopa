@@ -73,13 +73,13 @@ R'''% --------------------------------------------------------------------------
             f, 'Comportamento Normal', '', '', data['comportamento-normal']
             )
 
-        for (i, alt) in enumerate(data['comportamentos-alternativos']):
+        for (i, alt) in enumerate(data.get('comportamentos-alternativos', [])):
             _write_latex_parte(
                 f, 'Comportamento Alternativo {}'.format(i+1), alt['condição'],
                 alt['passo-origem'], alt['passos']
                 )
 
-        for (i, exc) in enumerate(data['exceções']):
+        for (i, exc) in enumerate(data.get('exceções', [])):
             _write_latex_parte(
                 f, 'Exceção {}'.format(i+1), exc['condição'],
                 exc['passo-origem'], exc['passos']
