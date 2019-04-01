@@ -44,7 +44,7 @@ R'''% --------------------------------------------------------------------------
             '\n'
             )
 
-        if data['descrição']:
+        if 'descrição' in data:
 
             f.write(
                 R'    Descrição: & \multicolumn{2}{l|}{' +
