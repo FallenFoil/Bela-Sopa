@@ -1,3 +1,5 @@
 *.vpp.bak_*
 *.vpp.lck
+.mypy_cache
+__pycache__
 Thumbs.db
