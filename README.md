@@ -16,7 +16,6 @@
 
 * Relatório: https://www.overleaf.com/5339766667vnbrydbtfqmv
 * Slides: https://docs.google.com/presentation/d/1ZKDLeam9Jmg71EUGakL4HhRUTD4VyTE9mdkam9mCGq8/edit?usp=sharing
-* [***obsoleto***] Especificação de *use cases*: https://docs.google.com/spreadsheets/d/19k830uzsHmWHjpblS5Y0p0oy92OWaZ_lixuiGVNLyqU/edit?usp=sharing
 
 <!-- ----------------------------------------------------------------------- -->
 
