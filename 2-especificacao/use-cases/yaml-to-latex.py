@@ -44,11 +44,11 @@ R'''% --------------------------------------------------------------------------
             '\n'
             )
 
-        if 'descrição' in data:
+        if 'descrição' in data and data['descrição']:
 
             f.write(
                 R'    Descrição: & \multicolumn{2}{l|}{' +
-                (data['descrição'] or '') +
+                data['descrição'] +
                 R'} \\ \hline' +
                 '\n'
                 )
