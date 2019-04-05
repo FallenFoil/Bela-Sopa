@@ -59,8 +59,6 @@ exceções:
       - (S) 2.1. Indica para voltar quando possuir tudo
       - (S) 2.2. Sai do serviço Confecionar receita
 
-exceções:
-
   - condição: Utilizador cancela Confecionar receita
     passo-origem: indeterminado
     passos:
