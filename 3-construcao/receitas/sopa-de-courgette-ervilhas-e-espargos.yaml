@@ -1,5 +1,16 @@
 # ---------------------------------------------------------------------------- #
 
+dificuldade: fácil
+duração-minutos: 30
+porção-pessoas: 6
+
+etiquetas:
+  - sabores mediterrânicos
+  - sem leite
+  - vegan
+
+# ---------------------------------------------------------------------------- #
+
 ingredientes:
 
   - nome: cebola picada
@@ -18,6 +29,7 @@ ingredientes:
     quantidade: 1
 
   - nome: molho de espargos verdes frescos
+    quantidade:
 
   - nome: sal
     quantidade: 1 c. sobremesa
@@ -31,13 +43,35 @@ ingredientes:
   - nome: sementes de girassol Pura Vida
     quantidade: 2 c. sopa
 
-# ---------------------------------------------------------------------------- #
-
 valores-nutricionais:
 
   - nome: Energia
     dose: 153 Kcal
-    percentagem-do-vdr-adulto: 8%
+    percentagem-do-vdr-adulto: 8
+
+  - nome: Gordura
+    dose: 10,2 g
+    percentagem-do-vdr-adulto: 15
+
+  - nome: Gordura | das quais saturadas
+    dose: 1,5 g
+    percentagem-do-vdr-adulto: 8
+
+  - nome: Hidratos de carbono
+    dose: 7,8 g
+    percentagem-do-vdr-adulto:
+
+  - nome: Hidratos de carbono | dos quais açúcares
+    dose: 5,0 g
+    percentagem-do-vdr-adulto: 6
+
+  - nome: Fibra
+    dose: 3,3 g
+    percentagem-do-vdr-adulto: 13
+
+  - nome: Proteínas
+    dose: 6,2 g
+    percentagem-do-vdr-adulto:
 
 # ---------------------------------------------------------------------------- #
 
