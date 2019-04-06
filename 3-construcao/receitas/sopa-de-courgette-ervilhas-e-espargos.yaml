@@ -1,0 +1,66 @@
+# ---------------------------------------------------------------------------- #
+
+ingredientes:
+
+  - nome: cebola picada
+    quantidade: 100 g
+
+  - nome: alho-francês em rodelas
+    quantidade: 100 g
+
+  - nome: ervilhas congeladas
+    quantidade: 100 g
+
+  - nome: azeite
+    quantidade: 2,5 c. sopa
+
+  - nome: courgette
+    quantidade: 1
+
+  - nome: molho de espargos verdes frescos
+
+  - nome: sal
+    quantidade: 1 c. sobremesa
+
+  - nome: água
+    quantidade: 800 ml
+
+  - nome: hortelã
+    quantidade: qb
+
+  - nome: sementes de girassol Pura Vida
+    quantidade: 2 c. sopa
+
+# ---------------------------------------------------------------------------- #
+
+valores-nutricionais:
+
+  - nome: Energia
+    dose: 153 Kcal
+    percentagem-do-vdr-adulto: 8%
+
+# ---------------------------------------------------------------------------- #
+
+passos:
+
+  - Leve a <cebola>, o <alho-francês> e as <ervilhas>{ervilha} ao lume numa
+    panela com duas colheres de sopa de <azeite>. Tape e cozinhe em lume brando.
+
+  - Lave a <courgette>, elimine as pontas, corte-a em cubos pequenos e coloque-a
+    na panela.
+
+  - Lave os <espargos>{espargo}, elimine as bases fibrosas, reserve as pontas
+    espigadas, corte o restante em rodelas finas e adicione-as ao cozinhado.
+
+  - Tempere com o <sal>, regue com a água a ferver, junte algumas folhas de
+    <hortelã> (reserve algumas) e deixe cozer cerca de 20 minutos.
+
+  - Aqueça o restante <azeite> numa frigideira anti-aderente e salteie as pontas
+    espigadas dos <espargos>{espargo} cerca de 2 minutos, agitando a frigideira.
+    Retire e reserve.
+
+  - Triture a sopa no <liquidificador> ou com a <varinha mágica> e sirva com as
+    pontas dos <espargos>, as <sementes de girassol> e as folhas de <hortelã>
+    reservadas.
+
+# ---------------------------------------------------------------------------- #
