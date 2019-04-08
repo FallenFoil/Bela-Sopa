@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------------
+
+github.com/brunobmo/ASP.NET-Training/tree/master/2019/Workshop1/ProjetoParte3
+
+!! ASP.NET Core 2.2 !!
+
+!! Entity Framework !!
+!! Fluent API !!
+
+--------------------------------------------------------------------------------
