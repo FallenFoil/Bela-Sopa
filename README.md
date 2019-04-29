@@ -22,6 +22,6 @@
 ## Recursos relevantes
 
 * *Software Engineering*, 9th edition, I. Sommerville
-* https://docs.microsoft.com/en-us/aspnet/overview
+* Workshop ASP.NET Core 2: https://github.com/brunobmo/ASP.NET-Training
 
 <!-- ----------------------------------------------------------------------- -->
