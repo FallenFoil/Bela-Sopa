@@ -1,0 +1,14 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Remover receita da ementa
+pré-condição: Estar autenticado, receita existe
+pós-condição: Receita removida
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Escolhe dia e refeição
+  - (S) 2. Valida escolha
+  - (S) 3. Remove receita da ementa
+
+# ---------------------------------------------------------------------------- #

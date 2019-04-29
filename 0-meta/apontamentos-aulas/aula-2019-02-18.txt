@@ -1,0 +1,79 @@
+--------------------------------------------------------------------------------
+--- Trabalho Prático -- Parte I
+
+    (temos que desenvolver documentos de especificação bem definidos, i.e., relatório)
+    (o prof é fornecedor & cliente)
+
+    (tópicos que o prof "gostaria de ver no relatório":)
+
+    - Contextualização
+
+        - apresentação do "caso de estudo"
+
+    - Motivação e objetivos
+
+        - por que é que o vou fazer
+
+    - Definição da identidade do sistema a desenvolver
+
+        - Tabela com:
+            - nome do projeto
+            - designação do projeto
+            - outras caraterísticas do projeto
+
+    - Justificação, viabilidade e utilidade do sistema
+
+        - em termos empresariais
+
+    - Identificação dos recursos necessários
+
+        - não é "computador e software"
+        - recursos importantes para garantir o sucesso do desenvolvimento do sistema
+        - equipa de desenvolvimento
+        - e equipa que nos dá o conhecimento necessário (em culinária)
+
+    - Modelo do sistema a implementar -- maqueta
+
+        - esboço de como o sistema vai ATUAR
+        - não se sabe ainda como o sistema vai ser construído
+        - ainda é uma caixa negra
+
+    - Definição de medidas de sucesso
+
+        - faz mais sentido um sistema colocado em e.g. 10% dos lares que ajude a utilizar o produto de alguma empresa -- boa motivação
+
+    - Plano de desenvolvimento
+
+        - Gantt
+        - distribuição por pessoa (?)
+        - quantidade de horas de trabalho
+        - assumir trabalhar ao dia, dias de 8 horas
+        - dá depois para contabilizar o quanto vamos gastar a desenvolver o projeto ("era engraçado fazerem isso")
+
+        - e.g.: contabilizar tempo para falar com consultor (such as chef)
+          uma semana chega, faz de conta, e vamos levar 2 pessoas para falar
+
+        - (convém manter Gantt original no relatório final)
+
+--------------------------------------------------------------------------------
+--- Atividades básica da engenharia de software
+
+    - Estudo e levantamento de requisitos
+    - A definição e desenvolvimento do projeto de software
+    - A caracterização do processo de desenvolvimento do software
+    - A gestão e acompanhamento do projeto de software
+    - A gera da documentação do produto desenvolvido
+    - O desenvolvido e teste do produto de software
+    - A manutenção dos produtos desenvolvidos
+
+--------------------------------------------------------------------------------
+--- O processo da engenharia de requisitos
+
+Feasibility study <-> Req elicitation and analysis <-> Req specification <-> Req validation
+       |                        |                             |                    |
+       v                        v                             v                    v
+Feasibility report      system models         user and system reqs.      reqs. document
+      |                       |                         |                      ^
+      +------------------------------------------------------------------------+
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Apagar conta
+descrição:
+pré-condição: Estar autenticado
+pós-condição: Conta eliminada
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Fornece o email da conta que pretende ser apaga.
+  - (S) 2. Valida email
+  - (S) 3. Elimina conta
+
+# ---------------------------------------------------------------------------- #
+
+comportamentos-alternativos:
+
+  - condição: Ator é cliente
+    passo-origem: 2
+    passos:
+      - (S) 2.1. Valida se a conta é do próprio
+      - (S) 2.2. Elimina conta
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Email de cliente inválido
+    passo-origem: 2
+    passos:
+      - (S) 2.1. Informa que o email é inválido
+
+  - condição: Dados inválidos
+    passo-origem: 2
+    passos:
+      - (S) 2.1. Informa que o email é invalido
+
+# ---------------------------------------------------------------------------- #
