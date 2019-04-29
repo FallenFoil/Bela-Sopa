@@ -1,0 +1,14 @@
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\bin\Debug\netcoreapp2.1\App.deps.json
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\bin\Debug\netcoreapp2.1\App.runtimeconfig.json
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\bin\Debug\netcoreapp2.1\App.runtimeconfig.dev.json
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\bin\Debug\netcoreapp2.1\App.dll
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\bin\Debug\netcoreapp2.1\App.pdb
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.csprojAssemblyReference.cache
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.csproj.CoreCompileInputs.cache
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.RazorAssemblyInfo.cache
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.RazorAssemblyInfo.cs
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.AssemblyInfoInputs.cache
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.AssemblyInfo.cs
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.RazorTargetAssemblyInfo.cache
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.dll
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.pdb
