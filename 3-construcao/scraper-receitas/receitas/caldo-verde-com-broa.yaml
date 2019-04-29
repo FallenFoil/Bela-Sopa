@@ -1,0 +1,56 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+ingredientes:
+- nome: cebola
+  quantidade: 100 g
+- nome: dentes de alho
+  quantidade: '2'
+- nome: batata para cozer
+  quantidade: 400 g
+- nome: água
+  quantidade: 1 l
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: couve-portuguesa
+  quantidade: 300 g
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: fatias de broa (com chouriço) de milho
+  quantidade: '6'
+minutos-de-preparação: 35
+número-de-doses: 6
+passos:
+- Numa panela com água, coza a cebola, os dentes de alho e as batatas descascadas.
+  Quando ferver, tempere com sal, tape e deixe cozer sobre lume moderado 20 minutos
+  ou até as batatas estarem cozidas.
+- Lave a couve-portuguesa e corte-a em juliana. Escalde-a em água a ferver durante
+  1 minuto e escorra.
+- Triture a sopa com a varinha mágica até reduzir completamente as batatas a puré.
+  Deixe retomar fervura e introduza a couve. Mexa e deixe ferver com a panela destapada
+  durante cinco ou seis minutos.
+- Sirva a sopa acompanhada das fatias finas de broa de milho com chouriço.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449085277
+valores-nutricionais:
+- dose: 163 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '10'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '6'
+- dose: 23 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 3 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '4'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '13'
+- dose: 4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

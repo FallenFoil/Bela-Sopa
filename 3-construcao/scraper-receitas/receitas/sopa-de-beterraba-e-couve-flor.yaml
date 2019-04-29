@@ -1,0 +1,58 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegan
+ingredientes:
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: alho-francês em rodelas
+  quantidade: 200 g
+- nome: talos de aipo
+  quantidade: '3'
+- nome: couve-flor em ramos
+  quantidade: 400 g
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: água
+  quantidade: 1,2 l
+- nome: beterraba cozida
+  quantidade: 450 g
+- nome: pimenta de moinho
+  quantidade: qb
+minutos-de-preparação: 30
+número-de-doses: 8
+passos:
+- Coloque o azeite numa panela, junte o alho-francês e leve ao lume a refogar um pouco.
+- Corte dois talos de aipo em lâminas (reserve o restante) e adicione-os, juntamente
+  com a couve-flor, ao refogado.
+- Salpique com o sal, regue com a água a ferver e deixe cozer, tapado, cerca de 20
+  minutos.
+- Retire do lume, junte a beterraba cozida cortada em cubos e triture tudo com a varinha
+  mágica ou no copo do liquidificador.
+- Sirva a sopa em copos com o restante talo de aipo cortado em troços e salpicada
+  com pimenta.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2018/09/Sopa_beterraba.jpg
+valores-nutricionais:
+- dose: 72 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '4'
+- dose: 6,3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '9'
+- dose: 1,1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 13,2 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 11,7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '13'
+- dose: 3,1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 6,4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

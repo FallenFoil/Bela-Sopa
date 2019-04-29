@@ -1,0 +1,35 @@
+dificuldade: fácil
+etiquetas:
+- sem leite
+- vegetariana
+ingredientes:
+- nome: vinho verde
+  quantidade: 1 l
+- nome: açúcar
+  quantidade: 250 g
+- nome: limão
+  quantidade: '1'
+- nome: pão de trigo
+  quantidade: 1 kg
+minutos-de-preparação: 15
+número-de-doses: 12
+passos:
+- Coloque o vinho num recipiente fundo e adicione o açúcar e a casca do limão finamente
+  cortada e sem a parte branca.
+- Envolva muito bem e deixe repousar durante 5 minutos. Mexa e deixe repousar mais
+  um pouco.
+- Corte o pão em fatias muito finas para pratos fundos e cubra-as com o vinho doce.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449085881
+valores-nutricionais:
+- dose: 317 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '16'
+- dose: 1,8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '3'
+- dose: 22,8 g
+  nome: Açúcar
+  percentagem-do-vdr-adulto: '25'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'

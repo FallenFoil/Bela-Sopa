@@ -1,0 +1,64 @@
+dificuldade: média
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+ingredientes:
+- nome: cebola picada
+  quantidade: 150 g
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: carne picada
+  quantidade: 250 g
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: pimenta em pó
+  quantidade: qb
+- nome: couve-lombarda
+  quantidade: 450 g
+- nome: alho-francês
+  quantidade: 300 g
+- nome: abóbora butternut
+  quantidade: 450 g
+- nome: feijão-vermelho cozido
+  quantidade: 400 g
+- nome: água
+  quantidade: 1,4 l
+- nome: broa de milho
+  quantidade: 200 g
+minutos-de-preparação: 65
+número-de-doses: 8
+passos:
+- Aloure a cebola picada numa panela com o azeite. Junte a carne picada e salteie,
+  mexendo sempre até a carne estar bem solta e ter perdido o tom rosado. Tempere com
+  o sal e uma pitada de pimenta.
+- Elimine os talos mais grossos da couve, corte-a em juliana fina, lave e escorra
+  bem. Junte a lombarda e as rodelas de alho-francês à carne, misture bem, tape a
+  panela e reduza o calor.
+- Descasque e limpe a abóbora de sementes, corte-a em juliana fina, lave e escorra
+  bem. Junte a lombarda e as rodelas de alho-francês à carne, misture bem, tape a
+  panela e reduza o calor.
+- Adicione o feijão e a água e deixe ferver mais 15 a 20 minutos. Sirva com o chouriço
+  em rodelas e a broa cortada em fatias finas.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449085891
+valores-nutricionais:
+- dose: 341 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '17'
+- dose: 14,6 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '21'
+- dose: 4,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '24'
+- dose: 29,4 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 8,5 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '9'
+- dose: 9,5 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '38'
+- dose: 20,1 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

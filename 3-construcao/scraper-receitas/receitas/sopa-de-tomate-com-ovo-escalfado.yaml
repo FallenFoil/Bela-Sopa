@@ -1,0 +1,69 @@
+dificuldade: média
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+ingredientes:
+- nome: cebola
+  quantidade: '1'
+- nome: dentes alho
+  quantidade: '2'
+- nome: alho-francês
+  quantidade: '1'
+- nome: azeite
+  quantidade: 3 c. sopa
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: tomate com rama maduro
+  quantidade: '7'
+- nome: tomate concentrado
+  quantidade: 1 c. sopa
+- nome: água
+  quantidade: 1,3 l
+- nome: ovos S
+  quantidade: '6'
+- nome: pão da avó
+  quantidade: 300 g
+- nome: hortelã
+  quantidade: qb
+- nome: uvas sem grainha
+  quantidade: 200 g
+minutos-de-preparação: 30
+número-de-doses: 6
+passos:
+- Descasque a cebola e os alhos e pique-os finamente. Pique igualmente o alho-francês.
+- Aqueça o azeite numa panela, adicione os legumes preparados, tempere com o sal e
+  deixe cozinhar, tapado e em lume brando, cerca de 10 minutos, mexendo de vez em
+  quando.
+- Retire os pedúnculos ao tomate, faça um golpe em cruz do lado oposto e escalde-os
+  na água a ferver 1 a 2 minutos.
+- Retire a pele ao tomate, limpe-o de sementes, pique-o em pedaços pequenos e junte-o
+  aos restantes legumes.
+- Adicione o concentrado de tomate, volte a tapar e cozinhe mais 10 a 15 minutos.
+- Adicione a água onde escaldou o tomate e deixe levantar fervura.
+- Abra os ovos e adicione-os, um a um e cuidadosamente, à sopa, deixando fervilhar
+  entre 3 a 4 minutos, até as claras coagularem.
+- Sirva a sopa sobre fatias de pão e polvilhe com folhas de hortelã. Acompanhe com
+  as uvas.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/06/sopa-de-tomate-com-ovo-escalfado.jpg
+valores-nutricionais:
+- dose: 284 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '14'
+- dose: 11,1 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '16'
+- dose: 2,4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '12'
+- dose: 34,4 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 9,3 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '10'
+- dose: 4,2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '17'
+- dose: 11,6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

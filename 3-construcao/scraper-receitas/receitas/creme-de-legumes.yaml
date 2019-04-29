@@ -1,0 +1,62 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegetariana
+ingredientes:
+- nome: cebola
+  quantidade: '1'
+- nome: nabo
+  quantidade: '1'
+- nome: chuchu
+  quantidade: '1'
+- nome: batatas médias
+  quantidade: '2'
+- nome: abóbora
+  quantidade: 300 g
+- nome: água
+  quantidade: qb
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: feijão-verde
+  quantidade: 250 g
+- nome: segurelha
+  quantidade: qb
+- nome: azeite
+  quantidade: 1 c. de sopa
+minutos-de-preparação: 55
+número-de-doses: 4
+passos:
+- Descasque e corte em pedaços pequenos a cebola, o nabo, o chuchu, as batatas e a
+  abóbora. Deite numa panela e junte água até cobrir os legumes. Tempere com sal,
+  tape e leve a cozer sobre lume moderado até os legumes estarem tenros.
+- Tire o fio ao feijão-verde e corte-o em lâminas finas na diagonal. 
+- Quando os legumes estiverem cozidos, triture com a varinha mágica até os desfazer
+  completamente. Adicione um pouco mais de água a ferver se achar a sopa demasiado
+  espessa e junte o feijão-verde cortado e as folhinhas de segurelha. Deixe ferver
+  até o feijão-verde estar tenro.
+- Regue com o azeite e sirva.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449085228
+valores-nutricionais:
+- dose: 97 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '5'
+- dose: 3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '5'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '3'
+- dose: 15 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '7'
+- dose: 4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '16'
+- dose: 3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

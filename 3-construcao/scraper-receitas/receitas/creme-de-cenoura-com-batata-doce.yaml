@@ -1,0 +1,55 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- vegetariana
+ingredientes:
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: cebola congelada picada
+  quantidade: 100 g
+- nome: alho-francês em rodelas
+  quantidade: 70 g
+- nome: cenoura ripada
+  quantidade: 300 g
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: água
+  quantidade: 6,5 dl
+- nome: batata-doce
+  quantidade: 150 g
+- nome: tomilho
+  quantidade: qb
+minutos-de-preparação: 20
+número-de-doses: 6
+passos:
+- Deite o azeite, a cebola picada, o alho-francês e a cenoura ripada numa panela.
+  Salpique com o sal, junte a água a ferver, tape e leve a ferver em lume médio a
+  forte.
+- Descasque as batatas, corte-as em cubos pequenos e junte-as aos legumes.
+- Mexa e deixe ferver mais 15 minutos em lume moderado.
+- Triture a sopa com a varinha mágica, ou no copo liquidificador, até obter um creme.
+  Salpique com tomilho.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2018/10/creme-cenoura.jpg
+valores-nutricionais:
+- dose: 77 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '4'
+- dose: 3,6 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '5'
+- dose: 0,6 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '3'
+- dose: 9,6 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 6,0 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '7'
+- dose: 2,2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '9'
+- dose: 0,9 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

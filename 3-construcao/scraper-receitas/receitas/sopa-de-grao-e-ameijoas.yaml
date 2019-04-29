@@ -1,0 +1,64 @@
+dificuldade: média
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+ingredientes:
+- nome: grão-de-bico
+  quantidade: 150 g
+- nome: água
+  quantidade: qb
+- nome: cebola
+  quantidade: 100 g
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: dentes de alho
+  quantidade: '2'
+- nome: folha de louro
+  quantidade: '1'
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: amêijoas
+  quantidade: 150 g
+- nome: espinafres
+  quantidade: 150 g
+- nome: coentros
+  quantidade: qb
+minutos-de-preparação: 80
+número-de-doses: 6
+passos:
+- Ponha o grão de molho em água fria de um dia para o outro.
+- Escorra, coloque o grão numa panela, cubra com água e junte a cebola descascada
+  e picada. Coza cerca de 45 minutos ou até o grão estar macio.
+- Descasque os dentes de alho, pique-os e leve-os ao lume num tacho com a folha de
+  louro e o azeite. Quando o alho começar a alourar, adicione os espinafres e, assim
+  que estiverem murchos, introduza as amêijoas, lavadas e escorridas. Deixe cozinhar
+  5 minutos ou até as amêijoas abrirem. Retire do lume e reserve.
+- Assim que o grão estiver cozido, retire cerca de uma chávena com uma escumadeira
+  e triture o restante com a varinha mágica. Tempere com 1 colher de sobremesa de
+  sal e introduza a mistura de amêijoas e espinafres e o grão que reservou. Assim
+  que retomar fervura, desligue o lume e salpique generosamente com folhas frescas
+  de coentros.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449085285
+valores-nutricionais:
+- dose: 500 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '25'
+- dose: 28 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '40'
+- dose: 10 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '52'
+- dose: 43 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 8 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '9'
+- dose: 4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '15'
+- dose: 23 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

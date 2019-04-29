@@ -1,0 +1,65 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegetariana
+ingredientes:
+- nome: cebola
+  quantidade: 150 g
+- nome: funcho
+  quantidade: 300 g
+- nome: cenoura
+  quantidade: 150 g
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: tomate em rama
+  quantidade: 1 kg
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: ovo S
+  quantidade: '1'
+- nome: água
+  quantidade: 1 l
+- nome: açúcar
+  quantidade: 1 c. de chá
+- nome: cebolinho picado
+  quantidade: 1 c. de sopa
+minutos-de-preparação: 30
+número-de-doses: 4
+passos:
+- Descasque a cebola e pique-a finamente, elimine os talos rijos do bolbo de funcho,
+  reserve as folhas verdes e pique a parte restante. Pele a cenoura e corte-a em cubinhos
+  pequenos.
+- Numa panela tapada sobre lume brando, cozinhe os legumes com o azeite.
+- Pele o tomate, corte-o ao meio e limpe-o de sementes. Pique-o em pedaços e junte
+  aos restantes legumes. Salpique com 1 colher de sobremesa de sal, volte a tapar
+  e deixe cozinhar mais 10 minutos, mexendo de vez em quando.
+- Ao mesmo tempo, coza o ovo em água temperada com sal durante 10 minutos
+- Acrescente o açúcar e a água a ferver. Quando os legumes estiverem macios triture-os
+  com a varinha mágica e rectifique os temperos se necessário.
+- Descasque o ovo já cozido e pique-o finamente.
+- Deite a sopa nos pratos, salpique com o ovo picado, as folhas de funcho e o cebolinho.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449085363
+valores-nutricionais:
+- dose: 140 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '7'
+- dose: 7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '10'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 13 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 12 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '14'
+- dose: 4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '16'
+- dose: 4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

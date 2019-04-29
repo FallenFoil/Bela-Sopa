@@ -1,0 +1,68 @@
+dificuldade: média
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegetariana
+ingredientes:
+- nome: talo de aipo
+  quantidade: '1'
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: cebola congelada picada
+  quantidade: 100 g
+- nome: abóbora limpa
+  quantidade: 500 g
+- nome: cenoura ripada
+  quantidade: 300 g
+- nome: pasta de concentrado de tomate
+  quantidade: 2 c. sopa
+- nome: cominhos em pó
+  quantidade: 1 c. chá
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: lentilhas vermelhas
+  quantidade: 200 g
+- nome: água
+  quantidade: 1,4 l
+- nome: pimentão-doce
+  quantidade: 1 c. sobremesa
+- nome: salsa picada
+  quantidade: 2 c. sopa
+- nome: sementes de abóbora
+  quantidade: 1 c. sopa
+minutos-de-preparação: 40
+número-de-doses: 8
+passos:
+- Lave o talo de aipo, corte-o em lâminas e leve ao lume numa panela com o azeite
+  e a cebola.
+- Junte a abóbora, cortada em cubos, a cenoura e a pasta de concentrado de tomate.
+- Polvilhe com os cominhos e o sal e mexa para misturar bem. Tape e deixe suar cerca
+  de 15 minutos.
+- Passe as lentilhas por água, junte-as aos legumes e adicione a água a ferver. Tape
+  e deixe cozinhar mais 15 minutos.
+- Triture a sopa com a varinha mágica ou no copo liquidificador e sirva polvilhada
+  com o pimentão-doce, a salsa picada e as sementes de abóbora.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/11/creme-de-lentilhas-com-abobora.jpg
+valores-nutricionais:
+- dose: 219 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '11'
+- dose: 10,4 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '15'
+- dose: 1,3 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 20,9 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5,5 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 4,6 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '18'
+- dose: 9,6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

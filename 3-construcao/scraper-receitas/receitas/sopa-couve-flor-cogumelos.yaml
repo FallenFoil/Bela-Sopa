@@ -1,0 +1,63 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+ingredientes:
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: cebola congelada picada
+  quantidade: 100 g
+- nome: alho picado
+  quantidade: 1 c. chá
+- nome: cogumelos congelados
+  quantidade: 400 g
+- nome: couve-flor em ramos
+  quantidade: 500 g
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: água
+  quantidade: 5 dl
+- nome: amêndoa laminada
+  quantidade: 40 g
+- nome: noz-moscada
+  quantidade: qb
+- nome: pimenta moinho
+  quantidade: qb
+- nome: frango cozido desfiado
+  quantidade: 125 g
+- nome: cebolinho desfiado
+  quantidade: 2 c. sopa
+minutos-de-preparação: 20
+número-de-doses: 6
+passos:
+- Deite o azeite e os legumes numa panela, salpique com o sal, adicione a água a ferver
+  e leve ao lume, deixando cozer cerca de 18 minutos.
+- Aloure as amêndoas laminadas numa frigideira e reserve.
+- Tempere a sopa com uma pitada de noz-moscada e um pouco de pimenta e triture até
+  obter um creme.
+- Distribua a sopa e o frango desfiado pelos pratos de servir, salpique com o cebolinho
+  picado e sirva com as amêndoas tostadas.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2018/01/sopa-de-couve-flor.jpg
+valores-nutricionais:
+- dose: 111 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '6'
+- dose: 6,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '9'
+- dose: 0,9 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '4'
+- dose: 3,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 2,6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '3'
+- dose: 3,8 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '15'
+- dose: 7,9 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

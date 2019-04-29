@@ -1,0 +1,54 @@
+dificuldade: fácil
+etiquetas:
+- sem leite
+- vegetariana
+ingredientes:
+- nome: tomate chucha
+  quantidade: 500 g
+- nome: pêssegos
+  quantidade: '2'
+- nome: melancia
+  quantidade: 1/4
+- nome: hastes manjericão
+  quantidade: '5'
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: sal
+  quantidade: 1 c. café
+- nome: pimenta de moinho
+  quantidade: qb
+- nome: alho-francês médio
+  quantidade: '1'
+minutos-de-preparação: 15
+número-de-doses: 4
+passos:
+- Faça um corte superficial, em cruz, na pele do tomate e escalde-o em água a ferver
+  durante 30 segundos. Retire a pele, corte em quartos e elimine as sementes.
+- Descasque os pêssegos e corte-os em pedaços para dentro do copo do liquidificador.
+- Junte a melancia, descascada e cortada em pedaços, as folhas de manjericão (reserve
+  algumas), o azeite, o sal e a pimenta e triture tudo muito bem.
+- Sirva com um pouco de alho-francês cortado em juliana fina e as folhas do manjericão
+  reservadas.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/10/sopa-fria-de-tomate.jpg
+valores-nutricionais:
+- dose: 178 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '9'
+- dose: 6,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '9'
+- dose: 1,0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 25,9 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 25,7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '29'
+- dose: 4,4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '18'
+- dose: 3,3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

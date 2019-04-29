@@ -1,0 +1,88 @@
+dificuldade: média
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+ingredientes:
+- nome: perna de frango
+  quantidade: 120 g
+- nome: água
+  quantidade: 7 dl
+- nome: dentes de alho
+  quantidade: '2'
+- nome: cebola
+  quantidade: 75 g
+- nome: feijão-branco
+  quantidade: 100 g
+- nome: água
+  quantidade: qb
+- nome: sal
+  quantidade: qb
+- nome: cenouras
+  quantidade: '2'
+- nome: hastes de aipo
+  quantidade: '4'
+- nome: cebola
+  quantidade: '1'
+- nome: tomates de rama maduros
+  quantidade: '2'
+- nome: batata branca
+  quantidade: '1'
+- nome: courgette
+  quantidade: '1'
+- nome: bacon
+  quantidade: 80 g
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: dentes de alho
+  quantidade: '2'
+- nome: ervilhas
+  quantidade: 50 g
+- nome: massinha argolas
+  quantidade: 120 g
+- nome: salsa
+  quantidade: qb
+- nome: pesto
+  quantidade: 4 c. de sopa
+minutos-de-preparação: 75
+número-de-doses: 8
+passos:
+- Num tacho, coza a perna de frango em água com dois dentes de alho descascados e
+  a cebola durante 30 minutos. Reserve.
+- Coloque o feijão, demolhado de véspera, numa panela com água (quatro vezes o volume
+  do feijão) e o sal e coza até estar macio, mas sem se desfazer. Reserve.
+- Corte a cenoura, o aipo, a cebola, o tomate (limpo de sementes), a batata, a courgette
+  e o bacon em cubos pequenos. Reserve.
+- Numa panela, aqueça o azeite e, quando estiver quente, introduza a cebola cortada,
+  os dentes de alho picados e o bacon. Deixe saltear.
+- Refresque com 5 dl do caldo da cozedura do frango e adicione os cubos de cenoura,
+  aipo e batata.
+- Envolva, junte o feijão cozido, a água da cozedura, as ervilhas, o tomate e a massinha
+  cortada.
+- Deixe cozinhar cerca de 15 minutos em lume brando até a massa e os legumes estarem
+  macios.
+- Adicione o frango picado, limpo de peles e ossos, e a courgette e deixe cozinhar
+  mais uns instantes.
+- No final, junte a salsa picada e envolva bem. Sirva a sopa com o pesto.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/05/caldo-de-legumes-com-pesto.jpg
+valores-nutricionais:
+- dose: 217 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '11'
+- dose: 8,6 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '12'
+- dose: 1,7 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '9'
+- dose: 24,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4,4 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '5'
+- dose: 4,8 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '19'
+- dose: 9,5 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

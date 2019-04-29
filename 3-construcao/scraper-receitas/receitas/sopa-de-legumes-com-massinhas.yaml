@@ -1,0 +1,64 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- vegetariana
+ingredientes:
+- nome: azeite
+  quantidade: 1 c. sopa
+- nome: ervilhas congeladas
+  quantidade: 100 g
+- nome: lata pequena de grão-de-bico Pingo Doce
+  quantidade: '1'
+- nome: cebola grande
+  quantidade: '1'
+- nome: cenoura
+  quantidade: '1'
+- nome: couve-lombarda
+  quantidade: ½
+- nome: água
+  quantidade: 1,2 l
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: massa cotovelinhos Pingo Doce
+  quantidade: 100 g
+- nome: queijo Feta
+  quantidade: 100 g
+- nome: pimenta moinho
+  quantidade: qb
+- nome: manjericão
+  quantidade: qb
+minutos-de-preparação: 35
+número-de-doses: 4
+passos:
+- Coloque ao lume uma panela com o azeite e quando estiver quente adicione as ervilhas
+  e o grão-de-bico.
+- Deixe refogar, mexendo de vez em quando.
+- Junte a cebola picada, a cenoura cortada em cubos pequenos, a couve-lombarda em
+  juliana e a água.
+- Tempere com o sal e assim que levantar fervura, tape e deixe cozer 5 minutos.
+- Junte a massa e deixe cozer mais 7 a 8 minutos.
+- Distribua a sopa pelos pratos ou taças, coloque por cima o queijo Feta esfarelado,
+  polvilhe com pimenta e folhas de manjericão e sirva.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/08/sopa-de-legumes-com-massinhas.jpg
+valores-nutricionais:
+- dose: 315 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '16'
+- dose: 10,1 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '14'
+- dose: 4,2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '21'
+- dose: 38,6 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 8,6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '10'
+- dose: 8,5 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '34'
+- dose: 13,3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

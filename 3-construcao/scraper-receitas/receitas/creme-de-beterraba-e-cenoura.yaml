@@ -1,0 +1,60 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+- vegetariana
+ingredientes:
+- nome: (500 g) beterraba
+  quantidade: '5'
+- nome: (300 g) cenouras
+  quantidade: '2'
+- nome: dentes de alho
+  quantidade: '2'
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: cebolinho
+  quantidade: qb
+- nome: cebola
+  quantidade: 30 g
+- nome: laranja
+  quantidade: 200 g
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: pimenta
+  quantidade: qb
+- nome: pão torrado
+  quantidade: 40 g
+- nome: batata
+  quantidade: 200 g
+minutos-de-preparação: 65
+número-de-doses: 4
+passos:
+- Descasque a beterraba e coloque-a em água a ferver juntamente com o alho, a cebola
+  e a batata descascada. Junte a cenoura e o sumo de laranja.
+- Quando estiver tudo bem cozido, tempere com o sal, a pimenta e o azeite (reserve
+  um pouco) e triture com a varinha mágica, de forma a obter um creme homogéneo.
+- Para servir, salpique com o pão torrado cortado em cubos, o cebolinho picado e o
+  restante azeite.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449090095
+valores-nutricionais:
+- dose: 163 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '4'
+- dose: ''
+  nome: Gordura
+  percentagem-do-vdr-adulto: '6'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 24 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 11 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '12'
+- dose: 4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '16'
+- dose: 3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

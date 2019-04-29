@@ -1,0 +1,58 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegetariana
+ingredientes:
+- nome: feijão-frade
+  quantidade: 200 g
+- nome: cebola
+  quantidade: 150 g
+- nome: courgette
+  quantidade: 200 g
+- nome: cenouras
+  quantidade: '2'
+- nome: dentes de alho
+  quantidade: '2'
+- nome: nabiças
+  quantidade: 700 g
+- nome: coentros
+  quantidade: 50 g
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: sal
+  quantidade: 1 c. de sobremesa
+minutos-de-preparação: 60
+número-de-doses: 8
+passos:
+- De véspera, deixe o feijão-frade a demolhar em água.
+- Numa panela com água, leve a cozer a cebola, a courgette e as cenouras cortadas
+  em pedaços, os alhos, os coentros e metade do feijão-frade. Reserve a outra metade.
+- Deixe cozinhar 20 minutos ou até os legumes estarem macios.
+- Triture os legumes cozidos. Junte as nabiças partidas em pequenos pedaços e o restante
+  feijão-frade e tempere com sal e azeite.
+- Deixe cozinhar mais 10 minutos e sirva quente.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449089460
+valores-nutricionais:
+- dose: 165 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '7'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '4'
+- dose: 19 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '4'
+- dose: 6 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '24'
+- dose: 9 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

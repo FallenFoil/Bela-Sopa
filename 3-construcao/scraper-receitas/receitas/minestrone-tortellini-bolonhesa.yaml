@@ -1,0 +1,54 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+ingredientes:
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: cebola doce
+  quantidade: '1'
+- nome: emb. legumes para sopa juliana Pingo Doce
+  quantidade: '1'
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: molho com basílico Pingo Doce
+  quantidade: 3 c. sopa
+- nome: água
+  quantidade: 1,5 l
+- nome: emb. tortellini de bolonhesa
+  quantidade: '1'
+- nome: manjericão fresco
+  quantidade: qb
+minutos-de-preparação: 30
+número-de-doses: 8
+passos:
+- Aqueça o azeite numa panela, adicione a cebola picada, mexa e deixe alourar 2 a
+  3 minutos.
+- Junte a juliana de legumes, mexa e tempere com o sal.
+- Tape e deixe suar em lume moderado cerca de 20 minutos, mexendo de vez em quando.
+- Adicione o molho de tomate e regue com a água a ferver.
+- Assim que retomar fervura introduza a massa e ferva 1 minuto.
+- Retire do lume e adicione algumas folhas de manjericão ripadas.
+- Distribua pelos pratos de servir e decore com folhas de manjericão.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/07/minestrone-com-tortellini-de-bolonhesa.jpg
+valores-nutricionais:
+- dose: 136 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '7'
+- dose: 5,3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '8'
+- dose: 1,3 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '6'
+- dose: 16,9 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 1,3 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '1'
+- dose: 2,6 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '10'
+- dose: 5,0 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

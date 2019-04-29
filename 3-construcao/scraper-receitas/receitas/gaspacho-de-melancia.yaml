@@ -1,0 +1,56 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegetariana
+ingredientes:
+- nome: melancia
+  quantidade: '2'
+- nome: tomates com rama maduros
+  quantidade: '2'
+- nome: pepino
+  quantidade: '1'
+- nome: manjericão fresco
+  quantidade: qb
+- nome: sal
+  quantidade: qb
+- nome: lima
+  quantidade: '1'
+- nome: pimenta
+  quantidade: qb
+minutos-de-preparação: 15
+número-de-doses: 4
+passos:
+- Tire a casca à melancia, limpe-a de pevides e corte-a em cubos.
+- Pele o tomate, limpe de sementes e corte-o em pedaços pequenos.
+- Pele o pepino, corte ¼ em rodelas finas e reserve. Limpe o restante de sementes
+  e pique-o em pedaços.
+- Reserve ¼ da melancia e coloque a restante no liquidificador. Junte os cubos de
+  tomate e de pepino, 5 folhas de manjericão e tempere com sal e sumo de lima.
+- Triture tudo muito bem e leve ao frigorífico para refrescar.
+- Sirva o gaspacho enfeitado com os cubos de melancia e as rodelas de pepino reservados
+  e salpique com pimenta e folhas de manjericão.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/05/gaspacho-de-melancia.jpg
+valores-nutricionais:
+- dose: 93 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '5'
+- dose: 0,9 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '1'
+- dose: 0,3 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '2'
+- dose: 20,3 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 20,2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '22'
+- dose: 0,9 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '4'
+- dose: 1,8 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

@@ -1,0 +1,43 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegetariana
+ingredientes:
+- nome: beterraba
+  quantidade: 150 g
+- nome: laranja
+  quantidade: '1'
+- nome: melão (limpo)
+  quantidade: 300 g
+- nome: talo de aipo
+  quantidade: '1'
+minutos-de-preparação: 5
+número-de-doses: 4
+passos:
+- Corte a beterraba em pedaços pequenos para dentro do copo da varinha mágica. Junte
+  o sumo da laranja e o melão cortado em bocados.
+- Triture com a varinha mágica até desfazer completamente os ingredientes. Se achar
+  que o creme está demasiado espesso adicione um pouco de água fria.
+- Lave o talo de aipo, retire-lhe os filamentos e corte-o em 4 palitos um pouco maiores
+  do que os copos.
+- Divida o preparado pelos copos de servir. Coloque um palito dentro de cada copo
+  e sirva.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449084604
+valores-nutricionais:
+- dose: 47 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '2'
+- dose: 10 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 10 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '11'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '1'
+- dose: 2 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

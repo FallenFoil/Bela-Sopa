@@ -1,0 +1,55 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegan
+ingredientes:
+- nome: manga
+  quantidade: '1'
+- nome: courgette
+  quantidade: '1'
+- nome: cebola-roxa
+  quantidade: '1'
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: vinagre de framboesa
+  quantidade: 2 c. sopa
+- nome: pimenta-preta
+  quantidade: qb
+- nome: manjericão
+  quantidade: qb
+- nome: emb. gaspacho Pingo Doce
+  quantidade: '1'
+- nome: amêndoas laminadas torradas
+  quantidade: 60 g
+minutos-de-preparação: 15
+número-de-doses: 4
+passos:
+- Corte a manga, a courgette e a cebola aos cubos. Coloque numa taça e tempere com
+  azeite, vinagre de framboesa, pimenta e folhas de manjericão.
+- Sirva o gaspacho em copos ou em taças com a salsa de manga, as amêndoas torradas
+  e mais folhas de manjericão. Polvilhe com mais pimenta-preta.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2018/10/Gaspacho.jpg
+valores-nutricionais:
+- dose: 282 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '14'
+- dose: 17,9 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '26'
+- dose: 2,3 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '12'
+- dose: 21,6 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 17,2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '19'
+- dose: 6,1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '24'
+- dose: 6,8 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

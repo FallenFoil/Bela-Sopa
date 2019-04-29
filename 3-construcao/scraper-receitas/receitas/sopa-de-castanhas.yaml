@@ -1,0 +1,50 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+- vegetariana
+ingredientes:
+- nome: croutons com azeite e alho
+  quantidade: 80 g
+- nome: castanhas congeladas
+  quantidade: 400 g
+- nome: folhas de aipo
+  quantidade: qb
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: azeite
+  quantidade: 1 c. de sopa
+- nome: cebola
+  quantidade: '1'
+- nome: dentes de alho
+  quantidade: '2'
+minutos-de-preparação: 40
+número-de-doses: 4
+passos:
+- Numa panela com água, cozinhe todos os ingredientes, excepto os croutons e as folhas
+  de aipo. Tempere com sal e azeite e, assim que estiver cozinhado, triture para obter
+  um puré homogéneo. 
+- Sirva com os croutons com azeite e alho e a rama de aipo laminada.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449085265
+valores-nutricionais:
+- dose: 295 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '15'
+- dose: 9 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '13'
+- dose: 2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '8'
+- dose: 52 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 8 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '9'
+- dose: 7 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '28'
+- dose: 4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

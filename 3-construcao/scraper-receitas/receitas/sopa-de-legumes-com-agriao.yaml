@@ -1,0 +1,61 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+- vegetariana
+ingredientes:
+- nome: nabo
+  quantidade: 100 g
+- nome: batata-doce
+  quantidade: 400 g
+- nome: cenouras
+  quantidade: 250 g
+- nome: courgette
+  quantidade: 250 g
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: alho-francês
+  quantidade: 250 g
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: água
+  quantidade: 2 l
+- nome: aletria
+  quantidade: 100 g
+- nome: folhas de agrião
+  quantidade: 100 g
+- nome: hortelã
+  quantidade: qb
+minutos-de-preparação: 45
+número-de-doses: 8
+passos:
+- Descasque o nabo, a batata-doce e a cenoura e corte tudo em cubos pequenos. Lave
+  e corte a courgette em cubos mais pequenos.
+- Deite o azeite num tacho, junte o alho-francês e os restantes legumes, tempere com
+  sal e tape, deixando cozinhar em lume brando cerca de 15 minutos.
+- Regue com a água a ferver e deixe cozer até os legumes estarem macios. Introduza
+  a massa e os agriões e deixe ferver mais 2 minutos.
+- Retire do lume e salpique com uma mão-cheia de hortelã picada.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449084667
+valores-nutricionais:
+- dose: 139 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '7'
+- dose: 4 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '6'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '4'
+- dose: 21 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

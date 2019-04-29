@@ -1,0 +1,62 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+ingredientes:
+- nome: cebola
+  quantidade: '1'
+- nome: dentes alho
+  quantidade: '4'
+- nome: azeite
+  quantidade: 3 c. sopa
+- nome: batata
+  quantidade: 350 g
+- nome: nabo pequeno
+  quantidade: '1'
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: água
+  quantidade: 1,5 dl
+- nome: molho coentros (só folhas)
+  quantidade: '1'
+- nome: caldo-verde
+  quantidade: 300 g
+- nome: rodelas chouriço
+  quantidade: '6'
+minutos-de-preparação: 40
+número-de-doses: 6
+passos:
+- Pique a cebola e os dentes de alho e aloure os ligeiramente numa panela com duas
+  colheres de sopa de azeite.
+- Descasque as batatas e o nabo, corte em cubos pequenos e coloque-os na panela.
+- Tempere com o sal, mexa e deixe cozinhar, tapado e em lume muito brando, cerca de
+  25 minutos ou até a batata estar macia.
+- Adicione a água a ferver e um punhado de coentros e triture com a varinha mágica.
+- Deixe retomar fervura, introduza o caldo-verde, previamente escaldado, e deixe ferver
+  destapado mais 8 a 10 minutos.
+- Retire do lume e tempere com o restante azeite.
+- Sirva com as rodelas de chouriço levemente grelhadas.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2017/06/caldo-verde.jpg
+valores-nutricionais:
+- dose: 139 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '7'
+- dose: 7,2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '10'
+- dose: 1,4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 13,4 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4,4 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '5'
+- dose: 2,6 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '10'
+- dose: 4,6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

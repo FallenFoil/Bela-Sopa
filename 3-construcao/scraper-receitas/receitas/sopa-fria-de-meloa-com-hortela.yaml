@@ -1,0 +1,45 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem leite
+- vegetariana
+ingredientes:
+- nome: meloa
+  quantidade: 2 kg
+- nome: hortelã
+  quantidade: qb
+- nome: gressinos de azeite
+  quantidade: '8'
+- nome: gelo
+  quantidade: qb cubos
+minutos-de-preparação: 20
+número-de-doses: 8
+passos:
+- Descasque a meloa, corte-a em pedaços e adicione as folhas de hortelã (reserve algumas
+  para a decoração).
+- Triture tudo com a varinha mágica e coloque no prato de servir, juntamente com cubos
+  de gelo.
+- Polvilhe com as folhas de hortelã e sirva acompanhada por um gressino.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449090152
+valores-nutricionais:
+- dose: 67 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '3'
+- dose: 1 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '1'
+- dose: ''
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '1'
+- dose: 14 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 10 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '11'
+- dose: 1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '4'
+- dose: 2 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

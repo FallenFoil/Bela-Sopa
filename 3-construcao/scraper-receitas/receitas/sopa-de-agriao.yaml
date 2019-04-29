@@ -1,0 +1,59 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegan
+ingredientes:
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: cebola
+  quantidade: '1'
+- nome: courgette
+  quantidade: '1'
+- nome: couve-flor
+  quantidade: 500 g
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: emb. agrião
+  quantidade: '1'
+- nome: água
+  quantidade: 1 L
+- nome: amêndoas laminadas Pingo Doce
+  quantidade: 30 g
+- nome: tomilho (folhas frescas)
+  quantidade: qb
+minutos-de-preparação: 30
+número-de-doses: 6
+passos:
+- Aqueça o azeite numa panela e adicione-lhe a cebola, previamente picada.
+- Lave a courgette, corte-a em cubos e deite-a na panela. Junte os ramos de couve-flor
+  e o sal. Tape e deixe cozinhar em lume brando cerca de 5 minutos.
+- Pique grosseiramente o agrião e deite-o na panela. Deixe cozinhar com a panela tapada
+  durante cerca de 15 minutos. Adicione a água a ferver e coza durante mais 10 minutos
+  ou até os legumes estarem macios.
+- Aloure as amêndoas laminadas numa frigideira anti-aderente e reserve.
+- Triture muito bem a sopa e sirva-a decorada as amêndoas e as folhas de tomilho.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2018/12/sopa-de-agriao.jpg
+valores-nutricionais:
+- dose: 111 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '6'
+- dose: 7,2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '10'
+- dose: 1,0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 5,2 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4,1 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '5'
+- dose: 2,8 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '11'
+- dose: 5,3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''

@@ -1,0 +1,39 @@
+dificuldade: fácil
+etiquetas:
+- sem leite
+- vegetariana
+ingredientes:
+- nome: água
+  quantidade: 1 l
+- nome: sal
+  quantidade: 1 c. de chá
+- nome: alho-francês
+  quantidade: 150 g
+- nome: polpa de abóbora
+  quantidade: 300 g
+- nome: cuscuz
+  quantidade: 50 g
+- nome: espinafres
+  quantidade: 150 g
+minutos-de-preparação: 30
+número-de-doses: 6
+passos:
+- Coloque ao lume uma panela com a água.
+- Quando levantar fervura, adicione o sal, o alho-francês cortado às rodelas e a abóbora
+  em pedaços e deixe ferver durante 15 minutos.
+- Acrescente os cuscuz e os espinafres e deixe cozer mais 10 minutos.
+- Triture com a varinha mágica, deixe arrefecer e acondicione em recipiente apropriado.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/sopaabobora2.jpg
+valores-nutricionais:
+- dose: 37 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '2'
+- dose: 0,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '1'
+- dose: 0,1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '0'
+- dose: 0,7 g
+  nome: Sal
+  percentagem-do-vdr-adulto: '18'

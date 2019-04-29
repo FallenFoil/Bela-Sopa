@@ -1,0 +1,59 @@
+dificuldade: fácil
+etiquetas:
+- sabores mediterrânicos
+- sem glúten
+- sem leite
+- vegetariana
+ingredientes:
+- nome: cebola
+  quantidade: 100 g
+- nome: azeite
+  quantidade: 1 c. de sopa
+- nome: dentes de alho
+  quantidade: '2'
+- nome: sal grosso
+  quantidade: 1 c. de sopa
+- nome: cogumelos brancos
+  quantidade: 400 g
+- nome: funcho em bolbo
+  quantidade: 100 g
+- nome: funcho em rama
+  quantidade: 10 g
+- nome: batatas
+  quantidade: 350 g
+- nome: miolo de pinhão
+  quantidade: 20 g
+minutos-de-preparação: 40
+número-de-doses: 8
+passos:
+- Corte as batatas, a cebola, o alho e o bolbo de funcho em cubos, coloque-os numa
+  panela com água e leve ao lume.
+- A meio da cozedura, junte os cogumelos lavados e cortados ao meio. Tenha o cuidado
+  de reservar alguns para decoração.
+- Depois dos legumes cozidos, triture com a ajuda da varinha mágica de forma a obter
+  um creme homogéneo.
+- Tempere com o sal, regue com um fio de azeite e sirva com os pinhões tostados, a
+  rama de funcho e os cogumelos reservados braseados.
+url-imagem: https://www.pingodoce.pt/wp-content/uploads/2015/12/1449089567
+valores-nutricionais:
+- dose: 71 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '4'
+- dose: 7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '22'
+- dose: 23 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 22 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '24'
+- dose: 2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '8'
+- dose: 8 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
