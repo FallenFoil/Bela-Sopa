@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 namespace App.Models.Assistente{
     public class Utensilio{
         [Key]
-        public int Id;
+        public int UtensilioId { set; get; }
 
         [Required]
         [StringLength(20)]
-        public string Nome;
+        public string Nome { set; get; }
 
         [Required]
         [StringLength(200)]
-        public string Descricao;
+        public string Descricao { set; get; }
 
         [Required]
         [StringLength(50)]
-        public string ImagePath;
+        public string ImagePath { set; get; }
 
         [Required]
         [StringLength(50)]
-        public string Link;
+        public string Link { set; get; }
     }
 }

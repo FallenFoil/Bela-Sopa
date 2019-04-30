@@ -55,6 +55,7 @@ namespace App.Models.Assistente{
         public virtual List<Tecnica> Tecnicas {get; set; }
     }
 
+    /*
     public class ReceitaContext : DbContext{
         public ReceitaContext(DbContextOptions<ReceitaContext> options)
             : base(options){
@@ -69,5 +70,5 @@ namespace App.Models.Assistente{
 
         public DbSet<Receita> receitas { get; set; }
         //public DbSet<Models.Task> task { get; set; }
-    }
+    }*/
 }

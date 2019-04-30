@@ -18,7 +18,7 @@ namespace App.Controllers{
 
         [HttpGet]
         public Tarefa[] get() {
-            return _context.Tarefa.ToArray<Tarefa>();
+            return new Tarefa[] { new Tarefa() { TarefaId = 1, Descricao = "Teste", Tempo = 10 } };// _context.Tarefa.ToArray<Tarefa>();
         }
     }
 }
