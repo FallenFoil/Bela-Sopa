@@ -9,7 +9,7 @@ namespace App.Models.Assistente{
     public class Ingrediente{
 
         public Ingrediente(){
-            this.TarefaIngredientes = new HashSet<TarefaIngrediente>();
+         //   this.TarefaIngrediente = new HashSet<TarefaIngrediente>();
         }
 
         [Key]
@@ -31,7 +31,7 @@ namespace App.Models.Assistente{
         [StringLength(50)]
         public string Link { set; get; }
 
-
-        public ICollection<TarefaIngrediente> TarefaIngredientes { set; get; }
+       // [NotMapped]
+       // public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; }
     }
 }

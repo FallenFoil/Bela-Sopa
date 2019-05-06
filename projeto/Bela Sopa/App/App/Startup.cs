@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App.Models;
 using App.Models.Assistente;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +30,7 @@ namespace App
         {
             //alterar quando houver uma base de dados
             var connection = @"Server=DESKTOP-54TBH9M\SQLEXPRESS;Database=Bela Sopa;Trusted_Connection=True;ConnectRetryCount=0";
-            services.AddDbContext<TarefaContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<BelaSopaContext>(options => options.UseSqlServer(connection));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

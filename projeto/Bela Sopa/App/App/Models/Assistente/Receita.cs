@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace App.Models.Assistente{
     public class Receita{
         [Key]
-        public int Id;
+        public int ReceitaId { get; set; }
 
         [Required]
         [StringLength(10)]
@@ -37,22 +38,28 @@ namespace App.Models.Assistente{
         public string Link {get; set; }
 
         [Required]
-        public virtual List<string> Etiquetas { get; set; }
+        [NotMapped]
+        public virtual IList<string> Etiqueta { get; set; }
 
         [Required]
-        public virtual List<Processo> Processos {get; set; }
+        [NotMapped]
+        public virtual List<Processo> Processo {get; set; }
 
         [Required]
-        public virtual Dictionary<string, Ingrediente> Ingredientes {get; set; }
+        [NotMapped]
+        public virtual Dictionary<string, Ingrediente> Ingrediente {get; set; }
 
         [Required]
-        public virtual Dictionary<string, int> Quantidades {get; set; }
+        [NotMapped]
+        public virtual Dictionary<string, int> Quantidade {get; set; }
 
         [Required]
-        public virtual List<Utensilio> Utensilios {get; set; }
+        [NotMapped]
+        public virtual List<Utensilio> Utensilio {get; set; }
 
         [Required]
-        public virtual List<Tecnica> Tecnicas {get; set; }
+        [NotMapped]
+        public virtual List<Tecnica> Tecnica {get; set; }
     }
 
     /*

@@ -11,7 +11,7 @@ namespace App.Models.Assistente {
 
         public Processo()
         {
-            this.Tarefas = new List<Tarefa>();
+            this.Tarefa = new List<Tarefa>();
         }
 
         [Key]
@@ -21,9 +21,10 @@ namespace App.Models.Assistente {
         public int Tempo { set; get; }
 
         [NotMapped]
-        public virtual ICollection<Tarefa> Tarefas { get; set; }
+        public virtual ICollection<Tarefa> Tarefa { get; set; }
     }
 
+    /*
     public class ProcessoContext : DbContext{
         public ProcessoContext(DbContextOptions<TarefaContext> options)
             : base(options){
@@ -43,4 +44,5 @@ namespace App.Models.Assistente {
             base.OnModelCreating(modelBuilder);
         }
     }
+    */
 }

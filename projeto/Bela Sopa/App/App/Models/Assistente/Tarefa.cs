@@ -10,10 +10,10 @@ namespace App.Models.Assistente{
     public class Tarefa{
 
         public Tarefa(){
-            this.TarefaIngredientes = new HashSet<TarefaIngrediente>();
-            this.Utensilios = new HashSet<Utensilio>();
-            this.Tecnicas = new HashSet<Tecnica>();
-            this.Processos = new HashSet<Processo>();
+            this.TarefaIngrediente = new HashSet<TarefaIngrediente>();
+            this.TarefaUtensilio = new HashSet<TarefaUtensilio>();
+            this.TarefaTecnica = new HashSet<TarefaTecnica>();
+            this.Processo = new HashSet<Processo>();
         }
 
         [Key]
@@ -26,44 +26,103 @@ namespace App.Models.Assistente{
         [Required]
         public int Tempo { set; get; }
 
-        public ICollection<TarefaIngrediente> TarefaIngredientes { set; get; }
-        public virtual ICollection<Utensilio> Utensilios { set; get; }
-        public virtual ICollection<Tecnica> Tecnicas { set; get; }
         [NotMapped]
-        public virtual ICollection<Processo> Processos { set; get; }
+        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; }
+        [NotMapped]
+        public virtual ICollection<TarefaUtensilio> TarefaUtensilio { set; get; }
+        [NotMapped]
+        public virtual ICollection<TarefaTecnica> TarefaTecnica { set; get; }
+        [NotMapped]
+        public virtual ICollection<Processo> Processo { set; get; }
     }
 
-    public class TarefaIngrediente
-    {
+    public class TarefaIngrediente {
         [Key]
         public int TarefaId { set; get; }
-        public Tarefa Tarefa { set; get; }
+        [NotMapped]
+        public virtual Tarefa Tarefa { set; get; }
 
         [Key]
         public int IngredienteId { set; get; }
-        public Ingrediente Ingrediente {set; get;}
+        [NotMapped]
+        public virtual Ingrediente Ingrediente {set; get;}
     }
 
+    public class TarefaUtensilio {
+        [Key]
+        public int TarefaId { set; get; }
+        [NotMapped]
+        public virtual Tarefa Tarefa { set; get; }
+
+        [Key]
+        public int UtensilioId { set; get; }
+        [NotMapped]
+        public virtual Utensilio Utensilio { set; get; }
+    }
+
+    public class TarefaTecnica {
+        [Key]
+        public int TarefaId { set; get; }
+        [NotMapped]
+        public virtual Tarefa Tarefa { set; get; }
+
+        [Key]
+        public int TecnicaId { set; get; }
+        [NotMapped]
+        public virtual Tecnica Tecnica { set; get; }
+    }
+
+    /*
     public class TarefaContext : DbContext{
         public TarefaContext(DbContextOptions<TarefaContext> options)
             : base(options){
 
         }
 
+        
+        public DbSet<Tarefa> Tarefa { set; get; }
+        public DbSet<Ingrediente> Ingrediente { set; get; }
+        public DbSet<Utensilio> Utensilio { set; get; }
+        public DbSet<Tecnica> Tecnica { set; get; }
+        public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
+        public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
+        public DbSet<TarefaTecnica> TarefaTecnica { get; set;  }
 
-        public DbSet<Tarefa> Tarefas { get; set; }
-        public DbSet<Ingrediente> Ingredientes { set; get; }
-        public DbSet<TarefaIngrediente> TarefaIngredientes { get; set; }
-        public DbSet<Utensilio> Utensilios { set; get; }
-        public DbSet<Tecnica> Tecnicas { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Tarefa>()
-            //   .HasMany<Ingrediente>
-            //modelBuilder.Entity<Ingrediente>().HasKey(i => i.IngredienteId);
-            modelBuilder.Entity<TarefaIngrediente>().HasKey(ti => new { ti.TarefaId, ti.IngredienteId });
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<TarefaIngrediente>()
+                .HasKey(ti => new { ti.TarefaId, ti.IngredienteId });
+            modelBuilder.Entity<TarefaIngrediente>()
+                .HasOne(ti => ti.Tarefa)
+                .WithMany(t => t.TarefaIngrediente)
+                .HasForeignKey(ti => ti.TarefaId);
+            modelBuilder.Entity<TarefaIngrediente>()
+                .HasOne(ti => ti.Ingrediente)
+                .WithMany(i => i.TarefaIngredientes)
+                .HasForeignKey(ti => ti.IngredienteId);
+
+            modelBuilder.Entity<TarefaUtensilio>()
+               .HasKey(ti => new { ti.TarefaId, ti.UtensilioId });
+            modelBuilder.Entity<TarefaUtensilio>()
+                .HasOne(ti => ti.Tarefa)
+                .WithMany(t => t.TarefaUtensilio)
+                .HasForeignKey(ti => ti.TarefaId);
+            modelBuilder.Entity<TarefaUtensilio>()
+                .HasOne(ti => ti.Utensilio)
+                .WithMany(i => i.TarefaUtensilios)
+                .HasForeignKey(ti => ti.UtensilioId);
+
+            modelBuilder.Entity<TarefaTecnica>()
+               .HasKey(ti => new { ti.TarefaId, ti.TecnicaId });
+            modelBuilder.Entity<TarefaTecnica>()
+                .HasOne(ti => ti.Tarefa)
+                .WithMany(t => t.TarefaTecnica)
+                .HasForeignKey(ti => ti.TarefaId);
+            modelBuilder.Entity<TarefaTecnica>()
+                .HasOne(ti => ti.Tecnica)
+                .WithMany(i => i.TarefaTecnicas)
+                .HasForeignKey(ti => ti.TecnicaId);
         }
-    }
+    }*/
 }
