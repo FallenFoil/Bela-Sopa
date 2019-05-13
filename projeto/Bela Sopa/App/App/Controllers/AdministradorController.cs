@@ -61,7 +61,7 @@ namespace App.Controllers
             return Ok(a);
         }
 
-        // DELETE api/cliente/5
+        // DELETE api/administrador/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id) {
             Administrador a = _context.Administrador.Find(id);
