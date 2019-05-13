@@ -31,7 +31,7 @@ namespace App.Models.Assistente{
         [StringLength(50)]
         public string Link { set; get; }
 
-       // [NotMapped]
-       // public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; }
+        [NotMapped]
+        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; }
     }
 }

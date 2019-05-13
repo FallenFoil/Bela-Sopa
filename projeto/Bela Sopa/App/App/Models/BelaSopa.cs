@@ -35,7 +35,7 @@ namespace App.Models {
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
            // modelBuilder.Entity<Ingrediente>().ToTable("Ingrediente");
 
-           /* modelBuilder.Entity<TarefaIngrediente>()
+            modelBuilder.Entity<TarefaIngrediente>()
                 .HasKey(ti => new { ti.TarefaId, ti.IngredienteId });
             modelBuilder.Entity<TarefaIngrediente>()
                 .HasOne(ti => ti.Tarefa)
@@ -43,7 +43,7 @@ namespace App.Models {
                 .HasForeignKey(ti => ti.TarefaId);
             modelBuilder.Entity<TarefaIngrediente>()
                 .HasOne(ti => ti.Ingrediente)
-                .WithMany(i => i.TarefaIngredientes)
+                .WithMany(i => i.TarefaIngrediente)
                 .HasForeignKey(ti => ti.IngredienteId);
 
             modelBuilder.Entity<TarefaUtensilio>()
@@ -54,7 +54,7 @@ namespace App.Models {
                 .HasForeignKey(ti => ti.TarefaId);
             modelBuilder.Entity<TarefaUtensilio>()
                 .HasOne(ti => ti.Utensilio)
-                .WithMany(i => i.TarefaUtensilios)
+                .WithMany(i => i.TarefaUtensilio)
                 .HasForeignKey(ti => ti.UtensilioId);
 
             modelBuilder.Entity<TarefaTecnica>()
@@ -65,8 +65,8 @@ namespace App.Models {
                 .HasForeignKey(ti => ti.TarefaId);
             modelBuilder.Entity<TarefaTecnica>()
                 .HasOne(ti => ti.Tecnica)
-                .WithMany(i => i.TarefaTecnicas)
-                .HasForeignKey(ti => ti.TecnicaId);*/
+                .WithMany(i => i.TarefaTecnica)
+                .HasForeignKey(ti => ti.TecnicaId);
         }
     }
 }
