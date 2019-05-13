@@ -46,15 +46,39 @@ namespace App.Controllers {
 
         // PUT api/cliente/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value) {
+        public IActionResult Put(int id, [FromBody] Cliente c) {
+            Cliente toUpdate = _context.Cliente.Find(id);
+            if (toUpdate == null)
+                return NotFound();
+
+            toUpdate.Distrito = c.Distrito;
+            toUpdate.Email = c.Email;
+            toUpdate.EmentaSemanal = c.EmentaSemanal;
+            toUpdate.Favoritos = c.Favoritos;
+            toUpdate.Finalizados = c.Finalizados;
+            toUpdate.Localização = c.Localização;
+            toUpdate.Nome = c.Nome;
+
+            _context.SaveChanges(); 
+
+            return Ok(c);
         }
 
         // DELETE api/cliente/5
         [HttpDelete("{id}")]
-        public void Delete(int id) {
+        public IActionResult Delete(int id) {
+            Cliente c = _context.Cliente.Find(id);
+            if (c == null) {
+                return NotFound();
+            }
+
+            _context.Cliente.Remove(c);
+            _context.SaveChanges();
+            return NoContent();
         }
         public IActionResult Index()
         {
+           
             return View();
         }
     }
