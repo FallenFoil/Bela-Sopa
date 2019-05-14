@@ -36,17 +36,14 @@ namespace App.Controllers{
         // GET api/tarefa/getTecnicas/5
         [HttpGet("getTecnicas/{codigo}")]
         public ActionResult getTecnicas(int codigo){
-            Console.WriteLine(codigo);
             var tarefa = _context.Tarefa.Find(codigo);
             if (tarefa == null)
                 return NotFound();
             var tecnicas = from tecnica in _context.Tecnica
-                           join tarefaTecnica in (from tt in _context.TarefaTecnica
-                                                  where tt.TarefaId == codigo
-                                                  select new { tt.TarefaId, tt.TecnicaId })
-                              on tecnica.TecnicaId equals tarefaTecnica.TarefaId into Tecnicas
-                           from defautTecn in Tecnicas.DefaultIfEmpty()
+                           join tarefaTecnica in _context.TarefaTecnica.Where(tt => tt.TarefaId == codigo)
+                                on tecnica.TecnicaId equals tarefaTecnica.TecnicaId                          
                            select new {
+                               tecnica.TecnicaId,
                                tecnica.Descricao,
                                tecnica.Nome,
                                tecnica.Link,
@@ -56,24 +53,22 @@ namespace App.Controllers{
         }
 
         // GET api/tarefa/getIngredientes/5
-        [HttpGet("getTecnicas/{codigo}")]
+        [HttpGet("getIngredientes/{codigo}")]
         public ActionResult getIngredientes(int codigo) {
-            Console.WriteLine(codigo);
             var tarefa = _context.Tarefa.Find(codigo);
             if (tarefa == null)
                 return NotFound();
-            var tecnicas = from tecnica in _context.Tecnica
-                           where tecnica.TecnicaId == codigo
-                           join tarefaTecnica in _context.TarefaTecnica
-                              on tecnica.TecnicaId equals tarefaTecnica.TarefaId into Tecnicas
-                           from defautTecn in Tecnicas.DefaultIfEmpty()
-                           select new {
-                               tecnica.Descricao,
-                               tecnica.Nome,
-                               tecnica.Link,
-                               tecnica.ImagePath
-                           };
-            return Ok(tecnicas);
+            var ingredientes = from ingrediente in _context.Ingrediente
+                               join tarefaIngrediente in _context.TarefaIngrediente.Where(tt => tt.TarefaId == codigo)
+                                    on ingrediente.IngredienteId equals tarefaIngrediente.IngredienteId
+                               select new {
+                                   ingrediente.IngredienteId,
+                                   ingrediente.Descricao,
+                                   ingrediente.Nome,
+                                   ingrediente.Link,
+                                   ingrediente.ImagePath
+                               };
+            return Ok(ingredientes);
         }
 
         // POST api/tecnica
@@ -91,14 +86,28 @@ namespace App.Controllers{
                                                         && tt.TarefaId == idTarefa);
             bool tecn = _context.Tecnica.Any(tecnica => tecnica.TecnicaId == idTecnica);
             bool tar = _context.Tarefa.Any(tarefa => tarefa.TarefaId == idTarefa);
-            if (!tartecn || !tar || !tecn) {
+            if (tartecn ) {
                 return NotFound();
             }
             TarefaTecnica t = new TarefaTecnica();
-            t.TarefaId = idTecnica;
+            t.TarefaId = idTarefa;
             t.TecnicaId = idTecnica;
-            _context.TarefaTecnica.Add(t); 
+            _context.TarefaTecnica.Add(t);
+            _context.SaveChanges();
             return Ok(t);
+        }
+
+        // DELETE api/tarefa/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id) {
+            Tarefa t = _context.Tarefa.Find(id);
+            if (t == null) {
+                return NotFound();
+            }
+
+            _context.Tarefa.Remove(t);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
