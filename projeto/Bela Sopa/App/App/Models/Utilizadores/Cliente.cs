@@ -1,4 +1,5 @@
 ﻿using App.Models.Assistente;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,5 +22,28 @@ namespace App.Models.Utilizadores {
         [NotMapped]
         public IDictionary<DateTime, Receita> EmentaSemanal { set; get; }
         public string Localização { set; get; }
+    }
+
+    public class ClienteFavorito {
+        [Key]
+        public int ClienteId { set; get; }
+        [Key]
+        public int ReceitaId { set; get; }
+
+        [NotMapped]
+        [JsonIgnore]
+        public Cliente Cliente { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public Receita Receita { set; get; }
+    }
+
+    public class ClienteFinalizado {
+      
+
+    }
+
+    public class ClienteEmentaSemanal {
+
     }
 }

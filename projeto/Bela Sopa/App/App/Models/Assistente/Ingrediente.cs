@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ namespace App.Models.Assistente{
     public class Ingrediente{
 
         public Ingrediente(){
-         //   this.TarefaIngrediente = new HashSet<TarefaIngrediente>();
+            this.TarefaIngrediente = new HashSet<TarefaIngrediente>();
         }
 
         [Key]
@@ -32,6 +33,11 @@ namespace App.Models.Assistente{
         public string Link { set; get; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; }
+
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { set; get; }
     }
 }

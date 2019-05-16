@@ -3,35 +3,22 @@ using App.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace App.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190516204649_receita")]
+    partial class receita
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("App.Models.Assistente.Etiqueta", b =>
-                {
-                    b.Property<int>("EtiquetaId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(20);
-
-                    b.HasKey("EtiquetaId");
-
-                    b.ToTable("Etiqueta");
-                });
 
             modelBuilder.Entity("App.Models.Assistente.Ingrediente", b =>
                 {
@@ -118,19 +105,6 @@ namespace App.Migrations
                     b.HasKey("ReceitaId");
 
                     b.ToTable("Receita");
-                });
-
-            modelBuilder.Entity("App.Models.Assistente.ReceitaEtiqueta", b =>
-                {
-                    b.Property<int>("ReceitaId");
-
-                    b.Property<int>("EtiquetaId");
-
-                    b.HasKey("ReceitaId", "EtiquetaId");
-
-                    b.HasAlternateKey("EtiquetaId", "ReceitaId");
-
-                    b.ToTable("ReceitaEtiqueta");
                 });
 
             modelBuilder.Entity("App.Models.Assistente.ReceitaIngrediente", b =>
@@ -323,19 +297,6 @@ namespace App.Migrations
                     b.HasOne("App.Models.Assistente.Tarefa", "Tarefa")
                         .WithMany("ProcessoTarefa")
                         .HasForeignKey("TarefaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("App.Models.Assistente.ReceitaEtiqueta", b =>
-                {
-                    b.HasOne("App.Models.Assistente.Etiqueta", "Etiqueta")
-                        .WithMany("ReceitaEtiqueta")
-                        .HasForeignKey("EtiquetaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("App.Models.Assistente.Receita", "Receita")
-                        .WithMany("ReceitaEtiqueta")
-                        .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

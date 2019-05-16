@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -35,24 +36,21 @@ namespace App.Models.Assistente{
 
         [Required]
         [StringLength(50)]
-        public string Link {get; set; }
+        public string Link {get; set; } 
 
-        [Required]
         [NotMapped]
-        public virtual IList<string> Etiqueta { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
-        [Required]
         [NotMapped]
-        public virtual List<Processo> Processo {get; set; }
+        [JsonIgnore]
+        public virtual ICollection<ReceitaProcesso> ReceitaProcesso {get; set; }
 
-        [Required]
         [NotMapped]
-        public virtual Dictionary<string, Ingrediente> Ingrediente {get; set; }
+        [JsonIgnore]
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente {get; set; }
 
-        [Required]
-        [NotMapped]
-        public virtual Dictionary<string, int> Quantidade {get; set; }
-
+        /*
         [Required]
         [NotMapped]
         public virtual List<Utensilio> Utensilio {get; set; }
@@ -60,22 +58,70 @@ namespace App.Models.Assistente{
         [Required]
         [NotMapped]
         public virtual List<Tecnica> Tecnica {get; set; }
+        */
     }
 
-    /*
-    public class ReceitaContext : DbContext{
-        public ReceitaContext(DbContextOptions<ReceitaContext> options)
-            : base(options){
+    public class Etiqueta {
+        [Key]
+        public int EtiquetaId { set; get; }
+        [Required]
+        [StringLength(20)]
+        public string Nome { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { set; get; }
+    }
 
+    public class ReceitaEtiqueta {
+        [Key]
+        public int EtiquetaId { set; get; }
+        [Key]
+        public int ReceitaId { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public Receita Receita { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public Etiqueta Etiqueta { get; set; }
+    }
+
+    public class ReceitaIngrediente {
+        public ReceitaIngrediente() { }
+        public ReceitaIngrediente(int idReceita, int idIngrediente) {
+            this.ReceitaId = idReceita;
+            this.IngredienteId = idIngrediente;
         }
+        [Key]
+        public int ReceitaId { get; set; }
+        [Key]
+        public int IngredienteId { set; get; }
+        [Required]
+        public int Quantidade { set; get; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //Por fazer
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Ingrediente Ingrediente { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Receita Receita { set; get; }
+    }
+
+    public class ReceitaProcesso {
+        public ReceitaProcesso() { }
+        public ReceitaProcesso(int idReceita, int idProcesso) {
+            this.ReceitaId = idReceita;
+            this.ProcessoId = idProcesso;
         }
+        [Key]
+        public int ReceitaId { get; set; }
+        [Key]
+        public int ProcessoId { set; get; }
 
-
-        public DbSet<Receita> receitas { get; set; }
-        //public DbSet<Models.Task> task { get; set; }
-    }*/
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Processo Processo { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Receita Receita { set; get; }
+    }
 }

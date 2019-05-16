@@ -2,6 +2,7 @@
 using App.Models.Assistente;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +16,6 @@ namespace App.Controllers{
         private readonly BelaSopaContext _context;
 
         public TarefaController(BelaSopaContext context) {
-            Console.WriteLine("Test");
             _context = context;
         }
 
@@ -33,8 +33,8 @@ namespace App.Controllers{
             return Ok(tar);
         }
 
-        // GET api/tarefa/getTecnicas/5
-        [HttpGet("getTecnicas/{codigo}")]
+        // GET api/tarefa/tecnicas/5
+        [HttpGet("tecnica/{codigo}")]
         public ActionResult getTecnicas(int codigo){
             var tarefa = _context.Tarefa.Find(codigo);
             if (tarefa == null)
@@ -52,8 +52,8 @@ namespace App.Controllers{
             return Ok(tecnicas);
         }
 
-        // GET api/tarefa/getIngredientes/5
-        [HttpGet("getIngredientes/{codigo}")]
+        // GET api/tarefa/ingrediente/5
+        [HttpGet("ingrediente/{codigo}")]
         public ActionResult getIngredientes(int codigo) {
             var tarefa = _context.Tarefa.Find(codigo);
             if (tarefa == null)
@@ -71,28 +71,78 @@ namespace App.Controllers{
             return Ok(ingredientes);
         }
 
-        // POST api/tecnica
+        // GET api/tarefa/utensilio/5
+        [HttpGet("utensilio/{codigo}")]
+        public ActionResult getUtensilios(int codigo) {
+            var tarefa = _context.Tarefa.Find(codigo);
+            if (tarefa == null)
+                return NotFound();
+            var utensilios = from utensilio in _context.Utensilio
+                               join tarefaUtensilio in _context.TarefaUtensilio.Where(tt => tt.TarefaId == codigo)
+                                    on utensilio.UtensilioId equals tarefaUtensilio.UtensilioId
+                               select new {
+                                   utensilio.UtensilioId,
+                                   utensilio.Descricao,
+                                   utensilio.Nome,
+                                   utensilio.Link,
+                                   utensilio.ImagePath
+                               };
+            return Ok(utensilios);
+        }
+
+        // POST api/tarefa
         [HttpPost]
         public IActionResult Post([FromBody] Tarefa tar) {
             _context.Tarefa.Add(tar);
             _context.SaveChanges();
-            return new CreatedResult($"/api/Tecnica/{tar.TarefaId}", tar);
+            return new CreatedResult($"/api/tarefa/{tar.TarefaId}", tar);
         }
 
-        // POST api/tarefa/addTecnica/1/1
-        [HttpPost("addTecnica/{idTarefa}/{idTecnica}")]
+        // POST api/tarefa/tecnica/1/1
+        [HttpPost("tecnica/{idTarefa}/{idTecnica}")]
         public IActionResult PostTecnica(int idTarefa, int idTecnica) {
             bool tartecn = _context.TarefaTecnica.Any(tt => tt.TecnicaId == idTecnica 
                                                         && tt.TarefaId == idTarefa);
             bool tecn = _context.Tecnica.Any(tecnica => tecnica.TecnicaId == idTecnica);
             bool tar = _context.Tarefa.Any(tarefa => tarefa.TarefaId == idTarefa);
-            if (tartecn ) {
+            if (tartecn || !tecn || !tar) {
                 return NotFound();
             }
-            TarefaTecnica t = new TarefaTecnica();
-            t.TarefaId = idTarefa;
-            t.TecnicaId = idTecnica;
+            TarefaTecnica t = new TarefaTecnica(idTarefa, idTecnica);
             _context.TarefaTecnica.Add(t);
+            _context.SaveChanges();
+            return Ok(t);
+        }
+
+        // POST api/tarefa/utensilio/1/1
+        [HttpPost("utensilio/{idTarefa}/{idUtensilio}")]
+        public IActionResult PostUtensilio(int idTarefa, int idUtensilio) {
+            bool tartecn = _context.TarefaUtensilio.Any(tt => tt.UtensilioId == idUtensilio
+                                                        && tt.TarefaId == idTarefa);
+            bool uten = _context.Utensilio.Any(utensilio => utensilio.UtensilioId == idUtensilio);
+            bool tar = _context.Tarefa.Any(tarefa => tarefa.TarefaId == idTarefa);
+            if (tartecn || !uten || !tar) {
+                return NotFound();
+            }
+            TarefaUtensilio t = new TarefaUtensilio(idTarefa, idUtensilio);
+            _context.TarefaUtensilio.Add(t);
+            _context.SaveChanges();
+            return Ok(t);
+        }
+
+
+        // POST api/tarefa/ingrediente/1/1
+        [HttpPost("ingrediente/{idTarefa}/{idIngrediente}")]
+        public IActionResult PostIngrediente(int idTarefa, int idIngrediente) {
+            bool tartecn = _context.TarefaIngrediente.Any(tt => tt.IngredienteId == idIngrediente
+                                                        && tt.TarefaId == idTarefa);
+            bool ing = _context.Ingrediente.Any(ingr => ingr.IngredienteId == idIngrediente);
+            bool tar = _context.Tarefa.Any(tarefa => tarefa.TarefaId == idTarefa);
+            if (tartecn || !ing || !tar ) {
+                return NotFound();
+            }
+            TarefaIngrediente t = new TarefaIngrediente(idTarefa, idIngrediente);
+            _context.TarefaIngrediente.Add(t);
             _context.SaveChanges();
             return Ok(t);
         }
@@ -104,10 +154,49 @@ namespace App.Controllers{
             if (t == null) {
                 return NotFound();
             }
+            ProcessoTarefa processoTarefa = _context.ProcessoTarefa.Where<ProcessoTarefa>(pt => pt.TarefaId == id).First();
+            Processo processo = _context.Processo.Find(processoTarefa.ProcessoId);
 
             _context.Tarefa.Remove(t);
+            processo.Tempo -= t.Tempo;
             _context.SaveChanges();
             return NoContent();
+        }
+
+        // DELETE api/tarefa/ingrediente
+        [HttpDelete("ingrediente/{idTarefa}/{idIngrediente}")]
+        public IActionResult DeleteIngrediente(int idTarefa, int idIngrediente ) {
+            if(_context.TarefaIngrediente.Any(ti => ti.IngredienteId == idIngrediente && ti.TarefaId == idTarefa)) {
+                TarefaIngrediente tarefaIngrediente = new TarefaIngrediente(idTarefa, idIngrediente);
+                _context.TarefaIngrediente.Remove(tarefaIngrediente);
+                _context.SaveChanges();
+                return Ok(tarefaIngrediente);
+            }
+            return NotFound();
+        }
+
+        // DELETE api/tarefa/tecnica
+        [HttpDelete("tecnica/{idTarefa}/{idtecnica}")]
+        public IActionResult Deletetecnica(int idTarefa, int idTecnica) {
+            if (_context.TarefaTecnica.Any(ti => ti.TecnicaId == idTecnica && ti.TarefaId == idTarefa)) {
+                TarefaTecnica tarefaTecnica = new TarefaTecnica(idTarefa, idTecnica);
+                _context.TarefaTecnica.Remove(tarefaTecnica);
+                _context.SaveChanges();
+                return Ok(tarefaTecnica);
+            }
+            return NotFound();
+        }
+
+        // DELETE api/tarefa/utensilio
+        [HttpDelete("utensilio/{idTarefa}/{idutensilio}")]
+        public IActionResult Deleteutensilio(int idTarefa, int idUtensilio) {
+            if (_context.TarefaUtensilio.Any(ti => ti.UtensilioId == idUtensilio && ti.TarefaId == idTarefa)) {
+                TarefaUtensilio tarefaUtensilio = new TarefaUtensilio(idTarefa, idUtensilio);
+                _context.TarefaUtensilio.Remove(tarefaUtensilio);
+                _context.SaveChanges();
+                return Ok(tarefaUtensilio);
+            }
+            return NotFound();
         }
     }
 }

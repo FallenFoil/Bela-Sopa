@@ -20,16 +20,24 @@ namespace App.Models {
 
         }
 
+        public DbSet<Cliente> Cliente { get; set; } 
+        public DbSet<Administrador> Administrador { get; set; }
+
+        public DbSet<Receita> Receita { set; get; }
+        public DbSet<Etiqueta> Etiqueta { set; get; }
+        public DbSet<ReceitaIngrediente> ReceitaIngrediente { set; get; }
+        public DbSet<ReceitaProcesso> ReceitaProcesso { set; get; }
+
+        public DbSet<Processo> Processo { set; get; }
+        public DbSet<ProcessoTarefa> ProcessoTarefa { set; get; }
+
         public DbSet<Tarefa> Tarefa { set; get; }
+        public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
+        public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
+        public DbSet<TarefaTecnica> TarefaTecnica { get; set; }
         public DbSet<Ingrediente> Ingrediente { set; get; }
         public DbSet<Utensilio> Utensilio { set; get; }
         public DbSet<Tecnica> Tecnica { set; get; }
-        public DbSet<Processo> Processo { set; get; }
-        public DbSet<Cliente> Cliente { get; set; } 
-        public DbSet<Administrador> Administrador { get; set; }
-        public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
-        public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
-        public DbSet<TarefaTecnica> TarefaTecnica { get; set; } 
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
@@ -67,6 +75,50 @@ namespace App.Models {
                 .HasOne(ti => ti.Tecnica)
                 .WithMany(i => i.TarefaTecnica)
                 .HasForeignKey(ti => ti.TecnicaId);
+
+            modelBuilder.Entity<ProcessoTarefa>()
+               .HasKey(pt => new { pt.ProcessoId, pt.TarefaId });
+            modelBuilder.Entity<ProcessoTarefa>()
+                .HasOne(p => p.Processo)
+                .WithMany(t => t.ProcessoTarefa)
+                .HasForeignKey(ti => ti.ProcessoId);
+            modelBuilder.Entity<ProcessoTarefa>()
+                .HasOne(t => t.Tarefa)
+                .WithMany(pt => pt.ProcessoTarefa)
+                .HasForeignKey(t => t.TarefaId);
+
+            modelBuilder.Entity<ReceitaIngrediente>()
+              .HasKey(pt => new { pt.ReceitaId, pt.IngredienteId });
+            modelBuilder.Entity<ReceitaIngrediente>()
+                .HasOne(ri => ri.Receita)
+                .WithMany(r => r.ReceitaIngrediente)
+                .HasForeignKey(ti => ti.ReceitaId);
+            modelBuilder.Entity<ReceitaIngrediente>()
+                .HasOne(ri => ri.Ingrediente)
+                .WithMany(i => i.ReceitaIngrediente)
+                .HasForeignKey(t => t.IngredienteId);
+
+            modelBuilder.Entity<ReceitaProcesso>()
+                .HasKey(rc => new { rc.ReceitaId, rc.ProcessoId });
+            modelBuilder.Entity<ReceitaProcesso>()
+                .HasOne(ri => ri.Receita)
+                .WithMany(i => i.ReceitaProcesso)
+                .HasForeignKey(t => t.ReceitaId);
+            modelBuilder.Entity<ReceitaProcesso>()
+               .HasOne(ri => ri.Processo)
+               .WithMany(i => i.ReceitaProcesso)
+               .HasForeignKey(t => t.ProcessoId);
+
+            modelBuilder.Entity<ReceitaEtiqueta>()
+                .HasKey(rc => new { rc.ReceitaId, rc.EtiquetaId });
+            modelBuilder.Entity<ReceitaEtiqueta>()
+                .HasOne(ri => ri.Receita)
+                .WithMany(i => i.ReceitaEtiqueta)
+                .HasForeignKey(t => t.ReceitaId);
+            modelBuilder.Entity<ReceitaEtiqueta>()
+               .HasOne(ri => ri.Etiqueta)
+               .WithMany(i => i.ReceitaEtiqueta)
+               .HasForeignKey(t => t.EtiquetaId);
         }
     }
 }

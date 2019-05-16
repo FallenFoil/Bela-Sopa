@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,42 +8,43 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace App.Models.Assistente {
-    public class Processo{
+    public class Processo {
 
-        public Processo()
-        {
-            this.Tarefa = new List<Tarefa>();
+        public Processo() {
+           
+        }
+
+        [Key]
+        public int ProcessoId { set; get; }
+        [Required]
+        public int Tempo { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<ProcessoTarefa> ProcessoTarefa { get; set; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; }
+    }
+
+    public class ProcessoTarefa{
+        public ProcessoTarefa() { }
+        public ProcessoTarefa(int idProcesso, int idTarefa) {
+            this.ProcessoId = idProcesso;
+            this.TarefaId = idTarefa;
         }
 
         [Key]
         public int ProcessoId { set; get; }
 
-        [Required]
-        public int Tempo { set; get; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Processo Processo { get; set; }
+        
+        [Key]
+        public int TarefaId { set; get; }
 
         [NotMapped]
-        public virtual ICollection<Tarefa> Tarefa { get; set; }
+        [JsonIgnore]
+        public virtual Tarefa Tarefa { set; get; }
     }
-
-    /*
-    public class ProcessoContext : DbContext{
-        public ProcessoContext(DbContextOptions<TarefaContext> options)
-            : base(options){
-
-        }
-
-        public DbSet<Processo> Processos { get; set; }
-        public DbSet<Tarefa> Tarefas { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //modelBuilder.Entity<Tarefa>()
-            //   .HasMany<Ingrediente>
-            //modelBuilder.Entity<Tarefa>()
-            //   .HasKey(t => t.Id);
-            //modelBuilder.Entity<Ingrediente>().HasKey(i => i.IngredienteId);
-            base.OnModelCreating(modelBuilder);
-        }
-    }
-    */
 }
