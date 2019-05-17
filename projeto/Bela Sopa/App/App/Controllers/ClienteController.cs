@@ -53,9 +53,6 @@ namespace App.Controllers {
 
             toUpdate.Distrito = c.Distrito;
             toUpdate.Email = c.Email;
-            toUpdate.EmentaSemanal = c.EmentaSemanal;
-            toUpdate.Favoritos = c.Favoritos;
-            toUpdate.Finalizados = c.Finalizados;
             toUpdate.Localização = c.Localização;
             toUpdate.Nome = c.Nome;
 

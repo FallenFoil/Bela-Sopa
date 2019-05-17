@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using App.Models.Utilizadores;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,18 @@ namespace App.Models.Assistente{
         [NotMapped]
         [JsonIgnore]
         public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente {get; set; }
+
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<ClienteFavorito> ClienteFavorito { get; set; }
+
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<ClienteFinalizado> ClienteFinalizado { get; set; }
+
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
         /*
         [Required]

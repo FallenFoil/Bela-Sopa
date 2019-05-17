@@ -10,21 +10,18 @@ using System.Threading.Tasks;
 namespace App.Models.Utilizadores {
     public class Cliente : Utilizador {
         public Cliente() {
-            Favoritos = new HashSet<Receita>();
-            Finalizados = new HashSet<Receita>();
-            EmentaSemanal = new Dictionary<DateTime, Receita>();
             Localização = "";
         }
         [NotMapped]
-        public ICollection<Receita> Favoritos { set; get; }
+        public ICollection<ClienteFavorito> ClienteFavorito { set; get; }
         [NotMapped]
-        public ICollection<Receita> Finalizados { set; get; }
+        public ICollection<ClienteFinalizado> ClienteFinalizado { set; get; }
         [NotMapped]
-        public IDictionary<DateTime, Receita> EmentaSemanal { set; get; }
+        public ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { set; get; }
         public string Localização { set; get; }
     }
-
-    public class ClienteFavorito {
+    
+    public abstract class ClienteReceita {
         [Key]
         public int ClienteId { set; get; }
         [Key]
@@ -32,18 +29,16 @@ namespace App.Models.Utilizadores {
 
         [NotMapped]
         [JsonIgnore]
-        public Cliente Cliente { set; get; }
+        public virtual Cliente Cliente { set; get; }
         [NotMapped]
         [JsonIgnore]
-        public Receita Receita { set; get; }
+        public virtual Receita Receita { set; get; }
     }
-
-    public class ClienteFinalizado {
-      
-
+    
+    public class ClienteEmentaSemanal : ClienteReceita{
+        [Required]
+        public DateTime Horario { set; get; }
     }
-
-    public class ClienteEmentaSemanal {
-
-    }
+    public class ClienteFavorito : ClienteReceita{ }
+    public class ClienteFinalizado : ClienteReceita { }
 }

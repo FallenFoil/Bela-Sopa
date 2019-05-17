@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace App.Models {
     public class BelaSopa {
-        Receita Receita;
-        Dictionary<int, Dictionary<int, Boolean>> EstadoConfecao;
+        public Receita Receita;
+        public Dictionary<int, Dictionary<int, Boolean>> EstadoConfecao;
     }
 
     public class BelaSopaContext : DbContext {
@@ -19,8 +19,10 @@ namespace App.Models {
             : base(options) {
 
         }
-
         public DbSet<Cliente> Cliente { get; set; } 
+        public DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
+        public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        public DbSet<ClienteFavorito> ClienteFavorito { get; set; }
         public DbSet<Administrador> Administrador { get; set; }
 
         public DbSet<Receita> Receita { set; get; }
@@ -41,7 +43,38 @@ namespace App.Models {
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-           // modelBuilder.Entity<Ingrediente>().ToTable("Ingrediente");
+            modelBuilder.Entity<ClienteFinalizado>()
+                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
+            modelBuilder.Entity<ClienteFinalizado>()
+               .HasOne(ti => ti.Cliente)
+               .WithMany(t => t.ClienteFinalizado)
+               .HasForeignKey(ti => ti.ClienteId);
+            modelBuilder.Entity<ClienteFinalizado>()
+                .HasOne(ti => ti.Receita)
+                .WithMany(i => i.ClienteFinalizado)
+                .HasForeignKey(ti => ti.ReceitaId);
+
+            modelBuilder.Entity<ClienteFavorito>()
+                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
+            modelBuilder.Entity<ClienteFavorito>()
+              .HasOne(ti => ti.Cliente)
+              .WithMany(t => t.ClienteFavorito)
+              .HasForeignKey(ti => ti.ClienteId);
+            modelBuilder.Entity<ClienteFavorito>()
+                .HasOne(ti => ti.Receita)
+                .WithMany(i => i.ClienteFavorito)
+                .HasForeignKey(ti => ti.ReceitaId);
+
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+              .HasOne(ti => ti.Cliente)
+              .WithMany(t => t.ClienteEmentaSemanal)
+              .HasForeignKey(ti => ti.ClienteId);
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+                .HasOne(ti => ti.Receita)
+                .WithMany(i => i.ClienteEmentaSemanal)
+                .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<TarefaIngrediente>()
                 .HasKey(ti => new { ti.TarefaId, ti.IngredienteId });
