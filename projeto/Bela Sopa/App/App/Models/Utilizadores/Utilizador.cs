@@ -15,5 +15,7 @@ namespace App.Models.Utilizadores {
         public string Email { set; get; }
         [Required]
         public string Distrito { set; get; }
+        [Required]
+        public string Password { set; get; }
     }
 }
