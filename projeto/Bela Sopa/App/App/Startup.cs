@@ -29,7 +29,7 @@ namespace App
         public void ConfigureServices(IServiceCollection services)
         {
             //alterar quando houver uma base de dados
-            var connection = @"Server=MACEDO\SQLEXPRESS01;Database=Bela Sopa;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = @"Server=DESKTOP-54TBH9M\SQLEXPRESS;Database=Bela Sopa;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<BelaSopaContext>(options => options.UseSqlServer(connection));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

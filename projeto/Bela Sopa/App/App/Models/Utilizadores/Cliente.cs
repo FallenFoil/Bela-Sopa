@@ -20,8 +20,13 @@ namespace App.Models.Utilizadores {
         public ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { set; get; }
         public string Localização { set; get; }
     }
-    
-    public abstract class ClienteReceita {
+
+    public class ClienteReceita {
+        public ClienteReceita() { }
+        public ClienteReceita(int idCliente, int idReceita) {
+            this.ClienteId = idCliente;
+            this.ReceitaId = idReceita;
+        }
         [Key]
         public int ClienteId { set; get; }
         [Key]
@@ -34,11 +39,21 @@ namespace App.Models.Utilizadores {
         [JsonIgnore]
         public virtual Receita Receita { set; get; }
     }
-    
+
+
     public class ClienteEmentaSemanal : ClienteReceita{
+        public ClienteEmentaSemanal(int idCliente, int idReceita) : base(idCliente, idReceita) { }
+        public ClienteEmentaSemanal() { }
         [Required]
         public DateTime Horario { set; get; }
     }
-    public class ClienteFavorito : ClienteReceita{ }
-    public class ClienteFinalizado : ClienteReceita { }
+    public class ClienteFavorito : ClienteReceita{
+        public ClienteFavorito() { }
+        public ClienteFavorito(int idCliente, int idReceita) : base(idCliente, idReceita) { }
+
+    }
+    public class ClienteFinalizado : ClienteReceita {
+        public ClienteFinalizado() { }
+        public ClienteFinalizado(int idCliente, int idReceita) : base(idCliente, idReceita) { }
+    }
 }
