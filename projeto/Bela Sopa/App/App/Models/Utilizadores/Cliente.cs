@@ -12,6 +12,7 @@ namespace App.Models.Utilizadores {
         public Cliente() {
             Localização = "";
         }
+
         [NotMapped]
         public ICollection<ClienteFavorito> ClienteFavorito { set; get; }
         [NotMapped]
@@ -41,4 +42,6 @@ namespace App.Models.Utilizadores {
     }
     public class ClienteFavorito : ClienteReceita{ }
     public class ClienteFinalizado : ClienteReceita { }
+
+
 }

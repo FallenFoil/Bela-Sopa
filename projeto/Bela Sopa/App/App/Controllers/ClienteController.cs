@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using App.Models;
 using App.Models.Utilizadores;
+using App.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace App.Controllers {
@@ -38,9 +39,11 @@ namespace App.Controllers {
 
         // POST api/cliente
         [HttpPost]
-        public void Post([FromBody] Cliente c) {
+        public bool Post([FromBody] Cliente c) {
+            c.Password = Encript.HashPassword(c.Password);
             _context.Cliente.Add(c);
             _context.SaveChanges();
+            return true;
            // return new CreatedResult($"/api/cliente/{c.UtilizadorId}", c);
         }
 
