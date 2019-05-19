@@ -11,16 +11,18 @@ namespace App.Models.Assistente
         [Key]
         public int ReceitaId { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required, StringLength(10)]
         public string Nome { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required, StringLength(10)]
         public string Dificuldade { get; set; }
 
         [Required]
         public int Tempo { get; set; }
+
+
+        [Required, StringLength(50)]
+        public string ImagePath { set; get; }
 
         [Required]
         [StringLength(200)]
@@ -37,28 +39,22 @@ namespace App.Models.Assistente
         [StringLength(50)]
         public string Link { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteFavorito> ClienteFavorito { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteFinalizado> ClienteFinalizado { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
     }
 

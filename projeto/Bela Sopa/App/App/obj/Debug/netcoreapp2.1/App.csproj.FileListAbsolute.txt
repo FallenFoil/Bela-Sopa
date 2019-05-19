@@ -32,3 +32,4 @@ C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\
 C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\App.csproj.CopyComplete
 C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\Razor\Views\LoginView\Index.g.cshtml.cs
 C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\Razor\Views\RegisterView\Index.g.cshtml.cs
+C:\Users\CésarAugustodaCostaB\Documents\Projects\LI4\projeto\Bela Sopa\App\App\obj\Debug\netcoreapp2.1\Razor\Views\VisualizaçaoReceitaView\Index.g.cshtml.cs
