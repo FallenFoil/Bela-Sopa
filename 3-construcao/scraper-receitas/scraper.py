@@ -73,10 +73,6 @@ def scrape_recipe(url: str) -> None:
             )
         )
 
-    # parse recipe - imagem
-
-    url_imagem = str(soup.find('div', id='imagemReceitaHeader').img.get('src'))
-
     # parse recipe - etiquetas
 
     etiquetas = list(
@@ -190,17 +186,24 @@ def scrape_recipe(url: str) -> None:
         for tag in soup.find_all('span', class_='instruction-body')
         )
 
+    # parse recipe - imagem
+
+    url_imagem = str(soup.find('div', id='imagemReceitaHeader').img.get('src'))
+
+    with urllib.request.urlopen(url_imagem) as imagem_file:
+        imagem = imagem_file.read()
+
     # output yaml
 
     receita = {
         'dificuldade'          : dificuldade,
         'minutos-de-preparação': duracao_minutos,
         'número-de-doses'      : num_pessoas,
-        'url-imagem'           : url_imagem,
         'etiquetas'            : etiquetas,
         'ingredientes'         : ingredientes,
         'valores-nutricionais' : valores_nutricionais,
-        'passos'               : passos
+        'passos'               : passos,
+        'imagem'               : imagem
     }
 
     path_yaml = re.sub(
@@ -209,12 +212,13 @@ def scrape_recipe(url: str) -> None:
         url
         )
 
-    with open(path_yaml, 'w+', encoding='utf-8') as yaml_file:
+    with open(path_yaml, 'w+b') as yaml_file:
 
         yaml.dump(
             receita,
             stream=yaml_file,
-            allow_unicode=True
+            allow_unicode=True,
+            encoding='utf-8'
             )
 
 # ---------------------------------------------------------------------------- #
