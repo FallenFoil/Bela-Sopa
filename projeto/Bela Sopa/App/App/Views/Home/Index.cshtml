@@ -1,8 +1,10 @@
-﻿
 @{
-    ViewData["Title"] = "Bela Sopa - Receitas";
+    //ViewData["Title"] = "Bela Sopa - Receitas";
     Layout = "~/Views/shared/_Layout.cshtml";
+    var etiquetas = ViewData["Etiquetas"] as App.Models.Assistente.Etiqueta[];
 }
+@model App.Controllers.HomeController
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h3>Receitas</h3>
 <div class="container">
@@ -17,10 +19,10 @@
             <div class="form-group" style="height:1px">
                 <select class="form-control" id="sel1">
                     <option>Etiquetas</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+                    @foreach (var etiqueta in etiquetas) {
+                        <option>@etiqueta.Nome</option>
+                    }
+                    </select>
             </div>
         </div>
         <div class="col-sm">

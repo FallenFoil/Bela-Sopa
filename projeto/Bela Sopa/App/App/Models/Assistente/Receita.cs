@@ -60,29 +60,9 @@ namespace App.Models.Assistente
         [NotMapped]
         [JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-
-        /*
-        [Required]
-        [NotMapped]
-        public virtual List<Utensilio> Utensilio {get; set; }
-
-        [Required]
-        [NotMapped]
-        public virtual List<Tecnica> Tecnica {get; set; }
-        */
     }
 
-    public class Etiqueta
-    {
-        [Key]
-        public int EtiquetaId { set; get; }
-        [Required]
-        [StringLength(20)]
-        public string Nome { set; get; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { set; get; }
-    }
+   
 
     public class ReceitaEtiqueta
     {

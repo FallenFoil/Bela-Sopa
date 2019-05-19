@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -72,6 +72,12 @@ namespace App.Controllers
             _context.SaveChanges();
             return Ok(receita);
         }
+
+        // POST api/receita/etiqueta
+
+        // Delete api/receita/etiqueta/1/1
+
+        // GET api/receita/etiqueta/1
 
         // POST api/receita/processo/1/2
         [HttpPost("processo/{idReceita}/{idProcesso}")]
