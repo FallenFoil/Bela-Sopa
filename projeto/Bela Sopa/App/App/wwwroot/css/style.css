@@ -1,4 +1,4 @@
-﻿/*
+/*
     DEMO STYLE
 */
 
@@ -67,6 +67,8 @@ span {
     background: #4CAF50;
     color: #fff;
     transition: all 0.3s;
+    position: fixed;
+    height: 100%;
 }
 
     #sidebar.active {
@@ -148,7 +150,6 @@ span {
 
     #sidebar ul.components {
         padding: 20px 0;
-        /*border-bottom: 10px solid #47748b;*/
     }
 
     #sidebar ul li a {
@@ -223,10 +224,24 @@ a.article:hover {
 
 #content {
     width: 100%;
+    margin-left: 20%;
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
 }
+
+    #content.active {
+        width: 100%;
+        margin-left: 5%;
+        padding: 20px;
+        min-height: 100vh;
+        transition: all 0.3s;
+    }
+
+        #content.active h3 {
+            margin-left: 3%;
+        }
+
 /* ---------------------------------------------------
     HOME STYLE
 ----------------------------------------------------- */
@@ -248,6 +263,18 @@ a.article:hover {
     color: #4CAF50;
 }
 
+.Receita p {
+    color: green;
+}
+
+.ReceitaImg {
+    width: 100%;
+    height: 70%;
+}
+
+.ReceitasLinha {
+    margin-bottom: 3%;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
