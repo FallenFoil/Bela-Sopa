@@ -1,4 +1,4 @@
-﻿using App.Models.Assistente;
+using App.Models.Assistente;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,7 @@ namespace App.Models.Utilizadores {
         public Cliente() {
             Localização = "";
         }
+
         [NotMapped]
         public ICollection<ClienteFavorito> ClienteFavorito { set; get; }
         [NotMapped]
@@ -47,6 +48,7 @@ namespace App.Models.Utilizadores {
         [Required]
         public DateTime Horario { set; get; }
     }
+
     public class ClienteFavorito : ClienteReceita{
         public ClienteFavorito() { }
         public ClienteFavorito(int idCliente, int idReceita) : base(idCliente, idReceita) { }
@@ -56,4 +58,5 @@ namespace App.Models.Utilizadores {
         public ClienteFinalizado() { }
         public ClienteFinalizado(int idCliente, int idReceita) : base(idCliente, idReceita) { }
     }
+
 }

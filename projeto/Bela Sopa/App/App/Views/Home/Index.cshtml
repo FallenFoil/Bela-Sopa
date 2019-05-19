@@ -1,8 +1,33 @@
-﻿
 @{
-    ViewData["Title"] = "Receitas";
+    //ViewData["Title"] = "Bela Sopa - Receitas";
     Layout = "~/Views/shared/_Layout.cshtml";
+    var etiquetas = ViewData["Etiquetas"] as App.Models.Assistente.Etiqueta[];
 }
+@model App.Controllers.HomeController
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h3>Receitas</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <form class="form-inline md-form form-sm active-cyan-2 mt-2">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </form>
+        </div>
+        <div class="col-sm">
+            <div class="form-group" style="height:1px">
+                <select class="form-control" id="sel1">
+                    <option>Etiquetas</option>
+                    @foreach (var etiqueta in etiquetas) {
+                        <option>@etiqueta.Nome</option>
+                    }
+                    </select>
+            </div>
+        </div>
+        <div class="col-sm">
+            One of three columns
+        </div>
+    </div>
+</div>
 

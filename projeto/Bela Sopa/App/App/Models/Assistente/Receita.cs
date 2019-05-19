@@ -1,15 +1,13 @@
-﻿using App.Models.Utilizadores;
-using Microsoft.EntityFrameworkCore;
+using App.Models.Utilizadores;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace App.Models.Assistente{
-    public class Receita{
+namespace App.Models.Assistente
+{
+    public class Receita
+    {
         [Key]
         public int ReceitaId { get; set; }
 
@@ -19,25 +17,25 @@ namespace App.Models.Assistente{
 
         [Required]
         [StringLength(10)]
-        public string Dificuldade {get; set; }
+        public string Dificuldade { get; set; }
 
         [Required]
-        public int Tempo {get; set; }
-        
+        public int Tempo { get; set; }
+
         [Required]
         [StringLength(200)]
-        public string Descricao {get; set; }
+        public string Descricao { get; set; }
 
         [StringLength(50)]
-        public string Video {get; set; }
+        public string Video { get; set; }
 
         //valores nutricionais
         [Required]
-        public int NPessoas {get; set; }
+        public int NPessoas { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Link {get; set; } 
+        public string Link { get; set; }
 
         [NotMapped]
         [JsonIgnore]
@@ -45,11 +43,11 @@ namespace App.Models.Assistente{
 
         [NotMapped]
         [JsonIgnore]
-        public virtual ICollection<ReceitaProcesso> ReceitaProcesso {get; set; }
+        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; }
 
         [NotMapped]
         [JsonIgnore]
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente {get; set; }
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; }
 
         [NotMapped]
         [JsonIgnore]
@@ -62,30 +60,12 @@ namespace App.Models.Assistente{
         [NotMapped]
         [JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-
-        /*
-        [Required]
-        [NotMapped]
-        public virtual List<Utensilio> Utensilio {get; set; }
-
-        [Required]
-        [NotMapped]
-        public virtual List<Tecnica> Tecnica {get; set; }
-        */
     }
 
-    public class Etiqueta {
-        [Key]
-        public int EtiquetaId { set; get; }
-        [Required]
-        [StringLength(20)]
-        public string Nome { set; get; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { set; get; }
-    }
+   
 
-    public class ReceitaEtiqueta {
+    public class ReceitaEtiqueta
+    {
         [Key]
         public int EtiquetaId { set; get; }
         [Key]
@@ -98,9 +78,11 @@ namespace App.Models.Assistente{
         public Etiqueta Etiqueta { get; set; }
     }
 
-    public class ReceitaIngrediente {
+    public class ReceitaIngrediente
+    {
         public ReceitaIngrediente() { }
-        public ReceitaIngrediente(int idReceita, int idIngrediente) {
+        public ReceitaIngrediente(int idReceita, int idIngrediente)
+        {
             this.ReceitaId = idReceita;
             this.IngredienteId = idIngrediente;
         }
@@ -119,9 +101,11 @@ namespace App.Models.Assistente{
         public virtual Receita Receita { set; get; }
     }
 
-    public class ReceitaProcesso {
+    public class ReceitaProcesso
+    {
         public ReceitaProcesso() { }
-        public ReceitaProcesso(int idReceita, int idProcesso) {
+        public ReceitaProcesso(int idReceita, int idProcesso)
+        {
             this.ReceitaId = idReceita;
             this.ProcessoId = idProcesso;
         }

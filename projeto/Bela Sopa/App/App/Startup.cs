@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,6 +31,12 @@ namespace App
             //alterar quando houver uma base de dados
             var connection = @"Server=DESKTOP-54TBH9M\SQLEXPRESS;Database=Bela Sopa;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<BelaSopaContext>(options => options.UseSqlServer(connection));
+            /*services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                    .AddCookie(options =>
+                    {
+                        options.LoginPath = "/LoginView/UserLogin/";
+
+                    });*/
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
