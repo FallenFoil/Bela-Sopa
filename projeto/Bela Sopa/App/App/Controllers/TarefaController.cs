@@ -1,4 +1,4 @@
-﻿using BelaSopa.Models;
+using BelaSopa.Models;
 using BelaSopa.Models.Assistente;
 using Microsoft.AspNetCore.Mvc;
 using System;

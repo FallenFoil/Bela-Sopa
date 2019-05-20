@@ -1,4 +1,4 @@
-﻿using BelaSopa.Models.Assistente;
+using BelaSopa.Models.Assistente;
 using BelaSopa.Models.Utilizadores;
 using Microsoft.EntityFrameworkCore;
 using System;
