@@ -47,10 +47,19 @@ namespace BelaSopa
             else
                 app.UseHsts();
 
-            using (var serviceScope = app.ApplicationServices.GetService< IServiceScopeFactory >().CreateScope())
+            using (
+                var serviceScope =
+                    app
+                    .ApplicationServices
+                    .GetService<IServiceScopeFactory>()
+                    .CreateScope()
+                    )
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService< BelaSopaContext >();
-                context.Database.Migrate();
+                serviceScope
+                    .ServiceProvider
+                    .GetRequiredService<BelaSopaContext>()
+                    .Database
+                    .Migrate();
             }
 
             app.UseMvcWithDefaultRoute();

@@ -42,6 +42,10 @@ def scrape_recipe(url: str) -> None:
 
     soup = bs4.BeautifulSoup(html, features='html.parser')
 
+    # parse recipe - nome
+
+    nome_receita = soup.find('h1', class_='main-slide-title').string.strip()
+
     # parse recipe - dificuldade
 
     tag_dificuldade = soup.find('label', class_='dificulty')
@@ -196,6 +200,7 @@ def scrape_recipe(url: str) -> None:
     # output yaml
 
     receita = {
+        'nome'                 : nome_receita,
         'dificuldade'          : dificuldade,
         'minutos-de-preparação': duracao_minutos,
         'número-de-doses'      : num_pessoas,
