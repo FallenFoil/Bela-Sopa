@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using App.Models;
-using App.Models.Assistente;
-using App.Models.Utilizadores;
-using App.Controllers;
+using BelaSopa.Models;
+using BelaSopa.Models.Assistente;
+using BelaSopa.Models.Utilizadores;
+using BelaSopa.Controllers;
 
 
-namespace App.Controllers
+namespace BelaSopa.Controllers
 {
               
         public class RegisterViewController : Controller

@@ -1,10 +1,10 @@
-using App.Models.Utilizadores;
+using BelaSopa.Models.Utilizadores;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace App.Models.Assistente
+namespace BelaSopa.Models.Assistente
 {
     public class Receita
     {

@@ -1,5 +1,5 @@
-﻿using App.Models;
-using App.Models.Assistente;
+﻿using BelaSopa.Models;
+using BelaSopa.Models.Assistente;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace App.Controllers{
+namespace BelaSopa.Controllers{
 
     [Route("api/[controller]")]
     [ApiController]

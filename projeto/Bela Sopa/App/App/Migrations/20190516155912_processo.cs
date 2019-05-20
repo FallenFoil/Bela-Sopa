@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace App.Migrations
+namespace BelaSopa.Migrations
 {
     public partial class processo : Migration
     {

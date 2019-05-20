@@ -1,4 +1,4 @@
-using App.Models.Assistente;
+using BelaSopa.Models.Assistente;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace App.Models.Utilizadores {
+namespace BelaSopa.Models.Utilizadores {
     public class Cliente : Utilizador {
         public Cliente() {
             Localização = "";

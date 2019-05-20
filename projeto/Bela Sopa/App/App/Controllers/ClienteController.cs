@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using App.Models;
-using App.Models.Assistente;
-using App.Models.Utilizadores;
-using App.Shared;
+using BelaSopa.Models;
+using BelaSopa.Models.Assistente;
+using BelaSopa.Models.Utilizadores;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace App.Controllers {
+namespace BelaSopa.Controllers {
     [Route("api/[controller]")]
     [ApiController]
     public class ClienteController : Controller

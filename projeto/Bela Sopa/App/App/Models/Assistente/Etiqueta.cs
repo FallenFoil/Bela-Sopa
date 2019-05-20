@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace App.Models.Assistente {
+namespace BelaSopa.Models.Assistente {
     public class Etiqueta {
         [Key]
         public int EtiquetaId { set; get; }

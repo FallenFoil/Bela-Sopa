@@ -1,5 +1,5 @@
-﻿using App.Models.Assistente;
-using App.Models.Utilizadores;
+﻿using BelaSopa.Models.Assistente;
+using BelaSopa.Models.Utilizadores;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace App.Models {
+namespace BelaSopa.Models {
     public class BelaSopa {
         public Receita Receita;
         public Dictionary<int, Dictionary<int, Boolean>> EstadoConfecao;

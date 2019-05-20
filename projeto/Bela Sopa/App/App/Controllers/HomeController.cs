@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using App.Models;
-using App.Models.Assistente;
+using BelaSopa.Models;
+using BelaSopa.Models.Assistente;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.Controllers {
+namespace BelaSopa.Controllers {
     public class HomeController : Controller {
         public HomeController(BelaSopaContext context) {
             EtiquetaController = new EtiquetaController(context);
