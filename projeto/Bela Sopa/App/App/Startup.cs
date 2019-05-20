@@ -22,9 +22,7 @@ namespace BelaSopa
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext< BelaSopaContext >(
-                options => options.UseSqlServer(
-                    this.Configuration.GetConnectionString("DefaultConnection")
-                    )
+                options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
                 );
 
             // TODO: fix/implement this
@@ -34,9 +32,7 @@ namespace BelaSopa
             //    options => { options.LoginPath = "/LoginView/UserLogin/"; }
             //    );
             
-            services.AddMvc().SetCompatibilityVersion(
-                CompatibilityVersion.Version_2_1
-                );
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure
