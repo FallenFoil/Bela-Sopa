@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20190516153654_processo.cs" />
-    <Compile Remove="Migrations\20190516153654_processo.Designer.cs" />
-    <Compile Remove="Migrations\20190520153657_ola.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

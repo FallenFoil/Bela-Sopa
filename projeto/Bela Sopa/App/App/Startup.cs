@@ -27,6 +27,7 @@ namespace BelaSopa
                     )
                 );
 
+            // TODO: fix/implement this
             //services.AddAuthentication(
             //    CookieAuthenticationDefaults.AuthenticationScheme
             //    ).AddCookie(
@@ -47,20 +48,8 @@ namespace BelaSopa
             else
                 app.UseHsts();
 
-            using (
-                var serviceScope =
-                    app
-                    .ApplicationServices
-                    .GetService<IServiceScopeFactory>()
-                    .CreateScope()
-                    )
-            {
-                serviceScope
-                    .ServiceProvider
-                    .GetRequiredService<BelaSopaContext>()
-                    .Database
-                    .Migrate();
-            }
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+                serviceScope.ServiceProvider.GetRequiredService<BelaSopaContext>().Database.Migrate();
 
             app.UseMvcWithDefaultRoute();
             app.UseStaticFiles();
