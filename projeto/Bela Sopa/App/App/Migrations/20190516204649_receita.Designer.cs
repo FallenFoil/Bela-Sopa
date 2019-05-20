@@ -20,7 +20,7 @@ namespace BelaSopa.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("App.Models.Assistente.Ingrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.Ingrediente", b =>
                 {
                     b.Property<int>("IngredienteId")
                         .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Ingrediente");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.Processo", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.Processo", b =>
                 {
                     b.Property<int>("ProcessoId")
                         .ValueGeneratedOnAdd()
@@ -60,7 +60,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Processo");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.ProcessoTarefa", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.ProcessoTarefa", b =>
                 {
                     b.Property<int>("ProcessoId");
 
@@ -73,7 +73,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ProcessoTarefa");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.Receita", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.Receita", b =>
                 {
                     b.Property<int>("ReceitaId")
                         .ValueGeneratedOnAdd()
@@ -107,7 +107,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Receita");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.ReceitaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaIngrediente", b =>
                 {
                     b.Property<int>("ReceitaId");
 
@@ -122,7 +122,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ReceitaIngrediente");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.ReceitaProcesso", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaProcesso", b =>
                 {
                     b.Property<int>("ReceitaId");
 
@@ -135,7 +135,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ReceitaProcesso");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.Tarefa", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.Tarefa", b =>
                 {
                     b.Property<int>("TarefaId")
                         .ValueGeneratedOnAdd()
@@ -152,7 +152,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Tarefa");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.TarefaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaIngrediente", b =>
                 {
                     b.Property<int>("TarefaId");
 
@@ -165,7 +165,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("TarefaIngrediente");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.TarefaTecnica", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaTecnica", b =>
                 {
                     b.Property<int>("TarefaId");
 
@@ -178,7 +178,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("TarefaTecnica");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.TarefaUtensilio", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaUtensilio", b =>
                 {
                     b.Property<int>("TarefaId");
 
@@ -191,7 +191,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("TarefaUtensilio");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.Tecnica", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.Tecnica", b =>
                 {
                     b.Property<int>("TecnicaId")
                         .ValueGeneratedOnAdd()
@@ -218,7 +218,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Tecnica");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.Utensilio", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.Utensilio", b =>
                 {
                     b.Property<int>("UtensilioId")
                         .ValueGeneratedOnAdd()
@@ -245,7 +245,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Utensilio");
                 });
 
-            modelBuilder.Entity("App.Models.Utilizadores.Administrador", b =>
+            modelBuilder.Entity("BelaSopa.Models.Utilizadores.Administrador", b =>
                 {
                     b.Property<int>("UtilizadorId")
                         .ValueGeneratedOnAdd()
@@ -265,7 +265,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Administrador");
                 });
 
-            modelBuilder.Entity("App.Models.Utilizadores.Cliente", b =>
+            modelBuilder.Entity("BelaSopa.Models.Utilizadores.Cliente", b =>
                 {
                     b.Property<int>("UtilizadorId")
                         .ValueGeneratedOnAdd()
@@ -287,79 +287,79 @@ namespace BelaSopa.Migrations
                     b.ToTable("Cliente");
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.ProcessoTarefa", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.ProcessoTarefa", b =>
                 {
-                    b.HasOne("App.Models.Assistente.Processo", "Processo")
+                    b.HasOne("BelaSopa.Models.Assistente.Processo", "Processo")
                         .WithMany("ProcessoTarefa")
                         .HasForeignKey("ProcessoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("App.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
                         .WithMany("ProcessoTarefa")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.ReceitaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaIngrediente", b =>
                 {
-                    b.HasOne("App.Models.Assistente.Ingrediente", "Ingrediente")
+                    b.HasOne("BelaSopa.Models.Assistente.Ingrediente", "Ingrediente")
                         .WithMany("ReceitaIngrediente")
                         .HasForeignKey("IngredienteId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("App.Models.Assistente.Receita", "Receita")
+                    b.HasOne("BelaSopa.Models.Assistente.Receita", "Receita")
                         .WithMany("ReceitaIngrediente")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.ReceitaProcesso", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaProcesso", b =>
                 {
-                    b.HasOne("App.Models.Assistente.Processo", "Processo")
+                    b.HasOne("BelaSopa.Models.Assistente.Processo", "Processo")
                         .WithMany("ReceitaProcesso")
                         .HasForeignKey("ProcessoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("App.Models.Assistente.Receita", "Receita")
+                    b.HasOne("BelaSopa.Models.Assistente.Receita", "Receita")
                         .WithMany("ReceitaProcesso")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.TarefaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaIngrediente", b =>
                 {
-                    b.HasOne("App.Models.Assistente.Ingrediente", "Ingrediente")
+                    b.HasOne("BelaSopa.Models.Assistente.Ingrediente", "Ingrediente")
                         .WithMany("TarefaIngrediente")
                         .HasForeignKey("IngredienteId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("App.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
                         .WithMany("TarefaIngrediente")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.TarefaTecnica", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaTecnica", b =>
                 {
-                    b.HasOne("App.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
                         .WithMany("TarefaTecnica")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("App.Models.Assistente.Tecnica", "Tecnica")
+                    b.HasOne("BelaSopa.Models.Assistente.Tecnica", "Tecnica")
                         .WithMany("TarefaTecnica")
                         .HasForeignKey("TecnicaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("App.Models.Assistente.TarefaUtensilio", b =>
+            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaUtensilio", b =>
                 {
-                    b.HasOne("App.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
                         .WithMany("TarefaUtensilio")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("App.Models.Assistente.Utensilio", "Utensilio")
+                    b.HasOne("BelaSopa.Models.Assistente.Utensilio", "Utensilio")
                         .WithMany("TarefaUtensilio")
                         .HasForeignKey("UtensilioId")
                         .OnDelete(DeleteBehavior.Cascade);

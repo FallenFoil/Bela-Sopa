@@ -1,10 +1,10 @@
 @{
     //ViewData["Title"] = "Bela Sopa - Receitas";
     Layout = "~/Views/shared/_Layout.cshtml";
-    var etiquetas = ViewData["Etiquetas"] as App.Models.Assistente.Etiqueta[];
-    var receitas = ViewData["Receitas"] as App.Models.Assistente.Receita[];
+    var etiquetas = ViewData["Etiquetas"] as BelaSopa.Models.Assistente.Etiqueta[];
+    var receitas = ViewData["Receitas"] as BelaSopa.Models.Assistente.Receita[];
 }
-@model App.Controllers.HomeController
+@model BelaSopa.Controllers.HomeController
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h3>Receitas</h3>
