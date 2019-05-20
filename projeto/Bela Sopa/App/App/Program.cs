@@ -7,11 +7,12 @@ namespace BelaSopa
     {
         public static void Main(string[] args)
         {
-            WebHost
-                .CreateDefaultBuilder(args)
-                .UseStartup< Startup >()
-                .Build()
-                .Run();
+            CreateWebHostBuilder(args).Build().Run();
+        }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
         }
     }
 }
