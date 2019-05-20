@@ -21,11 +21,10 @@ namespace BelaSopa
         // services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // TODO: alterar quando houver uma base de dados
-            var connection = @"Server=DESKTOP-54TBH9M\SQLEXPRESS;Database=Bela Sopa;Trusted_Connection=True;ConnectRetryCount=0";
-
             services.AddDbContext< BelaSopaContext >(
-                options => options.UseSqlServer(connection)
+                options => options.UseSqlServer(
+                    this.Configuration.GetConnectionString("DefaultConnection")
+                    )
                 );
 
             //services.AddAuthentication(
