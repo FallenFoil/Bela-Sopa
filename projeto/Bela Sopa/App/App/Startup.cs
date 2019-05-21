@@ -1,3 +1,4 @@
+using App.Shared;
 using BelaSopa.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,7 +46,10 @@ namespace BelaSopa
                 app.UseHsts();
 
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-                serviceScope.ServiceProvider.GetRequiredService<BelaSopaContext>().Database.Migrate();
+            {
+                var database = serviceScope.ServiceProvider.GetRequiredService<BelaSopaContext>().Database;
+                DatabaseManager.EnsureExists(database);
+            }
 
             app.UseMvcWithDefaultRoute();
             app.UseStaticFiles();
