@@ -1,9 +1,76 @@
+
+nome: Sopa de feijão-verde
+
 dificuldade: fácil
+
+minutos-de-preparação: 45
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: cebola
+  quantidade: '1'
+- nome: dentes de alho
+  quantidade: '2'
+- nome: alho-francês
+  quantidade: '1'
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: batata-doce
+  quantidade: 200 g
+- nome: abóbora
+  quantidade: 200 g
+- nome: courgette
+  quantidade: '1'
+- nome: sal
+  quantidade: 1 c. chá
+- nome: feijão-verde cortado Pingo Doce
+  quantidade: 200 g
+- nome: água
+  quantidade: 1 l
+
+valores-nutricionais:
+- dose: 525 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '29'
+- dose: 19,2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '27'
+- dose: 3,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '19'
+- dose: 65,6 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 21,4 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '25'
+- dose: 8,8 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '59'
+- dose: 22,6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque a cebola e os dentes de alho, pique-os em pedaços e deite numa panela.
+- Corte o alho-francês em rodelas finas, lave bem e deite-as também na panela. Regue
+  com o azeite e cozinhe em lume brando.
+- Pele as batatas e a abóbora, corte-as em cubos pequenos e deite-as na panela. Lave
+  a courgette, corte-a também em cubos e junte-a aos outros legumes.
+- Salpique com o sal e mexa. Tape a panela e cozinhe em lume muito brando cerca de
+  30 minutos,ou até os legumes estarem macios, agitando a panela de vez em quando.
+- Lave o feijão-verde, coloque-o numa taça de vidro, cubra com uma tampa própria para
+  microondas, ou com película aderente, e coza 5 minutos na potência máxima.
+- Quando os legumes estiverem macios, junte-lhes a água a ferver, triture muito bem
+  com a varinha mágica, ou no copo liquidificador, e adicione o feijão-verde.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -1059,61 +1126,3 @@ imagem: !!binary |
   H5m337zPNPV6gu3RT5E9msB9uqID6M/Sz0kh8l8zRJFPdTvAl8dEON4OeTovPntCfBAoqY4N77eB
   p7aao7AW8reVwKF4kQuYsLRDQjsSn6/azwQVPhYQRxFj9V7K/uge6c7JUim7DuCgm8/r+1vpHRP5
   sY9Cp2STmx4eqdOeuxLpa3cqX/Kz/9k=
-ingredientes:
-- nome: cebola
-  quantidade: '1'
-- nome: dentes de alho
-  quantidade: '2'
-- nome: alho-francês
-  quantidade: '1'
-- nome: azeite
-  quantidade: 2 c. sopa
-- nome: batata-doce
-  quantidade: 200 g
-- nome: abóbora
-  quantidade: 200 g
-- nome: courgette
-  quantidade: '1'
-- nome: sal
-  quantidade: 1 c. chá
-- nome: feijão-verde cortado Pingo Doce
-  quantidade: 200 g
-- nome: água
-  quantidade: 1 l
-minutos-de-preparação: 45
-nome: Sopa de feijão-verde
-número-de-doses: 6
-passos:
-- Descasque a cebola e os dentes de alho, pique-os em pedaços e deite numa panela.
-- Corte o alho-francês em rodelas finas, lave bem e deite-as também na panela. Regue
-  com o azeite e cozinhe em lume brando.
-- Pele as batatas e a abóbora, corte-as em cubos pequenos e deite-as na panela. Lave
-  a courgette, corte-a também em cubos e junte-a aos outros legumes.
-- Salpique com o sal e mexa. Tape a panela e cozinhe em lume muito brando cerca de
-  30 minutos,ou até os legumes estarem macios, agitando a panela de vez em quando.
-- Lave o feijão-verde, coloque-o numa taça de vidro, cubra com uma tampa própria para
-  microondas, ou com película aderente, e coza 5 minutos na potência máxima.
-- Quando os legumes estiverem macios, junte-lhes a água a ferver, triture muito bem
-  com a varinha mágica, ou no copo liquidificador, e adicione o feijão-verde.
-valores-nutricionais:
-- dose: 525 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '29'
-- dose: 19,2 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '27'
-- dose: 3,8 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '19'
-- dose: 65,6 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 21,4 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '25'
-- dose: 8,8 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '59'
-- dose: 22,6 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

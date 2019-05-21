@@ -1,8 +1,82 @@
+
+nome: Sopa rica de feijão e carne
+
 dificuldade: média
+
+minutos-de-preparação: 95
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
+
+ingredientes:
+- nome: feijão encarnado seco
+  quantidade: 250 g
+- nome: carne de vaca para cozer
+  quantidade: 250 g
+- nome: folha de louro
+  quantidade: '1'
+- nome: sal
+  quantidade: 2 c. de chá
+- nome: cebola
+  quantidade: 100 g
+- nome: dentes de alho
+  quantidade: '4'
+- nome: alho-francês cortado
+  quantidade: 200 g
+- nome: nabo
+  quantidade: 200 g
+- nome: cenouras
+  quantidade: 300 g
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: nabiças
+  quantidade: 500 g
+- nome: pimenta
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 279 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '14'
+- dose: 8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '9'
+- dose: 26 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '8'
+- dose: 14 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '56'
+- dose: 21 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Deixe o feijão a demolhar, de véspera.
+- No próprio dia, escorra-o, coloque-o na panela juntamente com a carne de vaca e
+  a folha de louro, cubra com água, tempere com 1 colher de chá de sal e leve a cozer
+  até o feijão estar macio (40 minutos em panela de pressão e 1 hora e 30 minutos
+  se usar uma panela comum).
+- Pique a cebola e os dentes de alho. Corte o nabo e a cenoura em cubos pequenos.
+- Ponha os legumes numa outra panela, juntamente com o alho-francês, adicione o azeite
+  e tempere com o restante sal. Tape e deixe suar até os legumes estarem macios.
+- Retire a carne e junte os legumes ao feijão cozido. Se for necessário, adicione
+  um pouco mais de água.
+- Quando recomeçar a ferver, adicione as folhas de nabiças, escolhidas e limpas de
+  talos. Deixe cozer destapada durante10 minutos.
+- Desfie a carne cozida, eliminando gorduras e peles, e junte-a à sopa. Tempere com
+  um pouco de pimenta.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1199,68 +1273,3 @@ imagem: !!binary |
   vy8PT3CrZiwn8c+Ppz9NCEtQvy/ly/A5fGVMaHRlUoEPj0n1Z8c/zfZzqlrjH0BB8T+OXD7PwoE9
   MY+o/F6OP5e//CgHjGMwjm3w78259v7qFjGOIY9+PUHxblmPTlkPj/TUgN8P295z/Hxpjx78eoA+
   NWf+18ZLQsYxwAe55eo555fHhSQccYwxxuXDPhQwFGhjG/8AepmXrP/Z
-ingredientes:
-- nome: feijão encarnado seco
-  quantidade: 250 g
-- nome: carne de vaca para cozer
-  quantidade: 250 g
-- nome: folha de louro
-  quantidade: '1'
-- nome: sal
-  quantidade: 2 c. de chá
-- nome: cebola
-  quantidade: 100 g
-- nome: dentes de alho
-  quantidade: '4'
-- nome: alho-francês cortado
-  quantidade: 200 g
-- nome: nabo
-  quantidade: 200 g
-- nome: cenouras
-  quantidade: 300 g
-- nome: azeite
-  quantidade: 3 c. de sopa
-- nome: nabiças
-  quantidade: 500 g
-- nome: pimenta
-  quantidade: qb
-minutos-de-preparação: 95
-nome: Sopa rica de feijão e carne
-número-de-doses: 6
-passos:
-- Deixe o feijão a demolhar, de véspera.
-- No próprio dia, escorra-o, coloque-o na panela juntamente com a carne de vaca e
-  a folha de louro, cubra com água, tempere com 1 colher de chá de sal e leve a cozer
-  até o feijão estar macio (40 minutos em panela de pressão e 1 hora e 30 minutos
-  se usar uma panela comum).
-- Pique a cebola e os dentes de alho. Corte o nabo e a cenoura em cubos pequenos.
-- Ponha os legumes numa outra panela, juntamente com o alho-francês, adicione o azeite
-  e tempere com o restante sal. Tape e deixe suar até os legumes estarem macios.
-- Retire a carne e junte os legumes ao feijão cozido. Se for necessário, adicione
-  um pouco mais de água.
-- Quando recomeçar a ferver, adicione as folhas de nabiças, escolhidas e limpas de
-  talos. Deixe cozer destapada durante10 minutos.
-- Desfie a carne cozida, eliminando gorduras e peles, e junte-a à sopa. Tempere com
-  um pouco de pimenta.
-valores-nutricionais:
-- dose: 279 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '14'
-- dose: 8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '11'
-- dose: 2 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '9'
-- dose: 26 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 7 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
-- dose: 14 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '56'
-- dose: 21 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

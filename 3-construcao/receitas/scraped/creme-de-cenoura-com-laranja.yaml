@@ -1,9 +1,81 @@
+
+nome: Creme de cenoura com laranja
+
 dificuldade: fácil
+
+minutos-de-preparação: 55
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: cenoura
+  quantidade: 100 g
+- nome: dentes de alho
+  quantidade: '4'
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: alho-francês
+  quantidade: 150 g
+- nome: batata para cozer
+  quantidade: 200 g
+- nome: talos de aipo
+  quantidade: '3'
+- nome: cenoura
+  quantidade: 500 g
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: pau de canela
+  quantidade: '1'
+- nome: água
+  quantidade: 1,2 l
+- nome: laranja
+  quantidade: '1'
+- nome: cebolinho
+  quantidade: 2 c. de sopa
+- nome: queijo feta
+  quantidade: 75 g
+
+valores-nutricionais:
+- dose: 129 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '6'
+- dose: 7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '9'
+- dose: 2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '12'
+- dose: 13 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '8'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Ponha a cebola e os dentes de alho, descascados e picados numa panela. Adicione
+  o azeite, o alho-francês e o aipo, cortados em rodelas finas, tape e deixe cozinhar
+  em lume brando. 
+- Descasque a batata e as cenouras, corte-as em pedaços pequenos e deite na panela.
+- Tempere com o sal, junte o pau de canela, mexa e volte a tapar, deixando cozinhar
+  suavemente durante 30 minutos ou até os legumes estarem macios.
+- Retire o pau de canela, junte a água a ferver, a raspa da casca e o sumo da laranja.
+- Retire do lume e triture com a varinha mágica.
+- Distribua a sopa pelos pratos e salpique-os com o cebolinho picado e o queijo desfeito
+  em pedaços ou cortado em cubos.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -976,66 +1048,3 @@ imagem: !!binary |
   Y+f9P/c/97+XnUZS0PnP/B8n+5+rwy/loQkH/wCj/W/2/wCkZdlCEx3/ACbf9LJ+Xm4+WqAh/Bnl
   /t9/4uyiBejJn6nlH/I82RzoQG5s/wCPn/t+b29tCnG5/wCEPPmP0cuGfbQB+E5fi/Xyy+r7aAc/
   /b/Q8zMvNn+Hs5VAdY/13efJ3k+36ZVUOJ1//XqmJ//Z
-ingredientes:
-- nome: cenoura
-  quantidade: 100 g
-- nome: dentes de alho
-  quantidade: '4'
-- nome: azeite
-  quantidade: 2 c. de sopa
-- nome: alho-francês
-  quantidade: 150 g
-- nome: batata para cozer
-  quantidade: 200 g
-- nome: talos de aipo
-  quantidade: '3'
-- nome: cenoura
-  quantidade: 500 g
-- nome: sal
-  quantidade: 1 c. de sopa
-- nome: pau de canela
-  quantidade: '1'
-- nome: água
-  quantidade: 1,2 l
-- nome: laranja
-  quantidade: '1'
-- nome: cebolinho
-  quantidade: 2 c. de sopa
-- nome: queijo feta
-  quantidade: 75 g
-minutos-de-preparação: 55
-nome: Creme de cenoura com laranja
-número-de-doses: 6
-passos:
-- Ponha a cebola e os dentes de alho, descascados e picados numa panela. Adicione
-  o azeite, o alho-francês e o aipo, cortados em rodelas finas, tape e deixe cozinhar
-  em lume brando. 
-- Descasque a batata e as cenouras, corte-as em pedaços pequenos e deite na panela.
-- Tempere com o sal, junte o pau de canela, mexa e volte a tapar, deixando cozinhar
-  suavemente durante 30 minutos ou até os legumes estarem macios.
-- Retire o pau de canela, junte a água a ferver, a raspa da casca e o sumo da laranja.
-- Retire do lume e triture com a varinha mágica.
-- Distribua a sopa pelos pratos e salpique-os com o cebolinho picado e o queijo desfeito
-  em pedaços ou cortado em cubos.
-valores-nutricionais:
-- dose: 129 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '6'
-- dose: 7 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '9'
-- dose: 2 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '12'
-- dose: 13 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 7 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
-- dose: 3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '12'
-- dose: 4 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

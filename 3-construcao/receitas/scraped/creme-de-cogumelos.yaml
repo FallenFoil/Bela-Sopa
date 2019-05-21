@@ -1,9 +1,71 @@
+
+nome: Creme de cogumelos
+
 dificuldade: fácil
+
+minutos-de-preparação: 40
+
+número-de-doses: 8
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: cebola
+  quantidade: 100 g
+- nome: azeite
+  quantidade: 1 c. de sopa
+- nome: dentes de alho
+  quantidade: '2'
+- nome: sal grosso
+  quantidade: 1 c. de sopa
+- nome: cogumelos brancos
+  quantidade: 400 g
+- nome: funcho em bolbo
+  quantidade: 100 g
+- nome: funcho em rama
+  quantidade: 10 g
+- nome: batatas
+  quantidade: 350 g
+- nome: miolo de pinhão
+  quantidade: 20 g
+
+valores-nutricionais:
+- dose: 71 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '4'
+- dose: 7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '22'
+- dose: 23 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 22 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '24'
+- dose: 2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '8'
+- dose: 8 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Corte as batatas, a cebola, o alho e o bolbo de funcho em cubos, coloque-os numa
+  panela com água e leve ao lume.
+- A meio da cozedura, junte os cogumelos lavados e cortados ao meio. Tenha o cuidado
+  de reservar alguns para decoração.
+- Depois dos legumes cozidos, triture com a ajuda da varinha mágica de forma a obter
+  um creme homogéneo.
+- Tempere com o sal, regue com um fio de azeite e sirva com os pinhões tostados, a
+  rama de funcho e os cogumelos reservados braseados.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1374,56 +1436,3 @@ imagem: !!binary |
   n8fj9uNRE8T7/wAv/C/v/wDL4YgCvz/c+Yf/AJnzH+b/AHecYQU7t/1Nn/8AU+f5vv8AljN7kJVa
   8f5fns0/1N8vn/fizsrX/wD1u3+bo2nzfKNP7aTjaDVf8DTp/p0/tGAof/1/TQ/6tB8v9+KK8X+R
   X/K0t+X5fl+7/F44zAf/APt8B//Z
-ingredientes:
-- nome: cebola
-  quantidade: 100 g
-- nome: azeite
-  quantidade: 1 c. de sopa
-- nome: dentes de alho
-  quantidade: '2'
-- nome: sal grosso
-  quantidade: 1 c. de sopa
-- nome: cogumelos brancos
-  quantidade: 400 g
-- nome: funcho em bolbo
-  quantidade: 100 g
-- nome: funcho em rama
-  quantidade: 10 g
-- nome: batatas
-  quantidade: 350 g
-- nome: miolo de pinhão
-  quantidade: 20 g
-minutos-de-preparação: 40
-nome: Creme de cogumelos
-número-de-doses: 8
-passos:
-- Corte as batatas, a cebola, o alho e o bolbo de funcho em cubos, coloque-os numa
-  panela com água e leve ao lume.
-- A meio da cozedura, junte os cogumelos lavados e cortados ao meio. Tenha o cuidado
-  de reservar alguns para decoração.
-- Depois dos legumes cozidos, triture com a ajuda da varinha mágica de forma a obter
-  um creme homogéneo.
-- Tempere com o sal, regue com um fio de azeite e sirva com os pinhões tostados, a
-  rama de funcho e os cogumelos reservados braseados.
-valores-nutricionais:
-- dose: 71 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '4'
-- dose: 7 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '11'
-- dose: 4 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '22'
-- dose: 23 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 22 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '24'
-- dose: 2 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '8'
-- dose: 8 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

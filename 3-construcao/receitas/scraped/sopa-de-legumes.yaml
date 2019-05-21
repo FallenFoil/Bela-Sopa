@@ -1,7 +1,75 @@
+
+nome: Sopa de legumes
+
 dificuldade: fácil
+
+minutos-de-preparação: 50
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
+
+ingredientes:
+- nome: frango
+  quantidade: '1'
+- nome: alho-francês
+  quantidade: 250 g
+- nome: cenoura
+  quantidade: 350 g
+- nome: cebola
+  quantidade: 150 g
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: couve-lombarda
+  quantidade: 200 g
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: aletria
+  quantidade: 80 g
+- nome: hortelã
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 299 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '15'
+- dose: 15 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '22'
+- dose: 3 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '15'
+- dose: 25 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 10 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '11'
+- dose: 5 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '20'
+- dose: 14 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Lave bem o frango, escorra-o, corte-o em pedaços e coloque-o numa panela.
+- Acrescente as folhas verdes-escuras do alho-francês cortadas em pedaços, as cenouras
+  peladas e a cebola descascada e cortada em pedaços. Cubra com água e tempere com
+  sal. Deixe ferver durante 45 minutos ou até o frango estar tenro.
+- Corte o restante alho-francês em rodelas, lave e escorra. Corte as cenouras, já
+  peladas, em rodelas finas e a couve-lombarda em juliana fina.
+- Noutra panela, deite o azeite, o alho-francês, a cenoura e a couve-lombarda e salpique
+  com 1 pitada de sal. Tape e cozinhe sobre lume brando cerca de 15 minutos.
+- Quando o frango estiver tenro, coe o caldo da sua cozedura e junte cerca de 1,2
+  l aos legumes.
+- Desosse o frango, limpe-o de peles e desfie a carne. Junte 1 chávena de chá de frango
+  desfiado à sopa.
+- Quando o caldo retomar fervura, adicione a aletria grosseiramente partida com as
+  mãos, ferva durante mais 2 ou 3 minutos e termine com algumas folhinhas de hortelã.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1464,62 +1532,3 @@ imagem: !!binary |
   WeXFDh3/ALuKZ/iTtj/2d9n/ALOX+l/U/px/1ez8vZVln7H/AKfjkuF4FV37l/q/Pl+fiOw/+TO7
   2f7b3v6x9/8A95z7Eq1fb8eWef49SuX3frll+BIt/wD8duP6X9aH/b+9/t5Pd7PzdtLH/wDry4+X
   /sPL8+fHz/8AUFf/AJVYP/xNnzP/2Q==
-ingredientes:
-- nome: frango
-  quantidade: '1'
-- nome: alho-francês
-  quantidade: 250 g
-- nome: cenoura
-  quantidade: 350 g
-- nome: cebola
-  quantidade: 150 g
-- nome: sal
-  quantidade: 1 c. de sobremesa
-- nome: couve-lombarda
-  quantidade: 200 g
-- nome: azeite
-  quantidade: 3 c. de sopa
-- nome: aletria
-  quantidade: 80 g
-- nome: hortelã
-  quantidade: qb
-minutos-de-preparação: 50
-nome: Sopa de legumes
-número-de-doses: 4
-passos:
-- Lave bem o frango, escorra-o, corte-o em pedaços e coloque-o numa panela.
-- Acrescente as folhas verdes-escuras do alho-francês cortadas em pedaços, as cenouras
-  peladas e a cebola descascada e cortada em pedaços. Cubra com água e tempere com
-  sal. Deixe ferver durante 45 minutos ou até o frango estar tenro.
-- Corte o restante alho-francês em rodelas, lave e escorra. Corte as cenouras, já
-  peladas, em rodelas finas e a couve-lombarda em juliana fina.
-- Noutra panela, deite o azeite, o alho-francês, a cenoura e a couve-lombarda e salpique
-  com 1 pitada de sal. Tape e cozinhe sobre lume brando cerca de 15 minutos.
-- Quando o frango estiver tenro, coe o caldo da sua cozedura e junte cerca de 1,2
-  l aos legumes.
-- Desosse o frango, limpe-o de peles e desfie a carne. Junte 1 chávena de chá de frango
-  desfiado à sopa.
-- Quando o caldo retomar fervura, adicione a aletria grosseiramente partida com as
-  mãos, ferva durante mais 2 ou 3 minutos e termine com algumas folhinhas de hortelã.
-valores-nutricionais:
-- dose: 299 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '15'
-- dose: 15 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '22'
-- dose: 3 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '15'
-- dose: 25 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 10 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '11'
-- dose: 5 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '20'
-- dose: 14 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

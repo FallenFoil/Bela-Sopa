@@ -1,5 +1,69 @@
+
+nome: Sopa de meloa com chips de presunto
+
 dificuldade: fácil
+
+minutos-de-preparação: 25
+
+número-de-doses: 4
+
 etiquetas: []
+
+ingredientes:
+- nome: meloa
+  quantidade: '1'
+- nome: vinho do Porto branco
+  quantidade: 0,5 dl
+- nome: limão
+  quantidade: ½
+- nome: iogurte grego sem açúcar
+  quantidade: 2 c. de sopa
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: pimenta
+  quantidade: qb
+- nome: noz-moscada
+  quantidade: qb
+- nome: presunto em fatias finas
+  quantidade: 50 g
+- nome: cebolinho picado
+  quantidade: qb
+- nome: gressinos finos
+  quantidade: '8'
+
+valores-nutricionais:
+- dose: 100 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '6'
+- dose: 3,8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '5'
+- dose: 1,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '9'
+- dose: 11,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 7,5 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '8'
+- dose: 1,1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '5'
+- dose: 3,9 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque a meloa, limpe de pevides, corte-a em pedaços e triture-a.
+- Junte o vinho do Porto, o sumo de meio limão, o iogurte, o sal, um pouco de pimenta
+  e uma pitada de noz-moscada e misture bem. Reserve no frigorífico.
+- Numa frigideira antiaderente, frite as fatias de presunto, na gordura do mesmo,
+  até ficarem crocantes.
+- Retire e coloque-as sobre papel absorvente.
+- Divida a sopa nas taças de servir e, por cima, o presunto cortado em tiras.
+- Salpique com pimenta e o cebolinho e sirva com os gressinos.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUFBQUFBQUGBgUICAcICAsKCQkKCxEMDQwNDBEaEBMQ
   EBMQGhcbFhUWGxcpIBwcICkvJyUnLzkzMzlHREddXX0BBQUFBQUFBQYGBQgIBwgICwoJCQoLEQwN
@@ -755,58 +819,3 @@ imagem: !!binary |
   ZhYYO7BfG3KHk/DyseSllmxDi+WQvd5rBcciwuBZhjhTbBVtNB1m7KxmMmxkmeR2g91o2aggd0Ha
   JpoK1ae8NGpRl6aKzaA0KKvxFDs5WFRGgTPdb6fgKxP8ErA/w03YdnIrFe871CHvtR3KO49F8I9V
   B/jB/ucsZ/iZfp+iCxOy+H6I/wBkf7dg3KGyGw7OXZJ7/aPdR3Xzoc/RfEuX1QX/2Q==
-ingredientes:
-- nome: meloa
-  quantidade: '1'
-- nome: vinho do Porto branco
-  quantidade: 0,5 dl
-- nome: limão
-  quantidade: ½
-- nome: iogurte grego sem açúcar
-  quantidade: 2 c. de sopa
-- nome: sal
-  quantidade: 1 c. de sobremesa
-- nome: pimenta
-  quantidade: qb
-- nome: noz-moscada
-  quantidade: qb
-- nome: presunto em fatias finas
-  quantidade: 50 g
-- nome: cebolinho picado
-  quantidade: qb
-- nome: gressinos finos
-  quantidade: '8'
-minutos-de-preparação: 25
-nome: Sopa de meloa com chips de presunto
-número-de-doses: 4
-passos:
-- Descasque a meloa, limpe de pevides, corte-a em pedaços e triture-a.
-- Junte o vinho do Porto, o sumo de meio limão, o iogurte, o sal, um pouco de pimenta
-  e uma pitada de noz-moscada e misture bem. Reserve no frigorífico.
-- Numa frigideira antiaderente, frite as fatias de presunto, na gordura do mesmo,
-  até ficarem crocantes.
-- Retire e coloque-as sobre papel absorvente.
-- Divida a sopa nas taças de servir e, por cima, o presunto cortado em tiras.
-- Salpique com pimenta e o cebolinho e sirva com os gressinos.
-valores-nutricionais:
-- dose: 100 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '6'
-- dose: 3,8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '5'
-- dose: 1,8 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '9'
-- dose: 11,5 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 7,5 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
-- dose: 1,1 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '5'
-- dose: 3,9 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

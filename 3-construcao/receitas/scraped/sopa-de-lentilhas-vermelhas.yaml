@@ -1,9 +1,84 @@
+
+nome: Sopa de lentilhas vermelhas
+
 dificuldade: fácil
+
+minutos-de-preparação: 45
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: lentilhas vermelhas
+  quantidade: 140 g
+- nome: cebola
+  quantidade: 100 g
+- nome: dentes de alho
+  quantidade: '3'
+- nome: abóbora limpa
+  quantidade: 300 g
+- nome: talos de aipo
+  quantidade: '2'
+- nome: folha de louro
+  quantidade: '1'
+- nome: água
+  quantidade: 1,5 l
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: mistura de legumes para sopa portuguesa
+  quantidade: 200 g
+- nome: cominhos moídos
+  quantidade: 2 c. de chá
+- nome: miolo de pevide torrado
+  quantidade: 30 g
+
+valores-nutricionais:
+- dose: 177 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '9'
+- dose: 8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 17 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 3 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '4'
+- dose: 5 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '20'
+- dose: 8 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Passe as lentilhas por água dentro de um passador de rede e coloque- – as de molho
+  numa panela com água.
+- Descasque a cebola e os dentes de alho e pique-os em pedaços. Corte a abóbora em
+  cubos pequenos e os talos de aipo em lâminas finas.
+- Escorra a água das lentilhas, coloque-as de novo na panela, junte os legumes preparados,
+  a folha de louro e metade do sal.
+- Adicione 1,5 l de água e leve ao lume, deixando ferver com a panela tapada até os
+  legumes estarem tenros.
+- Coloque o azeite num tacho, junte a mistura de legumes para sopa, tempere com o
+  restante sal e os cominhos e leve a cozinhar, tapado e sobre lume brando, até os
+  legumes estarem tenros mas crocantes.
+- Assim que as lentilhas e os legumes estiverem macios, retire a folha de louro e
+  triture com a varinha mágica até obter um creme.
+- Adicione a mistura de lombarda e cenoura. Misture bem.
+- Sirva a sopa salpicada com miolo de pevide torrado.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1093,69 +1168,3 @@ imagem: !!binary |
   /P8Awpe4/wCt/hyzLWfzX5c+EcTD/wCTD8n93/o/Jqfkrylv8o//AC5ZeB25ZPu5/cuM1OnzO116
   /f8AwpkijEm+XpqNdPf3VV8gjmyxxn9+PX5fy6+/upuz/wCxeOXGQu/+LI83/wA8/L/HQffVN1/2
   Mta/FER0f8vXXTTrWcsS4fySfP8A2j/9A07qvZ/l+X48eBS7y7+PET40v/8AMsf/2Q==
-ingredientes:
-- nome: lentilhas vermelhas
-  quantidade: 140 g
-- nome: cebola
-  quantidade: 100 g
-- nome: dentes de alho
-  quantidade: '3'
-- nome: abóbora limpa
-  quantidade: 300 g
-- nome: talos de aipo
-  quantidade: '2'
-- nome: folha de louro
-  quantidade: '1'
-- nome: água
-  quantidade: 1,5 l
-- nome: sal
-  quantidade: 1 c. de sopa
-- nome: azeite
-  quantidade: 3 c. de sopa
-- nome: mistura de legumes para sopa portuguesa
-  quantidade: 200 g
-- nome: cominhos moídos
-  quantidade: 2 c. de chá
-- nome: miolo de pevide torrado
-  quantidade: 30 g
-minutos-de-preparação: 45
-nome: Sopa de lentilhas vermelhas
-número-de-doses: 6
-passos:
-- Passe as lentilhas por água dentro de um passador de rede e coloque- – as de molho
-  numa panela com água.
-- Descasque a cebola e os dentes de alho e pique-os em pedaços. Corte a abóbora em
-  cubos pequenos e os talos de aipo em lâminas finas.
-- Escorra a água das lentilhas, coloque-as de novo na panela, junte os legumes preparados,
-  a folha de louro e metade do sal.
-- Adicione 1,5 l de água e leve ao lume, deixando ferver com a panela tapada até os
-  legumes estarem tenros.
-- Coloque o azeite num tacho, junte a mistura de legumes para sopa, tempere com o
-  restante sal e os cominhos e leve a cozinhar, tapado e sobre lume brando, até os
-  legumes estarem tenros mas crocantes.
-- Assim que as lentilhas e os legumes estiverem macios, retire a folha de louro e
-  triture com a varinha mágica até obter um creme.
-- Adicione a mistura de lombarda e cenoura. Misture bem.
-- Sirva a sopa salpicada com miolo de pevide torrado.
-valores-nutricionais:
-- dose: 177 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '9'
-- dose: 8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '11'
-- dose: 1 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
-- dose: 17 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 3 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
-- dose: 5 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '20'
-- dose: 8 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

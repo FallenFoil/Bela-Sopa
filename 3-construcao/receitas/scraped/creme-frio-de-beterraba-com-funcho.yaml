@@ -1,9 +1,82 @@
+
+nome: Creme frio de beterraba com funcho
+
 dificuldade: fácil
+
+minutos-de-preparação: 60
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: beterraba
+  quantidade: 500 g
+- nome: água
+  quantidade: qb
+- nome: vinagre de vinho branco
+  quantidade: 1 c. de sopa
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: tofu refrigerado
+  quantidade: 1/2 emb.
+- nome: sementes de funcho
+  quantidade: 1 c. de chá
+- nome: dente de alho
+  quantidade: '1'
+- nome: cebola roxa
+  quantidade: 80 g
+- nome: talos de aipo
+  quantidade: 40 g
+- nome: funcho em rama
+  quantidade: 10 g
+- nome: pimenta de moinho
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 56 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '3'
+- dose: 2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '2'
+- dose: ''
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '1'
+- dose: 7 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '8'
+- dose: 4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Coza as beterrabas em água temperada com sal durante cerca de 40 minutos ou até
+  estarem macias.
+- Corte o tofu em cubos e coloque numa taça. Num almofariz esmague muito bem as sementes
+  de funcho, o dente de alho, esborrachado e sem pele, e continue a esmagar até ficar
+  em pasta. Adicione o vinagre, misture bem, deite o preparado sobre os cubos de tofu
+  e deixe marinar.
+- Quando as beterrabas estiverem cozidas, escorra-as, passe-as por água fria e volte
+  a escorrer. Retire-lhes a pele e corte-as em cubos para dentro do copo liquidificador
+  ou para o copo da varinha mágica. 
+- Descasque a cebola, corte-a em pedaços e junte à beterraba. Adicione os talos de
+  aipo, bem lavados e cortados em fatias finas. Junte a rama de funcho, reservando
+  algumas folhinhas para decoração, e cerca de 6 dl de água fresca.
+- Triture tudo bem.
+- Sirva a sopa bem fresca com os cubinhos de tofu, salpicada com pimenta moída no
+  momento e folhinhas frescas de funcho.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1569,67 +1642,3 @@ imagem: !!binary |
   4VB+b7p/K9z8xvyv9p+99GJ2f/Gv/py9n0K3fvYW3P8A5ej4+8fyfc4j8v8Aj/8A2sdf+Nc8uPaY
   L7n5me27+Vl97+Rj/k+PGb8nz/1nlXGO39lfPl9Pr7TW+fLjr9A9Z+/D/iX8un5vve4P5Pz/AH8X
   X7n9328QZW9mfEhT/uYf/wDIn3H/2Q==
-ingredientes:
-- nome: beterraba
-  quantidade: 500 g
-- nome: água
-  quantidade: qb
-- nome: vinagre de vinho branco
-  quantidade: 1 c. de sopa
-- nome: sal
-  quantidade: 1 c. de sopa
-- nome: tofu refrigerado
-  quantidade: 1/2 emb.
-- nome: sementes de funcho
-  quantidade: 1 c. de chá
-- nome: dente de alho
-  quantidade: '1'
-- nome: cebola roxa
-  quantidade: 80 g
-- nome: talos de aipo
-  quantidade: 40 g
-- nome: funcho em rama
-  quantidade: 10 g
-- nome: pimenta de moinho
-  quantidade: qb
-minutos-de-preparação: 60
-nome: Creme frio de beterraba com funcho
-número-de-doses: 4
-passos:
-- Coza as beterrabas em água temperada com sal durante cerca de 40 minutos ou até
-  estarem macias.
-- Corte o tofu em cubos e coloque numa taça. Num almofariz esmague muito bem as sementes
-  de funcho, o dente de alho, esborrachado e sem pele, e continue a esmagar até ficar
-  em pasta. Adicione o vinagre, misture bem, deite o preparado sobre os cubos de tofu
-  e deixe marinar.
-- Quando as beterrabas estiverem cozidas, escorra-as, passe-as por água fria e volte
-  a escorrer. Retire-lhes a pele e corte-as em cubos para dentro do copo liquidificador
-  ou para o copo da varinha mágica. 
-- Descasque a cebola, corte-a em pedaços e junte à beterraba. Adicione os talos de
-  aipo, bem lavados e cortados em fatias finas. Junte a rama de funcho, reservando
-  algumas folhinhas para decoração, e cerca de 6 dl de água fresca.
-- Triture tudo bem.
-- Sirva a sopa bem fresca com os cubinhos de tofu, salpicada com pimenta moída no
-  momento e folhinhas frescas de funcho.
-valores-nutricionais:
-- dose: 56 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '3'
-- dose: 2 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '2'
-- dose: ''
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '1'
-- dose: 7 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 5 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
-- dose: 2 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '8'
-- dose: 4 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

@@ -1,8 +1,71 @@
+
+nome: Sopa de castanhas e abóbora
+
 dificuldade: fácil
+
+minutos-de-preparação: 50
+
+número-de-doses: 8
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: azeite
+  quantidade: 1 c. sopa
+- nome: cebola
+  quantidade: '1'
+- nome: dentes de alho
+  quantidade: '2'
+- nome: alecrim
+  quantidade: qb
+- nome: castanhas congeladas Pingo Doce
+  quantidade: 500 g
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: polpa de abóbora
+  quantidade: 400 g
+- nome: broa de milho
+  quantidade: 200 g
+- nome: pimenta
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 200 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '10'
+- dose: 3,9 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '6'
+- dose: 0,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '4'
+- dose: 36,9 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 7,6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '8'
+- dose: 6,0 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '24'
+- dose: 3,6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Leve ao lume uma panela com o azeite e quando estiver bem quente introduza a cebola
+  cortada em rodelas, os dentes de alho e o alecrim e deixe refogar cerca de 4 minutos
+- Retire o alecrim, junte as castanhas e o sal, cubra com água, tape e deixe cozinhar
+  até as castanhas estarem macias.
+- Corte a abóbora em cubos pequenos.
+- Retire quatro ou cinco castanhas e triture as restantes. Junte a abóbora e deixe
+  cozinhar até estar macia.
+- Na altura de servir, divida a sopa pelos pratos, distribua a broa esfarelada e as
+  castanhas reservadas, polvilhe com pimenta e algumas folhas de alecrim picadas.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM
   DAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8f
@@ -1240,57 +1303,3 @@ imagem: !!binary |
   azT/ADLUV9//AIDf43T/AOG/xOnl71HH34/Mk+jm/anqf/3rr/8A3D/C+ldPD14/IwZv/wC35maj
   6eX0rQjMyZetWorZMlXRKpE0f0q1EGEx9amiphSVJEWELUisITqOnn0pkCdOgpkWExfD/akAVH0p
   Ah46GkNC+Q+n8qBMd+GkMcvwnrQJDv7+dAhzeX/XlQSZF+VMgf/Z
-ingredientes:
-- nome: azeite
-  quantidade: 1 c. sopa
-- nome: cebola
-  quantidade: '1'
-- nome: dentes de alho
-  quantidade: '2'
-- nome: alecrim
-  quantidade: qb
-- nome: castanhas congeladas Pingo Doce
-  quantidade: 500 g
-- nome: sal
-  quantidade: 1 c. sobremesa
-- nome: polpa de abóbora
-  quantidade: 400 g
-- nome: broa de milho
-  quantidade: 200 g
-- nome: pimenta
-  quantidade: qb
-minutos-de-preparação: 50
-nome: Sopa de castanhas e abóbora
-número-de-doses: 8
-passos:
-- Leve ao lume uma panela com o azeite e quando estiver bem quente introduza a cebola
-  cortada em rodelas, os dentes de alho e o alecrim e deixe refogar cerca de 4 minutos
-- Retire o alecrim, junte as castanhas e o sal, cubra com água, tape e deixe cozinhar
-  até as castanhas estarem macias.
-- Corte a abóbora em cubos pequenos.
-- Retire quatro ou cinco castanhas e triture as restantes. Junte a abóbora e deixe
-  cozinhar até estar macia.
-- Na altura de servir, divida a sopa pelos pratos, distribua a broa esfarelada e as
-  castanhas reservadas, polvilhe com pimenta e algumas folhas de alecrim picadas.
-valores-nutricionais:
-- dose: 200 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '10'
-- dose: 3,9 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '6'
-- dose: 0,8 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '4'
-- dose: 36,9 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 7,6 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
-- dose: 6,0 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '24'
-- dose: 3,6 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

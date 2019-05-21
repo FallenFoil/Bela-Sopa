@@ -1,7 +1,66 @@
+
+nome: Sopa fria de tomate e manjericão
+
 dificuldade: fácil
+
+minutos-de-preparação: 15
+
+número-de-doses: 4
+
 etiquetas:
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: tomate chucha
+  quantidade: 500 g
+- nome: pêssegos
+  quantidade: '2'
+- nome: melancia
+  quantidade: 1/4
+- nome: hastes manjericão
+  quantidade: '5'
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: sal
+  quantidade: 1 c. café
+- nome: pimenta de moinho
+  quantidade: qb
+- nome: alho-francês médio
+  quantidade: '1'
+
+valores-nutricionais:
+- dose: 178 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '9'
+- dose: 6,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '9'
+- dose: 1,0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 25,9 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 25,7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '29'
+- dose: 4,4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '18'
+- dose: 3,3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Faça um corte superficial, em cruz, na pele do tomate e escalde-o em água a ferver
+  durante 30 segundos. Retire a pele, corte em quartos e elimine as sementes.
+- Descasque os pêssegos e corte-os em pedaços para dentro do copo do liquidificador.
+- Junte a melancia, descascada e cortada em pedaços, as folhas de manjericão (reserve
+  algumas), o azeite, o sal e a pimenta e triture tudo muito bem.
+- Sirva com um pouco de alho-francês cortado em juliana fina e as folhas do manjericão
+  reservadas.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -718,53 +777,3 @@ imagem: !!binary |
   LZTma8CfyD+UyANVkB2Tmwp4TxuTL4QcATKsb5tVwaxsBPBjRXNqLimWVNQVjeFmwrQPZO30R4AE
   mAvsdyBPVuj0P0VqQ+aZ3VRmXdGUQsqyohFHsRwjtkws55ImewETAkoOzOLyqbc4krAPbCOycumn
   sN9UeHQ723qnsukn/JU/d+6uvbKeigiij2x2DwKPAdmt7BTf0z/fFUtl/9k=
-ingredientes:
-- nome: tomate chucha
-  quantidade: 500 g
-- nome: pêssegos
-  quantidade: '2'
-- nome: melancia
-  quantidade: 1/4
-- nome: hastes manjericão
-  quantidade: '5'
-- nome: azeite
-  quantidade: 2 c. sopa
-- nome: sal
-  quantidade: 1 c. café
-- nome: pimenta de moinho
-  quantidade: qb
-- nome: alho-francês médio
-  quantidade: '1'
-minutos-de-preparação: 15
-nome: Sopa fria de tomate e manjericão
-número-de-doses: 4
-passos:
-- Faça um corte superficial, em cruz, na pele do tomate e escalde-o em água a ferver
-  durante 30 segundos. Retire a pele, corte em quartos e elimine as sementes.
-- Descasque os pêssegos e corte-os em pedaços para dentro do copo do liquidificador.
-- Junte a melancia, descascada e cortada em pedaços, as folhas de manjericão (reserve
-  algumas), o azeite, o sal e a pimenta e triture tudo muito bem.
-- Sirva com um pouco de alho-francês cortado em juliana fina e as folhas do manjericão
-  reservadas.
-valores-nutricionais:
-- dose: 178 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '9'
-- dose: 6,5 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '9'
-- dose: 1,0 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
-- dose: 25,9 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 25,7 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '29'
-- dose: 4,4 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '18'
-- dose: 3,3 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

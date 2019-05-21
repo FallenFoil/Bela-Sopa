@@ -1,7 +1,68 @@
+
+nome: Canja de perdiz vermelha
+
 dificuldade: fácil
+
+minutos-de-preparação: 70
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
+
+ingredientes:
+- nome: perdiz
+  quantidade: 450 g
+- nome: aletria
+  quantidade: 120 g
+- nome: cebola
+  quantidade: 100 g
+- nome: dentes de alho
+  quantidade: '2'
+- nome: salva
+  quantidade: qb
+- nome: cenoura
+  quantidade: 150 g
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: hortelã
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 183 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '9'
+- dose: 1 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '2'
+- dose: ''
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '2'
+- dose: 27 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '5'
+- dose: 2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '8'
+- dose: 17 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Limpe e lave as perdizes. Leve ao lume um tacho com água abundante e com o sal,
+  a cebola inteira, os dentes alho descascados, um ramo de salva e a cenoura inteira.
+- Quando a perdiz estiver cozida (mais ou menos 1 hora depois), retire do lume e reserve
+  a água. Desfie a perdiz, retirando peles e ossos, de forma a obter pequenas lascas.
+  Passe a água por um passador fino, e reserve a cenoura cozida.
+- Coloque a água novamente ao lume e, quando levantar fervura, adicione a aletria.
+  Deixe cozer até estar al dente. Junte as lascas de perdiz e a cenoura em pequenos
+  cubos.
+- Rectifique temperos e aromatize a canja com um pouco de salva e hortelã. 
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -929,55 +990,3 @@ imagem: !!binary |
   LxSAlbkMuP1N9ikBetv7py+3IfSoMlHM1ty/6KPLIfH8XHL7e1Vx8RbLw9Ph0zObbkMuP1N9iryg
   kh+L8PH4e/j9iTGdR0z/AHY/7nxtyyz+vkqbuRfZO8i/ts7j35/i7ea5vFm55Fg/C74v/wCP/UfY
   J8vr095F5rt6e36Hn/V/xn/qPhPxe2S6Nnw8DFezOJWkpP/Z
-ingredientes:
-- nome: perdiz
-  quantidade: 450 g
-- nome: aletria
-  quantidade: 120 g
-- nome: cebola
-  quantidade: 100 g
-- nome: dentes de alho
-  quantidade: '2'
-- nome: salva
-  quantidade: qb
-- nome: cenoura
-  quantidade: 150 g
-- nome: sal
-  quantidade: 1 c. de sopa
-- nome: hortelã
-  quantidade: qb
-minutos-de-preparação: 70
-nome: Canja de perdiz vermelha
-número-de-doses: 4
-passos:
-- Limpe e lave as perdizes. Leve ao lume um tacho com água abundante e com o sal,
-  a cebola inteira, os dentes alho descascados, um ramo de salva e a cenoura inteira.
-- Quando a perdiz estiver cozida (mais ou menos 1 hora depois), retire do lume e reserve
-  a água. Desfie a perdiz, retirando peles e ossos, de forma a obter pequenas lascas.
-  Passe a água por um passador fino, e reserve a cenoura cozida.
-- Coloque a água novamente ao lume e, quando levantar fervura, adicione a aletria.
-  Deixe cozer até estar al dente. Junte as lascas de perdiz e a cenoura em pequenos
-  cubos.
-- Rectifique temperos e aromatize a canja com um pouco de salva e hortelã. 
-valores-nutricionais:
-- dose: 183 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '9'
-- dose: 1 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '2'
-- dose: ''
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '2'
-- dose: 27 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 4 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '5'
-- dose: 2 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '8'
-- dose: 17 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

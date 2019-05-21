@@ -1,8 +1,67 @@
+
+nome: Sopa fria de manjericão
+
 dificuldade: média
+
+minutos-de-preparação: 80
+
+número-de-doses: 4
+
 etiquetas:
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: alho-francês
+  quantidade: 100 g
+- nome: cenoura
+  quantidade: 100 g
+- nome: talo de aipo
+  quantidade: '1'
+- nome: dente de alho
+  quantidade: '1'
+- nome: água
+  quantidade: 1,2 l
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: grãos pimenta preta
+  quantidade: '2'
+- nome: azeite
+  quantidade: 1 c. de sopa
+- nome: batata
+  quantidade: 300 g
+- nome: brócolos
+  quantidade: 300 g
+- nome: cebola
+  quantidade: 80 g
+- nome: manjericão em folha
+  quantidade: 20 g
+
+valores-nutricionais:
+- dose: 108 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '6'
+- dose: 3,3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '5'
+- dose: 0,6 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '3'
+- dose: 1,4 g
+  nome: Sal
+  percentagem-do-vdr-adulto: '34'
+
+passos:
+- Leve ao lume uma panela com o alho-francês cortado em rodelas, a cenoura em palitos,
+  o talo de aipo em pedaços, o dente de alho, a água, o sal e a pimenta. Tape e deixe
+  cozer em lume brando durante 30 minutos.
+- Coe o caldo para outra panela, onde deverá cozer as batatas descascadas e cortadas
+  em cubos, os brócolos em ramos e a cebola em gomos.
+- Quando as batatas estiverem macias, introduza as folhas de manjericão, previamente
+  lavadas e bem enxutas. Triture com a varinha mágica.
+- Deixe arrefecer a sopa antes de a guardar no frigorífico. Sirva fria.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -811,53 +870,3 @@ imagem: !!binary |
   w9sF0LY87J+fS6/gUr30y+nH/l+jL5LF79+rdvh/5f8ArxOfr+Hf4+nxkhL6D9OeGGPw/m/0rL9f
   9d/w7/t/7m1fy661/wDWDNv/AFw/288MMCudf49/3/16R6WP/L/Xqev1NCOAw7sFy2PdxbdiwMfD
   4rFm6EMB3fJSxhBl7HBSUIZYIAbMfPDLBJjRE4d3yCgoWff8vZkDB+Kn9QP/2Q==
-ingredientes:
-- nome: alho-francês
-  quantidade: 100 g
-- nome: cenoura
-  quantidade: 100 g
-- nome: talo de aipo
-  quantidade: '1'
-- nome: dente de alho
-  quantidade: '1'
-- nome: água
-  quantidade: 1,2 l
-- nome: sal
-  quantidade: 1 c. de sobremesa
-- nome: grãos pimenta preta
-  quantidade: '2'
-- nome: azeite
-  quantidade: 1 c. de sopa
-- nome: batata
-  quantidade: 300 g
-- nome: brócolos
-  quantidade: 300 g
-- nome: cebola
-  quantidade: 80 g
-- nome: manjericão em folha
-  quantidade: 20 g
-minutos-de-preparação: 80
-nome: Sopa fria de manjericão
-número-de-doses: 4
-passos:
-- Leve ao lume uma panela com o alho-francês cortado em rodelas, a cenoura em palitos,
-  o talo de aipo em pedaços, o dente de alho, a água, o sal e a pimenta. Tape e deixe
-  cozer em lume brando durante 30 minutos.
-- Coe o caldo para outra panela, onde deverá cozer as batatas descascadas e cortadas
-  em cubos, os brócolos em ramos e a cebola em gomos.
-- Quando as batatas estiverem macias, introduza as folhas de manjericão, previamente
-  lavadas e bem enxutas. Triture com a varinha mágica.
-- Deixe arrefecer a sopa antes de a guardar no frigorífico. Sirva fria.
-valores-nutricionais:
-- dose: 108 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '6'
-- dose: 3,3 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '5'
-- dose: 0,6 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '3'
-- dose: 1,4 g
-  nome: Sal
-  percentagem-do-vdr-adulto: '34'

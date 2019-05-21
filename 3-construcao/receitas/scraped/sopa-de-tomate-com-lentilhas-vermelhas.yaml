@@ -1,8 +1,74 @@
+
+nome: Sopa de tomate com lentilhas
+
 dificuldade: fácil
+
+minutos-de-preparação: 25
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - vegetariana
+
+ingredientes:
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: dentes de alho
+  quantidade: '2'
+- nome: cebola
+  quantidade: '1'
+- nome: lata de tomate de conserva em cubos
+  quantidade: '1'
+- nome: cominhos
+  quantidade: ½ c. café
+- nome: água
+  quantidade: 1 l
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: lentilhas vermelhas
+  quantidade: 150 g
+- nome: emb. espinafres em folha
+  quantidade: '1'
+- nome: manjericão fresco
+  quantidade: qb
+- nome: iogurte grego triplo zero Pingo Doce
+  quantidade: '1'
+
+valores-nutricionais:
+- dose: 157 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 4,2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '6'
+- dose: 0,6 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '3'
+- dose: 19,6 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5,1 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 4,3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '17'
+- dose: 9,3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Aqueça o azeite numa panela, junte os dentes de alho espremidos e a cebola, previamente
+  picada, e deixe cozinhar em lume moderado até a cebola estar mole.
+- Junte o conteúdo da lata de tomate e os cominhos e cozinhe com a panela tapada,
+  durante cerca de 8 minutos, mexendo de vez em quando.
+- Adicione a água a ferver e o sal e, assim que retomar fervura, introduza as lentilhas,
+  previamente passadas por água. Tape a panela e deixe cozer durante mais 15 minutos.
+- Triture muito bem a sopa, junte as folhas de espinafres e de manjericão e mexa.
+- Distribua a sopa pelos pratos e sirva com uma colherada de iogurte.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QOBaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1215,60 +1281,3 @@ imagem: !!binary |
   /wDjeX06QfV9X7n0/wBtB7hWxZcr+pF/+U/z79KLEM79p/8ARn+r/Xk//L/qHp/ipLfky1bL7F14
   z/rZ/p/q9vq+inKybN/07/T/AEV/q/T1/wBL0mX8SLc7j/0sr6f+z+j/AGRUpsgsTlfQnT6h+z9t
   MAFcr1/d/qL0/q/1V+n/AAVGTwEf/jVBT//Z
-ingredientes:
-- nome: azeite
-  quantidade: 2 c. sopa
-- nome: dentes de alho
-  quantidade: '2'
-- nome: cebola
-  quantidade: '1'
-- nome: lata de tomate de conserva em cubos
-  quantidade: '1'
-- nome: cominhos
-  quantidade: ½ c. café
-- nome: água
-  quantidade: 1 l
-- nome: sal
-  quantidade: 1 c. sobremesa
-- nome: lentilhas vermelhas
-  quantidade: 150 g
-- nome: emb. espinafres em folha
-  quantidade: '1'
-- nome: manjericão fresco
-  quantidade: qb
-- nome: iogurte grego triplo zero Pingo Doce
-  quantidade: '1'
-minutos-de-preparação: 25
-nome: Sopa de tomate com lentilhas
-número-de-doses: 6
-passos:
-- Aqueça o azeite numa panela, junte os dentes de alho espremidos e a cebola, previamente
-  picada, e deixe cozinhar em lume moderado até a cebola estar mole.
-- Junte o conteúdo da lata de tomate e os cominhos e cozinhe com a panela tapada,
-  durante cerca de 8 minutos, mexendo de vez em quando.
-- Adicione a água a ferver e o sal e, assim que retomar fervura, introduza as lentilhas,
-  previamente passadas por água. Tape a panela e deixe cozer durante mais 15 minutos.
-- Triture muito bem a sopa, junte as folhas de espinafres e de manjericão e mexa.
-- Distribua a sopa pelos pratos e sirva com uma colherada de iogurte.
-valores-nutricionais:
-- dose: 157 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '8'
-- dose: 4,2 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '6'
-- dose: 0,6 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '3'
-- dose: 19,6 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 5,1 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
-- dose: 4,3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '17'
-- dose: 9,3 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

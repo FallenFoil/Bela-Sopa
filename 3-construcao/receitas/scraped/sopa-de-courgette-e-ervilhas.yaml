@@ -1,8 +1,75 @@
+
+nome: Sopa de courgette, ervilhas e espargos
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
 - vegan
+
+ingredientes:
+- nome: cebola picada
+  quantidade: 100 g
+- nome: alho-francês em rodelas
+  quantidade: 100 g
+- nome: ervilhas congeladas
+  quantidade: 100 g
+- nome: azeite
+  quantidade: 2,5 c. sopa
+- nome: courgette
+  quantidade: '1'
+- nome: molho de espargos verdes frescos
+  quantidade: '1'
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: água
+  quantidade: 800 ml
+- nome: hortelã
+  quantidade: qb
+- nome: sementes de girassol Pura Vida
+  quantidade: 2 c. sopa
+
+valores-nutricionais:
+- dose: 153 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 10,2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '15'
+- dose: 1,5 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '8'
+- dose: 7,8 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5,0 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 3,3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '13'
+- dose: 6,2 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Leve a cebola, o alho-francês e as ervilhas ao lume numa panela com duas colheres
+  de sopa de azeite. Tape e cozinhe em lume brando.
+- Lave a courgette, elimine as pontas, corte-a em cubos pequenos e coloque-a na panela.
+- Lave os espargos, elimine as bases fibrosas, reserve as pontas espigadas, corte
+  o restante em rodelas finas e adicione-as ao cozinhado.
+- Tempere com o sal, regue com a água a ferver, junte algumas folhas de hortelã (reserve
+  algumas) e deixe cozer cerca de 20 minutos.
+- Aqueça o restante azeite numa frigideira anti-aderente e salteie as pontas espigadas
+  dos espargos cerca de 2 minutos, agitando a frigideira. Retire e reserve.
+- Triture a sopa no liquidificador ou com a varinha mágica e sirva com as pontas dos
+  espargos, as sementes de girassol e as folhas de hortelã reservadas.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -953,61 +1020,3 @@ imagem: !!binary |
   W5kaT3YpfUUjUKRqNQ50axZHwMsSbe3ayLaex/qbVUKKQkhr2MkscdpuiUIJ3f8AL/NGObuobfl/
   gfivmj4/VCm+GmPN4cNt2OWWbtJs8LPLn+oumyr1R6EOF9+x/E+0j1Pftg+T9SX9z1I9kYue38I/
   lJck+ER5MXIx8d16CH/xyIfMvxJ8nSfOLgjyjP8A8aMvp+J6GP5EM//Z
-ingredientes:
-- nome: cebola picada
-  quantidade: 100 g
-- nome: alho-francês em rodelas
-  quantidade: 100 g
-- nome: ervilhas congeladas
-  quantidade: 100 g
-- nome: azeite
-  quantidade: 2,5 c. sopa
-- nome: courgette
-  quantidade: '1'
-- nome: molho de espargos verdes frescos
-  quantidade: '1'
-- nome: sal
-  quantidade: 1 c. sobremesa
-- nome: água
-  quantidade: 800 ml
-- nome: hortelã
-  quantidade: qb
-- nome: sementes de girassol Pura Vida
-  quantidade: 2 c. sopa
-minutos-de-preparação: 30
-nome: Sopa de courgette, ervilhas e espargos
-número-de-doses: 6
-passos:
-- Leve a cebola, o alho-francês e as ervilhas ao lume numa panela com duas colheres
-  de sopa de azeite. Tape e cozinhe em lume brando.
-- Lave a courgette, elimine as pontas, corte-a em cubos pequenos e coloque-a na panela.
-- Lave os espargos, elimine as bases fibrosas, reserve as pontas espigadas, corte
-  o restante em rodelas finas e adicione-as ao cozinhado.
-- Tempere com o sal, regue com a água a ferver, junte algumas folhas de hortelã (reserve
-  algumas) e deixe cozer cerca de 20 minutos.
-- Aqueça o restante azeite numa frigideira anti-aderente e salteie as pontas espigadas
-  dos espargos cerca de 2 minutos, agitando a frigideira. Retire e reserve.
-- Triture a sopa no liquidificador ou com a varinha mágica e sirva com as pontas dos
-  espargos, as sementes de girassol e as folhas de hortelã reservadas.
-valores-nutricionais:
-- dose: 153 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '8'
-- dose: 10,2 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '15'
-- dose: 1,5 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '8'
-- dose: 7,8 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 5,0 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
-- dose: 3,3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '13'
-- dose: 6,2 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

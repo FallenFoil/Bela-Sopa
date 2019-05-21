@@ -1,7 +1,89 @@
+
+nome: Gaspacho com camarão
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
+
+ingredientes:
+- nome: tomates maduros
+  quantidade: '3'
+- nome: pimento verde
+  quantidade: 1/2
+- nome: pimento vermelho
+  quantidade: '1'
+- nome: dentes de alho
+  quantidade: '2'
+- nome: cebola
+  quantidade: 1/2
+- nome: vinagre de vinho branco
+  quantidade: 2 c. de sopa
+- nome: azeite
+  quantidade: 4 c. de sopa
+- nome: orégãos
+  quantidade: 1 c. de sopa
+- nome: coentros picados
+  quantidade: 2 c. de sopa
+- nome: pepino
+  quantidade: '1'
+- nome: água
+  quantidade: 2 copos
+- nome: camarão cozido
+  quantidade: 120 g
+- nome: fatias finas de pão
+  quantidade: '4'
+- nome: maionese
+  quantidade: 2 c. de sopa
+- nome: sal
+  quantidade: qb
+- nome: meloa
+  quantidade: 200 g
+- nome: cebolinho (para decoração)
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 224 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '11'
+- dose: 14 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '20'
+- dose: 2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '11'
+- dose: 20 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 11 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '12'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque a meloa e o camarão, corte-os em cubos pequenos e misture com a maionese
+  e os coentros picados. Reserve no frio.
+- Corte o tomate, o pepino, a cebola e os pimentos limpos de sementes em cubos. Junte
+  o alho picado e os orégãos. Tempere com vinagre e sal. Triture com a varinha mágica,
+  acrescentando o azeite aos poucos.
+- Passe por um coador, de forma a obter um creme ligeiro e homogéneo. Coloque uma
+  forma cilíndrica no centro de um prato fundo e encha-a com a mistura de meloa e
+  camarão*. Sirva o creme de gaspacho à volta e retire a forma cuidadosamente. Torre
+  o pão em fatias finas. Decore o gaspacho com cebolinho e coentros e sirva com o
+  pão torrado.
+- '* Pode conseguir o efeito com uma chávena de café ou um dos aros de plástico que
+  envolvem o queijo fresco.'
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -867,76 +949,3 @@ imagem: !!binary |
   LQC0AdaAQfb8KEh/TrQgU0Afb8aAUaChInT7dqEC0AUDDpQMKAKADQAKADQAPt3oSHf7dKMgSpAD
   7fhQAf51AFH270AnepYENAOqAH2/GpAHSgD7fjQBQCmgZQ5D/hd/yafo+2tQyThOU+d//Jqfm106
   /wAasirMrG/+QdOvz669PCpINHk//hu8ummlQiWUYvnPn016a1CJZPVgf//Z
-ingredientes:
-- nome: tomates maduros
-  quantidade: '3'
-- nome: pimento verde
-  quantidade: 1/2
-- nome: pimento vermelho
-  quantidade: '1'
-- nome: dentes de alho
-  quantidade: '2'
-- nome: cebola
-  quantidade: 1/2
-- nome: vinagre de vinho branco
-  quantidade: 2 c. de sopa
-- nome: azeite
-  quantidade: 4 c. de sopa
-- nome: orégãos
-  quantidade: 1 c. de sopa
-- nome: coentros picados
-  quantidade: 2 c. de sopa
-- nome: pepino
-  quantidade: '1'
-- nome: água
-  quantidade: 2 copos
-- nome: camarão cozido
-  quantidade: 120 g
-- nome: fatias finas de pão
-  quantidade: '4'
-- nome: maionese
-  quantidade: 2 c. de sopa
-- nome: sal
-  quantidade: qb
-- nome: meloa
-  quantidade: 200 g
-- nome: cebolinho (para decoração)
-  quantidade: qb
-minutos-de-preparação: 30
-nome: Gaspacho com camarão
-número-de-doses: 4
-passos:
-- Descasque a meloa e o camarão, corte-os em cubos pequenos e misture com a maionese
-  e os coentros picados. Reserve no frio.
-- Corte o tomate, o pepino, a cebola e os pimentos limpos de sementes em cubos. Junte
-  o alho picado e os orégãos. Tempere com vinagre e sal. Triture com a varinha mágica,
-  acrescentando o azeite aos poucos.
-- Passe por um coador, de forma a obter um creme ligeiro e homogéneo. Coloque uma
-  forma cilíndrica no centro de um prato fundo e encha-a com a mistura de meloa e
-  camarão*. Sirva o creme de gaspacho à volta e retire a forma cuidadosamente. Torre
-  o pão em fatias finas. Decore o gaspacho com cebolinho e coentros e sirva com o
-  pão torrado.
-- '* Pode conseguir o efeito com uma chávena de café ou um dos aros de plástico que
-  envolvem o queijo fresco.'
-valores-nutricionais:
-- dose: 224 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '11'
-- dose: 14 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '20'
-- dose: 2 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '11'
-- dose: 20 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 11 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '12'
-- dose: 3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '12'
-- dose: 6 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

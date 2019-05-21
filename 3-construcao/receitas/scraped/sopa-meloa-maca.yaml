@@ -1,9 +1,71 @@
+
+nome: Sopa de meloa, maçã e hortelã
+
 dificuldade: fácil
+
+minutos-de-preparação: 10
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: meloa Gália
+  quantidade: 1 kg
+- nome: maçã Royal Gala
+  quantidade: '1'
+- nome: limão
+  quantidade: '1'
+- nome: hortelã
+  quantidade: qb
+- nome: raiz de gengibre
+  quantidade: 1 c. chá
+- nome: água gelada
+  quantidade: 250 dl
+- nome: malagueta verde
+  quantidade: 10 g
+
+valores-nutricionais:
+- dose: 49 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '2'
+- dose: 0,2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '0'
+- dose: 0,0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '0'
+- dose: 10,4 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 10,4 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '12'
+- dose: 2,0 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '8'
+- dose: 1,1 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Abra a meloa ao meio, limpe-a de sementes e retire-lhe a casca. Corte parte da meloa
+  em cubos pequenos (cerca de 2 colheres de sopa) e reserve. Deite a restante no copo
+  liquidificador (ou use a varinha mágica).
+- Corte a maçã ao meio e retire-lhe o caroço. Descasque metade, corte-a em bocados
+  e junte-os à meloa. Adicione o sumo do limão, três a quatro folhas de hortelã e
+  o sumo de um pedaço de raiz de gengibre, previamente pelada e ralada, e o sal.
+- Triture tudo muito bem até obter um puré liso. Junte a água gelada e volte a triturar.
+- Limpe a malagueta de sementes, pique-a em cubos pequenos e misture-a com a meloa
+  picada. Reserve.
+- Corte a restante metade da maçã com a casca em lâminas finas. Reserve.
+- Distribua a sopa pelos pratos, decore com a maçã, a mistura de meloa e malagueta,
+  e as folhas frescas de hortelã. Sirva bem fresca.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -902,56 +964,3 @@ imagem: !!binary |
   f/qjElW2z0LqFU0CqnVOzLyg0XqeiGlT0VSLQfJMaYqAt7x+lRq2Y4HphCo3tUdYoRZOfTickwyH
   C6gQrSQtECck9j5aYKdisPvOFx52W80OGv4WUBWnsX+ons2T0rrNWXVKzVl1VddVddfDHj8j4pXW
   Xwz3r4p2dViz711j74L4q+A3x9SuqO8/lZe+K6h7h+F8Yd2y6uv/2Q==
-ingredientes:
-- nome: meloa Gália
-  quantidade: 1 kg
-- nome: maçã Royal Gala
-  quantidade: '1'
-- nome: limão
-  quantidade: '1'
-- nome: hortelã
-  quantidade: qb
-- nome: raiz de gengibre
-  quantidade: 1 c. chá
-- nome: água gelada
-  quantidade: 250 dl
-- nome: malagueta verde
-  quantidade: 10 g
-minutos-de-preparação: 10
-nome: Sopa de meloa, maçã e hortelã
-número-de-doses: 4
-passos:
-- Abra a meloa ao meio, limpe-a de sementes e retire-lhe a casca. Corte parte da meloa
-  em cubos pequenos (cerca de 2 colheres de sopa) e reserve. Deite a restante no copo
-  liquidificador (ou use a varinha mágica).
-- Corte a maçã ao meio e retire-lhe o caroço. Descasque metade, corte-a em bocados
-  e junte-os à meloa. Adicione o sumo do limão, três a quatro folhas de hortelã e
-  o sumo de um pedaço de raiz de gengibre, previamente pelada e ralada, e o sal.
-- Triture tudo muito bem até obter um puré liso. Junte a água gelada e volte a triturar.
-- Limpe a malagueta de sementes, pique-a em cubos pequenos e misture-a com a meloa
-  picada. Reserve.
-- Corte a restante metade da maçã com a casca em lâminas finas. Reserve.
-- Distribua a sopa pelos pratos, decore com a maçã, a mistura de meloa e malagueta,
-  e as folhas frescas de hortelã. Sirva bem fresca.
-valores-nutricionais:
-- dose: 49 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '2'
-- dose: 0,2 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '0'
-- dose: 0,0 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '0'
-- dose: 10,4 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 10,4 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '12'
-- dose: 2,0 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '8'
-- dose: 1,1 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

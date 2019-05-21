@@ -1,6 +1,87 @@
+
+nome: Ramen
+
 dificuldade: média
+
+minutos-de-preparação: 60
+
+número-de-doses: 6
+
 etiquetas:
 - sem leite
+
+ingredientes:
+- nome: perna frango do campo
+  quantidade: 250 g
+- nome: cenoura pequena
+  quantidade: '1'
+- nome: pedaço gengibre
+  quantidade: '1'
+- nome: tomate seco
+  quantidade: '1'
+- nome: nabo pequeno
+  quantidade: '1'
+- nome: água
+  quantidade: 1 lt
+- nome: molho de soja
+  quantidade: 2 c. sopa
+- nome: sal
+  quantidade: 2 c. chá
+- nome: ovos S
+  quantidade: '4'
+- nome: óleo
+  quantidade: 1 c. sobremesa
+- nome: fatias finas de lombo porco
+  quantidade: '8'
+- nome: massa chinesa
+  quantidade: 200 g
+- nome: lata pequena milho doce Pingo Doce
+  quantidade: '1'
+- nome: rebentos de feijão mungo fresco
+  quantidade: 80 g
+- nome: espinafre em folha
+  quantidade: 100 g
+- nome: manjericão
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 313 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '16'
+- dose: 12,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '18'
+- dose: 3,3 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '16'
+- dose: 28,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5,7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 1,3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '5'
+- dose: 22,7 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Leve ao lume uma panela com a perna de frango, a cenoura cortada em palitos, a raiz
+  de gengibre, o tomate seco, o nabo em palitos, a água, uma colher de sopa de molho
+  de soja, uma colher de chá de sal e os ovos inteiros.
+- Depois de levantar fervura, deixe cozer 8 minutos e retire os ovos. Cozinhe os restantes
+  ingredientes mais 20 minutos.
+- Aqueça uma frigideira anti-aderente, previamente untada com o óleo, e salteie rapidamente
+  as fatias de carne de ambos os lados. Regue com o restante molho de soja e reserve.
+- Coza a massa em água temperada com o restante sal cerca de 3 minutos.
+- Escorra-a e coloque-a no fundo de quatro tigelas.
+- Junte o milho, os rebentos de feijão mungo, as folhas de espinafres e as fatias
+  de carne e regue tudo com o caldo, previamente coado.
+- Adicione os ovos descascados e cortados ao meio e salpique com folhas de manjericão.
+- Sirva de imediato.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM
   DAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8f
@@ -969,75 +1050,3 @@ imagem: !!binary |
   X9h+Xc/0O/8AjxPsjX+Y6n3rw/4fzP8A4y+fM0/J9u5+C+0fd3Pyk3gem43+A/6Ynm+v+r1P8361
   4nkb/n/PU2+Tfp/7T/JbPtn+S0TX6eW+fM/xhr/Tj6Yvs/1GEf8A8Lvj4/f4h9P8v9TZ3vmH/wCP
   /9k=
-ingredientes:
-- nome: perna frango do campo
-  quantidade: 250 g
-- nome: cenoura pequena
-  quantidade: '1'
-- nome: pedaço gengibre
-  quantidade: '1'
-- nome: tomate seco
-  quantidade: '1'
-- nome: nabo pequeno
-  quantidade: '1'
-- nome: água
-  quantidade: 1 lt
-- nome: molho de soja
-  quantidade: 2 c. sopa
-- nome: sal
-  quantidade: 2 c. chá
-- nome: ovos S
-  quantidade: '4'
-- nome: óleo
-  quantidade: 1 c. sobremesa
-- nome: fatias finas de lombo porco
-  quantidade: '8'
-- nome: massa chinesa
-  quantidade: 200 g
-- nome: lata pequena milho doce Pingo Doce
-  quantidade: '1'
-- nome: rebentos de feijão mungo fresco
-  quantidade: 80 g
-- nome: espinafre em folha
-  quantidade: 100 g
-- nome: manjericão
-  quantidade: qb
-minutos-de-preparação: 60
-nome: Ramen
-número-de-doses: 6
-passos:
-- Leve ao lume uma panela com a perna de frango, a cenoura cortada em palitos, a raiz
-  de gengibre, o tomate seco, o nabo em palitos, a água, uma colher de sopa de molho
-  de soja, uma colher de chá de sal e os ovos inteiros.
-- Depois de levantar fervura, deixe cozer 8 minutos e retire os ovos. Cozinhe os restantes
-  ingredientes mais 20 minutos.
-- Aqueça uma frigideira anti-aderente, previamente untada com o óleo, e salteie rapidamente
-  as fatias de carne de ambos os lados. Regue com o restante molho de soja e reserve.
-- Coza a massa em água temperada com o restante sal cerca de 3 minutos.
-- Escorra-a e coloque-a no fundo de quatro tigelas.
-- Junte o milho, os rebentos de feijão mungo, as folhas de espinafres e as fatias
-  de carne e regue tudo com o caldo, previamente coado.
-- Adicione os ovos descascados e cortados ao meio e salpique com folhas de manjericão.
-- Sirva de imediato.
-valores-nutricionais:
-- dose: 313 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '16'
-- dose: 12,5 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '18'
-- dose: 3,3 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '16'
-- dose: 28,5 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 5,7 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
-- dose: 1,3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '5'
-- dose: 22,7 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

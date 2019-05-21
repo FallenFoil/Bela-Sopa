@@ -1,7 +1,78 @@
+
+nome: Creme de couve-flor com cogumelos
+
 dificuldade: média
+
+minutos-de-preparação: 60
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
+
+ingredientes:
+- nome: cebola
+  quantidade: '1'
+- nome: alho-francês cortado Pingo Doce
+  quantidade: 200 g
+- nome: couve-flor
+  quantidade: ½
+- nome: peito de frango
+  quantidade: 200 g
+- nome: água
+  quantidade: 2 l
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: cogumelos Portobello Pingo Doce pequenos
+  quantidade: 250 g
+- nome: bacon em tiras Pingo Doce
+  quantidade: 50 g
+- nome: azeite Pingo Doce
+  quantidade: 1 c. sopa
+- nome: emb. agrião em folha Pingo Doce
+  quantidade: '1'
+- nome: sementes girassol Pura Vida
+  quantidade: 3 c. sopa
+- nome: pimenta Pingo Doce
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 171 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '9'
+- dose: 8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '8'
+- dose: 5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '3'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 18 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque a cebola e corte-a em pedaços para uma panela. Junte o alho-francês cortado,
+  a couve flor, cortada em pedaços pequenos, e os peitos de frango.
+- Adicione a água e o sal e leve ao lume cerca de 40 minutos ou até os legumes e o
+  frango estarem cozidos.
+- Aloure o bacon com o azeite, junte os cogumelos limpos e cortados em fatias e salteie,
+  mexendo, sobre lume médio a forte.
+- Tempere com pimenta a gosto e reserve.
+- Retire o frango e triture a sopa com a varinha mágica.
+- Junte as folhas de agrião, os cogumelos salteados, o frango desfiado e as sementes
+  de girassol e retire do lume assim que retomar fervura.
+- Distribua pelas tigelas ou pratos de servir e sirva.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -760,65 +831,3 @@ imagem: !!binary |
   1QcXjDWFNuiKcG9go/ai8Ndm+yqDRBVQsraFQIWCwMpC8r+RTv8AAM0fTFyKhaLqOTqEuoW2oKqD
   oMVI5oQzKWH0woND1+EWsHqGN/BHgpFTKohmB7RYFVVQeIo/FLhBjio3Guah3ifKqL21tB6KVkMt
   aIAAey75RUKjI3n7dZXp2WU6LKdFGOAUY5LKPs/GUDnWi2xEm82Xz7f43nL/AFP/2Q==
-ingredientes:
-- nome: cebola
-  quantidade: '1'
-- nome: alho-francês cortado Pingo Doce
-  quantidade: 200 g
-- nome: couve-flor
-  quantidade: ½
-- nome: peito de frango
-  quantidade: 200 g
-- nome: água
-  quantidade: 2 l
-- nome: sal
-  quantidade: 1 c. sopa
-- nome: cogumelos Portobello Pingo Doce pequenos
-  quantidade: 250 g
-- nome: bacon em tiras Pingo Doce
-  quantidade: 50 g
-- nome: azeite Pingo Doce
-  quantidade: 1 c. sopa
-- nome: emb. agrião em folha Pingo Doce
-  quantidade: '1'
-- nome: sementes girassol Pura Vida
-  quantidade: 3 c. sopa
-- nome: pimenta Pingo Doce
-  quantidade: qb
-minutos-de-preparação: 60
-nome: Creme de couve-flor com cogumelos
-número-de-doses: 6
-passos:
-- Descasque a cebola e corte-a em pedaços para uma panela. Junte o alho-francês cortado,
-  a couve flor, cortada em pedaços pequenos, e os peitos de frango.
-- Adicione a água e o sal e leve ao lume cerca de 40 minutos ou até os legumes e o
-  frango estarem cozidos.
-- Aloure o bacon com o azeite, junte os cogumelos limpos e cortados em fatias e salteie,
-  mexendo, sobre lume médio a forte.
-- Tempere com pimenta a gosto e reserve.
-- Retire o frango e triture a sopa com a varinha mágica.
-- Junte as folhas de agrião, os cogumelos salteados, o frango desfiado e as sementes
-  de girassol e retire do lume assim que retomar fervura.
-- Distribua pelas tigelas ou pratos de servir e sirva.
-valores-nutricionais:
-- dose: 171 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '9'
-- dose: 8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '11'
-- dose: 2 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '8'
-- dose: 5 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 2 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
-- dose: 3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '12'
-- dose: 18 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

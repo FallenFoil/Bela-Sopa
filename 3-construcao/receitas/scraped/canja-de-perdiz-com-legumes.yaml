@@ -1,7 +1,73 @@
+
+nome: Canja de perdiz com legumes
+
 dificuldade: fácil
+
+minutos-de-preparação: 65
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
+
+ingredientes:
+- nome: perdiz
+  quantidade: 400 g
+- nome: alho-francês
+  quantidade: 100 g
+- nome: talos de aipo
+  quantidade: '2'
+- nome: sal
+  quantidade: 1/2 c. de sopa
+- nome: cenouras
+  quantidade: 350 g
+- nome: cebola
+  quantidade: 60 g
+- nome: pão de forma de cereais
+  quantidade: 60 g
+- nome: dente de alho
+  quantidade: '1'
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: salva fresca
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 185 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '9'
+- dose: 7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '10'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '6'
+- dose: 13 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '7'
+- dose: 3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 18 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Lave e limpe bem a perdiz. Coloque-a num tacho com água.
+- Junte-lhe metade do alho-francês, o aipo e 1/2 colher de sopa de sal. Deixe cozinhar,
+  adicionando um pouco de água a meio da cozedura.
+- Retire-a depois de cozida e deixe-a arrefecer um pouco.
+- Em seguida, corte as cenouras em cubos pequenos, lamine o restante alho-francês
+  e pique a cebola. Adicione-os ao caldo, deixando cozer até ficarem macios.
+- Limpe a perdiz de peles e ossos, desfie a carne e reserve.
+- Corte o pão de forma em cubos de 2 cm e salteie-os com o azeite e o alho picado.
+- Junte a perdiz desfiada à canja, com os legumes, e sirva com folhas de salva fresca
+  e o pão salteado.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1399,60 +1465,3 @@ imagem: !!binary |
   yMmRcB7vi48cATIvw/Fz4+/BgdPA8eWIBQ5+3Aok8T7uPDjikN8xx54Axvd7/ZiA0OX6/wBeKBWI
   UzAhmBTMAZgDMAZywIaH9v8AbilN4gKn9Uv/AKJ3Dh8dtx+H/Ux/xP3P2vLAtefsfyLAv+uX/D7u
   GKZRUouDcfiPH24pWSF4c+XHhz+7FA5yPHGSG8Qp/9k=
-ingredientes:
-- nome: perdiz
-  quantidade: 400 g
-- nome: alho-francês
-  quantidade: 100 g
-- nome: talos de aipo
-  quantidade: '2'
-- nome: sal
-  quantidade: 1/2 c. de sopa
-- nome: cenouras
-  quantidade: 350 g
-- nome: cebola
-  quantidade: 60 g
-- nome: pão de forma de cereais
-  quantidade: 60 g
-- nome: dente de alho
-  quantidade: '1'
-- nome: azeite
-  quantidade: 2 c. de sopa
-- nome: salva fresca
-  quantidade: qb
-minutos-de-preparação: 65
-nome: Canja de perdiz com legumes
-número-de-doses: 4
-passos:
-- Lave e limpe bem a perdiz. Coloque-a num tacho com água.
-- Junte-lhe metade do alho-francês, o aipo e 1/2 colher de sopa de sal. Deixe cozinhar,
-  adicionando um pouco de água a meio da cozedura.
-- Retire-a depois de cozida e deixe-a arrefecer um pouco.
-- Em seguida, corte as cenouras em cubos pequenos, lamine o restante alho-francês
-  e pique a cebola. Adicione-os ao caldo, deixando cozer até ficarem macios.
-- Limpe a perdiz de peles e ossos, desfie a carne e reserve.
-- Corte o pão de forma em cubos de 2 cm e salteie-os com o azeite e o alho picado.
-- Junte a perdiz desfiada à canja, com os legumes, e sirva com folhas de salva fresca
-  e o pão salteado.
-valores-nutricionais:
-- dose: 185 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '9'
-- dose: 7 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '10'
-- dose: 1 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '6'
-- dose: 13 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 6 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '7'
-- dose: 3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '12'
-- dose: 18 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

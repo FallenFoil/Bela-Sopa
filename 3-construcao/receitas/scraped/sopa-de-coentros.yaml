@@ -1,9 +1,73 @@
+
+nome: Sopa de coentros
+
 dificuldade: fácil
+
+minutos-de-preparação: 50
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: cebola
+  quantidade: 100 g
+- nome: coentros
+  quantidade: 50 g
+- nome: courgette
+  quantidade: 350 g
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: água
+  quantidade: 1,2 l
+- nome: ovo S
+  quantidade: '1'
+- nome: tortitas de arroz
+  quantidade: '2'
+- nome: batata grande
+  quantidade: 300 g
+
+valores-nutricionais:
+- dose: 153 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '10'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 17 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '4'
+- dose: 2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '8'
+- dose: 5 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque a cebola e pique-a finamente. Lave os coentros, reserve as folhas e pique
+  os talos.
+- Deite a cebola, os talos de coentros picados e o azeite numa panela, junte a batata
+  descascada e cortada em cubos e adicione o sal. Mexa e tape.
+- Lave a courgette, elimine as pontas e pique-a em cubos pequenos. Junte aos restantes
+  legumes, mexa, tape e deixe cozinhar em lume muito brando, até a courgette e a batata
+  estarem macias.
+- Regue com a água a ferver, junte as folhas de coentros e triture com a varinha mágica.
+- Junte o ovo previamente batido e deixe retomar fervura, mexendo com um garfo.
+- Distribua a sopa pelos pratos.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1337,58 +1401,3 @@ imagem: !!binary |
   z8V/5v3fb/dwnlxH8+8S/qz/AO40tt/z/s3+G/k59r+UcYv5f+//AOzqxo/qfDM1lTyeX08vb0KI
   f8rde/4v8T3v5j+Dz/4f7PdXGay9Jr/U88uI8PfIRuf/ADh8s/Z/w/P+U/gn/wDqv7Lvxp/Vx7DG
   30V8/R6eM4COnf8AlD5of4r+YX3t/jf4ZPZ7uz92mIf0o2p/7LccuXGZ8yf7OK/2ng//ANT/2Q==
-ingredientes:
-- nome: cebola
-  quantidade: 100 g
-- nome: coentros
-  quantidade: 50 g
-- nome: courgette
-  quantidade: 350 g
-- nome: azeite
-  quantidade: 2 c. de sopa
-- nome: sal
-  quantidade: 1 c. de sobremesa
-- nome: água
-  quantidade: 1,2 l
-- nome: ovo S
-  quantidade: '1'
-- nome: tortitas de arroz
-  quantidade: '2'
-- nome: batata grande
-  quantidade: 300 g
-minutos-de-preparação: 50
-nome: Sopa de coentros
-número-de-doses: 4
-passos:
-- Descasque a cebola e pique-a finamente. Lave os coentros, reserve as folhas e pique
-  os talos.
-- Deite a cebola, os talos de coentros picados e o azeite numa panela, junte a batata
-  descascada e cortada em cubos e adicione o sal. Mexa e tape.
-- Lave a courgette, elimine as pontas e pique-a em cubos pequenos. Junte aos restantes
-  legumes, mexa, tape e deixe cozinhar em lume muito brando, até a courgette e a batata
-  estarem macias.
-- Regue com a água a ferver, junte as folhas de coentros e triture com a varinha mágica.
-- Junte o ovo previamente batido e deixe retomar fervura, mexendo com um garfo.
-- Distribua a sopa pelos pratos.
-valores-nutricionais:
-- dose: 153 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '8'
-- dose: 7 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '10'
-- dose: 1 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
-- dose: 17 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 4 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
-- dose: 2 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '8'
-- dose: 5 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

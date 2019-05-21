@@ -1,7 +1,86 @@
+
+nome: Sopa de abóbora
+
 dificuldade: fácil
+
+minutos-de-preparação: 50
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - vegetariana
+
+ingredientes:
+- nome: talo de aipo
+  quantidade: '1'
+- nome: folha de louro
+  quantidade: '1'
+- nome: cebola pequena
+  quantidade: '1'
+- nome: dente de alho
+  quantidade: '1'
+- nome: polpa de abóbora
+  quantidade: 500 g
+- nome: água
+  quantidade: 1 l
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: azeite
+  quantidade: 1 c. sopa
+- nome: alho-francês
+  quantidade: '1'
+- nome: raiz de gengibre
+  quantidade: qb
+- nome: leite evaporado Pingo Doce
+  quantidade: 1,5 dl
+- nome: caril em pó
+  quantidade: 1 c. chá
+- nome: noz-moscada moída
+  quantidade: ½ c. café
+- nome: piripíri moído
+  quantidade: ½
+- nome: cebolinho
+  quantidade: qb
+- nome: mini tortitas de milho Pura Vida
+  quantidade: '2'
+
+valores-nutricionais:
+- dose: 73 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '4'
+- dose: 3,8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '5'
+- dose: 1,7 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '8'
+- dose: 6,7 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4,7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '5'
+- dose: 1,6 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '6'
+- dose: 2,6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Coloque ao lume uma panela com o aipo cortado em lâminas, a folha de louro, a cebola
+  em gomos, o dente de alho, a abóbora em cubos pequenos, a água e o sal.
+- Tape e, quando levantar fervura, deixe cozer cerca de 30 minutos ou até a abóbora
+  estar tenra.
+- Ponha ao lume outra panela com o azeite e refogue o alho-francês em rodelas.
+- Junte um pedaço de raiz de gengibre ralada e o leite evaporado.
+- Retire a folha de louro do preparado anterior e misture tudo ao refogado, juntando
+  o caril, a noz-moscada e o piripíri.
+- Deixe ferver mais uns minutos e retire do lume.
+- Triture com a varinha mágica e distribua pelos pratos, polvilhando com cebolinho
+  picado e as tortitas.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
   AQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwP/2wBDAQEBAQEBAQEBAQECAgECAgMDAwMD
@@ -3390,73 +3469,3 @@ imagem: !!binary |
   APHP4s/PnPrP67/j/kzg+pzvnfrPr8P+Xnxnj7f8u5/K/wD6Z/Bd/wDf4zh9P/x/x+rn9V/k4+vj
   P+pevP8Au55+f8h3/X3nD/Q9/g/3n8k8y6f+Hp/18Zz+v8Pz7/3n/UP5Z/BP17795/Sfzn8c/wCF
   6/6+8/oP7Pf+O5/tP6MH8z/5/wD8mfzn/9k=
-ingredientes:
-- nome: talo de aipo
-  quantidade: '1'
-- nome: folha de louro
-  quantidade: '1'
-- nome: cebola pequena
-  quantidade: '1'
-- nome: dente de alho
-  quantidade: '1'
-- nome: polpa de abóbora
-  quantidade: 500 g
-- nome: água
-  quantidade: 1 l
-- nome: sal
-  quantidade: 1 c. sopa
-- nome: azeite
-  quantidade: 1 c. sopa
-- nome: alho-francês
-  quantidade: '1'
-- nome: raiz de gengibre
-  quantidade: qb
-- nome: leite evaporado Pingo Doce
-  quantidade: 1,5 dl
-- nome: caril em pó
-  quantidade: 1 c. chá
-- nome: noz-moscada moída
-  quantidade: ½ c. café
-- nome: piripíri moído
-  quantidade: ½
-- nome: cebolinho
-  quantidade: qb
-- nome: mini tortitas de milho Pura Vida
-  quantidade: '2'
-minutos-de-preparação: 50
-nome: Sopa de abóbora
-número-de-doses: 6
-passos:
-- Coloque ao lume uma panela com o aipo cortado em lâminas, a folha de louro, a cebola
-  em gomos, o dente de alho, a abóbora em cubos pequenos, a água e o sal.
-- Tape e, quando levantar fervura, deixe cozer cerca de 30 minutos ou até a abóbora
-  estar tenra.
-- Ponha ao lume outra panela com o azeite e refogue o alho-francês em rodelas.
-- Junte um pedaço de raiz de gengibre ralada e o leite evaporado.
-- Retire a folha de louro do preparado anterior e misture tudo ao refogado, juntando
-  o caril, a noz-moscada e o piripíri.
-- Deixe ferver mais uns minutos e retire do lume.
-- Triture com a varinha mágica e distribua pelos pratos, polvilhando com cebolinho
-  picado e as tortitas.
-valores-nutricionais:
-- dose: 73 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '4'
-- dose: 3,8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '5'
-- dose: 1,7 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '8'
-- dose: 6,7 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 4,7 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '5'
-- dose: 1,6 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '6'
-- dose: 2,6 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

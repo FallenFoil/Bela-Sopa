@@ -1,6 +1,72 @@
+
+nome: Sopa de noodles picante
+
 dificuldade: fácil
+
+minutos-de-preparação: 20
+
+número-de-doses: 4
+
 etiquetas:
 - sem leite
+
+ingredientes:
+- nome: peitos de frango
+  quantidade: '2'
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: cebola congelada
+  quantidade: 3 c. sopa
+- nome: alho congelado
+  quantidade: 1 c. sopa
+- nome: azeite
+  quantidade: 3 c. sopa
+- nome: malagueta vermelha picada
+  quantidade: '1'
+- nome: mistura chinesa Pingo Doce
+  quantidade: 1 emb.
+- nome: frasco de molho de caril
+  quantidade: '1'
+- nome: lata de leite de coco
+  quantidade: '1'
+- nome: noodles de frango Pingo Doce
+  quantidade: 2 emb.
+- nome: molho de coentros
+  quantidade: '1'
+
+valores-nutricionais:
+- dose: 569 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '28'
+- dose: 37,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '54'
+- dose: 22,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '114'
+- dose: 33,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 6,8 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '8'
+- dose: 5,7 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '23'
+- dose: 24,6 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Coza os peitos de frango em água com metade do sal durante 10 min. Escorra-os, desfie-os
+  e reserve.
+- Num tacho, refogue a cebola e o alho em azeite. Junte a malagueta picada, deixe
+  cozinhar por 1 minuto e adicione a mistura chinesa e o restante sal, deixando cozinhar
+  mais 4 minutos.
+- Acrescente o molho de caril, o leite de coco e misture bem. Deixe ferver.
+- Envolva os noodles e deixe cozinhar conforme as instruções da embalagem.
+- Junte o frango desfiado e sirva polvilhado com coentros picados.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -957,60 +1023,3 @@ imagem: !!binary |
   Xjg1xp019nrieh6g1VeRt4E3qkpjqPt+ChZ7c77vx77FcXUyfFyNUTf7ijUvoXTsOEs+IooXFEuR
   FixdmN1i+Uo0OGuQktXIyNW7neRRqXmuY6PJnczbiPY6cG+xltxEvS75F7s5FRW/XgWKFE2YKaUW
   +XuX3KtlW9lh0Y5nZRmBxpRbjrh0exDrse12wMQ5fIt846CjY9xjllP9DqGM1Dn/ANP/AP/Z
-ingredientes:
-- nome: peitos de frango
-  quantidade: '2'
-- nome: sal
-  quantidade: 1 c. sobremesa
-- nome: cebola congelada
-  quantidade: 3 c. sopa
-- nome: alho congelado
-  quantidade: 1 c. sopa
-- nome: azeite
-  quantidade: 3 c. sopa
-- nome: malagueta vermelha picada
-  quantidade: '1'
-- nome: mistura chinesa Pingo Doce
-  quantidade: 1 emb.
-- nome: frasco de molho de caril
-  quantidade: '1'
-- nome: lata de leite de coco
-  quantidade: '1'
-- nome: noodles de frango Pingo Doce
-  quantidade: 2 emb.
-- nome: molho de coentros
-  quantidade: '1'
-minutos-de-preparação: 20
-nome: Sopa de noodles picante
-número-de-doses: 4
-passos:
-- Coza os peitos de frango em água com metade do sal durante 10 min. Escorra-os, desfie-os
-  e reserve.
-- Num tacho, refogue a cebola e o alho em azeite. Junte a malagueta picada, deixe
-  cozinhar por 1 minuto e adicione a mistura chinesa e o restante sal, deixando cozinhar
-  mais 4 minutos.
-- Acrescente o molho de caril, o leite de coco e misture bem. Deixe ferver.
-- Envolva os noodles e deixe cozinhar conforme as instruções da embalagem.
-- Junte o frango desfiado e sirva polvilhado com coentros picados.
-valores-nutricionais:
-- dose: 569 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '28'
-- dose: 37,5 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '54'
-- dose: 22,8 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '114'
-- dose: 33,5 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 6,8 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
-- dose: 5,7 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '23'
-- dose: 24,6 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

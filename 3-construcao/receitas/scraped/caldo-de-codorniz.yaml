@@ -1,7 +1,76 @@
+
+nome: Caldo de codorniz
+
 dificuldade: fácil
+
+minutos-de-preparação: 75
+
+número-de-doses: 12
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
+
+ingredientes:
+- nome: codornizes
+  quantidade: 150 g
+- nome: cebola
+  quantidade: 60 g
+- nome: alho
+  quantidade: 2 dente
+- nome: sal
+  quantidade: 2 c. sobremesa
+- nome: pimenta
+  quantidade: qb grãos
+- nome: cenouras
+  quantidade: 300 g
+- nome: alho-francês
+  quantidade: 300 g
+- nome: cogumelos Pleurothus
+  quantidade: 240 g
+- nome: rebentos de soja
+  quantidade: 240 g
+- nome: aletria
+  quantidade: 180 g
+- nome: cebolinho
+  quantidade: 20 g
+
+valores-nutricionais:
+- dose: 135 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '7'
+- dose: 3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '4'
+- dose: 0,6 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '3'
+- dose: 16,1 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 2,6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '3'
+- dose: 3,1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 10,4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Limpe e lave bem as codornizes e coloque-as numa panela com água, a cebola cortada
+  e os dentes de alho esmagados. Tempere com uma colher de sobremesa de sal e a pimenta
+  e leve ao lume até as codornizes estarem cozidas.
+- Retire do lume, deixe arrefecer e limpe de peles e ossos, desfiando a carne. Coe
+  o caldo da cozedura com um passador para outro recipiente, coloque-o de novo na
+  panela e adicione a cenoura descascada e cortada em pequenos cubos e o alho-francês
+  em juliana.
+- Deixe ferver durante um minuto e introduza os cogumelos desfiados, os rebentos de
+  soja e a carne desfiada. Junte a aletria partida e ferva novamente 3 a 4 minutos.
+- Retire e tempere com o restante sal, adicionando o cebolinho, previamente picado.
+  Sirva bem quente, em prato fundo ou taça.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABQAAD/4QNnaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1950,63 +2019,3 @@ imagem: !!binary |
   KnYH4P8Ay6n/AAz/AMu/Cz/J/wDe/vf1cB7x/ai7OHy9y6H9tP8Aqty/+X8//UZu+f8A0/iqH98v
   8StXx/wmv438nxH/AGPHyxTa/MMlXvv9h3zZnt7+v4r0U29/gm1/5b/Dh/K/y/4P5fy8PLHaj5Qv
   mGb+67PM559/VUl//wAbDqlf/9k=
-ingredientes:
-- nome: codornizes
-  quantidade: 150 g
-- nome: cebola
-  quantidade: 60 g
-- nome: alho
-  quantidade: 2 dente
-- nome: sal
-  quantidade: 2 c. sobremesa
-- nome: pimenta
-  quantidade: qb grãos
-- nome: cenouras
-  quantidade: 300 g
-- nome: alho-francês
-  quantidade: 300 g
-- nome: cogumelos Pleurothus
-  quantidade: 240 g
-- nome: rebentos de soja
-  quantidade: 240 g
-- nome: aletria
-  quantidade: 180 g
-- nome: cebolinho
-  quantidade: 20 g
-minutos-de-preparação: 75
-nome: Caldo de codorniz
-número-de-doses: 12
-passos:
-- Limpe e lave bem as codornizes e coloque-as numa panela com água, a cebola cortada
-  e os dentes de alho esmagados. Tempere com uma colher de sobremesa de sal e a pimenta
-  e leve ao lume até as codornizes estarem cozidas.
-- Retire do lume, deixe arrefecer e limpe de peles e ossos, desfiando a carne. Coe
-  o caldo da cozedura com um passador para outro recipiente, coloque-o de novo na
-  panela e adicione a cenoura descascada e cortada em pequenos cubos e o alho-francês
-  em juliana.
-- Deixe ferver durante um minuto e introduza os cogumelos desfiados, os rebentos de
-  soja e a carne desfiada. Junte a aletria partida e ferva novamente 3 a 4 minutos.
-- Retire e tempere com o restante sal, adicionando o cebolinho, previamente picado.
-  Sirva bem quente, em prato fundo ou taça.
-valores-nutricionais:
-- dose: 135 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '7'
-- dose: 3 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '4'
-- dose: 0,6 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '3'
-- dose: 16,1 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 2,6 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
-- dose: 3,1 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '12'
-- dose: 10,4 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

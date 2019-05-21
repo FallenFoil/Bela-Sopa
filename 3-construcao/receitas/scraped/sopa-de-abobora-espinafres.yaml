@@ -1,7 +1,51 @@
+
+nome: Sopa de abóbora e espinafres
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 6
+
 etiquetas:
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: água
+  quantidade: 1 l
+- nome: sal
+  quantidade: 1 c. de chá
+- nome: alho-francês
+  quantidade: 150 g
+- nome: polpa de abóbora
+  quantidade: 300 g
+- nome: cuscuz
+  quantidade: 50 g
+- nome: espinafres
+  quantidade: 150 g
+
+valores-nutricionais:
+- dose: 37 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '2'
+- dose: 0,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '1'
+- dose: 0,1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '0'
+- dose: 0,7 g
+  nome: Sal
+  percentagem-do-vdr-adulto: '18'
+
+passos:
+- Coloque ao lume uma panela com a água.
+- Quando levantar fervura, adicione o sal, o alho-francês cortado às rodelas e a abóbora
+  em pedaços e deixe ferver durante 15 minutos.
+- Acrescente os cuscuz e os espinafres e deixe cozer mais 10 minutos.
+- Triture com a varinha mágica, deixe arrefecer e acondicione em recipiente apropriado.
+
 imagem: !!binary |
   /9j/4QAyRXhpZgAASUkqAAgAAAABAJiCAgAOAAAAGgAAAAAAAABMZW1vbm5pZXJmb3RvAAAA/+wA
   EUR1Y2t5AAEABAAAAFQAAP/hA/VodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tl
@@ -1876,38 +1920,3 @@ imagem: !!binary |
   /cv+Yvwo/wDyT/zh+I/0Lv8A8Z+tjH81fyYfzf8A5Xy9qaP+7+r+Vnlx6OXaro/EA/71ugn+Zf8A
   nW3/APj1/nnxH9A7uz9fGL5e/k3Pz/J/tvk7VUt8p/zPlPz5ZcehQb8Zn/OCy/8Aeh8B/wC8j/M3
   4R8P6/6XfjY8o/y5fyv/AJfzLL2T5z8nb83YuHP/ALYx13+Jdd/iX//Z
-ingredientes:
-- nome: água
-  quantidade: 1 l
-- nome: sal
-  quantidade: 1 c. de chá
-- nome: alho-francês
-  quantidade: 150 g
-- nome: polpa de abóbora
-  quantidade: 300 g
-- nome: cuscuz
-  quantidade: 50 g
-- nome: espinafres
-  quantidade: 150 g
-minutos-de-preparação: 30
-nome: Sopa de abóbora e espinafres
-número-de-doses: 6
-passos:
-- Coloque ao lume uma panela com a água.
-- Quando levantar fervura, adicione o sal, o alho-francês cortado às rodelas e a abóbora
-  em pedaços e deixe ferver durante 15 minutos.
-- Acrescente os cuscuz e os espinafres e deixe cozer mais 10 minutos.
-- Triture com a varinha mágica, deixe arrefecer e acondicione em recipiente apropriado.
-valores-nutricionais:
-- dose: 37 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '2'
-- dose: 0,5 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '1'
-- dose: 0,1 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '0'
-- dose: 0,7 g
-  nome: Sal
-  percentagem-do-vdr-adulto: '18'

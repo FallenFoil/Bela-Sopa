@@ -1,7 +1,101 @@
+
+nome: Sopa de cogumelos com crocantes de queijo
+
 dificuldade: média
+
+minutos-de-preparação: 70
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - vegetariana
+
+ingredientes:
+- nome: chalotas
+  quantidade: '125'
+- nome: dentes de alho
+  quantidade: '2'
+- nome: alho-francês
+  quantidade: 80 g
+- nome: azeite
+  quantidade: 2 c. sopa
+- nome: cenouras
+  quantidade: 250 g
+- nome: cogumelos Marron
+  quantidade: 200 g
+- nome: cogumelos brancos
+  quantidade: 200 g
+- nome: sal
+  quantidade: 2 c. café
+- nome: mistura de pimenta em moinho
+  quantidade: qb
+- nome: noz-moscada
+  quantidade: qb
+- nome: farinha tipo 55
+  quantidade: 3 c. sobremesa
+- nome: água
+  quantidade: 1,2 l
+- nome: amêndoa laminada
+  quantidade: 30 g
+- nome: queijo Emmental ralado em fios
+  quantidade: 40 g
+- nome: tomilho
+  quantidade: 1 c. sobremesa
+- nome: salsa picada (talos)
+  quantidade: 1 c. sopa
+- nome: sementes de sésamo Pura Vida
+  quantidade: 1 c. sobremesa
+- nome: creme culinário de soja
+  quantidade: 1 dl
+
+valores-nutricionais:
+- dose: 192 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '10'
+- dose: 13,7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '20'
+- dose: 3,0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '15'
+- dose: 9,6 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4,2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '5'
+- dose: 3,7 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '15'
+- dose: 6,4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque as chalotas e os dentes de alho e pique os finamente. Corte o alho-francês
+  em rodelas finas e lave-o em água corrente.
+- Deite o azeite numa panela, junte os legumes preparados e leve a cozinhar em lume
+  brando.
+- Pele a cenoura, corte-a em pedaços pequenos e deite-os na panela. Polvilhe com uma
+  colher de café de sal, tape e cozinhe suavemente cerca de 30 minutos.
+- Limpe os cogumelos com papel de cozinha, pique-os e coloque-os na panela. Salpique
+  com o restante sal, um pouco de pimenta e noz-moscada, tape e cozinhe em lume brando
+  mais 20 minutos. Polvilhe com a farinha, mexa bem, adicione a água e deixe ferver
+  suavemente 15 a 20 minutos, mexendo de vez em quando.
+- Pré-aqueça o forno a 180° C.
+- Misture a amêndoa com o queijo, o tomilho, os talos de salsa picados e as sementes
+  de sésamo. Espalhe a mistura em 12 pequenos montes, bem afastadas entre si, sobre
+  um tabuleiro do forno forrado com papel vegetal.
+- Espalme-os com uma colher e leve ao forno cerca de 10 minutos ou até o queijo derreter
+  e alourar. Retire do forno e deixe arrefecer.
+- Reduza a sopa a puré com a varinha mágica ou no copo liquidificador. Se preferir
+  ainda mais aveludada, coe-a através de um passador de rede fina.
+- Reserve uma colher de sobremesa do creme culinário de soja e junte o restante à
+  sopa. Mexa e leve ao lume até levantar fervura.
+- Sirva o creme decorado com gotas do creme culinário reservado. Polvilhe com uma
+  pitada de noz-moscada e acompanhe com os crocantes de queijo e amêndoa.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -604,88 +698,3 @@ imagem: !!binary |
   jwx42dkjskdrR6ht6Kcl7jk3zpbL1oo7WLG2LElyN0qQ3oluKS4NkxjYuT3HpXyaK0o7UeGmeEeC
   zwWeCzwDwEeChYonYkUloxvXjcfKJCeyZLk9/I9K+WijY2NvkvRoexe5LdD4F+05Z73p3LR6UUc6
   VrfmpGxfnfkexJ2VuVsfykf2sT2FpYhiEe+r1XlXmXkfklxquD+UjwxCPYYz/9k=
-ingredientes:
-- nome: chalotas
-  quantidade: '125'
-- nome: dentes de alho
-  quantidade: '2'
-- nome: alho-francês
-  quantidade: 80 g
-- nome: azeite
-  quantidade: 2 c. sopa
-- nome: cenouras
-  quantidade: 250 g
-- nome: cogumelos Marron
-  quantidade: 200 g
-- nome: cogumelos brancos
-  quantidade: 200 g
-- nome: sal
-  quantidade: 2 c. café
-- nome: mistura de pimenta em moinho
-  quantidade: qb
-- nome: noz-moscada
-  quantidade: qb
-- nome: farinha tipo 55
-  quantidade: 3 c. sobremesa
-- nome: água
-  quantidade: 1,2 l
-- nome: amêndoa laminada
-  quantidade: 30 g
-- nome: queijo Emmental ralado em fios
-  quantidade: 40 g
-- nome: tomilho
-  quantidade: 1 c. sobremesa
-- nome: salsa picada (talos)
-  quantidade: 1 c. sopa
-- nome: sementes de sésamo Pura Vida
-  quantidade: 1 c. sobremesa
-- nome: creme culinário de soja
-  quantidade: 1 dl
-minutos-de-preparação: 70
-nome: Sopa de cogumelos com crocantes de queijo
-número-de-doses: 6
-passos:
-- Descasque as chalotas e os dentes de alho e pique os finamente. Corte o alho-francês
-  em rodelas finas e lave-o em água corrente.
-- Deite o azeite numa panela, junte os legumes preparados e leve a cozinhar em lume
-  brando.
-- Pele a cenoura, corte-a em pedaços pequenos e deite-os na panela. Polvilhe com uma
-  colher de café de sal, tape e cozinhe suavemente cerca de 30 minutos.
-- Limpe os cogumelos com papel de cozinha, pique-os e coloque-os na panela. Salpique
-  com o restante sal, um pouco de pimenta e noz-moscada, tape e cozinhe em lume brando
-  mais 20 minutos. Polvilhe com a farinha, mexa bem, adicione a água e deixe ferver
-  suavemente 15 a 20 minutos, mexendo de vez em quando.
-- Pré-aqueça o forno a 180° C.
-- Misture a amêndoa com o queijo, o tomilho, os talos de salsa picados e as sementes
-  de sésamo. Espalhe a mistura em 12 pequenos montes, bem afastadas entre si, sobre
-  um tabuleiro do forno forrado com papel vegetal.
-- Espalme-os com uma colher e leve ao forno cerca de 10 minutos ou até o queijo derreter
-  e alourar. Retire do forno e deixe arrefecer.
-- Reduza a sopa a puré com a varinha mágica ou no copo liquidificador. Se preferir
-  ainda mais aveludada, coe-a através de um passador de rede fina.
-- Reserve uma colher de sobremesa do creme culinário de soja e junte o restante à
-  sopa. Mexa e leve ao lume até levantar fervura.
-- Sirva o creme decorado com gotas do creme culinário reservado. Polvilhe com uma
-  pitada de noz-moscada e acompanhe com os crocantes de queijo e amêndoa.
-valores-nutricionais:
-- dose: 192 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '10'
-- dose: 13,7 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '20'
-- dose: 3,0 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '15'
-- dose: 9,6 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 4,2 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '5'
-- dose: 3,7 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '15'
-- dose: 6,4 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

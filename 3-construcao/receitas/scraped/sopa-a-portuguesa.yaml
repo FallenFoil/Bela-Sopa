@@ -1,8 +1,67 @@
+
+nome: Sopa à portuguesa
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 8
+
 etiquetas:
 - sabores mediterrânicos
 - sem leite
 - vegan
+
+ingredientes:
+- nome: cebola em cubos congelada Pingo Doce
+  quantidade: 150 g
+- nome: azeite
+  quantidade: 3 c. sopa
+- nome: batata
+  quantidade: 300 g
+- nome: abóbora
+  quantidade: 300 g
+- nome: mistura de legumes emb. para sopa portuguesa Pingo Doce
+  quantidade: '1'
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: massa cuscuz
+  quantidade: 50 g
+
+valores-nutricionais:
+- dose: 105 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '5'
+- dose: 4,2 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '6'
+- dose: 0,7 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '4'
+- dose: 13,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 3,8 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '4'
+- dose: 2,7 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '11'
+- dose: 2,8 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Numa panela, leve ao lume a cebola com o azeite.
+- Descasque as batatas e a abóbora, corte-as em cubos e junte à cebola. Deixe suar
+  com a panela tapada, durante 5 minutos.
+- Junte a mistura de legumes e tempere com o sal. Regue com água a ferver e deixe
+  cozer, durante cerca de 15 minutos.
+- Retire com uma escumadeira cerca de 1/3 dos legumes cozidos e reserve. Triture os
+  restantes com a varinha mágica até obter um creme.
+- Adicione a massa e deixe ferver mais 7 minutos.
+- Quando estiver pronta, introduza os legumes cozidos reservados e mexa.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAgEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
   AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEB
@@ -5207,53 +5266,3 @@ imagem: !!binary |
   i6dZqs0O6YeVKohAkjwAPLcMuABiuDLEqjrSqJVJKSSlNc7Sbgmk5XaTTafdM+jn+6UFS/dq1R2p
   +4rqhUknaNldSSafRpNao+4v7D0T/oD6X/4L7T/4zX6J9QwP/QHhP/Cej/8AIHwX9qZn/wBDHHf+
   FeI/+WD/2Q==
-ingredientes:
-- nome: cebola em cubos congelada Pingo Doce
-  quantidade: 150 g
-- nome: azeite
-  quantidade: 3 c. sopa
-- nome: batata
-  quantidade: 300 g
-- nome: abóbora
-  quantidade: 300 g
-- nome: mistura de legumes emb. para sopa portuguesa Pingo Doce
-  quantidade: '1'
-- nome: sal
-  quantidade: 1 c. sobremesa
-- nome: massa cuscuz
-  quantidade: 50 g
-minutos-de-preparação: 30
-nome: Sopa à portuguesa
-número-de-doses: 8
-passos:
-- Numa panela, leve ao lume a cebola com o azeite.
-- Descasque as batatas e a abóbora, corte-as em cubos e junte à cebola. Deixe suar
-  com a panela tapada, durante 5 minutos.
-- Junte a mistura de legumes e tempere com o sal. Regue com água a ferver e deixe
-  cozer, durante cerca de 15 minutos.
-- Retire com uma escumadeira cerca de 1/3 dos legumes cozidos e reserve. Triture os
-  restantes com a varinha mágica até obter um creme.
-- Adicione a massa e deixe ferver mais 7 minutos.
-- Quando estiver pronta, introduza os legumes cozidos reservados e mexa.
-valores-nutricionais:
-- dose: 105 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '5'
-- dose: 4,2 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '6'
-- dose: 0,7 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '4'
-- dose: 13,5 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 3,8 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
-- dose: 2,7 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '11'
-- dose: 2,8 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

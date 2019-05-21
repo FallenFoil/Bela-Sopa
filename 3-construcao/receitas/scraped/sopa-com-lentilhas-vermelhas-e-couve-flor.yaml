@@ -1,9 +1,69 @@
+
+nome: Sopa com lentilhas vermelhas e couve-flor
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegan
+
+ingredientes:
+- nome: cebola em cubos congelada Pingo Doce
+  quantidade: 150 g
+- nome: azeite
+  quantidade: 3 c. sopa
+- nome: couve-flor
+  quantidade: 600 g
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: água
+  quantidade: 1,2 L
+- nome: lentilhas vermelhas
+  quantidade: 120 g
+- nome: emb. mistura de legumes para Sopa do Campo Pingo Doce
+  quantidade: '1'
+
+valores-nutricionais:
+- dose: 170 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 6,3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '9'
+- dose: 1,1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 17,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5,5 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 5,2 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '21'
+- dose: 9,2 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Leve a cebola ao lume numa panela com 2 colheres de sopa de azeite. Deixe cozinhar
+  sobre lume moderado.
+- Lave a couve-flor e corte-a em pequenos ramos. Junte-a à cebola, tempere com o sal
+  e adicione a água a ferver (até cobrir os legumes).
+- Quando ferver, junte as lentilhas, previamente passadas por água, tape a panela
+  e deixe cozinhar durante cerca de 15 minutos, ou até a couve-flor estar tenra.
+- Triture a sopa com a varinha mágica e leve de novo ao lume.
+- Quando ferver, adicione a mistura de legumes. Mexa e deixe ferver destapado durante
+  cerca de 8 minutos.
+- Depois de pronta, regue-a com o restante azeite.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QQJaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1530,54 +1590,3 @@ imagem: !!binary |
   35uuunTuwrMeH+X11+nX592AE9i1Ty/P+Z88ZbgexZF549PP9X/rd+AEJi0l8vk/3vl6YPcUr5Dz
   L/L0Pl8v/o7MUexP8wFv5v8AvvN8tR5f9NMKh2WS+Uf8x9fl8mo/l/24bt+IFuTg/wBz/P8AKv8A
   M11P7cF7hK8YB//Z
-ingredientes:
-- nome: cebola em cubos congelada Pingo Doce
-  quantidade: 150 g
-- nome: azeite
-  quantidade: 3 c. sopa
-- nome: couve-flor
-  quantidade: 600 g
-- nome: sal
-  quantidade: 1 c. sopa
-- nome: água
-  quantidade: 1,2 L
-- nome: lentilhas vermelhas
-  quantidade: 120 g
-- nome: emb. mistura de legumes para Sopa do Campo Pingo Doce
-  quantidade: '1'
-minutos-de-preparação: 30
-nome: Sopa com lentilhas vermelhas e couve-flor
-número-de-doses: 6
-passos:
-- Leve a cebola ao lume numa panela com 2 colheres de sopa de azeite. Deixe cozinhar
-  sobre lume moderado.
-- Lave a couve-flor e corte-a em pequenos ramos. Junte-a à cebola, tempere com o sal
-  e adicione a água a ferver (até cobrir os legumes).
-- Quando ferver, junte as lentilhas, previamente passadas por água, tape a panela
-  e deixe cozinhar durante cerca de 15 minutos, ou até a couve-flor estar tenra.
-- Triture a sopa com a varinha mágica e leve de novo ao lume.
-- Quando ferver, adicione a mistura de legumes. Mexa e deixe ferver destapado durante
-  cerca de 8 minutos.
-- Depois de pronta, regue-a com o restante azeite.
-valores-nutricionais:
-- dose: 170 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '8'
-- dose: 6,3 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '9'
-- dose: 1,1 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
-- dose: 17,5 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 5,5 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
-- dose: 5,2 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '21'
-- dose: 9,2 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

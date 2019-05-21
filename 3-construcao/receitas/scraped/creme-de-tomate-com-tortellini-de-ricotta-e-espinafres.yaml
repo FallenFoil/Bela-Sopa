@@ -1,7 +1,80 @@
+
+nome: Creme de tomate com tortellini de ricotta e espinafres
+
 dificuldade: fácil
+
+minutos-de-preparação: 65
+
+número-de-doses: 8
+
 etiquetas:
 - sabores mediterrânicos
 - vegetariana
+
+ingredientes:
+- nome: cebola doce
+  quantidade: 200 g
+- nome: bolbo de funcho
+  quantidade: '1'
+- nome: alho
+  quantidade: 4 dente
+- nome: azeite
+  quantidade: 3 c. sopa
+- nome: batata-doce
+  quantidade: 400 g
+- nome: tomate em pedaços
+  quantidade: 390 g
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: água
+  quantidade: 1,8 l
+- nome: tortellini fresco com espinafres e ricotta
+  quantidade: 250 g
+- nome: espinafres em folha
+  quantidade: 1 emb.
+- nome: queijo parmesão
+  quantidade: 160 g
+- nome: pimenta em pó
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 262 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '13'
+- dose: 11,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '16'
+- dose: 4,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '24'
+- dose: 25,7 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5,2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 3,8 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '15'
+- dose: 12,8 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque as cebolas e corte-as em gomos finos. Retire as folhas verdes do funcho
+  e reserve-as. Elimine os talos fibrosos, corte o restante funcho em lâminas, lave
+  e escorra. Esmague os dentes de alho e retire-lhes a casca.
+- Coloque o azeite numa panela e leve-o ao lume com os legumes preparados. Tape e
+  deixe cozinhar em lume brando cerca de cinco minutos ou até estarem macios.
+- Adicione as batatas doces, descascadas e cortadas em cubos pequenos, o tomate em
+  pedaços e o sal. Volte a tapar, deixando cozinhar lentamente cerca de 30 minutos
+  e tendo o cuidado de mexer de vez em quando.
+- Ferva a água e adicione metade, triturando tudo com a varinha mágica. Junte a restante
+  água e, assim que retomar fervura, introduza os tortellini, deixando cozer cerca
+  de cinco minutos. Junte as folhas de espinafres, misture bem e retire do lume.
+- Sirva a sopa salpicada com as folhas verdes do funcho reservadas e as lascas de
+  queijo Parmesão. Salpique com pimenta.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -2215,67 +2288,3 @@ imagem: !!binary |
   m7iL/wCJC9v/ALgPR609P18P6PqxkOtst90673Y2t4p22D+5yej+8H0+v0n9v4fji3Q/q5eCQqXi
   /wBvK21effc3/wC5O7en+5W/63HgP0vh5/Xj2XSv7Deawdd/edawSXf/APEYfR/eDx9Pp8fh+H4Y
   eNyWanH/APwsCj7V/9k=
-ingredientes:
-- nome: cebola doce
-  quantidade: 200 g
-- nome: bolbo de funcho
-  quantidade: '1'
-- nome: alho
-  quantidade: 4 dente
-- nome: azeite
-  quantidade: 3 c. sopa
-- nome: batata-doce
-  quantidade: 400 g
-- nome: tomate em pedaços
-  quantidade: 390 g
-- nome: sal
-  quantidade: 1 c. sopa
-- nome: água
-  quantidade: 1,8 l
-- nome: tortellini fresco com espinafres e ricotta
-  quantidade: 250 g
-- nome: espinafres em folha
-  quantidade: 1 emb.
-- nome: queijo parmesão
-  quantidade: 160 g
-- nome: pimenta em pó
-  quantidade: qb
-minutos-de-preparação: 65
-nome: Creme de tomate com tortellini de ricotta e espinafres
-número-de-doses: 8
-passos:
-- Descasque as cebolas e corte-as em gomos finos. Retire as folhas verdes do funcho
-  e reserve-as. Elimine os talos fibrosos, corte o restante funcho em lâminas, lave
-  e escorra. Esmague os dentes de alho e retire-lhes a casca.
-- Coloque o azeite numa panela e leve-o ao lume com os legumes preparados. Tape e
-  deixe cozinhar em lume brando cerca de cinco minutos ou até estarem macios.
-- Adicione as batatas doces, descascadas e cortadas em cubos pequenos, o tomate em
-  pedaços e o sal. Volte a tapar, deixando cozinhar lentamente cerca de 30 minutos
-  e tendo o cuidado de mexer de vez em quando.
-- Ferva a água e adicione metade, triturando tudo com a varinha mágica. Junte a restante
-  água e, assim que retomar fervura, introduza os tortellini, deixando cozer cerca
-  de cinco minutos. Junte as folhas de espinafres, misture bem e retire do lume.
-- Sirva a sopa salpicada com as folhas verdes do funcho reservadas e as lascas de
-  queijo Parmesão. Salpique com pimenta.
-valores-nutricionais:
-- dose: 262 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '13'
-- dose: 11,5 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '16'
-- dose: 4,8 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '24'
-- dose: 25,7 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 5,2 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
-- dose: 3,8 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '15'
-- dose: 12,8 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

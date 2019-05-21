@@ -1,6 +1,54 @@
+
+nome: Sopa fria de melão
+
 dificuldade: fácil
+
+minutos-de-preparação: 40
+
+número-de-doses: 4
+
 etiquetas:
 - sem glúten
+
+ingredientes:
+- nome: polpa de melão
+  quantidade: 700 g
+- nome: iogurte natural
+  quantidade: '1'
+- nome: sal
+  quantidade: 1 c. de café
+- nome: vinho do Porto
+  quantidade: 0,5 dl
+- nome: fatias finas de presunto magro
+  quantidade: '2'
+- nome: pimenta preta
+  quantidade: qb
+- nome: cebolinho
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 94 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '5'
+- dose: 0,8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '1'
+- dose: 13,8 g
+  nome: Açúcar
+  percentagem-do-vdr-adulto: '15'
+- dose: 1,4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '1'
+
+passos:
+- Parta o melão ao meio e limpe-o de casca e sementes.
+- Corte a polpa em cubos e coloque-os no copo do liquidificador. Acrescente o iogurte
+  e misture muito bem, até obter um creme.
+- Retire do copo para uma tigela e acrescente o sal e o Vinho do Porto. Mexa bem.
+- Corte o presunto em tiras fininhas e salteie por curtos instantes numa frigideira
+  antiaderente, sem acrescentar qualquer gordura. Deite em papel absorvente.
+- Divida a sopa por taças, enfeite com as tiras de presunto e o cebolinho.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1982,42 +2030,3 @@ imagem: !!binary |
   4bvUjmnEfwP8PwSfFx4H9BhjI5apHM4xy7kK/wA9OHxRf73wj4cGvePQoxj4IrfyDw+H8PuHH2fv
   xM5J6Y55YyRR/lhw4D/e4jhiMfwCJd+Mei5/5b/H8K8OHxc/Z+/E5ZHPIJzx5pHm/H7P04YoGZUe
   KK/xHj9vHEZZ64ZIo3/zMR/+JT8V/9k=
-ingredientes:
-- nome: polpa de melão
-  quantidade: 700 g
-- nome: iogurte natural
-  quantidade: '1'
-- nome: sal
-  quantidade: 1 c. de café
-- nome: vinho do Porto
-  quantidade: 0,5 dl
-- nome: fatias finas de presunto magro
-  quantidade: '2'
-- nome: pimenta preta
-  quantidade: qb
-- nome: cebolinho
-  quantidade: qb
-minutos-de-preparação: 40
-nome: Sopa fria de melão
-número-de-doses: 4
-passos:
-- Parta o melão ao meio e limpe-o de casca e sementes.
-- Corte a polpa em cubos e coloque-os no copo do liquidificador. Acrescente o iogurte
-  e misture muito bem, até obter um creme.
-- Retire do copo para uma tigela e acrescente o sal e o Vinho do Porto. Mexa bem.
-- Corte o presunto em tiras fininhas e salteie por curtos instantes numa frigideira
-  antiaderente, sem acrescentar qualquer gordura. Deite em papel absorvente.
-- Divida a sopa por taças, enfeite com as tiras de presunto e o cebolinho.
-valores-nutricionais:
-- dose: 94 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '5'
-- dose: 0,8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '1'
-- dose: 13,8 g
-  nome: Açúcar
-  percentagem-do-vdr-adulto: '15'
-- dose: 1,4 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '1'

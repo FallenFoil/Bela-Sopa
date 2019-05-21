@@ -1,8 +1,75 @@
+
+nome: Sopa de courgettes com espargos
+
 dificuldade: fácil
+
+minutos-de-preparação: 50
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - vegetariana
+
+ingredientes:
+- nome: espargos verdes
+  quantidade: 400 g
+- nome: água
+  quantidade: 1 l
+- nome: sal
+  quantidade: qb
+- nome: cebola média
+  quantidade: '1'
+- nome: alho-francês em rodelas
+  quantidade: 200 g
+- nome: nabo médio
+  quantidade: '1'
+- nome: courgette
+  quantidade: 600 g
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: queijo tipo atabafado
+  quantidade: 1/2
+
+valores-nutricionais:
+- dose: 205 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '10'
+- dose: 14 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '19'
+- dose: 5 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '23'
+- dose: 10 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 9 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '10'
+- dose: 5 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '20'
+- dose: 11 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Corte as bases dos espargos e rejeite-as. Coza os espargos numa panela com água
+  a ferver temperada com 1 colher de chá de sal.
+- Descasque e pique a cebola, lave e escorra as rodelas de alho francês. Descasque
+  o nabo e lave as courgettes. Corte em pedaços pequenos.
+- Numa panela, deite 2 colheres de sopa de azeite, a cebola, o alho francês, o nabo
+  e as courgettes. Mexa, salpique com 1 colher de chá de sal e leve a suar sobre lume
+  muito brando.
+- Quando os legumes estiverem moles, junte-lhes a água da cozedura dos espargos e
+  os espargos cortados em pequenos troços (reserve as pontas espigadas para juntar
+  à sopa no final). Mexa e deixe cozer até os legumes estarem tenros.
+- Triture a sopa com a varinha mágica, junte-lhe um pouco mais de água a ferver se
+  achar demasiado espessa e volte a triturar. Adicione o restante azeite e sirva com
+  as pontas espigadas dos espargos e o queijo cortado em cubinhos à parte, numa taça.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1147,61 +1214,3 @@ imagem: !!binary |
   t9fX14HTj6+v4DrB1Z8ug18R8tM18DHB/wCow/8A8yPl+b5un491U+DPyjdY/wAsP/4j9PH8n+Gv
   mdn7/HPj/g1LML/qD/O+cfJrqfmrJ/XyU+DSYH/ucX835Pya6/mr1FxXn/n6/wCTG3Iy/wD9Sur/
   AFJP/9k=
-ingredientes:
-- nome: espargos verdes
-  quantidade: 400 g
-- nome: água
-  quantidade: 1 l
-- nome: sal
-  quantidade: qb
-- nome: cebola média
-  quantidade: '1'
-- nome: alho-francês em rodelas
-  quantidade: 200 g
-- nome: nabo médio
-  quantidade: '1'
-- nome: courgette
-  quantidade: 600 g
-- nome: azeite
-  quantidade: 3 c. de sopa
-- nome: queijo tipo atabafado
-  quantidade: 1/2
-minutos-de-preparação: 50
-nome: Sopa de courgettes com espargos
-número-de-doses: 4
-passos:
-- Corte as bases dos espargos e rejeite-as. Coza os espargos numa panela com água
-  a ferver temperada com 1 colher de chá de sal.
-- Descasque e pique a cebola, lave e escorra as rodelas de alho francês. Descasque
-  o nabo e lave as courgettes. Corte em pedaços pequenos.
-- Numa panela, deite 2 colheres de sopa de azeite, a cebola, o alho francês, o nabo
-  e as courgettes. Mexa, salpique com 1 colher de chá de sal e leve a suar sobre lume
-  muito brando.
-- Quando os legumes estiverem moles, junte-lhes a água da cozedura dos espargos e
-  os espargos cortados em pequenos troços (reserve as pontas espigadas para juntar
-  à sopa no final). Mexa e deixe cozer até os legumes estarem tenros.
-- Triture a sopa com a varinha mágica, junte-lhe um pouco mais de água a ferver se
-  achar demasiado espessa e volte a triturar. Adicione o restante azeite e sirva com
-  as pontas espigadas dos espargos e o queijo cortado em cubinhos à parte, numa taça.
-valores-nutricionais:
-- dose: 205 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '10'
-- dose: 14 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '19'
-- dose: 5 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '23'
-- dose: 10 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 9 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '10'
-- dose: 5 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '20'
-- dose: 11 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

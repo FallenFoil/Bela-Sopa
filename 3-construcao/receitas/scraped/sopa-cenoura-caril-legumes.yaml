@@ -1,7 +1,79 @@
+
+nome: Sopa de cenoura, caril e legumes
+
 dificuldade: fácil
+
+minutos-de-preparação: 90
+
+número-de-doses: 6
+
 etiquetas:
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: cenoura
+  quantidade: 400 g
+- nome: sal
+  quantidade: 1 c. sobremesa
+- nome: azeite
+  quantidade: 2 c. sopa + 1 c. sobremesa
+- nome: chalotas
+  quantidade: '2'
+- nome: caril em pó
+  quantidade: 1 c. chá
+- nome: açafrão-das-índias
+  quantidade: 1 c. chá
+- nome: tomate maduro
+  quantidade: 1 kg
+- nome: courgette pequena
+  quantidade: '1'
+- nome: beringela pequena
+  quantidade: '1'
+- nome: tomates cherry
+  quantidade: '12'
+- nome: coentros
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 115 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '6'
+- dose: 5,6 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '8'
+- dose: 1,1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 12,1 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 11,7 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '13'
+- dose: 4,4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '18'
+- dose: 2,5 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Corte as cenoura em rodelas, coloque-as numa panela, cubra com água, tempere com
+  o sal e leve ao lume até estarem macias.
+- Triture com a varinha mágica até obter um puré e reserve.
+- Aqueça duas colheres de sopa de azeite numa frigideira, junte as chalotas picadas
+  e deixe refogar. Adicione o caril e o açafrão-das-índias, mexa bem e retire do lume.
+- Retire a pele e as sementes do tomate, corte-o em pedaços e coloque-o no copo do
+  liquidificador ou no robot de cozinha.
+- Junte às chalotas refogadas água suficiente para que a sopa fique com a consistência
+  pretendida e triture. Adicione o preparado ao puré de cenoura e leve ao frigorífico.
+- Corte a courgette em rodelas e a beringela em cubos e grelhe, ou salteie, numa frigideira,
+  com o restante azeite e o tomate cherry.
+- Disponha os legumes, alternando, em palitos de espetadas e reserve.
+- Na altura de servir, divida a sopa pelas tigelas, colocando por cima uma espetada
+  de legumes. Polvilhe com coentros picados.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM
   DAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8f
@@ -1256,66 +1328,3 @@ imagem: !!binary |
   Zv8A0R/dbzh9f/rPif0Z/md+Pw9d/NGpr/7S3esn6jX9Yn9kPLzP7f8A+Cb/AOy/zPuPqv0j++E9
   e39Op/Wv+n/M38f9bj/E+sffB99+39Z/b/n46hr8fKeBPoHl8T6D5/8AieBzv/M+z/5/wn2H+/HU
   +2/c35j+k+0/pvxn9fa/Tqfu87mv9Ck/p9mfi+Lzn9g/0pq9k+uZfaP93M+p/9k=
-ingredientes:
-- nome: cenoura
-  quantidade: 400 g
-- nome: sal
-  quantidade: 1 c. sobremesa
-- nome: azeite
-  quantidade: 2 c. sopa + 1 c. sobremesa
-- nome: chalotas
-  quantidade: '2'
-- nome: caril em pó
-  quantidade: 1 c. chá
-- nome: açafrão-das-índias
-  quantidade: 1 c. chá
-- nome: tomate maduro
-  quantidade: 1 kg
-- nome: courgette pequena
-  quantidade: '1'
-- nome: beringela pequena
-  quantidade: '1'
-- nome: tomates cherry
-  quantidade: '12'
-- nome: coentros
-  quantidade: qb
-minutos-de-preparação: 90
-nome: Sopa de cenoura, caril e legumes
-número-de-doses: 6
-passos:
-- Corte as cenoura em rodelas, coloque-as numa panela, cubra com água, tempere com
-  o sal e leve ao lume até estarem macias.
-- Triture com a varinha mágica até obter um puré e reserve.
-- Aqueça duas colheres de sopa de azeite numa frigideira, junte as chalotas picadas
-  e deixe refogar. Adicione o caril e o açafrão-das-índias, mexa bem e retire do lume.
-- Retire a pele e as sementes do tomate, corte-o em pedaços e coloque-o no copo do
-  liquidificador ou no robot de cozinha.
-- Junte às chalotas refogadas água suficiente para que a sopa fique com a consistência
-  pretendida e triture. Adicione o preparado ao puré de cenoura e leve ao frigorífico.
-- Corte a courgette em rodelas e a beringela em cubos e grelhe, ou salteie, numa frigideira,
-  com o restante azeite e o tomate cherry.
-- Disponha os legumes, alternando, em palitos de espetadas e reserve.
-- Na altura de servir, divida a sopa pelas tigelas, colocando por cima uma espetada
-  de legumes. Polvilhe com coentros picados.
-valores-nutricionais:
-- dose: 115 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '6'
-- dose: 5,6 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '8'
-- dose: 1,1 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
-- dose: 12,1 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 11,7 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '13'
-- dose: 4,4 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '18'
-- dose: 2,5 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

@@ -1,7 +1,78 @@
+
+nome: Sopa de caril com camarão
+
 dificuldade: média
+
+minutos-de-preparação: 50
+
+número-de-doses: 8
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
+
+ingredientes:
+- nome: camarão cozido
+  quantidade: 400 g
+- nome: manga verde
+  quantidade: 500 g
+- nome: coco ralado
+  quantidade: 50 g
+- nome: coentros
+  quantidade: 40 g
+- nome: malagueta vermelha
+  quantidade: '1'
+- nome: óleo de amendoim
+  quantidade: 2 c. sopa
+- nome: cebolas
+  quantidade: 200 g
+- nome: louro
+  quantidade: 2 folhas
+- nome: açafrão
+  quantidade: 1 c. sopa
+- nome: caril em pó
+  quantidade: 1 c. sopa
+- nome: leite coco
+  quantidade: 1,8 dl
+- nome: sal
+  quantidade: 2 c. sobremesa
+
+valores-nutricionais:
+- dose: 168 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 7,4 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 4,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '24'
+- dose: 12,1 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 10,5 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '12'
+- dose: 3,1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '12'
+- dose: 12,3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descasque o camarão, preservando a cauda. Coloque as cascas num tacho com água e
+  ferva lentamente entre 5 a 10 minutos.
+- Retire do lume, coe o caldo por um passador e reserve.
+- Corte as mangas com casca em pequenos cubos e reserve. Junte o côco ralado, os coentros
+  e a malagueta, limpa de sementes, e triture tudo no liquidificador ou com a ajuda
+  da varinha mágica.
+- Aqueça o óleo numa frigideira e aloure a cebola cortada em rodelas finas. Adicione
+  as folhas de louro, a mistura de coco ralado, o açafrão, o caril em pó, o leite
+  de coco e um pouco do caldo da cozedura das cascas de camarão.
+- Junte as mangas cortadas e a restante malagueta laminada, deixe levantar fervura
+  e introduza o camarão cozido. Tempere com sal e sirva de imediato.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1662,65 +1733,3 @@ imagem: !!binary |
   yDHM7DrD7X/p66/t7cDnxxwyLInN/wBM3y6j/Vqfl7/5sR8hYZjN1qv9T5F+bX5ThVmWP7UErv5x
   roPn/qfKPm/9nuxY8yslz/8A6ei/6j/r5tf+i/ox/wBP/wC2/m/y7cKyR5+BXR/1PTT8H+n8OJx7
   +PAMhwf9O3zafh9g1xFyFXHvORfMNfx/6Pd3YV5ez5+8dHf/AJ2J/wCgB//Z
-ingredientes:
-- nome: camarão cozido
-  quantidade: 400 g
-- nome: manga verde
-  quantidade: 500 g
-- nome: coco ralado
-  quantidade: 50 g
-- nome: coentros
-  quantidade: 40 g
-- nome: malagueta vermelha
-  quantidade: '1'
-- nome: óleo de amendoim
-  quantidade: 2 c. sopa
-- nome: cebolas
-  quantidade: 200 g
-- nome: louro
-  quantidade: 2 folhas
-- nome: açafrão
-  quantidade: 1 c. sopa
-- nome: caril em pó
-  quantidade: 1 c. sopa
-- nome: leite coco
-  quantidade: 1,8 dl
-- nome: sal
-  quantidade: 2 c. sobremesa
-minutos-de-preparação: 50
-nome: Sopa de caril com camarão
-número-de-doses: 8
-passos:
-- Descasque o camarão, preservando a cauda. Coloque as cascas num tacho com água e
-  ferva lentamente entre 5 a 10 minutos.
-- Retire do lume, coe o caldo por um passador e reserve.
-- Corte as mangas com casca em pequenos cubos e reserve. Junte o côco ralado, os coentros
-  e a malagueta, limpa de sementes, e triture tudo no liquidificador ou com a ajuda
-  da varinha mágica.
-- Aqueça o óleo numa frigideira e aloure a cebola cortada em rodelas finas. Adicione
-  as folhas de louro, a mistura de coco ralado, o açafrão, o caril em pó, o leite
-  de coco e um pouco do caldo da cozedura das cascas de camarão.
-- Junte as mangas cortadas e a restante malagueta laminada, deixe levantar fervura
-  e introduza o camarão cozido. Tempere com sal e sirva de imediato.
-valores-nutricionais:
-- dose: 168 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '8'
-- dose: 7,4 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '11'
-- dose: 4,8 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '24'
-- dose: 12,1 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 10,5 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '12'
-- dose: 3,1 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '12'
-- dose: 12,3 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

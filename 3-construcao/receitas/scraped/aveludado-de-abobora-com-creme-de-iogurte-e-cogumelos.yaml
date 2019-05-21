@@ -1,6 +1,76 @@
+
+nome: Aveludado de abóbora com creme de iogurte e cogumelos
+
 dificuldade: fácil
+
+minutos-de-preparação: 20
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
+
+ingredientes:
+- nome: cogumelos congelados Pingo Doce
+  quantidade: 400 g
+- nome: polpa de abóbora
+  quantidade: 1 kg
+- nome: batatas
+  quantidade: '3'
+- nome: sal
+  quantidade: qb
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: pimenta moída
+  quantidade: qb
+- nome: coentros
+  quantidade: qb
+- nome: dente de alho
+  quantidade: '1'
+- nome: iogurte grego Pingo Doce
+  quantidade: 200 g
+- nome: lascas de queijo parmesão
+  quantidade: 60 g
+
+valores-nutricionais:
+- dose: 168 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '8'
+- dose: 8,1 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '12'
+- dose: 4,2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '21'
+- dose: 14,9 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 5,2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '6'
+- dose: 4 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '16'
+- dose: 7,9 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Descongele os cogumelos e reserve.
+- Numa panela, coza os cubos de polpa de abóbora e de batata. Tempere com azeite,
+  sal e pimenta.
+- Com a varinha mágica, triture até obter um creme homogéneo. Adicione uma mão-cheia
+  de folhas de coentros (reserve algumas) e volte a triturar.
+- Numa frigideira antiaderente, ferva o restante azeite e o dente de alho picado.
+  Junte os cogumelos, tempere com sal e salteie durante 7 minutos.
+- Retire e deixe arrefecer.
+- Num robot de cozinha, triture os cogumelos (reserve alguns para decoração) com o
+  iogurte.
+- Distribua o aveludado pelos pratos.
+- Por cima, coloque o creme de iogurte, os cogumelos reservados, as lascas de parmesão
+  e os coentros picados.
+- Sirva de imediato.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -834,64 +904,3 @@ imagem: !!binary |
   yIMabyQVCqZHGMrCwCplhllKIVH5F8KcJ9rK5c0eXHEDDz00sP7UodN1tywixCHUfkfHZROOF89C
   oCPFzPBLBfUdcv2i9lMLNC2JjuqHpOtR8hRA8jYHwA5F2lhYL6j7d0ZaZY5vH1DQ/NUDCe/j4X8g
   8eUQet+lsY6kKJ+Q2FD6R3PwoiTxwdfsdR9lpb//2Q==
-ingredientes:
-- nome: cogumelos congelados Pingo Doce
-  quantidade: 400 g
-- nome: polpa de abóbora
-  quantidade: 1 kg
-- nome: batatas
-  quantidade: '3'
-- nome: sal
-  quantidade: qb
-- nome: azeite
-  quantidade: 2 c. de sopa
-- nome: pimenta moída
-  quantidade: qb
-- nome: coentros
-  quantidade: qb
-- nome: dente de alho
-  quantidade: '1'
-- nome: iogurte grego Pingo Doce
-  quantidade: 200 g
-- nome: lascas de queijo parmesão
-  quantidade: 60 g
-minutos-de-preparação: 20
-nome: Aveludado de abóbora com creme de iogurte e cogumelos
-número-de-doses: 6
-passos:
-- Descongele os cogumelos e reserve.
-- Numa panela, coza os cubos de polpa de abóbora e de batata. Tempere com azeite,
-  sal e pimenta.
-- Com a varinha mágica, triture até obter um creme homogéneo. Adicione uma mão-cheia
-  de folhas de coentros (reserve algumas) e volte a triturar.
-- Numa frigideira antiaderente, ferva o restante azeite e o dente de alho picado.
-  Junte os cogumelos, tempere com sal e salteie durante 7 minutos.
-- Retire e deixe arrefecer.
-- Num robot de cozinha, triture os cogumelos (reserve alguns para decoração) com o
-  iogurte.
-- Distribua o aveludado pelos pratos.
-- Por cima, coloque o creme de iogurte, os cogumelos reservados, as lascas de parmesão
-  e os coentros picados.
-- Sirva de imediato.
-valores-nutricionais:
-- dose: 168 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '8'
-- dose: 8,1 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '12'
-- dose: 4,2 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '21'
-- dose: 14,9 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 5,2 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
-- dose: 4 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '16'
-- dose: 7,9 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

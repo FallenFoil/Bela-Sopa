@@ -1,7 +1,74 @@
+
+nome: Sopa de arroz e cantaril
+
 dificuldade: média
+
+minutos-de-preparação: 55
+
+número-de-doses: 8
+
 etiquetas:
 - sem glúten
 - sem leite
+
+ingredientes:
+- nome: cantaril
+  quantidade: 1,2 kg
+- nome: água
+  quantidade: 2,2 l
+- nome: pimenta branca em grão
+  quantidade: qb
+- nome: óleo de amendoim
+  quantidade: 0,3 dl
+- nome: dentes de alho
+  quantidade: '10'
+- nome: arroz agulha Europa
+  quantidade: 350 g
+- nome: pés de aipo
+  quantidade: '2'
+- nome: alho-francês
+  quantidade: 100 g
+- nome: cebolinha nova
+  quantidade: '1'
+- nome: amendoim torrado sem sal
+  quantidade: 50 g
+- nome: sal
+  quantidade: qb
+- nome: molho de cebolinho
+  quantidade: '1'
+- nome: molho de coentros
+  quantidade: ½
+
+valores-nutricionais:
+- dose: 292 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '15'
+- dose: 8,7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '12'
+- dose: 1,8 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '9'
+- dose: 1,3 g
+  nome: Sal
+  percentagem-do-vdr-adulto: '22'
+
+passos:
+- Amanhe o cantaril e lave.
+- Com uma faca afiada, corte-lhe a cabeça e, em seguida, os filetes de ambos os lados,
+  mantendo sempre a lâmina bem encostada à espinha.
+- Reserve a cabeça e as espinhas.
+- Corte os filetes em cubos uniformes, mantendo a pele. Reserve.
+- Numa panela, leve ao lume 2,2l de água, junte os grãos de pimenta, as espinhas e
+  a cabeça do peixe. Deixe cozinhar em lume brando durante 20 minutos.
+- Num tacho, aqueça o óleo de amendoim, junte os dentes de alho laminados e deixe
+  alourar ligeiramente.
+- Acrescente 2l do caldo do peixe, coado num passador.
+- Quando ferver junte o arroz, o aipo, o alho-francês e a cebola laminada.
+- Após 15 minutos, incorpore os cubos de cantaril, o amendoim e tempere com sal.
+- Cozinhe lentamente até o arroz estar bem cozido. Polvilhe com o cebolinho e os coentros
+  picados e sirva bem quente.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUFBQUFBQUGBgUICAcICAsKCQkKCxEMDQwNDBEaEBMQ
   EBMQGhcbFhUWGxcpIBwcICkvJyUnLzkzMzlHREddXX0BBQUFBQUFBQYGBQgIBwgICwoJCQoLEQwN
@@ -762,61 +829,3 @@ imagem: !!binary |
   ybJs/KexO/f/AOxvPyHvcvvpBmkTSJoE0QIPczQIMazQICo7beRcYkRCz5FBY8zkmdRmKLoX9RP5
   n/2NPeD57MuWJYly5csTWJrHvNcvsWFRjMAvLDQJNiZG1ZGMqxEJqjyIN5Y+Q9jDDwfvDPJg7Hnu
   YYex7nsew5iwT2+8PH8CGdN/7P4MycN9of1NBP3GDifuHy//2Q==
-ingredientes:
-- nome: cantaril
-  quantidade: 1,2 kg
-- nome: água
-  quantidade: 2,2 l
-- nome: pimenta branca em grão
-  quantidade: qb
-- nome: óleo de amendoim
-  quantidade: 0,3 dl
-- nome: dentes de alho
-  quantidade: '10'
-- nome: arroz agulha Europa
-  quantidade: 350 g
-- nome: pés de aipo
-  quantidade: '2'
-- nome: alho-francês
-  quantidade: 100 g
-- nome: cebolinha nova
-  quantidade: '1'
-- nome: amendoim torrado sem sal
-  quantidade: 50 g
-- nome: sal
-  quantidade: qb
-- nome: molho de cebolinho
-  quantidade: '1'
-- nome: molho de coentros
-  quantidade: ½
-minutos-de-preparação: 55
-nome: Sopa de arroz e cantaril
-número-de-doses: 8
-passos:
-- Amanhe o cantaril e lave.
-- Com uma faca afiada, corte-lhe a cabeça e, em seguida, os filetes de ambos os lados,
-  mantendo sempre a lâmina bem encostada à espinha.
-- Reserve a cabeça e as espinhas.
-- Corte os filetes em cubos uniformes, mantendo a pele. Reserve.
-- Numa panela, leve ao lume 2,2l de água, junte os grãos de pimenta, as espinhas e
-  a cabeça do peixe. Deixe cozinhar em lume brando durante 20 minutos.
-- Num tacho, aqueça o óleo de amendoim, junte os dentes de alho laminados e deixe
-  alourar ligeiramente.
-- Acrescente 2l do caldo do peixe, coado num passador.
-- Quando ferver junte o arroz, o aipo, o alho-francês e a cebola laminada.
-- Após 15 minutos, incorpore os cubos de cantaril, o amendoim e tempere com sal.
-- Cozinhe lentamente até o arroz estar bem cozido. Polvilhe com o cebolinho e os coentros
-  picados e sirva bem quente.
-valores-nutricionais:
-- dose: 292 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '15'
-- dose: 8,7 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '12'
-- dose: 1,8 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '9'
-- dose: 1,3 g
-  nome: Sal
-  percentagem-do-vdr-adulto: '22'

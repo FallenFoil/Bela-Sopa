@@ -199,17 +199,17 @@ def scrape_recipe(url: str) -> None:
 
     # output yaml
 
-    receita = {
-        'nome'                 : nome_receita,
-        'dificuldade'          : dificuldade,
-        'minutos-de-preparação': duracao_minutos,
-        'número-de-doses'      : num_pessoas,
-        'etiquetas'            : etiquetas,
-        'ingredientes'         : ingredientes,
-        'valores-nutricionais' : valores_nutricionais,
-        'passos'               : passos,
-        'imagem'               : imagem
-    }
+    receita = [
+        ('nome'                 , nome_receita),
+        ('dificuldade'          , dificuldade),
+        ('minutos-de-preparação', duracao_minutos),
+        ('número-de-doses'      , num_pessoas),
+        ('etiquetas'            , etiquetas),
+        ('ingredientes'         , ingredientes),
+        ('valores-nutricionais' , valores_nutricionais),
+        ('passos'               , passos),
+        ('imagem'               , imagem),
+    ]
 
     path_yaml = re.sub(
         r'https://www\.pingodoce\.pt/receitas/([\w-]+)/',
@@ -217,14 +217,11 @@ def scrape_recipe(url: str) -> None:
         url
         )
 
-    with open(path_yaml, 'w+b') as yaml_file:
+    with open(path_yaml, 'w', encoding='utf-8') as yaml_file:
 
-        yaml.dump(
-            receita,
-            stream=yaml_file,
-            allow_unicode=True,
-            encoding='utf-8'
-            )
+        for (key, value) in receita:
+            yaml_file.write('\n')
+            yaml.dump({ key: value }, stream=yaml_file, allow_unicode=True)
 
 # ---------------------------------------------------------------------------- #
 # main

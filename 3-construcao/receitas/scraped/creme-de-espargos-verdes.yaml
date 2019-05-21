@@ -1,6 +1,81 @@
+
+nome: Creme de espargos verdes
+
 dificuldade: média
+
+minutos-de-preparação: 40
+
+número-de-doses: 2
+
 etiquetas:
 - vegetariana
+
+ingredientes:
+- nome: cebola pequena
+  quantidade: '1'
+- nome: dente de alho
+  quantidade: '1'
+- nome: manteiga sem sal
+  quantidade: 25 g
+- nome: espargos verdes
+  quantidade: 300 g
+- nome: curgete
+  quantidade: 1/2
+- nome: sal
+  quantidade: 1 c. chá
+- nome: miolo de pinhão
+  quantidade: ''
+- nome: queijo chèvre redondo
+  quantidade: 50 g
+- nome: caril em pó
+  quantidade: qb
+- nome: folha de massa filo
+  quantidade: '1'
+- nome: azeite
+  quantidade: 1 c. sopa
+- nome: pailtos
+  quantidade: '2'
+
+valores-nutricionais:
+- dose: 365 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '18'
+- dose: 29,5 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '42'
+- dose: 13,0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '65'
+- dose: 13,0 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 4,3 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '5'
+- dose: 4,7 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '19'
+- dose: 10,4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Comece por preparar o creme. Descasque e pique a cebola e os dentes de alho. Salteie
+  num tacho com a manteiga e deixe suar.
+- Apare os espargos e corte-os em lâminas, reservando 8 pontas e algumas lâminas.
+  Adicione-os ao tacho e salteie.
+- Corte a courgette em cubos e acrescente ao salteado.
+- Junte água (500ml) e tempere com o sal. Deixe cozinhar durante 5 a 10 minutos.
+- Quando estiver pronto, retire do lume e triture até obter um creme bem aveludado.
+  Passe por um passador fino e rectifique os temperos.
+- Para as setas, corte o queijo em 8 rodelas. Polvilhe com o caril em pó.
+- Pincele a folha de massa filo com o azeite e corte fitas largas de massa.
+- Enrole as rodelas de queijo em massa filo. Coloque 1 rodela de queijo por espeto.
+- Na hora de servir a sopa, leve as setas ao forno, pré-aquecido a 200 °C. Deixe corar
+  bem de forma a ficarem estaladiças.
+- Sirva as setas sobre o creme. Ponha as pontas de espargos sobre a fatia de queijo.
+  Decore com os pinhões e as lâminas de espargos reservadas.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAgEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
   AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEB
@@ -5149,69 +5224,3 @@ imagem: !!binary |
   6muuP2iaWr110lv6Iq26qfsxKgllYMSASwVW2hj3AwMZ6YGKXV/11ZL39EivIiCWUhV4ZSPlHBYX
   G4jjgttXce+BnoKuo3zWu7ELf+uxUdVLISoJO8HIHIDMQD7A8j35q47S/wC3f1NX9j5/kUwisW3K
   rYc43AHGICR1HY8j0NarZeqJi3bd7W/FjNq+g/IVpZdl9yIA/9k=
-ingredientes:
-- nome: cebola pequena
-  quantidade: '1'
-- nome: dente de alho
-  quantidade: '1'
-- nome: manteiga sem sal
-  quantidade: 25 g
-- nome: espargos verdes
-  quantidade: 300 g
-- nome: curgete
-  quantidade: 1/2
-- nome: sal
-  quantidade: 1 c. chá
-- nome: miolo de pinhão
-  quantidade: ''
-- nome: queijo chèvre redondo
-  quantidade: 50 g
-- nome: caril em pó
-  quantidade: qb
-- nome: folha de massa filo
-  quantidade: '1'
-- nome: azeite
-  quantidade: 1 c. sopa
-- nome: pailtos
-  quantidade: '2'
-minutos-de-preparação: 40
-nome: Creme de espargos verdes
-número-de-doses: 2
-passos:
-- Comece por preparar o creme. Descasque e pique a cebola e os dentes de alho. Salteie
-  num tacho com a manteiga e deixe suar.
-- Apare os espargos e corte-os em lâminas, reservando 8 pontas e algumas lâminas.
-  Adicione-os ao tacho e salteie.
-- Corte a courgette em cubos e acrescente ao salteado.
-- Junte água (500ml) e tempere com o sal. Deixe cozinhar durante 5 a 10 minutos.
-- Quando estiver pronto, retire do lume e triture até obter um creme bem aveludado.
-  Passe por um passador fino e rectifique os temperos.
-- Para as setas, corte o queijo em 8 rodelas. Polvilhe com o caril em pó.
-- Pincele a folha de massa filo com o azeite e corte fitas largas de massa.
-- Enrole as rodelas de queijo em massa filo. Coloque 1 rodela de queijo por espeto.
-- Na hora de servir a sopa, leve as setas ao forno, pré-aquecido a 200 °C. Deixe corar
-  bem de forma a ficarem estaladiças.
-- Sirva as setas sobre o creme. Ponha as pontas de espargos sobre a fatia de queijo.
-  Decore com os pinhões e as lâminas de espargos reservadas.
-valores-nutricionais:
-- dose: 365 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '18'
-- dose: 29,5 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '42'
-- dose: 13,0 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '65'
-- dose: 13,0 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 4,3 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '5'
-- dose: 4,7 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '19'
-- dose: 10,4 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

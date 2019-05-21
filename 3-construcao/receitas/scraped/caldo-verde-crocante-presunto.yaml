@@ -1,6 +1,98 @@
+
+nome: Caldo-verde com crocante de presunto
+
 dificuldade: média
+
+minutos-de-preparação: 60
+
+número-de-doses: 10
+
 etiquetas:
 - sem leite
+
+ingredientes:
+- nome: batata branca
+  quantidade: 450 g
+- nome: cebola
+  quantidade: '1'
+- nome: dentes de alho
+  quantidade: '3'
+- nome: sal
+  quantidade: 1 c. chá
+- nome: água
+  quantidade: 1 l
+- nome: presunto em fatias finas
+  quantidade: 100 g
+- nome: couve galega em juliana (caldo-verde)
+  quantidade: 150 g
+- nome: sal
+  quantidade: 1 c. chá
+- nome: água
+  quantidade: 2 dl
+- nome: azeite
+  quantidade: 1 c. sopa
+- nome: sal
+  quantidade: 1 c. café
+- nome: dentes de alho
+  quantidade: '2'
+- nome: carcuma
+  quantidade: 1 c. café
+- nome: couve galega em juliana (caldo-verde)
+  quantidade: 100 g
+- nome: farinha de milho
+  quantidade: 75 g
+- nome: sêmola de milho
+  quantidade: 50 g
+- nome: presunto em fatias finas (cozido)
+  quantidade: 100 g
+- nome: azeite
+  quantidade: 2 c. sopa
+
+valores-nutricionais:
+- dose: 131 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '7'
+- dose: 4,8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '7'
+- dose: 1,0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 17,5 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 2,6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '3'
+- dose: 1,6 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '7'
+- dose: 4,9 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Coloque numa panela com 1 l de água as batatas descascadas e cortadas em cubos,
+  a cebola, os dentes de alho e o sal.
+- Quando levantar fervura adicione as fatias de presunto e deixe ferver 5 minutos.
+  Retire o presunto e reserve.
+- Coza as batatas até estarem macias e, em seguida, triture tudo de modo a obter um
+  creme pouco espesso e homogéneo. Reserve.
+- Para o concentrado, escalde a couve em água a ferver temperada com o sal durante
+  1 minuto, triture-a, passe este preparado pelo passador e reserve.
+- Prepare os palitos de milho, colocando a água ao lume com o azeite, o sal, o alho
+  e a curcuma.
+- Assim que ferver adicione o caldo-verde e deixe cozinhar 5 minutos. Junte a sêmola
+  e a farinha de milho, previamente misturadas, de uma só vez, e mexa energicamente
+  até a massa se soltar do tacho.
+- Disponha num tabuleiro e deixe arrefecer. Pré-aqueça o forno a 170° C.
+- Molde pequenos palitos, disponha-os num tabuleiro forrado com papel vegetal e leve
+  ao forno cerca de 10 minutos.
+- Entretanto, lamine as fatias de presunto e toste-as 5 minutos (juntamente com os
+  palitos) no forno.
+- Distribua o creme de batata pelos copos e adicione o concentrado de couve. Sirva
+  com um palito de milho por cima e a juliana de presunto. Regue com o azeite.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -513,86 +605,3 @@ imagem: !!binary |
   tlHxIE2RUbJzjDd1VaJNvmnpzU43O6PPKUBsnAdXdFvAXuDQopgNQIgi4ysiUKgLHBOo1XMPJEFE
   WyKKKYNygNgqkWsnP+K65oBAogIk2CMw6yY07Smg9UR5Iu2TjumjdAbKTKKKKKBuMhzRVukOQBlA
   53QI6Uct0F1zwXC63FZbKy6ysrK3BddXgtldWX3QVlbKytl9yV1l/9k=
-ingredientes:
-- nome: batata branca
-  quantidade: 450 g
-- nome: cebola
-  quantidade: '1'
-- nome: dentes de alho
-  quantidade: '3'
-- nome: sal
-  quantidade: 1 c. chá
-- nome: água
-  quantidade: 1 l
-- nome: presunto em fatias finas
-  quantidade: 100 g
-- nome: couve galega em juliana (caldo-verde)
-  quantidade: 150 g
-- nome: sal
-  quantidade: 1 c. chá
-- nome: água
-  quantidade: 2 dl
-- nome: azeite
-  quantidade: 1 c. sopa
-- nome: sal
-  quantidade: 1 c. café
-- nome: dentes de alho
-  quantidade: '2'
-- nome: carcuma
-  quantidade: 1 c. café
-- nome: couve galega em juliana (caldo-verde)
-  quantidade: 100 g
-- nome: farinha de milho
-  quantidade: 75 g
-- nome: sêmola de milho
-  quantidade: 50 g
-- nome: presunto em fatias finas (cozido)
-  quantidade: 100 g
-- nome: azeite
-  quantidade: 2 c. sopa
-minutos-de-preparação: 60
-nome: Caldo-verde com crocante de presunto
-número-de-doses: 10
-passos:
-- Coloque numa panela com 1 l de água as batatas descascadas e cortadas em cubos,
-  a cebola, os dentes de alho e o sal.
-- Quando levantar fervura adicione as fatias de presunto e deixe ferver 5 minutos.
-  Retire o presunto e reserve.
-- Coza as batatas até estarem macias e, em seguida, triture tudo de modo a obter um
-  creme pouco espesso e homogéneo. Reserve.
-- Para o concentrado, escalde a couve em água a ferver temperada com o sal durante
-  1 minuto, triture-a, passe este preparado pelo passador e reserve.
-- Prepare os palitos de milho, colocando a água ao lume com o azeite, o sal, o alho
-  e a curcuma.
-- Assim que ferver adicione o caldo-verde e deixe cozinhar 5 minutos. Junte a sêmola
-  e a farinha de milho, previamente misturadas, de uma só vez, e mexa energicamente
-  até a massa se soltar do tacho.
-- Disponha num tabuleiro e deixe arrefecer. Pré-aqueça o forno a 170° C.
-- Molde pequenos palitos, disponha-os num tabuleiro forrado com papel vegetal e leve
-  ao forno cerca de 10 minutos.
-- Entretanto, lamine as fatias de presunto e toste-as 5 minutos (juntamente com os
-  palitos) no forno.
-- Distribua o creme de batata pelos copos e adicione o concentrado de couve. Sirva
-  com um palito de milho por cima e a juliana de presunto. Regue com o azeite.
-valores-nutricionais:
-- dose: 131 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '7'
-- dose: 4,8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '7'
-- dose: 1,0 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
-- dose: 17,5 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 2,6 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
-- dose: 1,6 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '7'
-- dose: 4,9 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

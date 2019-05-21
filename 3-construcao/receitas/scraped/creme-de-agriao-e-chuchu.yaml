@@ -1,9 +1,76 @@
+
+nome: Creme de agrião e chuchu
+
 dificuldade: fácil
+
+minutos-de-preparação: 60
+
+número-de-doses: 8
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: alho-francês
+  quantidade: 200 g
+- nome: talo de aipo
+  quantidade: 70 g
+- nome: azeite
+  quantidade: 3 c. sopa
+- nome: chuchu
+  quantidade: 100 g
+- nome: batata
+  quantidade: 250 g
+- nome: courgette
+  quantidade: 400 g
+- nome: agrião
+  quantidade: 1 emb.
+- nome: couve-chinesa
+  quantidade: 250 g
+- nome: sal
+  quantidade: 1 c. sopa
+- nome: água
+  quantidade: 3 dl
+- nome: miolo de noz
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 137 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '7'
+- dose: 9,6 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '14'
+- dose: 1,2 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '6'
+- dose: 7,9 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 2,8 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '3'
+- dose: 2,6 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '10'
+- dose: 3,9 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Numa panela, coloque o azeite, o alho-francês e o talo de aipo laminados e o chuchu
+  pelado e sem caroço, partido em pedaços pequenos.
+- Descasque a batata, lave a courgette e corte em cubos pequenos. Coloque-os na panela.
+  Junte o agrião e a couve chinesa cortada em juliana, tempere com o sal, mexa e deixe
+  cozinhar, com a panela tapada e em lume brando, cerca de 40 minutos ou até os legumes
+  estarem macios.
+- Junte a água, previamente aquecida, e triture a sopa com a varinha mágica ou no
+  copo liquidificador até estar bem cremosa. Divida a sopa em 8 porções e congele
+  se quiser depois de frias. No momento de servir, polvilhe com nozes.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -756,61 +823,3 @@ imagem: !!binary |
   rc/4vHNIxN/C/j+cf/L8v1peQW/j+MmCuf43tQAf8VBBHmP4uSAw5n8XgkaT5T+KgJGf8ZACMz+L
   7EBkv977UxRj+9ySMLv73y/rRANmY/Fy45ZcUAwZR/ieTjlkfN+0gwfZ/GyH1JDwhv8AfZ/pTKBf
   5Hfi+zJEFSzP+N5XZd31c0E2/wD/AJSYf//Z
-ingredientes:
-- nome: alho-francês
-  quantidade: 200 g
-- nome: talo de aipo
-  quantidade: 70 g
-- nome: azeite
-  quantidade: 3 c. sopa
-- nome: chuchu
-  quantidade: 100 g
-- nome: batata
-  quantidade: 250 g
-- nome: courgette
-  quantidade: 400 g
-- nome: agrião
-  quantidade: 1 emb.
-- nome: couve-chinesa
-  quantidade: 250 g
-- nome: sal
-  quantidade: 1 c. sopa
-- nome: água
-  quantidade: 3 dl
-- nome: miolo de noz
-  quantidade: qb
-minutos-de-preparação: 60
-nome: Creme de agrião e chuchu
-número-de-doses: 8
-passos:
-- Numa panela, coloque o azeite, o alho-francês e o talo de aipo laminados e o chuchu
-  pelado e sem caroço, partido em pedaços pequenos.
-- Descasque a batata, lave a courgette e corte em cubos pequenos. Coloque-os na panela.
-  Junte o agrião e a couve chinesa cortada em juliana, tempere com o sal, mexa e deixe
-  cozinhar, com a panela tapada e em lume brando, cerca de 40 minutos ou até os legumes
-  estarem macios.
-- Junte a água, previamente aquecida, e triture a sopa com a varinha mágica ou no
-  copo liquidificador até estar bem cremosa. Divida a sopa em 8 porções e congele
-  se quiser depois de frias. No momento de servir, polvilhe com nozes.
-valores-nutricionais:
-- dose: 137 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '7'
-- dose: 9,6 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '14'
-- dose: 1,2 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '6'
-- dose: 7,9 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 2,8 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
-- dose: 2,6 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '10'
-- dose: 3,9 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

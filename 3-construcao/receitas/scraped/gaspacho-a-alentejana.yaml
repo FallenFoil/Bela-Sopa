@@ -1,7 +1,69 @@
+
+nome: Gaspacho à alentejana
+
 dificuldade: fácil
+
+minutos-de-preparação: 15
+
+número-de-doses: 4
+
 etiquetas:
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: alho
+  quantidade: '3'
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: tomate (maduro) chucha
+  quantidade: 400 g
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: vinagre
+  quantidade: 2 c. de sopa
+- nome: orégãos
+  quantidade: 1 c. de sopa
+- nome: pimento verde
+  quantidade: 150 g
+- nome: pepino
+  quantidade: 150 g
+- nome: água
+  quantidade: 1,5 l
+- nome: pão (duro) alentejano
+  quantidade: 150 g
+- nome: coentros frescos
+  quantidade: qb
+- nome: pimenta
+  quantidade: qb
+- nome: azeitona preta
+  quantidade: 60 g
+
+valores-nutricionais:
+- dose: 222 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '11'
+- dose: 7,9 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 1,4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 3,7 g
+  nome: Sal
+  percentagem-do-vdr-adulto: '15'
+
+passos:
+- Tire a pele aos dentes de alho e pise-os num almofariz juntamente com o sal e a
+  polpa de um tomate até obter uma pasta líquida.
+- Deite a pasta na tigela onde vai servir o gaspacho, regue com 1 colher de azeite,
+  com o vinagre e polvilhe com orégãos.
+- Lave o pimento e tire-lhe as sementes e a película branca. Corte-o em cubos pequenos.
+- Lave o pepino, corte-o também em cubos e deite na mesma tigela. Acrescente a água
+  bem fria (ou gelada).
+- Corte o pão em fatias finas, esfarelando algum no gaspacho e polvilhe com coentros
+  frescos e um pouco de pimenta. Sirva com o restante pão e as azeitonas.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1253,56 +1315,3 @@ imagem: !!binary |
   fRfn01b5O7GmP+H6k3/kesPlf+poNPl1On7MTX3jt7gab/N2nz/87T2D6u3Cv+o6lhP/AJeHXWL/
   ABfMvzY1uZ16kln/AFH1+aT2a9P2YKDsPb5x/hbT5f8Ah/vYqu5PQba/5pv/ALIe339+LruTYkfU
   afe1192KEJaf52T/AAdfl64mv8vcN/xLpf8ALD5vn6/L00/u436e8z6ll/8ALxqYn//Z
-ingredientes:
-- nome: alho
-  quantidade: '3'
-- nome: sal
-  quantidade: 1 c. de sopa
-- nome: tomate (maduro) chucha
-  quantidade: 400 g
-- nome: azeite
-  quantidade: 2 c. de sopa
-- nome: vinagre
-  quantidade: 2 c. de sopa
-- nome: orégãos
-  quantidade: 1 c. de sopa
-- nome: pimento verde
-  quantidade: 150 g
-- nome: pepino
-  quantidade: 150 g
-- nome: água
-  quantidade: 1,5 l
-- nome: pão (duro) alentejano
-  quantidade: 150 g
-- nome: coentros frescos
-  quantidade: qb
-- nome: pimenta
-  quantidade: qb
-- nome: azeitona preta
-  quantidade: 60 g
-minutos-de-preparação: 15
-nome: Gaspacho à alentejana
-número-de-doses: 4
-passos:
-- Tire a pele aos dentes de alho e pise-os num almofariz juntamente com o sal e a
-  polpa de um tomate até obter uma pasta líquida.
-- Deite a pasta na tigela onde vai servir o gaspacho, regue com 1 colher de azeite,
-  com o vinagre e polvilhe com orégãos.
-- Lave o pimento e tire-lhe as sementes e a película branca. Corte-o em cubos pequenos.
-- Lave o pepino, corte-o também em cubos e deite na mesma tigela. Acrescente a água
-  bem fria (ou gelada).
-- Corte o pão em fatias finas, esfarelando algum no gaspacho e polvilhe com coentros
-  frescos e um pouco de pimenta. Sirva com o restante pão e as azeitonas.
-valores-nutricionais:
-- dose: 222 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '11'
-- dose: 7,9 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '11'
-- dose: 1,4 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
-- dose: 3,7 g
-  nome: Sal
-  percentagem-do-vdr-adulto: '15'

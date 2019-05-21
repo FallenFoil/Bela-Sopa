@@ -1,8 +1,54 @@
+
+nome: Creme de abóbora com manjericão
+
 dificuldade: fácil
+
+minutos-de-preparação: 55
+
+número-de-doses: 4
+
 etiquetas:
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: azeite
+  quantidade: 0,2 dl
+- nome: folhas de manjericão fresco
+  quantidade: '4'
+- nome: abóbora
+  quantidade: 950 g
+- nome: cebolas
+  quantidade: '4'
+- nome: dentes de alho
+  quantidade: '2'
+
+valores-nutricionais:
+- dose: 83 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '4'
+- dose: 5,3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '8'
+- dose: 1 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '5'
+- dose: 1,9 g
+  nome: Sal
+  percentagem-do-vdr-adulto: '31'
+
+passos:
+- Descasque a abóbora, o alho e a cebola. Corte-os em cubos e leve-os ao lume numa
+  panela com 1,5 l de água temperada com metade do sal.
+- Deixe cozinhar durante alguns minutos, até que os legumes fiquem macios.
+- No copo da varinha mágica triture as folhas de manjericão e o azeite.
+- Retire a panela do lume e, com a varinha, reduza a puré todos os legumes.
+- Adicione então o azeite de manjericão aos legumes de forma a obter um creme aveludado.
+  Rectifique os temperos se for necessário.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1151,40 +1197,3 @@ imagem: !!binary |
   KEMtVP8Apm44Ow7R5v6uMIfIm2//ANRt/wC3gfP5cPlE32Kpue9XP/p1v5f7bP7Xkwy5R87l49/E
   Hv0OB6m/9SP/AE/9yn/1Haf7H/1eP9Mbdv8AwXpyM838uOPQ0+nvLeeTFn/p/wD1HkZ5P6vsWNL7
   frx7gW/s5HQf/v45TQ//2Q==
-ingredientes:
-- nome: sal
-  quantidade: 1 c. de sopa
-- nome: azeite
-  quantidade: 0,2 dl
-- nome: folhas de manjericão fresco
-  quantidade: '4'
-- nome: abóbora
-  quantidade: 950 g
-- nome: cebolas
-  quantidade: '4'
-- nome: dentes de alho
-  quantidade: '2'
-minutos-de-preparação: 55
-nome: Creme de abóbora com manjericão
-número-de-doses: 4
-passos:
-- Descasque a abóbora, o alho e a cebola. Corte-os em cubos e leve-os ao lume numa
-  panela com 1,5 l de água temperada com metade do sal.
-- Deixe cozinhar durante alguns minutos, até que os legumes fiquem macios.
-- No copo da varinha mágica triture as folhas de manjericão e o azeite.
-- Retire a panela do lume e, com a varinha, reduza a puré todos os legumes.
-- Adicione então o azeite de manjericão aos legumes de forma a obter um creme aveludado.
-  Rectifique os temperos se for necessário.
-valores-nutricionais:
-- dose: 83 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '4'
-- dose: 5,3 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '8'
-- dose: 1 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
-- dose: 1,9 g
-  nome: Sal
-  percentagem-do-vdr-adulto: '31'

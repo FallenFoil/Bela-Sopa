@@ -1,6 +1,80 @@
+
+nome: Sopa exótica de peixe e aletria
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 4
+
 etiquetas:
 - sabores mediterrânicos
+
+ingredientes:
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: alho-francês
+  quantidade: '1'
+- nome: dentes de alho
+  quantidade: '2'
+- nome: malagueta vermelha
+  quantidade: ½
+- nome: caril moído
+  quantidade: 1 c. de sobremesa
+- nome: filetes de pescada congelados
+  quantidade: 400 g
+- nome: sal
+  quantidade: qb
+- nome: leite de coco
+  quantidade: 400 ml
+- nome: água
+  quantidade: 1 l
+- nome: legumes chineses congelados
+  quantidade: 400 g
+- nome: aletria
+  quantidade: 150 g
+- nome: limão
+  quantidade: ½
+- nome: noz-moscada
+  quantidade: qb
+- nome: cebolinho
+  quantidade: qb
+
+valores-nutricionais:
+- dose: 328 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '16'
+- dose: 8,8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '13'
+- dose: 1,5 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '8'
+- dose: 36,2 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 10,6 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '12'
+- dose: 4,1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '16'
+- dose: 26,3 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Numa panela, aqueça o azeite e junte o alho-francês às rodelas, os dentes de alho
+  esmagados e a malagueta, cortada em rodelas e sem sementes.
+- Polvilhe com o caril e cozinhe cerca de 5 minutos em lume moderado, mexendo de vez
+  em quando.
+- Corte os filetes em pedaços, coloque na panela com uma pitada de sal e acrescente
+  o leite de coco e a água já quente. Assim que ferver, adicione os legumes, mexa
+  e cozinhe tapado 10 minutos.
+- Parta a aletria com as mãos, junte e cozinhe mais 5 minutos.
+- Regue com sumo de limão e tempere com uma pitada de noz-moscada.
+- Distribua pelos pratos ou taças de servir e decore com cebolinho cortado.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM
   DAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8f
@@ -1160,68 +1234,3 @@ imagem: !!binary |
   PzPvj8O/PU/2eJ/2an+H3PB0b9z8g1uHt87m3+6jv9Gc/wD6n6E5hNm/93NSH7+Z/h3zr+Z+D/U0
   6+ffHmfg871zNG9teHE+0fD58z7j8TPgbP4/M0/0n6Opq+J+H7T/AEzzdaejfmf8we3nrzP63/r3
   PJ2+z/VPun5v+PE8qAfwjrT8Tr+zsg/0D/1PsX3cz/Q6P1/T/9k=
-ingredientes:
-- nome: azeite
-  quantidade: 2 c. de sopa
-- nome: alho-francês
-  quantidade: '1'
-- nome: dentes de alho
-  quantidade: '2'
-- nome: malagueta vermelha
-  quantidade: ½
-- nome: caril moído
-  quantidade: 1 c. de sobremesa
-- nome: filetes de pescada congelados
-  quantidade: 400 g
-- nome: sal
-  quantidade: qb
-- nome: leite de coco
-  quantidade: 400 ml
-- nome: água
-  quantidade: 1 l
-- nome: legumes chineses congelados
-  quantidade: 400 g
-- nome: aletria
-  quantidade: 150 g
-- nome: limão
-  quantidade: ½
-- nome: noz-moscada
-  quantidade: qb
-- nome: cebolinho
-  quantidade: qb
-minutos-de-preparação: 30
-nome: Sopa exótica de peixe e aletria
-número-de-doses: 4
-passos:
-- Numa panela, aqueça o azeite e junte o alho-francês às rodelas, os dentes de alho
-  esmagados e a malagueta, cortada em rodelas e sem sementes.
-- Polvilhe com o caril e cozinhe cerca de 5 minutos em lume moderado, mexendo de vez
-  em quando.
-- Corte os filetes em pedaços, coloque na panela com uma pitada de sal e acrescente
-  o leite de coco e a água já quente. Assim que ferver, adicione os legumes, mexa
-  e cozinhe tapado 10 minutos.
-- Parta a aletria com as mãos, junte e cozinhe mais 5 minutos.
-- Regue com sumo de limão e tempere com uma pitada de noz-moscada.
-- Distribua pelos pratos ou taças de servir e decore com cebolinho cortado.
-valores-nutricionais:
-- dose: 328 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '16'
-- dose: 8,8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '13'
-- dose: 1,5 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '8'
-- dose: 36,2 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 10,6 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '12'
-- dose: 4,1 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '16'
-- dose: 26,3 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

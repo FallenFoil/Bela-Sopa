@@ -1,9 +1,71 @@
+
+nome: Creme de ervilhas com hortelã
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 2
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: cebola congelada picada
+  quantidade: 50 g
+- nome: azeite
+  quantidade: 1 c. sopa
+- nome: alho-francês
+  quantidade: 50 g
+- nome: talo de aipo
+  quantidade: 50 g
+- nome: courgette
+  quantidade: 100 g
+- nome: ervilhas congeladas
+  quantidade: 250 g
+- nome: hortelã
+  quantidade: qb
+- nome: sal
+  quantidade: 1 c. chá
+- nome: água
+  quantidade: 4,5 dl
+- nome: miolo de noz
+  quantidade: 15 g
+
+valores-nutricionais:
+- dose: 212 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '11'
+- dose: 10,6 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '15'
+- dose: 1,4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 15,2 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 6,1 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '7'
+- dose: 10,3 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '41'
+- dose: 9,7 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Leve a cebola ao lume numa panela com o azeite. Pique finamente o alho-francês,
+  corte o aipo em lâminas finas e junte-os à cebola.
+- Adicione a courgette cortada em cubos, as ervilhas e um pé de hortelã.
+- Salpique com o sal, tape e deixe suar em lume brando cerca de 25 minutos.
+- Adicione a água a ferver e triture com a varinha ou no liquidificador.
+- Sirva com o miolo de noz grosseiramente picado e decore com folhas de hortelã.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM
   DAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8f
@@ -941,56 +1003,3 @@ imagem: !!binary |
   mf3Hr+48qkoHb3+W9SipBk+Eerb1RnIImyf8O39XOmiGTGx9G2/e1UJhrfxjf232NNGb2JH+Udvf
   ff7PlTDqST+b7t8P9I2/e9NbkvYPY+Llun7Hl+lVEzn/AH776gG+H3ff1NSaL+xZX4E/r577c60W
   xl5+xn/KsDqP/9k=
-ingredientes:
-- nome: cebola congelada picada
-  quantidade: 50 g
-- nome: azeite
-  quantidade: 1 c. sopa
-- nome: alho-francês
-  quantidade: 50 g
-- nome: talo de aipo
-  quantidade: 50 g
-- nome: courgette
-  quantidade: 100 g
-- nome: ervilhas congeladas
-  quantidade: 250 g
-- nome: hortelã
-  quantidade: qb
-- nome: sal
-  quantidade: 1 c. chá
-- nome: água
-  quantidade: 4,5 dl
-- nome: miolo de noz
-  quantidade: 15 g
-minutos-de-preparação: 30
-nome: Creme de ervilhas com hortelã
-número-de-doses: 2
-passos:
-- Leve a cebola ao lume numa panela com o azeite. Pique finamente o alho-francês,
-  corte o aipo em lâminas finas e junte-os à cebola.
-- Adicione a courgette cortada em cubos, as ervilhas e um pé de hortelã.
-- Salpique com o sal, tape e deixe suar em lume brando cerca de 25 minutos.
-- Adicione a água a ferver e triture com a varinha ou no liquidificador.
-- Sirva com o miolo de noz grosseiramente picado e decore com folhas de hortelã.
-valores-nutricionais:
-- dose: 212 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '11'
-- dose: 10,6 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '15'
-- dose: 1,4 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
-- dose: 15,2 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 6,1 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '7'
-- dose: 10,3 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '41'
-- dose: 9,7 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

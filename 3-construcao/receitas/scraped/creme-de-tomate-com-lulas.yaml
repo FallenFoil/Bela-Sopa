@@ -1,6 +1,71 @@
+
+nome: Creme de tomate com lulas
+
 dificuldade: fácil
+
+minutos-de-preparação: 30
+
+número-de-doses: 6
+
 etiquetas:
 - sem leite
+
+ingredientes:
+- nome: tomate maduro
+  quantidade: 600 g
+- nome: lulas pequenas e limpas
+  quantidade: 300 g
+- nome: limão
+  quantidade: 100 g
+- nome: pimenta de moinho
+  quantidade: qb
+- nome: cenoura
+  quantidade: 200 g
+- nome: cebola roxa
+  quantidade: 150 g
+- nome: sal
+  quantidade: 1 c. de sopa
+- nome: pimento vermelho
+  quantidade: 70 g
+- nome: azeite
+  quantidade: 3 c. de sopa
+- nome: água
+  quantidade: 1,2 l
+- nome: folhas de manjericão
+  quantidade: '6'
+- nome: croutons de azeite
+  quantidade: 60 g
+
+valores-nutricionais:
+- dose: 171 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '9'
+- dose: 8 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '11'
+- dose: 1,4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 2 g
+  nome: Sal
+  percentagem-do-vdr-adulto: '28'
+
+passos:
+- Corte as lulas em pedaços pequenos, tempere-as com o sumo de limão e um pouco de
+  pimenta moída na altura.
+- Tire a pele e as sementes ao tomate e corte-o em pedaços. Pele e corte a cenoura
+  em rodelas e a cebola em cubos.
+- Leve ao lume uma panela com duas colheres de azeite, adicione os legumes, tempere
+  com uma colher de sopa de sal, tape e deixe suar, em lume brando, até as cenouras
+  estarem cozidas.
+- De seguida, pique o pimento em cubos pequenos. Aqueça o restante azeite numa frigideira
+  antiaderente e salteie as lulas, escorridas e enxutas, e os cubos de pimento, durante
+  2 ou 3 minutos.
+- Ferva a água, adicione-a aos legumes na panela e triture tudo com a varinha mágica.
+- Divida as lulas e os pimentos salteados pelos pratos ou taças, adicione a sopa e
+  salpique com as folhas de manjericão grosseiramente picadas. Sirva com os croutons
+  de azeite.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1745,59 +1810,3 @@ imagem: !!binary |
   yf0/jzH9T7v5Ux2dv/8AWO3vx8ku3kMYKX9Yv/tu8y/pj4s/iHw40XPxTI54x9kP/wC3/wD+xLD4
   fjfn8fH388Va/FQ8MYPNW1n+d3P4M/8A+I/p/wCz24PggCn9Of5E5fE74fhz9PVio5BFLNE/9zAe
   CrwX/9k=
-ingredientes:
-- nome: tomate maduro
-  quantidade: 600 g
-- nome: lulas pequenas e limpas
-  quantidade: 300 g
-- nome: limão
-  quantidade: 100 g
-- nome: pimenta de moinho
-  quantidade: qb
-- nome: cenoura
-  quantidade: 200 g
-- nome: cebola roxa
-  quantidade: 150 g
-- nome: sal
-  quantidade: 1 c. de sopa
-- nome: pimento vermelho
-  quantidade: 70 g
-- nome: azeite
-  quantidade: 3 c. de sopa
-- nome: água
-  quantidade: 1,2 l
-- nome: folhas de manjericão
-  quantidade: '6'
-- nome: croutons de azeite
-  quantidade: 60 g
-minutos-de-preparação: 30
-nome: Creme de tomate com lulas
-número-de-doses: 6
-passos:
-- Corte as lulas em pedaços pequenos, tempere-as com o sumo de limão e um pouco de
-  pimenta moída na altura.
-- Tire a pele e as sementes ao tomate e corte-o em pedaços. Pele e corte a cenoura
-  em rodelas e a cebola em cubos.
-- Leve ao lume uma panela com duas colheres de azeite, adicione os legumes, tempere
-  com uma colher de sopa de sal, tape e deixe suar, em lume brando, até as cenouras
-  estarem cozidas.
-- De seguida, pique o pimento em cubos pequenos. Aqueça o restante azeite numa frigideira
-  antiaderente e salteie as lulas, escorridas e enxutas, e os cubos de pimento, durante
-  2 ou 3 minutos.
-- Ferva a água, adicione-a aos legumes na panela e triture tudo com a varinha mágica.
-- Divida as lulas e os pimentos salteados pelos pratos ou taças, adicione a sopa e
-  salpique com as folhas de manjericão grosseiramente picadas. Sirva com os croutons
-  de azeite.
-valores-nutricionais:
-- dose: 171 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '9'
-- dose: 8 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '11'
-- dose: 1,4 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
-- dose: 2 g
-  nome: Sal
-  percentagem-do-vdr-adulto: '28'

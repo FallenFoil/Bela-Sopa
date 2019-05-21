@@ -1,9 +1,70 @@
+
+nome: Sopa de couve-flor
+
 dificuldade: fácil
+
+minutos-de-preparação: 55
+
+número-de-doses: 10
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: couve-flor
+  quantidade: 500 g
+- nome: alho-francês
+  quantidade: 250 g
+- nome: courgette
+  quantidade: 300 g
+- nome: cebola
+  quantidade: 150 g
+- nome: água
+  quantidade: qb
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: folhas de espinafres
+  quantidade: 150 g
+- nome: azeite
+  quantidade: 2 c. de sopa
+
+valores-nutricionais:
+- dose: 43 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '2'
+- dose: 3 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '4'
+- dose: 0 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '2'
+- dose: 3 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '3'
+- dose: 1 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '4'
+- dose: 2 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Lave os legumes.
+- Numa panela, junte a couve-flor separada em raminhos e o alho-francês em rodelas.
+- Junte a courgette cortada em pedaços pequenos e a cebola descascada e cortada em
+  bocados. Cubra os legumes com água, tempere com o sal, tape e leve a cozer sobre
+  lume brando até estarem macios.
+- Triture com a varinha mágica até desfazer completamente os legumes. Se achar a sopa
+  demasiado espessa, junte um pouco mais de água a ferver e rectifique os temperos
+  se for necessário.
+- Adicione as folhas de espinafres e o azeite, mexa e retire do lume.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -862,55 +923,3 @@ imagem: !!binary |
   OR66gkb2UVBd/Dl/a8PCgrbl+j2fB25UWvHvWXg3D/U+D4P1uPhq+jOryvafCzw5N8Pjz+iV5vX+
   P19fi9MdfYfF255+I/TrWr6tatiPwQ5eCXw9XHp5dNItXm/ot/Uyfn4vEfD/AC/bSi4P/NT/AFB4
   f1fCzxfbViF2/wD0bfB4m5+LJ/0NRSt/VPjzb/W8Q/6X2VUih/3tZV//2Q==
-ingredientes:
-- nome: couve-flor
-  quantidade: 500 g
-- nome: alho-francês
-  quantidade: 250 g
-- nome: courgette
-  quantidade: 300 g
-- nome: cebola
-  quantidade: 150 g
-- nome: água
-  quantidade: qb
-- nome: sal
-  quantidade: 1 c. de sobremesa
-- nome: folhas de espinafres
-  quantidade: 150 g
-- nome: azeite
-  quantidade: 2 c. de sopa
-minutos-de-preparação: 55
-nome: Sopa de couve-flor
-número-de-doses: 10
-passos:
-- Lave os legumes.
-- Numa panela, junte a couve-flor separada em raminhos e o alho-francês em rodelas.
-- Junte a courgette cortada em pedaços pequenos e a cebola descascada e cortada em
-  bocados. Cubra os legumes com água, tempere com o sal, tape e leve a cozer sobre
-  lume brando até estarem macios.
-- Triture com a varinha mágica até desfazer completamente os legumes. Se achar a sopa
-  demasiado espessa, junte um pouco mais de água a ferver e rectifique os temperos
-  se for necessário.
-- Adicione as folhas de espinafres e o azeite, mexa e retire do lume.
-valores-nutricionais:
-- dose: 43 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '2'
-- dose: 3 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '4'
-- dose: 0 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '2'
-- dose: 3 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 2 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
-- dose: 1 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '4'
-- dose: 2 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''

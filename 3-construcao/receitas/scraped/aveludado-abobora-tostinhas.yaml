@@ -1,5 +1,67 @@
+
+nome: Aveludado de abóbora e tostinhas
+
 dificuldade: fácil
+
+minutos-de-preparação: 50
+
+número-de-doses: 4
+
 etiquetas: []
+
+ingredientes:
+- nome: talo de aipo
+  quantidade: 40 g
+- nome: cebola
+  quantidade: 50 g
+- nome: folha de louro
+  quantidade: '1'
+- nome: água
+  quantidade: 1,4 l
+- nome: azeite
+  quantidade: 1 c. sopa
+- nome: alho-francês em rodelas
+  quantidade: 150 g
+- nome: polpa de abóbora
+  quantidade: 400 g
+- nome: feijão branco cozido
+  quantidade: 200 g
+- nome: pimenta
+  quantidade: qb
+- nome: leite meio-gordo
+  quantidade: 2 dl
+- nome: fatias pequenas pão de 8 cereias
+  quantidade: '4'
+
+valores-nutricionais:
+- dose: 215 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '12'
+- dose: 5,9 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '8'
+- dose: 1,4 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '7'
+- dose: 7,7 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '51'
+
+passos:
+- Coloque numa panela o aipo, a cebola e a folha de louro. Junte cerca de 1,4 l de
+  água, tempere com o sal e leve ao lume, cozinhando até os legumes estarem macios.
+- Noutra panela, coloque a colher de sopa de azeite, o alho-francês, a polpa de abóbora
+  cortada em cubos, o feijão cozido e um pouco de pimenta e leve ao lume.
+- Tape e deixe estufar até a abóbora ficar desfeita, tendo o cuidado de mexer de vez
+  em quando.
+- Coe o caldo e junte-o ao estufado de abóbora.
+- Adicione o leite e triture com a varinha mágica.
+- Deixe levantar fervura de novo e cozinhe mais quatro minutos.
+- Toste as fatias de pão e corte-as em tiras finas.
+- Distribua o aveludado pelos pratos de sopa ou tigelas e salpique com um pouco de
+  pimenta.
+- Distribua as tiras de pão e sirva de imediato.
+
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
   ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4e
@@ -916,56 +978,3 @@ imagem: !!binary |
   dGfXPUG/oos05W8rj6IOsDb63HqiL9x+RRaCYyv7IAwO0fMLw1+RUX1+n2QFtMvP7ogRqfcfwqbz
   Lpju8+S3muvxvXHmsuNyseNysONFZvgr8b+X5q/Jks+Tqqy/phZcn9Vf1is18Pf8lfz/AOi/uB3K
   3ifZZf7fYrrDw911PB3uv6n+0eyv/wAfddU9zv8Asv6g40XV8G+6u7vHzVneHzX/2Q==
-ingredientes:
-- nome: talo de aipo
-  quantidade: 40 g
-- nome: cebola
-  quantidade: 50 g
-- nome: folha de louro
-  quantidade: '1'
-- nome: água
-  quantidade: 1,4 l
-- nome: azeite
-  quantidade: 1 c. sopa
-- nome: alho-francês em rodelas
-  quantidade: 150 g
-- nome: polpa de abóbora
-  quantidade: 400 g
-- nome: feijão branco cozido
-  quantidade: 200 g
-- nome: pimenta
-  quantidade: qb
-- nome: leite meio-gordo
-  quantidade: 2 dl
-- nome: fatias pequenas pão de 8 cereias
-  quantidade: '4'
-minutos-de-preparação: 50
-nome: Aveludado de abóbora e tostinhas
-número-de-doses: 4
-passos:
-- Coloque numa panela o aipo, a cebola e a folha de louro. Junte cerca de 1,4 l de
-  água, tempere com o sal e leve ao lume, cozinhando até os legumes estarem macios.
-- Noutra panela, coloque a colher de sopa de azeite, o alho-francês, a polpa de abóbora
-  cortada em cubos, o feijão cozido e um pouco de pimenta e leve ao lume.
-- Tape e deixe estufar até a abóbora ficar desfeita, tendo o cuidado de mexer de vez
-  em quando.
-- Coe o caldo e junte-o ao estufado de abóbora.
-- Adicione o leite e triture com a varinha mágica.
-- Deixe levantar fervura de novo e cozinhe mais quatro minutos.
-- Toste as fatias de pão e corte-as em tiras finas.
-- Distribua o aveludado pelos pratos de sopa ou tigelas e salpique com um pouco de
-  pimenta.
-- Distribua as tiras de pão e sirva de imediato.
-valores-nutricionais:
-- dose: 215 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '12'
-- dose: 5,9 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '8'
-- dose: 1,4 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
-- dose: 7,7 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '51'

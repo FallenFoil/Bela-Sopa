@@ -1,9 +1,73 @@
+
+nome: Creme de favas com coentros
+
 dificuldade: média
+
+minutos-de-preparação: 60
+
+número-de-doses: 6
+
 etiquetas:
 - sabores mediterrânicos
 - sem glúten
 - sem leite
 - vegetariana
+
+ingredientes:
+- nome: cebola picada
+  quantidade: 100 g
+- nome: alho-francês em rodelas
+  quantidade: 150 g
+- nome: courgette
+  quantidade: 200 g
+- nome: azeite
+  quantidade: 2 c. de sopa
+- nome: coentros picados
+  quantidade: 1 c. de sopa
+- nome: sal
+  quantidade: 1 c. de sobremesa
+- nome: favas descascadas
+  quantidade: 400 g
+- nome: água
+  quantidade: 1,3 l
+- nome: pés de hortelã
+  quantidade: 3 a 4
+
+valores-nutricionais:
+- dose: 92 Kcal
+  nome: Energia
+  percentagem-do-vdr-adulto: '5'
+- dose: 3,7 g
+  nome: Gordura
+  percentagem-do-vdr-adulto: '5'
+- dose: 0,6 g
+  nome: Gordura | das quais saturadas
+  percentagem-do-vdr-adulto: '3'
+- dose: 6,8 g
+  nome: Hidratos de carbono
+  percentagem-do-vdr-adulto: ''
+- dose: 2,2 g
+  nome: Hidratos de carbono | dos quais açúcares
+  percentagem-do-vdr-adulto: '2'
+- dose: 5,9 g
+  nome: Fibra
+  percentagem-do-vdr-adulto: '24'
+- dose: 5,4 g
+  nome: Proteínas
+  percentagem-do-vdr-adulto: ''
+
+passos:
+- Numa panela, coloque a cebola picada, o alho-francês, a courgette cortada em cubos,
+  o azeite e os talos dos coentros picados. Tempere com o sal, mexa e cozinhe tapado
+  sobre lume brando.
+- Tire a pele às favas, junte-as aos restantes legumes, envolva e deixe cozinhar sobre
+  lume brando cerca de 20 minutos ou até os legumes estarem tenros.
+- Retire uma colherada grande dos legumes cozinhados e reserve. Adicione a água a
+  ferver aos restantes legumes, junte as folhas dos coentros e algumas folhas de hortelã
+  e triture tudo muito bem.
+- Distribua a sopa pelos pratos de serviço ou taças, colocando no centro os legumes
+  reservados.
+
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
   L25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
@@ -1077,58 +1141,3 @@ imagem: !!binary |
   Ofw8/A+N+V/2+f1f0b7P6v8ApI03/OGf8x8kn91/zX8M/he2VYyfVz+HrPwnhv8AEr9p/un5f283
   m/E/D/1P/F2JTPstt1/6v1+Bvw4eyJVl+I3y8M8+Ofb9del78Tu9/MWNr095R+F/4vf2Vlipv9s/
   DHlzGefuroZNPbeUfXWuRCRVMH//2Q==
-ingredientes:
-- nome: cebola picada
-  quantidade: 100 g
-- nome: alho-francês em rodelas
-  quantidade: 150 g
-- nome: courgette
-  quantidade: 200 g
-- nome: azeite
-  quantidade: 2 c. de sopa
-- nome: coentros picados
-  quantidade: 1 c. de sopa
-- nome: sal
-  quantidade: 1 c. de sobremesa
-- nome: favas descascadas
-  quantidade: 400 g
-- nome: água
-  quantidade: 1,3 l
-- nome: pés de hortelã
-  quantidade: 3 a 4
-minutos-de-preparação: 60
-nome: Creme de favas com coentros
-número-de-doses: 6
-passos:
-- Numa panela, coloque a cebola picada, o alho-francês, a courgette cortada em cubos,
-  o azeite e os talos dos coentros picados. Tempere com o sal, mexa e cozinhe tapado
-  sobre lume brando.
-- Tire a pele às favas, junte-as aos restantes legumes, envolva e deixe cozinhar sobre
-  lume brando cerca de 20 minutos ou até os legumes estarem tenros.
-- Retire uma colherada grande dos legumes cozinhados e reserve. Adicione a água a
-  ferver aos restantes legumes, junte as folhas dos coentros e algumas folhas de hortelã
-  e triture tudo muito bem.
-- Distribua a sopa pelos pratos de serviço ou taças, colocando no centro os legumes
-  reservados.
-valores-nutricionais:
-- dose: 92 Kcal
-  nome: Energia
-  percentagem-do-vdr-adulto: '5'
-- dose: 3,7 g
-  nome: Gordura
-  percentagem-do-vdr-adulto: '5'
-- dose: 0,6 g
-  nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '3'
-- dose: 6,8 g
-  nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
-- dose: 2,2 g
-  nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '2'
-- dose: 5,9 g
-  nome: Fibra
-  percentagem-do-vdr-adulto: '24'
-- dose: 5,4 g
-  nome: Proteínas
-  percentagem-do-vdr-adulto: ''
