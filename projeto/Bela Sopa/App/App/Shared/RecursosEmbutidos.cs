@@ -23,7 +23,7 @@ namespace App.Shared
             }
         }
 
-        public static IEnumerable<Receita> CarregarIngredientesDeExemplo()
+        public static IEnumerable<Ingrediente> CarregarIngredientesDeExemplo()
         {
             var nomesRecursos =
                 Assembly
