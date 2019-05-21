@@ -21,7 +21,7 @@ namespace BelaSopa
         // services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext< BelaSopaContext >(
+            services.AddDbContext<BelaSopaContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
                 );
 
