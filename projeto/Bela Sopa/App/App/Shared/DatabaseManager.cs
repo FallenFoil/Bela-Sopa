@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace App.Shared
 {
-    public static class DatabaseManager
+    public static class BaseDeDados
     {
-        public static void Initialize(IApplicationBuilder app)
+        public static void Inicializar(IApplicationBuilder app)
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
@@ -19,23 +20,32 @@ namespace App.Shared
                 bool databaseExisted =
                     (context.Database.GetService<IDatabaseCreator>() as IRelationalDatabaseCreator).Exists();
 
-                // apply pending migrations (creating database if necessary)
+                // aplicar migrações pendentes (cria base de dados se não existir)
                 context.Database.Migrate();
 
                 if (databaseExisted)
                 {
-                    // database didn't exist, populate it
-                    Populate(context);
+                    // base de dados acabou de ser criada, inserir dados iniciais
+                    InserirDadosIniciais(context);
                 }
             }
         }
 
-        private static void Populate(BelaSopaDbContext context)
+        private static void InserirDadosIniciais(BelaSopaDbContext context)
         {
-            context.Add<Administrador>(new Administrador(
+            // criar conta de administrador
+
+            context.Add(new Administrador(
                 Config.DEFAULT_ADMINISTRADOR_NOME,
                 Config.DEFAULT_ADMINISTRADOR_PALAVRA_CHAVE
                 ));
+
+            // inserir dados de exemplo
+
+            context.AddRange(RecursosEmbutidos.CarregarReceitasDeExemplo());
+            context.AddRange(RecursosEmbutidos.CarregarIngredientesDeExemplo());
+            
+            // guardar alterações
 
             context.SaveChanges();
         }
