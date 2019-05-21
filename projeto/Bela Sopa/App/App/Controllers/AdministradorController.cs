@@ -12,9 +12,9 @@ namespace BelaSopa.Controllers
     [ApiController]
     public class AdministradorController : Controller
     {
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public AdministradorController(BelaSopaContext context) {
+        public AdministradorController(BelaSopaDbContext context) {
             _context = context;
         }
 

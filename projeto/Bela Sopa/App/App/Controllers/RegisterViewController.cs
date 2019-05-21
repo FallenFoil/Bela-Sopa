@@ -16,9 +16,9 @@ namespace BelaSopa.Controllers
         {
 
        
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public RegisterViewController(BelaSopaContext context)
+        public RegisterViewController(BelaSopaDbContext context)
         {
                 _context = context;
         }

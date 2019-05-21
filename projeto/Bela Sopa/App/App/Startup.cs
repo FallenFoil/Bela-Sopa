@@ -22,7 +22,7 @@ namespace BelaSopa
         // services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BelaSopaContext>(
+            services.AddDbContext<BelaSopaDbContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
                 );
 
@@ -32,7 +32,7 @@ namespace BelaSopa
             //    ).AddCookie(
             //    options => { options.LoginPath = "/LoginView/UserLogin/"; }
             //    );
-            
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -45,11 +45,7 @@ namespace BelaSopa
             else
                 app.UseHsts();
 
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var database = serviceScope.ServiceProvider.GetRequiredService<BelaSopaContext>().Database;
-                DatabaseManager.EnsureExists(database);
-            }
+            DatabaseManager.Initialize(app);
 
             app.UseMvcWithDefaultRoute();
             app.UseStaticFiles();

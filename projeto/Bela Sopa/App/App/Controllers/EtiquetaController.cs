@@ -12,9 +12,9 @@ namespace BelaSopa.Controllers
     [ApiController]
     public class EtiquetaController : Controller
     {
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public EtiquetaController(BelaSopaContext context) {
+        public EtiquetaController(BelaSopaDbContext context) {
             _context = context;
         }
 

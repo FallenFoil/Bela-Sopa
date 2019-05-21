@@ -15,9 +15,9 @@ namespace BelaSopa.Controllers {
     public class ClienteController : Controller
     {
 
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public ClienteController(BelaSopaContext context) {
+        public ClienteController(BelaSopaDbContext context) {
             _context = context;
         }
 

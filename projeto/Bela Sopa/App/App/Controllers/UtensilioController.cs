@@ -11,9 +11,9 @@ namespace BelaSopa.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class UtensilioController : Controller {
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public UtensilioController(BelaSopaContext context) {
+        public UtensilioController(BelaSopaDbContext context) {
             _context = context;
         }
 

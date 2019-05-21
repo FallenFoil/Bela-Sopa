@@ -13,9 +13,9 @@ namespace BelaSopa.Controllers
     public class ReceitaController : Controller
     {
 
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public ReceitaController(BelaSopaContext context) {
+        public ReceitaController(BelaSopaDbContext context) {
             _context = context;
         }
         //GET api/receita

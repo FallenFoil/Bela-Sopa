@@ -12,9 +12,9 @@ namespace BelaSopa.Controllers
     [ApiController]
     public class ProcessoController : Controller
     {
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public ProcessoController(BelaSopaContext context) {
+        public ProcessoController(BelaSopaDbContext context) {
             _context = context;
         }
 

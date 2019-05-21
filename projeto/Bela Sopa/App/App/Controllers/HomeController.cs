@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BelaSopa.Controllers {
     public class HomeController : Controller {
-        public HomeController(BelaSopaContext context) {
+        public HomeController(BelaSopaDbContext context) {
             EtiquetaController = new EtiquetaController(context);
             ReceitaController = new ReceitaController(context);
         }

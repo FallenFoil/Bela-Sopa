@@ -13,9 +13,9 @@ namespace BelaSopa.Controllers{
     [ApiController]
     public class TarefaController : Controller {
 
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public TarefaController(BelaSopaContext context) {
+        public TarefaController(BelaSopaDbContext context) {
             _context = context;
         }
 

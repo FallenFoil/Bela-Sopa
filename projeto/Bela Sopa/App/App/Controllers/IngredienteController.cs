@@ -12,9 +12,9 @@ namespace BelaSopa.Controllers
     [ApiController]
     public class IngredienteController : Controller
     {
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public IngredienteController(BelaSopaContext context) {
+        public IngredienteController(BelaSopaDbContext context) {
             _context = context;
         }
 

@@ -11,9 +11,9 @@ namespace BelaSopa.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class TecnicaController : Controller {
-        private readonly BelaSopaContext _context;
+        private readonly BelaSopaDbContext _context;
 
-        public TecnicaController(BelaSopaContext context) {
+        public TecnicaController(BelaSopaDbContext context) {
             _context = context;
         }
 

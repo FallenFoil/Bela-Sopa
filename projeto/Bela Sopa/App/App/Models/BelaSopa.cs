@@ -14,8 +14,8 @@ namespace BelaSopa.Models {
         public Dictionary<int, Dictionary<int, Boolean>> EstadoConfecao;
     }
 
-    public class BelaSopaContext : DbContext {
-        public BelaSopaContext(DbContextOptions<BelaSopaContext> options)
+    public class BelaSopaDbContext : DbContext {
+        public BelaSopaDbContext(DbContextOptions<BelaSopaDbContext> options)
             : base(options) {
 
         }
