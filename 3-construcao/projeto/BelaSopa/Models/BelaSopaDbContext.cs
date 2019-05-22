@@ -1,5 +1,4 @@
 using BelaSopa.Models.Assistente;
-using BelaSopa.Models.Utilizadores;
 using Microsoft.EntityFrameworkCore;
 
 namespace BelaSopa.Models
@@ -11,11 +10,13 @@ namespace BelaSopa.Models
 
     public class BelaSopaDbContext : DbContext
     {
-        public BelaSopaDbContext(DbContextOptions<BelaSopaDbContext> options)
-            : base(options)
+        public BelaSopaDbContext(DbContextOptions<BelaSopaDbContext> options) : base(options)
         {
-
         }
+
+        public DbSet<Administrador> Administradores { get; set; }
+
+        public DbSet<Cliente> Clientes { get; set; }
 
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }

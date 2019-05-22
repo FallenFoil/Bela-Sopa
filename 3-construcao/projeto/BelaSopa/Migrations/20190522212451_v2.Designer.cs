@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaDbContext))]
-    [Migration("20190522150813_v1")]
-    partial class v1
+    [Migration("20190522212451_v2")]
+    partial class v2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,25 @@ namespace BelaSopa.Migrations
                 .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("BelaSopa.Models.Administrador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte[]>("HashPalavraPasse")
+                        .IsRequired()
+                        .HasMaxLength(32);
+
+                    b.Property<string>("NomeDeUtilizador")
+                        .IsRequired()
+                        .HasMaxLength(32);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Administrador");
+                });
 
             modelBuilder.Entity("BelaSopa.Models.Assistente.Etiqueta", b =>
                 {
@@ -278,9 +297,9 @@ namespace BelaSopa.Migrations
                     b.ToTable("Utensilio");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.Administrador", b =>
+            modelBuilder.Entity("BelaSopa.Models.Cliente", b =>
                 {
-                    b.Property<int>("UtilizadorId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -290,43 +309,28 @@ namespace BelaSopa.Migrations
                     b.Property<string>("Email")
                         .IsRequired();
 
-                    b.Property<string>("Nome")
-                        .IsRequired();
-
-                    b.Property<string>("Password")
-                        .IsRequired();
-
-                    b.HasKey("UtilizadorId");
-
-                    b.ToTable("Administrador");
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.Cliente", b =>
-                {
-                    b.Property<int>("UtilizadorId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Distrito")
-                        .IsRequired();
-
-                    b.Property<string>("Email")
-                        .IsRequired();
+                    b.Property<byte[]>("HashPalavraPasse")
+                        .IsRequired()
+                        .HasMaxLength(32);
 
                     b.Property<string>("Localização");
 
                     b.Property<string>("Nome")
                         .IsRequired();
 
+                    b.Property<string>("NomeDeUtilizador")
+                        .IsRequired()
+                        .HasMaxLength(32);
+
                     b.Property<string>("Password")
                         .IsRequired();
 
-                    b.HasKey("UtilizadorId");
+                    b.HasKey("Id");
 
                     b.ToTable("Cliente");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.ClienteEmentaSemanal", b =>
+            modelBuilder.Entity("BelaSopa.Models.ClienteEmentaSemanal", b =>
                 {
                     b.Property<int>("ClienteId");
 
@@ -341,7 +345,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ClienteEmentaSemanal");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.ClienteFavorito", b =>
+            modelBuilder.Entity("BelaSopa.Models.ClienteFavorito", b =>
                 {
                     b.Property<int>("ClienteId");
 
@@ -354,7 +358,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ClienteFavorito");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.ClienteFinalizado", b =>
+            modelBuilder.Entity("BelaSopa.Models.ClienteFinalizado", b =>
                 {
                     b.Property<int>("ClienteId");
 
@@ -458,9 +462,9 @@ namespace BelaSopa.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.ClienteEmentaSemanal", b =>
+            modelBuilder.Entity("BelaSopa.Models.ClienteEmentaSemanal", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Utilizadores.Cliente", "Cliente")
+                    b.HasOne("BelaSopa.Models.Cliente", "Cliente")
                         .WithMany("ClienteEmentaSemanal")
                         .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -471,9 +475,9 @@ namespace BelaSopa.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.ClienteFavorito", b =>
+            modelBuilder.Entity("BelaSopa.Models.ClienteFavorito", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Utilizadores.Cliente", "Cliente")
+                    b.HasOne("BelaSopa.Models.Cliente", "Cliente")
                         .WithMany("ClienteFavorito")
                         .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -484,9 +488,9 @@ namespace BelaSopa.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Utilizadores.ClienteFinalizado", b =>
+            modelBuilder.Entity("BelaSopa.Models.ClienteFinalizado", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Utilizadores.Cliente", "Cliente")
+                    b.HasOne("BelaSopa.Models.Cliente", "Cliente")
                         .WithMany("ClienteFinalizado")
                         .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade);

@@ -1,4 +1,3 @@
-using BelaSopa.Models.Utilizadores;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -58,7 +57,7 @@ namespace BelaSopa.Models.Assistente
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
     }
 
-   
+
 
     public class ReceitaEtiqueta
     {

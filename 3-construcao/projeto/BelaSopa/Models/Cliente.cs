@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Models.Utilizadores {
+namespace BelaSopa.Models {
     public class Cliente : Utilizador {
         public Cliente() {
             Localização = "";
@@ -20,6 +20,15 @@ namespace BelaSopa.Models.Utilizadores {
         [NotMapped]
         public ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { set; get; }
         public string Localização { set; get; }
+
+        [Required]
+        public string Nome { set; get; }
+        [Required]
+        public string Email { set; get; }
+        [Required]
+        public string Distrito { set; get; }
+        [Required]
+        public string Password { set; get; }
     }
 
     public class ClienteReceita {

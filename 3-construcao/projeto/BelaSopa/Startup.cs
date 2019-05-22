@@ -1,14 +1,13 @@
-using BelaSopa.Shared;
 using BelaSopa.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using BelaSopa.Models.Utilizadores;
 
 namespace BelaSopa
 {
@@ -25,18 +24,27 @@ namespace BelaSopa
         // services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // adicionar base de dados
+
             services.AddDbContext<BelaSopaDbContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
                 );
 
-            // TODO: fix/implement this
-            //services.AddAuthentication(
-            //    CookieAuthenticationDefaults.AuthenticationScheme
-            //    ).AddCookie(
-            //    options => { options.LoginPath = "/LoginView/UserLogin/"; }
-            //    );
+            // configurar autenticação por cookies
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services
+                .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.AccessDeniedPath = "/";
+                    options.LoginPath = "/";
+                });
+
+            // configurar MVC
+
+            services
+                .AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure
@@ -50,7 +58,8 @@ namespace BelaSopa
 
             InicializarBaseDeDados(app);
 
-            app.UseMvcWithDefaultRoute();
+            app.UseAuthentication();
+            app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Autenticacao}/{action=Index}"));
             app.UseStaticFiles();
         }
 
@@ -68,7 +77,7 @@ namespace BelaSopa
 
                 if (!databaseExisted)
                 {
-                    // base de dados acabou de ser criada, efetuar povoamento inicial
+                    // base de dados acabou de ser criada, realizar povoamento inicial
                     PovoarBaseDeDados(context);
                 }
             }
@@ -78,16 +87,16 @@ namespace BelaSopa
         {
             // criar conta de administrador
 
-            context.Add(Administrador.DeInfo(new AdministradorInfo
+            context.Add(new Administrador
             {
-                NomeDeUtilizador = Config.DEFAULT_ADMINISTRADOR_NOME,
-                PalavraChave = Config.DEFAULT_ADMINISTRADOR_PALAVRA_CHAVE
-            }));
-            
+                NomeDeUtilizador = "root",
+                HashPalavraPasse = Credenciais.ComputarHashPalavraPasse("root")
+            });
+
             // inserir dados de exemplo
 
-            context.AddRange(RecursosEmbutidos.CarregarReceitasDeExemplo());
-            context.AddRange(RecursosEmbutidos.CarregarIngredientesDeExemplo());
+            //context.AddRange(RecursosEmbutidos.CarregarReceitasDeExemplo());
+            //context.AddRange(RecursosEmbutidos.CarregarIngredientesDeExemplo());
 
             // guardar alterações
 

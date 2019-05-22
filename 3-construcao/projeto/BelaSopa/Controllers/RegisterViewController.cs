@@ -1,28 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using BelaSopa.Models;
-using BelaSopa.Models.Assistente;
-using BelaSopa.Models.Utilizadores;
-using BelaSopa.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace BelaSopa.Controllers
 {
-              
-        public class RegisterViewController : Controller
-        {
 
-       
+    public class RegisterViewController : Controller
+    {
+
+
         private readonly BelaSopaDbContext _context;
 
         public RegisterViewController(BelaSopaDbContext context)
         {
-                _context = context;
+            _context = context;
         }
-        
+
 
         // Post api/user -> inecabado
         [HttpPost]
@@ -46,7 +39,7 @@ namespace BelaSopa.Controllers
         }
 
 
-   
+
 
 
         public IActionResult Index()

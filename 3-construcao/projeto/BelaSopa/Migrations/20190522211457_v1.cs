@@ -12,8 +12,25 @@ namespace BelaSopa.Migrations
                 name: "Administrador",
                 columns: table => new
                 {
-                    UtilizadorId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    NomeDeUtilizador = table.Column<string>(maxLength: 32, nullable: false),
+                    HashPalavraChave = table.Column<byte[]>(maxLength: 32, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Administrador", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cliente",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    NomeDeUtilizador = table.Column<string>(maxLength: 32, nullable: false),
+                    HashPalavraChave = table.Column<byte[]>(maxLength: 32, nullable: false),
+                    Localização = table.Column<string>(nullable: true),
                     Nome = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
                     Distrito = table.Column<string>(nullable: false),
@@ -21,24 +38,7 @@ namespace BelaSopa.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Administrador", x => x.UtilizadorId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Cliente",
-                columns: table => new
-                {
-                    UtilizadorId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
-                    Distrito = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false),
-                    Localização = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cliente", x => x.UtilizadorId);
+                    table.PrimaryKey("PK_Cliente", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -164,7 +164,7 @@ namespace BelaSopa.Migrations
                         name: "FK_ClienteEmentaSemanal_Cliente_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
-                        principalColumn: "UtilizadorId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ClienteEmentaSemanal_Receita_ReceitaId",
@@ -188,7 +188,7 @@ namespace BelaSopa.Migrations
                         name: "FK_ClienteFavorito_Cliente_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
-                        principalColumn: "UtilizadorId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ClienteFavorito_Receita_ReceitaId",
@@ -212,7 +212,7 @@ namespace BelaSopa.Migrations
                         name: "FK_ClienteFinalizado_Cliente_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
-                        principalColumn: "UtilizadorId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ClienteFinalizado_Receita_ReceitaId",
