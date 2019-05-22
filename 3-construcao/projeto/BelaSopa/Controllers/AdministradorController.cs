@@ -42,7 +42,8 @@ namespace BelaSopa.Controllers
         public IActionResult Post([FromBody] Administrador a) {
             _context.Administrador.Add(a);
             _context.SaveChanges();
-            return new CreatedResult($"/api/administrador/{a.UtilizadorId}", a);
+            //return new CreatedResult($"/api/administrador/{a.UtilizadorId}", a);
+            return new OkResult();
         }
 
         // PUT api/administrador/5
@@ -52,9 +53,9 @@ namespace BelaSopa.Controllers
             if (toUpdate == null)
                 return NotFound();
 
-            toUpdate.Distrito = a.Distrito;
-            toUpdate.Email = a.Email;
-            toUpdate.Nome = a.Nome;
+            //toUpdate.Distrito = a.Distrito;
+            //toUpdate.Email = a.Email;
+            //toUpdate.Nome = a.Nome;
 
             _context.SaveChanges();
 

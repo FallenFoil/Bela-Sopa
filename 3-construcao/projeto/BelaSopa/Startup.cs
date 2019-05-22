@@ -78,11 +78,12 @@ namespace BelaSopa
         {
             // criar conta de administrador
 
-            //context.Add(new Administrador(
-            //    Config.DEFAULT_ADMINISTRADOR_NOME,
-            //    Config.DEFAULT_ADMINISTRADOR_PALAVRA_CHAVE
-            //    ));
-
+            context.Add(Administrador.DeInfo(new AdministradorInfo
+            {
+                NomeDeUtilizador = Config.DEFAULT_ADMINISTRADOR_NOME,
+                PalavraChave = Config.DEFAULT_ADMINISTRADOR_PALAVRA_CHAVE
+            }));
+            
             // inserir dados de exemplo
 
             context.AddRange(RecursosEmbutidos.CarregarReceitasDeExemplo());

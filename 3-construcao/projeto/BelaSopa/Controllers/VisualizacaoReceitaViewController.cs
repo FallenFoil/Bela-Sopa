@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BelaSopa.Controllers
 {
-    public class VisualizaçaoReceitaViewController : Controller
+    public class VisualizacaoReceitaViewController : Controller
     {
         public IActionResult Index()
         {

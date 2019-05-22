@@ -1,25 +1,23 @@
 using BelaSopa.Models.Assistente;
 using BelaSopa.Models.Utilizadores;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BelaSopa.Models {
-    public class BelaSopa {
-        public Receita Receita;
-        public Dictionary<int, Dictionary<int, Boolean>> EstadoConfecao;
-    }
+namespace BelaSopa.Models
+{
+    //public class BelaSopa {
+    //    public Receita Receita;
+    //    public Dictionary<int, Dictionary<int, Boolean>> EstadoConfecao;
+    //}
 
-    public class BelaSopaDbContext : DbContext {
+    public class BelaSopaDbContext : DbContext
+    {
         public BelaSopaDbContext(DbContextOptions<BelaSopaDbContext> options)
-            : base(options) {
+            : base(options)
+        {
 
         }
-        public DbSet<Cliente> Cliente { get; set; } 
+
+        public DbSet<Cliente> Cliente { get; set; }
         public DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
         public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
         public DbSet<ClienteFavorito> ClienteFavorito { get; set; }
@@ -42,7 +40,8 @@ namespace BelaSopa.Models {
         public DbSet<Tecnica> Tecnica { set; get; }
 
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<ClienteFinalizado>()
                 .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
             modelBuilder.Entity<ClienteFinalizado>()

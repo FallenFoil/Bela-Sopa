@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BelaSopa.Controllers
@@ -15,7 +11,8 @@ namespace BelaSopa.Controllers
 
         [HttpGet]
         [ValidateAntiForgeryToken]
-        public IActionResult UserLogin(){
+        public IActionResult UserLogin()
+        {
             return View();
         }
         /*
