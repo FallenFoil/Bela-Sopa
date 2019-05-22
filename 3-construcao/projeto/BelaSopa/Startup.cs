@@ -66,9 +66,9 @@ namespace BelaSopa
                 // aplicar migrações pendentes (cria base de dados se não existir)
                 context.Database.Migrate();
 
-                if (databaseExisted)
+                if (!databaseExisted)
                 {
-                    // base de dados acabou de ser criada, inserir dados iniciais
+                    // base de dados acabou de ser criada, efetuar povoamento inicial
                     PovoarBaseDeDados(context);
                 }
             }
