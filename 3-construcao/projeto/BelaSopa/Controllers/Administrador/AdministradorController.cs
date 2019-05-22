@@ -2,7 +2,7 @@ using BelaSopa.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Controllers.Administrador
 {
     [Route("api/[controller]")]
     [ApiController]

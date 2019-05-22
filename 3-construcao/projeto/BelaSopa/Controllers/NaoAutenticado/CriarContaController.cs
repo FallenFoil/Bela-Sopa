@@ -1,7 +1,7 @@
 using BelaSopa.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Controllers.NaoAutenticado
 {
     public class CriarContaController : Controller
     {

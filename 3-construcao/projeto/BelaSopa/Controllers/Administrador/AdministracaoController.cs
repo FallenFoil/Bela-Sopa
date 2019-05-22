@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Controllers.Administrador
 {
     [Authorize(Roles = "Administrador")]
     public class AdministracaoController : Controller

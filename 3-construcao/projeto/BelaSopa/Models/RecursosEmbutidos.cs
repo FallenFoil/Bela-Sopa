@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using YamlDotNet.RepresentationModel;
 
-namespace BelaSopa.Shared
+namespace BelaSopa.Models
 {
     public class RecursosEmbutidos
     {

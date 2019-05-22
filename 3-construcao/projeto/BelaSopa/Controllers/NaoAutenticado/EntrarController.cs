@@ -7,13 +7,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Controllers.NaoAutenticado
 {
-    public class AutenticacaoController : Controller
+    public class EntrarController : Controller
     {
         private readonly BelaSopaDbContext context;
 
-        public AutenticacaoController(BelaSopaDbContext context)
+        public EntrarController(BelaSopaDbContext context)
         {
             this.context = context;
         }
@@ -31,7 +31,7 @@ namespace BelaSopa.Controllers
 
                 if (nomeDeUtilizador != null)
                 {
-                    var utilizador = Utilizador.GetComNomeDeUtilizador(this.context, nomeDeUtilizador);
+                    var utilizador = context.GetUtilizador(nomeDeUtilizador);
 
                     // verificar se utilizador existe
 
@@ -53,7 +53,7 @@ namespace BelaSopa.Controllers
 
             // não autenticado
 
-            return View(viewName: "Index");
+            return View(viewName: "NaoAutenticado/Entrar/Index");
         }
 
         [HttpPost]
@@ -65,7 +65,7 @@ namespace BelaSopa.Controllers
             if (!ModelState.IsValid)
             {
                 // dados inválidos
-                return View(viewName: "Index");
+                return View(viewName: "NaoAutenticado/Entrar/Index");
             }
 
             // obter utilizador por nome de utilizador (cliente ou administrador)
@@ -80,7 +80,7 @@ namespace BelaSopa.Controllers
             {
                 // utilizador não existe
                 TempData["ErroAutenticacao"] = "Utilizador não existe.";
-                return View(viewName: "Index");
+                return View(viewName: "NaoAutenticado/Entrar/Index");
             }
 
             // verificar se palavra-passe está correta
@@ -89,7 +89,7 @@ namespace BelaSopa.Controllers
             {
                 // palavra-passe incorreta
                 TempData["ErroAutenticacao"] = "Palavra-passe incorreta.";
-                return View(viewName: "Index");
+                return View(viewName: "NaoAutenticado/Entrar/Index");
             }
 
             // criar cookie

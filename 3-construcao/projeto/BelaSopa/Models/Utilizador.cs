@@ -12,12 +12,5 @@ namespace BelaSopa.Models
 
         [Required, MinLength(32), MaxLength(32)]
         public byte[] HashPalavraPasse { get; set; }
-
-        public static Utilizador GetComNomeDeUtilizador(BelaSopaDbContext context, string nomeDeUtilizador)
-        {
-            return (Utilizador)
-                context.Clientes.SingleOrDefault(c => c.NomeDeUtilizador == nomeDeUtilizador) ??
-                context.Administradores.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador);
-        }
     }
 }

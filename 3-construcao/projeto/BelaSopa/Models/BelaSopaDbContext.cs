@@ -1,5 +1,6 @@
 using BelaSopa.Models.Assistente;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace BelaSopa.Models
 {
@@ -12,6 +13,13 @@ namespace BelaSopa.Models
     {
         public BelaSopaDbContext(DbContextOptions<BelaSopaDbContext> options) : base(options)
         {
+        }
+
+        public Utilizador GetUtilizador(string nomeDeUtilizador)
+        {
+            return (Utilizador)
+                this.Clientes.SingleOrDefault(c => c.NomeDeUtilizador == nomeDeUtilizador) ??
+                this.Administradores.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador);
         }
 
         public DbSet<Administrador> Administradores { get; set; }

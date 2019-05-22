@@ -6,7 +6,7 @@ using BelaSopa.Models;
 using BelaSopa.Models.Assistente;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Controllers.Cliente
 {
     [Route("api/[controller]")]
     [ApiController]

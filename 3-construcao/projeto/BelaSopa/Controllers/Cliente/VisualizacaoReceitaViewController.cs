@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Controllers.Cliente
 {
-    public class HistoricoViewController : Controller
+    public class VisualizacaoReceitaViewController : Controller
     {
         public IActionResult Index()
         {

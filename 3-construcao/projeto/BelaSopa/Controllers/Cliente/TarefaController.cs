@@ -7,7 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Controllers{
+namespace BelaSopa.Controllers.Cliente
+{
 
     [Route("api/[controller]")]
     [ApiController]
@@ -41,7 +42,7 @@ namespace BelaSopa.Controllers{
                 return NotFound();
             var tecnicas = from tecnica in _context.Tecnica
                            join tarefaTecnica in _context.TarefaTecnica.Where(tt => tt.TarefaId == codigo)
-                                on tecnica.TecnicaId equals tarefaTecnica.TecnicaId                          
+                                on tecnica.TecnicaId equals tarefaTecnica.TecnicaId
                            select new {
                                tecnica.TecnicaId,
                                tecnica.Descricao,
@@ -101,7 +102,7 @@ namespace BelaSopa.Controllers{
         // POST api/tarefa/tecnica/1/1
         [HttpPost("tecnica/{idTarefa}/{idTecnica}")]
         public IActionResult PostTecnica(int idTarefa, int idTecnica) {
-            bool tartecn = _context.TarefaTecnica.Any(tt => tt.TecnicaId == idTecnica 
+            bool tartecn = _context.TarefaTecnica.Any(tt => tt.TecnicaId == idTecnica
                                                         && tt.TarefaId == idTarefa);
             bool tecn = _context.Tecnica.Any(tecnica => tecnica.TecnicaId == idTecnica);
             bool tar = _context.Tarefa.Any(tarefa => tarefa.TarefaId == idTarefa);
