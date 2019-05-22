@@ -7,13 +7,13 @@ using System.Reflection;
 using System.Text;
 using YamlDotNet.RepresentationModel;
 
-namespace App.Shared
+namespace BelaSopa.Shared
 {
     public class RecursosEmbutidos
     {
         public static IEnumerable<Receita> CarregarReceitasDeExemplo()
         {
-            return CarregarRecursos("App.Data.Receitas.", stream =>
+            return CarregarRecursos("BelaSopa.Data.Receitas.", stream =>
             {
                 using (var reader = new StreamReader(stream, Encoding.UTF8))
                 {
@@ -29,7 +29,7 @@ namespace App.Shared
 
         public static IEnumerable<Ingrediente> CarregarIngredientesDeExemplo()
         {
-            return CarregarRecursos("App.Data.Ingredientes.", stream =>
+            return CarregarRecursos("BelaSopa.Data.Ingredientes.", stream =>
             {
                 using (var reader = new StreamReader(stream, Encoding.UTF8))
                 {

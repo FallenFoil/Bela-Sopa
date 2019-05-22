@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace App.Shared
+namespace BelaSopa.Shared
 {
     public static class Config
     {

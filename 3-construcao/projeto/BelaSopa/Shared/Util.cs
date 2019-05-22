@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace App.Shared
+namespace BelaSopa.Shared
 {
     public static class Util
     {

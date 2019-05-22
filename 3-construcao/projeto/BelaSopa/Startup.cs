@@ -1,4 +1,4 @@
-using App.Shared;
+using BelaSopa.Shared;
 using BelaSopa.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using BelaSopa.Models.Utilizadores;
 
 namespace BelaSopa
 {
@@ -45,10 +48,49 @@ namespace BelaSopa
             else
                 app.UseHsts();
 
-            DatabaseManager.Initialize(app);
+            InicializarBaseDeDados(app);
 
             app.UseMvcWithDefaultRoute();
             app.UseStaticFiles();
+        }
+
+        private static void InicializarBaseDeDados(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<BelaSopaDbContext>();
+
+                bool databaseExisted =
+                    (context.Database.GetService<IDatabaseCreator>() as IRelationalDatabaseCreator).Exists();
+
+                // aplicar migrações pendentes (cria base de dados se não existir)
+                context.Database.Migrate();
+
+                if (databaseExisted)
+                {
+                    // base de dados acabou de ser criada, inserir dados iniciais
+                    PovoarBaseDeDados(context);
+                }
+            }
+        }
+
+        private static void PovoarBaseDeDados(BelaSopaDbContext context)
+        {
+            // criar conta de administrador
+
+            //context.Add(new Administrador(
+            //    Config.DEFAULT_ADMINISTRADOR_NOME,
+            //    Config.DEFAULT_ADMINISTRADOR_PALAVRA_CHAVE
+            //    ));
+
+            // inserir dados de exemplo
+
+            context.AddRange(RecursosEmbutidos.CarregarReceitasDeExemplo());
+            context.AddRange(RecursosEmbutidos.CarregarIngredientesDeExemplo());
+
+            // guardar alterações
+
+            context.SaveChanges();
         }
     }
 }

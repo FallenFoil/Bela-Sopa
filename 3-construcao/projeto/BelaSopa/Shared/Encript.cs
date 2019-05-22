@@ -4,15 +4,6 @@ using System.Text;
 
 namespace BelaSopa.Shared
 {
-    public class UtilPalavrasChave
-    {
-        public static byte[] hash(string palavraChave)
-        {
-            using (var hash = SHA256.Create())
-                return hash.ComputeHash(Encoding.UTF8.GetBytes(palavraChave));
-        }
-    }
-
     public class Encript
     {
         //retorna a string que equivale ao encriptamento
