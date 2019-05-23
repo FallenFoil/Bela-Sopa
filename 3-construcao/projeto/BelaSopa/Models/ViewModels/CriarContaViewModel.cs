@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BelaSopa.Models.ViewModels.NaoAutenticado
+namespace BelaSopa.Models.ViewModels
 {
     public class CriarContaViewModel
     {

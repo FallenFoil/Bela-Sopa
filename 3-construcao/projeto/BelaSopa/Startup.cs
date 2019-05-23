@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.BusinessModels.Utilizadores;
+using BelaSopa.Models.BusinessModels;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -60,7 +60,7 @@ namespace BelaSopa
             InicializarBaseDeDados(app);
 
             app.UseAuthentication();
-            app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Entrar}/{action=Index}"));
+            app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Autenticacao}/{action=Index}"));
             app.UseStaticFiles();
         }
 

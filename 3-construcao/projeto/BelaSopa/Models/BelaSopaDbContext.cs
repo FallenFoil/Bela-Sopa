@@ -1,5 +1,5 @@
 using BelaSopa.Models.Assistente;
-using BelaSopa.Models.BusinessModels.Utilizadores;
+using BelaSopa.Models.BusinessModels;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 

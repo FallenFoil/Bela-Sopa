@@ -1,19 +1,22 @@
 @model EntrarViewModel
-
 @{
     Layout = "_Layout.cshtml";
     ViewData["Title"] = "Autenticação";
 }
 
-<h1>Bela Sopa</h1>
 <h2>Entrar</h2>
+
+@if (TempData["Sucesso"] != null)
+{
+    <p class="alert alert-success">@TempData["Sucesso"]</p>
+}
 
 @if (TempData["Erro"] != null)
 {
     <p class="alert alert-danger">@TempData["Erro"]</p>
 }
 
-<form asp-action="Entrar" method="post">
+<form asp-action="Index" method="post">
 
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -35,4 +38,4 @@
 
 </form>
 
-@Html.ActionLink(linkText: "Criar conta", actionName: "CriarConta")
+Não tem uma conta? @Html.ActionLink(linkText: "Criar conta", actionName: "CriarConta")

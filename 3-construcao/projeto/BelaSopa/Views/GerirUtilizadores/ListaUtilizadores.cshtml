@@ -1,0 +1,32 @@
+@model ListaUtilizadoresViewModel
+@{
+    Layout = "_LayoutAdministrador";
+    ViewData["Title"] = "Gerir utilizadores";
+}
+
+<h3>Administradores</h3>
+
+<ul>
+    @foreach (var administrador in Model.Administradores)
+    {
+        <li>
+            @administrador.NomeDeUtilizador
+            @if (administrador.NomeDeUtilizador != User.Identity.Name)
+            {
+                <a asp-action="RemoverUtilizador" asp-route-nomeDeUtilizador="@administrador.NomeDeUtilizador">Remover</a>
+            }
+        </li>
+    }
+</ul>
+
+<h3>Clientes</h3>
+
+<ul>
+    @foreach (var cliente in Model.Clientes)
+    {
+        <li>
+            @cliente.NomeDeUtilizador
+            | <a asp-action="RemoverUtilizador" asp-route-nomeDeUtilizador="@cliente.NomeDeUtilizador">Remover</a>
+        </li>
+    }
+</ul>

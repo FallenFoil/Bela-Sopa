@@ -1,4 +1,4 @@
-using BelaSopa.Models.BusinessModels.Utilizadores;
+using BelaSopa.Models.BusinessModels;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;

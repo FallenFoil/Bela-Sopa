@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.BusinessModels.Utilizadores;
+using BelaSopa.Models.BusinessModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BelaSopa.Controllers
 {
-    public static class Autenticacao
+    public static class Util
     {
         public static async Task<IActionResult> AutenticarUtilizador(Controller controller, Utilizador utilizador)
         {
@@ -28,7 +28,7 @@ namespace BelaSopa.Controllers
 
             return controller.RedirectToAction(
                 actionName: "Index",
-                controllerName: (utilizador is Cliente) ? "Receitas" : "Administracao"
+                controllerName: (utilizador is Cliente) ? "Perfil" : "GerirUtilizadores"
                 );
         }
 
@@ -36,6 +36,11 @@ namespace BelaSopa.Controllers
         {
             await controller.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
+
+        //public static Utilizador GetUtilizadorAutenticado()
+        //{
+
+        //}
 
         public static async Task<IActionResult> RedirecionarSeAutenticado(
             Controller controller,
@@ -62,7 +67,7 @@ namespace BelaSopa.Controllers
 
                         return controller.RedirectToAction(
                             actionName: "Index",
-                            controllerName: (utilizador is Cliente) ? "Receitas" : "Administracao"
+                            controllerName: (utilizador is Cliente) ? "Perfil" : "GerirUtilizadores"
                             );
                     }
                 }
