@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -9,36 +9,32 @@ namespace BelaSopa.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Administrador",
+                name: "Administradores",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     NomeDeUtilizador = table.Column<string>(maxLength: 32, nullable: false),
-                    HashPalavraChave = table.Column<byte[]>(maxLength: 32, nullable: false)
+                    HashPalavraPasse = table.Column<byte[]>(maxLength: 32, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Administrador", x => x.Id);
+                    table.PrimaryKey("PK_Administradores", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cliente",
+                name: "Clientes",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     NomeDeUtilizador = table.Column<string>(maxLength: 32, nullable: false),
-                    HashPalavraChave = table.Column<byte[]>(maxLength: 32, nullable: false),
-                    Localização = table.Column<string>(nullable: true),
-                    Nome = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
-                    Distrito = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false)
+                    HashPalavraPasse = table.Column<byte[]>(maxLength: 32, nullable: false),
+                    Email = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cliente", x => x.Id);
+                    table.PrimaryKey("PK_Clientes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,79 +143,6 @@ namespace BelaSopa.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Utensilio", x => x.UtensilioId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ClienteEmentaSemanal",
-                columns: table => new
-                {
-                    ClienteId = table.Column<int>(nullable: false),
-                    ReceitaId = table.Column<int>(nullable: false),
-                    Horario = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClienteEmentaSemanal", x => new { x.ClienteId, x.ReceitaId });
-                    table.ForeignKey(
-                        name: "FK_ClienteEmentaSemanal_Cliente_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Cliente",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ClienteEmentaSemanal_Receita_ReceitaId",
-                        column: x => x.ReceitaId,
-                        principalTable: "Receita",
-                        principalColumn: "ReceitaId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ClienteFavorito",
-                columns: table => new
-                {
-                    ClienteId = table.Column<int>(nullable: false),
-                    ReceitaId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClienteFavorito", x => new { x.ClienteId, x.ReceitaId });
-                    table.ForeignKey(
-                        name: "FK_ClienteFavorito_Cliente_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Cliente",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ClienteFavorito_Receita_ReceitaId",
-                        column: x => x.ReceitaId,
-                        principalTable: "Receita",
-                        principalColumn: "ReceitaId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ClienteFinalizado",
-                columns: table => new
-                {
-                    ClienteId = table.Column<int>(nullable: false),
-                    ReceitaId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClienteFinalizado", x => new { x.ClienteId, x.ReceitaId });
-                    table.ForeignKey(
-                        name: "FK_ClienteFinalizado_Cliente_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Cliente",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ClienteFinalizado_Receita_ReceitaId",
-                        column: x => x.ReceitaId,
-                        principalTable: "Receita",
-                        principalColumn: "ReceitaId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -396,21 +319,6 @@ namespace BelaSopa.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClienteEmentaSemanal_ReceitaId",
-                table: "ClienteEmentaSemanal",
-                column: "ReceitaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ClienteFavorito_ReceitaId",
-                table: "ClienteFavorito",
-                column: "ReceitaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ClienteFinalizado_ReceitaId",
-                table: "ClienteFinalizado",
-                column: "ReceitaId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProcessoTarefa_TarefaId",
                 table: "ProcessoTarefa",
                 column: "TarefaId");
@@ -429,16 +337,10 @@ namespace BelaSopa.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Administrador");
+                name: "Administradores");
 
             migrationBuilder.DropTable(
-                name: "ClienteEmentaSemanal");
-
-            migrationBuilder.DropTable(
-                name: "ClienteFavorito");
-
-            migrationBuilder.DropTable(
-                name: "ClienteFinalizado");
+                name: "Clientes");
 
             migrationBuilder.DropTable(
                 name: "ProcessoTarefa");
@@ -460,9 +362,6 @@ namespace BelaSopa.Migrations
 
             migrationBuilder.DropTable(
                 name: "TarefaUtensilio");
-
-            migrationBuilder.DropTable(
-                name: "Cliente");
 
             migrationBuilder.DropTable(
                 name: "Etiqueta");

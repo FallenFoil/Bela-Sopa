@@ -1,6 +1,6 @@
 @model DadosCliente
 @{
-    Layout = "_Layout";
+    Layout = "_Layout.cshtml";
     ViewData["Title"] = "Criar conta";
 }
 
@@ -41,6 +41,6 @@
 @Html.ActionLink(linkText: "Voltar", actionName: "Voltar")
 
 @section Scripts
-    {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

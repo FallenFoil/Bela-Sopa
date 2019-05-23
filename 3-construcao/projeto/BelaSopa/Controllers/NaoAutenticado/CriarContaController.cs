@@ -19,7 +19,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
         {
             return
                 await Autenticacao.RedirecionarSeAutenticado(this, this.context)
-                ?? View(viewName: "../NaoAutenticado/CriarConta/Index");
+                ?? View(viewName: "../NaoAutenticado/CriarConta");
         }
 
         [HttpPost]
@@ -31,7 +31,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
             if (!ModelState.IsValid)
             {
                 // dados inválidos
-                return View(viewName: "../NaoAutenticado/CriarConta/Index");
+                return View(viewName: "../NaoAutenticado/CriarConta");
             }
 
             // verificar se nome de utilizador está disponível
@@ -40,7 +40,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
             {
                 // nome de utilizador indisponível
                 TempData["Erro"] = "Nome de utilizador indisponível.";
-                return View(viewName: "../NaoAutenticado/CriarConta/Index");
+                return View(viewName: "../NaoAutenticado/CriarConta");
             }
 
             // registar cliente

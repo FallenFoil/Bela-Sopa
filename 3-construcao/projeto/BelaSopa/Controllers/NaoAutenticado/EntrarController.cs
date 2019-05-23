@@ -24,7 +24,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
         {
             return
                 await Autenticacao.RedirecionarSeAutenticado(this, this.context)
-                ?? View(viewName: "../NaoAutenticado/Entrar/Index");
+                ?? View(viewName: "../NaoAutenticado/Entrar");
         }
 
         [HttpPost]
@@ -36,7 +36,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
             if (!ModelState.IsValid)
             {
                 // dados inválidos
-                return View(viewName: "../NaoAutenticado/Entrar/Index");
+                return View(viewName: "../NaoAutenticado/Entrar");
             }
 
             // verificar se utilizador existe
@@ -47,7 +47,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
             {
                 // utilizador não existe
                 TempData["Erro"] = "Utilizador não existe.";
-                return View(viewName: "../NaoAutenticado/Entrar/Index");
+                return View(viewName: "../NaoAutenticado/Entrar");
             }
 
             // verificar se palavra-passe está correta
@@ -56,7 +56,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
             {
                 // palavra-passe incorreta
                 TempData["Erro"] = "Palavra-passe incorreta.";
-                return View(viewName: "../NaoAutenticado/Entrar/Index");
+                return View(viewName: "../NaoAutenticado/Entrar");
             }
 
             // autenticar utilizador e redirecionar
