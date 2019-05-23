@@ -43,6 +43,7 @@ namespace BelaSopa.Controllers.AutenticadoAdministrador
                 }
             }
 
+            TempData["Sucesso"] = "Utilizador removido com sucesso.";
             return RedirectToAction(actionName: "Index");
         }
 
@@ -86,11 +87,8 @@ namespace BelaSopa.Controllers.AutenticadoAdministrador
 
             // redirecionar para view de autenticação
 
-            TempData["Sucesso"] = "Conta criada com sucesso.";
-            return View(
-                viewName: "Entrar",
-                model: new EntrarViewModel { NomeDeUtilizador = viewModel.NomeDeUtilizador }
-                );
+            TempData["Sucesso"] = "Administrador criado com sucesso.";
+            return RedirectToAction(actionName: "Index");
         }
     }
 }

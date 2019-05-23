@@ -1,17 +1,17 @@
-@model CriarContaViewModel
+@model AdicionarAdministradorViewModel
 @{
-    Layout = "_Layout";
-    ViewData["Title"] = "Criar conta";
+    Layout = "_LayoutAdministrador";
+    ViewData["Title"] = "Adicionar administrador";
 }
 
-<h2>Criar conta</h2>
+<h2>Adicionar administrador</h2>
 
 @if (TempData["Erro"] != null)
 {
     <p class="alert alert-danger">@TempData["Erro"]</p>
 }
 
-<form asp-action="CriarConta" method="post">
+<form asp-action="AdicionarAdministrador" method="post">
 
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -31,12 +31,6 @@
         <label asp-for="ConfirmacaoPalavraPasse" class="control-label"></label>
         <input asp-for="ConfirmacaoPalavraPasse" class="form-control" />
         <span asp-validation-for="ConfirmacaoPalavraPasse" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
     <div class="form-group">
