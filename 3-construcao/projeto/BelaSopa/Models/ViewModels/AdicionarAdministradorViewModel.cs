@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BelaSopa.Models.ViewModels
 {
-    public class CriarContaViewModel
+    public class AdicionarAdministradorViewModel
     {
         [Display(Name = "Nome de utilizador")]
         [Required(ErrorMessage = "O nome de utilizador é obrigatório.")]
@@ -21,9 +21,5 @@ namespace BelaSopa.Models.ViewModels
         [DataType(DataType.Password, ErrorMessage = "A palavra-passe é inválida.")]
         [Compare("PalavraPasse", ErrorMessage = "As palavras-passe não correspondem.")]
         public string ConfirmacaoPalavraPasse { get; set; }
-
-        [Display(Name = "Endereço de e-mail (opcional)")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "O endereço de e-mail é inválido.")]
-        public string Email { set; get; }
     }
 }

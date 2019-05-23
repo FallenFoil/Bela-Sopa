@@ -1,4 +1,5 @@
 using BelaSopa.Models;
+using BelaSopa.Models.BusinessModels;
 using BelaSopa.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,13 +20,12 @@ namespace BelaSopa.Controllers.AutenticadoAdministrador
         [HttpGet]
         public IActionResult Index()
         {
-            var viewModel = new ListaUtilizadoresViewModel
-            {
-                Administradores = this.context.Administradores.ToList(),
-                Clientes = this.context.Clientes.ToList()
-            };
+            var viewModel = (
+                Administradores: this.context.Administradores.ToList(),
+                Clientes: this.context.Clientes.ToList()
+            );
 
-            return View(viewName: "ListaUtilizadores", model: viewModel);
+            return View(viewName: "ListaDeUtilizadores", model: viewModel);
         }
 
         [HttpGet]
@@ -44,6 +44,53 @@ namespace BelaSopa.Controllers.AutenticadoAdministrador
             }
 
             return RedirectToAction(actionName: "Index");
+        }
+
+        [HttpGet]
+        public IActionResult AdicionarAdministrador()
+        {
+            return View(viewName: "AdicionarAdministrador");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AdicionarAdministrador([Bind] AdicionarAdministradorViewModel viewModel)
+        {
+            // validar dados
+
+            if (!ModelState.IsValid)
+            {
+                // dados inválidos
+                return View(viewName: "AdicionarAdministrador");
+            }
+
+            // verificar se nome de utilizador está disponível
+
+            if (this.context.GetUtilizador(viewModel.NomeDeUtilizador) != null)
+            {
+                // nome de utilizador indisponível
+                TempData["Erro"] = "Nome de utilizador indisponível.";
+                return View(viewName: "AdicionarAdministrador");
+            }
+
+            // registar cliente
+
+            var administrador = new Administrador
+            {
+                NomeDeUtilizador = viewModel.NomeDeUtilizador,
+                HashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse)
+            };
+
+            this.context.Administradores.Add(administrador);
+            this.context.SaveChanges();
+
+            // redirecionar para view de autenticação
+
+            TempData["Sucesso"] = "Conta criada com sucesso.";
+            return View(
+                viewName: "Entrar",
+                model: new EntrarViewModel { NomeDeUtilizador = viewModel.NomeDeUtilizador }
+                );
         }
     }
 }

@@ -1,4 +1,4 @@
-@model ListaUtilizadoresViewModel
+@model (List<Administrador> Administradores, List<Cliente> Clientes)
 @{
     Layout = "_LayoutAdministrador";
     ViewData["Title"] = "Gerir utilizadores";
@@ -6,11 +6,13 @@
 
 <h3>Administradores</h3>
 
+<a asp-action="AdicionarAdministrador">Adicionar administrador</a>
+
 <ul>
     @foreach (var administrador in Model.Administradores)
     {
         <li>
-            @administrador.NomeDeUtilizador
+            @administrador.NomeDeUtilizador |
             @if (administrador.NomeDeUtilizador != User.Identity.Name)
             {
                 <a asp-action="RemoverUtilizador" asp-route-nomeDeUtilizador="@administrador.NomeDeUtilizador">Remover</a>
