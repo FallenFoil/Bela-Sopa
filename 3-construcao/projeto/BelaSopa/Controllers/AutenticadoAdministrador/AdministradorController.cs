@@ -1,8 +1,3 @@
-using BelaSopa.Models;
-using BelaSopa.Models.Utilizadores;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-
 namespace BelaSopa.Controllers.AutenticadoAdministrador
 {
     //[Route("api/[controller]")]

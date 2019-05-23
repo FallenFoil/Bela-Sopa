@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
-namespace BelaSopa.Models.Utilizadores
+namespace BelaSopa.Models.BusinessModels.Utilizadores
 {
     public abstract class Utilizador
     {
@@ -12,5 +13,11 @@ namespace BelaSopa.Models.Utilizadores
 
         [Required, MinLength(32), MaxLength(32)]
         public byte[] HashPalavraPasse { get; set; }
+
+        public static byte[] ComputarHashPalavraPasse(string palavraPasse)
+        {
+            using (var hash = SHA256.Create())
+                return hash.ComputeHash(Encoding.UTF8.GetBytes(palavraPasse));
+        }
     }
 }

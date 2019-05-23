@@ -1,11 +1,8 @@
 using BelaSopa.Models;
-using BelaSopa.Models.Utilizadores;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using BelaSopa.Models.BusinessModels.Utilizadores;
+using BelaSopa.Models.ViewModels.NaoAutenticado;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace BelaSopa.Controllers.NaoAutenticado
@@ -29,7 +26,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Entrar([Bind] Credenciais credenciais)
+        public async Task<IActionResult> Entrar([Bind] EntrarViewModel viewModel)
         {
             // validar dados
 
@@ -41,7 +38,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
 
             // verificar se utilizador existe
 
-            var utilizador = this.context.GetUtilizador(credenciais.NomeDeUtilizador);
+            var utilizador = this.context.GetUtilizador(viewModel.NomeDeUtilizador);
 
             if (utilizador == null)
             {
@@ -52,7 +49,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
 
             // verificar se palavra-passe está correta
 
-            if (!utilizador.HashPalavraPasse.SequenceEqual(credenciais.ComputarHashPalavraPasse()))
+            if (!utilizador.HashPalavraPasse.SequenceEqual(Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse)))
             {
                 // palavra-passe incorreta
                 TempData["Erro"] = "Palavra-passe incorreta.";

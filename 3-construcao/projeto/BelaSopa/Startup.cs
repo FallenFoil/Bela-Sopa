@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.Utilizadores;
+using BelaSopa.Models.BusinessModels.Utilizadores;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -91,7 +91,7 @@ namespace BelaSopa
             context.Add(new Administrador
             {
                 NomeDeUtilizador = "root",
-                HashPalavraPasse = Credenciais.ComputarHashPalavraPasse("root")
+                HashPalavraPasse = Utilizador.ComputarHashPalavraPasse("root")
             });
 
             // inserir dados de exemplo

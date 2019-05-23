@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.Utilizadores;
+using BelaSopa.Models.BusinessModels.Utilizadores;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;

@@ -1,5 +1,6 @@
 using BelaSopa.Models;
-using BelaSopa.Models.Utilizadores;
+using BelaSopa.Models.BusinessModels.Utilizadores;
+using BelaSopa.Models.ViewModels.NaoAutenticado;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -24,7 +25,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CriarConta([Bind] DadosCliente dadosCliente)
+        public async Task<IActionResult> CriarConta([Bind] CriarContaViewModel viewModel)
         {
             // validar dados
 
@@ -36,7 +37,7 @@ namespace BelaSopa.Controllers.NaoAutenticado
 
             // verificar se nome de utilizador está disponível
 
-            if (this.context.GetUtilizador(dadosCliente.NomeDeUtilizador) != null)
+            if (this.context.GetUtilizador(viewModel.NomeDeUtilizador) != null)
             {
                 // nome de utilizador indisponível
                 TempData["Erro"] = "Nome de utilizador indisponível.";
@@ -47,9 +48,9 @@ namespace BelaSopa.Controllers.NaoAutenticado
 
             var cliente = new Cliente
             {
-                NomeDeUtilizador = dadosCliente.NomeDeUtilizador,
-                HashPalavraPasse = dadosCliente.ComputarHashPalavraPasse(),
-                Email = dadosCliente.Email
+                NomeDeUtilizador = viewModel.NomeDeUtilizador,
+                HashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse),
+                Email = viewModel.Email
             };
 
             this.context.Clientes.Add(cliente);

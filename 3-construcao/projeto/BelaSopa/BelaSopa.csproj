@@ -255,6 +255,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Models\ViewModels\AutenticadoCliente\" />
+    <Folder Include="Models\ViewModels\AutenticadoAdministrador\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

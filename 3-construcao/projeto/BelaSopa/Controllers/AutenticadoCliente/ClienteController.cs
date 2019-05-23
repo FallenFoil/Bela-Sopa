@@ -1,11 +1,3 @@
-using BelaSopa.Models;
-using BelaSopa.Models.Assistente;
-using BelaSopa.Models.Utilizadores;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace BelaSopa.Controllers.AutenticadoCliente
 {
     //[Route("api/[controller]")]

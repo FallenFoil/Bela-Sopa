@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BelaSopa.Models.Utilizadores
+namespace BelaSopa.Models.BusinessModels.Utilizadores
 {
     public class Cliente : Utilizador
     {

@@ -1,4 +1,4 @@
-namespace BelaSopa.Models.Utilizadores
+namespace BelaSopa.Models.BusinessModels.Utilizadores
 {
     public class Administrador : Utilizador
     {
