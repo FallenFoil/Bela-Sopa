@@ -3,7 +3,7 @@ using BelaSopa.Models.Assistente;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers.Cliente
+namespace BelaSopa.Controllers.AutenticadoCliente
 {
     [Authorize(Roles = "Cliente")]
     public class ReceitasController : Controller

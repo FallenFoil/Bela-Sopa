@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace BelaSopa.Models
+namespace BelaSopa.Models.Utilizadores
 {
     public abstract class Utilizador
     {

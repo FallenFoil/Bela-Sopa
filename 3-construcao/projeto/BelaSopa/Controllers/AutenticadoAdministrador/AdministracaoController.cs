@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Controllers.Administrador
+namespace BelaSopa.Controllers.AutenticadoAdministrador
 {
     [Authorize(Roles = "Administrador")]
     public class AdministracaoController : Controller
@@ -20,15 +20,15 @@ namespace BelaSopa.Controllers.Administrador
         [HttpGet]
         public IActionResult Index()
         {
-            return View(viewName: "Index");
+            return View(viewName: "../AutenticadoAdministrador/Administracao/Index");
         }
 
         [HttpGet]
         public async Task<IActionResult> Sair()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await Autenticacao.DesautenticarUtilizador(this);
 
-            return RedirectToAction(actionName: "Index", controllerName: "Autenticacao");
+            return RedirectToAction(actionName: "Index", controllerName: "Entrar");
         }
     }
 }

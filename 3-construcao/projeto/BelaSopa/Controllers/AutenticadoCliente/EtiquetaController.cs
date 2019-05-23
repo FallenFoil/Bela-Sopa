@@ -6,7 +6,7 @@ using BelaSopa.Models;
 using BelaSopa.Models.Assistente;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers.Cliente
+namespace BelaSopa.Controllers.AutenticadoCliente
 {
     [Route("api/[controller]")]
     [ApiController]

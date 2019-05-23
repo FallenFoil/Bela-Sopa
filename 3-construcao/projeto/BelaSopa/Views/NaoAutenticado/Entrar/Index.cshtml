@@ -6,12 +6,13 @@
 }
 
 <h1>Bela Sopa</h1>
+<h2>Entrar</h2>
 
 <div class="col-md-4">
 
-    @if (TempData["ErroAutenticacao"] != null)
+    @if (TempData["Erro"] != null)
     {
-        <p class="alert alert-danger">@TempData["ErroAutenticacao"]</p>
+        <p class="alert alert-danger">@TempData["Erro"]</p>
     }
 
     <form asp-action="Entrar" method="post">

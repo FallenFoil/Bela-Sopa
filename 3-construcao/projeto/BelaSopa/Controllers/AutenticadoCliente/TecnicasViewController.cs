@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers.Cliente
+namespace BelaSopa.Controllers.AutenticadoCliente
 {
-    public class EmConfecaoViewController : Controller
+    public class TecnicasViewController : Controller
     {
         public IActionResult Index()
         {

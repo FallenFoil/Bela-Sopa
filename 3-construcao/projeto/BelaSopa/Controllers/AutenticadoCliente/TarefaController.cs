@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Controllers.Cliente
+namespace BelaSopa.Controllers.AutenticadoCliente
 {
 
     [Route("api/[controller]")]

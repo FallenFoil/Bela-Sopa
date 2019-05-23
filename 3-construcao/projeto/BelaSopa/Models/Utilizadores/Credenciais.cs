@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BelaSopa.Models
+namespace BelaSopa.Models.Utilizadores
 {
     public class Credenciais
     {
@@ -14,7 +14,7 @@ namespace BelaSopa.Models
         [Display(Name = "Palavra-passe")]
         [Required(ErrorMessage = "A palavra-passe é obrigatória.")]
         [StringLength(32, MinimumLength = 4, ErrorMessage = "A palavra-passe deve ter entre 4 e 32 carateres.")]
-        [DataType(DataType.Password)]
+        [DataType(DataType.Password, ErrorMessage = "A palavra-passe é inválida.")]
         public string PalavraPasse { get; set; }
 
         public byte[] ComputarHashPalavraPasse()
