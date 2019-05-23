@@ -27,11 +27,9 @@ namespace BelaSopa.Models
 
         public DbSet<Cliente> Clientes { get; set; }
 
-        //public DbSet<Cliente> Cliente { get; set; }
         //public DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
         //public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
         //public DbSet<ClienteFavorito> ClienteFavorito { get; set; }
-        //public DbSet<Administrador> Administrador { get; set; }
 
         public DbSet<Receita> Receita { set; get; }
         public DbSet<Etiqueta> Etiqueta { set; get; }
