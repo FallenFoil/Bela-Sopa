@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa; 
+    background: #fafafa;
 }
 
 p {
@@ -127,8 +127,9 @@ span {
         background: #4CAF50;
         border-bottom: 1px solid #4CAF50;
     }
+
         #sidebar .sidebar-header #logo {
-            margin-left:15%;
+            margin-left: 15%;
         }
 
         #sidebar .sidebar-header #logo_icon {
@@ -142,7 +143,7 @@ span {
             border-color: #4CAF50;
             margin-top: 5%;
         }
-        
+
         #sidebar .sidebar-header strong {
             display: none;
             font-size: 1.8em;
