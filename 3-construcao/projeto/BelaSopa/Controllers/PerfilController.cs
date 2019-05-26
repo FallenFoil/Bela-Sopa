@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = "Cliente")]
+    [Authorize(Roles = Util.ROLES_CLIENTE)]
     public class PerfilController : Controller
     {
         private readonly BelaSopaDbContext context;

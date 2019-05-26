@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-namespace BelaSopa.Controllers.AutenticadoAdministrador
+namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = Util.ROLES_ADMINISTRADOR)]
     public class GerirUtilizadoresController : Controller
     {
         private readonly BelaSopaDbContext context;

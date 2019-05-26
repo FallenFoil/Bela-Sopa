@@ -12,12 +12,19 @@ namespace BelaSopa.Controllers
 {
     public static class Util
     {
+        public const string ROLES_CLIENTE = "Cliente";
+        public const string ROLES_ADMINISTRADOR = "Administrador";
+        public const string ROLES_CLIENTE_OU_ADMINISTRADOR = ROLES_CLIENTE + ", " + ROLES_ADMINISTRADOR;
+
+        private const string CONTROLLER_INICIAL_CLIENTE = "Perfil";
+        private const string CONTROLLER_INICIAL_ADMINISTRADOR = "GerirUtilizadores";
+
         public static async Task<IActionResult> AutenticarUtilizador(Controller controller, Utilizador utilizador)
         {
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, utilizador.NomeDeUtilizador),
-                new Claim(ClaimTypes.Role, (utilizador is Cliente) ? "Cliente" : "Administrador")
+                new Claim(ClaimTypes.Role, (utilizador is Cliente) ? ROLES_CLIENTE : ROLES_ADMINISTRADOR)
             };
 
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(claims, "login"));
@@ -28,7 +35,7 @@ namespace BelaSopa.Controllers
 
             return controller.RedirectToAction(
                 actionName: "Index",
-                controllerName: (utilizador is Cliente) ? "Perfil" : "GerirUtilizadores"
+                controllerName: (utilizador is Cliente) ? CONTROLLER_INICIAL_CLIENTE : CONTROLLER_INICIAL_ADMINISTRADOR
                 );
         }
 
@@ -37,17 +44,12 @@ namespace BelaSopa.Controllers
             await controller.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
-        //public static Utilizador GetUtilizadorAutenticado()
-        //{
-
-        //}
-
-        public static async Task<IActionResult> RedirecionarSeAutenticado(
+        public static Utilizador GetUtilizadorAutenticado(
             Controller controller,
             BelaSopaDbContext context
             )
         {
-            // verificar se utilizador já está autenticado
+            // verificar se utilizador está autenticado
 
             if (controller.User.Identity.IsAuthenticated)
             {
@@ -62,14 +64,35 @@ namespace BelaSopa.Controllers
                     // verificar se utilizador existe
 
                     if (utilizador != null)
-                    {
-                        // já autenticado, redirecionar
+                        return utilizador;
+                }
+            }
 
-                        return controller.RedirectToAction(
-                            actionName: "Index",
-                            controllerName: (utilizador is Cliente) ? "Perfil" : "GerirUtilizadores"
-                            );
-                    }
+            // não autenticado ou autenticação inválida
+
+            return null;
+        }
+
+        public static async Task<IActionResult> RedirecionarSeAutenticado(
+            Controller controller,
+            BelaSopaDbContext context
+            )
+        {
+            // verificar se utilizador está autenticado
+
+            if (controller.User.Identity.IsAuthenticated)
+            {
+                var utilizador = GetUtilizadorAutenticado(controller, context);
+
+                if (utilizador != null)
+                {
+                    // já autenticado, redirecionar
+
+                    return controller.RedirectToAction(
+                        actionName: "Index",
+                        controllerName:
+                            (utilizador is Cliente) ? CONTROLLER_INICIAL_CLIENTE : CONTROLLER_INICIAL_ADMINISTRADOR
+                        );
                 }
 
                 // sessão inválida, remover autenticação
