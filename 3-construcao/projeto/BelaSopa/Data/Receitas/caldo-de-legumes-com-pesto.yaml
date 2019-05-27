@@ -1,6 +1,8 @@
 
 nome: Caldo de legumes com pesto
 
+descrição: Uma sopa de legumes, básica, enriquecida com carne de frango e bacon. Deliciosa e reconfortante, esta sopa é ideal para os dias mais frios. O sabor do pesto dá-lhe um toque ainda mais especial.
+
 dificuldade: média
 
 minutos-de-preparação: 75
@@ -56,44 +58,36 @@ ingredientes:
 valores-nutricionais:
 - dose: 217 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 8,6 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 1,7 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 24,5 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 4,4 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 4,8 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '19'
+  percentagem-do-vdr-adulto: 19
 - dose: 9,5 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Num tacho, coza a perna de frango em água com dois dentes de alho descascados e
-  a cebola durante 30 minutos. Reserve.
-- Coloque o feijão, demolhado de véspera, numa panela com água (quatro vezes o volume
-  do feijão) e o sal e coza até estar macio, mas sem se desfazer. Reserve.
-- Corte a cenoura, o aipo, a cebola, o tomate (limpo de sementes), a batata, a courgette
-  e o bacon em cubos pequenos. Reserve.
-- Numa panela, aqueça o azeite e, quando estiver quente, introduza a cebola cortada,
-  os dentes de alho picados e o bacon. Deixe saltear.
-- Refresque com 5 dl do caldo da cozedura do frango e adicione os cubos de cenoura,
-  aipo e batata.
-- Envolva, junte o feijão cozido, a água da cozedura, as ervilhas, o tomate e a massinha
-  cortada.
-- Deixe cozinhar cerca de 15 minutos em lume brando até a massa e os legumes estarem
-  macios.
-- Adicione o frango picado, limpo de peles e ossos, e a courgette e deixe cozinhar
-  mais uns instantes.
-- No final, junte a salsa picada e envolva bem. Sirva a sopa com o pesto.
+- - Num tacho, coza a perna de frango em água com dois dentes de alho descascados e a cebola durante 30 minutos. Reserve.
+  - Coloque o feijão, demolhado de véspera, numa panela com água (quatro vezes o volume do feijão) e o sal e coza até estar macio, mas sem se desfazer. Reserve.
+  - Corte a cenoura, o aipo, a cebola, o tomate (limpo de sementes), a batata, a courgette e o bacon em cubos pequenos. Reserve.
+  - Numa panela, aqueça o azeite e, quando estiver quente, introduza a cebola cortada, os dentes de alho picados e o bacon. Deixe saltear.
+  - Refresque com 5 dl do caldo da cozedura do frango e adicione os cubos de cenoura, aipo e batata.
+  - Envolva, junte o feijão cozido, a água da cozedura, as ervilhas, o tomate e a massinha cortada.
+  - Deixe cozinhar cerca de 15 minutos em lume brando até a massa e os legumes estarem macios.
+  - Adicione o frango picado, limpo de peles e ossos, e a courgette e deixe cozinhar mais uns instantes.
+  - No final, junte a salsa picada e envolva bem. Sirva a sopa com o pesto.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUFBQUFBQUGBgUICAcICAsKCQkKCxEMDQwNDBEaEBMQ

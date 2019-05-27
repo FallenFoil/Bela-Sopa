@@ -1,6 +1,8 @@
 
 nome: Sopa rica de castanhas
 
+descrição: Esta é uma sopa típica de Resende, onde o Domingo de Ramos (que antecede o Domingo de Páscoa) manda que se sirva a sopa de castanhas com tradição. Neste dia, as hortaliças ficam de fora para evitar superstições antigas.
+
 dificuldade: fácil
 
 minutos-de-preparação: 60
@@ -35,35 +37,33 @@ ingredientes:
 valores-nutricionais:
 - dose: 319 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 18,5 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '26'
+  percentagem-do-vdr-adulto: 26
 - dose: 5,4 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '27'
+  percentagem-do-vdr-adulto: 27
 - dose: 30,6 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 3,8 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 3,1 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 7,8 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Coloque uma panela ao lume com o azeite e deixe aquecer.
-- Adicione a carne e o toucinho, cortados em pequenos cubos, e deixe corar. Junte
-  a cebola e o alho picados.
-- Adicione 1,5 litro de água e deixe ferver 10 minutos.
-- Junte as castanhas e tempere com o sal. Quando as castanhas estiverem cozidas, acrescente
-  o arroz e envolva.
-- Deixe ferver 8 minutos e adicione a massa de argolinhas.
-- Rectifique os temperos e sirva a sopa bem quente, num prato fundo.
+- - Coloque uma panela ao lume com o azeite e deixe aquecer.
+  - Adicione a carne e o toucinho, cortados em pequenos cubos, e deixe corar. Junte a cebola e o alho picados.
+  - Adicione 1,5 litro de água e deixe ferver 10 minutos.
+  - Junte as castanhas e tempere com o sal. Quando as castanhas estiverem cozidas, acrescente o arroz e envolva.
+  - Deixe ferver 8 minutos e adicione a massa de argolinhas.
+  - Rectifique os temperos e sirva a sopa bem quente, num prato fundo.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QQHaHR0cDov

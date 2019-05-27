@@ -1,6 +1,8 @@
 
 nome: Creme de crustáceos com tostas de alho
 
+descrição: Um clássico creme de crustáceos servido com tostas de alho, cobertas de recheio da sapateira e navalheira. Uma entrada elegante com sabores tradicionais reinventados, em proposta festiva.
+
 dificuldade: fácil
 
 minutos-de-preparação: 55
@@ -44,45 +46,37 @@ ingredientes:
 valores-nutricionais:
 - dose: 187 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 6,0 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 0,9 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 16,2 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 3,3 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 1,7 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 10,0 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Aqueça o azeite numa panela e, quando estiver quente, junte-lhe a cebola, dois dentes
-  de alho, o alho-francês e o aipo finamente picados e deixe refogar até começarem
-  a murchar.
-- Junte a navalheira e a sapateira partidas, envolva e refresque com o vinho e o brandy.
-- Deixe cozinhar um pouco para reduzir, adicione o tomate cortado em cubos e refogue
-  15 minutos.
-- Adicione a água e os coentros, tempere com o sal e deixe ferver mais 15 minutos.
-- Retire a navalheira e a sapateira, desfie a carne e reserve.
-- Dissolva o amido de milho com um pouco de água fria e adicione-o ao cozinhado, envolvendo
-  bem.
-- Deixe cozinhar para engrossar um pouco e, em seguida, retire do lume e triture tudo
-  com a varinha mágica.
-- Passe o caldo por um passador para o recipiente de servir e junte-lhe a carne de
-  sapateira e navalheira desfiada (reserve alguma).
-- Corte o pão em fatias finas, torre-as ligeiramente e esfregue-as com o restante
-  dente de alho cortado ao meio.
-- Disponha a carne da navalheira e da sapateira reservada nas tostas e sirva-as a
-  acompanhar o creme.
+- - Aqueça o azeite numa panela e, quando estiver quente, junte-lhe a cebola, dois dentes de alho, o alho-francês e o aipo finamente picados e deixe refogar até começarem a murchar.
+  - Junte a navalheira e a sapateira partidas, envolva e refresque com o vinho e o brandy.
+  - Deixe cozinhar um pouco para reduzir, adicione o tomate cortado em cubos e refogue 15 minutos.
+  - Adicione a água e os coentros, tempere com o sal e deixe ferver mais 15 minutos.
+  - Retire a navalheira e a sapateira, desfie a carne e reserve.
+  - Dissolva o amido de milho com um pouco de água fria e adicione-o ao cozinhado, envolvendo bem.
+  - Deixe cozinhar para engrossar um pouco e, em seguida, retire do lume e triture tudo com a varinha mágica.
+  - Passe o caldo por um passador para o recipiente de servir e junte-lhe a carne de sapateira e navalheira desfiada (reserve alguma).
+  - Corte o pão em fatias finas, torre-as ligeiramente e esfregue-as com o restante dente de alho cortado ao meio.
+  - Disponha a carne da navalheira e da sapateira reservada nas tostas e sirva-as a acompanhar o creme.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

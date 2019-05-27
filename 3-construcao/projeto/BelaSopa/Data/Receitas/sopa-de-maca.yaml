@@ -1,6 +1,8 @@
 
 nome: Sopa de maçã
 
+descrição: A sopa de maçã é uma entrada diferente para um encontro de amigos. As maçãs fazem a sopa suave e o açafrão e o queijo Roquefort dão-lhe um sabor especial.
+
 dificuldade: fácil
 
 minutos-de-preparação: 40
@@ -36,26 +38,23 @@ ingredientes:
 valores-nutricionais:
 - dose: 180 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 10,1 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '14'
+  percentagem-do-vdr-adulto: 14
 - dose: 3,8 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '19'
+  percentagem-do-vdr-adulto: 19
 - dose: 4,8 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '19'
+  percentagem-do-vdr-adulto: 19
 
 passos:
-- Refogue a cebola e os dentes de alho picados no azeite.
-- Adicione a cenoura ralada e as maçãs descascadas e cortadas em cubos. Tape e deixe
-  suar durante 10 minutos em lume médio.
-- Junte a água a ferver, o sal, o açafrão e um pouco de pimenta, mexa e deixe ferver
-  durante mais 10 minutos.
-- Retire do lume e triture tudo muito bem com a varinha mágica.
-- Na altura de servir, distribua a sopa pelos pratos e salpique com o queijo Roquefort
-  esfarelado e o cebolinho picado.
+- - Refogue a cebola e os dentes de alho picados no azeite.
+  - Adicione a cenoura ralada e as maçãs descascadas e cortadas em cubos. Tape e deixe suar durante 10 minutos em lume médio.
+  - Junte a água a ferver, o sal, o açafrão e um pouco de pimenta, mexa e deixe ferver durante mais 10 minutos.
+  - Retire do lume e triture tudo muito bem com a varinha mágica.
+  - Na altura de servir, distribua a sopa pelos pratos e salpique com o queijo Roquefort esfarelado e o cebolinho picado.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

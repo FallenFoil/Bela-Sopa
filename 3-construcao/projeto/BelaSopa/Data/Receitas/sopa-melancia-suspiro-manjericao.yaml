@@ -1,6 +1,8 @@
 
 nome: Sopa de melancia com suspiro de manjericão
 
+descrição: Uma receita cheia de frescura, original e com sabores de Verão! Experimente!
+
 dificuldade: média
 
 minutos-de-preparação: 90
@@ -47,43 +49,37 @@ ingredientes:
 valores-nutricionais:
 - dose: 150 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 4,3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 0,9 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 24,4 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 24,1 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '27'
+  percentagem-do-vdr-adulto: 27
 - dose: 2,6 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 3,2 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Pré-aqueça o forno a 120° C na função estática.
-- Coloque o açúcar e as folhas de manjericão no robot de cozinha ou no liquidificador
-  e triture.
-- Bata as claras até fizerem espuma e deite o açúcar com o manjericão em chuva, adicione
-  o sal e o sumo de limão e continue a bater até obter um merengue.
-- Coloque-o num saco de pasteleiro disponha pequenos montes (do tamanho de avelãs)
-  num tabuleiro forrado com papel vegetal.
-- Leve ao forno cerca de 1 hora. Desligue e deixe arrefecer, sem abrir a porta.
-- Retire a pele e as semente ao tomate, corte-o em pedaços e coloque-o no robot ou
-  no liquidificador.
-- Adicione a polpa da melancia em cubos, o pimento em tiras, os dentes de alho, o
-  azeite, o vinagre e o sal e triture tudo muito bem.
-- Junte água até obter a consistência desejada, alguns cubos de gelo e reserve no
-  frigorífico.
-- Na altura de servir distribua pelas taças, colocando por cima alguns suspiros.
-- Polvilhe com manjericão fresco e pimenta e sirva.
+- - Pré-aqueça o forno a 120° C na função estática.
+  - Coloque o açúcar e as folhas de manjericão no robot de cozinha ou no liquidificador e triture.
+  - Bata as claras até fizerem espuma e deite o açúcar com o manjericão em chuva, adicione o sal e o sumo de limão e continue a bater até obter um merengue.
+  - Coloque-o num saco de pasteleiro disponha pequenos montes (do tamanho de avelãs) num tabuleiro forrado com papel vegetal.
+  - Leve ao forno cerca de 1 hora. Desligue e deixe arrefecer, sem abrir a porta.
+  - Retire a pele e as semente ao tomate, corte-o em pedaços e coloque-o no robot ou no liquidificador.
+  - Adicione a polpa da melancia em cubos, o pimento em tiras, os dentes de alho, o azeite, o vinagre e o sal e triture tudo muito bem.
+  - Junte água até obter a consistência desejada, alguns cubos de gelo e reserve no frigorífico.
+  - Na altura de servir distribua pelas taças, colocando por cima alguns suspiros.
+  - Polvilhe com manjericão fresco e pimenta e sirva.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

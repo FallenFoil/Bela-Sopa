@@ -46,6 +46,30 @@ def scrape_recipe(url: str) -> None:
 
     nome_receita = soup.find('h1', class_='main-slide-title').string.strip()
 
+    # parse recipe - descrição
+
+    descricao_receita = (
+        soup
+        .find('li', class_='detail-slide')
+        .find('div', class_='description')
+        .string
+        )
+
+    if not descricao_receita:
+
+        # sem valores nutritionais
+
+        print('    SKIPPING - no description')
+        return
+
+    descricao_receita = descricao_receita.strip().strip('"\'').strip()
+
+    descricao_receita = re.sub(
+        r'[\s\n]+',
+        r' ',
+        descricao_receita
+        )
+
     # parse recipe - dificuldade
 
     tag_dificuldade = soup.find('label', class_='dificulty')
@@ -111,10 +135,17 @@ def scrape_recipe(url: str) -> None:
                 if td.get('class') != ['down-border', 'hidden']
                 )
 
+            percentagem_vdr = percentagem_vdr.replace('%', '').strip()
+
+            if percentagem_vdr:
+                percentagem_vdr = int(percentagem_vdr)
+            else:
+                percentagem_vdr = None
+
             valores_nutricionais.append({
                 'nome': nome,
                 'dose': dose.strip(),
-                'percentagem-do-vdr-adulto': percentagem_vdr.replace('%', '').strip()
+                'percentagem-do-vdr-adulto': percentagem_vdr
                 })
 
     elif soup.find('div', class_='nutrition-table') is not None:
@@ -148,8 +179,17 @@ def scrape_recipe(url: str) -> None:
                 dose += ' Kcal'
 
             percentagem_vdr = (
-                detail.find('div', class_='percent').string.replace('%', '').strip()
+                detail
+                .find('div', class_='percent')
+                .string
+                .replace('%', '')
+                .strip()
                 )
+
+            if percentagem_vdr:
+                percentagem_vdr = int(percentagem_vdr)
+            else:
+                percentagem_vdr = None
 
             valores_nutricionais.append({
                 'nome': nome,
@@ -185,10 +225,12 @@ def scrape_recipe(url: str) -> None:
 
     # parse recipe - passos
 
-    passos = list(
-        str(tag.string)
-        for tag in soup.find_all('span', class_='instruction-body')
-        )
+    passos = [
+        list(
+            str(tag.string)
+            for tag in soup.find_all('span', class_='instruction-body')
+            )
+        ]
 
     # parse recipe - imagem
 
@@ -201,6 +243,7 @@ def scrape_recipe(url: str) -> None:
 
     receita = [
         ('nome'                 , nome_receita),
+        ('descrição'            , descricao_receita),
         ('dificuldade'          , dificuldade),
         ('minutos-de-preparação', duracao_minutos),
         ('número-de-doses'      , num_pessoas),
@@ -221,7 +264,12 @@ def scrape_recipe(url: str) -> None:
 
         for (key, value) in receita:
             yaml_file.write('\n')
-            yaml.dump({ key: value }, stream=yaml_file, allow_unicode=True)
+            yaml.dump(
+                { key: value },
+                stream=yaml_file,
+                allow_unicode=True,
+                width=float("inf")
+                )
 
 # ---------------------------------------------------------------------------- #
 # main

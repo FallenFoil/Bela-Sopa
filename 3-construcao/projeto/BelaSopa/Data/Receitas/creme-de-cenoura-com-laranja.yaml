@@ -1,6 +1,8 @@
 
 nome: Creme de cenoura com laranja
 
+descrição: A textura aveludada e o queijo feta fazem deste creme de cenoura com laranja uma entrada simples de fazer mas que torna a refeição muito especial. Um início de refeição leve com sabores fortes.
+
 dificuldade: fácil
 
 minutos-de-preparação: 55
@@ -44,37 +46,33 @@ ingredientes:
 valores-nutricionais:
 - dose: 129 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 7 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 2 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 13 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 7 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 3 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 4 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Ponha a cebola e os dentes de alho, descascados e picados numa panela. Adicione
-  o azeite, o alho-francês e o aipo, cortados em rodelas finas, tape e deixe cozinhar
-  em lume brando. 
-- Descasque a batata e as cenouras, corte-as em pedaços pequenos e deite na panela.
-- Tempere com o sal, junte o pau de canela, mexa e volte a tapar, deixando cozinhar
-  suavemente durante 30 minutos ou até os legumes estarem macios.
-- Retire o pau de canela, junte a água a ferver, a raspa da casca e o sumo da laranja.
-- Retire do lume e triture com a varinha mágica.
-- Distribua a sopa pelos pratos e salpique-os com o cebolinho picado e o queijo desfeito
-  em pedaços ou cortado em cubos.
+- - Ponha a cebola e os dentes de alho, descascados e picados numa panela. Adicione o azeite, o alho-francês e o aipo, cortados em rodelas finas, tape e deixe cozinhar em lume brando. 
+  - Descasque a batata e as cenouras, corte-as em pedaços pequenos e deite na panela.
+  - Tempere com o sal, junte o pau de canela, mexa e volte a tapar, deixando cozinhar suavemente durante 30 minutos ou até os legumes estarem macios.
+  - Retire o pau de canela, junte a água a ferver, a raspa da casca e o sumo da laranja.
+  - Retire do lume e triture com a varinha mágica.
+  - Distribua a sopa pelos pratos e salpique-os com o cebolinho picado e o queijo desfeito em pedaços ou cortado em cubos.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

@@ -1,6 +1,8 @@
 
 nome: Sopa de cenoura com courgette e batata-doce
 
+descrição: O bom sabor da tradição num prato perfeito para qualquer dia da semana. Junte um fio de natas e acrescente um toque diferente e original.
+
 dificuldade: fácil
 
 minutos-de-preparação: 40
@@ -37,30 +39,26 @@ ingredientes:
 valores-nutricionais:
 - dose: 107 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 6,1 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 1,1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 1,0 g
   nome: Sal
-  percentagem-do-vdr-adulto: '17'
+  percentagem-do-vdr-adulto: 17
 
 passos:
-- Corte a cebola em pedaços e deite-os no copo. Junte os dentes de alho e programe
-  5 segundos, velocidade 5.
-- Raspe as paredes do copo com a espátula, junte o azeite e cozinhe 5 minutos, a 100°
-  C, velocidade 2.
-- Corte a cenoura, a batata-doce e a courgette em pedaços e deite tudo no copo.
-- Adicione o sal e programe 30 minutos, a 100° C, na velocidade 2.
-- Retire o copo medidor da tampa e aguarde um pouco antes de abrir.
-- Raspe as paredes do copo e a tampa com a ajuda da espátula e adicione água até ao
-  limite máximo do copo (± 300 g).
-- Triture 1 minuto, na velocidade 7 a 9.
-- Sirva a sopa com um fio de natas e polvilhada com as sementes de girassol e o cebolinho
-  picado.
+- - Corte a cebola em pedaços e deite-os no copo. Junte os dentes de alho e programe 5 segundos, velocidade 5.
+  - Raspe as paredes do copo com a espátula, junte o azeite e cozinhe 5 minutos, a 100° C, velocidade 2.
+  - Corte a cenoura, a batata-doce e a courgette em pedaços e deite tudo no copo.
+  - Adicione o sal e programe 30 minutos, a 100° C, na velocidade 2.
+  - Retire o copo medidor da tampa e aguarde um pouco antes de abrir.
+  - Raspe as paredes do copo e a tampa com a ajuda da espátula e adicione água até ao limite máximo do copo (± 300 g).
+  - Triture 1 minuto, na velocidade 7 a 9.
+  - Sirva a sopa com um fio de natas e polvilhada com as sementes de girassol e o cebolinho picado.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

@@ -1,6 +1,8 @@
 
 nome: Sopa de grão e amêijoas
 
+descrição: Esta sopa de grão e amêijoas é uma bela maneira de começar uma refeição. Para terminar, quando a sopa já estiver passada, as folhas de espinafres, os grãos inteiros e as amêijoas dão-lhe um toque ainda mais apelativo visualmente.
+
 dificuldade: média
 
 minutos-de-preparação: 80
@@ -37,39 +39,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 500 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '25'
+  percentagem-do-vdr-adulto: 25
 - dose: 28 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '40'
+  percentagem-do-vdr-adulto: 40
 - dose: 10 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '52'
+  percentagem-do-vdr-adulto: 52
 - dose: 43 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 8 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 4 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 23 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Ponha o grão de molho em água fria de um dia para o outro.
-- Escorra, coloque o grão numa panela, cubra com água e junte a cebola descascada
-  e picada. Coza cerca de 45 minutos ou até o grão estar macio.
-- Descasque os dentes de alho, pique-os e leve-os ao lume num tacho com a folha de
-  louro e o azeite. Quando o alho começar a alourar, adicione os espinafres e, assim
-  que estiverem murchos, introduza as amêijoas, lavadas e escorridas. Deixe cozinhar
-  5 minutos ou até as amêijoas abrirem. Retire do lume e reserve.
-- Assim que o grão estiver cozido, retire cerca de uma chávena com uma escumadeira
-  e triture o restante com a varinha mágica. Tempere com 1 colher de sobremesa de
-  sal e introduza a mistura de amêijoas e espinafres e o grão que reservou. Assim
-  que retomar fervura, desligue o lume e salpique generosamente com folhas frescas
-  de coentros.
+- - Ponha o grão de molho em água fria de um dia para o outro.
+  - Escorra, coloque o grão numa panela, cubra com água e junte a cebola descascada e picada. Coza cerca de 45 minutos ou até o grão estar macio.
+  - Descasque os dentes de alho, pique-os e leve-os ao lume num tacho com a folha de louro e o azeite. Quando o alho começar a alourar, adicione os espinafres e, assim que estiverem murchos, introduza as amêijoas, lavadas e escorridas. Deixe cozinhar 5 minutos ou até as amêijoas abrirem. Retire do lume e reserve.
+  - Assim que o grão estiver cozido, retire cerca de uma chávena com uma escumadeira e triture o restante com a varinha mágica. Tempere com 1 colher de sobremesa de sal e introduza a mistura de amêijoas e espinafres e o grão que reservou. Assim que retomar fervura, desligue o lume e salpique generosamente com folhas frescas de coentros.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

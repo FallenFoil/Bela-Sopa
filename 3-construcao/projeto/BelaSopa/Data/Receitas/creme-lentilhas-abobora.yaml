@@ -1,6 +1,8 @@
 
 nome: Creme de lentilhas com abóbora
 
+descrição: Uma sopa consistente preparada com lentilhas e abóbora. Toda a cremosidade e sabor de uma entrada perfeita, para refeição de Outono.
+
 dificuldade: média
 
 minutos-de-preparação: 40
@@ -44,36 +46,32 @@ ingredientes:
 valores-nutricionais:
 - dose: 219 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 10,4 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 1,3 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 20,9 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 5,5 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 4,6 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '18'
+  percentagem-do-vdr-adulto: 18
 - dose: 9,6 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Lave o talo de aipo, corte-o em lâminas e leve ao lume numa panela com o azeite
-  e a cebola.
-- Junte a abóbora, cortada em cubos, a cenoura e a pasta de concentrado de tomate.
-- Polvilhe com os cominhos e o sal e mexa para misturar bem. Tape e deixe suar cerca
-  de 15 minutos.
-- Passe as lentilhas por água, junte-as aos legumes e adicione a água a ferver. Tape
-  e deixe cozinhar mais 15 minutos.
-- Triture a sopa com a varinha mágica ou no copo liquidificador e sirva polvilhada
-  com o pimentão-doce, a salsa picada e as sementes de abóbora.
+- - Lave o talo de aipo, corte-o em lâminas e leve ao lume numa panela com o azeite e a cebola.
+  - Junte a abóbora, cortada em cubos, a cenoura e a pasta de concentrado de tomate.
+  - Polvilhe com os cominhos e o sal e mexa para misturar bem. Tape e deixe suar cerca de 15 minutos.
+  - Passe as lentilhas por água, junte-as aos legumes e adicione a água a ferver. Tape e deixe cozinhar mais 15 minutos.
+  - Triture a sopa com a varinha mágica ou no copo liquidificador e sirva polvilhada com o pimentão-doce, a salsa picada e as sementes de abóbora.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP

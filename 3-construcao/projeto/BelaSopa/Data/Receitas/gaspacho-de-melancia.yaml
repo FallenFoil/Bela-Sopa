@@ -1,6 +1,8 @@
 
 nome: Gaspacho de melancia
 
+descrição: Esta é uma receita de sopa fria que combina fruta da época com produtos hortícolas. Com apenas cinco ingredientes, prepare este gaspacho e delicie-se com verdadeiras colheradas de frescura!
+
 dificuldade: fácil
 
 minutos-de-preparação: 15
@@ -32,36 +34,33 @@ ingredientes:
 valores-nutricionais:
 - dose: 93 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 0,9 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '1'
+  percentagem-do-vdr-adulto: 1
 - dose: 0,3 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '2'
+  percentagem-do-vdr-adulto: 2
 - dose: 20,3 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 20,2 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '22'
+  percentagem-do-vdr-adulto: 22
 - dose: 0,9 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 1,8 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Tire a casca à melancia, limpe-a de pevides e corte-a em cubos.
-- Pele o tomate, limpe de sementes e corte-o em pedaços pequenos.
-- Pele o pepino, corte ¼ em rodelas finas e reserve. Limpe o restante de sementes
-  e pique-o em pedaços.
-- Reserve ¼ da melancia e coloque a restante no liquidificador. Junte os cubos de
-  tomate e de pepino, 5 folhas de manjericão e tempere com sal e sumo de lima.
-- Triture tudo muito bem e leve ao frigorífico para refrescar.
-- Sirva o gaspacho enfeitado com os cubos de melancia e as rodelas de pepino reservados
-  e salpique com pimenta e folhas de manjericão.
+- - Tire a casca à melancia, limpe-a de pevides e corte-a em cubos.
+  - Pele o tomate, limpe de sementes e corte-o em pedaços pequenos.
+  - Pele o pepino, corte ¼ em rodelas finas e reserve. Limpe o restante de sementes e pique-o em pedaços.
+  - Reserve ¼ da melancia e coloque a restante no liquidificador. Junte os cubos de tomate e de pepino, 5 folhas de manjericão e tempere com sal e sumo de lima.
+  - Triture tudo muito bem e leve ao frigorífico para refrescar.
+  - Sirva o gaspacho enfeitado com os cubos de melancia e as rodelas de pepino reservados e salpique com pimenta e folhas de manjericão.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUFBQUFBQUGBgUICAcICAsKCQkKCxEMDQwNDBEaEBMQ

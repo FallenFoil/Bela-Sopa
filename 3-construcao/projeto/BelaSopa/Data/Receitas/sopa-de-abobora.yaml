@@ -1,6 +1,8 @@
 
 nome: Sopa de abóbora
 
+descrição: Uma sopa quentinha perfeita para aconchegar, servida com cebolinho e tortitas de milho. Elegância à sua mesa, com a simplicidade de uma sopa rica de abóbora.
+
 dificuldade: fácil
 
 minutos-de-preparação: 50
@@ -48,38 +50,34 @@ ingredientes:
 valores-nutricionais:
 - dose: 73 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 3,8 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 1,7 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 6,7 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 4,7 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 1,6 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 2,6 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Coloque ao lume uma panela com o aipo cortado em lâminas, a folha de louro, a cebola
-  em gomos, o dente de alho, a abóbora em cubos pequenos, a água e o sal.
-- Tape e, quando levantar fervura, deixe cozer cerca de 30 minutos ou até a abóbora
-  estar tenra.
-- Ponha ao lume outra panela com o azeite e refogue o alho-francês em rodelas.
-- Junte um pedaço de raiz de gengibre ralada e o leite evaporado.
-- Retire a folha de louro do preparado anterior e misture tudo ao refogado, juntando
-  o caril, a noz-moscada e o piripíri.
-- Deixe ferver mais uns minutos e retire do lume.
-- Triture com a varinha mágica e distribua pelos pratos, polvilhando com cebolinho
-  picado e as tortitas.
+- - Coloque ao lume uma panela com o aipo cortado em lâminas, a folha de louro, a cebola em gomos, o dente de alho, a abóbora em cubos pequenos, a água e o sal.
+  - Tape e, quando levantar fervura, deixe cozer cerca de 30 minutos ou até a abóbora estar tenra.
+  - Ponha ao lume outra panela com o azeite e refogue o alho-francês em rodelas.
+  - Junte um pedaço de raiz de gengibre ralada e o leite evaporado.
+  - Retire a folha de louro do preparado anterior e misture tudo ao refogado, juntando o caril, a noz-moscada e o piripíri.
+  - Deixe ferver mais uns minutos e retire do lume.
+  - Triture com a varinha mágica e distribua pelos pratos, polvilhando com cebolinho picado e as tortitas.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB

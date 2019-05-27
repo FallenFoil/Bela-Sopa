@@ -1,6 +1,8 @@
 
 nome: Sopa de tomate com batata-doce
 
+descrição: Uma sopa preparada com polpa de tomate e batata-doce, enriquecida com ovos, decorada com manjericão e croutons Pingo Doce. Comece da melhor forma a sua refeição!
+
 dificuldade: fácil
 
 minutos-de-preparação: 20
@@ -35,35 +37,32 @@ ingredientes:
 valores-nutricionais:
 - dose: 152 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 6,9 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 1,5 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 21,4 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 6,9 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 3,0 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 4,1 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Deite o azeite, a cebola picada e os cubos de batata-doce numa panela. Salpique
-  com o sal, tape e leve ao lume cerca de 15 minutos, mexendo de vez em quando.
-- Sempre que necessário, junte um pouco da água a ferver para que os legumes não queimem.
-- Adicione a polpa de tomate e a restante água a ferver e coza mais 5 minutos.
-- Triture a sopa com a varinha mágica até obter um creme, deixe retomar fervura e
-  adicione o ovo batido em fio no último minuto, mexendo com o garfo.
-- Distribua pelos pratos e salpique com folhas de manjericão. Sirva com os croutons
-  à parte.
+- - Deite o azeite, a cebola picada e os cubos de batata-doce numa panela. Salpique com o sal, tape e leve ao lume cerca de 15 minutos, mexendo de vez em quando.
+  - Sempre que necessário, junte um pouco da água a ferver para que os legumes não queimem.
+  - Adicione a polpa de tomate e a restante água a ferver e coza mais 5 minutos.
+  - Triture a sopa com a varinha mágica até obter um creme, deixe retomar fervura e adicione o ovo batido em fio no último minuto, mexendo com o garfo.
+  - Distribua pelos pratos e salpique com folhas de manjericão. Sirva com os croutons à parte.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP

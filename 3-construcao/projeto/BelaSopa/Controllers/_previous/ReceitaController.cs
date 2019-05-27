@@ -98,7 +98,7 @@ namespace BelaSopa.Controllers
             }
             ReceitaProcesso rt = new ReceitaProcesso(idReceita, idProcesso);
             _context.ReceitaProcesso.Add(rt);
-            receita.Tempo += processo.Tempo;
+            receita.MinutosPreparacao += processo.Tempo;
             _context.SaveChanges();
             return Ok(rt);
         }
@@ -109,7 +109,7 @@ namespace BelaSopa.Controllers
         {
             bool receitaProcesso = _context.ReceitaIngrediente.Any(tt => tt.ReceitaId == ri.ReceitaId
                                                        && tt.IngredienteId == ri.IngredienteId);
-            bool receita = _context.Receita.Any(r => r.ReceitaId == ri.ReceitaId);
+            bool receita = _context.Receita.Any(r => r.Id == ri.ReceitaId);
             bool ingrediente = _context.Ingrediente.Any(i => i.IngredienteId == ri.IngredienteId);
             if (receitaProcesso || !receita || !ingrediente)
             {
@@ -145,7 +145,7 @@ namespace BelaSopa.Controllers
             Receita receita = _context.Receita.Find(idReceita);
             //Pelo invariante de inserção nunca deve ser nulo, mas por prevenção o "if" foi posto
             if (processo != null && receita != null)
-                receita.Tempo -= processo.Tempo;
+                receita.MinutosPreparacao -= processo.Tempo;
 
             _context.SaveChanges();
             return Ok();

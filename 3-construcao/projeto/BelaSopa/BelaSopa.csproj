@@ -209,7 +209,6 @@
     <EmbeddedResource Include="Data\Receitas\sopa-de-cenoura-com-courgette-e-batata-doce.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-de-coentros.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-de-cogumelos-com-crocantes-de-queijo.yaml" />
-    <EmbeddedResource Include="Data\Receitas\sopa-de-courgette-e-ervilhas.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-de-courgettes-com-espargos.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-de-couve-flor.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-de-ervilhas-com-ovo-escalfado.yaml" />

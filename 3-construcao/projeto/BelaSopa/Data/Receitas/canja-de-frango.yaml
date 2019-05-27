@@ -1,6 +1,8 @@
 
 nome: Canja de frango
 
+descrição: Não há nada como uma canja de frango para nos sentirmos melhor. Quando estamos doentes, quando está frio ou, simplesmente, porque nos apetece uma sopa reconfortante. E até as crianças adoram canja, o que é uma óptima solução para quando estão adoentadas e não têm apetite.
+
 dificuldade: média
 
 minutos-de-preparação: 120
@@ -36,43 +38,32 @@ ingredientes:
 valores-nutricionais:
 - dose: 184 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 3,9 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 0,8 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 15,1 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 4,7 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 2,9 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 21,5 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Lave o frango, coloque-o numa panela, cubra-o com bastante água, junte o sal e a
-  parte verde do alho-francês lavada e cortada ao meio. Lave as cenouras, pele-as
-  e junte as cascas ao frango. Adicione a folha de louro e coza em lume brando cerca
-  de 50 minutos ou até o frango estar tenro.
-- Corte o restante alho-francês em rodelas finas e as cenouras em cubos pequenos e
-  coloque-os numa panela com o azeite, deixando cozinhar tapada sobre lume brando.
-- Pele ou descasque as batatas e corte-as em cubinhos pequenos. Lave o tomate, limpe-o
-  de sementes e corte-o em pedaços. Junte as batatas e o tomate aos restantes legumes,
-  mexa e volte a tapar a panela, cozinhando lentamente cerca de 25 minutos. Mexa de
-  vez em quando.
-- Escorra o frango (reservando o caldo da cozedura), limpe-o de pele e ossos, desfie-o
-  finamente e junte-o aos legumes, polvilhando, em seguida, com a farinha. Misture
-  bem e, quando começar a engrossar, regue com cerca de 1,7l do caldo da cozedura
-  do frango, previamente coado.
-- Deixe ferver suavemente cerca de 5 minutos e sirva a sopa perfumada com folhas frescas
-  de hortelã.
+- - Lave o frango, coloque-o numa panela, cubra-o com bastante água, junte o sal e a parte verde do alho-francês lavada e cortada ao meio. Lave as cenouras, pele-as e junte as cascas ao frango. Adicione a folha de louro e coza em lume brando cerca de 50 minutos ou até o frango estar tenro.
+  - Corte o restante alho-francês em rodelas finas e as cenouras em cubos pequenos e coloque-os numa panela com o azeite, deixando cozinhar tapada sobre lume brando.
+  - Pele ou descasque as batatas e corte-as em cubinhos pequenos. Lave o tomate, limpe-o de sementes e corte-o em pedaços. Junte as batatas e o tomate aos restantes legumes, mexa e volte a tapar a panela, cozinhando lentamente cerca de 25 minutos. Mexa de vez em quando.
+  - Escorra o frango (reservando o caldo da cozedura), limpe-o de pele e ossos, desfie-o finamente e junte-o aos legumes, polvilhando, em seguida, com a farinha. Misture bem e, quando começar a engrossar, regue com cerca de 1,7l do caldo da cozedura do frango, previamente coado.
+  - Deixe ferver suavemente cerca de 5 minutos e sirva a sopa perfumada com folhas frescas de hortelã.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

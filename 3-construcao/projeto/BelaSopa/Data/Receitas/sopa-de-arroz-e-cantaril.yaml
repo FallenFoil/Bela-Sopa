@@ -1,6 +1,8 @@
 
 nome: Sopa de arroz e cantaril
 
+descrição: Esta é uma receita muito versátil, uma vez que pode substituir o cantaril por outro peixe da sua preferência. Experimente com dourada ou pargo, por exemplo.
+
 dificuldade: média
 
 minutos-de-preparação: 55
@@ -42,32 +44,28 @@ ingredientes:
 valores-nutricionais:
 - dose: 292 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 8,7 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 1,8 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 1,3 g
   nome: Sal
-  percentagem-do-vdr-adulto: '22'
+  percentagem-do-vdr-adulto: 22
 
 passos:
-- Amanhe o cantaril e lave.
-- Com uma faca afiada, corte-lhe a cabeça e, em seguida, os filetes de ambos os lados,
-  mantendo sempre a lâmina bem encostada à espinha.
-- Reserve a cabeça e as espinhas.
-- Corte os filetes em cubos uniformes, mantendo a pele. Reserve.
-- Numa panela, leve ao lume 2,2l de água, junte os grãos de pimenta, as espinhas e
-  a cabeça do peixe. Deixe cozinhar em lume brando durante 20 minutos.
-- Num tacho, aqueça o óleo de amendoim, junte os dentes de alho laminados e deixe
-  alourar ligeiramente.
-- Acrescente 2l do caldo do peixe, coado num passador.
-- Quando ferver junte o arroz, o aipo, o alho-francês e a cebola laminada.
-- Após 15 minutos, incorpore os cubos de cantaril, o amendoim e tempere com sal.
-- Cozinhe lentamente até o arroz estar bem cozido. Polvilhe com o cebolinho e os coentros
-  picados e sirva bem quente.
+- - Amanhe o cantaril e lave.
+  - Com uma faca afiada, corte-lhe a cabeça e, em seguida, os filetes de ambos os lados, mantendo sempre a lâmina bem encostada à espinha.
+  - Reserve a cabeça e as espinhas.
+  - Corte os filetes em cubos uniformes, mantendo a pele. Reserve.
+  - Numa panela, leve ao lume 2,2l de água, junte os grãos de pimenta, as espinhas e a cabeça do peixe. Deixe cozinhar em lume brando durante 20 minutos.
+  - Num tacho, aqueça o óleo de amendoim, junte os dentes de alho laminados e deixe alourar ligeiramente.
+  - Acrescente 2l do caldo do peixe, coado num passador.
+  - Quando ferver junte o arroz, o aipo, o alho-francês e a cebola laminada.
+  - Após 15 minutos, incorpore os cubos de cantaril, o amendoim e tempere com sal.
+  - Cozinhe lentamente até o arroz estar bem cozido. Polvilhe com o cebolinho e os coentros picados e sirva bem quente.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUFBQUFBQUGBgUICAcICAsKCQkKCxEMDQwNDBEaEBMQ

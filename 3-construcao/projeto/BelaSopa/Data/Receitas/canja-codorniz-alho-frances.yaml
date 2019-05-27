@@ -1,6 +1,8 @@
 
 nome: Canja de codorniz com alho-francês
 
+descrição: Uma sopa leve e quente para servir com toda a elegância dos ingredientes que a compõem. A codorniz desfiada, a aletria, o toque fresco da hortelã e os ovos, o bom sabor da tradição.
+
 dificuldade: fácil
 
 minutos-de-preparação: 55
@@ -29,39 +31,35 @@ ingredientes:
 valores-nutricionais:
 - dose: 311 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 4,3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 0,9 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 12,8 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 2,3 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 1,2 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 12,9 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Coza os ovos em água durante 4 minutos e retire-os para uma taça de água fria. Descasque-os
-  e reserve.
-- Lave as codornizes, corte-as ao meio e reserve.
-- Coloque uma panela com água abundante ao lume, introduza as codornizes, a cebola
-  descascada e tempere com o sal.
-- Deixe cozer cerca de 30 minutos ou até que as codornizes estejam bem cozidas.
-- Retire as codornizes e reserve-as.
-- Passe o caldo por um passador (rejeite a cebola), volte a colocá-lo na panela, adicione
-  o alho-francês e leve ao lume novamente.
-- Deixe levantar fervura, junte a aletria partida e a carne de codorniz desfiada e
-  coza cerca de 2 a 3 minutos.
-- Sirva a canja com os ovos cozidos partidos e folhas de hortelã.
+- - Coza os ovos em água durante 4 minutos e retire-os para uma taça de água fria. Descasque-os e reserve.
+  - Lave as codornizes, corte-as ao meio e reserve.
+  - Coloque uma panela com água abundante ao lume, introduza as codornizes, a cebola descascada e tempere com o sal.
+  - Deixe cozer cerca de 30 minutos ou até que as codornizes estejam bem cozidas.
+  - Retire as codornizes e reserve-as.
+  - Passe o caldo por um passador (rejeite a cebola), volte a colocá-lo na panela, adicione o alho-francês e leve ao lume novamente.
+  - Deixe levantar fervura, junte a aletria partida e a carne de codorniz desfiada e coza cerca de 2 a 3 minutos.
+  - Sirva a canja com os ovos cozidos partidos e folhas de hortelã.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

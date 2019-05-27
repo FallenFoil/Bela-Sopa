@@ -1,6 +1,8 @@
 
 nome: Gaspacho branco
 
+descrição: Colorida e fresca, este gaspacho é uma excelente opção para uma tarde quente de Verão. Tente fazê-lo em casa!
+
 dificuldade: fácil
 
 minutos-de-preparação: 40
@@ -38,37 +40,32 @@ ingredientes:
 valores-nutricionais:
 - dose: 428 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '21'
+  percentagem-do-vdr-adulto: 21
 - dose: 36,3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '52'
+  percentagem-do-vdr-adulto: 52
 - dose: 3,6 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '18'
+  percentagem-do-vdr-adulto: 18
 - dose: 11 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 3,3 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 4,5 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '18'
+  percentagem-do-vdr-adulto: 18
 - dose: 12,6 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Coloque numa panela o miolo de amêndoa sem pele, os dentes de alho sem pele e a
-  água e leve ao lume. Quando levantar fervura, desligue e deixe arrefecer.
-- Esfarele o pão para o copo do liquidificador ou para o robot de cozinha, junte a
-  água com as amêndoas e o alho, o azeite, o vinagre, o sal, um pouco de pimenta e
-  triture até obter uma papa.
-- Retire para outro recipiente. Corte ao meio 20 bagos de uva branca, triture-os e
-  filtre o sumo com um passador fino.
-- Misture-o ao preparado anterior e reserve no frigorífico.
-- Na altura de servir, divida o gaspacho pelas taças, junte-lhe os restantes bagos
-  de uva e as amêndoas com pele laminadas e tempere com um pouco de pimenta.
+- - Coloque numa panela o miolo de amêndoa sem pele, os dentes de alho sem pele e a água e leve ao lume. Quando levantar fervura, desligue e deixe arrefecer.
+  - Esfarele o pão para o copo do liquidificador ou para o robot de cozinha, junte a água com as amêndoas e o alho, o azeite, o vinagre, o sal, um pouco de pimenta e triture até obter uma papa.
+  - Retire para outro recipiente. Corte ao meio 20 bagos de uva branca, triture-os e filtre o sumo com um passador fino.
+  - Misture-o ao preparado anterior e reserve no frigorífico.
+  - Na altura de servir, divida o gaspacho pelas taças, junte-lhe os restantes bagos de uva e as amêndoas com pele laminadas e tempere com um pouco de pimenta.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

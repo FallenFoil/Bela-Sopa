@@ -1,6 +1,8 @@
 
 nome: Aveludado de abóbora com creme de iogurte e cogumelos
 
+descrição: Há muito que as sopas deixaram de ser um simples caldo de legumes. Cada vez mais há tendência para inovar e criar novas versões deste prato tão reconfortante. Exemplo disso é este aveludado de abóbora com creme de iogurte e cogumelos.
+
 dificuldade: fácil
 
 minutos-de-preparação: 20
@@ -35,41 +37,36 @@ ingredientes:
 valores-nutricionais:
 - dose: 168 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 8,1 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 4,2 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '21'
+  percentagem-do-vdr-adulto: 21
 - dose: 14,9 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 5,2 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 4 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 7,9 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descongele os cogumelos e reserve.
-- Numa panela, coza os cubos de polpa de abóbora e de batata. Tempere com azeite,
-  sal e pimenta.
-- Com a varinha mágica, triture até obter um creme homogéneo. Adicione uma mão-cheia
-  de folhas de coentros (reserve algumas) e volte a triturar.
-- Numa frigideira antiaderente, ferva o restante azeite e o dente de alho picado.
-  Junte os cogumelos, tempere com sal e salteie durante 7 minutos.
-- Retire e deixe arrefecer.
-- Num robot de cozinha, triture os cogumelos (reserve alguns para decoração) com o
-  iogurte.
-- Distribua o aveludado pelos pratos.
-- Por cima, coloque o creme de iogurte, os cogumelos reservados, as lascas de parmesão
-  e os coentros picados.
-- Sirva de imediato.
+- - Descongele os cogumelos e reserve.
+  - Numa panela, coza os cubos de polpa de abóbora e de batata. Tempere com azeite, sal e pimenta.
+  - Com a varinha mágica, triture até obter um creme homogéneo. Adicione uma mão-cheia de folhas de coentros (reserve algumas) e volte a triturar.
+  - Numa frigideira antiaderente, ferva o restante azeite e o dente de alho picado. Junte os cogumelos, tempere com sal e salteie durante 7 minutos.
+  - Retire e deixe arrefecer.
+  - Num robot de cozinha, triture os cogumelos (reserve alguns para decoração) com o iogurte.
+  - Distribua o aveludado pelos pratos.
+  - Por cima, coloque o creme de iogurte, os cogumelos reservados, as lascas de parmesão e os coentros picados.
+  - Sirva de imediato.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP

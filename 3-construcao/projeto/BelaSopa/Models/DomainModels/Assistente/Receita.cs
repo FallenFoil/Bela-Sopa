@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,36 +8,38 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Receita
     {
-        [Key]
-        public int ReceitaId { get; set; }
+        public int Id { get; set; }
 
-        [Required, StringLength(10)]
+        [Required, StringLength(100)]
         public string Nome { get; set; }
 
-        [Required, StringLength(10)]
-        public string Dificuldade { get; set; }
-
         [Required]
-        public int Tempo { get; set; }
-
-
-        [Required, StringLength(50)]
-        public string ImagePath { set; get; }
-
-        [Required]
-        [StringLength(200)]
         public string Descricao { get; set; }
 
-        [StringLength(50)]
-        public string Video { get; set; }
-
-        //valores nutricionais
         [Required]
-        public int NPessoas { get; set; }
+        public Dificuldade Dificuldade { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Link { get; set; }
+        public int MinutosPreparacao { get; set; }
+
+        [Required]
+        public int NumDoses { get; set; }
+
+        [Required]
+        public byte[] Imagem { set; get; }
+
+        //[NotMapped, JsonIgnore]
+        //public virtual ICollection<QuantidadeIngrediente> QuantidadeIngredientes { get; set; }
+
+        //[NotMapped, JsonIgnore]
+        //public virtual ICollection<ValorNutricional> ValorNutricionais { get; set; }
+
+        //[StringLength(50)]
+        //public string Video { get; set; }
+
+        //[Required]
+        //[StringLength(50)]
+        //public string Link { get; set; }
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
@@ -55,9 +58,12 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+
+        public string GetImagemBase64()
+        {
+            return Convert.ToBase64String(Imagem, Base64FormattingOptions.None);
+        }
     }
-
-
 
     public class ReceitaEtiqueta
     {

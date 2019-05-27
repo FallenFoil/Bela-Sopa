@@ -1,6 +1,8 @@
 
 nome: Creme de couve-flor com cogumelos
 
+descrição: Uma sopa muito cremosa, enriquecida com cogumelos, frango e bacon. Ideal para um jantar rápido e saboroso!
+
 dificuldade: média
 
 minutos-de-preparação: 60
@@ -40,38 +42,34 @@ ingredientes:
 valores-nutricionais:
 - dose: 171 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 8 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 2 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 5 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 2 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 3 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 18 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descasque a cebola e corte-a em pedaços para uma panela. Junte o alho-francês cortado,
-  a couve flor, cortada em pedaços pequenos, e os peitos de frango.
-- Adicione a água e o sal e leve ao lume cerca de 40 minutos ou até os legumes e o
-  frango estarem cozidos.
-- Aloure o bacon com o azeite, junte os cogumelos limpos e cortados em fatias e salteie,
-  mexendo, sobre lume médio a forte.
-- Tempere com pimenta a gosto e reserve.
-- Retire o frango e triture a sopa com a varinha mágica.
-- Junte as folhas de agrião, os cogumelos salteados, o frango desfiado e as sementes
-  de girassol e retire do lume assim que retomar fervura.
-- Distribua pelas tigelas ou pratos de servir e sirva.
+- - Descasque a cebola e corte-a em pedaços para uma panela. Junte o alho-francês cortado, a couve flor, cortada em pedaços pequenos, e os peitos de frango.
+  - Adicione a água e o sal e leve ao lume cerca de 40 minutos ou até os legumes e o frango estarem cozidos.
+  - Aloure o bacon com o azeite, junte os cogumelos limpos e cortados em fatias e salteie, mexendo, sobre lume médio a forte.
+  - Tempere com pimenta a gosto e reserve.
+  - Retire o frango e triture a sopa com a varinha mágica.
+  - Junte as folhas de agrião, os cogumelos salteados, o frango desfiado e as sementes de girassol e retire do lume assim que retomar fervura.
+  - Distribua pelas tigelas ou pratos de servir e sirva.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP

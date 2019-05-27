@@ -1,6 +1,8 @@
 
 nome: Sopa de coentros
 
+descrição: Ideal para dias em que não tem muito tempo, esta sopa de coentros com ovo e courgette é tão completa que não vai ter de fazer um segundo prato.
+
 dificuldade: fácil
 
 minutos-de-preparação: 50
@@ -36,37 +38,33 @@ ingredientes:
 valores-nutricionais:
 - dose: 153 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 7 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 17 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 4 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 2 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 5 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descasque a cebola e pique-a finamente. Lave os coentros, reserve as folhas e pique
-  os talos.
-- Deite a cebola, os talos de coentros picados e o azeite numa panela, junte a batata
-  descascada e cortada em cubos e adicione o sal. Mexa e tape.
-- Lave a courgette, elimine as pontas e pique-a em cubos pequenos. Junte aos restantes
-  legumes, mexa, tape e deixe cozinhar em lume muito brando, até a courgette e a batata
-  estarem macias.
-- Regue com a água a ferver, junte as folhas de coentros e triture com a varinha mágica.
-- Junte o ovo previamente batido e deixe retomar fervura, mexendo com um garfo.
-- Distribua a sopa pelos pratos.
+- - Descasque a cebola e pique-a finamente. Lave os coentros, reserve as folhas e pique os talos.
+  - Deite a cebola, os talos de coentros picados e o azeite numa panela, junte a batata descascada e cortada em cubos e adicione o sal. Mexa e tape.
+  - Lave a courgette, elimine as pontas e pique-a em cubos pequenos. Junte aos restantes legumes, mexa, tape e deixe cozinhar em lume muito brando, até a courgette e a batata estarem macias.
+  - Regue com a água a ferver, junte as folhas de coentros e triture com a varinha mágica.
+  - Junte o ovo previamente batido e deixe retomar fervura, mexendo com um garfo.
+  - Distribua a sopa pelos pratos.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

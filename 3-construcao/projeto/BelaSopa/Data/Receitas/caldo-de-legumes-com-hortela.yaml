@@ -1,6 +1,8 @@
 
 nome: Caldo de legumes com hortelã
 
+descrição: Reconfortante e muito saciante, este caldo de legumes com hortelã é perfeito para ser saboreado nos dias mais frios do Inverno ou quando alguém estiver doente.
+
 dificuldade: fácil
 
 minutos-de-preparação: 45
@@ -41,36 +43,34 @@ ingredientes:
 valores-nutricionais:
 - dose: 176 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 6 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 23 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 8 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 5 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '20'
+  percentagem-do-vdr-adulto: 20
 - dose: 6 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Lave os talos de aipo e corte-os em fatias finas. Descasque o nabo e a cenoura e
-  corte-os em cubos pequenos. Lave a courgette, elimine as pontas e corte-a também
-  em cubinhos.
-- Aqueça o azeite numa panela, junte os legumes preparados, tape e deixe suar.
-- Corte a couve-coração em quartos, retire-lhe o talo central e corte-a em tiras.
-- Deite as tiras de couve e as ervilhas na panela e tempere com o sal.
-- Regue com a água a ferver e assim que retomar fervura introduza a massa.
-- Mexa e deixe ferver tapado durante 15 minutos ou até a massa estar al dente.
-- Adicione as folhas de hortelã, regue com o sumo do limão e sirva sem demora.
+- - Lave os talos de aipo e corte-os em fatias finas. Descasque o nabo e a cenoura e corte-os em cubos pequenos. Lave a courgette, elimine as pontas e corte-a também em cubinhos.
+  - Aqueça o azeite numa panela, junte os legumes preparados, tape e deixe suar.
+  - Corte a couve-coração em quartos, retire-lhe o talo central e corte-a em tiras.
+  - Deite as tiras de couve e as ervilhas na panela e tempere com o sal.
+  - Regue com a água a ferver e assim que retomar fervura introduza a massa.
+  - Mexa e deixe ferver tapado durante 15 minutos ou até a massa estar al dente.
+  - Adicione as folhas de hortelã, regue com o sumo do limão e sirva sem demora.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

@@ -1,6 +1,8 @@
 
 nome: Sopa de tomate com ovo escalfado
 
+descrição: A típica comida de conforto, com alguns dos sabores mais tradicionais da nossa cozinha. Acompanhe com fatias de pão e uvas... Simplesmente irresistível!
+
 dificuldade: média
 
 minutos-de-preparação: 30
@@ -40,41 +42,35 @@ ingredientes:
 valores-nutricionais:
 - dose: 284 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '14'
+  percentagem-do-vdr-adulto: 14
 - dose: 11,1 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 2,4 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 34,4 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 9,3 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 4,2 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '17'
+  percentagem-do-vdr-adulto: 17
 - dose: 11,6 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descasque a cebola e os alhos e pique-os finamente. Pique igualmente o alho-francês.
-- Aqueça o azeite numa panela, adicione os legumes preparados, tempere com o sal e
-  deixe cozinhar, tapado e em lume brando, cerca de 10 minutos, mexendo de vez em
-  quando.
-- Retire os pedúnculos ao tomate, faça um golpe em cruz do lado oposto e escalde-os
-  na água a ferver 1 a 2 minutos.
-- Retire a pele ao tomate, limpe-o de sementes, pique-o em pedaços pequenos e junte-o
-  aos restantes legumes.
-- Adicione o concentrado de tomate, volte a tapar e cozinhe mais 10 a 15 minutos.
-- Adicione a água onde escaldou o tomate e deixe levantar fervura.
-- Abra os ovos e adicione-os, um a um e cuidadosamente, à sopa, deixando fervilhar
-  entre 3 a 4 minutos, até as claras coagularem.
-- Sirva a sopa sobre fatias de pão e polvilhe com folhas de hortelã. Acompanhe com
-  as uvas.
+- - Descasque a cebola e os alhos e pique-os finamente. Pique igualmente o alho-francês.
+  - Aqueça o azeite numa panela, adicione os legumes preparados, tempere com o sal e deixe cozinhar, tapado e em lume brando, cerca de 10 minutos, mexendo de vez em quando.
+  - Retire os pedúnculos ao tomate, faça um golpe em cruz do lado oposto e escalde-os na água a ferver 1 a 2 minutos.
+  - Retire a pele ao tomate, limpe-o de sementes, pique-o em pedaços pequenos e junte-o aos restantes legumes.
+  - Adicione o concentrado de tomate, volte a tapar e cozinhe mais 10 a 15 minutos.
+  - Adicione a água onde escaldou o tomate e deixe levantar fervura.
+  - Abra os ovos e adicione-os, um a um e cuidadosamente, à sopa, deixando fervilhar entre 3 a 4 minutos, até as claras coagularem.
+  - Sirva a sopa sobre fatias de pão e polvilhe com folhas de hortelã. Acompanhe com as uvas.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

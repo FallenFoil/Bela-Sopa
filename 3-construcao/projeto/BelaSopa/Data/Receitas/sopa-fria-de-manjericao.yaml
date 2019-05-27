@@ -1,6 +1,8 @@
 
 nome: Sopa fria de manjericão
 
+descrição: Uma sopa fria com a surpresa do manjericão. Este ingrediente confere a uma sopa simples, um sabor mais rico e que vai fazer a diferença na sua refeição. Ideal para servir fria nos dias de mais calor.
+
 dificuldade: média
 
 minutos-de-preparação: 80
@@ -41,26 +43,22 @@ ingredientes:
 valores-nutricionais:
 - dose: 108 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 3,3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 0,6 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 1,4 g
   nome: Sal
-  percentagem-do-vdr-adulto: '34'
+  percentagem-do-vdr-adulto: 34
 
 passos:
-- Leve ao lume uma panela com o alho-francês cortado em rodelas, a cenoura em palitos,
-  o talo de aipo em pedaços, o dente de alho, a água, o sal e a pimenta. Tape e deixe
-  cozer em lume brando durante 30 minutos.
-- Coe o caldo para outra panela, onde deverá cozer as batatas descascadas e cortadas
-  em cubos, os brócolos em ramos e a cebola em gomos.
-- Quando as batatas estiverem macias, introduza as folhas de manjericão, previamente
-  lavadas e bem enxutas. Triture com a varinha mágica.
-- Deixe arrefecer a sopa antes de a guardar no frigorífico. Sirva fria.
+- - Leve ao lume uma panela com o alho-francês cortado em rodelas, a cenoura em palitos, o talo de aipo em pedaços, o dente de alho, a água, o sal e a pimenta. Tape e deixe cozer em lume brando durante 30 minutos.
+  - Coe o caldo para outra panela, onde deverá cozer as batatas descascadas e cortadas em cubos, os brócolos em ramos e a cebola em gomos.
+  - Quando as batatas estiverem macias, introduza as folhas de manjericão, previamente lavadas e bem enxutas. Triture com a varinha mágica.
+  - Deixe arrefecer a sopa antes de a guardar no frigorífico. Sirva fria.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

@@ -1,6 +1,8 @@
 
 nome: Sopa fria de melão
 
+descrição: 'O melão e o presunto não têm necessariamente de ser servidos de forma tradicional. Atreva-se a inovar e experimente esta deliciosa sopa fria de melão. Uma coisa é certa: vão pedir-lhe a receita.'
+
 dificuldade: fácil
 
 minutos-de-preparação: 40
@@ -29,25 +31,23 @@ ingredientes:
 valores-nutricionais:
 - dose: 94 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 0,8 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '1'
+  percentagem-do-vdr-adulto: 1
 - dose: 13,8 g
   nome: Açúcar
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 1,4 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '1'
+  percentagem-do-vdr-adulto: 1
 
 passos:
-- Parta o melão ao meio e limpe-o de casca e sementes.
-- Corte a polpa em cubos e coloque-os no copo do liquidificador. Acrescente o iogurte
-  e misture muito bem, até obter um creme.
-- Retire do copo para uma tigela e acrescente o sal e o Vinho do Porto. Mexa bem.
-- Corte o presunto em tiras fininhas e salteie por curtos instantes numa frigideira
-  antiaderente, sem acrescentar qualquer gordura. Deite em papel absorvente.
-- Divida a sopa por taças, enfeite com as tiras de presunto e o cebolinho.
+- - Parta o melão ao meio e limpe-o de casca e sementes.
+  - Corte a polpa em cubos e coloque-os no copo do liquidificador. Acrescente o iogurte e misture muito bem, até obter um creme.
+  - Retire do copo para uma tigela e acrescente o sal e o Vinho do Porto. Mexa bem.
+  - Corte o presunto em tiras fininhas e salteie por curtos instantes numa frigideira antiaderente, sem acrescentar qualquer gordura. Deite em papel absorvente.
+  - Divida a sopa por taças, enfeite com as tiras de presunto e o cebolinho.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

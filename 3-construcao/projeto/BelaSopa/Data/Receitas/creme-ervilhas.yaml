@@ -1,6 +1,8 @@
 
 nome: Creme de ervilhas
 
+descrição: De textura cremosa e aroma intenso, este creme de ervilhas é uma agradável surpresa para os sentidos. Feito com creme de soja e servido com croutons salpicados com caril é uma opção saudável que irá perfumar a sua cozinha.
+
 dificuldade: fácil
 
 minutos-de-preparação: 50
@@ -37,31 +39,25 @@ ingredientes:
 valores-nutricionais:
 - dose: 290 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '14'
+  percentagem-do-vdr-adulto: 14
 - dose: 17,4 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '25'
+  percentagem-do-vdr-adulto: 25
 - dose: 3,8 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '19'
+  percentagem-do-vdr-adulto: 19
 - dose: 1,6 g
   nome: Sal
-  percentagem-do-vdr-adulto: '27'
+  percentagem-do-vdr-adulto: 27
 
 passos:
-- Coloque ao lume uma panela com duas colheres de sopa de azeite, as ervilhas ainda
-  congeladas, as batatas descascadas e cortadas em bocados, o alho-francês e o sal.
-- Tape e deixe suar em lume brando até os legumes estarem macios.
-- Adicione a água a ferver e deixe apurar mais 10 minutos, triturando em seguida com
-  a varinha mágica até obter um creme.
-- Entretanto, prepare os croutons. Corte o pão em cubos, coloque-o numa tigela e salpique
-  com o caril, envolvendo bem.
-- Ponha uma frigideira anti-aderente ao lume com a colher de sobremesa de azeite e,
-  quando estiver quente, salteie os cubos de pão. Reserve.
-- Misture o creme culinário de soja com a gema e incorpore este preparado na sopa,
-  mexendo bem.
-- Distribua a sopa pelos pratos de servir, salpique com os croutons e um pouco de
-  coentros picados e sirva.
+- - Coloque ao lume uma panela com duas colheres de sopa de azeite, as ervilhas ainda congeladas, as batatas descascadas e cortadas em bocados, o alho-francês e o sal.
+  - Tape e deixe suar em lume brando até os legumes estarem macios.
+  - Adicione a água a ferver e deixe apurar mais 10 minutos, triturando em seguida com a varinha mágica até obter um creme.
+  - Entretanto, prepare os croutons. Corte o pão em cubos, coloque-o numa tigela e salpique com o caril, envolvendo bem.
+  - Ponha uma frigideira anti-aderente ao lume com a colher de sobremesa de azeite e, quando estiver quente, salteie os cubos de pão. Reserve.
+  - Misture o creme culinário de soja com a gema e incorpore este preparado na sopa, mexendo bem.
+  - Distribua a sopa pelos pratos de servir, salpique com os croutons e um pouco de coentros picados e sirva.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

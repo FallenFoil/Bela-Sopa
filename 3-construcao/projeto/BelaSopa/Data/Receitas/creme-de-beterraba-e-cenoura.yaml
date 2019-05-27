@@ -1,6 +1,8 @@
 
 nome: Creme de beterraba e cenoura
 
+descrição: Este creme de beterraba e cenoura é uma excelente entrada para qualquer dia do ano e não precisa de esperar para ter convidados em casa para experimentar esta receita.
+
 dificuldade: fácil
 
 minutos-de-preparação: 65
@@ -39,33 +41,30 @@ ingredientes:
 valores-nutricionais:
 - dose: 163 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: ''
   nome: Gordura
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 24 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 11 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 4 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 3 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descasque a beterraba e coloque-a em água a ferver juntamente com o alho, a cebola
-  e a batata descascada. Junte a cenoura e o sumo de laranja.
-- Quando estiver tudo bem cozido, tempere com o sal, a pimenta e o azeite (reserve
-  um pouco) e triture com a varinha mágica, de forma a obter um creme homogéneo.
-- Para servir, salpique com o pão torrado cortado em cubos, o cebolinho picado e o
-  restante azeite.
+- - Descasque a beterraba e coloque-a em água a ferver juntamente com o alho, a cebola e a batata descascada. Junte a cenoura e o sumo de laranja.
+  - Quando estiver tudo bem cozido, tempere com o sal, a pimenta e o azeite (reserve um pouco) e triture com a varinha mágica, de forma a obter um creme homogéneo.
+  - Para servir, salpique com o pão torrado cortado em cubos, o cebolinho picado e o restante azeite.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

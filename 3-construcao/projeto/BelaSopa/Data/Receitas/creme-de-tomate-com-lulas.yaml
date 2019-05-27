@@ -1,6 +1,8 @@
 
 nome: Creme de tomate com lulas
 
+descrição: Este creme de tomate com lulas é muito mais do que uma sopa – é, ou pode ser, um prato principal. De preparação rápida e fácil, é ideal para aqueles dias em que o tempo não está a seu favor.
+
 dificuldade: fácil
 
 minutos-de-preparação: 30
@@ -39,32 +41,24 @@ ingredientes:
 valores-nutricionais:
 - dose: 171 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 8 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 1,4 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 2 g
   nome: Sal
-  percentagem-do-vdr-adulto: '28'
+  percentagem-do-vdr-adulto: 28
 
 passos:
-- Corte as lulas em pedaços pequenos, tempere-as com o sumo de limão e um pouco de
-  pimenta moída na altura.
-- Tire a pele e as sementes ao tomate e corte-o em pedaços. Pele e corte a cenoura
-  em rodelas e a cebola em cubos.
-- Leve ao lume uma panela com duas colheres de azeite, adicione os legumes, tempere
-  com uma colher de sopa de sal, tape e deixe suar, em lume brando, até as cenouras
-  estarem cozidas.
-- De seguida, pique o pimento em cubos pequenos. Aqueça o restante azeite numa frigideira
-  antiaderente e salteie as lulas, escorridas e enxutas, e os cubos de pimento, durante
-  2 ou 3 minutos.
-- Ferva a água, adicione-a aos legumes na panela e triture tudo com a varinha mágica.
-- Divida as lulas e os pimentos salteados pelos pratos ou taças, adicione a sopa e
-  salpique com as folhas de manjericão grosseiramente picadas. Sirva com os croutons
-  de azeite.
+- - Corte as lulas em pedaços pequenos, tempere-as com o sumo de limão e um pouco de pimenta moída na altura.
+  - Tire a pele e as sementes ao tomate e corte-o em pedaços. Pele e corte a cenoura em rodelas e a cebola em cubos.
+  - Leve ao lume uma panela com duas colheres de azeite, adicione os legumes, tempere com uma colher de sopa de sal, tape e deixe suar, em lume brando, até as cenouras estarem cozidas.
+  - De seguida, pique o pimento em cubos pequenos. Aqueça o restante azeite numa frigideira antiaderente e salteie as lulas, escorridas e enxutas, e os cubos de pimento, durante 2 ou 3 minutos.
+  - Ferva a água, adicione-a aos legumes na panela e triture tudo com a varinha mágica.
+  - Divida as lulas e os pimentos salteados pelos pratos ou taças, adicione a sopa e salpique com as folhas de manjericão grosseiramente picadas. Sirva com os croutons de azeite.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

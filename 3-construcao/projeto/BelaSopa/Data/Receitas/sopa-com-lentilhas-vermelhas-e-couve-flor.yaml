@@ -1,6 +1,8 @@
 
 nome: Sopa com lentilhas vermelhas e couve-flor
 
+descrição: Prepare esta sopa deliciosa com lentilhas vermelhas e couve-flor, uma receita prática e saudável pronta em apenas 30 minutos.
+
 dificuldade: fácil
 
 minutos-de-preparação: 30
@@ -32,37 +34,33 @@ ingredientes:
 valores-nutricionais:
 - dose: 170 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 6,3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 1,1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 17,5 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 5,5 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 5,2 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '21'
+  percentagem-do-vdr-adulto: 21
 - dose: 9,2 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Leve a cebola ao lume numa panela com 2 colheres de sopa de azeite. Deixe cozinhar
-  sobre lume moderado.
-- Lave a couve-flor e corte-a em pequenos ramos. Junte-a à cebola, tempere com o sal
-  e adicione a água a ferver (até cobrir os legumes).
-- Quando ferver, junte as lentilhas, previamente passadas por água, tape a panela
-  e deixe cozinhar durante cerca de 15 minutos, ou até a couve-flor estar tenra.
-- Triture a sopa com a varinha mágica e leve de novo ao lume.
-- Quando ferver, adicione a mistura de legumes. Mexa e deixe ferver destapado durante
-  cerca de 8 minutos.
-- Depois de pronta, regue-a com o restante azeite.
+- - Leve a cebola ao lume numa panela com 2 colheres de sopa de azeite. Deixe cozinhar sobre lume moderado.
+  - Lave a couve-flor e corte-a em pequenos ramos. Junte-a à cebola, tempere com o sal e adicione a água a ferver (até cobrir os legumes).
+  - Quando ferver, junte as lentilhas, previamente passadas por água, tape a panela e deixe cozinhar durante cerca de 15 minutos, ou até a couve-flor estar tenra.
+  - Triture a sopa com a varinha mágica e leve de novo ao lume.
+  - Quando ferver, adicione a mistura de legumes. Mexa e deixe ferver destapado durante cerca de 8 minutos.
+  - Depois de pronta, regue-a com o restante azeite.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QQJaHR0cDov

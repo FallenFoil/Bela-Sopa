@@ -1,6 +1,8 @@
 
 nome: Sopa picante de tomate
 
+descrição: Acompanhada de espetadas de figos e presunto, esta sopa picante de tomate é perfeita como entrada numa refeição e com sabor a Verão.
+
 dificuldade: média
 
 minutos-de-preparação: 40
@@ -42,40 +44,35 @@ ingredientes:
 valores-nutricionais:
 - dose: 228 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 11,4 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 4,2 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '21'
+  percentagem-do-vdr-adulto: 21
 - dose: 21,9 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 12,7 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '14'
+  percentagem-do-vdr-adulto: 14
 - dose: 3,8 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 8,8 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Parta o pão em pedaços e borrife-o com o vinagre. Reserve.
-- Retire a pele e as sementes ao tomate e corte-o em pedaços. Reserve.
-- Pique a chalota e a malagueta (se preferir menos picante, retire-lhes as sementes).
-  Coloque todos os ingredientes preparados no liquidificador ou no robot de cozinha
-  e triture-os.
-- Junte o azeite, o pimentão-doce, o sal, água se necessário, alguns cubos de gelo
-  e leve ao frigorífico.
-- Corte os figos em quartos e enrole neles as tiras de presunto. Prenda-as com palitos.
-- Leve ao lume uma frigideira antiaderente e quando estiver bem quente introduza as
-  espetadas de figo, deixando corar ligeiramente o presunto. Retire e reserve.
-- Na altura de servir, misture o iogurte com a sopa e distribua pelas tigelas, colocando
-  por cima uma espetada.
-- Polvilhe com pimenta e folhas de hortelã.
+- - Parta o pão em pedaços e borrife-o com o vinagre. Reserve.
+  - Retire a pele e as sementes ao tomate e corte-o em pedaços. Reserve.
+  - Pique a chalota e a malagueta (se preferir menos picante, retire-lhes as sementes). Coloque todos os ingredientes preparados no liquidificador ou no robot de cozinha e triture-os.
+  - Junte o azeite, o pimentão-doce, o sal, água se necessário, alguns cubos de gelo e leve ao frigorífico.
+  - Corte os figos em quartos e enrole neles as tiras de presunto. Prenda-as com palitos.
+  - Leve ao lume uma frigideira antiaderente e quando estiver bem quente introduza as espetadas de figo, deixando corar ligeiramente o presunto. Retire e reserve.
+  - Na altura de servir, misture o iogurte com a sopa e distribua pelas tigelas, colocando por cima uma espetada.
+  - Polvilhe com pimenta e folhas de hortelã.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

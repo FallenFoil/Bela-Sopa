@@ -1,6 +1,8 @@
 
 nome: Arjamolho com pimentos
 
+descrição: O arjamolho com pimentos é servido fresco e preparado no momento. Uma sopa tipicamente algarvia, fresca, deliciosa e fácil! Experimente adicionar pepino cortado em cubos e cebola picada, ou servi-los à parte.
+
 dificuldade: fácil
 
 minutos-de-preparação: 15
@@ -34,37 +36,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 330 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 12,1 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '17'
+  percentagem-do-vdr-adulto: 17
 - dose: 2,1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 47,9 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 5,8 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 4,7 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '19'
+  percentagem-do-vdr-adulto: 19
 - dose: 7,7 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Limpe o tomate e faça-lhe um golpe em cruz na base. Coloque numa taça e cubra com
-  água a ferver. Espere um minuto, retire a pele, limpe de sementes e corte em cubos
-  pequenos. Reserve.
-- Esborrache os dentes de alho, tire-lhes a pele e pise-os num almofariz com o sal
-  e a polpa de um tomate (aproximadamente). Mude a mistura para uma taça ou terrina,
-  junte cerca de 100 g de miolo de pão esfarelado e uma colher de sopa de orégãos
-  e misture bem. Adicione a água e o vinagre.
-- Lave o pimento, limpe-o de sementes, corte-o em cubos e adicione-o ao caldo, juntamente
-  com o restante tomate e o pão cortado em cubos pequenos.
-- Regue com o azeite, mexa e salpique com os restantes orégãos. Sirva de imediato.
+- - Limpe o tomate e faça-lhe um golpe em cruz na base. Coloque numa taça e cubra com água a ferver. Espere um minuto, retire a pele, limpe de sementes e corte em cubos pequenos. Reserve.
+  - Esborrache os dentes de alho, tire-lhes a pele e pise-os num almofariz com o sal e a polpa de um tomate (aproximadamente). Mude a mistura para uma taça ou terrina, junte cerca de 100 g de miolo de pão esfarelado e uma colher de sopa de orégãos e misture bem. Adicione a água e o vinagre.
+  - Lave o pimento, limpe-o de sementes, corte-o em cubos e adicione-o ao caldo, juntamente com o restante tomate e o pão cortado em cubos pequenos.
+  - Regue com o azeite, mexa e salpique com os restantes orégãos. Sirva de imediato.
 
 imagem: !!binary |
   iVBORw0KGgoAAAANSUhEUgAAAmkAAAFyCAYAAACuiE0XAAgAAElEQVR42lT9d5xcWX3njb/POTdW

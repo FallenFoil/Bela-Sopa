@@ -2,7 +2,7 @@
     Layout = "_LayoutCliente";
     ViewData["Title"] = "Bela Sopa - Receitas";
 }
-@model BelaSopa.Models.ViewModels.HomeViewModel;
+@model HomeViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h3>Receitas</h3>
@@ -17,9 +17,10 @@
         <div class="col-sm">
             <div class="form-group">
                 <select class="form-control" id="etiquetasSel">
-                    <option>Etiquetas</option>
-                    @foreach (var etiqueta in Model.Etiquetas) {
-                    <option>@etiqueta.Nome</option>
+                    <option>Qualquer etiqueta</option>
+                    @foreach (var etiqueta in Model.Etiquetas)
+                    {
+                        <option>@etiqueta.Nome</option>
                     }
                 </select>
             </div>
@@ -27,10 +28,10 @@
         <div class="col-sm">
             <div class="form-group">
                 <select class="form-control" id="sel1">
-                    <option>Dificuldade</option>
-                    <option>Facil</option>
-                    <option>Medio</option>
-                    <option>Dificil</option>
+                    <option>Qualquer dificuldade</option>
+                    <option>Fácil</option>
+                    <option>Médio</option>
+                    <option>Difícil</option>
                 </select>
             </div>
         </div>
@@ -44,21 +45,25 @@
         @for ( ; j < 3 && i < Model.Receitas.Length; j++, i++) {
         <div class="col-sm Receita">
             <a href="#">
-                <img class="ReceitaImg" src=@Model.Receitas[i].ImagePath alt="Receita 1" />
+                <img class="ReceitaImg" src="data:image/x-icon;base64,@Model.Receitas[i].GetImagemBase64()" alt="" />
                 <p>@Model.Receitas[i].Nome</p>
             </a>
-            @if (@Model.Receitas[i].Dificuldade == "Facil") {
-            <i class="fas fa-signal" style="color:green;"></i>
-                }
-            @if (@Model.Receitas[i].Dificuldade == "Medio") {
-            <i class="fas fa-signal" style="color:orange;"></i>
-                }
-            @if (@Model.Receitas[i].Dificuldade == "Dificil") {
-            <i class="fas fa-signal" style="color:red;"></i>
-                }
+            @switch (Model.Receitas[i].Dificuldade)
+            {
+                case Dificuldade.Facil:
+                    <i class="fas fa-signal" style="color:green;"></i>
+                    break;
 
-        <span style="margin-left:5%;">@Model.Receitas[i].Tempo min <i class="fas fa-clock"></i></span>
-        <span style="margin-left:5%;">@Model.Receitas[i].NPessoas Pessoas</span>
+                case Dificuldade.Media:
+                    <i class="fas fa-signal" style="color:orange;"></i>
+                    break;
+
+                case Dificuldade.Dificil:
+                    <i class="fas fa-signal" style="color:red;"></i>
+                    break;
+            }
+            <span style="margin-left:5%;">@Model.Receitas[i].MinutosPreparacao min <i class="fas fa-clock"></i></span>
+            <span style="margin-left:5%;">@Model.Receitas[i].NumDoses Pessoas</span>
         </div>
         }
         @for(; j < 3; j++) {

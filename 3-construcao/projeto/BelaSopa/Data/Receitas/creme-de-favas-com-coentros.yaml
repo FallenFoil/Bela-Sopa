@@ -1,6 +1,8 @@
 
 nome: Creme de favas com coentros
 
+descrição: A textura delicada das favas e o aroma dos coentros e da hortelã fazem desta entrada uma boa escolha para uma refeição de Inverno.
+
 dificuldade: média
 
 minutos-de-preparação: 60
@@ -36,37 +38,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 92 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 3,7 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 0,6 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 6,8 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 2,2 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '2'
+  percentagem-do-vdr-adulto: 2
 - dose: 5,9 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '24'
+  percentagem-do-vdr-adulto: 24
 - dose: 5,4 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Numa panela, coloque a cebola picada, o alho-francês, a courgette cortada em cubos,
-  o azeite e os talos dos coentros picados. Tempere com o sal, mexa e cozinhe tapado
-  sobre lume brando.
-- Tire a pele às favas, junte-as aos restantes legumes, envolva e deixe cozinhar sobre
-  lume brando cerca de 20 minutos ou até os legumes estarem tenros.
-- Retire uma colherada grande dos legumes cozinhados e reserve. Adicione a água a
-  ferver aos restantes legumes, junte as folhas dos coentros e algumas folhas de hortelã
-  e triture tudo muito bem.
-- Distribua a sopa pelos pratos de serviço ou taças, colocando no centro os legumes
-  reservados.
+- - Numa panela, coloque a cebola picada, o alho-francês, a courgette cortada em cubos, o azeite e os talos dos coentros picados. Tempere com o sal, mexa e cozinhe tapado sobre lume brando.
+  - Tire a pele às favas, junte-as aos restantes legumes, envolva e deixe cozinhar sobre lume brando cerca de 20 minutos ou até os legumes estarem tenros.
+  - Retire uma colherada grande dos legumes cozinhados e reserve. Adicione a água a ferver aos restantes legumes, junte as folhas dos coentros e algumas folhas de hortelã e triture tudo muito bem.
+  - Distribua a sopa pelos pratos de serviço ou taças, colocando no centro os legumes reservados.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

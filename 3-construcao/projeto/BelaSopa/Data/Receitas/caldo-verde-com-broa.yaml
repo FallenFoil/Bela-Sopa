@@ -1,6 +1,8 @@
 
 nome: Caldo-verde com broa
 
+descrição: O caldo-verde é um dos pratos mais típicos e tradicionais de Portugal. A sopa, à base de batata e couve cortada fininha, é uma excelente maneira de começar uma refeição nos dias frios. Aqui, acrescentamos a broa ao caldo-verde.
+
 dificuldade: fácil
 
 minutos-de-preparação: 35
@@ -32,36 +34,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 163 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 7 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 23 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 3 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 3 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '13'
+  percentagem-do-vdr-adulto: 13
 - dose: 4 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Numa panela com água, coza a cebola, os dentes de alho e as batatas descascadas.
-  Quando ferver, tempere com sal, tape e deixe cozer sobre lume moderado 20 minutos
-  ou até as batatas estarem cozidas.
-- Lave a couve-portuguesa e corte-a em juliana. Escalde-a em água a ferver durante
-  1 minuto e escorra.
-- Triture a sopa com a varinha mágica até reduzir completamente as batatas a puré.
-  Deixe retomar fervura e introduza a couve. Mexa e deixe ferver com a panela destapada
-  durante cinco ou seis minutos.
-- Sirva a sopa acompanhada das fatias finas de broa de milho com chouriço.
+- - Numa panela com água, coza a cebola, os dentes de alho e as batatas descascadas. Quando ferver, tempere com sal, tape e deixe cozer sobre lume moderado 20 minutos ou até as batatas estarem cozidas.
+  - Lave a couve-portuguesa e corte-a em juliana. Escalde-a em água a ferver durante 1 minuto e escorra.
+  - Triture a sopa com a varinha mágica até reduzir completamente as batatas a puré. Deixe retomar fervura e introduza a couve. Mexa e deixe ferver com a panela destapada durante cinco ou seis minutos.
+  - Sirva a sopa acompanhada das fatias finas de broa de milho com chouriço.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

@@ -1,6 +1,8 @@
 
 nome: Ramen
 
+descrição: Servido numa taça larga e funda, o ramen é uma sopa de origem japonesa feita com vários ingredientes, dos quais devem constar a massa chinesa, o ovo e os vegetais. Coma o ramen com pauzinhos e torna a sua refeição mais exótica!
+
 dificuldade: média
 
 minutos-de-preparação: 60
@@ -47,40 +49,35 @@ ingredientes:
 valores-nutricionais:
 - dose: 313 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 12,5 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '18'
+  percentagem-do-vdr-adulto: 18
 - dose: 3,3 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 28,5 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 5,7 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 1,3 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 22,7 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Leve ao lume uma panela com a perna de frango, a cenoura cortada em palitos, a raiz
-  de gengibre, o tomate seco, o nabo em palitos, a água, uma colher de sopa de molho
-  de soja, uma colher de chá de sal e os ovos inteiros.
-- Depois de levantar fervura, deixe cozer 8 minutos e retire os ovos. Cozinhe os restantes
-  ingredientes mais 20 minutos.
-- Aqueça uma frigideira anti-aderente, previamente untada com o óleo, e salteie rapidamente
-  as fatias de carne de ambos os lados. Regue com o restante molho de soja e reserve.
-- Coza a massa em água temperada com o restante sal cerca de 3 minutos.
-- Escorra-a e coloque-a no fundo de quatro tigelas.
-- Junte o milho, os rebentos de feijão mungo, as folhas de espinafres e as fatias
-  de carne e regue tudo com o caldo, previamente coado.
-- Adicione os ovos descascados e cortados ao meio e salpique com folhas de manjericão.
-- Sirva de imediato.
+- - Leve ao lume uma panela com a perna de frango, a cenoura cortada em palitos, a raiz de gengibre, o tomate seco, o nabo em palitos, a água, uma colher de sopa de molho de soja, uma colher de chá de sal e os ovos inteiros.
+  - Depois de levantar fervura, deixe cozer 8 minutos e retire os ovos. Cozinhe os restantes ingredientes mais 20 minutos.
+  - Aqueça uma frigideira anti-aderente, previamente untada com o óleo, e salteie rapidamente as fatias de carne de ambos os lados. Regue com o restante molho de soja e reserve.
+  - Coza a massa em água temperada com o restante sal cerca de 3 minutos.
+  - Escorra-a e coloque-a no fundo de quatro tigelas.
+  - Junte o milho, os rebentos de feijão mungo, as folhas de espinafres e as fatias de carne e regue tudo com o caldo, previamente coado.
+  - Adicione os ovos descascados e cortados ao meio e salpique com folhas de manjericão.
+  - Sirva de imediato.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

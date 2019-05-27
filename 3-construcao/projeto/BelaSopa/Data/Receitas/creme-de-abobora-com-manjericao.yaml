@@ -1,6 +1,8 @@
 
 nome: Creme de abóbora com manjericão
 
+descrição: Este creme de abóbora com manjericão é ideal para servir como entrada de um jantar especial, entre amigos ou em família. Se for prato único, acrescente tostinhas gratinadas com queijo ou cubinhos de queijo de cabra.
+
 dificuldade: fácil
 
 minutos-de-preparação: 55
@@ -29,25 +31,23 @@ ingredientes:
 valores-nutricionais:
 - dose: 83 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 5,3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 1,9 g
   nome: Sal
-  percentagem-do-vdr-adulto: '31'
+  percentagem-do-vdr-adulto: 31
 
 passos:
-- Descasque a abóbora, o alho e a cebola. Corte-os em cubos e leve-os ao lume numa
-  panela com 1,5 l de água temperada com metade do sal.
-- Deixe cozinhar durante alguns minutos, até que os legumes fiquem macios.
-- No copo da varinha mágica triture as folhas de manjericão e o azeite.
-- Retire a panela do lume e, com a varinha, reduza a puré todos os legumes.
-- Adicione então o azeite de manjericão aos legumes de forma a obter um creme aveludado.
-  Rectifique os temperos se for necessário.
+- - Descasque a abóbora, o alho e a cebola. Corte-os em cubos e leve-os ao lume numa panela com 1,5 l de água temperada com metade do sal.
+  - Deixe cozinhar durante alguns minutos, até que os legumes fiquem macios.
+  - No copo da varinha mágica triture as folhas de manjericão e o azeite.
+  - Retire a panela do lume e, com a varinha, reduza a puré todos os legumes.
+  - Adicione então o azeite de manjericão aos legumes de forma a obter um creme aveludado. Rectifique os temperos se for necessário.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

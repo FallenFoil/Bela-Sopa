@@ -1,6 +1,8 @@
 
 nome: Aveludado de abóbora com iogurte
 
+descrição: O aveludado de abóbora cremoso e nutritivo, combina na perfeição com as colheradas de iogurte. É caso para dizer que o iogurte grego natural vai bem com tudo.
+
 dificuldade: fácil
 
 minutos-de-preparação: 40
@@ -41,37 +43,34 @@ ingredientes:
 valores-nutricionais:
 - dose: 158 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 6,0 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 2,2 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 17,4 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 11,3 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '13'
+  percentagem-do-vdr-adulto: 13
 - dose: 7,7 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '31'
+  percentagem-do-vdr-adulto: 31
 - dose: 5,5 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Pique a cebola. Reserve. Retire a pele e as sementes ao tomate e corte em pedaços.
-- Aqueça o azeite numa panela e refogue a cebola e o tomate.
-- Adicione a polpa de abóbora e as cenouras cortadas em cubos pequenos e tempere com
-  o sal. Cubra com água, tape e deixe cozer 20 minutos.
-- Triture com a varinha, juntando mais água, se necessário.
-- Junte as ervilhas já descongeladas, a curcuma, um pouco de pimenta e noz-moscada
-  e coza mais 10 minutos.
-- Misture o iogurte com folhas de tomilho (reserve algumas). Reserve.
-- Distribua a sopa pelos pratos, dispondo por cima o molho de iogurte. Salpique com
-  pimenta e o tomilho reservado e sirva.
+- - Pique a cebola. Reserve. Retire a pele e as sementes ao tomate e corte em pedaços.
+  - Aqueça o azeite numa panela e refogue a cebola e o tomate.
+  - Adicione a polpa de abóbora e as cenouras cortadas em cubos pequenos e tempere com o sal. Cubra com água, tape e deixe cozer 20 minutos.
+  - Triture com a varinha, juntando mais água, se necessário.
+  - Junte as ervilhas já descongeladas, a curcuma, um pouco de pimenta e noz-moscada e coza mais 10 minutos.
+  - Misture o iogurte com folhas de tomilho (reserve algumas). Reserve.
+  - Distribua a sopa pelos pratos, dispondo por cima o molho de iogurte. Salpique com pimenta e o tomilho reservado e sirva.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP

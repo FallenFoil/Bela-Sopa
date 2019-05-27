@@ -1,6 +1,8 @@
 
 nome: Sopa de couve-flor com cogumelos
 
+descrição: Esta sopa cremosa de couve-flor, servida com lascas de frango cozido e amêndoa laminada torrada, vai buscar sabores e texturas que combinam na perfeição. Uma sopa pronta em apenas 20 minutos!
+
 dificuldade: fácil
 
 minutos-de-preparação: 20
@@ -41,34 +43,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 111 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 6,5 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 0,9 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 3,5 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 2,6 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 3,8 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 7,9 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Deite o azeite e os legumes numa panela, salpique com o sal, adicione a água a ferver
-  e leve ao lume, deixando cozer cerca de 18 minutos.
-- Aloure as amêndoas laminadas numa frigideira e reserve.
-- Tempere a sopa com uma pitada de noz-moscada e um pouco de pimenta e triture até
-  obter um creme.
-- Distribua a sopa e o frango desfiado pelos pratos de servir, salpique com o cebolinho
-  picado e sirva com as amêndoas tostadas.
+- - Deite o azeite e os legumes numa panela, salpique com o sal, adicione a água a ferver e leve ao lume, deixando cozer cerca de 18 minutos.
+  - Aloure as amêndoas laminadas numa frigideira e reserve.
+  - Tempere a sopa com uma pitada de noz-moscada e um pouco de pimenta e triture até obter um creme.
+  - Distribua a sopa e o frango desfiado pelos pratos de servir, salpique com o cebolinho picado e sirva com as amêndoas tostadas.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP

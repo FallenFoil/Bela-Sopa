@@ -1,6 +1,8 @@
 
 nome: Minestrone com tortellini
 
+descrição: Uma receita equilibrada para os dias em que apetece cozinhar num instante! Uma sopa de origem italiana, rica em nutrientes, servida com legumes e tortellini de bolonhesa.
+
 dificuldade: fácil
 
 minutos-de-preparação: 30
@@ -31,35 +33,34 @@ ingredientes:
 valores-nutricionais:
 - dose: 136 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 5,3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 1,3 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 16,9 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 1,3 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '1'
+  percentagem-do-vdr-adulto: 1
 - dose: 2,6 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 5,0 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Aqueça o azeite numa panela, adicione a cebola picada, mexa e deixe alourar 2 a
-  3 minutos.
-- Junte a juliana de legumes, mexa e tempere com o sal.
-- Tape e deixe suar em lume moderado cerca de 20 minutos, mexendo de vez em quando.
-- Adicione o molho de tomate e regue com a água a ferver.
-- Assim que retomar fervura introduza a massa e ferva 1 minuto.
-- Retire do lume e adicione algumas folhas de manjericão ripadas.
-- Distribua pelos pratos de servir e decore com folhas de manjericão.
+- - Aqueça o azeite numa panela, adicione a cebola picada, mexa e deixe alourar 2 a 3 minutos.
+  - Junte a juliana de legumes, mexa e tempere com o sal.
+  - Tape e deixe suar em lume moderado cerca de 20 minutos, mexendo de vez em quando.
+  - Adicione o molho de tomate e regue com a água a ferver.
+  - Assim que retomar fervura introduza a massa e ferva 1 minuto.
+  - Retire do lume e adicione algumas folhas de manjericão ripadas.
+  - Distribua pelos pratos de servir e decore com folhas de manjericão.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

@@ -49,6 +49,8 @@ namespace BelaSopa.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             //modelBuilder.Entity<ClienteFinalizado>()
             //    .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
             //modelBuilder.Entity<ClienteFinalizado>()

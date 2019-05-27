@@ -1,6 +1,8 @@
 
 nome: Sopa de grão
 
+descrição: Esta sopa de grão alimenta e aquece toda a família. Ideal para começar uma refeição nos dias frios, o creme de grão denso é equilibrado com o paladar do agrião.
+
 dificuldade: fácil
 
 minutos-de-preparação: 50
@@ -32,38 +34,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 180 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 7 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 21 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 6 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 6 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '24'
+  percentagem-do-vdr-adulto: 24
 - dose: 7 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descasque as cebolas e os dentes de alho e pique-os finamente. Corte a abóbora em
-  cubos.
-- Numa panela com 2 colheres de sopa de azeite cozinhe sobre lume brando a cebola,
-  o alho, a abóbora e os talos de agrião picados. Salpique com sal, tape e cozinhe
-  cerca de 10 minutos. Adicione o grão cozido e 1,5 l de água. Deixe fervilhar cerca
-  de 25 minutos.
-- Antes de triturar a sopa retire alguns legumes com uma escumadeira e reserve-os.
-- Triture os restantes legumes com a varinha mágica, adicione um pouco mais de água
-  se a sopa estiver muito espessa, deixe retomar a fervura, rectifique temperos e
-  introduza as folhas de agrião. Assim que voltar a ferver, retire a sopa do lume,
-  junte-lhe os legumes reservados e regue com o restante azeite.
+- - Descasque as cebolas e os dentes de alho e pique-os finamente. Corte a abóbora em cubos.
+  - Numa panela com 2 colheres de sopa de azeite cozinhe sobre lume brando a cebola, o alho, a abóbora e os talos de agrião picados. Salpique com sal, tape e cozinhe cerca de 10 minutos. Adicione o grão cozido e 1,5 l de água. Deixe fervilhar cerca de 25 minutos.
+  - Antes de triturar a sopa retire alguns legumes com uma escumadeira e reserve-os.
+  - Triture os restantes legumes com a varinha mágica, adicione um pouco mais de água se a sopa estiver muito espessa, deixe retomar a fervura, rectifique temperos e introduza as folhas de agrião. Assim que voltar a ferver, retire a sopa do lume, junte-lhe os legumes reservados e regue com o restante azeite.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

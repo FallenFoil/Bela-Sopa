@@ -1,6 +1,8 @@
 
 nome: Sopa de Inverno
 
+descrição: Contra o frio, a chuva e o mau humor, esta sopa de inverno, com carne picada e vegetais, é a receita certa para juntar toda a família à mesa sem o tempo contado... É tão saciante que dispensa o prato principal.
+
 dificuldade: média
 
 minutos-de-preparação: 65
@@ -38,38 +40,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 341 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '17'
+  percentagem-do-vdr-adulto: 17
 - dose: 14,6 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '21'
+  percentagem-do-vdr-adulto: 21
 - dose: 4,8 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '24'
+  percentagem-do-vdr-adulto: 24
 - dose: 29,4 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 8,5 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 9,5 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '38'
+  percentagem-do-vdr-adulto: 38
 - dose: 20,1 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Aloure a cebola picada numa panela com o azeite. Junte a carne picada e salteie,
-  mexendo sempre até a carne estar bem solta e ter perdido o tom rosado. Tempere com
-  o sal e uma pitada de pimenta.
-- Elimine os talos mais grossos da couve, corte-a em juliana fina, lave e escorra
-  bem. Junte a lombarda e as rodelas de alho-francês à carne, misture bem, tape a
-  panela e reduza o calor.
-- Descasque e limpe a abóbora de sementes, corte-a em juliana fina, lave e escorra
-  bem. Junte a lombarda e as rodelas de alho-francês à carne, misture bem, tape a
-  panela e reduza o calor.
-- Adicione o feijão e a água e deixe ferver mais 15 a 20 minutos. Sirva com o chouriço
-  em rodelas e a broa cortada em fatias finas.
+- - Aloure a cebola picada numa panela com o azeite. Junte a carne picada e salteie, mexendo sempre até a carne estar bem solta e ter perdido o tom rosado. Tempere com o sal e uma pitada de pimenta.
+  - Elimine os talos mais grossos da couve, corte-a em juliana fina, lave e escorra bem. Junte a lombarda e as rodelas de alho-francês à carne, misture bem, tape a panela e reduza o calor.
+  - Descasque e limpe a abóbora de sementes, corte-a em juliana fina, lave e escorra bem. Junte a lombarda e as rodelas de alho-francês à carne, misture bem, tape a panela e reduza o calor.
+  - Adicione o feijão e a água e deixe ferver mais 15 a 20 minutos. Sirva com o chouriço em rodelas e a broa cortada em fatias finas.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

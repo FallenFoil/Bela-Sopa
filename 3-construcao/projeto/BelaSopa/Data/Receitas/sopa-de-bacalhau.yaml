@@ -1,6 +1,8 @@
 
 nome: Sopa de bacalhau
 
+descrição: 'Uma maneira diferente de preparar o ingrediente preferido dos portugueses: uma sopa de bacalhau que faz lembrar o Alentejo e que aquece nos dias mais frios.'
+
 dificuldade: fácil
 
 minutos-de-preparação: 50
@@ -36,42 +38,34 @@ ingredientes:
 valores-nutricionais:
 - dose: 146 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 6 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 16 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 4 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 2 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 7 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Num tacho, em lume brando, ferva as postas de bacalhau com a água, cerca de 8 minutos.
-- Corte o pão em fatias finas e esfregue-as com os dentes de alho, previamente esborrachados
-  e sem pele.
-- Descasque a cebola e pique-a finamente. Numa panela com 2 colheres de sopa de azeite
-  salteie em lume brando os dentes de alho e a cebola picada.
-- Lave o tomate, dê-lhe um golpe em cruz na base e introduza-o na água da cozedura
-  do bacalhau por breves minutos, para que seja mais fácil pelar. Pele-o tomate, pique-o
-  em pedaços e limpe-o de sementes. Junte-o à cebola, adicionando depois a polpa de
-  tomate. Deixe cozinhar tapado durante 10 minutos.
-- Limpe o bacalhau de peles e espinhas e desfaça-o em lascas. Coe o caldo de cozedura
-  e adicione-o ao cozinhado de tomate quando este estiver macio.
-- Tempere com o sal, junte as folhas de poejo e as lascas de bacalhau e deixe retomar
-  fervura.
-- Coloque as fatias de pão nos pratos de servir e regue com o restante azeite. Distribua
-  a sopa pelos pratos e sirva imediatamente.
+- - Num tacho, em lume brando, ferva as postas de bacalhau com a água, cerca de 8 minutos.
+  - Corte o pão em fatias finas e esfregue-as com os dentes de alho, previamente esborrachados e sem pele.
+  - Descasque a cebola e pique-a finamente. Numa panela com 2 colheres de sopa de azeite salteie em lume brando os dentes de alho e a cebola picada.
+  - Lave o tomate, dê-lhe um golpe em cruz na base e introduza-o na água da cozedura do bacalhau por breves minutos, para que seja mais fácil pelar. Pele-o tomate, pique-o em pedaços e limpe-o de sementes. Junte-o à cebola, adicionando depois a polpa de tomate. Deixe cozinhar tapado durante 10 minutos.
+  - Limpe o bacalhau de peles e espinhas e desfaça-o em lascas. Coe o caldo de cozedura e adicione-o ao cozinhado de tomate quando este estiver macio.
+  - Tempere com o sal, junte as folhas de poejo e as lascas de bacalhau e deixe retomar fervura.
+  - Coloque as fatias de pão nos pratos de servir e regue com o restante azeite. Distribua a sopa pelos pratos e sirva imediatamente.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

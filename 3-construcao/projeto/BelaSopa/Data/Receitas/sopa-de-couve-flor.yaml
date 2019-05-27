@@ -1,6 +1,8 @@
 
 nome: Sopa de couve-flor
 
+descrição: A sopa de couve-flor é um bom início para uma refeição. Aqui, a suavidade da courgette permite que os sabores da couve-flor, do alho-francês e dos espinafres se manifestem.
+
 dificuldade: fácil
 
 minutos-de-preparação: 55
@@ -34,36 +36,32 @@ ingredientes:
 valores-nutricionais:
 - dose: 43 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '2'
+  percentagem-do-vdr-adulto: 2
 - dose: 3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 0 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '2'
+  percentagem-do-vdr-adulto: 2
 - dose: 3 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 2 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 1 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 2 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Lave os legumes.
-- Numa panela, junte a couve-flor separada em raminhos e o alho-francês em rodelas.
-- Junte a courgette cortada em pedaços pequenos e a cebola descascada e cortada em
-  bocados. Cubra os legumes com água, tempere com o sal, tape e leve a cozer sobre
-  lume brando até estarem macios.
-- Triture com a varinha mágica até desfazer completamente os legumes. Se achar a sopa
-  demasiado espessa, junte um pouco mais de água a ferver e rectifique os temperos
-  se for necessário.
-- Adicione as folhas de espinafres e o azeite, mexa e retire do lume.
+- - Lave os legumes.
+  - Numa panela, junte a couve-flor separada em raminhos e o alho-francês em rodelas.
+  - Junte a courgette cortada em pedaços pequenos e a cebola descascada e cortada em bocados. Cubra os legumes com água, tempere com o sal, tape e leve a cozer sobre lume brando até estarem macios.
+  - Triture com a varinha mágica até desfazer completamente os legumes. Se achar a sopa demasiado espessa, junte um pouco mais de água a ferver e rectifique os temperos se for necessário.
+  - Adicione as folhas de espinafres e o azeite, mexa e retire do lume.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

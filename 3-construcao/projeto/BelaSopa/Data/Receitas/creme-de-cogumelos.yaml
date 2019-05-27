@@ -1,6 +1,8 @@
 
 nome: Creme de cogumelos
 
+descrição: Se gosta de cogumelos e de pinhões, então este creme de cogumelos é a sua entrada de eleição. Uma receita fácil e que pode ser um aconchego para os dias mais frios.
+
 dificuldade: fácil
 
 minutos-de-preparação: 40
@@ -36,35 +38,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 71 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '4'
+  percentagem-do-vdr-adulto: 4
 - dose: 7 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 4 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '22'
+  percentagem-do-vdr-adulto: 22
 - dose: 23 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 22 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '24'
+  percentagem-do-vdr-adulto: 24
 - dose: 2 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 8 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Corte as batatas, a cebola, o alho e o bolbo de funcho em cubos, coloque-os numa
-  panela com água e leve ao lume.
-- A meio da cozedura, junte os cogumelos lavados e cortados ao meio. Tenha o cuidado
-  de reservar alguns para decoração.
-- Depois dos legumes cozidos, triture com a ajuda da varinha mágica de forma a obter
-  um creme homogéneo.
-- Tempere com o sal, regue com um fio de azeite e sirva com os pinhões tostados, a
-  rama de funcho e os cogumelos reservados braseados.
+- - Corte as batatas, a cebola, o alho e o bolbo de funcho em cubos, coloque-os numa panela com água e leve ao lume.
+  - A meio da cozedura, junte os cogumelos lavados e cortados ao meio. Tenha o cuidado de reservar alguns para decoração.
+  - Depois dos legumes cozidos, triture com a ajuda da varinha mágica de forma a obter um creme homogéneo.
+  - Tempere com o sal, regue com um fio de azeite e sirva com os pinhões tostados, a rama de funcho e os cogumelos reservados braseados.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

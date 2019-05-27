@@ -1,6 +1,8 @@
 
 nome: Creme de legumes
 
+descrição: Este simples creme de legumes com segurelha é uma maneira deliciosa de começar a sua refeição. Ideal para o ajudar a atingir o objectivo de comer 4 porções de hortícolas por dia. Começar a refeição com uma sopa faz com que fique saciado mais cedo.
+
 dificuldade: fácil
 
 minutos-de-preparação: 55
@@ -38,36 +40,31 @@ ingredientes:
 valores-nutricionais:
 - dose: 97 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 3 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '5'
+  percentagem-do-vdr-adulto: 5
 - dose: 1 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 15 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 6 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 4 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 3 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descasque e corte em pedaços pequenos a cebola, o nabo, o chuchu, as batatas e a
-  abóbora. Deite numa panela e junte água até cobrir os legumes. Tempere com sal,
-  tape e leve a cozer sobre lume moderado até os legumes estarem tenros.
-- Tire o fio ao feijão-verde e corte-o em lâminas finas na diagonal. 
-- Quando os legumes estiverem cozidos, triture com a varinha mágica até os desfazer
-  completamente. Adicione um pouco mais de água a ferver se achar a sopa demasiado
-  espessa e junte o feijão-verde cortado e as folhinhas de segurelha. Deixe ferver
-  até o feijão-verde estar tenro.
-- Regue com o azeite e sirva.
+- - Descasque e corte em pedaços pequenos a cebola, o nabo, o chuchu, as batatas e a abóbora. Deite numa panela e junte água até cobrir os legumes. Tempere com sal, tape e leve a cozer sobre lume moderado até os legumes estarem tenros.
+  - Tire o fio ao feijão-verde e corte-o em lâminas finas na diagonal. 
+  - Quando os legumes estiverem cozidos, triture com a varinha mágica até os desfazer completamente. Adicione um pouco mais de água a ferver se achar a sopa demasiado espessa e junte o feijão-verde cortado e as folhinhas de segurelha. Deixe ferver até o feijão-verde estar tenro.
+  - Regue com o azeite e sirva.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

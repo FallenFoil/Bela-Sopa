@@ -1,6 +1,8 @@
 
 nome: Sopa doce de pão
 
+descrição: Só precisa de 15 minutos e de gostar de vinho verde para fazer esta receita. A sopa doce de pão faz-se num instante.
+
 dificuldade: fácil
 
 minutos-de-preparação: 15
@@ -24,23 +26,21 @@ ingredientes:
 valores-nutricionais:
 - dose: 317 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '16'
+  percentagem-do-vdr-adulto: 16
 - dose: 1,8 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '3'
+  percentagem-do-vdr-adulto: 3
 - dose: 22,8 g
   nome: Açúcar
-  percentagem-do-vdr-adulto: '25'
+  percentagem-do-vdr-adulto: 25
 - dose: 3 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 
 passos:
-- Coloque o vinho num recipiente fundo e adicione o açúcar e a casca do limão finamente
-  cortada e sem a parte branca.
-- Envolva muito bem e deixe repousar durante 5 minutos. Mexa e deixe repousar mais
-  um pouco.
-- Corte o pão em fatias muito finas para pratos fundos e cubra-as com o vinho doce.
+- - Coloque o vinho num recipiente fundo e adicione o açúcar e a casca do limão finamente cortada e sem a parte branca.
+  - Envolva muito bem e deixe repousar durante 5 minutos. Mexa e deixe repousar mais um pouco.
+  - Corte o pão em fatias muito finas para pratos fundos e cubra-as com o vinho doce.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov

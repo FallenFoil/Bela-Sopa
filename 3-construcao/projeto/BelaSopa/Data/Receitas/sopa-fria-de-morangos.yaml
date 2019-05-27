@@ -1,6 +1,8 @@
 
 nome: Sopa fria de morangos
 
+descrição: Cores e sabores que combinam na perfeição numa receita de Verão. Refresque-se com estes aromas exóticos e excepcionais da lima, leite de coco e morango, combinados com os restantes ingredientes.
+
 dificuldade: fácil
 
 minutos-de-preparação: 15
@@ -47,42 +49,34 @@ ingredientes:
 valores-nutricionais:
 - dose: 142 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '7'
+  percentagem-do-vdr-adulto: 7
 - dose: 10,2 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 3,8 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '19'
+  percentagem-do-vdr-adulto: 19
 - dose: 9,3 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 8,6 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 3,0 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '12'
+  percentagem-do-vdr-adulto: 12
 - dose: 2,2 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Lave os morangos e o tomate, corte-os em pedaços, coloque-os num robot de cozinha
-  ou processador (ou use a varinha mágica) e triture-os bem.
-- Adicione a courgette em pedaços, a cebola-roxa (reserve duas ou três lâminas), o
-  alho, o azeite e a água e volte a triturar até obter um creme homogéneo.
-- Tempere com o vinagre, uma colher de sopa de sal, um pouco de pimenta e orégãos
-  frescos (reserve alguns).
-- Triture mais uma vez e prove para ajustar os temperos. Reserve no frigorífico até
-  ao momento de servir.
-- Numa taça, envolva o leite de coco (reserve quatro colheres de sopa) com a raspa
-  e o sumo da lima e o restante sal.
-- Prepare o pepino com o espiralizador e reserve.
-- Disponha a sopa em taças individuais, adicione uma colher de sopa do creme de coco
-  em cada uma (se envolver ligeiramente obtém um efeito marmoreado) e salpique com
-  os noodles de courgette, os orégãos reservados, a cebola reservada picada, o cebolinho,
-  um pouco de pimenta e um gomo da lima.
+- - Lave os morangos e o tomate, corte-os em pedaços, coloque-os num robot de cozinha ou processador (ou use a varinha mágica) e triture-os bem.
+  - Adicione a courgette em pedaços, a cebola-roxa (reserve duas ou três lâminas), o alho, o azeite e a água e volte a triturar até obter um creme homogéneo.
+  - Tempere com o vinagre, uma colher de sopa de sal, um pouco de pimenta e orégãos frescos (reserve alguns).
+  - Triture mais uma vez e prove para ajustar os temperos. Reserve no frigorífico até ao momento de servir.
+  - Numa taça, envolva o leite de coco (reserve quatro colheres de sopa) com a raspa e o sumo da lima e o restante sal.
+  - Prepare o pepino com o espiralizador e reserve.
+  - Disponha a sopa em taças individuais, adicione uma colher de sopa do creme de coco em cada uma (se envolver ligeiramente obtém um efeito marmoreado) e salpique com os noodles de courgette, os orégãos reservados, a cebola reservada picada, o cebolinho, um pouco de pimenta e um gomo da lima.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP

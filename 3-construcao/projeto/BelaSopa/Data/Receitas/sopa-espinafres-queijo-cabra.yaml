@@ -1,6 +1,8 @@
 
 nome: Sopa de espinafres com queijo de cabra
 
+descrição: Pronta num instante, esta é uma receita quente e reconfortante, fácil de preparar e com os mais frescos produtos Pingo Doce, para quando não há tempo a perder e o sabor se quer por inteiro.
+
 dificuldade: fácil
 
 minutos-de-preparação: 30
@@ -36,37 +38,35 @@ ingredientes:
 valores-nutricionais:
 - dose: 185 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 10,4 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 3,8 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '19'
+  percentagem-do-vdr-adulto: 19
 - dose: 17 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 5,6 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '6'
+  percentagem-do-vdr-adulto: 6
 - dose: 2,4 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '10'
+  percentagem-do-vdr-adulto: 10
 - dose: 5,6 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Aqueça o azeite numa panela, junte a cebola e os dentes de alho picados.
-- Pique finamente os talos de coentros e deite-os na panela.
-- Junte as batatas descascadas e cortadas em cubos pequenos, tempere com o sal, tape
-  e deixe cozinhar em lume moderado.
-- Lave o tomate, limpe-o de sementes, corte-o em pedaços e adicione-o ao cozinhado.
-- Mexa e cozinhe tapado mais 5 minutos.
-- Regue com a água a ferver e deixe cozinhar 15 minutos ou até as batatas estarem
-  macias.
-- Junte as folhas de espinafres e o queijo cortado em cubos e ferva mais 2 a 3 minutos.
-- Distribua pelos pratos ou taças e sirva com os croutons.
+- - Aqueça o azeite numa panela, junte a cebola e os dentes de alho picados.
+  - Pique finamente os talos de coentros e deite-os na panela.
+  - Junte as batatas descascadas e cortadas em cubos pequenos, tempere com o sal, tape e deixe cozinhar em lume moderado.
+  - Lave o tomate, limpe-o de sementes, corte-o em pedaços e adicione-o ao cozinhado.
+  - Mexa e cozinhe tapado mais 5 minutos.
+  - Regue com a água a ferver e deixe cozinhar 15 minutos ou até as batatas estarem macias.
+  - Junte as folhas de espinafres e o queijo cortado em cubos e ferva mais 2 a 3 minutos.
+  - Distribua pelos pratos ou taças e sirva com os croutons.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM

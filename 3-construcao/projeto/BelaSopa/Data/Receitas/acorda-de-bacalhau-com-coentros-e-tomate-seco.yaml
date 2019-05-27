@@ -1,6 +1,8 @@
 
 nome: Açorda de bacalhau com coentros e tomate seco
 
+descrição: A açorda é um prato típico português, preparado com pão e ovo. Esta açorda de bacalhau, enriquecida com tomate seco e piso de coentros não tem como resistir!
+
 dificuldade: média
 
 minutos-de-preparação: 30
@@ -35,45 +37,36 @@ ingredientes:
 valores-nutricionais:
 - dose: 443 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '21'
+  percentagem-do-vdr-adulto: 21
 - dose: 21,4 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '31'
+  percentagem-do-vdr-adulto: 31
 - dose: 3,9 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '20'
+  percentagem-do-vdr-adulto: 20
 - dose: 39,6 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 1,9 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '2'
+  percentagem-do-vdr-adulto: 2
 - dose: 2,7 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '11'
+  percentagem-do-vdr-adulto: 11
 - dose: 23,6 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Descongele o bacalhau e coloque-o num tacho. Adicione a água, a folha de louro e
-  2 dentes de alho esmagados com casca. Leve ao lume e deixe ferver, ligeiramente,
-  cerca de 8 minutos, ou até o bacalhau começar a abrir lasca.
-- Reserve algumas folhas de coentros. Pique os restantes coentros previamente lavados
-  para dentro de um almofariz e adicione-lhes os restantes dentes de alho, previamente
-  descascados e espremidos. Junte o azeite e o sal e esmague muito bem com um pilão.
-- Pique o tomate seco em pedacinhos pequenos e misture com o preparado (piso) de coentros.
-- Distribua o piso por 4 pratos de sopa e por cima coloque o pão, cortado em fatias.
-- Coe o caldo da cozedura do bacalhau para outro tacho e reserve.
-- Limpe o bacalhau da pele e das espinhas, desfaça-o em lascas e coloque-as sobre
-  as fatias de pão.
-- Leve o caldo da cozedura do bacalhau de novo ao lume até levantar fervura.
-- Abra um ovo para dentro de uma taça pequena, coloque-o numa concha de sopa e introduza-a
-  cuidadosamente no caldo a ferver, mantendo o ovo dentro da concha até a clara ficar
-  cozinhada e obter um ovo escalfado. Repita o procedimento com os restantes três
-  ovos.
-- Depois de escalfados os ovos distribua pelos pratos e regue sobre eles o restante
-  caldo. Finalize com as folhas de coentros reservadas. Sirva bem quente.
+- - Descongele o bacalhau e coloque-o num tacho. Adicione a água, a folha de louro e 2 dentes de alho esmagados com casca. Leve ao lume e deixe ferver, ligeiramente, cerca de 8 minutos, ou até o bacalhau começar a abrir lasca.
+  - Reserve algumas folhas de coentros. Pique os restantes coentros previamente lavados para dentro de um almofariz e adicione-lhes os restantes dentes de alho, previamente descascados e espremidos. Junte o azeite e o sal e esmague muito bem com um pilão.
+  - Pique o tomate seco em pedacinhos pequenos e misture com o preparado (piso) de coentros.
+  - Distribua o piso por 4 pratos de sopa e por cima coloque o pão, cortado em fatias.
+  - Coe o caldo da cozedura do bacalhau para outro tacho e reserve.
+  - Limpe o bacalhau da pele e das espinhas, desfaça-o em lascas e coloque-as sobre as fatias de pão.
+  - Leve o caldo da cozedura do bacalhau de novo ao lume até levantar fervura.
+  - Abra um ovo para dentro de uma taça pequena, coloque-o numa concha de sopa e introduza-a cuidadosamente no caldo a ferver, mantendo o ovo dentro da concha até a clara ficar cozinhada e obter um ovo escalfado. Repita o procedimento com os restantes três ovos.
+  - Depois de escalfados os ovos distribua pelos pratos e regue sobre eles o restante caldo. Finalize com as folhas de coentros reservadas. Sirva bem quente.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QOBaHR0cDov

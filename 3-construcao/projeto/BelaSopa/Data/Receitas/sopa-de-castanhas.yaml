@@ -1,6 +1,8 @@
 
 nome: Sopa de castanhas
 
+descrição: A castanha é um alimento muito importante, que, em tempos, substituiu o pão e a batata. Aqueça a mesa com esta deliciosa sopa de castanhas - com as castanhas congeladas podemos fingir que é Outono em qualquer altura do ano.
+
 dificuldade: fácil
 
 minutos-de-preparação: 40
@@ -31,31 +33,29 @@ ingredientes:
 valores-nutricionais:
 - dose: 295 Kcal
   nome: Energia
-  percentagem-do-vdr-adulto: '15'
+  percentagem-do-vdr-adulto: 15
 - dose: 9 g
   nome: Gordura
-  percentagem-do-vdr-adulto: '13'
+  percentagem-do-vdr-adulto: 13
 - dose: 2 g
   nome: Gordura | das quais saturadas
-  percentagem-do-vdr-adulto: '8'
+  percentagem-do-vdr-adulto: 8
 - dose: 52 g
   nome: Hidratos de carbono
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 - dose: 8 g
   nome: Hidratos de carbono | dos quais açúcares
-  percentagem-do-vdr-adulto: '9'
+  percentagem-do-vdr-adulto: 9
 - dose: 7 g
   nome: Fibra
-  percentagem-do-vdr-adulto: '28'
+  percentagem-do-vdr-adulto: 28
 - dose: 4 g
   nome: Proteínas
-  percentagem-do-vdr-adulto: ''
+  percentagem-do-vdr-adulto: null
 
 passos:
-- Numa panela com água, cozinhe todos os ingredientes, excepto os croutons e as folhas
-  de aipo. Tempere com sal e azeite e, assim que estiver cozinhado, triture para obter
-  um puré homogéneo. 
-- Sirva com os croutons com azeite e alho e a rama de aipo laminada.
+- - Numa panela com água, cozinhe todos os ingredientes, excepto os croutons e as folhas de aipo. Tempere com sal e azeite e, assim que estiver cozinhado, triture para obter um puré homogéneo. 
+  - Sirva com os croutons com azeite e alho e a rama de aipo laminada.
 
 imagem: !!binary |
   /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMtaHR0cDov
