@@ -1,10 +1,8 @@
 @model EntrarViewModel
 @{
-    Layout = "~/Views/Shared/_AutenticacaoLayout.cshtml";
-    ViewData["Title"] = "Autenticação";
+    Layout = "_LayoutAutenticacao";
+    ViewData["Title"] = "Entrar";
 }
-
-<h2>Entrar</h2>
 
 @if (TempData["Sucesso"] != null)
 {
@@ -38,4 +36,4 @@
 
 </form>
 
-Não tem uma conta? @Html.ActionLink(linkText: "Criar conta", actionName: "CriarConta")
+<a asp-action="CriarConta">Criar conta</a>

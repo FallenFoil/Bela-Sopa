@@ -1,6 +1,6 @@
 @model AdicionarAdministradorViewModel
 @{
-    Layout = "~/Views/shared/_Layout.cshtml";
+    Layout = "_LayoutAdministrador";
     ViewData["Title"] = "Adicionar administrador";
 }
 
@@ -39,4 +39,4 @@
 
 </form>
 
-@Html.ActionLink(linkText: "Voltar", actionName: "Index")
+<a asp-action="Index">Voltar</a>

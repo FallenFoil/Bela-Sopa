@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+}
+
+@section AppendToHead
+{
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="~/style.css" />
+}
+
+<div id="content">
+    @RenderBody()
+    <a asp-controller="Autenticacao" asp-action="Sair">Sair</a>
+    <hr /><footer><p>&copy; 2019 &ndash; Bela Sopa</p></footer>
+</div>
