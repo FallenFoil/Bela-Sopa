@@ -43,7 +43,7 @@ namespace BelaSopa.Models
                         Descricao = yamlReceita.Descricao,
                         Dificuldade = dificuldade,
                         MinutosPreparacao = yamlReceita.MinutosPreparacao,
-                        NumDoses = yamlReceita.NumeroDoses,
+                        NumeroDoses = yamlReceita.NumeroDoses,
                         Imagem = yamlReceita.Imagem
                     }).Entity;
 
@@ -56,9 +56,9 @@ namespace BelaSopa.Models
 
                         var receitaEtiqueta = new ReceitaEtiqueta
                         {
-                            EtiquetaId = etiqueta.Id,
+                            EtiquetaId = etiqueta.EtiquetaId,
                             Etiqueta = etiqueta,
-                            ReceitaId = receita.Id,
+                            ReceitaId = receita.ReceitaId,
                             Receita = receita
                         };
 

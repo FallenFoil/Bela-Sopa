@@ -1,6 +1,4 @@
 using BelaSopa.Models;
-using BelaSopa.Models.DomainModels.Assistente;
-using BelaSopa.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -20,11 +18,12 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            HomeViewModel hvm = new HomeViewModel();
-            hvm.Etiquetas = this.context.Etiqueta.ToArray<Etiqueta>();
-            hvm.Receitas = this.context.Receita.ToArray<Receita>();
+            var viewModel = (
+                Etiquetas: context.Etiqueta.ToList(),
+                Receitas: context.Receita.ToList()
+                );
 
-            return View(viewName: "Home", model: hvm);
+            return View(viewName: "Home", model: viewModel);
         }
     }
 }

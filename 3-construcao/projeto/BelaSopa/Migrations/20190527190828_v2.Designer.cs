@@ -4,14 +4,16 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190527190828_v2")]
+    partial class v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace BelaSopa.Migrations
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>
                 {
-                    b.Property<int>("EtiquetaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -29,7 +31,7 @@ namespace BelaSopa.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.HasKey("EtiquetaId");
+                    b.HasKey("Id");
 
                     b.ToTable("Etiqueta");
                 });
@@ -89,7 +91,7 @@ namespace BelaSopa.Migrations
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Receita", b =>
                 {
-                    b.Property<int>("ReceitaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -109,7 +111,7 @@ namespace BelaSopa.Migrations
 
                     b.Property<int>("NumeroDoses");
 
-                    b.HasKey("ReceitaId");
+                    b.HasKey("Id");
 
                     b.ToTable("Receita");
                 });

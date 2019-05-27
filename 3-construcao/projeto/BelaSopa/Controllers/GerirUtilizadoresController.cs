@@ -21,8 +21,8 @@ namespace BelaSopa.Controllers
         public IActionResult Index()
         {
             var viewModel = (
-                Administradores: this.context.Administradores.ToList(),
-                Clientes: this.context.Clientes.ToList()
+                Administradores: context.Administradores.ToList(),
+                Clientes: context.Clientes.ToList()
             );
 
             return View(viewName: "ListaDeUtilizadores", model: viewModel);
@@ -34,12 +34,12 @@ namespace BelaSopa.Controllers
         {
             if (nomeDeUtilizador != User.Identity.Name)
             {
-                var utilizador = this.context.GetUtilizador(nomeDeUtilizador);
+                var utilizador = context.GetUtilizador(nomeDeUtilizador);
 
                 if (utilizador != null)
                 {
-                    this.context.Remove(utilizador);
-                    this.context.SaveChanges();
+                    context.Remove(utilizador);
+                    context.SaveChanges();
                 }
             }
 
@@ -67,7 +67,7 @@ namespace BelaSopa.Controllers
 
             // verificar se nome de utilizador está disponível
 
-            if (this.context.GetUtilizador(viewModel.NomeDeUtilizador) != null)
+            if (context.GetUtilizador(viewModel.NomeDeUtilizador) != null)
             {
                 // nome de utilizador indisponível
                 TempData["Erro"] = "Nome de utilizador indisponível.";
@@ -82,8 +82,8 @@ namespace BelaSopa.Controllers
                 HashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse)
             };
 
-            this.context.Administradores.Add(administrador);
-            this.context.SaveChanges();
+            context.Administradores.Add(administrador);
+            context.SaveChanges();
 
             // redirecionar para view de autenticação
 

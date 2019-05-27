@@ -109,7 +109,7 @@ namespace BelaSopa.Controllers
         {
             bool receitaProcesso = _context.ReceitaIngrediente.Any(tt => tt.ReceitaId == ri.ReceitaId
                                                        && tt.IngredienteId == ri.IngredienteId);
-            bool receita = _context.Receita.Any(r => r.Id == ri.ReceitaId);
+            bool receita = _context.Receita.Any(r => r.ReceitaId == ri.ReceitaId);
             bool ingrediente = _context.Ingrediente.Any(i => i.IngredienteId == ri.IngredienteId);
             if (receitaProcesso || !receita || !ingrediente)
             {

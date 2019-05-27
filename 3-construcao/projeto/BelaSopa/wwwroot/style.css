@@ -271,6 +271,7 @@ a.article:hover {
 .ReceitaImg {
     width: 100%;
     height: 70%;
+    object-fit: cover;
 }
 
 .ReceitasLinha {

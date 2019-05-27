@@ -8,7 +8,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Receita
     {
-        public int Id { get; set; }
+        public int ReceitaId { get; set; }
 
         [Required, StringLength(100)]
         public string Nome { get; set; }
@@ -23,7 +23,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int MinutosPreparacao { get; set; }
 
         [Required]
-        public int NumDoses { get; set; }
+        public int NumeroDoses { get; set; }
 
         [Required]
         public byte[] Imagem { set; get; }
@@ -69,11 +69,14 @@ namespace BelaSopa.Models.DomainModels.Assistente
     {
         [Key]
         public int EtiquetaId { set; get; }
+
         [Key]
         public int ReceitaId { set; get; }
+
         [NotMapped]
         [JsonIgnore]
         public Receita Receita { set; get; }
+
         [NotMapped]
         [JsonIgnore]
         public Etiqueta Etiqueta { get; set; }

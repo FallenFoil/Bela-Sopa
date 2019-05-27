@@ -7,7 +7,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Etiqueta
     {
-        public int Id { set; get; }
+        public int EtiquetaId { set; get; }
 
         [Required, StringLength(50)]
         public string Nome { set; get; }
