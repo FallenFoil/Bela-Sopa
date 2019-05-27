@@ -6,7 +6,8 @@ namespace BelaSopa.Models.DomainModels.Utilizadores
 {
     public abstract class Utilizador
     {
-        public int Id { get; set; }
+        [Key]
+        public int UtilizadorId { get; set; }
 
         [Required, StringLength(32, MinimumLength = 4)]
         public string NomeDeUtilizador { get; set; }

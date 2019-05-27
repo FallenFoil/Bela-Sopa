@@ -4,14 +4,16 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190527203105_v4")]
+    partial class v4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,7 +269,7 @@ namespace BelaSopa.Migrations
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Utilizadores.Administrador", b =>
                 {
-                    b.Property<int>("UtilizadorId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -279,14 +281,14 @@ namespace BelaSopa.Migrations
                         .IsRequired()
                         .HasMaxLength(32);
 
-                    b.HasKey("UtilizadorId");
+                    b.HasKey("Id");
 
                     b.ToTable("Administradores");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Utilizadores.Cliente", b =>
                 {
-                    b.Property<int>("UtilizadorId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -300,7 +302,7 @@ namespace BelaSopa.Migrations
                         .IsRequired()
                         .HasMaxLength(32);
 
-                    b.HasKey("UtilizadorId");
+                    b.HasKey("Id");
 
                     b.ToTable("Clientes");
                 });
