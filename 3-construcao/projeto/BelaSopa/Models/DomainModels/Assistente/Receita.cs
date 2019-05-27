@@ -42,7 +42,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         //public string Link { get; set; }
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
+        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; }

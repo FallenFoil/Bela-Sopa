@@ -1,3 +1,4 @@
+using BelaSopa.Models.DomainModels.Assistente;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +26,49 @@ namespace BelaSopa.Models
                         .Build();
 
                     var yamlReceita = deserializer.Deserialize<YamlReceita>(reader);
+
+                    Dificuldade dificuldade;
+
+                    switch (yamlReceita.Dificuldade.ToLower())
+                    {
+                        case "fácil": dificuldade = Dificuldade.Facil; break;
+                        case "média": dificuldade = Dificuldade.Media; break;
+                        case "difícil": dificuldade = Dificuldade.Dificil; break;
+                        default: throw new Exception();
+                    }
+
+                    var receita = context.Receita.Add(new Receita
+                    {
+                        Nome = yamlReceita.Nome,
+                        Descricao = yamlReceita.Descricao,
+                        Dificuldade = dificuldade,
+                        MinutosPreparacao = yamlReceita.MinutosPreparacao,
+                        NumDoses = yamlReceita.NumeroDoses,
+                        Imagem = yamlReceita.Imagem
+                    }).Entity;
+
+                    foreach (var nomeEtiqueta in yamlReceita.Etiquetas)
+                    {
+                        var etiqueta = context.Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta);
+
+                        if (etiqueta == null)
+                            etiqueta = context.Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
+
+                        var receitaEtiqueta = new ReceitaEtiqueta
+                        {
+                            EtiquetaId = etiqueta.Id,
+                            Etiqueta = etiqueta,
+                            ReceitaId = receita.Id,
+                            Receita = receita
+                        };
+
+                        receita.ReceitaEtiqueta.Add(receitaEtiqueta);
+                        etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
+
+                        context.ReceitaEtiqueta.Add(receitaEtiqueta);
+                    }
+
+                    context.SaveChanges();
                 }
             });
         }

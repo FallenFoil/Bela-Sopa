@@ -33,6 +33,7 @@ namespace BelaSopa.Models
 
         public DbSet<Receita> Receita { set; get; }
         public DbSet<Etiqueta> Etiqueta { set; get; }
+        public DbSet<ReceitaEtiqueta> ReceitaEtiqueta { set; get; }
         public DbSet<ReceitaIngrediente> ReceitaIngrediente { set; get; }
         public DbSet<ReceitaProcesso> ReceitaProcesso { set; get; }
 
@@ -149,7 +150,7 @@ namespace BelaSopa.Models
                .HasOne(ri => ri.Processo)
                .WithMany(i => i.ReceitaProcesso)
                .HasForeignKey(t => t.ProcessoId);
-
+            
             modelBuilder.Entity<ReceitaEtiqueta>()
                 .HasKey(rc => new { rc.ReceitaId, rc.EtiquetaId });
             modelBuilder.Entity<ReceitaEtiqueta>()

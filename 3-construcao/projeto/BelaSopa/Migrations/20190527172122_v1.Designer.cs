@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    [Migration("20190523202527_v1")]
+    [Migration("20190527172122_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,22 +21,22 @@ namespace BelaSopa.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.Etiqueta", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>
                 {
-                    b.Property<int>("EtiquetaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(50);
 
-                    b.HasKey("EtiquetaId");
+                    b.HasKey("Id");
 
                     b.ToTable("Etiqueta");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.Ingrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Ingrediente", b =>
                 {
                     b.Property<int>("IngredienteId")
                         .ValueGeneratedOnAdd()
@@ -63,7 +63,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Ingrediente");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.Processo", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Processo", b =>
                 {
                     b.Property<int>("ProcessoId")
                         .ValueGeneratedOnAdd()
@@ -76,7 +76,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Processo");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ProcessoTarefa", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ProcessoTarefa", b =>
                 {
                     b.Property<int>("ProcessoId");
 
@@ -89,45 +89,34 @@ namespace BelaSopa.Migrations
                     b.ToTable("ProcessoTarefa");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.Receita", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Receita", b =>
                 {
-                    b.Property<int>("ReceitaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(200);
+                        .IsRequired();
 
-                    b.Property<string>("Dificuldade")
-                        .IsRequired()
-                        .HasMaxLength(10);
+                    b.Property<int>("Dificuldade");
 
-                    b.Property<string>("ImagePath")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<byte[]>("Imagem")
+                        .IsRequired();
 
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<int>("NPessoas");
+                    b.Property<int>("MinutosPreparacao");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(10);
+                        .HasMaxLength(100);
 
-                    b.Property<int>("Tempo");
+                    b.Property<int>("NumDoses");
 
-                    b.Property<string>("Video")
-                        .HasMaxLength(50);
-
-                    b.HasKey("ReceitaId");
+                    b.HasKey("Id");
 
                     b.ToTable("Receita");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaEtiqueta", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaEtiqueta", b =>
                 {
                     b.Property<int>("ReceitaId");
 
@@ -140,7 +129,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ReceitaEtiqueta");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaIngrediente", b =>
                 {
                     b.Property<int>("ReceitaId");
 
@@ -155,7 +144,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ReceitaIngrediente");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaProcesso", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaProcesso", b =>
                 {
                     b.Property<int>("ReceitaId");
 
@@ -168,7 +157,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("ReceitaProcesso");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.Tarefa", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tarefa", b =>
                 {
                     b.Property<int>("TarefaId")
                         .ValueGeneratedOnAdd()
@@ -185,7 +174,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Tarefa");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.TarefaIngrediente", b =>
                 {
                     b.Property<int>("TarefaId");
 
@@ -198,7 +187,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("TarefaIngrediente");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaTecnica", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.TarefaTecnica", b =>
                 {
                     b.Property<int>("TarefaId");
 
@@ -211,7 +200,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("TarefaTecnica");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaUtensilio", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.TarefaUtensilio", b =>
                 {
                     b.Property<int>("TarefaId");
 
@@ -224,7 +213,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("TarefaUtensilio");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.Tecnica", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tecnica", b =>
                 {
                     b.Property<int>("TecnicaId")
                         .ValueGeneratedOnAdd()
@@ -251,7 +240,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Tecnica");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.Utensilio", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Utensilio", b =>
                 {
                     b.Property<int>("UtensilioId")
                         .ValueGeneratedOnAdd()
@@ -278,7 +267,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Utensilio");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.BusinessModels.Administrador", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Utilizadores.Administrador", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -297,7 +286,7 @@ namespace BelaSopa.Migrations
                     b.ToTable("Administradores");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.BusinessModels.Cliente", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Utilizadores.Cliente", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -318,92 +307,92 @@ namespace BelaSopa.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ProcessoTarefa", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ProcessoTarefa", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Assistente.Processo", "Processo")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Processo", "Processo")
                         .WithMany("ProcessoTarefa")
                         .HasForeignKey("ProcessoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tarefa", "Tarefa")
                         .WithMany("ProcessoTarefa")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaEtiqueta", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaEtiqueta", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Assistente.Etiqueta", "Etiqueta")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Etiqueta", "Etiqueta")
                         .WithMany("ReceitaEtiqueta")
                         .HasForeignKey("EtiquetaId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.Assistente.Receita", "Receita")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
                         .WithMany("ReceitaEtiqueta")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaIngrediente", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Assistente.Ingrediente", "Ingrediente")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Ingrediente", "Ingrediente")
                         .WithMany("ReceitaIngrediente")
                         .HasForeignKey("IngredienteId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.Assistente.Receita", "Receita")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
                         .WithMany("ReceitaIngrediente")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.ReceitaProcesso", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaProcesso", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Assistente.Processo", "Processo")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Processo", "Processo")
                         .WithMany("ReceitaProcesso")
                         .HasForeignKey("ProcessoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.Assistente.Receita", "Receita")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
                         .WithMany("ReceitaProcesso")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.TarefaIngrediente", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Assistente.Ingrediente", "Ingrediente")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Ingrediente", "Ingrediente")
                         .WithMany("TarefaIngrediente")
                         .HasForeignKey("IngredienteId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tarefa", "Tarefa")
                         .WithMany("TarefaIngrediente")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaTecnica", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.TarefaTecnica", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tarefa", "Tarefa")
                         .WithMany("TarefaTecnica")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.Assistente.Tecnica", "Tecnica")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tecnica", "Tecnica")
                         .WithMany("TarefaTecnica")
                         .HasForeignKey("TecnicaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.Assistente.TarefaUtensilio", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.TarefaUtensilio", b =>
                 {
-                    b.HasOne("BelaSopa.Models.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tarefa", "Tarefa")
                         .WithMany("TarefaUtensilio")
                         .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.Assistente.Utensilio", "Utensilio")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Utensilio", "Utensilio")
                         .WithMany("TarefaUtensilio")
                         .HasForeignKey("UtensilioId")
                         .OnDelete(DeleteBehavior.Cascade);

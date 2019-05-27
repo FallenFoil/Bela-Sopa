@@ -41,13 +41,13 @@ namespace BelaSopa.Migrations
                 name: "Etiqueta",
                 columns: table => new
                 {
-                    EtiquetaId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(maxLength: 20, nullable: false)
+                    Nome = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Etiqueta", x => x.EtiquetaId);
+                    table.PrimaryKey("PK_Etiqueta", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -83,20 +83,18 @@ namespace BelaSopa.Migrations
                 name: "Receita",
                 columns: table => new
                 {
-                    ReceitaId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(maxLength: 10, nullable: false),
-                    Dificuldade = table.Column<string>(maxLength: 10, nullable: false),
-                    Tempo = table.Column<int>(nullable: false),
-                    ImagePath = table.Column<string>(maxLength: 50, nullable: false),
-                    Descricao = table.Column<string>(maxLength: 200, nullable: false),
-                    Video = table.Column<string>(maxLength: 50, nullable: true),
-                    NPessoas = table.Column<int>(nullable: false),
-                    Link = table.Column<string>(maxLength: 50, nullable: false)
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
+                    Descricao = table.Column<string>(nullable: false),
+                    Dificuldade = table.Column<int>(nullable: false),
+                    MinutosPreparacao = table.Column<int>(nullable: false),
+                    NumDoses = table.Column<int>(nullable: false),
+                    Imagem = table.Column<byte[]>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Receita", x => x.ReceitaId);
+                    table.PrimaryKey("PK_Receita", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -160,13 +158,13 @@ namespace BelaSopa.Migrations
                         name: "FK_ReceitaEtiqueta_Etiqueta_EtiquetaId",
                         column: x => x.EtiquetaId,
                         principalTable: "Etiqueta",
-                        principalColumn: "EtiquetaId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ReceitaEtiqueta_Receita_ReceitaId",
                         column: x => x.ReceitaId,
                         principalTable: "Receita",
-                        principalColumn: "ReceitaId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -192,7 +190,7 @@ namespace BelaSopa.Migrations
                         name: "FK_ReceitaIngrediente_Receita_ReceitaId",
                         column: x => x.ReceitaId,
                         principalTable: "Receita",
-                        principalColumn: "ReceitaId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -217,7 +215,7 @@ namespace BelaSopa.Migrations
                         name: "FK_ReceitaProcesso_Receita_ReceitaId",
                         column: x => x.ReceitaId,
                         principalTable: "Receita",
-                        principalColumn: "ReceitaId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 

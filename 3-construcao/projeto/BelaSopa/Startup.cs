@@ -75,9 +75,7 @@ namespace BelaSopa
 
                 // aplicar migrações pendentes (cria base de dados se não existir)
                 context.Database.Migrate();
-
-                RecursosEmbutidos.CarregarReceitasDeExemplo(context);
-
+                
                 if (!databaseExisted)
                 {
                     // base de dados acabou de ser criada, realizar povoamento inicial
@@ -90,7 +88,7 @@ namespace BelaSopa
         {
             // criar conta de administrador
 
-            context.Add(new Administrador
+            context.Administradores.Add(new Administrador
             {
                 NomeDeUtilizador = "root",
                 HashPalavraPasse = Utilizador.ComputarHashPalavraPasse("root")
@@ -99,7 +97,6 @@ namespace BelaSopa
             // inserir dados de exemplo
 
             RecursosEmbutidos.CarregarReceitasDeExemplo(context);
-            //context.AddRange(RecursosEmbutidos.CarregarIngredientesDeExemplo());
 
             // guardar alterações
 

@@ -7,13 +7,12 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Etiqueta
     {
-        [Key]
-        public int EtiquetaId { set; get; }
-        [Required]
-        [StringLength(20)]
+        public int Id { set; get; }
+
+        [Required, StringLength(50)]
         public string Nome { set; get; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { set; get; }
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { set; get; } = new List<ReceitaEtiqueta>();
     }
 }
