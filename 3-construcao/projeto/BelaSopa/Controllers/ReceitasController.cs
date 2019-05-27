@@ -6,11 +6,11 @@ using System.Linq;
 namespace BelaSopa.Controllers
 {
     [Authorize(Roles = Util.ROLES_CLIENTE)]
-    public class HomeController : Controller
+    public class ReceitasController : Controller
     {
         private readonly BelaSopaContext context;
 
-        public HomeController(BelaSopaContext context)
+        public ReceitasController(BelaSopaContext context)
         {
             this.context = context;
         }
@@ -23,7 +23,7 @@ namespace BelaSopa.Controllers
                 Receitas: context.Receita.ToList()
                 );
 
-            return View(viewName: "Home", model: viewModel);
+            return View(viewName: "ListaReceitas", model: viewModel);
         }
     }
 }

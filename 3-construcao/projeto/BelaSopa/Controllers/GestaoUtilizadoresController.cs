@@ -8,11 +8,11 @@ using System.Linq;
 namespace BelaSopa.Controllers
 {
     [Authorize(Roles = Util.ROLES_ADMINISTRADOR)]
-    public class GerirUtilizadoresController : Controller
+    public class GestaoUtilizadoresController : Controller
     {
         private readonly BelaSopaContext context;
 
-        public GerirUtilizadoresController(BelaSopaContext context)
+        public GestaoUtilizadoresController(BelaSopaContext context)
         {
             this.context = context;
         }
@@ -25,7 +25,7 @@ namespace BelaSopa.Controllers
                 Clientes: context.Clientes.ToList()
             );
 
-            return View(viewName: "ListaDeUtilizadores", model: viewModel);
+            return View(viewName: "ListaUtilizadores", model: viewModel);
         }
 
         [HttpGet]

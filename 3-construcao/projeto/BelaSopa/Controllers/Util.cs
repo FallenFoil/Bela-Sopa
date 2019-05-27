@@ -16,8 +16,8 @@ namespace BelaSopa.Controllers
         public const string ROLES_ADMINISTRADOR = "Administrador";
         public const string ROLES_CLIENTE_OU_ADMINISTRADOR = ROLES_CLIENTE + ", " + ROLES_ADMINISTRADOR;
 
-        private const string CONTROLLER_INICIAL_CLIENTE = "Perfil";
-        private const string CONTROLLER_INICIAL_ADMINISTRADOR = "GerirUtilizadores";
+        private const string CONTROLLER_INICIAL_CLIENTE = "Receitas";
+        private const string CONTROLLER_INICIAL_ADMINISTRADOR = "GestaoUtilizadores";
 
         public static async Task<IActionResult> AutenticarUtilizador(Controller controller, Utilizador utilizador)
         {
