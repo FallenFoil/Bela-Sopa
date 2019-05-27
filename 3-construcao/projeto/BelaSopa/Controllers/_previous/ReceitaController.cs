@@ -1,32 +1,33 @@
-using System;
+using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using BelaSopa.Models;
-using BelaSopa.Models.Assistente;
-using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers.AutenticadoCliente
+namespace BelaSopa.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ReceitaController : Controller
     {
 
-        private readonly BelaSopaDbContext _context;
+        private readonly BelaSopaContext _context;
 
-        public ReceitaController(BelaSopaDbContext context) {
+        public ReceitaController(BelaSopaContext context)
+        {
             _context = context;
         }
         //GET api/receita
         [HttpGet]
-        public Receita[] Get() {
+        public Receita[] Get()
+        {
             return _context.Receita.ToArray<Receita>();
         }
 
         //GET api/receita/1
         [HttpGet("{idReceita}")]
-        public IActionResult Get(int idReceita) {
+        public IActionResult Get(int idReceita)
+        {
             Receita receita = _context.Receita.Find(idReceita);
             if (receita == null)
                 return NotFound();
@@ -35,24 +36,27 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // GET api/receita/processo/1
         [HttpGet("processo/{idReceita}")]
-        public IActionResult GetProcessos(int idReceita) {
+        public IActionResult GetProcessos(int idReceita)
+        {
             var receita = _context.Receita.Find(idReceita);
             if (receita == null)
                 return NotFound();
             var processos = from processo in _context.Processo
-                             join ReceitaProcesso in _context.ReceitaProcesso.Where(rt => rt.ReceitaId == idReceita)
-                                  on processo.ProcessoId equals ReceitaProcesso.ProcessoId
-                             select new {
-                                 processo.ProcessoId,
-                                 processo.Tempo
-                             };
+                            join ReceitaProcesso in _context.ReceitaProcesso.Where(rt => rt.ReceitaId == idReceita)
+                                 on processo.ProcessoId equals ReceitaProcesso.ProcessoId
+                            select new
+                            {
+                                processo.ProcessoId,
+                                processo.Tempo
+                            };
             //processos = processos.ToList<Processo>;
             return Ok(processos);
         }
 
         // GET api/receita/ingrediente/1
         [HttpGet("ingrediente/{idReceita}")]
-        public IActionResult GetIngredientes(int idReceita) {
+        public IActionResult GetIngredientes(int idReceita)
+        {
             var receita = _context.Receita.Find(idReceita);
             if (receita == null)
                 return NotFound();
@@ -67,7 +71,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // POST api/receita
         [HttpPost]
-        public IActionResult Post([FromBody] Receita receita) {
+        public IActionResult Post([FromBody] Receita receita)
+        {
             _context.Receita.Add(receita);
             _context.SaveChanges();
             return Ok(receita);
@@ -81,12 +86,14 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // POST api/receita/processo/1/2
         [HttpPost("processo/{idReceita}/{idProcesso}")]
-        public IActionResult PostProcesso(int idReceita, int idProcesso) {
+        public IActionResult PostProcesso(int idReceita, int idProcesso)
+        {
             bool receitaProcesso = _context.ReceitaProcesso.Any(tt => tt.ReceitaId == idReceita
                                                        && tt.ProcessoId == idProcesso);
             Receita receita = _context.Receita.Find(idReceita);
             Processo processo = _context.Processo.Find(idProcesso);
-            if (receitaProcesso || receita == null || processo == null) {
+            if (receitaProcesso || receita == null || processo == null)
+            {
                 return NotFound();
             }
             ReceitaProcesso rt = new ReceitaProcesso(idReceita, idProcesso);
@@ -98,12 +105,14 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // POST api/receita/ingrediente/
         [HttpPost("ingrediente/")]
-        public IActionResult PostIngrediente([FromBody] ReceitaIngrediente ri) {
+        public IActionResult PostIngrediente([FromBody] ReceitaIngrediente ri)
+        {
             bool receitaProcesso = _context.ReceitaIngrediente.Any(tt => tt.ReceitaId == ri.ReceitaId
                                                        && tt.IngredienteId == ri.IngredienteId);
             bool receita = _context.Receita.Any(r => r.ReceitaId == ri.ReceitaId);
             bool ingrediente = _context.Ingrediente.Any(i => i.IngredienteId == ri.IngredienteId);
-            if (receitaProcesso || !receita|| !ingrediente) {
+            if (receitaProcesso || !receita || !ingrediente)
+            {
                 return NotFound();
             }
             _context.ReceitaIngrediente.Add(ri);
@@ -115,7 +124,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         //DELETE api/receita/1
         [HttpDelete("{idReceita}")]
-        public IActionResult Delete(int idReceita) {
+        public IActionResult Delete(int idReceita)
+        {
             Receita receita = _context.Receita.Find(idReceita);
             if (receita == null) return NotFound();
 
@@ -126,7 +136,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // DELETE api/processo/1/2
         [HttpDelete("processo/{idReceita}/{idProcesso}")]
-        public IActionResult DeleteTarefa(int idReceita, int idProcesso) {
+        public IActionResult DeleteTarefa(int idReceita, int idProcesso)
+        {
             ReceitaProcesso receitaProcesso = new ReceitaProcesso(idReceita, idProcesso);
             _context.ReceitaProcesso.Remove(receitaProcesso);
 
@@ -142,7 +153,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // DELETE api/processo/1/2
         [HttpDelete("ingrediente/{idReceita}/{idIngrediente}")]
-        public IActionResult DeleteIngrediente(int idReceita, int idIngrediente) {
+        public IActionResult DeleteIngrediente(int idReceita, int idIngrediente)
+        {
             ReceitaIngrediente receitaProcesso = new ReceitaIngrediente(idReceita, idIngrediente);
             _context.ReceitaIngrediente.Remove(receitaProcesso);
             _context.SaveChanges();

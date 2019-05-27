@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.BusinessModels;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,9 +10,9 @@ namespace BelaSopa.Controllers
     [Authorize(Roles = Util.ROLES_ADMINISTRADOR)]
     public class GerirUtilizadoresController : Controller
     {
-        private readonly BelaSopaDbContext context;
+        private readonly BelaSopaContext context;
 
-        public GerirUtilizadoresController(BelaSopaDbContext context)
+        public GerirUtilizadoresController(BelaSopaContext context)
         {
             this.context = context;
         }

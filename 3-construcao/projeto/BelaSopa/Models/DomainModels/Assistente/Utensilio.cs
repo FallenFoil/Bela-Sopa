@@ -1,14 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BelaSopa.Models.Assistente{
-    public class Tecnica{
+namespace BelaSopa.Models.DomainModels.Assistente
+{
+    public class Utensilio
+    {
         [Key]
-        public int TecnicaId { set; get; }
+        public int UtensilioId { set; get; }
 
         [Required]
         [StringLength(20)]
@@ -27,7 +26,7 @@ namespace BelaSopa.Models.Assistente{
         public string Link { set; get; }
 
         [NotMapped]
-        public virtual ICollection<TarefaTecnica> TarefaTecnica { set; get; }
+        public virtual ICollection<TarefaUtensilio> TarefaUtensilio { set; get; }
 
     }
 }

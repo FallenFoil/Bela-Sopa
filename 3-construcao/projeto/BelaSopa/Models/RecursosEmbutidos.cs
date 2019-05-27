@@ -1,4 +1,4 @@
-using BelaSopa.Models.Assistente;
+using BelaSopa.Models.DomainModels.Assistente;
 using System;
 using System.Collections.Generic;
 using System.IO;

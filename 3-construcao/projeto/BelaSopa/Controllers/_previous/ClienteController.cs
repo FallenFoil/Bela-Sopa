@@ -1,13 +1,20 @@
-namespace BelaSopa.Controllers.AutenticadoCliente
+using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Models.DomainModels.Utilizadores;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+
+namespace BelaSopa.Controllers
 {
     //[Route("api/[controller]")]
     //[ApiController]
     //public class ClienteController : Controller
     //{
 
-    //    private readonly BelaSopaDbContext _context;
+    //    private readonly BelaSopaContext _context;
 
-    //    public ClienteController(BelaSopaDbContext context)
+    //    public ClienteController(BelaSopaContext context)
     //    {
     //        _context = context;
     //    }
@@ -16,7 +23,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpGet]
     //    public ActionResult Get()
     //    {
-    //        Cliente[] clientes = _context.Cliente.ToArray<Cliente>();
+    //        Cliente[] clientes = _context.Clientes.ToArray<Cliente>();
     //        return Ok(clientes);
     //    }
 
@@ -24,7 +31,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpGet("{id}")]
     //    public ActionResult<string> Get(int id)
     //    {
-    //        Cliente c = _context.Cliente.Find(id);
+    //        Cliente c = _context.Clientes.Find(id);
     //        if (c == null)
     //            return NotFound();
 
@@ -35,10 +42,10 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpGet("finalizado/{idCliente}")]
     //    public IActionResult GetReceitasFinalizadas(int idCliente)
     //    {
-    //        var cliente = _context.Cliente.Find(idCliente);
+    //        var cliente = _context.Clientes.Find(idCliente);
     //        if (cliente == null)
     //            return NotFound();
-    //        Receita[] receitas = getReceitaOfCliente<ClienteFinalizado>(idCliente, _context.ClienteFinalizado);
+    //        Receita[] receitas = getReceitaOfCliente<ClienteFinalizado>(idCliente, _context.ClientesFinalizado);
     //        return Ok(receitas);
     //    }
 
@@ -46,10 +53,10 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpGet("ementasemanal/{idCliente}")]
     //    public IActionResult GetReceitasEmentaSemanal(int idCliente)
     //    {
-    //        var cliente = _context.Cliente.Find(idCliente);
+    //        var cliente = _context.Clientes.Find(idCliente);
     //        if (cliente == null)
     //            return NotFound();
-    //        Receita[] receitas = getReceitaOfCliente<ClienteEmentaSemanal>(idCliente, _context.ClienteEmentaSemanal);
+    //        Receita[] receitas = getReceitaOfCliente<ClienteEmentaSemanal>(idCliente, _context.ClientesEmentaSemanal);
     //        return Ok(receitas);
     //    }
 
@@ -57,10 +64,10 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpGet("favorito/{idCliente}")]
     //    public IActionResult GetReceitasFavoritas(int idCliente)
     //    {
-    //        var cliente = _context.Cliente.Find(idCliente);
+    //        var cliente = _context.Clientes.Find(idCliente);
     //        if (cliente == null)
     //            return NotFound();
-    //        Receita[] receitas = getReceitaOfCliente<ClienteFavorito>(idCliente, _context.ClienteFavorito);
+    //        Receita[] receitas = getReceitaOfCliente<ClienteFavorito>(idCliente, _context.ClientesFavorito);
     //        return Ok(receitas);
     //    }
 
@@ -80,7 +87,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    public bool Post([FromBody] Cliente c)
     //    {
     //        //c.Password = Encript.HashPassword(c.Password);
-    //        _context.Cliente.Add(c);
+    //        _context.Clientes.Add(c);
     //        _context.SaveChanges();
     //        return true;
     //        // return new CreatedResult($"/api/cliente/{c.UtilizadorId}", c);
@@ -90,14 +97,14 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpPut("{id}")]
     //    public IActionResult Put(int id, [FromBody] Cliente c)
     //    {
-    //        Cliente toUpdate = _context.Cliente.Find(id);
+    //        Cliente toUpdate = _context.Clientes.Find(id);
     //        if (toUpdate == null)
     //            return NotFound();
 
-    //        toUpdate.Distrito = c.Distrito;
-    //        toUpdate.Email = c.Email;
-    //        toUpdate.Localização = c.Localização;
-    //        toUpdate.Nome = c.Nome;
+    //        //toUpdate.Distrito = c.Distrito;
+    //        //toUpdate.Email = c.Email;
+    //        //toUpdate.Localização = c.Localização;
+    //        //toUpdate.Nome = c.Nome;
 
     //        _context.SaveChanges();
 
@@ -109,7 +116,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpPost("finalizado")]
     //    public IActionResult PostFinalizado([FromBody] ClienteFinalizado cf)
     //    {
-    //        bool added = addReceitaToCliente<ClienteFinalizado>(cf, _context.ClienteFinalizado);
+    //        bool added = addReceitaToCliente<ClienteFinalizado>(cf, _context.ClientesFinalizado);
     //        if (!added) return NotFound();
     //        return Ok(cf);
     //    }
@@ -119,7 +126,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpPost("ementasemanal")]
     //    public IActionResult PostEmentaSemanal([FromBody] ClienteEmentaSemanal ce)
     //    {
-    //        bool added = addReceitaToCliente<ClienteEmentaSemanal>(ce, _context.ClienteEmentaSemanal);
+    //        bool added = addReceitaToCliente<ClienteEmentaSemanal>(ce, _context.ClientesEmentaSemanal);
     //        if (!added) return NotFound();
     //        return Ok(ce);
     //    }
@@ -128,7 +135,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpPost("favorito")]
     //    public IActionResult PostFavorito([FromBody] ClienteFavorito cf)
     //    {
-    //        bool added = addReceitaToCliente<ClienteFavorito>(cf, _context.ClienteFavorito);
+    //        bool added = addReceitaToCliente<ClienteFavorito>(cf, _context.ClientesFavorito);
     //        if (!added) return NotFound();
     //        return Ok(cf);
     //    }
@@ -137,7 +144,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    private bool addReceitaToCliente<T>(T toAdd, DbSet<T> clienteReceitaDb) where T : ClienteReceita
     //    {
     //        bool exists = clienteReceitaDb.Any(c => c.ReceitaId == toAdd.ReceitaId && c.ClienteId == toAdd.ClienteId);
-    //        bool cliente = _context.Cliente.Any(c => c.Id == toAdd.ClienteId);
+    //        bool cliente = _context.Clientes.Any(c => c.Id == toAdd.ClienteId);
     //        bool receita = _context.Receita.Any(r => r.ReceitaId == toAdd.ReceitaId);
     //        if (exists || !cliente || !receita) return false;
 
@@ -150,13 +157,13 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    [HttpDelete("{id}")]
     //    public IActionResult Delete(int id)
     //    {
-    //        Cliente c = _context.Cliente.Find(id);
+    //        Cliente c = _context.Clientes.Find(id);
     //        if (c == null)
     //        {
     //            return NotFound();
     //        }
 
-    //        _context.Cliente.Remove(c);
+    //        _context.Clientes.Remove(c);
     //        _context.SaveChanges();
     //        return NoContent();
     //    }
@@ -166,7 +173,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    public IActionResult DeleteFinalizado(int idCliente, int idReceita)
     //    {
     //        ClienteFinalizado cf = new ClienteFinalizado(idCliente, idReceita);
-    //        _context.ClienteFinalizado.Remove(cf);
+    //        _context.ClientesFinalizado.Remove(cf);
     //        _context.SaveChanges();
     //        return Ok(cf);
     //    }
@@ -175,7 +182,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    public IActionResult DeleteFavorito(int idCliente, int idReceita)
     //    {
     //        ClienteFavorito cf = new ClienteFavorito(idCliente, idReceita);
-    //        _context.ClienteFavorito.Remove(cf);
+    //        _context.ClientesFavorito.Remove(cf);
     //        _context.SaveChanges();
     //        return Ok(cf);
     //    }
@@ -184,7 +191,7 @@ namespace BelaSopa.Controllers.AutenticadoCliente
     //    public IActionResult DeleteEmentaSemanal(int idCliente, int idReceita)
     //    {
     //        ClienteEmentaSemanal ces = new ClienteEmentaSemanal(idCliente, idReceita);
-    //        _context.ClienteEmentaSemanal.Remove(ces);
+    //        _context.ClientesEmentaSemanal.Remove(ces);
     //        _context.SaveChanges();
     //        return Ok(ces);
     //    }

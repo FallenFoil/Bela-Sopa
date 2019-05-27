@@ -1,33 +1,34 @@
-using System;
+using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using BelaSopa.Models;
-using BelaSopa.Models.Assistente;
-using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers.AutenticadoCliente
+namespace BelaSopa.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class IngredienteController : Controller
     {
-        private readonly BelaSopaDbContext _context;
+        private readonly BelaSopaContext _context;
 
-        public IngredienteController(BelaSopaDbContext context) {
+        public IngredienteController(BelaSopaContext context)
+        {
             _context = context;
         }
 
-         // GET api/ingrediente
+        // GET api/ingrediente
         [HttpGet]
-        public ActionResult Get() {
+        public ActionResult Get()
+        {
             Ingrediente[] ingrs = _context.Ingrediente.ToArray<Ingrediente>();
             return Ok(ingrs);
         }
 
         // GET api/ingrediente/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id) {
+        public ActionResult<string> Get(int id)
+        {
             Ingrediente ingr = _context.Ingrediente.Find(id);
             if (ingr == null)
                 return NotFound();
@@ -38,7 +39,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // POST api/ingrediente
         [HttpPost]
-        public IActionResult Post([FromBody] Ingrediente ingr) {
+        public IActionResult Post([FromBody] Ingrediente ingr)
+        {
             _context.Ingrediente.Add(ingr);
             _context.SaveChanges();
             return new CreatedResult($"/api/Ingrediente/{ingr.IngredienteId}", ingr);
@@ -46,7 +48,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // PUT api/ingrediente/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Ingrediente ingr) {
+        public IActionResult Put(int id, [FromBody] Ingrediente ingr)
+        {
             Ingrediente toUpdate = _context.Ingrediente.Find(id);
             if (toUpdate == null)
                 return NotFound();
@@ -63,9 +66,11 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // DELETE api/ingrediente/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id) {
+        public IActionResult Delete(int id)
+        {
             Ingrediente a = _context.Ingrediente.Find(id);
-            if (a == null) {
+            if (a == null)
+            {
                 return NotFound();
             }
 

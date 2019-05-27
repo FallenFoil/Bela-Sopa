@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.BusinessModels;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -46,7 +46,7 @@ namespace BelaSopa.Controllers
 
         public static Utilizador GetUtilizadorAutenticado(
             Controller controller,
-            BelaSopaDbContext context
+            BelaSopaContext context
             )
         {
             // verificar se utilizador está autenticado
@@ -75,7 +75,7 @@ namespace BelaSopa.Controllers
 
         public static async Task<IActionResult> RedirecionarSeAutenticado(
             Controller controller,
-            BelaSopaDbContext context
+            BelaSopaContext context
             )
         {
             // verificar se utilizador está autenticado

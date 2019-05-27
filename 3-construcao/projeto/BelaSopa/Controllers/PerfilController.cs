@@ -7,9 +7,9 @@ namespace BelaSopa.Controllers
     [Authorize(Roles = Util.ROLES_CLIENTE)]
     public class PerfilController : Controller
     {
-        private readonly BelaSopaDbContext context;
+        private readonly BelaSopaContext context;
 
-        public PerfilController(BelaSopaDbContext context)
+        public PerfilController(BelaSopaContext context)
         {
             this.context = context;
         }

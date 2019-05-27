@@ -1,32 +1,34 @@
-using System;
+using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using BelaSopa.Models;
-using BelaSopa.Models.Assistente;
-using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers.AutenticadoCliente
+namespace BelaSopa.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UtensilioController : Controller {
-        private readonly BelaSopaDbContext _context;
+    public class UtensilioController : Controller
+    {
+        private readonly BelaSopaContext _context;
 
-        public UtensilioController(BelaSopaDbContext context) {
+        public UtensilioController(BelaSopaContext context)
+        {
             _context = context;
         }
 
         // GET api/utensilio
         [HttpGet]
-        public ActionResult Get() {
+        public ActionResult Get()
+        {
             Utensilio[] utens = _context.Utensilio.ToArray<Utensilio>();
             return Ok(utens);
         }
 
         // GET api/utensilio/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id) {
+        public ActionResult<string> Get(int id)
+        {
             Utensilio uten = _context.Utensilio.Find(id);
             if (uten == null)
                 return NotFound();
@@ -37,7 +39,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // POST api/utensilio
         [HttpPost]
-        public IActionResult Post([FromBody] Utensilio uten) {
+        public IActionResult Post([FromBody] Utensilio uten)
+        {
             _context.Utensilio.Add(uten);
             _context.SaveChanges();
             return new CreatedResult($"/api/Utensilio/{uten.UtensilioId}", uten);
@@ -45,7 +48,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // PUT api/utensilio/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Utensilio uten) {
+        public IActionResult Put(int id, [FromBody] Utensilio uten)
+        {
             Utensilio toUpdate = _context.Utensilio.Find(id);
             if (toUpdate == null)
                 return NotFound();
@@ -62,9 +66,11 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // DELETE api/utensilio/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id) {
+        public IActionResult Delete(int id)
+        {
             Utensilio a = _context.Utensilio.Find(id);
-            if (a == null) {
+            if (a == null)
+            {
                 return NotFound();
             }
 
@@ -73,7 +79,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
             return NoContent();
         }
 
-        public IActionResult Index() {
+        public IActionResult Index()
+        {
             return View();
         }
     }

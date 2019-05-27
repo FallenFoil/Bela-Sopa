@@ -1,10 +1,10 @@
-using BelaSopa.Models.BusinessModels;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BelaSopa.Models.Assistente
+namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class ClienteReceita
     {

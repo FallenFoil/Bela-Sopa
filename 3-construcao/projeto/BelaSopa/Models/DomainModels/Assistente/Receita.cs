@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BelaSopa.Models.Assistente
+namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Receita
     {

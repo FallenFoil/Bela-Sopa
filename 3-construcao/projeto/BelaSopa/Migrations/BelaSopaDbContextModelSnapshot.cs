@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
-    [DbContext(typeof(BelaSopaDbContext))]
+    [DbContext(typeof(BelaSopaContext))]
     partial class BelaSopaDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -1,13 +1,12 @@
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BelaSopa.Models.Assistente {
-    public class Etiqueta {
+namespace BelaSopa.Models.DomainModels.Assistente
+{
+    public class Etiqueta
+    {
         [Key]
         public int EtiquetaId { set; get; }
         [Required]

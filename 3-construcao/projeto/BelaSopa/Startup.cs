@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.BusinessModels;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +27,7 @@ namespace BelaSopa
         {
             // adicionar base de dados
 
-            services.AddDbContext<BelaSopaDbContext>(
+            services.AddDbContext<BelaSopaContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
                 );
 
@@ -68,7 +68,7 @@ namespace BelaSopa
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService<BelaSopaDbContext>();
+                var context = serviceScope.ServiceProvider.GetRequiredService<BelaSopaContext>();
 
                 bool databaseExisted =
                     (context.Database.GetService<IDatabaseCreator>() as IRelationalDatabaseCreator).Exists();
@@ -84,7 +84,7 @@ namespace BelaSopa
             }
         }
 
-        private static void PovoarBaseDeDados(BelaSopaDbContext context)
+        private static void PovoarBaseDeDados(BelaSopaContext context)
         {
             // criar conta de administrador
 

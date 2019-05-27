@@ -1,15 +1,15 @@
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BelaSopa.Models.Assistente{
-    public class Ingrediente{
+namespace BelaSopa.Models.DomainModels.Assistente
+{
+    public class Ingrediente
+    {
 
-        public Ingrediente(){
+        public Ingrediente()
+        {
             this.TarefaIngrediente = new HashSet<TarefaIngrediente>();
         }
 

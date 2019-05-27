@@ -1,5 +1,5 @@
-using BelaSopa.Models.Assistente;
-using BelaSopa.Models.BusinessModels;
+using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -10,9 +10,9 @@ namespace BelaSopa.Models
     //    public Dictionary<int, Dictionary<int, Boolean>> EstadoConfecao;
     //}
 
-    public class BelaSopaDbContext : DbContext
+    public class BelaSopaContext : DbContext
     {
-        public BelaSopaDbContext(DbContextOptions<BelaSopaDbContext> options) : base(options)
+        public BelaSopaContext(DbContextOptions<BelaSopaContext> options) : base(options)
         {
         }
 
@@ -27,9 +27,9 @@ namespace BelaSopa.Models
 
         public DbSet<Cliente> Clientes { get; set; }
 
-        //public DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
-        //public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-        //public DbSet<ClienteFavorito> ClienteFavorito { get; set; }
+        //public DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
+        //public DbSet<ClienteEmentaSemanal> ClientesEmentaSemanal { get; set; }
+        //public DbSet<ClienteFavorito> ClientesFavorito { get; set; }
 
         public DbSet<Receita> Receita { set; get; }
         public DbSet<Etiqueta> Etiqueta { set; get; }
@@ -46,7 +46,6 @@ namespace BelaSopa.Models
         public DbSet<Ingrediente> Ingrediente { set; get; }
         public DbSet<Utensilio> Utensilio { set; get; }
         public DbSet<Tecnica> Tecnica { set; get; }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

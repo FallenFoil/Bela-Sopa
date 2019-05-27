@@ -1,5 +1,5 @@
 using BelaSopa.Models;
-using BelaSopa.Models.Assistente;
+using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,9 +10,9 @@ namespace BelaSopa.Controllers
     [Authorize(Roles = Util.ROLES_CLIENTE)]
     public class HomeController : Controller
     {
-        private readonly BelaSopaDbContext context;
+        private readonly BelaSopaContext context;
 
-        public HomeController(BelaSopaDbContext context)
+        public HomeController(BelaSopaContext context)
         {
             this.context = context;
         }

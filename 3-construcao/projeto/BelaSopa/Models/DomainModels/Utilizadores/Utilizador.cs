@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BelaSopa.Models.BusinessModels
+namespace BelaSopa.Models.DomainModels.Utilizadores
 {
     public abstract class Utilizador
     {

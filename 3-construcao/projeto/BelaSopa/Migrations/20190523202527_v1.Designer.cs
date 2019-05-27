@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
-    [DbContext(typeof(BelaSopaDbContext))]
+    [DbContext(typeof(BelaSopaContext))]
     [Migration("20190523202527_v1")]
     partial class v1
     {

@@ -1,32 +1,34 @@
-using System;
+using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using BelaSopa.Models;
-using BelaSopa.Models.Assistente;
-using Microsoft.AspNetCore.Mvc;
 
-namespace BelaSopa.Controllers.AutenticadoCliente
+namespace BelaSopa.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TecnicaController : Controller {
-        private readonly BelaSopaDbContext _context;
+    public class TecnicaController : Controller
+    {
+        private readonly BelaSopaContext _context;
 
-        public TecnicaController(BelaSopaDbContext context) {
+        public TecnicaController(BelaSopaContext context)
+        {
             _context = context;
         }
 
         // GET api/tecnica
         [HttpGet]
-        public ActionResult Get() {
+        public ActionResult Get()
+        {
             Tecnica[] tecns = _context.Tecnica.ToArray<Tecnica>();
             return Ok(tecns);
         }
 
         // GET api/tecnica/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id) {
+        public ActionResult<string> Get(int id)
+        {
             Tecnica tecn = _context.Tecnica.Find(id);
             if (tecn == null)
                 return NotFound();
@@ -37,7 +39,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // POST api/tecnica
         [HttpPost]
-        public IActionResult Post([FromBody] Tecnica tecn) {
+        public IActionResult Post([FromBody] Tecnica tecn)
+        {
             _context.Tecnica.Add(tecn);
             _context.SaveChanges();
             return new CreatedResult($"/api/Tecnica/{tecn.TecnicaId}", tecn);
@@ -45,7 +48,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // PUT api/tecnica/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Tecnica tecn) {
+        public IActionResult Put(int id, [FromBody] Tecnica tecn)
+        {
             Tecnica toUpdate = _context.Tecnica.Find(id);
             if (toUpdate == null)
                 return NotFound();
@@ -62,9 +66,11 @@ namespace BelaSopa.Controllers.AutenticadoCliente
 
         // DELETE api/tecnica/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id) {
+        public IActionResult Delete(int id)
+        {
             Tecnica a = _context.Tecnica.Find(id);
-            if (a == null) {
+            if (a == null)
+            {
                 return NotFound();
             }
 
@@ -73,7 +79,8 @@ namespace BelaSopa.Controllers.AutenticadoCliente
             return NoContent();
         }
 
-        public IActionResult Index() {
+        public IActionResult Index()
+        {
             return View();
         }
     }
