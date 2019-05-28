@@ -10,27 +10,27 @@ minutos-de-preparação: 30
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- vegetariana
+- Sabores mediterrânicos
+- Vegetariana
 
 ingredientes:
-- nome: pepino-doce
+- nome: Pepino-doce
   quantidade: 250 g
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
-- nome: maçã Granny Smith
+- nome: Maçã granny smith
   quantidade: '2'
-- nome: limão
+- nome: Limão
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1,5 dl
-- nome: sal
+- nome: Sal
   quantidade: 1 c. chá
-- nome: iogurte natural magro Pingo Doce
+- nome: Iogurte natural magro pingo doce
   quantidade: '2'
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
-- nome: sementes de girassol Pura Vida
+- nome: Sementes de girassol pura vida
   quantidade: 1 c. sopa
 
 valores-nutricionais:

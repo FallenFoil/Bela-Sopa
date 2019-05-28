@@ -10,40 +10,40 @@ minutos-de-preparação: 60
 número-de-doses: 6
 
 etiquetas:
-- sem leite
+- Sem leite
 
 ingredientes:
-- nome: perna frango do campo
+- nome: Perna frango do campo
   quantidade: 250 g
-- nome: cenoura pequena
+- nome: Cenoura pequena
   quantidade: '1'
-- nome: pedaço gengibre
+- nome: Pedaço gengibre
   quantidade: '1'
-- nome: tomate seco
+- nome: Tomate seco
   quantidade: '1'
-- nome: nabo pequeno
+- nome: Nabo pequeno
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1 lt
-- nome: molho de soja
+- nome: Molho de soja
   quantidade: 2 c. sopa
-- nome: sal
+- nome: Sal
   quantidade: 2 c. chá
-- nome: ovos S
+- nome: Ovos s
   quantidade: '4'
-- nome: óleo
+- nome: Óleo
   quantidade: 1 c. sobremesa
-- nome: fatias finas de lombo porco
+- nome: Fatias finas de lombo porco
   quantidade: '8'
-- nome: massa chinesa
+- nome: Massa chinesa
   quantidade: 200 g
-- nome: lata pequena milho doce Pingo Doce
+- nome: Lata pequena milho doce pingo doce
   quantidade: '1'
-- nome: rebentos de feijão mungo fresco
+- nome: Rebentos de feijão mungo fresco
   quantidade: 80 g
-- nome: espinafre em folha
+- nome: Espinafre em folha
   quantidade: 100 g
-- nome: manjericão
+- nome: Manjericão
   quantidade: qb
 
 valores-nutricionais:

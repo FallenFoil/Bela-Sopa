@@ -10,27 +10,27 @@ minutos-de-preparação: 125
 número-de-doses: 9
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: galinha (com ovos e miúdos)
+- nome: Galinha (com ovos e miúdos)
   quantidade: 1,4 kg
-- nome: cebolas (+/- 200g)
+- nome: Cebolas (+/- 200g)
   quantidade: '2'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 400 g
-- nome: água
+- nome: Água
   quantidade: 2 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: abóbora (+/- 3 Kg)
+- nome: Abóbora (+/- 3 kg)
   quantidade: '1'
-- nome: massa estrelinhas
+- nome: Massa estrelinhas
   quantidade: 150 g
-- nome: limão
+- nome: Limão
   quantidade: '1'
-- nome: folhas de hortelã
+- nome: Folhas de hortelã
   quantidade: qb
 
 valores-nutricionais:

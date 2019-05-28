@@ -97,6 +97,7 @@ namespace BelaSopa
             // inserir dados de exemplo
 
             RecursosEmbutidos.CarregarReceitasDeExemplo(context);
+            RecursosEmbutidos.CarregarIngredientesDeExemplo(context);
 
             // guardar alterações
 

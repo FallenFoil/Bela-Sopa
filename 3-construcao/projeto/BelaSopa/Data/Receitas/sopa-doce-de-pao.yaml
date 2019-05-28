@@ -10,17 +10,17 @@ minutos-de-preparação: 15
 número-de-doses: 12
 
 etiquetas:
-- sem leite
-- vegetariana
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: vinho verde
+- nome: Vinho verde
   quantidade: 1 l
-- nome: açúcar
+- nome: Açúcar
   quantidade: 250 g
-- nome: limão
+- nome: Limão
   quantidade: '1'
-- nome: pão de trigo
+- nome: Pão de trigo
   quantidade: 1 kg
 
 valores-nutricionais:

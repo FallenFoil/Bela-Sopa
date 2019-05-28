@@ -10,28 +10,28 @@ minutos-de-preparação: 25
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: tomate maduro com rama
+- nome: Tomate maduro com rama
   quantidade: 500 g
-- nome: pão alentejano
+- nome: Pão alentejano
   quantidade: 600 g
-- nome: vinagre de vinho branco
+- nome: Vinagre de vinho branco
   quantidade: 1 c. de sobremesa
-- nome: cebola
+- nome: Cebola
   quantidade: 50 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: flor de sal
+- nome: Flor de sal
   quantidade: 1 c. de sopa
-- nome: folhas de orégãos
+- nome: Folhas de orégãos
   quantidade: qb
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. de sopa
-- nome: água
+- nome: Água
   quantidade: qb
 
 valores-nutricionais:

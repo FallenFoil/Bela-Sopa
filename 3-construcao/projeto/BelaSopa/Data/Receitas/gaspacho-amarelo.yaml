@@ -10,35 +10,35 @@ minutos-de-preparação: 15
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: pimento amarelo
+- nome: Pimento amarelo
   quantidade: '1'
-- nome: lata milho doce Pingo Doce
+- nome: Lata milho doce pingo doce
   quantidade: '1'
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dente de alho
+- nome: Dente de alho
   quantidade: '1'
-- nome: pepino
+- nome: Pepino
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 7,5 dl
-- nome: sal
+- nome: Sal
   quantidade: 1 c. chá
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
-- nome: azeite
+- nome: Azeite
   quantidade: 1 dl
-- nome: hastes de manjericão
+- nome: Hastes de manjericão
   quantidade: '2'
-- nome: hastes de coentros
+- nome: Hastes de coentros
   quantidade: '2'
-- nome: orégãos
+- nome: Orégãos
   quantidade: 1 c. café
 
 valores-nutricionais:

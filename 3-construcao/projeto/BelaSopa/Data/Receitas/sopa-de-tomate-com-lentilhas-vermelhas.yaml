@@ -10,32 +10,32 @@ minutos-de-preparação: 25
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: lata de tomate de conserva em cubos
+- nome: Lata de tomate de conserva em cubos
   quantidade: '1'
-- nome: cominhos
+- nome: Cominhos
   quantidade: ½ c. café
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: lentilhas vermelhas
+- nome: Lentilhas vermelhas
   quantidade: 150 g
-- nome: emb. espinafres em folha
+- nome: Emb. espinafres em folha
   quantidade: '1'
-- nome: manjericão fresco
+- nome: Manjericão fresco
   quantidade: qb
-- nome: iogurte grego triplo zero Pingo Doce
+- nome: Iogurte grego triplo zero pingo doce
   quantidade: '1'
 
 valores-nutricionais:

@@ -10,35 +10,35 @@ minutos-de-preparação: 35
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: cebola doce
+- nome: Cebola doce
   quantidade: '1'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: '1'
-- nome: batata para cozer
+- nome: Batata para cozer
   quantidade: 600 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa + 1 c. chá
-- nome: noz-moscada
+- nome: Noz-moscada
   quantidade: qb
-- nome: abóbora limpa
+- nome: Abóbora limpa
   quantidade: 600 g
-- nome: cogumelos browner pequenos
+- nome: Cogumelos browner pequenos
   quantidade: 150 g
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
-- nome: alho moído
+- nome: Alho moído
   quantidade: qb
-- nome: água
+- nome: Água
   quantidade: 1,3 l
-- nome: tomilho
+- nome: Tomilho
   quantidade: qb
 
 valores-nutricionais:

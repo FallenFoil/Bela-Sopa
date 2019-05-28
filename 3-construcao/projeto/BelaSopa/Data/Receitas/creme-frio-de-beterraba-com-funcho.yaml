@@ -10,33 +10,33 @@ minutos-de-preparação: 60
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: beterraba
+- nome: Beterraba
   quantidade: 500 g
-- nome: água
+- nome: Água
   quantidade: qb
-- nome: vinagre de vinho branco
+- nome: Vinagre de vinho branco
   quantidade: 1 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: tofu refrigerado
+- nome: Tofu refrigerado
   quantidade: 1/2 emb.
-- nome: sementes de funcho
+- nome: Sementes de funcho
   quantidade: 1 c. de chá
-- nome: dente de alho
+- nome: Dente de alho
   quantidade: '1'
-- nome: cebola roxa
+- nome: Cebola roxa
   quantidade: 80 g
-- nome: talos de aipo
+- nome: Talos de aipo
   quantidade: 40 g
-- nome: funcho em rama
+- nome: Funcho em rama
   quantidade: 10 g
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
 
 valores-nutricionais:

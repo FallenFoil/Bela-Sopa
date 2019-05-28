@@ -10,31 +10,31 @@ minutos-de-preparação: 55
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 250 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: castanhas congeladas
+- nome: Castanhas congeladas
   quantidade: 250 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: cogumelos Portobello
+- nome: Cogumelos portobello
   quantidade: 250 g
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: pétalas de tomate seco
+- nome: Pétalas de tomate seco
   quantidade: '2'
-- nome: salsa frisada
+- nome: Salsa frisada
   quantidade: qb
-- nome: pimenta preta de moinho
+- nome: Pimenta preta de moinho
   quantidade: qb
 
 valores-nutricionais:

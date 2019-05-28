@@ -12,35 +12,35 @@ número-de-doses: 4
 etiquetas: []
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 50 g
-- nome: aipo
+- nome: Aipo
   quantidade: '1'
-- nome: navalheira
+- nome: Navalheira
   quantidade: 250 g
-- nome: sapateira
+- nome: Sapateira
   quantidade: 500 g
-- nome: vinho branco
+- nome: Vinho branco
   quantidade: 1,5 dl
-- nome: brandy
+- nome: Brandy
   quantidade: 0,4 dl
-- nome: tomate rama maduro
+- nome: Tomate rama maduro
   quantidade: 200 g
-- nome: água
+- nome: Água
   quantidade: 1,2 l
-- nome: coentros
+- nome: Coentros
   quantidade: qb
-- nome: sal
+- nome: Sal
   quantidade: 2 c. sobremesa
-- nome: amido de milho
+- nome: Amido de milho
   quantidade: 2,5 c. sopa
-- nome: pão da avó
+- nome: Pão da avó
   quantidade: 50 g
 
 valores-nutricionais:

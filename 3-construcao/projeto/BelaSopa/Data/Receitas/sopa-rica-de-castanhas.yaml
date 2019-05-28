@@ -10,28 +10,28 @@ minutos-de-preparação: 60
 número-de-doses: 12
 
 etiquetas:
-- sem leite
+- Sem leite
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. chá
-- nome: lombinho de porco
+- nome: Lombinho de porco
   quantidade: 250 g
-- nome: toucinho de porco entremeado
+- nome: Toucinho de porco entremeado
   quantidade: 150 g
-- nome: cebolas pequenas
+- nome: Cebolas pequenas
   quantidade: '2'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '8'
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: castanhas congeladas Pingo Doce
+- nome: Castanhas congeladas pingo doce
   quantidade: 500 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: arroz
+- nome: Arroz
   quantidade: 125 g
-- nome: massa argolinhas
+- nome: Massa argolinhas
   quantidade: 100 g
 
 valores-nutricionais:

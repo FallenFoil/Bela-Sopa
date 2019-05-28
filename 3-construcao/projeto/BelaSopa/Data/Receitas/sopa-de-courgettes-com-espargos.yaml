@@ -10,28 +10,28 @@ minutos-de-preparação: 50
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Vegetariana
 
 ingredientes:
-- nome: espargos verdes
+- nome: Espargos verdes
   quantidade: 400 g
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: cebola média
+- nome: Cebola média
   quantidade: '1'
-- nome: alho-francês em rodelas
+- nome: Alho-francês em rodelas
   quantidade: 200 g
-- nome: nabo médio
+- nome: Nabo médio
   quantidade: '1'
-- nome: courgette
+- nome: Courgette
   quantidade: 600 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: queijo tipo atabafado
+- nome: Queijo tipo atabafado
   quantidade: 1/2
 
 valores-nutricionais:

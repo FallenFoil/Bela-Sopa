@@ -10,26 +10,26 @@ minutos-de-preparação: 20
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola congelada picada
+- nome: Cebola congelada picada
   quantidade: 100 g
-- nome: alho-francês em rodelas
+- nome: Alho-francês em rodelas
   quantidade: 70 g
-- nome: cenoura ripada
+- nome: Cenoura ripada
   quantidade: 300 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: água
+- nome: Água
   quantidade: 6,5 dl
-- nome: batata-doce
+- nome: Batata-doce
   quantidade: 150 g
-- nome: tomilho
+- nome: Tomilho
   quantidade: qb
 
 valores-nutricionais:

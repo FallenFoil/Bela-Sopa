@@ -10,32 +10,32 @@ minutos-de-preparação: 45
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
+- Sabores mediterrânicos
 
 ingredientes:
-- nome: ovos M
+- nome: Ovos m
   quantidade: '3'
-- nome: tomate com rama maduro
+- nome: Tomate com rama maduro
   quantidade: 1,5 kg
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: linguiça
+- nome: Linguiça
   quantidade: 40 g
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: batata para cozer
+- nome: Batata para cozer
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
-- nome: manjericão
+- nome: Manjericão
   quantidade: qb
-- nome: pão alentejano
+- nome: Pão alentejano
   quantidade: 300 g
 
 valores-nutricionais:

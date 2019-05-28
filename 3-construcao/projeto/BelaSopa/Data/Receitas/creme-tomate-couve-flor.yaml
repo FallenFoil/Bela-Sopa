@@ -10,36 +10,36 @@ minutos-de-preparação: 35
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: 70 g
-- nome: chcuchu
+- nome: Chcuchu
   quantidade: '1'
-- nome: lata de tomate pelado inteiro
+- nome: Lata de tomate pelado inteiro
   quantidade: '1'
-- nome: couve-flor
+- nome: Couve-flor
   quantidade: 600 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: miolo de avelã
+- nome: Miolo de avelã
   quantidade: 60 g
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: iogurte natural
+- nome: Iogurte natural
   quantidade: '1'
-- nome: pimenta de moinho Pingo Doce
+- nome: Pimenta de moinho pingo doce
   quantidade: qb
-- nome: folhas de manjericão
+- nome: Folhas de manjericão
   quantidade: qb
 
 valores-nutricionais:

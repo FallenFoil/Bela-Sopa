@@ -10,22 +10,22 @@ minutos-de-preparação: 55
 número-de-doses: 4
 
 etiquetas:
-- sem glúten
-- sem leite
-- vegetariana
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: azeite
+- nome: Azeite
   quantidade: 0,2 dl
-- nome: folhas de manjericão fresco
+- nome: Folhas de manjericão fresco
   quantidade: '4'
-- nome: abóbora
+- nome: Abóbora
   quantidade: 950 g
-- nome: cebolas
+- nome: Cebolas
   quantidade: '4'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
 
 valores-nutricionais:

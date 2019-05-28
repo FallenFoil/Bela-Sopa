@@ -10,25 +10,25 @@ minutos-de-preparação: 50
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebolas
+- nome: Cebolas
   quantidade: '2'
-- nome: dentes de alhos
+- nome: Dentes de alhos
   quantidade: '3'
-- nome: abóbora
+- nome: Abóbora
   quantidade: 300 g
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: grão-de-bico cozido
+- nome: Grão-de-bico cozido
   quantidade: 500 g
-- nome: agrião
+- nome: Agrião
   quantidade: 100 g
 
 valores-nutricionais:

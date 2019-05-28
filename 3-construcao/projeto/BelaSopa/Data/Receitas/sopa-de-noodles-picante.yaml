@@ -10,30 +10,30 @@ minutos-de-preparação: 20
 número-de-doses: 4
 
 etiquetas:
-- sem leite
+- Sem leite
 
 ingredientes:
-- nome: peitos de frango
+- nome: Peitos de frango
   quantidade: '2'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: cebola congelada
+- nome: Cebola congelada
   quantidade: 3 c. sopa
-- nome: alho congelado
+- nome: Alho congelado
   quantidade: 1 c. sopa
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: malagueta vermelha picada
+- nome: Malagueta vermelha picada
   quantidade: '1'
-- nome: mistura chinesa Pingo Doce
+- nome: Mistura chinesa pingo doce
   quantidade: 1 emb.
-- nome: frasco de molho de caril
+- nome: Frasco de molho de caril
   quantidade: '1'
-- nome: lata de leite de coco
+- nome: Lata de leite de coco
   quantidade: '1'
-- nome: noodles de frango Pingo Doce
+- nome: Noodles de frango pingo doce
   quantidade: 2 emb.
-- nome: molho de coentros
+- nome: Molho de coentros
   quantidade: '1'
 
 valores-nutricionais:

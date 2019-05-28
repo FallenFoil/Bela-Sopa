@@ -10,22 +10,22 @@ minutos-de-preparação: 40
 número-de-doses: 4
 
 etiquetas:
-- sem glúten
+- Sem glúten
 
 ingredientes:
-- nome: polpa de melão
+- nome: Polpa de melão
   quantidade: 700 g
-- nome: iogurte natural
+- nome: Iogurte natural
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de café
-- nome: vinho do Porto
+- nome: Vinho do porto
   quantidade: 0,5 dl
-- nome: fatias finas de presunto magro
+- nome: Fatias finas de presunto magro
   quantidade: '2'
-- nome: pimenta preta
+- nome: Pimenta preta
   quantidade: qb
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: qb
 
 valores-nutricionais:

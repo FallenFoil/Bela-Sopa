@@ -10,31 +10,31 @@ minutos-de-preparação: 40
 número-de-doses: 6
 
 etiquetas:
-- sem leite
-- vegetariana
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: miolo de amêndoa sem pele
+- nome: Miolo de amêndoa sem pele
   quantidade: 300 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: água
+- nome: Água
   quantidade: 1 dl
-- nome: fatias de pão de forma branco sem côdea
+- nome: Fatias de pão de forma branco sem côdea
   quantidade: '4'
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. sopa
-- nome: vinagre de vinho branco
+- nome: Vinagre de vinho branco
   quantidade: 3 c. sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: pimenta moída
+- nome: Pimenta moída
   quantidade: qb
-- nome: bagos de uva branca
+- nome: Bagos de uva branca
   quantidade: '30'
-- nome: bagos de uvas preta
+- nome: Bagos de uvas preta
   quantidade: '20'
-- nome: amêndoas com pele
+- nome: Amêndoas com pele
   quantidade: '6'
 
 valores-nutricionais:

@@ -10,25 +10,25 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: melancia
+- nome: Melancia
   quantidade: '2'
-- nome: tomates com rama maduros
+- nome: Tomates com rama maduros
   quantidade: '2'
-- nome: pepino
+- nome: Pepino
   quantidade: '1'
-- nome: manjericão fresco
+- nome: Manjericão fresco
   quantidade: qb
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: lima
+- nome: Lima
   quantidade: '1'
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
 
 valores-nutricionais:

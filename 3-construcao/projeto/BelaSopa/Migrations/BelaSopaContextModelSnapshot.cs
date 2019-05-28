@@ -41,20 +41,17 @@ namespace BelaSopa.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(200);
+                        .IsRequired();
 
-                    b.Property<string>("ImagePath")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<byte[]>("Imagem")
+                        .IsRequired();
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Texto")
+                        .IsRequired();
 
                     b.HasKey("IngredienteId");
 

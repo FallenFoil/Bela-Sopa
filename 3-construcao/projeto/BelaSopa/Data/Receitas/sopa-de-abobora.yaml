@@ -10,41 +10,41 @@ minutos-de-preparação: 50
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- vegetariana
+- Sabores mediterrânicos
+- Vegetariana
 
 ingredientes:
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: '1'
-- nome: folha de louro
+- nome: Folha de louro
   quantidade: '1'
-- nome: cebola pequena
+- nome: Cebola pequena
   quantidade: '1'
-- nome: dente de alho
+- nome: Dente de alho
   quantidade: '1'
-- nome: polpa de abóbora
+- nome: Polpa de abóbora
   quantidade: 500 g
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. sopa
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: '1'
-- nome: raiz de gengibre
+- nome: Raiz de gengibre
   quantidade: qb
-- nome: leite evaporado Pingo Doce
+- nome: Leite evaporado pingo doce
   quantidade: 1,5 dl
-- nome: caril em pó
+- nome: Caril em pó
   quantidade: 1 c. chá
-- nome: noz-moscada moída
+- nome: Noz-moscada moída
   quantidade: ½ c. café
-- nome: piripíri moído
+- nome: Piripíri moído
   quantidade: ½
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: qb
-- nome: mini tortitas de milho Pura Vida
+- nome: Mini tortitas de milho pura vida
   quantidade: '2'
 
 valores-nutricionais:

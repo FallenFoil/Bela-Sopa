@@ -10,29 +10,29 @@ minutos-de-preparação: 30
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegan
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegan
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: courgette
+- nome: Courgette
   quantidade: '1'
-- nome: couve-flor
+- nome: Couve-flor
   quantidade: 500 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: emb. agrião
+- nome: Emb. agrião
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1 L
-- nome: amêndoas laminadas Pingo Doce
+- nome: Amêndoas laminadas pingo doce
   quantidade: 30 g
-- nome: tomilho (folhas frescas)
+- nome: Tomilho (folhas frescas)
   quantidade: qb
 
 valores-nutricionais:

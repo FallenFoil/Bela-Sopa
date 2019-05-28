@@ -12,27 +12,27 @@ número-de-doses: 4
 etiquetas: []
 
 ingredientes:
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: 40 g
-- nome: cebola
+- nome: Cebola
   quantidade: 50 g
-- nome: folha de louro
+- nome: Folha de louro
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1,4 l
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. sopa
-- nome: alho-francês em rodelas
+- nome: Alho-francês em rodelas
   quantidade: 150 g
-- nome: polpa de abóbora
+- nome: Polpa de abóbora
   quantidade: 400 g
-- nome: feijão branco cozido
+- nome: Feijão branco cozido
   quantidade: 200 g
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
-- nome: leite meio-gordo
+- nome: Leite meio-gordo
   quantidade: 2 dl
-- nome: fatias pequenas pão de 8 cereias
+- nome: Fatias pequenas pão de 8 cereias
   quantidade: '4'
 
 valores-nutricionais:

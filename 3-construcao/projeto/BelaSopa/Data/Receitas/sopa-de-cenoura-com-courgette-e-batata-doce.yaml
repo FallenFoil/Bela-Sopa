@@ -10,30 +10,30 @@ minutos-de-preparação: 40
 número-de-doses: 8
 
 etiquetas:
-- vegetariana
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: cenoura
+- nome: Cenoura
   quantidade: 500 g
-- nome: batata-doce
+- nome: Batata-doce
   quantidade: 170 g
-- nome: courgette
+- nome: Courgette
   quantidade: 500 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: água
+- nome: Água
   quantidade: qb
-- nome: natas
+- nome: Natas
   quantidade: qb
-- nome: sementes girassol Pura Vida
+- nome: Sementes girassol pura vida
   quantidade: 2 c. sopa
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: qb
 
 valores-nutricionais:

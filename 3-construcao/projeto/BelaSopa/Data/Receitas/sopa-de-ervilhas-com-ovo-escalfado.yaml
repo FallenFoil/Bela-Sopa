@@ -10,32 +10,32 @@ minutos-de-preparação: 65
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
 
 ingredientes:
-- nome: bacon
+- nome: Bacon
   quantidade: 60 g
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. sopa
-- nome: cebola picada
+- nome: Cebola picada
   quantidade: 225 g
-- nome: courgette
+- nome: Courgette
   quantidade: 375 g
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: ervilhas congeladas
+- nome: Ervilhas congeladas
   quantidade: 600 g
-- nome: alface icebergue
+- nome: Alface icebergue
   quantidade: 225 g
-- nome: coentros
+- nome: Coentros
   quantidade: 1 molho
-- nome: ovos S
+- nome: Ovos s
   quantidade: '6'
-- nome: vinagre
+- nome: Vinagre
   quantidade: 2 c. sopa
-- nome: pimenta em pó
+- nome: Pimenta em pó
   quantidade: qb
 
 valores-nutricionais:

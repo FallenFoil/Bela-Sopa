@@ -10,27 +10,27 @@ minutos-de-preparação: 55
 número-de-doses: 10
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: couve-flor
+- nome: Couve-flor
   quantidade: 500 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 250 g
-- nome: courgette
+- nome: Courgette
   quantidade: 300 g
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: água
+- nome: Água
   quantidade: qb
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: folhas de espinafres
+- nome: Folhas de espinafres
   quantidade: 150 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
 
 valores-nutricionais:

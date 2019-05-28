@@ -10,18 +10,18 @@ minutos-de-preparação: 20
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: meloa
+- nome: Meloa
   quantidade: 2 kg
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
-- nome: gressinos de azeite
+- nome: Gressinos de azeite
   quantidade: '8'
-- nome: gelo
+- nome: Gelo
   quantidade: qb cubos
 
 valores-nutricionais:

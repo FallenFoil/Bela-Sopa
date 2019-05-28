@@ -10,32 +10,32 @@ minutos-de-preparação: 45
 número-de-doses: 12
 
 etiquetas:
-- sem glúten
-- sem leite
-- vegetariana
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: tomate maduro com rama
+- nome: Tomate maduro com rama
   quantidade: 1,2 kg
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. de sopa
-- nome: vinagre balsâmico
+- nome: Vinagre balsâmico
   quantidade: 1 c. de chá
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de chá
-- nome: açúcar mascavado
+- nome: Açúcar mascavado
   quantidade: 1 c. de chá
-- nome: cenouras
+- nome: Cenouras
   quantidade: 150 g
-- nome: aipo
+- nome: Aipo
   quantidade: 15 g
-- nome: cebola roxa
+- nome: Cebola roxa
   quantidade: 100 g
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de café
-- nome: tomilho
+- nome: Tomilho
   quantidade: qb
 
 valores-nutricionais:

@@ -10,31 +10,31 @@ minutos-de-preparação: 75
 número-de-doses: 12
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: codornizes
+- nome: Codornizes
   quantidade: 150 g
-- nome: cebola
+- nome: Cebola
   quantidade: 60 g
-- nome: alho
+- nome: Alho
   quantidade: 2 dente
-- nome: sal
+- nome: Sal
   quantidade: 2 c. sobremesa
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb grãos
-- nome: cenouras
+- nome: Cenouras
   quantidade: 300 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 300 g
-- nome: cogumelos Pleurothus
+- nome: Cogumelos pleurothus
   quantidade: 240 g
-- nome: rebentos de soja
+- nome: Rebentos de soja
   quantidade: 240 g
-- nome: aletria
+- nome: Aletria
   quantidade: 180 g
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: 20 g
 
 valores-nutricionais:

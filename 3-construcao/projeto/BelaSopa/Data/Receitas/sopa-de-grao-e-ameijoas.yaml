@@ -10,30 +10,30 @@ minutos-de-preparação: 80
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
 
 ingredientes:
-- nome: grão-de-bico
+- nome: Grão-de-bico
   quantidade: 150 g
-- nome: água
+- nome: Água
   quantidade: qb
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: folha de louro
+- nome: Folha de louro
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: amêijoas
+- nome: Amêijoas
   quantidade: 150 g
-- nome: espinafres
+- nome: Espinafres
   quantidade: 150 g
-- nome: coentros
+- nome: Coentros
   quantidade: qb
 
 valores-nutricionais:

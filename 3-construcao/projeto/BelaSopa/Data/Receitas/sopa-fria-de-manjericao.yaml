@@ -10,34 +10,34 @@ minutos-de-preparação: 80
 número-de-doses: 4
 
 etiquetas:
-- sem glúten
-- sem leite
-- vegetariana
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 100 g
-- nome: cenoura
+- nome: Cenoura
   quantidade: 100 g
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: '1'
-- nome: dente de alho
+- nome: Dente de alho
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1,2 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: grãos pimenta preta
+- nome: Grãos pimenta preta
   quantidade: '2'
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. de sopa
-- nome: batata
+- nome: Batata
   quantidade: 300 g
-- nome: brócolos
+- nome: Brócolos
   quantidade: 300 g
-- nome: cebola
+- nome: Cebola
   quantidade: 80 g
-- nome: manjericão em folha
+- nome: Manjericão em folha
   quantidade: 20 g
 
 valores-nutricionais:

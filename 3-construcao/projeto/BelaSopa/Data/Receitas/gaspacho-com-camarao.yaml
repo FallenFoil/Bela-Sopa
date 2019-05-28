@@ -10,43 +10,43 @@ minutos-de-preparação: 30
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: tomates maduros
+- nome: Tomates maduros
   quantidade: '3'
-- nome: pimento verde
+- nome: Pimento verde
   quantidade: 1/2
-- nome: pimento vermelho
+- nome: Pimento vermelho
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: cebola
+- nome: Cebola
   quantidade: 1/2
-- nome: vinagre de vinho branco
+- nome: Vinagre de vinho branco
   quantidade: 2 c. de sopa
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. de sopa
-- nome: orégãos
+- nome: Orégãos
   quantidade: 1 c. de sopa
-- nome: coentros picados
+- nome: Coentros picados
   quantidade: 2 c. de sopa
-- nome: pepino
+- nome: Pepino
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 2 copos
-- nome: camarão cozido
+- nome: Camarão cozido
   quantidade: 120 g
-- nome: fatias finas de pão
+- nome: Fatias finas de pão
   quantidade: '4'
-- nome: maionese
+- nome: Maionese
   quantidade: 2 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: meloa
+- nome: Meloa
   quantidade: 200 g
-- nome: cebolinho (para decoração)
+- nome: Cebolinho (para decoração)
   quantidade: qb
 
 valores-nutricionais:

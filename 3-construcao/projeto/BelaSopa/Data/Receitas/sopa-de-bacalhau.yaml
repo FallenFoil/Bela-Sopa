@@ -10,29 +10,29 @@ minutos-de-preparação: 50
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: bacalhau demolhado
+- nome: Bacalhau demolhado
   quantidade: 450 g
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: pão rústico
+- nome: Pão rústico
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: tomate maduro
+- nome: Tomate maduro
   quantidade: 500 g
-- nome: polpa de tomate
+- nome: Polpa de tomate
   quantidade: 2 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: molho de poejos
+- nome: Molho de poejos
   quantidade: '1'
 
 valores-nutricionais:

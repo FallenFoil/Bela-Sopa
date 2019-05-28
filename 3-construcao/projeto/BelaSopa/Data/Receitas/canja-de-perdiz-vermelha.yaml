@@ -10,25 +10,25 @@ minutos-de-preparação: 70
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: perdiz
+- nome: Perdiz
   quantidade: 450 g
-- nome: aletria
+- nome: Aletria
   quantidade: 120 g
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: salva
+- nome: Salva
   quantidade: qb
-- nome: cenoura
+- nome: Cenoura
   quantidade: 150 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
 
 valores-nutricionais:

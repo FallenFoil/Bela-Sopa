@@ -10,29 +10,29 @@ minutos-de-preparação: 55
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 100 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: courgette
+- nome: Courgette
   quantidade: 300 g
-- nome: favas congeladas
+- nome: Favas congeladas
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: água
+- nome: Água
   quantidade: 12 dl
-- nome: espinafres
+- nome: Espinafres
   quantidade: 1 emb.
-- nome: coentros frescos
+- nome: Coentros frescos
   quantidade: qb
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
 
 valores-nutricionais:

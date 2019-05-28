@@ -10,33 +10,33 @@ minutos-de-preparação: 55
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 200 g
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: batata para cozer
+- nome: Batata para cozer
   quantidade: 250 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: couve-flor
+- nome: Couve-flor
   quantidade: 400 g
-- nome: brócolos
+- nome: Brócolos
   quantidade: 300 g
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: pétalas de tomate seco
+- nome: Pétalas de tomate seco
   quantidade: '2'
-- nome: pevides de abóbora tostadas com sal
+- nome: Pevides de abóbora tostadas com sal
   quantidade: 30 g
 
 valores-nutricionais:

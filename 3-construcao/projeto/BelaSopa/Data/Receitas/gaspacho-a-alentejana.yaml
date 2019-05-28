@@ -10,35 +10,35 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sem leite
-- vegetariana
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: alho
+- nome: Alho
   quantidade: '3'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: tomate (maduro) chucha
+- nome: Tomate (maduro) chucha
   quantidade: 400 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: vinagre
+- nome: Vinagre
   quantidade: 2 c. de sopa
-- nome: orégãos
+- nome: Orégãos
   quantidade: 1 c. de sopa
-- nome: pimento verde
+- nome: Pimento verde
   quantidade: 150 g
-- nome: pepino
+- nome: Pepino
   quantidade: 150 g
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: pão (duro) alentejano
+- nome: Pão (duro) alentejano
   quantidade: 150 g
-- nome: coentros frescos
+- nome: Coentros frescos
   quantidade: qb
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
-- nome: azeitona preta
+- nome: Azeitona preta
   quantidade: 60 g
 
 valores-nutricionais:

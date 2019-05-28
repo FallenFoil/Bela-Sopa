@@ -3,39 +3,74 @@
     Layout = "_LayoutCliente";
     ViewData["Title"] = "Receitas";
 }
-
 <h3>Receitas</h3>
-<div class="container" style="border-bottom: 1px solid #717171;">
-    <div class="row">
-        <div class="col-sm">
-            <form class="form-inline md-form form-sm active-cyan-2 mt-2">
-                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+
+<form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
+    <div class="container" style="border-bottom: 1px solid #717171;">
+        <div class="row">
+            <div class="col-sm">
                 <i class="fas fa-search" aria-hidden="true"></i>
-            </form>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <select class="form-control" id="etiquetasSel">
-                    <option>Qualquer etiqueta</option>
-                    @foreach (var etiqueta in Model.Etiquetas)
-                    {
-                        <option>@etiqueta.Nome</option>
-                    }
-                </select>
+                <input type="text" name="nome" value="@ViewData["nome"]" onchange="this.form.submit()"
+                       placeholder="Nome" aria-placeholder="Nome" class="form-control form-control-sm mr-3 w-75">
             </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <select class="form-control" id="sel1">
-                    <option>Qualquer dificuldade</option>
-                    <option>Dificuldade fácil</option>
-                    <option>Dificuldade média</option>
-                    <option>Dificuldade difícil</option>
-                </select>
+            <div class="col-sm">
+                <div class="form-group">
+                    <select name="etiqueta" class="form-control" onchange="this.form.submit()">
+                        <option value="">Qualquer etiqueta</option>
+                        @foreach (var etiqueta in Model.Etiquetas)
+                        {
+                            if (etiqueta.EtiquetaId == ViewData["etiqueta"] as int?)
+                            {
+                                <option selected value="@etiqueta.EtiquetaId">@etiqueta.Nome</option>
+                            }
+                            else
+                            {
+                                <option value="@etiqueta.EtiquetaId">@etiqueta.Nome</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <select name="dificuldade" class="form-control" onchange="this.form.submit()">
+                        @switch (ViewData["dificuldade"] as Dificuldade?)
+                        {
+                            case null:
+                                <option selected value="">Qualquer dificuldade</option>
+                                <option value="@Dificuldade.Facil">Dificuldade fácil</option>
+                                <option value="@Dificuldade.Media">Dificuldade média</option>
+                                <option value="@Dificuldade.Dificil">Dificuldade difícil</option>
+                                break;
+
+                            case Dificuldade.Facil:
+                                <option value="">Qualquer dificuldade</option>
+                                <option selected value="@Dificuldade.Facil">Dificuldade fácil</option>
+                                <option value="@Dificuldade.Media">Dificuldade média</option>
+                                <option value="@Dificuldade.Dificil">Dificuldade difícil</option>
+                                break;
+
+                            case Dificuldade.Media:
+                                <option value="">Qualquer dificuldade</option>
+                                <option value="@Dificuldade.Facil">Dificuldade fácil</option>
+                                <option selected value="@Dificuldade.Media">Dificuldade média</option>
+                                <option value="@Dificuldade.Dificil">Dificuldade difícil</option>
+                                break;
+
+                            case Dificuldade.Dificil:
+                                <option value="">Qualquer dificuldade</option>
+                                <option value="@Dificuldade.Facil">Dificuldade fácil</option>
+                                <option value="@Dificuldade.Media">Dificuldade média</option>
+                                <option selected value="@Dificuldade.Dificil">Dificuldade difícil</option>
+                                break;
+                        }
+                    </select>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
+
 <div class="container" style="margin-top:2%;">
     @for (var i = 0; i < Model.Receitas.Count;)
     {

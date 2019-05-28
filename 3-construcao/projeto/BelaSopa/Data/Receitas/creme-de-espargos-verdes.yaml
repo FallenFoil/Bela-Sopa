@@ -10,32 +10,32 @@ minutos-de-preparação: 40
 número-de-doses: 2
 
 etiquetas:
-- vegetariana
+- Vegetariana
 
 ingredientes:
-- nome: cebola pequena
+- nome: Cebola pequena
   quantidade: '1'
-- nome: dente de alho
+- nome: Dente de alho
   quantidade: '1'
-- nome: manteiga sem sal
+- nome: Manteiga sem sal
   quantidade: 25 g
-- nome: espargos verdes
+- nome: Espargos verdes
   quantidade: 300 g
-- nome: curgete
+- nome: Curgete
   quantidade: 1/2
-- nome: sal
+- nome: Sal
   quantidade: 1 c. chá
-- nome: miolo de pinhão
+- nome: Miolo de pinhão
   quantidade: ''
-- nome: queijo chèvre redondo
+- nome: Queijo chèvre redondo
   quantidade: 50 g
-- nome: caril em pó
+- nome: Caril em pó
   quantidade: qb
-- nome: folha de massa filo
+- nome: Folha de massa filo
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. sopa
-- nome: pailtos
+- nome: Pailtos
   quantidade: '2'
 
 valores-nutricionais:

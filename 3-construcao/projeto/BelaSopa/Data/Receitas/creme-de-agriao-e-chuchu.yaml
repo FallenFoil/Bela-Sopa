@@ -10,33 +10,33 @@ minutos-de-preparação: 60
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 200 g
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: 70 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: chuchu
+- nome: Chuchu
   quantidade: 100 g
-- nome: batata
+- nome: Batata
   quantidade: 250 g
-- nome: courgette
+- nome: Courgette
   quantidade: 400 g
-- nome: agrião
+- nome: Agrião
   quantidade: 1 emb.
-- nome: couve-chinesa
+- nome: Couve-chinesa
   quantidade: 250 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: água
+- nome: Água
   quantidade: 3 dl
-- nome: miolo de noz
+- nome: Miolo de noz
   quantidade: qb
 
 valores-nutricionais:

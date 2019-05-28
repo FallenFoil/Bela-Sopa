@@ -15,81 +15,63 @@ namespace BelaSopa.Models
     {
         public static void CarregarReceitasDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursos("BelaSopa.Data.Receitas.", stream =>
+            CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", yamlReceita =>
             {
-                using (var reader = new StreamReader(stream, Encoding.UTF8))
+                Dificuldade dificuldade;
+
+                switch (yamlReceita.Dificuldade.ToLower())
                 {
-                    var deserializer =
-                        new DeserializerBuilder()
-                        .WithTagMapping("tag:yaml.org,2002:binary", typeof(byte[]))
-                        .WithTypeConverter(new ByteArrayConverter())
-                        .Build();
-
-                    var yamlReceita = deserializer.Deserialize<YamlReceita>(reader);
-
-                    Dificuldade dificuldade;
-
-                    switch (yamlReceita.Dificuldade.ToLower())
-                    {
-                        case "fácil": dificuldade = Dificuldade.Facil; break;
-                        case "média": dificuldade = Dificuldade.Media; break;
-                        case "difícil": dificuldade = Dificuldade.Dificil; break;
-                        default: throw new Exception();
-                    }
-
-                    var receita = context.Receita.Add(new Receita
-                    {
-                        Nome = yamlReceita.Nome,
-                        Descricao = yamlReceita.Descricao,
-                        Dificuldade = dificuldade,
-                        MinutosPreparacao = yamlReceita.MinutosPreparacao,
-                        NumeroDoses = yamlReceita.NumeroDoses,
-                        Imagem = yamlReceita.Imagem
-                    }).Entity;
-
-                    foreach (var nomeEtiqueta in yamlReceita.Etiquetas)
-                    {
-                        var etiqueta = context.Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta);
-
-                        if (etiqueta == null)
-                            etiqueta = context.Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
-
-                        var receitaEtiqueta = new ReceitaEtiqueta
-                        {
-                            EtiquetaId = etiqueta.EtiquetaId,
-                            Etiqueta = etiqueta,
-                            ReceitaId = receita.ReceitaId,
-                            Receita = receita
-                        };
-
-                        receita.ReceitaEtiqueta.Add(receitaEtiqueta);
-                        etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
-
-                        context.ReceitaEtiqueta.Add(receitaEtiqueta);
-                    }
-
-                    context.SaveChanges();
+                    case "fácil": dificuldade = Dificuldade.Facil; break;
+                    case "média": dificuldade = Dificuldade.Media; break;
+                    case "difícil": dificuldade = Dificuldade.Dificil; break;
+                    default: throw new Exception();
                 }
+
+                var receita = context.Receita.Add(new Receita
+                {
+                    Nome = yamlReceita.Nome,
+                    Descricao = yamlReceita.Descricao,
+                    Dificuldade = dificuldade,
+                    MinutosPreparacao = yamlReceita.MinutosPreparacao,
+                    NumeroDoses = yamlReceita.NumeroDoses,
+                    Imagem = yamlReceita.Imagem
+                }).Entity;
+
+                foreach (var nomeEtiqueta in yamlReceita.Etiquetas)
+                {
+                    var etiqueta = context.Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta);
+
+                    if (etiqueta == null)
+                        etiqueta = context.Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
+
+                    var receitaEtiqueta = new ReceitaEtiqueta
+                    {
+                        EtiquetaId = etiqueta.EtiquetaId,
+                        Etiqueta = etiqueta,
+                        ReceitaId = receita.ReceitaId,
+                        Receita = receita
+                    };
+
+                    receita.ReceitaEtiqueta.Add(receitaEtiqueta);
+                    etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
+
+                    context.ReceitaEtiqueta.Add(receitaEtiqueta);
+                }
+
+                context.SaveChanges();
             });
         }
 
-        //public static IEnumerable<Ingrediente> CarregarIngredientesDeExemplo(BelaSopaContext context)
-        //{
-        //    return CarregarRecursos("BelaSopa.Data.Ingredientes.", stream =>
-        //    {
-        //        using (var reader = new StreamReader(stream, Encoding.UTF8))
-        //        {
-        //            var yamlStream = new YamlStream();
-        //            yamlStream.Load(reader);
+        public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
+        {
+            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
+            {
+                context.Ingrediente.Add(ingrediente);
+                context.SaveChanges();
+            });
+        }
 
-        //            var root = yamlStream.Documents[0].RootNode;
-
-        //            return new Ingrediente();
-        //        }
-        //    });
-        //}
-
-        private static void CarregarRecursos(string prefixoNome, Action<Stream> carregador)
+        private static void CarregarRecursosYaml<T>(string prefixoNome, Action<T> carregador)
         {
             var nomesRecursos =
                 Assembly
@@ -100,7 +82,20 @@ namespace BelaSopa.Models
             foreach (var nome in nomesRecursos)
             {
                 using (var stream = Assembly.GetEntryAssembly().GetManifestResourceStream(nome))
-                    carregador(stream);
+                {
+                    using (var reader = new StreamReader(stream, Encoding.UTF8))
+                    {
+                        var deserializer =
+                            new DeserializerBuilder()
+                            .WithTagMapping("tag:yaml.org,2002:binary", typeof(byte[]))
+                            .WithTypeConverter(new ByteArrayConverter())
+                            .Build();
+
+                        var recurso = deserializer.Deserialize<T>(reader);
+
+                        carregador(recurso);
+                    }
+                }
             }
         }
 

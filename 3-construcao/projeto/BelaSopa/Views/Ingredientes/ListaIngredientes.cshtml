@@ -1,0 +1,41 @@
+@model List<Ingrediente>
+@{
+    Layout = "_LayoutCliente";
+    ViewData["Title"] = "Ingredientes";
+}
+<h3>Ingredientes</h3>
+
+<form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
+    <div class="container" style="border-bottom: 1px solid #717171;">
+        <div class="row">
+            <div class="col-sm">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="text" name="nome" value="@ViewData["nome"]" onchange="this.form.submit()"
+                       placeholder="Nome" aria-placeholder="Nome" class="form-control form-control-sm mr-3 w-75">
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container" style="margin-top:2%;">
+    @for (var i = 0; i < Model.Count;)
+    {
+        <div class="row ReceitasLinha">
+            @{ var j = 0;}
+            @for (; j < 3 && i < Model.Count; j++, i++)
+            {
+                <div class="col-sm Receita">
+                    <a href="#">
+                        <img class="ReceitaImg" src="data:image/x-icon;base64,@Model[i].GetImagemBase64()" alt="" />
+                        <p>@Model[i].Nome</p>
+                    </a>
+                </div>
+            }
+            @for (; j < 3; j++)
+            {
+                <div class="col-sm Receita">
+                </div>
+            }
+        </div>
+    }
+</div>

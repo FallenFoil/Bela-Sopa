@@ -12,25 +12,25 @@ número-de-doses: 4
 etiquetas: []
 
 ingredientes:
-- nome: meloa
+- nome: Meloa
   quantidade: '1'
-- nome: vinho do Porto branco
+- nome: Vinho do porto branco
   quantidade: 0,5 dl
-- nome: limão
+- nome: Limão
   quantidade: ½
-- nome: iogurte grego sem açúcar
+- nome: Iogurte grego sem açúcar
   quantidade: 2 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
-- nome: noz-moscada
+- nome: Noz-moscada
   quantidade: qb
-- nome: presunto em fatias finas
+- nome: Presunto em fatias finas
   quantidade: 50 g
-- nome: cebolinho picado
+- nome: Cebolinho picado
   quantidade: qb
-- nome: gressinos finos
+- nome: Gressinos finos
   quantidade: '8'
 
 valores-nutricionais:

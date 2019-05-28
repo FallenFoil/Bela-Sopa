@@ -10,28 +10,28 @@ minutos-de-preparação: 20
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola congelada picada
+- nome: Cebola congelada picada
   quantidade: 70 g
-- nome: batata-doce em cubos
+- nome: Batata-doce em cubos
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: água
+- nome: Água
   quantidade: 8 dl
-- nome: polpa de tomate com cebola e alho
+- nome: Polpa de tomate com cebola e alho
   quantidade: 5 dl
-- nome: ovos S
+- nome: Ovos s
   quantidade: '2'
-- nome: folhas de manjericão
+- nome: Folhas de manjericão
   quantidade: qb
-- nome: croutons com azeite e alho Pingo Doce
+- nome: Croutons com azeite e alho pingo doce
   quantidade: 80 g
 
 valores-nutricionais:

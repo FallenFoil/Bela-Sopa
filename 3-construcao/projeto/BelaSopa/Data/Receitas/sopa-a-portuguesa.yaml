@@ -10,24 +10,24 @@ minutos-de-preparação: 30
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
-- vegan
+- Sabores mediterrânicos
+- Sem leite
+- Vegan
 
 ingredientes:
-- nome: cebola em cubos congelada Pingo Doce
+- nome: Cebola em cubos congelada pingo doce
   quantidade: 150 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: batata
+- nome: Batata
   quantidade: 300 g
-- nome: abóbora
+- nome: Abóbora
   quantidade: 300 g
-- nome: mistura de legumes emb. para sopa portuguesa Pingo Doce
+- nome: Mistura de legumes emb. para sopa portuguesa pingo doce
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: massa cuscuz
+- nome: Massa cuscuz
   quantidade: 50 g
 
 valores-nutricionais:

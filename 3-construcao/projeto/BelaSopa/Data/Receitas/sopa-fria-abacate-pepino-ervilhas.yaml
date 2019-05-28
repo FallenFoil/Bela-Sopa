@@ -10,33 +10,33 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: ervilhas congeladas
+- nome: Ervilhas congeladas
   quantidade: 200 g
-- nome: água
+- nome: Água
   quantidade: 4 dl
-- nome: pepino
+- nome: Pepino
   quantidade: '1'
-- nome: cebola doce pequena
+- nome: Cebola doce pequena
   quantidade: '1'
-- nome: abacate
+- nome: Abacate
   quantidade: '1'
-- nome: coentros
+- nome: Coentros
   quantidade: 2 c. sopa
-- nome: emb. creme culinário de soja
+- nome: Emb. creme culinário de soja
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. chá
-- nome: limão
+- nome: Limão
   quantidade: ½
-- nome: rabanetes pequenos
+- nome: Rabanetes pequenos
   quantidade: '3'
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
 
 valores-nutricionais:

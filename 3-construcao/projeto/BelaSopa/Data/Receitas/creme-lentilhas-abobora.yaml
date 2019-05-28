@@ -10,37 +10,37 @@ minutos-de-preparação: 40
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola congelada picada
+- nome: Cebola congelada picada
   quantidade: 100 g
-- nome: abóbora limpa
+- nome: Abóbora limpa
   quantidade: 500 g
-- nome: cenoura ripada
+- nome: Cenoura ripada
   quantidade: 300 g
-- nome: pasta de concentrado de tomate
+- nome: Pasta de concentrado de tomate
   quantidade: 2 c. sopa
-- nome: cominhos em pó
+- nome: Cominhos em pó
   quantidade: 1 c. chá
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: lentilhas vermelhas
+- nome: Lentilhas vermelhas
   quantidade: 200 g
-- nome: água
+- nome: Água
   quantidade: 1,4 l
-- nome: pimentão-doce
+- nome: Pimentão-doce
   quantidade: 1 c. sobremesa
-- nome: salsa picada
+- nome: Salsa picada
   quantidade: 2 c. sopa
-- nome: sementes de abóbora
+- nome: Sementes de abóbora
   quantidade: 1 c. sopa
 
 valores-nutricionais:

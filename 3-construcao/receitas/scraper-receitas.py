@@ -104,7 +104,7 @@ def scrape_recipe(url: str) -> None:
     # parse recipe - etiquetas
 
     etiquetas = list(
-        tag.string.replace('|', '').strip()
+        tag.string.replace('|', '').strip().capitalize()
         for tag in soup.find_all('span', class_='recipetype')
         )
 
@@ -213,7 +213,7 @@ def scrape_recipe(url: str) -> None:
                     tag.find('span', class_='ingredient-product')
                     .stripped_strings
                     )[0].split()
-                ).strip(),
+                ).strip().capitalize(),
             'quantidade': '{} {}'.format(
                 tag.find('span', class_='ingredient-quantity').string or '',
                 tag.find('span', class_='ingredient-unit').string or ''

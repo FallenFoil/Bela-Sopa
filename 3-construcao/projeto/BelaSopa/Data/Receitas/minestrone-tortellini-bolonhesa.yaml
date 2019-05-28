@@ -10,24 +10,24 @@ minutos-de-preparação: 30
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
+- Sabores mediterrânicos
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola doce
+- nome: Cebola doce
   quantidade: '1'
-- nome: emb. legumes para sopa juliana Pingo Doce
+- nome: Emb. legumes para sopa juliana pingo doce
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: molho com basílico Pingo Doce
+- nome: Molho com basílico pingo doce
   quantidade: 3 c. sopa
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: emb. tortellini de bolonhesa
+- nome: Emb. tortellini de bolonhesa
   quantidade: '1'
-- nome: manjericão fresco
+- nome: Manjericão fresco
   quantidade: qb
 
 valores-nutricionais:

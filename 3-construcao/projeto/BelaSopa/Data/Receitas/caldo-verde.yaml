@@ -10,31 +10,31 @@ minutos-de-preparação: 45
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 150 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '4'
-- nome: azeite extra virgem
+- nome: Azeite extra virgem
   quantidade: 3 c. de sopa
-- nome: batata
+- nome: Batata
   quantidade: 200 g
-- nome: cenoura
+- nome: Cenoura
   quantidade: 100 g
-- nome: courgette
+- nome: Courgette
   quantidade: 280 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: água
+- nome: Água
   quantidade: 1,2 dl
-- nome: caldo-verde cortado
+- nome: Caldo-verde cortado
   quantidade: 200 g
 
 valores-nutricionais:

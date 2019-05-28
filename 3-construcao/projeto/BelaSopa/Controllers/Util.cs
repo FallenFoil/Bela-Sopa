@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -103,6 +104,15 @@ namespace BelaSopa.Controllers
             // não autenticado
 
             return null;
+        }
+
+        public static bool FuzzyContains(string textoOrigem, string textoContido)
+        {
+            return CultureInfo.CurrentCulture.CompareInfo.IndexOf(
+                textoContido,
+                textoContido,
+                CompareOptions.IgnoreCase | CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreSymbols
+                ) >= 0;
         }
     }
 }

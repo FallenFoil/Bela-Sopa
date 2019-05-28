@@ -10,25 +10,25 @@ minutos-de-preparação: 10
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: meloa Gália
+- nome: Meloa gália
   quantidade: 1 kg
-- nome: maçã Royal Gala
+- nome: Maçã royal gala
   quantidade: '1'
-- nome: limão
+- nome: Limão
   quantidade: '1'
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
-- nome: raiz de gengibre
+- nome: Raiz de gengibre
   quantidade: 1 c. chá
-- nome: água gelada
+- nome: Água gelada
   quantidade: 250 dl
-- nome: malagueta verde
+- nome: Malagueta verde
   quantidade: 10 g
 
 valores-nutricionais:

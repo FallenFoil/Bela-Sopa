@@ -12,33 +12,33 @@ número-de-doses: 6
 etiquetas: []
 
 ingredientes:
-- nome: pão com cabeça (tipo alentejano)
+- nome: Pão com cabeça (tipo alentejano)
   quantidade: 100 g
-- nome: vinagre de vinho branco
+- nome: Vinagre de vinho branco
   quantidade: 3 c. sopa
-- nome: tomate maduro
+- nome: Tomate maduro
   quantidade: 1,5 kg
-- nome: chalota
+- nome: Chalota
   quantidade: '1'
-- nome: malagueta
+- nome: Malagueta
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: pimentão-doce
+- nome: Pimentão-doce
   quantidade: 1 c. chá
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: gelo
+- nome: Gelo
   quantidade: qb
-- nome: figos
+- nome: Figos
   quantidade: '6'
-- nome: fatias finas de presunto
+- nome: Fatias finas de presunto
   quantidade: 150 g
-- nome: iogurte grego
+- nome: Iogurte grego
   quantidade: 200 g
-- nome: pimenta moída
+- nome: Pimenta moída
   quantidade: qb
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
 
 valores-nutricionais:

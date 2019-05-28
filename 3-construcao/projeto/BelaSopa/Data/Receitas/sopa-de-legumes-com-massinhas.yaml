@@ -10,33 +10,33 @@ minutos-de-preparação: 35
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- vegetariana
+- Sabores mediterrânicos
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. sopa
-- nome: ervilhas congeladas
+- nome: Ervilhas congeladas
   quantidade: 100 g
-- nome: lata pequena de grão-de-bico Pingo Doce
+- nome: Lata pequena de grão-de-bico pingo doce
   quantidade: '1'
-- nome: cebola grande
+- nome: Cebola grande
   quantidade: '1'
-- nome: cenoura
+- nome: Cenoura
   quantidade: '1'
-- nome: couve-lombarda
+- nome: Couve-lombarda
   quantidade: ½
-- nome: água
+- nome: Água
   quantidade: 1,2 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: massa cotovelinhos Pingo Doce
+- nome: Massa cotovelinhos pingo doce
   quantidade: 100 g
-- nome: queijo Feta
+- nome: Queijo feta
   quantidade: 100 g
-- nome: pimenta moinho
+- nome: Pimenta moinho
   quantidade: qb
-- nome: manjericão
+- nome: Manjericão
   quantidade: qb
 
 valores-nutricionais:
