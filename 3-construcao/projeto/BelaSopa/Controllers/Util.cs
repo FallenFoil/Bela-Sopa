@@ -109,7 +109,7 @@ namespace BelaSopa.Controllers
         public static bool FuzzyContains(string textoOrigem, string textoContido)
         {
             return CultureInfo.CurrentCulture.CompareInfo.IndexOf(
-                textoContido,
+                textoOrigem,
                 textoContido,
                 CompareOptions.IgnoreCase | CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreSymbols
                 ) >= 0;
