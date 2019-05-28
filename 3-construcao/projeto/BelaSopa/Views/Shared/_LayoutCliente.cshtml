@@ -16,6 +16,8 @@
         <div class="sidebar-header">
             <img id="logo_icon" src="~/logo.png" alt="Bela Sopa">
             <h3 id="logo">Bela Sopa</h3>
+            <p style="color: #ffffff">Olá, @User.Identity.Name.</p>
+            <hr />
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
                 <i class="fas fa-align-justify"></i>
             </button>
@@ -66,7 +68,6 @@
             <li id="SairMenu">
                 <a asp-controller="Autenticacao" asp-action="Sair">Sair</a>
             </li>
-
         </ul>
     </nav>
 

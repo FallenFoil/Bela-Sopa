@@ -86,19 +86,21 @@
                     @switch (Model.Receitas[i].Dificuldade)
                     {
                         case Dificuldade.Facil:
-                            <i class="fas fa-signal" style="color:green;"></i>
+                            <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
                             break;
 
                         case Dificuldade.Media:
-                            <i class="fas fa-signal" style="color:orange;"></i>
+                            <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
                             break;
 
                         case Dificuldade.Dificil:
-                            <i class="fas fa-signal" style="color:red;"></i>
+                            <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
                             break;
                     }
-                    <span style="margin-left:5%;">@Model.Receitas[i].MinutosPreparacao min <i class="fas fa-clock"></i></span>
-                    <span style="margin-left:5%;">@Model.Receitas[i].NumeroDoses doses</span>
+                    &nbsp;|&nbsp;
+                    <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receitas[i].MinutosPreparacao min</span>
+                    &nbsp;|&nbsp;
+                    <span>@Model.Receitas[i].NumeroDoses doses</span>
                 </div>
             }
             @for (; j < 3; j++)
