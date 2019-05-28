@@ -10,7 +10,7 @@ IFS=$'\n' \
 # trim trailing whitespace
 
 IFS=$'\n' \
-    sed -i -e 's/[[:space:]]+$//g' \
+    sed -i -E -e 's/[[:space:]]+$//g' \
     $(find . -type f -not -name '*.png' -not -name '*.jpg' -not -name '*.vpp')
 
 # ---------------------------------------------------------------------------- #
