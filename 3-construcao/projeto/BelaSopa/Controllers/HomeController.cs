@@ -1,4 +1,5 @@
 using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace BelaSopa.Controllers
         public IActionResult Index()
         {
             var viewModel = (
+                Etiqueta : 0,
+                Dificuldade : "All",
                 Etiquetas: context.Etiqueta.ToList(),
                 Receitas: context.Receita.ToList()
                 );
