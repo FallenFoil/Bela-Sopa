@@ -10,49 +10,49 @@ minutos-de-preparação: 75
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: perna de frango
+- nome: Perna de frango
   quantidade: 120 g
-- nome: água
+- nome: Água
   quantidade: 7 dl
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: cebola
+- nome: Cebola
   quantidade: 75 g
-- nome: feijão-branco
+- nome: Feijão-branco
   quantidade: 100 g
-- nome: água
+- nome: Água
   quantidade: qb
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: cenouras
+- nome: Cenouras
   quantidade: '2'
-- nome: hastes de aipo
+- nome: Hastes de aipo
   quantidade: '4'
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: tomates de rama maduros
+- nome: Tomates de rama maduros
   quantidade: '2'
-- nome: batata branca
+- nome: Batata branca
   quantidade: '1'
-- nome: courgette
+- nome: Courgette
   quantidade: '1'
-- nome: bacon
+- nome: Bacon
   quantidade: 80 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: ervilhas
+- nome: Ervilhas
   quantidade: 50 g
-- nome: massinha argolas
+- nome: Massinha argolas
   quantidade: 120 g
-- nome: salsa
+- nome: Salsa
   quantidade: qb
-- nome: pesto
+- nome: Pesto
   quantidade: 4 c. de sopa
 
 valores-nutricionais:

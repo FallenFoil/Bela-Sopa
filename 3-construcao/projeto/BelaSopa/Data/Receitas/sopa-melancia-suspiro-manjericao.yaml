@@ -10,40 +10,40 @@ minutos-de-preparação: 90
 número-de-doses: 6
 
 etiquetas:
-- sem glúten
-- sem leite
-- vegetariana
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: açúcar
+- nome: Açúcar
   quantidade: 60 g
-- nome: folhas grandes de manjericão
+- nome: Folhas grandes de manjericão
   quantidade: '4'
-- nome: claras XL
+- nome: Claras xl
   quantidade: '2'
-- nome: sal fino
+- nome: Sal fino
   quantidade: ½ c. de café
-- nome: sumo de limão
+- nome: Sumo de limão
   quantidade: 1 c. de café
-- nome: tomate com rama maduro
+- nome: Tomate com rama maduro
   quantidade: 1,5 kg
-- nome: polpa de melancia
+- nome: Polpa de melancia
   quantidade: 500 g
-- nome: pimento vermelho
+- nome: Pimento vermelho
   quantidade: ½
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: vinagre de vinho branco
+- nome: Vinagre de vinho branco
   quantidade: 2 c. sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: gelo
+- nome: Gelo
   quantidade: qb
-- nome: manjericão
+- nome: Manjericão
   quantidade: qb
-- nome: pimenta moída
+- nome: Pimenta moída
   quantidade: qb
 
 valores-nutricionais:

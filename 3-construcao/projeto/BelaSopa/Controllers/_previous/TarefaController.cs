@@ -57,25 +57,25 @@ namespace BelaSopa.Controllers
         }
 
         // GET api/tarefa/ingrediente/5
-        [HttpGet("ingrediente/{codigo}")]
-        public ActionResult getIngredientes(int codigo)
-        {
-            var tarefa = _context.Tarefa.Find(codigo);
-            if (tarefa == null)
-                return NotFound();
-            var ingredientes = from ingrediente in _context.Ingrediente
-                               join tarefaIngrediente in _context.TarefaIngrediente.Where(tt => tt.TarefaId == codigo)
-                                    on ingrediente.IngredienteId equals tarefaIngrediente.IngredienteId
-                               select new
-                               {
-                                   ingrediente.IngredienteId,
-                                   ingrediente.Descricao,
-                                   ingrediente.Nome,
-                                   ingrediente.Link,
-                                   ingrediente.ImagePath
-                               };
-            return Ok(ingredientes);
-        }
+        //[HttpGet("ingrediente/{codigo}")]
+        //public ActionResult getIngredientes(int codigo)
+        //{
+        //    var tarefa = _context.Tarefa.Find(codigo);
+        //    if (tarefa == null)
+        //        return NotFound();
+        //    var ingredientes = from ingrediente in _context.Ingrediente
+        //                       join tarefaIngrediente in _context.TarefaIngrediente.Where(tt => tt.TarefaId == codigo)
+        //                            on ingrediente.IngredienteId equals tarefaIngrediente.IngredienteId
+        //                       select new
+        //                       {
+        //                           ingrediente.IngredienteId,
+        //                           ingrediente.Descricao,
+        //                           ingrediente.Nome,
+        //                           ingrediente.Link,
+        //                           ingrediente.ImagePath
+        //                       };
+        //    return Ok(ingredientes);
+        //}
 
         // GET api/tarefa/utensilio/5
         [HttpGet("utensilio/{codigo}")]

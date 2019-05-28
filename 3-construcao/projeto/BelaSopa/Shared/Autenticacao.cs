@@ -8,16 +8,16 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Shared
 {
-    public static class Util
+    public static class Autenticacao
     {
-        public const string ROLES_CLIENTE = "Cliente";
         public const string ROLES_ADMINISTRADOR = "Administrador";
-        public const string ROLES_CLIENTE_OU_ADMINISTRADOR = ROLES_CLIENTE + ", " + ROLES_ADMINISTRADOR;
+        public const string ROLES_CLIENTE = "Cliente";
+        public const string ROLES_ADMINISTRADOR_OU_CLIENTE = ROLES_CLIENTE + ", " + ROLES_ADMINISTRADOR;
 
-        private const string CONTROLLER_INICIAL_CLIENTE = "Perfil";
-        private const string CONTROLLER_INICIAL_ADMINISTRADOR = "GerirUtilizadores";
+        private const string CONTROLLER_INICIAL_ADMINISTRADOR = "Utilizadores";
+        private const string CONTROLLER_INICIAL_CLIENTE = "Receitas";
 
         public static async Task<IActionResult> AutenticarUtilizador(Controller controller, Utilizador utilizador)
         {

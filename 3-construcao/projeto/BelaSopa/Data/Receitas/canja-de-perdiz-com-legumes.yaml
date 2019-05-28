@@ -10,29 +10,29 @@ minutos-de-preparação: 65
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: perdiz
+- nome: Perdiz
   quantidade: 400 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 100 g
-- nome: talos de aipo
+- nome: Talos de aipo
   quantidade: '2'
-- nome: sal
+- nome: Sal
   quantidade: 1/2 c. de sopa
-- nome: cenouras
+- nome: Cenouras
   quantidade: 350 g
-- nome: cebola
+- nome: Cebola
   quantidade: 60 g
-- nome: pão de forma de cereais
+- nome: Pão de forma de cereais
   quantidade: 60 g
-- nome: dente de alho
+- nome: Dente de alho
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: salva fresca
+- nome: Salva fresca
   quantidade: qb
 
 valores-nutricionais:

@@ -10,25 +10,25 @@ minutos-de-preparação: 30
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegan
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegan
 
 ingredientes:
-- nome: cebola em cubos congelada Pingo Doce
+- nome: Cebola em cubos congelada pingo doce
   quantidade: 150 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: couve-flor
+- nome: Couve-flor
   quantidade: 600 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: água
+- nome: Água
   quantidade: 1,2 L
-- nome: lentilhas vermelhas
+- nome: Lentilhas vermelhas
   quantidade: 120 g
-- nome: emb. mistura de legumes para Sopa do Campo Pingo Doce
+- nome: Emb. mistura de legumes para sopa do campo pingo doce
   quantidade: '1'
 
 valores-nutricionais:

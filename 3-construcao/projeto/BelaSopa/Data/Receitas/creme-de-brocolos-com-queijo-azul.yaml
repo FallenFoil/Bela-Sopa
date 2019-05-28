@@ -10,31 +10,31 @@ minutos-de-preparação: 20
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- vegetariana
+- Sabores mediterrânicos
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola congelada
+- nome: Cebola congelada
   quantidade: 100 g
-- nome: ervilhas congeladas
+- nome: Ervilhas congeladas
   quantidade: 100 g
-- nome: brócolos congelados
+- nome: Brócolos congelados
   quantidade: 400 g
-- nome: courgette aos cubos
+- nome: Courgette aos cubos
   quantidade: 300 g
-- nome: espinafres em folha
+- nome: Espinafres em folha
   quantidade: 100 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: água
+- nome: Água
   quantidade: 5 dl
-- nome: miolo de avelã
+- nome: Miolo de avelã
   quantidade: 40 g
-- nome: coentros
+- nome: Coentros
   quantidade: qb
-- nome: queijo Roquefort Pingo Doce
+- nome: Queijo roquefort pingo doce
   quantidade: 40 g
 
 valores-nutricionais:

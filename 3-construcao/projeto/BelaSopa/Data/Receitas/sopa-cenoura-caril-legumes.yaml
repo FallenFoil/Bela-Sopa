@@ -10,31 +10,31 @@ minutos-de-preparação: 90
 número-de-doses: 6
 
 etiquetas:
-- sem leite
-- vegetariana
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cenoura
+- nome: Cenoura
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa + 1 c. sobremesa
-- nome: chalotas
+- nome: Chalotas
   quantidade: '2'
-- nome: caril em pó
+- nome: Caril em pó
   quantidade: 1 c. chá
-- nome: açafrão-das-índias
+- nome: Açafrão-das-índias
   quantidade: 1 c. chá
-- nome: tomate maduro
+- nome: Tomate maduro
   quantidade: 1 kg
-- nome: courgette pequena
+- nome: Courgette pequena
   quantidade: '1'
-- nome: beringela pequena
+- nome: Beringela pequena
   quantidade: '1'
-- nome: tomates cherry
+- nome: Tomates cherry
   quantidade: '12'
-- nome: coentros
+- nome: Coentros
   quantidade: qb
 
 valores-nutricionais:

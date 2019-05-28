@@ -10,31 +10,31 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: melancia (2 kg)
+- nome: Melancia (2 kg)
   quantidade: ½
-- nome: tomate maduro
+- nome: Tomate maduro
   quantidade: '2'
-- nome: chalotas
+- nome: Chalotas
   quantidade: '2'
-- nome: pepino pequeno
+- nome: Pepino pequeno
   quantidade: '1'
-- nome: pimento pequeno
+- nome: Pimento pequeno
   quantidade: ¼
-- nome: pimento amarelo
+- nome: Pimento amarelo
   quantidade: ¼
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: '1'
-- nome: molho Tabasco
+- nome: Molho tabasco
   quantidade: 1 c. café
-- nome: vinagre sidra
+- nome: Vinagre sidra
   quantidade: 2 c. sopa
-- nome: tomilho
+- nome: Tomilho
   quantidade: qb
 
 valores-nutricionais:

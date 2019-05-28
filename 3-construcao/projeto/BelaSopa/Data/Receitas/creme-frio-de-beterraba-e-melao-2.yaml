@@ -10,19 +10,19 @@ minutos-de-preparação: 5
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: beterraba
+- nome: Beterraba
   quantidade: 150 g
-- nome: laranja
+- nome: Laranja
   quantidade: '1'
-- nome: melão (limpo)
+- nome: Melão (limpo)
   quantidade: 300 g
-- nome: talo de aipo
+- nome: Talo de aipo
   quantidade: '1'
 
 valores-nutricionais:

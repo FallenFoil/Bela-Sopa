@@ -10,29 +10,29 @@ minutos-de-preparação: 60
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: feijão-frade
+- nome: Feijão-frade
   quantidade: 200 g
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: courgette
+- nome: Courgette
   quantidade: 200 g
-- nome: cenouras
+- nome: Cenouras
   quantidade: '2'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: nabiças
+- nome: Nabiças
   quantidade: 700 g
-- nome: coentros
+- nome: Coentros
   quantidade: 50 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
 
 valores-nutricionais:

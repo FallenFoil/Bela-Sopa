@@ -10,29 +10,29 @@ minutos-de-preparação: 40
 número-de-doses: 4
 
 etiquetas:
-- sem glúten
-- vegetariana
+- Sem glúten
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: cenoura ralada
+- nome: Cenoura ralada
   quantidade: 250 g
-- nome: maçãs Reineta
+- nome: Maçãs reineta
   quantidade: '2'
-- nome: água
+- nome: Água
   quantidade: 1 lt
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de chá
-- nome: açafrão da Índia
+- nome: Açafrão da índia
   quantidade: 1 c. de sopa
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
-- nome: queijo Roquefort
+- nome: Queijo roquefort
   quantidade: 60 g
 
 valores-nutricionais:

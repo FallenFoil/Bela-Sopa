@@ -10,28 +10,28 @@ minutos-de-preparação: 20
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
+- Sabores mediterrânicos
 
 ingredientes:
-- nome: cogumelos congelados Pingo Doce
+- nome: Cogumelos congelados pingo doce
   quantidade: 400 g
-- nome: polpa de abóbora
+- nome: Polpa de abóbora
   quantidade: 1 kg
-- nome: batatas
+- nome: Batatas
   quantidade: '3'
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: pimenta moída
+- nome: Pimenta moída
   quantidade: qb
-- nome: coentros
+- nome: Coentros
   quantidade: qb
-- nome: dente de alho
+- nome: Dente de alho
   quantidade: '1'
-- nome: iogurte grego Pingo Doce
+- nome: Iogurte grego pingo doce
   quantidade: 200 g
-- nome: lascas de queijo parmesão
+- nome: Lascas de queijo parmesão
   quantidade: 60 g
 
 valores-nutricionais:

@@ -1,6 +1,7 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Models.ViewModels;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace BelaSopa.Controllers
         public async Task<IActionResult> Index()
         {
             return
-                await Util.RedirecionarSeAutenticado(this, this.context)
+                await Autenticacao.RedirecionarSeAutenticado(this, this.context)
                 ?? View(viewName: "Entrar");
         }
 
@@ -31,7 +32,7 @@ namespace BelaSopa.Controllers
         {
             // redirecionar utilizador se autenticado
 
-            var r = await Util.RedirecionarSeAutenticado(this, this.context);
+            var r = await Autenticacao.RedirecionarSeAutenticado(this, this.context);
 
             if (r != null)
                 return r;
@@ -68,14 +69,14 @@ namespace BelaSopa.Controllers
 
             // autenticar utilizador e redirecionar
 
-            return await Util.AutenticarUtilizador(this, utilizador);
+            return await Autenticacao.AutenticarUtilizador(this, utilizador);
         }
 
         [HttpGet]
         public async Task<IActionResult> CriarConta()
         {
             return
-                await Util.RedirecionarSeAutenticado(this, this.context)
+                await Autenticacao.RedirecionarSeAutenticado(this, this.context)
                 ?? View(viewName: "CriarConta");
         }
 
@@ -85,7 +86,7 @@ namespace BelaSopa.Controllers
         {
             // redirecionar utilizador se autenticado
 
-            var r = await Util.RedirecionarSeAutenticado(this, this.context);
+            var r = await Autenticacao.RedirecionarSeAutenticado(this, this.context);
 
             if (r != null)
                 return r;
@@ -132,7 +133,7 @@ namespace BelaSopa.Controllers
         [Authorize]
         public async Task<IActionResult> Sair()
         {
-            await Util.DesautenticarUtilizador(this);
+            await Autenticacao.DesautenticarUtilizador(this);
 
             return RedirectToAction(actionName: "Index");
         }

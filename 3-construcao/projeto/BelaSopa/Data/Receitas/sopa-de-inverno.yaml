@@ -10,31 +10,31 @@ minutos-de-preparação: 65
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: cebola picada
+- nome: Cebola picada
   quantidade: 150 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: carne picada
+- nome: Carne picada
   quantidade: 250 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: pimenta em pó
+- nome: Pimenta em pó
   quantidade: qb
-- nome: couve-lombarda
+- nome: Couve-lombarda
   quantidade: 450 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 300 g
-- nome: abóbora butternut
+- nome: Abóbora butternut
   quantidade: 450 g
-- nome: feijão-vermelho cozido
+- nome: Feijão-vermelho cozido
   quantidade: 400 g
-- nome: água
+- nome: Água
   quantidade: 1,4 l
-- nome: broa de milho
+- nome: Broa de milho
   quantidade: 200 g
 
 valores-nutricionais:

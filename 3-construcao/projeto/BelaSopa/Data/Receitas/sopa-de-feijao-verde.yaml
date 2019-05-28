@@ -10,31 +10,31 @@ minutos-de-preparação: 45
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: batata-doce
+- nome: Batata-doce
   quantidade: 200 g
-- nome: abóbora
+- nome: Abóbora
   quantidade: 200 g
-- nome: courgette
+- nome: Courgette
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. chá
-- nome: feijão-verde cortado Pingo Doce
+- nome: Feijão-verde cortado pingo doce
   quantidade: 200 g
-- nome: água
+- nome: Água
   quantidade: 1 l
 
 valores-nutricionais:

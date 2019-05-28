@@ -10,31 +10,31 @@ minutos-de-preparação: 50
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: cenouras
+- nome: Cenouras
   quantidade: '3'
-- nome: nabo
+- nome: Nabo
   quantidade: '1'
-- nome: abóbora
+- nome: Abóbora
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: amêndoa laminada
+- nome: Amêndoa laminada
   quantidade: 30 g
-- nome: laranjas
+- nome: Laranjas
   quantidade: '2'
-- nome: coentros (ou rama de funcho fresco)
+- nome: Coentros (ou rama de funcho fresco)
   quantidade: qb
 
 valores-nutricionais:

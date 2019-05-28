@@ -10,32 +10,32 @@ minutos-de-preparação: 45
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: nabo
+- nome: Nabo
   quantidade: 100 g
-- nome: batata-doce
+- nome: Batata-doce
   quantidade: 400 g
-- nome: cenouras
+- nome: Cenouras
   quantidade: 250 g
-- nome: courgette
+- nome: Courgette
   quantidade: 250 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 250 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: água
+- nome: Água
   quantidade: 2 l
-- nome: aletria
+- nome: Aletria
   quantidade: 100 g
-- nome: folhas de agrião
+- nome: Folhas de agrião
   quantidade: 100 g
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
 
 valores-nutricionais:

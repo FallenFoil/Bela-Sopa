@@ -10,44 +10,44 @@ minutos-de-preparação: 60
 número-de-doses: 10
 
 etiquetas:
-- sem leite
+- Sem leite
 
 ingredientes:
-- nome: batata branca
+- nome: Batata branca
   quantidade: 450 g
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. chá
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: presunto em fatias finas
+- nome: Presunto em fatias finas
   quantidade: 100 g
-- nome: couve galega em juliana (caldo-verde)
+- nome: Couve galega em juliana (caldo-verde)
   quantidade: 150 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. chá
-- nome: água
+- nome: Água
   quantidade: 2 dl
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. café
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: carcuma
+- nome: Carcuma
   quantidade: 1 c. café
-- nome: couve galega em juliana (caldo-verde)
+- nome: Couve galega em juliana (caldo-verde)
   quantidade: 100 g
-- nome: farinha de milho
+- nome: Farinha de milho
   quantidade: 75 g
-- nome: sêmola de milho
+- nome: Sêmola de milho
   quantidade: 50 g
-- nome: presunto em fatias finas (cozido)
+- nome: Presunto em fatias finas (cozido)
   quantidade: 100 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
 
 valores-nutricionais:

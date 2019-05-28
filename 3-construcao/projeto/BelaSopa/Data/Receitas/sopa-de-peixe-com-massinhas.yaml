@@ -10,37 +10,37 @@ minutos-de-preparação: 70
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: cabeça de garoupa
+- nome: Cabeça de garoupa
   quantidade: 800 g
-- nome: água
+- nome: Água
   quantidade: 2,5 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 300 g
-- nome: folha de louro
+- nome: Folha de louro
   quantidade: '1'
-- nome: gengibre
+- nome: Gengibre
   quantidade: qb
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '6'
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: abóbora
+- nome: Abóbora
   quantidade: 300 g
-- nome: tomate (maduro) em rama
+- nome: Tomate (maduro) em rama
   quantidade: 400 g
-- nome: massa cotovelinhos
+- nome: Massa cotovelinhos
   quantidade: 250 g
-- nome: limão (sumo)
+- nome: Limão (sumo)
   quantidade: qb
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
 
 valores-nutricionais:

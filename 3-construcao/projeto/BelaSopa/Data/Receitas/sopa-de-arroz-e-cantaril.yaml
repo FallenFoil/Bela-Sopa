@@ -10,35 +10,35 @@ minutos-de-preparação: 55
 número-de-doses: 8
 
 etiquetas:
-- sem glúten
-- sem leite
+- Sem glúten
+- Sem leite
 
 ingredientes:
-- nome: cantaril
+- nome: Cantaril
   quantidade: 1,2 kg
-- nome: água
+- nome: Água
   quantidade: 2,2 l
-- nome: pimenta branca em grão
+- nome: Pimenta branca em grão
   quantidade: qb
-- nome: óleo de amendoim
+- nome: Óleo de amendoim
   quantidade: 0,3 dl
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '10'
-- nome: arroz agulha Europa
+- nome: Arroz agulha europa
   quantidade: 350 g
-- nome: pés de aipo
+- nome: Pés de aipo
   quantidade: '2'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 100 g
-- nome: cebolinha nova
+- nome: Cebolinha nova
   quantidade: '1'
-- nome: amendoim torrado sem sal
+- nome: Amendoim torrado sem sal
   quantidade: 50 g
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: molho de cebolinho
+- nome: Molho de cebolinho
   quantidade: '1'
-- nome: molho de coentros
+- nome: Molho de coentros
   quantidade: ½
 
 valores-nutricionais:

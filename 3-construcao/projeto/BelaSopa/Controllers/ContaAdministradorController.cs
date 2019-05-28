@@ -1,15 +1,16 @@
 using BelaSopa.Models;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = Util.ROLES_CLIENTE)]
-    public class PerfilController : Controller
+    [Authorize(Roles = Autenticacao.ROLES_ADMINISTRADOR)]
+    public class ContaAdministradorController : Controller
     {
         private readonly BelaSopaContext context;
 
-        public PerfilController(BelaSopaContext context)
+        public ContaAdministradorController(BelaSopaContext context)
         {
             this.context = context;
         }
@@ -17,7 +18,7 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(viewName: "Perfil");
+            return View(viewName: "VerDados");
         }
     }
 }

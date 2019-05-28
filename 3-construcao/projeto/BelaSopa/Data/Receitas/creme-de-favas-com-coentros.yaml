@@ -10,29 +10,29 @@ minutos-de-preparação: 60
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola picada
+- nome: Cebola picada
   quantidade: 100 g
-- nome: alho-francês em rodelas
+- nome: Alho-francês em rodelas
   quantidade: 150 g
-- nome: courgette
+- nome: Courgette
   quantidade: 200 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: coentros picados
+- nome: Coentros picados
   quantidade: 1 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: favas descascadas
+- nome: Favas descascadas
   quantidade: 400 g
-- nome: água
+- nome: Água
   quantidade: 1,3 l
-- nome: pés de hortelã
+- nome: Pés de hortelã
   quantidade: 3 a 4
 
 valores-nutricionais:

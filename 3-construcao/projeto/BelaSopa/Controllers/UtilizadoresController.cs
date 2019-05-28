@@ -1,18 +1,19 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Models.ViewModels;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = Util.ROLES_ADMINISTRADOR)]
-    public class GerirUtilizadoresController : Controller
+    [Authorize(Roles = Autenticacao.ROLES_ADMINISTRADOR)]
+    public class UtilizadoresController : Controller
     {
         private readonly BelaSopaContext context;
 
-        public GerirUtilizadoresController(BelaSopaContext context)
+        public UtilizadoresController(BelaSopaContext context)
         {
             this.context = context;
         }
@@ -25,12 +26,12 @@ namespace BelaSopa.Controllers
                 Clientes: context.Clientes.ToList()
             );
 
-            return View(viewName: "ListaDeUtilizadores", model: viewModel);
+            return View(viewName: "ListaUtilizadores", model: viewModel);
         }
 
         [HttpGet]
         [Route("[controller]/[action]/{nomeDeUtilizador}")]
-        public IActionResult RemoverUtilizador(string nomeDeUtilizador)
+        public IActionResult RemoverUtilizador([FromRoute] string nomeDeUtilizador)
         {
             if (nomeDeUtilizador != User.Identity.Name)
             {

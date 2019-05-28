@@ -10,27 +10,27 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- vegetariana
+- Sabores mediterrânicos
+- Vegetariana
 
 ingredientes:
-- nome: tomate (maduro e carnudo)
+- nome: Tomate (maduro e carnudo)
   quantidade: '6'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: pão caseiro rijo
+- nome: Pão caseiro rijo
   quantidade: 300 g
-- nome: orégãos
+- nome: Orégãos
   quantidade: 2 c. sopa
-- nome: água fresca
+- nome: Água fresca
   quantidade: 1,2 l
-- nome: vinagre
+- nome: Vinagre
   quantidade: 2 c. sopa
-- nome: pimento verde pequeno
+- nome: Pimento verde pequeno
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. sopa
 
 valores-nutricionais:

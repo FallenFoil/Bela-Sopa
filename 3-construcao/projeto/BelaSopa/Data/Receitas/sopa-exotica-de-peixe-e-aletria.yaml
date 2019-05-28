@@ -10,36 +10,36 @@ minutos-de-preparação: 30
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
+- Sabores mediterrânicos
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: malagueta vermelha
+- nome: Malagueta vermelha
   quantidade: ½
-- nome: caril moído
+- nome: Caril moído
   quantidade: 1 c. de sobremesa
-- nome: filetes de pescada congelados
+- nome: Filetes de pescada congelados
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: leite de coco
+- nome: Leite de coco
   quantidade: 400 ml
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: legumes chineses congelados
+- nome: Legumes chineses congelados
   quantidade: 400 g
-- nome: aletria
+- nome: Aletria
   quantidade: 150 g
-- nome: limão
+- nome: Limão
   quantidade: ½
-- nome: noz-moscada
+- nome: Noz-moscada
   quantidade: qb
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: qb
 
 valores-nutricionais:

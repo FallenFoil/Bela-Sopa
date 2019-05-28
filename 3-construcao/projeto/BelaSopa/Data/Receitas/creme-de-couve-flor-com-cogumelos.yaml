@@ -10,33 +10,33 @@ minutos-de-preparação: 60
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: alho-francês cortado Pingo Doce
+- nome: Alho-francês cortado pingo doce
   quantidade: 200 g
-- nome: couve-flor
+- nome: Couve-flor
   quantidade: ½
-- nome: peito de frango
+- nome: Peito de frango
   quantidade: 200 g
-- nome: água
+- nome: Água
   quantidade: 2 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: cogumelos Portobello Pingo Doce pequenos
+- nome: Cogumelos portobello pingo doce pequenos
   quantidade: 250 g
-- nome: bacon em tiras Pingo Doce
+- nome: Bacon em tiras pingo doce
   quantidade: 50 g
-- nome: azeite Pingo Doce
+- nome: Azeite pingo doce
   quantidade: 1 c. sopa
-- nome: emb. agrião em folha Pingo Doce
+- nome: Emb. agrião em folha pingo doce
   quantidade: '1'
-- nome: sementes girassol Pura Vida
+- nome: Sementes girassol pura vida
   quantidade: 3 c. sopa
-- nome: pimenta Pingo Doce
+- nome: Pimenta pingo doce
   quantidade: qb
 
 valores-nutricionais:

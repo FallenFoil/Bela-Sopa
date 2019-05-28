@@ -10,21 +10,21 @@ minutos-de-preparação: 30
 número-de-doses: 6
 
 etiquetas:
-- sem leite
-- vegetariana
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de chá
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 150 g
-- nome: polpa de abóbora
+- nome: Polpa de abóbora
   quantidade: 300 g
-- nome: cuscuz
+- nome: Cuscuz
   quantidade: 50 g
-- nome: espinafres
+- nome: Espinafres
   quantidade: 150 g
 
 valores-nutricionais:

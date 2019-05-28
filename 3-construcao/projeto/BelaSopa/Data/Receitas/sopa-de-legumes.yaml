@@ -10,27 +10,27 @@ minutos-de-preparação: 50
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: frango
+- nome: Frango
   quantidade: '1'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 250 g
-- nome: cenoura
+- nome: Cenoura
   quantidade: 350 g
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: couve-lombarda
+- nome: Couve-lombarda
   quantidade: 200 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: aletria
+- nome: Aletria
   quantidade: 80 g
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
 
 valores-nutricionais:

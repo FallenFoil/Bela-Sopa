@@ -10,33 +10,33 @@ minutos-de-preparação: 55
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 150 g
-- nome: batata
+- nome: Batata
   quantidade: 150 g
-- nome: courgette
+- nome: Courgette
   quantidade: 100 g
-- nome: abóbora
+- nome: Abóbora
   quantidade: 100 g
-- nome: azeite virgem
+- nome: Azeite virgem
   quantidade: 1 c. de sopa
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: cenoura
+- nome: Cenoura
   quantidade: 100 g
-- nome: cebola
+- nome: Cebola
   quantidade: 50 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: folhas de couve-lombarda
+- nome: Folhas de couve-lombarda
   quantidade: '4'
-- nome: segurelha
+- nome: Segurelha
   quantidade: qb
 
 valores-nutricionais:

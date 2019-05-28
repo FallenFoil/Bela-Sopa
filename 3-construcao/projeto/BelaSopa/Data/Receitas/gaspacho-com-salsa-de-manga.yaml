@@ -10,29 +10,29 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegan
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegan
 
 ingredientes:
-- nome: manga
+- nome: Manga
   quantidade: '1'
-- nome: courgette
+- nome: Courgette
   quantidade: '1'
-- nome: cebola-roxa
+- nome: Cebola-roxa
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: vinagre de framboesa
+- nome: Vinagre de framboesa
   quantidade: 2 c. sopa
-- nome: pimenta-preta
+- nome: Pimenta-preta
   quantidade: qb
-- nome: manjericão
+- nome: Manjericão
   quantidade: qb
-- nome: emb. gaspacho Pingo Doce
+- nome: Emb. gaspacho pingo doce
   quantidade: '1'
-- nome: amêndoas laminadas torradas
+- nome: Amêndoas laminadas torradas
   quantidade: 60 g
 
 valores-nutricionais:

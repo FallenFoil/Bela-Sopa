@@ -10,33 +10,33 @@ minutos-de-preparação: 55
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 250 g
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. sopa
-- nome: ramo de coentros frescos
+- nome: Ramo de coentros frescos
   quantidade: '1'
-- nome: caril em pó
+- nome: Caril em pó
   quantidade: 2 c. de sopa
-- nome: noz-moscada
+- nome: Noz-moscada
   quantidade: 1 c. de chá
-- nome: couve-flor
+- nome: Couve-flor
   quantidade: 350 g
-- nome: courgette
+- nome: Courgette
   quantidade: 300 g
-- nome: maçã Royal Gala
+- nome: Maçã royal gala
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: água
+- nome: Água
   quantidade: 1,5 l
 
 valores-nutricionais:

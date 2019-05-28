@@ -10,37 +10,37 @@ minutos-de-preparação: 55
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cenoura
+- nome: Cenoura
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '4'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 150 g
-- nome: batata para cozer
+- nome: Batata para cozer
   quantidade: 200 g
-- nome: talos de aipo
+- nome: Talos de aipo
   quantidade: '3'
-- nome: cenoura
+- nome: Cenoura
   quantidade: 500 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: pau de canela
+- nome: Pau de canela
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1,2 l
-- nome: laranja
+- nome: Laranja
   quantidade: '1'
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: 2 c. de sopa
-- nome: queijo feta
+- nome: Queijo feta
   quantidade: 75 g
 
 valores-nutricionais:

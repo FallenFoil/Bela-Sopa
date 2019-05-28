@@ -10,35 +10,35 @@ minutos-de-preparação: 45
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: lentilhas vermelhas
+- nome: Lentilhas vermelhas
   quantidade: 140 g
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '3'
-- nome: abóbora limpa
+- nome: Abóbora limpa
   quantidade: 300 g
-- nome: talos de aipo
+- nome: Talos de aipo
   quantidade: '2'
-- nome: folha de louro
+- nome: Folha de louro
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: mistura de legumes para sopa portuguesa
+- nome: Mistura de legumes para sopa portuguesa
   quantidade: 200 g
-- nome: cominhos moídos
+- nome: Cominhos moídos
   quantidade: 2 c. de chá
-- nome: miolo de pevide torrado
+- nome: Miolo de pevide torrado
   quantidade: 30 g
 
 valores-nutricionais:

@@ -10,22 +10,22 @@ minutos-de-preparação: 55
 número-de-doses: 4
 
 etiquetas:
-- sem leite
+- Sem leite
 
 ingredientes:
-- nome: ovos codorniz
+- nome: Ovos codorniz
   quantidade: '4'
-- nome: codornizes
+- nome: Codornizes
   quantidade: '2'
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: alho-francês laminado
+- nome: Alho-francês laminado
   quantidade: 100 g
-- nome: aletria
+- nome: Aletria
   quantidade: 60 g
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
 
 valores-nutricionais:

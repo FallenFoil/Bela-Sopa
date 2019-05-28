@@ -10,29 +10,29 @@ minutos-de-preparação: 30
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- vegetariana
+- Sabores mediterrânicos
+- Vegetariana
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: molho de coentros (só os talos)
+- nome: Molho de coentros (só os talos)
   quantidade: '1'
-- nome: batata-doce
+- nome: Batata-doce
   quantidade: 300 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: tomate com rama maduro
+- nome: Tomate com rama maduro
   quantidade: 350 g
-- nome: espinafres em folha
+- nome: Espinafres em folha
   quantidade: 1 emb.
-- nome: queijo de cabra Pingo (100g) Doce
+- nome: Queijo de cabra pingo (100g) doce
   quantidade: '1'
-- nome: croutons com azeite e alho Pingo Doce
+- nome: Croutons com azeite e alho pingo doce
   quantidade: 40 g
 
 valores-nutricionais:

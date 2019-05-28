@@ -10,30 +10,30 @@ minutos-de-preparação: 60
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
 
 ingredientes:
-- nome: arroz carolino
+- nome: Arroz carolino
   quantidade: 40 g
-- nome: perna de frango do campo
+- nome: Perna de frango do campo
   quantidade: 150 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: caril em pó
+- nome: Caril em pó
   quantidade: qb
-- nome: cogumelos frescos
+- nome: Cogumelos frescos
   quantidade: 300 g
-- nome: coentros
+- nome: Coentros
   quantidade: qb
-- nome: cenoura
+- nome: Cenoura
   quantidade: 100 g
-- nome: courgettes
+- nome: Courgettes
   quantidade: 750 g
 
 valores-nutricionais:

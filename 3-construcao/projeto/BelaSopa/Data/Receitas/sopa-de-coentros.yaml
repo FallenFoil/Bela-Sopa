@@ -10,29 +10,29 @@ minutos-de-preparação: 50
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: coentros
+- nome: Coentros
   quantidade: 50 g
-- nome: courgette
+- nome: Courgette
   quantidade: 350 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: água
+- nome: Água
   quantidade: 1,2 l
-- nome: ovo S
+- nome: Ovo s
   quantidade: '1'
-- nome: tortitas de arroz
+- nome: Tortitas de arroz
   quantidade: '2'
-- nome: batata grande
+- nome: Batata grande
   quantidade: 300 g
 
 valores-nutricionais:

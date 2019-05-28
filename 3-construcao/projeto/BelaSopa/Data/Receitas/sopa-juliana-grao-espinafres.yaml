@@ -10,27 +10,27 @@ minutos-de-preparação: 20
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: azeite + 1 c. sobremesa
+- nome: Azeite + 1 c. sobremesa
   quantidade: 2 c. sopa
-- nome: cebola congelada picada
+- nome: Cebola congelada picada
   quantidade: 100 g
-- nome: mistura de legumes Pingo Doce para sopa de juliana
+- nome: Mistura de legumes pingo doce para sopa de juliana
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: 2 c. chá
-- nome: frasco de grão cozido em conserva
+- nome: Frasco de grão cozido em conserva
   quantidade: '1'
-- nome: ovos de codorniz
+- nome: Ovos de codorniz
   quantidade: '8'
-- nome: água + 4 dl
+- nome: Água + 4 dl
   quantidade: 5 dl
-- nome: emb. espinafres em folha
+- nome: Emb. espinafres em folha
   quantidade: '1'
 
 valores-nutricionais:

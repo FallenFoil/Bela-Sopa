@@ -10,31 +10,31 @@ minutos-de-preparação: 30
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: funcho
+- nome: Funcho
   quantidade: 300 g
-- nome: cenoura
+- nome: Cenoura
   quantidade: 150 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: tomate em rama
+- nome: Tomate em rama
   quantidade: 1 kg
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: ovo S
+- nome: Ovo s
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: açúcar
+- nome: Açúcar
   quantidade: 1 c. de chá
-- nome: cebolinho picado
+- nome: Cebolinho picado
   quantidade: 1 c. de sopa
 
 valores-nutricionais:

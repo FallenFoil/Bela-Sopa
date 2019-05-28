@@ -10,32 +10,32 @@ minutos-de-preparação: 65
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem leite
+- Vegetariana
 
 ingredientes:
 - nome: (500 g) beterraba
   quantidade: '5'
 - nome: (300 g) cenouras
   quantidade: '2'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: qb
-- nome: cebola
+- nome: Cebola
   quantidade: 30 g
-- nome: laranja
+- nome: Laranja
   quantidade: 200 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sopa
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
-- nome: pão torrado
+- nome: Pão torrado
   quantidade: 40 g
-- nome: batata
+- nome: Batata
   quantidade: 200 g
 
 valores-nutricionais:

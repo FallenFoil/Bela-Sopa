@@ -10,32 +10,32 @@ minutos-de-preparação: 37
 número-de-doses: 8
 
 etiquetas:
-- sem glúten
+- Sem glúten
 
 ingredientes:
-- nome: favas congeladas
+- nome: Favas congeladas
   quantidade: 500 g
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 80 g
-- nome: azeite
+- nome: Azeite
   quantidade: 35 g
-- nome: courgette
+- nome: Courgette
   quantidade: 400 g
-- nome: manjericão fresco
+- nome: Manjericão fresco
   quantidade: qb
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: noz-moscada
+- nome: Noz-moscada
   quantidade: qb
-- nome: água
+- nome: Água
   quantidade: 500 g
-- nome: natas
+- nome: Natas
   quantidade: 80 g
-- nome: pimenta moída
+- nome: Pimenta moída
   quantidade: qb
 
 valores-nutricionais:

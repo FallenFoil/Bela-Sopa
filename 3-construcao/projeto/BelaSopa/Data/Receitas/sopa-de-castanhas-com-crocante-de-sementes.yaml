@@ -10,49 +10,49 @@ minutos-de-preparação: 25
 número-de-doses: 4
 
 etiquetas:
-- sem leite
-- vegetariana
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: chávena de sementes de girassol Pura Vida
+- nome: Chávena de sementes de girassol pura vida
   quantidade: 1/4
-- nome: chávena de sementes de abóbora
+- nome: Chávena de sementes de abóbora
   quantidade: 1/4
-- nome: chávena de sementes de sésamo Pura Vida
+- nome: Chávena de sementes de sésamo pura vida
   quantidade: 1/4
-- nome: sementes de papoila
+- nome: Sementes de papoila
   quantidade: 1 c. sobremesa
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. sopa
-- nome: mel
+- nome: Mel
   quantidade: 1 c. sopa
-- nome: canela
+- nome: Canela
   quantidade: 1/2 c. chá
-- nome: sal grosso
+- nome: Sal grosso
   quantidade: 1 c. chá
-- nome: pimenta-preta
+- nome: Pimenta-preta
   quantidade: qb
-- nome: vegem de cardamomo
+- nome: Vegem de cardamomo
   quantidade: '1'
-- nome: chalotas
+- nome: Chalotas
   quantidade: '2'
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 1/2
-- nome: castanhas congeladas Pingo Doce
+- nome: Castanhas congeladas pingo doce
   quantidade: 400 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: courgettes
+- nome: Courgettes
   quantidade: '2'
-- nome: abóbora-manteiga
+- nome: Abóbora-manteiga
   quantidade: 400 g
-- nome: noz moscada
+- nome: Noz moscada
   quantidade: qb
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: qb
 
 valores-nutricionais:

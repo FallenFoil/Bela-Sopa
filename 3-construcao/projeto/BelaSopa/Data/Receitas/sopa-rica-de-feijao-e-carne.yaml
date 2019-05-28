@@ -10,34 +10,34 @@ minutos-de-preparação: 95
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
 
 ingredientes:
-- nome: feijão encarnado seco
+- nome: Feijão encarnado seco
   quantidade: 250 g
-- nome: carne de vaca para cozer
+- nome: Carne de vaca para cozer
   quantidade: 250 g
-- nome: folha de louro
+- nome: Folha de louro
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 2 c. de chá
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '4'
-- nome: alho-francês cortado
+- nome: Alho-francês cortado
   quantidade: 200 g
-- nome: nabo
+- nome: Nabo
   quantidade: 200 g
-- nome: cenouras
+- nome: Cenouras
   quantidade: 300 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: nabiças
+- nome: Nabiças
   quantidade: 500 g
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
 
 valores-nutricionais:

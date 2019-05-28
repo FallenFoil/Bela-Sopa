@@ -10,28 +10,28 @@ minutos-de-preparação: 30
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
+- Sabores mediterrânicos
 
 ingredientes:
-- nome: emb. lombos de bacalhau congelados Pingo Doce
+- nome: Emb. lombos de bacalhau congelados pingo doce
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1,2 L
-- nome: folha de louro
+- nome: Folha de louro
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '4'
-- nome: molho de coentros
+- nome: Molho de coentros
   quantidade: '1'
-- nome: azeite
+- nome: Azeite
   quantidade: 4 c. sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. café
-- nome: tomate seco
+- nome: Tomate seco
   quantidade: 40 g
-- nome: pão de mistura trigo e centeio
+- nome: Pão de mistura trigo e centeio
   quantidade: 300 g
-- nome: ovos S
+- nome: Ovos s
   quantidade: '4'
 
 valores-nutricionais:

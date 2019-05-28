@@ -10,30 +10,30 @@ minutos-de-preparação: 40
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes alho
+- nome: Dentes alho
   quantidade: '4'
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: batata
+- nome: Batata
   quantidade: 350 g
-- nome: nabo pequeno
+- nome: Nabo pequeno
   quantidade: '1'
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: água
+- nome: Água
   quantidade: 1,5 dl
-- nome: molho coentros (só folhas)
+- nome: Molho coentros (só folhas)
   quantidade: '1'
-- nome: caldo-verde
+- nome: Caldo-verde
   quantidade: 300 g
-- nome: rodelas chouriço
+- nome: Rodelas chouriço
   quantidade: '6'
 
 valores-nutricionais:

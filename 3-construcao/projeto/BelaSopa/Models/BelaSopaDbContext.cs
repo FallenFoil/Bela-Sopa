@@ -150,7 +150,7 @@ namespace BelaSopa.Models
                .HasOne(ri => ri.Processo)
                .WithMany(i => i.ReceitaProcesso)
                .HasForeignKey(t => t.ProcessoId);
-            
+
             modelBuilder.Entity<ReceitaEtiqueta>()
                 .HasKey(rc => new { rc.ReceitaId, rc.EtiquetaId });
             modelBuilder.Entity<ReceitaEtiqueta>()

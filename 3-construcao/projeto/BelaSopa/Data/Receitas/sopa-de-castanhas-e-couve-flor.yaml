@@ -10,34 +10,34 @@ minutos-de-preparação: 20
 número-de-doses: 6
 
 etiquetas:
-- sem glúten
+- Sem glúten
 
 ingredientes:
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: cebola picada
+- nome: Cebola picada
   quantidade: '1'
-- nome: dente alho picado
+- nome: Dente alho picado
   quantidade: '1'
-- nome: bacon cubos
+- nome: Bacon cubos
   quantidade: 50 g
-- nome: couve-flor limpa
+- nome: Couve-flor limpa
   quantidade: 500 g
-- nome: courgette
+- nome: Courgette
   quantidade: '1'
-- nome: castanhas cozidas descascadas
+- nome: Castanhas cozidas descascadas
   quantidade: 250 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: natas de soja
+- nome: Natas de soja
   quantidade: 2 dl
-- nome: noz-moscada
+- nome: Noz-moscada
   quantidade: 1 c. chá
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
-- nome: queijo Grana Padano ralado
+- nome: Queijo grana padano ralado
   quantidade: 30 g
-- nome: tomilho
+- nome: Tomilho
   quantidade: qb
 
 valores-nutricionais:

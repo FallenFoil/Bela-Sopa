@@ -41,20 +41,17 @@ namespace BelaSopa.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(200);
+                        .IsRequired();
 
-                    b.Property<string>("ImagePath")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<byte[]>("Imagem")
+                        .IsRequired();
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Texto")
+                        .IsRequired();
 
                     b.HasKey("IngredienteId");
 
@@ -267,7 +264,7 @@ namespace BelaSopa.Migrations
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Utilizadores.Administrador", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UtilizadorId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -279,14 +276,14 @@ namespace BelaSopa.Migrations
                         .IsRequired()
                         .HasMaxLength(32);
 
-                    b.HasKey("Id");
+                    b.HasKey("UtilizadorId");
 
                     b.ToTable("Administradores");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Utilizadores.Cliente", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UtilizadorId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -300,7 +297,7 @@ namespace BelaSopa.Migrations
                         .IsRequired()
                         .HasMaxLength(32);
 
-                    b.HasKey("Id");
+                    b.HasKey("UtilizadorId");
 
                     b.ToTable("Clientes");
                 });

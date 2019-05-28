@@ -10,25 +10,25 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
+- Sabores mediterrânicos
+- Sem glúten
 
 ingredientes:
-- nome: funcho
+- nome: Funcho
   quantidade: '2'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. de sopa
-- nome: sal
+- nome: Sal
   quantidade: qb
-- nome: beterraba cozida
+- nome: Beterraba cozida
   quantidade: 500 g
-- nome: laranjas
+- nome: Laranjas
   quantidade: '2'
-- nome: água
+- nome: Água
   quantidade: 4 dl
-- nome: iogurtes naturais
+- nome: Iogurtes naturais
   quantidade: '2'
-- nome: pimenta
+- nome: Pimenta
   quantidade: qb
 
 valores-nutricionais:

@@ -10,47 +10,47 @@ minutos-de-preparação: 65
 número-de-doses: 12
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 150 g
-- nome: alho
+- nome: Alho
   quantidade: 4 dente
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 100 g
-- nome: aipo
+- nome: Aipo
   quantidade: 50 g
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: sapateira
+- nome: Sapateira
   quantidade: 800 g
-- nome: aguardente velha
+- nome: Aguardente velha
   quantidade: 0,4 dl
-- nome: vinho branco
+- nome: Vinho branco
   quantidade: 1 dl
-- nome: coentros
+- nome: Coentros
   quantidade: qb
-- nome: farinha de trigo
+- nome: Farinha de trigo
   quantidade: 50 g
-- nome: tomate em rama
+- nome: Tomate em rama
   quantidade: 250 g
-- nome: polpa de tomate
+- nome: Polpa de tomate
   quantidade: 150 g
-- nome: malagueta vermelha
+- nome: Malagueta vermelha
   quantidade: '1'
-- nome: água
+- nome: Água
   quantidade: 1,2 l
-- nome: sal
+- nome: Sal
   quantidade: 2 c. sobremesa
-- nome: cenouras
+- nome: Cenouras
   quantidade: 150 g
-- nome: courgette
+- nome: Courgette
   quantidade: 150 g
-- nome: massa folhada
+- nome: Massa folhada
   quantidade: 300 g
-- nome: ovo M
+- nome: Ovo m
   quantidade: '1'
 
 valores-nutricionais:

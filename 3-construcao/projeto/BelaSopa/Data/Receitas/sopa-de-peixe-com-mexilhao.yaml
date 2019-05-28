@@ -10,43 +10,43 @@ minutos-de-preparação: 75
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: perca
+- nome: Perca
   quantidade: 400 g
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sobremesa
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
-- nome: mexilhão
+- nome: Mexilhão
   quantidade: 800 g
-- nome: alho-francês
+- nome: Alho-francês
   quantidade: 200 g
-- nome: louro
+- nome: Louro
   quantidade: 1 folha
-- nome: água
+- nome: Água
   quantidade: 1,5 l
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: alho
+- nome: Alho
   quantidade: 2 dente
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: vinho branco
+- nome: Vinho branco
   quantidade: 1,5 dl
-- nome: batata para cozer
+- nome: Batata para cozer
   quantidade: 400 g
-- nome: açafrão
+- nome: Açafrão
   quantidade: 1 c. sobremesa
-- nome: tomate
+- nome: Tomate
   quantidade: 400 g
-- nome: farinha de trigo
+- nome: Farinha de trigo
   quantidade: 1 c. sopa
-- nome: pão de mistura
+- nome: Pão de mistura
   quantidade: 200 g
-- nome: hortelã
+- nome: Hortelã
   quantidade: qb
 
 valores-nutricionais:

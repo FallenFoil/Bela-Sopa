@@ -10,29 +10,29 @@ minutos-de-preparação: 40
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: azeite
+- nome: Azeite
   quantidade: 1 c. de sopa
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: sal grosso
+- nome: Sal grosso
   quantidade: 1 c. de sopa
-- nome: cogumelos brancos
+- nome: Cogumelos brancos
   quantidade: 400 g
-- nome: funcho em bolbo
+- nome: Funcho em bolbo
   quantidade: 100 g
-- nome: funcho em rama
+- nome: Funcho em rama
   quantidade: 10 g
-- nome: batatas
+- nome: Batatas
   quantidade: 350 g
-- nome: miolo de pinhão
+- nome: Miolo de pinhão
   quantidade: 20 g
 
 valores-nutricionais:

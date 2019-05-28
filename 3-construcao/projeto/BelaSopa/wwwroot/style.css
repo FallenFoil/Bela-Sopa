@@ -123,19 +123,20 @@ span {
     }
 
     #sidebar .sidebar-header {
+        text-align: center;
         padding: 20px;
         background: #4CAF50;
         border-bottom: 1px solid #4CAF50;
     }
 
         #sidebar .sidebar-header #logo {
-            margin-left: 15%;
+            /*margin-left: 15%;*/
         }
 
         #sidebar .sidebar-header #logo_icon {
             width: 40%;
-            height: 40%;
-            margin-left: 25%;
+            /*margin-left: 25%;*/
+            padding-bottom: 0.8em;
         }
 
         #sidebar .sidebar-header #sidebarCollapse {

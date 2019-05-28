@@ -10,25 +10,25 @@ minutos-de-preparação: 15
 número-de-doses: 4
 
 etiquetas:
-- sem leite
-- vegetariana
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: tomate chucha
+- nome: Tomate chucha
   quantidade: 500 g
-- nome: pêssegos
+- nome: Pêssegos
   quantidade: '2'
-- nome: melancia
+- nome: Melancia
   quantidade: 1/4
-- nome: hastes manjericão
+- nome: Hastes manjericão
   quantidade: '5'
-- nome: azeite
+- nome: Azeite
   quantidade: 2 c. sopa
-- nome: sal
+- nome: Sal
   quantidade: 1 c. café
-- nome: pimenta de moinho
+- nome: Pimenta de moinho
   quantidade: qb
-- nome: alho-francês médio
+- nome: Alho-francês médio
   quantidade: '1'
 
 valores-nutricionais:

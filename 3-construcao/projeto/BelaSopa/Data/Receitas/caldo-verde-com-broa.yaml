@@ -10,25 +10,25 @@ minutos-de-preparação: 35
 número-de-doses: 6
 
 etiquetas:
-- sabores mediterrânicos
-- sem leite
+- Sabores mediterrânicos
+- Sem leite
 
 ingredientes:
-- nome: cebola
+- nome: Cebola
   quantidade: 100 g
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '2'
-- nome: batata para cozer
+- nome: Batata para cozer
   quantidade: 400 g
-- nome: água
+- nome: Água
   quantidade: 1 l
-- nome: sal
+- nome: Sal
   quantidade: 1 c. de sobremesa
-- nome: couve-portuguesa
+- nome: Couve-portuguesa
   quantidade: 300 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. de sopa
-- nome: fatias de broa (com chouriço) de milho
+- nome: Fatias de broa (com chouriço) de milho
   quantidade: '6'
 
 valores-nutricionais:

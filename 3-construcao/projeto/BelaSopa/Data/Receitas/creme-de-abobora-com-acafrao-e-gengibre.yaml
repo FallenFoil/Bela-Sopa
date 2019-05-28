@@ -10,31 +10,31 @@ minutos-de-preparação: 65
 número-de-doses: 8
 
 etiquetas:
-- sabores mediterrânicos
-- sem glúten
-- sem leite
-- vegetariana
+- Sabores mediterrânicos
+- Sem glúten
+- Sem leite
+- Vegetariana
 
 ingredientes:
-- nome: abóbora (sem casca) amarela
+- nome: Abóbora (sem casca) amarela
   quantidade: 800 g
-- nome: azeite
+- nome: Azeite
   quantidade: 3 c. sopa
-- nome: cebola
+- nome: Cebola
   quantidade: '1'
-- nome: dentes de alho
+- nome: Dentes de alho
   quantidade: '4'
-- nome: courgette
+- nome: Courgette
   quantidade: '1'
-- nome: batata
+- nome: Batata
   quantidade: '1'
-- nome: açafrão
+- nome: Açafrão
   quantidade: qb
-- nome: gengibre fresco
+- nome: Gengibre fresco
   quantidade: qb
-- nome: sal
+- nome: Sal
   quantidade: 1 c. sopa
-- nome: cebolinho
+- nome: Cebolinho
   quantidade: qb
 
 valores-nutricionais:
