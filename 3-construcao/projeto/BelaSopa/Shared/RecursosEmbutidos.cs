@@ -1,3 +1,4 @@
+using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
 
-namespace BelaSopa.Models
+namespace BelaSopa.Shared
 {
     public class RecursosEmbutidos
     {

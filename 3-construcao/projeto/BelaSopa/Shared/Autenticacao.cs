@@ -4,21 +4,20 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BelaSopa.Controllers
+namespace BelaSopa.Shared
 {
-    public static class Util
+    public static class Autenticacao
     {
-        public const string ROLES_CLIENTE = "Cliente";
         public const string ROLES_ADMINISTRADOR = "Administrador";
-        public const string ROLES_CLIENTE_OU_ADMINISTRADOR = ROLES_CLIENTE + ", " + ROLES_ADMINISTRADOR;
+        public const string ROLES_CLIENTE = "Cliente";
+        public const string ROLES_ADMINISTRADOR_OU_CLIENTE = ROLES_CLIENTE + ", " + ROLES_ADMINISTRADOR;
 
+        private const string CONTROLLER_INICIAL_ADMINISTRADOR = "Utilizadores";
         private const string CONTROLLER_INICIAL_CLIENTE = "Receitas";
-        private const string CONTROLLER_INICIAL_ADMINISTRADOR = "GestaoUtilizadores";
 
         public static async Task<IActionResult> AutenticarUtilizador(Controller controller, Utilizador utilizador)
         {
@@ -104,15 +103,6 @@ namespace BelaSopa.Controllers
             // não autenticado
 
             return null;
-        }
-
-        public static bool FuzzyContains(string textoOrigem, string textoContido)
-        {
-            return CultureInfo.CurrentCulture.CompareInfo.IndexOf(
-                textoOrigem,
-                textoContido,
-                CompareOptions.IgnoreCase | CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreSymbols
-                ) >= 0;
         }
     }
 }

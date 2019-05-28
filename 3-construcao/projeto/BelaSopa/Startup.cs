@@ -1,5 +1,6 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Utilizadores;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -75,7 +76,7 @@ namespace BelaSopa
 
                 // aplicar migrações pendentes (cria base de dados se não existir)
                 context.Database.Migrate();
-                
+
                 if (!databaseExisted)
                 {
                     // base de dados acabou de ser criada, realizar povoamento inicial

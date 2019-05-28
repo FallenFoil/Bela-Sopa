@@ -1,13 +1,13 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
 using System.Linq;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = Util.ROLES_CLIENTE)]
+    [Authorize(Roles = Autenticacao.ROLES_ADMINISTRADOR_OU_CLIENTE)]
     public class ReceitasController : Controller
     {
         private readonly BelaSopaContext context;
@@ -27,12 +27,12 @@ namespace BelaSopa.Controllers
             ViewData["nome"] = nome;
             ViewData["etiqueta"] = etiqueta;
             ViewData["dificuldade"] = dificuldade;
-            
+
             IQueryable<Receita> receitas = context.Receita;
-            
+
             if (nome != null)
                 receitas = receitas.Where(receita => Util.FuzzyContains(receita.Nome, nome));
-            
+
             if (etiqueta != null)
                 receitas = receitas.Where(r => r.ReceitaEtiqueta.Any(e => e.EtiquetaId == etiqueta));
 

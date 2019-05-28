@@ -1,15 +1,17 @@
 @model (List<Administrador> Administradores, List<Cliente> Clientes)
 @{
-    Layout = "_LayoutAdministrador";
-    ViewData["Title"] = "Gerir utilizadores";
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Utilizadores";
 }
+
+<h3>@ViewData["Title"]</h3>
 
 @if (TempData["Sucesso"] != null)
 {
     <p class="alert alert-success">@TempData["Sucesso"]</p>
 }
 
-<h3>Administradores</h3>
+<h4>Administradores</h4>
 
 <a asp-action="AdicionarAdministrador">Adicionar administrador</a>
 
@@ -26,7 +28,7 @@
     }
 </ul>
 
-<h3>Clientes</h3>
+<h4>Clientes</h4>
 
 <ul>
     @foreach (var cliente in Model.Clientes)

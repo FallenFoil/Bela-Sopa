@@ -1,13 +1,13 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
 using System.Linq;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = Util.ROLES_CLIENTE)]
+    [Authorize(Roles = Autenticacao.ROLES_ADMINISTRADOR_OU_CLIENTE)]
     public class IngredientesController : Controller
     {
         private readonly BelaSopaContext context;
@@ -28,7 +28,7 @@ namespace BelaSopa.Controllers
                 ingredientes = ingredientes.Where(ingrediente => Util.FuzzyContains(ingrediente.Nome, nome));
 
             var viewModel = ingredientes.ToList();
-            
+
             return View(viewName: "ListaIngredientes", model: viewModel);
         }
     }

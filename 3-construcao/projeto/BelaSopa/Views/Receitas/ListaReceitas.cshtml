@@ -1,9 +1,10 @@
 @model (List<Etiqueta> Etiquetas, List<Receita> Receitas)
 @{
-    Layout = "_LayoutCliente";
+    Layout = "_LayoutAutenticado";
     ViewData["Title"] = "Receitas";
 }
-<h3>Receitas</h3>
+
+<h3>@ViewData["Title"]</h3>
 
 <form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
     <div class="container" style="border-bottom: 1px solid #717171;">

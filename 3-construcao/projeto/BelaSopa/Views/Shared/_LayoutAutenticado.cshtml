@@ -1,0 +1,134 @@
+@{
+    Layout = "_Layout";
+}
+
+@section AppendToHead
+{
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="~/style.css" />
+}
+
+<div class="wrapper">
+
+    <!-- sidebar  -->
+
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img id="logo_icon" src="~/logo.png" alt="Bela Sopa">
+            <h3 id="logo">Bela Sopa</h3>
+            @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLES_ADMINISTRADOR))
+            {
+                <p style="color: #ffffff">Olá, @User.Identity.Name.<br />Autenticado como administrador.</p>
+            }
+            else
+            {
+                <p style="color: #ffffff">Olá, @User.Identity.Name.</p>
+            }
+            <hr />
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fas fa-align-justify"></i>
+            </button>
+        </div>
+        <ul class="list-unstyled components">
+            @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLES_ADMINISTRADOR))
+            {
+                <li>
+                    <a asp-controller="ContaAdministrador" asp-action="Index">
+                        <i class="fas fa-user"></i>
+                        <span>A minha conta</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Utilizadores" asp-action="Index">
+                        <i class="fas fa-users"></i>
+                        <span>Utilizadores</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Receitas" asp-action="Index">
+                        <i class="fas fa-book"></i>
+                        <span>Receitas</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Ingredientes" asp-action="Index">
+                        <i class="fas fa-carrot"></i>
+                        <span>Ingredientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Tecnicas" asp-action="Index">
+                        <i class="fas fa-utensils"></i>
+                        <span>Técnicas</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li id="contamenu">
+                    <a asp-controller="ContaCliente" asp-action="Index">
+                        <i class="fas fa-user"></i>
+                        <span>A minha conta</span>
+                    </a>
+                </li>
+                <li id="ConfeçaoMenu">
+                    <a asp-controller="EmConfecao" asp-action="Index">
+                        <i class="fas fa-play"></i>
+                        <span>Em confeção</span>
+                    </a>
+                </li>
+                <li id="ReceitasMenu">
+                    <a asp-controller="Receitas" asp-action="Index">
+                        <i class="fas fa-book"></i>
+                        <span>Receitas</span>
+                    </a>
+                </li>
+                <li id="TecnicasMenu">
+                    <a asp-controller="Tecnicas" asp-action="Index">
+                        <i class="fas fa-utensils"></i>
+                        <span>Técnicas</span>
+                    </a>
+                </li>
+                <li id="IngredientesMenu">
+                    <a asp-controller="Ingredientes" asp-action="Index">
+                        <i class="fas fa-carrot"></i>
+                        <span>Ingredientes</span>
+                    </a>
+                </li>
+                <li id="EmentaMenu">
+                    <a asp-controller="EmentaSemanal" asp-action="Index">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Ementa semanal</span>
+                    </a>
+                </li>
+                <li id="HistoricoMenu">
+                    <a asp-controller="Historico" asp-action="Index">
+                        <i class="fas fa-history"></i>
+                        <span>Histórico</span>
+                    </a>
+                </li>
+            }
+            <hr />
+            <li id="SairMenu">
+                <a asp-controller="Autenticacao" asp-action="Sair">Sair</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- page content -->
+
+    <div id="content">
+        @RenderBody()
+        <hr /><footer><p>&copy; 2019 &ndash; Bela Sopa</p></footer>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $('#content').toggleClass('active');
+        });
+    });
+</script>
