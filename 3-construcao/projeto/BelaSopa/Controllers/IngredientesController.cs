@@ -28,6 +28,8 @@ namespace BelaSopa.Controllers
             if (nome != null)
                 ingredientes = ingredientes.Where(ingrediente => Util.FuzzyContains(ingrediente.Nome, nome));
 
+            ingredientes = ingredientes.OrderBy(ingrediente => ingrediente.Nome);
+
             var viewModel = ingredientes.ToList();
 
             return View(viewName: "ListaIngredientes", model: viewModel);

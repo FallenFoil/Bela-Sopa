@@ -39,6 +39,8 @@ namespace BelaSopa.Controllers
             if (dificuldade != null)
                 receitas = receitas.Where(receita => receita.Dificuldade == dificuldade);
 
+            receitas = receitas.OrderBy(receita => receita.Nome);
+
             var viewModel = (
                 Etiquetas: context.Etiqueta.ToList(),
                 Receitas: receitas.ToList()
