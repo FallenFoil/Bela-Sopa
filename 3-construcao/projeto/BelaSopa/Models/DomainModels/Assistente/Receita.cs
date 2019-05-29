@@ -63,6 +63,14 @@ namespace BelaSopa.Models.DomainModels.Assistente
         {
             return Convert.ToBase64String(Imagem, Base64FormattingOptions.None);
         }
+
+        public bool HasEtiqueta(int EtiquetaId) {
+            foreach(ReceitaEtiqueta re in this.ReceitaEtiqueta) {
+                if (re.EtiquetaId == EtiquetaId)
+                    return true;
+            }
+            return false;
+        }
     }
 
     public class ReceitaEtiqueta
