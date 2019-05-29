@@ -52,7 +52,7 @@ namespace BelaSopa.Controllers
             {
                 var trimmed = parte.Trim();
 
-                if (!trimmed.EndsWith('.'))
+                if (!trimmed.EndsWith('.') && !trimmed.EndsWith(':'))
                 {
                     // título da secção
 

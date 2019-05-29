@@ -5,10 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Ingredientes\abacate.yaml" />
+    <None Remove="Data\Ingredientes\abobora.yaml" />
+    <None Remove="Data\Ingredientes\agriao.yaml" />
+    <None Remove="Data\Ingredientes\alho.yaml" />
     <None Remove="Data\Ingredientes\batata-doce.yaml" />
+    <None Remove="Data\Ingredientes\cebola.yaml" />
     <None Remove="Data\Ingredientes\citrinos.yaml" />
     <None Remove="Data\Ingredientes\frutos-secos.yaml" />
-    <None Remove="Data\Ingredientes\morangos.yaml" />
+    <None Remove="Data\Ingredientes\limao.yaml" />
+    <None Remove="Data\Ingredientes\morango.yaml" />
+    <None Remove="Data\Ingredientes\pimento.yaml" />
+    <None Remove="Data\Ingredientes\tomate.yaml" />
     <None Remove="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <None Remove="Data\Receitas\arjamolho-com-pimentos.yaml" />
     <None Remove="Data\Receitas\arjamolho.yaml" />
@@ -134,10 +142,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Data\Ingredientes\abacate.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\abobora.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\agriao.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\alho.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\batata-doce.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\cebola.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\citrinos.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\frutos-secos.yaml" />
-    <EmbeddedResource Include="Data\Ingredientes\morangos.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\limao.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\morango.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\pimento.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\tomate.yaml" />
     <EmbeddedResource Include="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <EmbeddedResource Include="Data\Receitas\arjamolho-com-pimentos.yaml" />
     <EmbeddedResource Include="Data\Receitas\arjamolho.yaml" />
