@@ -4,35 +4,22 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190529203115_v7")]
+    partial class v7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
-                {
-                    b.Property<int>("ClienteId");
-
-                    b.Property<int>("ReceitaId");
-
-                    b.Property<DateTime>("Horario");
-
-                    b.HasKey("ClienteId", "ReceitaId");
-
-                    b.HasIndex("ReceitaId");
-
-                    b.ToTable("ClienteEmentaSemanal");
-                });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>
                 {
@@ -319,19 +306,6 @@ namespace BelaSopa.Migrations
                     b.HasKey("UtilizadorId");
 
                     b.ToTable("Cliente");
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
-                {
-                    b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
-                        .WithMany("ClienteEmentaSemanal")
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
-                        .WithMany("ClienteEmentaSemanal")
-                        .HasForeignKey("ReceitaId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ProcessoTarefa", b =>
