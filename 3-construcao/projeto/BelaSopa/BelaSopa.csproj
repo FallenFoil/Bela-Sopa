@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <None Remove="Data\Ingredientes\batata-doce.yaml" />
+    <None Remove="Data\Ingredientes\citrinos.yaml" />
+    <None Remove="Data\Ingredientes\frutos-secos.yaml" />
     <None Remove="Data\Ingredientes\morangos.yaml" />
     <None Remove="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <None Remove="Data\Receitas\arjamolho-com-pimentos.yaml" />
@@ -133,6 +135,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Ingredientes\batata-doce.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\citrinos.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\frutos-secos.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\morangos.yaml" />
     <EmbeddedResource Include="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <EmbeddedResource Include="Data\Receitas\arjamolho-com-pimentos.yaml" />
