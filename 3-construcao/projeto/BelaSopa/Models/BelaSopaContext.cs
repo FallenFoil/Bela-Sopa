@@ -18,9 +18,9 @@ namespace BelaSopa.Models
 
         public Utilizador GetUtilizador(string nomeDeUtilizador)
         {
-            return (Utilizador)
-                this.Clientes.SingleOrDefault(c => c.NomeDeUtilizador == nomeDeUtilizador) ??
-                this.Administradores.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador);
+            return
+                this.Clientes.SingleOrDefault(c => c.NomeDeUtilizador == nomeDeUtilizador) as Utilizador ??
+                this.Administradores.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador) as Utilizador;
         }
 
         public DbSet<Administrador> Administradores { get; set; }
