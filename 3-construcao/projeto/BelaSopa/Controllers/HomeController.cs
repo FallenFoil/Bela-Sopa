@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BelaSopa.Controllers
 {
-   // [Authorize(Roles = Util.ROLES_CLIENTE)]
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly BelaSopaContext context;

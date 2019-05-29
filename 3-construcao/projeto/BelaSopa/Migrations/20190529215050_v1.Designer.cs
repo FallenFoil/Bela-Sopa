@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    [Migration("20190529203525_v9")]
-    partial class v9
+    [Migration("20190529215050_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,21 @@ namespace BelaSopa.Migrations
                 .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
+                {
+                    b.Property<int>("ClienteId");
+
+                    b.Property<int>("ReceitaId");
+
+                    b.Property<DateTime>("Horario");
+
+                    b.HasKey("ClienteId", "ReceitaId");
+
+                    b.HasIndex("ReceitaId");
+
+                    b.ToTable("ClienteEmentaSemanal");
+                });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>
                 {
@@ -66,24 +81,15 @@ namespace BelaSopa.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ReceitaId");
+
                     b.Property<int>("Tempo");
 
                     b.HasKey("ProcessoId");
 
+                    b.HasIndex("ReceitaId");
+
                     b.ToTable("Processo");
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ProcessoTarefa", b =>
-                {
-                    b.Property<int>("ProcessoId");
-
-                    b.Property<int>("TarefaId");
-
-                    b.HasKey("ProcessoId", "TarefaId");
-
-                    b.HasIndex("TarefaId");
-
-                    b.ToTable("ProcessoTarefa");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Receita", b =>
@@ -132,7 +138,7 @@ namespace BelaSopa.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IngredienteId");
+                    b.Property<int?>("IngredienteId");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -150,20 +156,7 @@ namespace BelaSopa.Migrations
 
                     b.HasIndex("ReceitaId");
 
-                    b.ToTable("IngredienteUtilizado");
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaProcesso", b =>
-                {
-                    b.Property<int>("ReceitaId");
-
-                    b.Property<int>("ProcessoId");
-
-                    b.HasKey("ReceitaId", "ProcessoId");
-
-                    b.HasAlternateKey("ProcessoId", "ReceitaId");
-
-                    b.ToTable("ReceitaProcesso");
+                    b.ToTable("ReceitaIngrediente");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tarefa", b =>
@@ -176,9 +169,13 @@ namespace BelaSopa.Migrations
                         .IsRequired()
                         .HasMaxLength(200);
 
+                    b.Property<int>("ProcessoId");
+
                     b.Property<int>("Tempo");
 
                     b.HasKey("TarefaId");
+
+                    b.HasIndex("ProcessoId");
 
                     b.ToTable("Tarefa");
                 });
@@ -316,16 +313,24 @@ namespace BelaSopa.Migrations
                     b.ToTable("Cliente");
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ProcessoTarefa", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
                 {
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Processo", "Processo")
-                        .WithMany("ProcessoTarefa")
-                        .HasForeignKey("ProcessoId")
+                    b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
+                        .WithMany("ClienteEmentaSemanal")
+                        .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tarefa", "Tarefa")
-                        .WithMany("ProcessoTarefa")
-                        .HasForeignKey("TarefaId")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
+                        .WithMany("ClienteEmentaSemanal")
+                        .HasForeignKey("ReceitaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Processo", b =>
+                {
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
+                        .WithMany()
+                        .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -346,25 +351,19 @@ namespace BelaSopa.Migrations
                 {
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Ingrediente", "Ingrediente")
                         .WithMany("ReceitaIngrediente")
-                        .HasForeignKey("IngredienteId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("IngredienteId");
 
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
-                        .WithMany("IngredientesUtilizados")
+                        .WithMany()
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaProcesso", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tarefa", b =>
                 {
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Processo", "Processo")
-                        .WithMany("ReceitaProcesso")
+                        .WithMany("Tarefas")
                         .HasForeignKey("ProcessoId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
-                        .WithMany("ReceitaProcesso")
-                        .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

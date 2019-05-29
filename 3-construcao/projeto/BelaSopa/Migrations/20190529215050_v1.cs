@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -9,24 +9,24 @@ namespace BelaSopa.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Administradores",
+                name: "Administrador",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    UtilizadorId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     NomeDeUtilizador = table.Column<string>(maxLength: 32, nullable: false),
                     HashPalavraPasse = table.Column<byte[]>(maxLength: 32, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Administradores", x => x.Id);
+                    table.PrimaryKey("PK_Administrador", x => x.UtilizadorId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Clientes",
+                name: "Cliente",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    UtilizadorId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     NomeDeUtilizador = table.Column<string>(maxLength: 32, nullable: false),
                     HashPalavraPasse = table.Column<byte[]>(maxLength: 32, nullable: false),
@@ -34,20 +34,20 @@ namespace BelaSopa.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.Id);
+                    table.PrimaryKey("PK_Cliente", x => x.UtilizadorId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Etiqueta",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    EtiquetaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Etiqueta", x => x.Id);
+                    table.PrimaryKey("PK_Etiqueta", x => x.EtiquetaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,10 +56,10 @@ namespace BelaSopa.Migrations
                 {
                     IngredienteId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(maxLength: 20, nullable: false),
-                    Descricao = table.Column<string>(maxLength: 200, nullable: false),
-                    ImagePath = table.Column<string>(maxLength: 50, nullable: false),
-                    Link = table.Column<string>(maxLength: 50, nullable: false)
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
+                    Descricao = table.Column<string>(nullable: false),
+                    Texto = table.Column<string>(nullable: false),
+                    Imagem = table.Column<byte[]>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,48 +67,21 @@ namespace BelaSopa.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Processo",
-                columns: table => new
-                {
-                    ProcessoId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Tempo = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Processo", x => x.ProcessoId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Receita",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    ReceitaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(maxLength: 100, nullable: false),
                     Descricao = table.Column<string>(nullable: false),
                     Dificuldade = table.Column<int>(nullable: false),
                     MinutosPreparacao = table.Column<int>(nullable: false),
-                    NumDoses = table.Column<int>(nullable: false),
+                    NumeroDoses = table.Column<int>(nullable: false),
                     Imagem = table.Column<byte[]>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Receita", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Tarefa",
-                columns: table => new
-                {
-                    TarefaId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Descricao = table.Column<string>(maxLength: 200, nullable: false),
-                    Tempo = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tarefa", x => x.TarefaId);
+                    table.PrimaryKey("PK_Receita", x => x.ReceitaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -144,11 +117,56 @@ namespace BelaSopa.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ClienteEmentaSemanal",
+                columns: table => new
+                {
+                    ClienteId = table.Column<int>(nullable: false),
+                    ReceitaId = table.Column<int>(nullable: false),
+                    Horario = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClienteEmentaSemanal", x => new { x.ClienteId, x.ReceitaId });
+                    table.ForeignKey(
+                        name: "FK_ClienteEmentaSemanal_Cliente_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "Cliente",
+                        principalColumn: "UtilizadorId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClienteEmentaSemanal_Receita_ReceitaId",
+                        column: x => x.ReceitaId,
+                        principalTable: "Receita",
+                        principalColumn: "ReceitaId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Processo",
+                columns: table => new
+                {
+                    ProcessoId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Tempo = table.Column<int>(nullable: false),
+                    ReceitaId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Processo", x => x.ProcessoId);
+                    table.ForeignKey(
+                        name: "FK_Processo_Receita_ReceitaId",
+                        column: x => x.ReceitaId,
+                        principalTable: "Receita",
+                        principalColumn: "ReceitaId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ReceitaEtiqueta",
                 columns: table => new
                 {
-                    EtiquetaId = table.Column<int>(nullable: false),
-                    ReceitaId = table.Column<int>(nullable: false)
+                    ReceitaId = table.Column<int>(nullable: false),
+                    EtiquetaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -158,13 +176,13 @@ namespace BelaSopa.Migrations
                         name: "FK_ReceitaEtiqueta_Etiqueta_EtiquetaId",
                         column: x => x.EtiquetaId,
                         principalTable: "Etiqueta",
-                        principalColumn: "Id",
+                        principalColumn: "EtiquetaId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ReceitaEtiqueta_Receita_ReceitaId",
                         column: x => x.ReceitaId,
                         principalTable: "Receita",
-                        principalColumn: "Id",
+                        principalColumn: "ReceitaId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -172,74 +190,48 @@ namespace BelaSopa.Migrations
                 name: "ReceitaIngrediente",
                 columns: table => new
                 {
+                    ReceitaIngredienteId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
+                    Quantidade = table.Column<string>(maxLength: 50, nullable: false),
                     ReceitaId = table.Column<int>(nullable: false),
-                    IngredienteId = table.Column<int>(nullable: false),
-                    Quantidade = table.Column<int>(nullable: false)
+                    IngredienteId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReceitaIngrediente", x => new { x.ReceitaId, x.IngredienteId });
-                    table.UniqueConstraint("AK_ReceitaIngrediente_IngredienteId_ReceitaId", x => new { x.IngredienteId, x.ReceitaId });
+                    table.PrimaryKey("PK_ReceitaIngrediente", x => x.ReceitaIngredienteId);
                     table.ForeignKey(
                         name: "FK_ReceitaIngrediente_Ingrediente_IngredienteId",
                         column: x => x.IngredienteId,
                         principalTable: "Ingrediente",
                         principalColumn: "IngredienteId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ReceitaIngrediente_Receita_ReceitaId",
                         column: x => x.ReceitaId,
                         principalTable: "Receita",
-                        principalColumn: "Id",
+                        principalColumn: "ReceitaId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReceitaProcesso",
+                name: "Tarefa",
                 columns: table => new
                 {
-                    ReceitaId = table.Column<int>(nullable: false),
+                    TarefaId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Descricao = table.Column<string>(maxLength: 200, nullable: false),
+                    Tempo = table.Column<int>(nullable: false),
                     ProcessoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReceitaProcesso", x => new { x.ReceitaId, x.ProcessoId });
-                    table.UniqueConstraint("AK_ReceitaProcesso_ProcessoId_ReceitaId", x => new { x.ProcessoId, x.ReceitaId });
+                    table.PrimaryKey("PK_Tarefa", x => x.TarefaId);
                     table.ForeignKey(
-                        name: "FK_ReceitaProcesso_Processo_ProcessoId",
+                        name: "FK_Tarefa_Processo_ProcessoId",
                         column: x => x.ProcessoId,
                         principalTable: "Processo",
                         principalColumn: "ProcessoId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ReceitaProcesso_Receita_ReceitaId",
-                        column: x => x.ReceitaId,
-                        principalTable: "Receita",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProcessoTarefa",
-                columns: table => new
-                {
-                    ProcessoId = table.Column<int>(nullable: false),
-                    TarefaId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProcessoTarefa", x => new { x.ProcessoId, x.TarefaId });
-                    table.ForeignKey(
-                        name: "FK_ProcessoTarefa_Processo_ProcessoId",
-                        column: x => x.ProcessoId,
-                        principalTable: "Processo",
-                        principalColumn: "ProcessoId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProcessoTarefa_Tarefa_TarefaId",
-                        column: x => x.TarefaId,
-                        principalTable: "Tarefa",
-                        principalColumn: "TarefaId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -317,9 +309,29 @@ namespace BelaSopa.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProcessoTarefa_TarefaId",
-                table: "ProcessoTarefa",
-                column: "TarefaId");
+                name: "IX_ClienteEmentaSemanal_ReceitaId",
+                table: "ClienteEmentaSemanal",
+                column: "ReceitaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Processo_ReceitaId",
+                table: "Processo",
+                column: "ReceitaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ReceitaIngrediente_IngredienteId",
+                table: "ReceitaIngrediente",
+                column: "IngredienteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ReceitaIngrediente_ReceitaId",
+                table: "ReceitaIngrediente",
+                column: "ReceitaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tarefa_ProcessoId",
+                table: "Tarefa",
+                column: "ProcessoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TarefaTecnica_TecnicaId",
@@ -335,22 +347,16 @@ namespace BelaSopa.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Administradores");
+                name: "Administrador");
 
             migrationBuilder.DropTable(
-                name: "Clientes");
-
-            migrationBuilder.DropTable(
-                name: "ProcessoTarefa");
+                name: "ClienteEmentaSemanal");
 
             migrationBuilder.DropTable(
                 name: "ReceitaEtiqueta");
 
             migrationBuilder.DropTable(
                 name: "ReceitaIngrediente");
-
-            migrationBuilder.DropTable(
-                name: "ReceitaProcesso");
 
             migrationBuilder.DropTable(
                 name: "TarefaIngrediente");
@@ -362,13 +368,10 @@ namespace BelaSopa.Migrations
                 name: "TarefaUtensilio");
 
             migrationBuilder.DropTable(
+                name: "Cliente");
+
+            migrationBuilder.DropTable(
                 name: "Etiqueta");
-
-            migrationBuilder.DropTable(
-                name: "Processo");
-
-            migrationBuilder.DropTable(
-                name: "Receita");
 
             migrationBuilder.DropTable(
                 name: "Ingrediente");
@@ -381,6 +384,12 @@ namespace BelaSopa.Migrations
 
             migrationBuilder.DropTable(
                 name: "Utensilio");
+
+            migrationBuilder.DropTable(
+                name: "Processo");
+
+            migrationBuilder.DropTable(
+                name: "Receita");
         }
     }
 }

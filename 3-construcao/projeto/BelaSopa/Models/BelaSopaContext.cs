@@ -84,10 +84,10 @@ namespace BelaSopa.Models
         public DbSet<Administrador> Administrador { get; set; }
 
         public DbSet<Cliente> Cliente { get; set; }
-
-        //public DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
-        //public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-        //public DbSet<ClienteFavorito> ClienteFavorito { get; set; }
+        
+        //public DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
+        public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        //public DbSet<ClienteFavorito> ClientesFavorito { get; set; }
 
         public DbSet<Receita> Receita { get; set; }
 
@@ -142,16 +142,16 @@ namespace BelaSopa.Models
             //    .WithMany(i => i.ClienteFavorito)
             //    .HasForeignKey(ti => ti.ReceitaId);
 
-            //modelBuilder.Entity<ClienteEmentaSemanal>()
-            //    .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
-            //modelBuilder.Entity<ClienteEmentaSemanal>()
-            //  .HasOne(ti => ti.Cliente)
-            //  .WithMany(t => t.ClienteEmentaSemanal)
-            //  .HasForeignKey(ti => ti.ClienteId);
-            //modelBuilder.Entity<ClienteEmentaSemanal>()
-            //    .HasOne(ti => ti.Receita)
-            //    .WithMany(i => i.ClienteEmentaSemanal)
-            //    .HasForeignKey(ti => ti.ReceitaId);
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+              .HasOne(ti => ti.Cliente)
+              .WithMany(t => t.ClienteEmentaSemanal)
+              .HasForeignKey(ti => ti.ClienteId);
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+                .HasOne(ti => ti.Receita)
+                .WithMany(i => i.ClienteEmentaSemanal)
+                .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<TarefaIngrediente>()
                 .HasKey(ti => new { ti.TarefaId, ti.IngredienteId });

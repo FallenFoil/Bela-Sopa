@@ -19,6 +19,21 @@ namespace BelaSopa.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
+                {
+                    b.Property<int>("ClienteId");
+
+                    b.Property<int>("ReceitaId");
+
+                    b.Property<DateTime>("Horario");
+
+                    b.HasKey("ClienteId", "ReceitaId");
+
+                    b.HasIndex("ReceitaId");
+
+                    b.ToTable("ClienteEmentaSemanal");
+                });
+
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>
                 {
                     b.Property<int>("EtiquetaId")
@@ -294,6 +309,19 @@ namespace BelaSopa.Migrations
                     b.HasKey("UtilizadorId");
 
                     b.ToTable("Cliente");
+                });
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
+                {
+                    b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
+                        .WithMany("ClienteEmentaSemanal")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
+                        .WithMany("ClienteEmentaSemanal")
+                        .HasForeignKey("ReceitaId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Processo", b =>
