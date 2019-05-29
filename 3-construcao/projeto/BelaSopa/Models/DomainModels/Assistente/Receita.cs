@@ -29,6 +29,24 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Required]
         public byte[] Imagem { get; set; }
 
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<Processo> Processos { get; set; } = new List<Processo>();
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ClienteFavorito> ClienteFavorito { get; set; }
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ClienteFinalizado> ClienteFinalizado { get; set; }
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+
         //[NotMapped, JsonIgnore]
         //public virtual ICollection<QuantidadeIngrediente> QuantidadeIngredientes { get; set; }
 
@@ -41,24 +59,6 @@ namespace BelaSopa.Models.DomainModels.Assistente
         //[Required]
         //[StringLength(50)]
         //public string Link { get; set; }
-
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
-
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
-
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; } = new List<ReceitaProcesso>();
-
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteFavorito> ClienteFavorito { get; set; }
-
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteFinalizado> ClienteFinalizado { get; set; }
-
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
         public string GetImagemBase64()
         {

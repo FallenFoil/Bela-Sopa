@@ -1,26 +1,25 @@
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class ReceitaIngrediente
     {
         [Key]
-        public int ReceitaId { get; set; }
+        public int ReceitaIngredienteId { get; set; }
 
-        [Key]
-        public int IngredienteId { get; set; }
-
-        [Required]
+        [Required, StringLength(100)]
         public string Nome { get; set; }
-        [Required]
+
+        [Required, StringLength(50)]
         public string Quantidade { get; set; }
 
-        [NotMapped, JsonIgnore]
-        public virtual Ingrediente Ingrediente { get; set; }
+        public int ReceitaId { get; set; }
 
-        [NotMapped, JsonIgnore]
         public virtual Receita Receita { get; set; }
+
+        public int? IngredienteId { get; set; }
+
+        public virtual Ingrediente Ingrediente { get; set; }
     }
 }

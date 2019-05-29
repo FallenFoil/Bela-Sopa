@@ -16,7 +16,7 @@ namespace BelaSopa.Shared
     {
         public static void CarregarReceitasDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", async yamlReceita =>
+            CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", yamlReceita =>
             {
                 Dificuldade dificuldade;
 
@@ -38,15 +38,24 @@ namespace BelaSopa.Shared
                     Imagem = yamlReceita.Imagem
                 };
 
-                await context.AdicionarReceitaAsync(receita, yamlReceita.Etiquetas);
+                foreach (var yamlIngrediente in yamlReceita.Ingredientes)
+                {
+                    receita.ReceitaIngrediente.Add(new ReceitaIngrediente
+                    {
+                        Nome = yamlIngrediente.Nome,
+                        Quantidade = yamlIngrediente.Quantidade
+                    });
+                }
+
+                context.AdicionarReceita(receita, yamlReceita.Etiquetas);
             });
         }
 
         public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", async ingrediente =>
+            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
             {
-                await context.AdicionarIngredienteAsync(ingrediente);
+                context.AdicionarIngrediente(ingrediente);
             });
         }
 

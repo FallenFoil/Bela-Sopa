@@ -29,8 +29,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<TarefaIngrediente> TarefaIngrediente { get; set; } = new List<TarefaIngrediente>();
-
-        [NotMapped, JsonIgnore]
+        
         public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
 
         public string GetImagemBase64()

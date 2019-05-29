@@ -13,9 +13,9 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int EtiquetaId { get; set; }
 
         [NotMapped, JsonIgnore]
-        public Receita Receita { get; set; }
+        public virtual Receita Receita { get; set; }
 
         [NotMapped, JsonIgnore]
-        public Etiqueta Etiqueta { get; set; }
+        public virtual Etiqueta Etiqueta { get; set; }
     }
 }

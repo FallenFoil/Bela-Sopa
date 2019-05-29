@@ -10,6 +10,30 @@
 
 <p class="font-italic">@Model.Descricao</p>
 
+<p>Ingredientes:</p>
+
+<ul>
+    @foreach (var ingredienteUtilizado in Model.ReceitaIngrediente)
+    {
+        <li>
+            @if (ingredienteUtilizado.Ingrediente != null)
+            {
+                <a
+                    asp-controller="Ingredientes"
+                    asp-action="Detalhes"
+                    asp-route-idReceita="@ingredienteUtilizado.Ingrediente.IngredienteId"
+                    >
+                    @ingredienteUtilizado.Nome (@ingredienteUtilizado.Quantidade)
+                </a>
+            }
+            else
+            {
+                <text>@ingredienteUtilizado.Nome (@ingredienteUtilizado.Quantidade)</text>
+            }
+        </li>
+    }
+</ul>
+
 <img
     src="data:image/*;base64,@Model.GetImagemBase64()"
     alt=""

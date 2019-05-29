@@ -7,45 +7,16 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Processo
     {
-
-        public Processo()
-        {
-
-        }
-
         [Key]
         public int ProcessoId { get; set; }
+
         [Required]
         public int Tempo { get; set; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<ProcessoTarefa> ProcessoTarefa { get; set; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; }
-    }
+        
+        public virtual ICollection<Tarefa> Tarefas { get; set; }
 
-    public class ProcessoTarefa
-    {
-        public ProcessoTarefa() { }
-        public ProcessoTarefa(int idProcesso, int idTarefa)
-        {
-            this.ProcessoId = idProcesso;
-            this.TarefaId = idTarefa;
-        }
+        public int ReceitaId { get; set; }
 
-        [Key]
-        public int ProcessoId { get; set; }
-
-        [NotMapped]
-        [JsonIgnore]
-        public virtual Processo Processo { get; set; }
-
-        [Key]
-        public int TarefaId { get; set; }
-
-        [NotMapped]
-        [JsonIgnore]
-        public virtual Tarefa Tarefa { get; set; }
+        public virtual Receita Receita { get; set; }
     }
 }

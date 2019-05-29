@@ -7,6 +7,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Tarefa
     {
+        [Key]
         public int TarefaId { get; set; }
 
         [Required, StringLength(200)]
@@ -24,8 +25,9 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<TarefaTecnica> TarefaTecnica { get; set; } = new List<TarefaTecnica>();
 
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ProcessoTarefa> ProcessoTarefa { get; set; } = new List<ProcessoTarefa>();
+        public int ProcessoId { get; set; }
+
+        public virtual Processo Processo { get; set; }
     }
 
     public class TarefaIngrediente
@@ -39,12 +41,12 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [Key]
         public int TarefaId { get; set; }
-        [NotMapped]
+
         public virtual Tarefa Tarefa { get; set; }
 
         [Key]
         public int IngredienteId { get; set; }
-        [NotMapped]
+
         public virtual Ingrediente Ingrediente { get; set; }
     }
 
@@ -59,12 +61,12 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [Key]
         public int TarefaId { get; set; }
-        [NotMapped]
+
         public virtual Tarefa Tarefa { get; set; }
 
         [Key]
         public int UtensilioId { get; set; }
-        [NotMapped]
+
         public virtual Utensilio Utensilio { get; set; }
     }
 
@@ -79,12 +81,12 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [Key]
         public int TarefaId { get; set; }
-        [NotMapped]
+
         public virtual Tarefa Tarefa { get; set; }
 
         [Key]
         public int TecnicaId { get; set; }
-        [NotMapped]
+
         public virtual Tecnica Tecnica { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace BelaSopa.Controllers
             IQueryable<Receita> receitas = context.Receita;
 
             if (nome != null)
-                receitas = receitas.Where(receita => Util.FuzzyContains(receita.Nome, nome));
+                receitas = receitas.Where(receita => Util.FairlyFuzzyContains(receita.Nome, nome));
 
             if (etiqueta != null)
                 receitas = receitas.Where(receita => receita.ReceitaEtiqueta.Any(e => e.EtiquetaId == etiqueta));
