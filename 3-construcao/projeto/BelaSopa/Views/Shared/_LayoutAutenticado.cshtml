@@ -20,7 +20,7 @@
             {
                 <p style="color: #ffffff">Olá, @User.Identity.Name.<br />Autenticado como administrador.</p>
             }
-            else
+            else if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
             {
                 <p style="color: #ffffff">Olá, @User.Identity.Name.</p>
             }
