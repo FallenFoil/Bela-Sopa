@@ -14,7 +14,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    /*color: #999;*/
 }
 
 a,
@@ -62,8 +62,9 @@ span {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 16em;
+    max-width: 16em;
+    padding: 15px;
     background: #4CAF50;
     color: #fff;
     transition: all 0.3s;
@@ -72,8 +73,8 @@ span {
 }
 
     #sidebar.active {
-        min-width: 80px;
-        max-width: 80px;
+        min-width: 5em;
+        max-width: 5em;
         text-align: center;
     }
 
@@ -97,7 +98,7 @@ span {
     }
 
     #sidebar.active ul li a {
-        padding: 20px 10px;
+        padding: 10px 10px;
         text-align: center;
         font-size: 0.85em;
     }
@@ -124,7 +125,7 @@ span {
 
     #sidebar .sidebar-header {
         text-align: center;
-        padding: 20px;
+        /*padding: 20px;*/
         background: #4CAF50;
         border-bottom: 1px solid #4CAF50;
     }
@@ -166,7 +167,7 @@ span {
         }
 
         #sidebar ul li a i {
-            margin-right: 10px;
+            /*margin-right: 10px;*/
         }
 
     #sidebar.active ul li a span {
@@ -226,22 +227,22 @@ a.article:hover {
 
 #content {
     width: 100%;
-    margin-left: 20%;
-    padding: 20px;
+    margin-left: 16em;
+    padding: 3em;
     min-height: 100vh;
     transition: all 0.3s;
 }
 
     #content.active {
         width: 100%;
-        margin-left: 5%;
-        padding: 20px;
+        margin-left: 5em;
+        padding: 3em;
         min-height: 100vh;
         transition: all 0.3s;
     }
 
         #content.active h3 {
-            margin-left: 3%;
+            /*margin-left: 3%;*/
         }
 
 /* ---------------------------------------------------
@@ -283,8 +284,8 @@ a.article:hover {
 ----------------------------------------------------- */
 @media (max-width: 768px) {
     #sidebar {
-        min-width: 80px;
-        max-width: 80px;
+        min-width: 5em;
+        max-width: 5em;
         text-align: center;
         margin-left: -80px !important;
     }
@@ -312,7 +313,7 @@ a.article:hover {
     }
 
     #sidebar ul li a {
-        padding: 20px 10px;
+        padding: 10px 10px;
     }
 
         #sidebar ul li a span {

@@ -1,5 +1,29 @@
-@model Receita
+@model (Ingrediente Ingrediente, List<(string Titulo, List<string> Paragrafos)> Seccoes)
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "TODO";
+    ViewData["Title"] = Model.Ingrediente.Nome;
+}
+
+<h2>@Model.Ingrediente.Nome</h2>
+<p class="font-italic">@Model.Ingrediente.Descricao</p>
+
+<img
+    src="data:image/*;base64,@Model.Ingrediente.GetImagemBase64()"
+    alt=""
+    style="max-width: 100%; object-fit: cover;"
+    />
+
+<hr />
+
+@foreach (var seccao in Model.Seccoes)
+{
+    if (seccao.Titulo != null)
+    {
+        <h4>@seccao.Titulo</h4>
+    }
+
+    foreach (var paragrafo in seccao.Paragrafos)
+    {
+        <p>@paragrafo</p>
+    }
 }

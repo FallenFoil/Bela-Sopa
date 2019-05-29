@@ -26,8 +26,8 @@
             @for (; j < 3 && i < Model.Count; j++, i++)
             {
                 <div class="col-sm Receita">
-                    <a href="#">
-                        <img class="ReceitaImg" src="data:image/x-icon;base64,@Model[i].GetImagemBase64()" alt="" />
+                    <a asp-action="Detalhes" asp-route-idIngrediente="@Model[i].IngredienteId">
+                        <img class="ReceitaImg" src="data:image/*;base64,@Model[i].GetImagemBase64()" alt="" />
                         <p>@Model[i].Nome</p>
                     </a>
                 </div>
