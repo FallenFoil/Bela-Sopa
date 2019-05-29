@@ -48,5 +48,21 @@ namespace BelaSopa.Controllers
 
             return View(viewName: "ListaReceitas", model: viewModel);
         }
+
+        [HttpGet]
+        [Route("[controller]/[action]/{idReceita}")]
+        public IActionResult Detalhes([FromRoute] int idReceita)
+        {
+            // obter receita
+
+            var receita = context.Receita.Find(idReceita);
+
+            if (receita == null)
+                return NotFound();
+
+            // devolver view
+
+            return View(viewName: "DetalhesReceita", model: receita);
+        }
     }
 }

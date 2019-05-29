@@ -45,10 +45,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; }
+        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; } = new List<ReceitaProcesso>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; }
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteFavorito> ClienteFavorito { get; set; }
@@ -92,24 +92,28 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
     public class ReceitaIngrediente
     {
-        public ReceitaIngrediente() { }
+        public ReceitaIngrediente()
+        {
+        }
+
         public ReceitaIngrediente(int idReceita, int idIngrediente)
         {
             this.ReceitaId = idReceita;
             this.IngredienteId = idIngrediente;
         }
+
         [Key]
         public int ReceitaId { get; set; }
         [Key]
         public int IngredienteId { set; get; }
+
         [Required]
         public int Quantidade { set; get; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual Ingrediente Ingrediente { set; get; }
-        [NotMapped]
-        [JsonIgnore]
+
+        [NotMapped, JsonIgnore]
         public virtual Receita Receita { set; get; }
     }
 

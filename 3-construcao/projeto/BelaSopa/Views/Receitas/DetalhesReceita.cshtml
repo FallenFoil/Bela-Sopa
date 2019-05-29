@@ -1,5 +1,19 @@
 @model Receita
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "TODO";
+    ViewData["Title"] = Model.Nome;
 }
+
+<p>Dificuldade: @Model.Dificuldade.ToString()</p>
+<p>Tempo de preparação: @Model.MinutosPreparacao minutos</p>
+<p>Número de doses: @Model.NumeroDoses</p>
+
+<p class="font-italic">@Model.Descricao</p>
+
+<img
+    src="data:image/*;base64,@Model.GetImagemBase64()"
+    alt=""
+    style="max-width: 100%; object-fit: cover;"
+    />
+
+<hr />
