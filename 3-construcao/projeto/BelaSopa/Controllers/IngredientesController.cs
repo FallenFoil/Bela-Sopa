@@ -55,7 +55,7 @@ namespace BelaSopa.Controllers
                 if (!trimmed.EndsWith('.'))
                 {
                     // título da secção
-                    
+
                     seccoes.Add((trimmed, new List<string>()));
                 }
                 else
