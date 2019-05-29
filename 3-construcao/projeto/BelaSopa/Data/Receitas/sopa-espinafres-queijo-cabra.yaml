@@ -1,7 +1,7 @@
 
 nome: Sopa de espinafres com queijo de cabra
 
-descrição: Pronta num instante, esta é uma receita quente e reconfortante, fácil de preparar e com os mais frescos produtos Pingo Doce, para quando não há tempo a perder e o sabor se quer por inteiro.
+descrição: Pronta num instante, esta é uma receita quente e reconfortante, fácil de preparar e com os mais frescos produtos Gota Doce, para quando não há tempo a perder e o sabor se quer por inteiro.
 
 dificuldade: fácil
 
@@ -32,7 +32,7 @@ ingredientes:
   quantidade: 1 emb.
 - nome: Queijo de cabra pingo (100g) doce
   quantidade: '1'
-- nome: Croutons com azeite e alho pingo doce
+- nome: Croutons com azeite e alho
   quantidade: 40 g
 
 valores-nutricionais:

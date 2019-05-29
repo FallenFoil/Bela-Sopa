@@ -1,7 +1,7 @@
 
 nome: Sopa de tomate com batata-doce
 
-descrição: Uma sopa preparada com polpa de tomate e batata-doce, enriquecida com ovos, decorada com manjericão e croutons Pingo Doce. Comece da melhor forma a sua refeição!
+descrição: Uma sopa preparada com polpa de tomate e batata-doce, enriquecida com ovos, decorada com manjericão e croutons Gota Doce. Comece da melhor forma a sua refeição!
 
 dificuldade: fácil
 
@@ -31,7 +31,7 @@ ingredientes:
   quantidade: '2'
 - nome: Folhas de manjericão
   quantidade: qb
-- nome: Croutons com azeite e alho pingo doce
+- nome: Croutons com azeite e alho
   quantidade: 80 g
 
 valores-nutricionais:

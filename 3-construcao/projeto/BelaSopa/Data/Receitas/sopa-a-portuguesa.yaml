@@ -1,7 +1,7 @@
 
 nome: Sopa à portuguesa
 
-descrição: Uma sopa preparada com a mistura de legumes para sopa do Pingo Doce, pronta em apenas 30 minutos. Esta sopa à portuguesa é carregada de sabor!
+descrição: Uma sopa preparada com a mistura de legumes para sopa do Gota Doce, pronta em apenas 30 minutos. Esta sopa à portuguesa é carregada de sabor!
 
 dificuldade: fácil
 
@@ -15,7 +15,7 @@ etiquetas:
 - Vegan
 
 ingredientes:
-- nome: Cebola em cubos congelada pingo doce
+- nome: Cebola em cubos congelada
   quantidade: 150 g
 - nome: Azeite
   quantidade: 3 c. sopa
@@ -23,7 +23,7 @@ ingredientes:
   quantidade: 300 g
 - nome: Abóbora
   quantidade: 300 g
-- nome: Mistura de legumes emb. para sopa portuguesa pingo doce
+- nome: Mistura de legumes emb. para sopa portuguesa
   quantidade: '1'
 - nome: Sal
   quantidade: 1 c. sobremesa
