@@ -12,9 +12,8 @@ namespace BelaSopa.Shared
 {
     public static class Autenticacao
     {
-        public const string ROLES_ADMINISTRADOR = "Administrador";
-        public const string ROLES_CLIENTE = "Cliente";
-        public const string ROLES_ADMINISTRADOR_OU_CLIENTE = ROLES_CLIENTE + ", " + ROLES_ADMINISTRADOR;
+        public const string ROLE_ADMINISTRADOR = "Administrador";
+        public const string ROLE_CLIENTE = "Cliente";
 
         private const string CONTROLLER_INICIAL_ADMINISTRADOR = "Utilizadores";
         private const string CONTROLLER_INICIAL_CLIENTE = "Receitas";
@@ -24,7 +23,7 @@ namespace BelaSopa.Shared
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, utilizador.NomeDeUtilizador),
-                new Claim(ClaimTypes.Role, (utilizador is Cliente) ? ROLES_CLIENTE : ROLES_ADMINISTRADOR)
+                new Claim(ClaimTypes.Role, (utilizador is Cliente) ? ROLE_CLIENTE : ROLE_ADMINISTRADOR)
             };
 
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(claims, "login"));

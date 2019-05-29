@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = Autenticacao.ROLES_ADMINISTRADOR)]
+    [Authorize(Roles = Autenticacao.ROLE_ADMINISTRADOR)]
     public class UtilizadoresController : Controller
     {
         private readonly BelaSopaContext context;

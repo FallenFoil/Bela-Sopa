@@ -20,7 +20,8 @@ p {
 a,
 a:hover,
 a:focus {
-    color: inherit;
+    /*color: inherit;*/
+    color: #007bff;
     text-decoration: none;
     transition: all 0.3s;
 }
@@ -95,6 +96,7 @@ span {
 
     #sidebar ul li a {
         text-align: left;
+        color: white;
     }
 
     #sidebar.active ul li a {

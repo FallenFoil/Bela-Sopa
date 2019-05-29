@@ -1,0 +1,32 @@
+@model string
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "A minha conta";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+@if (TempData["Sucesso"] != null)
+{
+    <p class="alert alert-success">@TempData["Sucesso"]</p>
+}
+
+<p>Nome de utilizador: @User.Identity.Name</p>
+
+<p><a asp-action="AlterarPalavraPasse">Alterar palavra-passe</a></p>
+
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+{
+    <p>
+        Endereço de e-mail:
+        @if (Model == null)
+        {
+            <text>(nenhum)</text>
+        }
+        else
+        {
+            <text>@Model</text>
+        }
+        <a asp-action="AlterarEmail">Alterar</a>
+    </p>
+}

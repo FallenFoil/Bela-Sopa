@@ -34,10 +34,10 @@ namespace BelaSopa.Controllers
                 receitas = receitas.Where(receita => Util.FuzzyContains(receita.Nome, nome));
 
             if (etiqueta != null)
-                receitas = receitas.Where(r => r.ReceitaEtiqueta.Any(e => e.EtiquetaId == etiqueta));
+                receitas = receitas.Where(receita => receita.ReceitaEtiqueta.Any(e => e.EtiquetaId == etiqueta));
 
             if (dificuldade != null)
-                receitas = receitas.Where(r => r.Dificuldade == dificuldade);
+                receitas = receitas.Where(receita => receita.Dificuldade == dificuldade);
 
             var viewModel = (
                 Etiquetas: context.Etiqueta.ToList(),

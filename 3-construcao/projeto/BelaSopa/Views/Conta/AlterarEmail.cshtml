@@ -1,0 +1,30 @@
+@model AlterarEmailViewModel
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Alterar endereço de e-mail";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+@if (TempData["Erro"] != null)
+{
+    <p class="alert alert-danger">@TempData["Erro"]</p>
+}
+
+<form asp-action="AlterarEmail" method="post">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="NovoEmail" class="control-label"></label>
+        <input asp-for="NovoEmail" class="form-control" />
+        <span asp-validation-for="NovoEmail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Alterar" class="btn btn-primary" />
+    </div>
+
+</form>
+
+<a asp-action="Index">Voltar</a>

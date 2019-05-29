@@ -129,8 +129,8 @@ namespace BelaSopa.Controllers
                 );
         }
 
-        [HttpGet]
         [Authorize]
+        [HttpGet]
         public async Task<IActionResult> Sair()
         {
             await Autenticacao.DesautenticarUtilizador(this);

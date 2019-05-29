@@ -16,7 +16,7 @@
         <div class="sidebar-header">
             <img id="logo_icon" src="~/logo.png" alt="Bela Sopa">
             <h3 id="logo">Bela Sopa</h3>
-            @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLES_ADMINISTRADOR))
+            @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
             {
                 <p style="color: #ffffff">Olá, @User.Identity.Name.<br />Autenticado como administrador.</p>
             }
@@ -30,14 +30,14 @@
             </button>
         </div>
         <ul class="list-unstyled components">
-            @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLES_ADMINISTRADOR))
+            <li id="contamenu">
+                <a asp-controller="Conta" asp-action="Index">
+                    <i class="fas fa-user"></i>
+                    <span>A minha conta</span>
+                </a>
+            </li>
+            @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
             {
-                <li>
-                    <a asp-controller="ContaAdministrador" asp-action="Index">
-                        <i class="fas fa-user"></i>
-                        <span>A minha conta</span>
-                    </a>
-                </li>
                 <li>
                     <a asp-controller="Utilizadores" asp-action="Index">
                         <i class="fas fa-users"></i>
@@ -63,14 +63,8 @@
                     </a>
                 </li>
             }
-            else
+            else if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
             {
-                <li id="contamenu">
-                    <a asp-controller="ContaCliente" asp-action="Index">
-                        <i class="fas fa-user"></i>
-                        <span>A minha conta</span>
-                    </a>
-                </li>
                 <li id="ConfeçaoMenu">
                     <a asp-controller="EmConfecao" asp-action="Index">
                         <i class="fas fa-play"></i>
