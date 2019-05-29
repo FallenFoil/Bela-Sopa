@@ -8,6 +8,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Receita
     {
+        [Key]
         public int ReceitaId { get; set; }
 
         [Required, StringLength(100)]
@@ -45,10 +46,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; } = new List<ReceitaProcesso>();
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
+        public virtual ICollection<ReceitaProcesso> ReceitaProcesso { get; set; } = new List<ReceitaProcesso>();
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteFavorito> ClienteFavorito { get; set; }
@@ -64,77 +65,13 @@ namespace BelaSopa.Models.DomainModels.Assistente
             return Convert.ToBase64String(Imagem, Base64FormattingOptions.None);
         }
 
-        public bool HasEtiqueta(int EtiquetaId) {
-            foreach(ReceitaEtiqueta re in this.ReceitaEtiqueta) {
-                if (re.EtiquetaId == EtiquetaId)
+        public bool HasEtiqueta(int etiquetaId)
+        {
+            foreach (ReceitaEtiqueta re in this.ReceitaEtiqueta)
+                if (re.EtiquetaId == etiquetaId)
                     return true;
-            }
+
             return false;
         }
-    }
-
-    public class ReceitaEtiqueta
-    {
-        [Key]
-        public int EtiquetaId { set; get; }
-
-        [Key]
-        public int ReceitaId { set; get; }
-
-        [NotMapped]
-        [JsonIgnore]
-        public Receita Receita { set; get; }
-
-        [NotMapped]
-        [JsonIgnore]
-        public Etiqueta Etiqueta { get; set; }
-    }
-
-    public class ReceitaIngrediente
-    {
-        public ReceitaIngrediente()
-        {
-        }
-
-        public ReceitaIngrediente(int idReceita, int idIngrediente)
-        {
-            this.ReceitaId = idReceita;
-            this.IngredienteId = idIngrediente;
-        }
-
-        [Key]
-        public int ReceitaId { get; set; }
-        [Key]
-        public int IngredienteId { set; get; }
-
-        [Required]
-        public int Quantidade { set; get; }
-
-        [NotMapped, JsonIgnore]
-        public virtual Ingrediente Ingrediente { set; get; }
-
-        [NotMapped, JsonIgnore]
-        public virtual Receita Receita { set; get; }
-    }
-
-    public class ReceitaProcesso
-    {
-        public ReceitaProcesso() { }
-        public ReceitaProcesso(int idReceita, int idProcesso)
-        {
-            this.ReceitaId = idReceita;
-            this.ProcessoId = idProcesso;
-        }
-        [Key]
-        public int ReceitaId { get; set; }
-        [Key]
-        public int ProcessoId { set; get; }
-
-        [NotMapped]
-        [JsonIgnore]
-        public virtual Processo Processo { set; get; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual Receita Receita { set; get; }
     }
 }

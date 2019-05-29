@@ -1,7 +1,9 @@
 using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BelaSopa.Models
 {
@@ -19,13 +21,56 @@ namespace BelaSopa.Models
         public Utilizador GetUtilizador(string nomeDeUtilizador)
         {
             return
-                this.Clientes.SingleOrDefault(c => c.NomeDeUtilizador == nomeDeUtilizador) as Utilizador ??
-                this.Administradores.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador) as Utilizador;
+                this.Cliente.SingleOrDefault(c => c.NomeDeUtilizador == nomeDeUtilizador) as Utilizador ??
+                this.Administrador.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador) as Utilizador;
         }
 
-        public DbSet<Administrador> Administradores { get; set; }
+        public async Task AdicionarReceitaAsync(Receita receita, IEnumerable<string> nomesEtiquetas)
+        {
+            // adicionar receita
 
-        public DbSet<Cliente> Clientes { get; set; }
+            Receita.Add(receita);
+
+            // adicionar etiquetas e relacionamentos receita-etiqueta
+
+            foreach (var nomeEtiqueta in nomesEtiquetas)
+            {
+                // adicionar etiqueta se não existir
+
+                var etiqueta = Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta);
+
+                if (etiqueta == null)
+                    etiqueta = Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
+
+                // adicionar relacionamento receita-etiqueta
+
+                var receitaEtiqueta = new ReceitaEtiqueta
+                {
+                    EtiquetaId = etiqueta.EtiquetaId,
+                    Etiqueta = etiqueta,
+                    ReceitaId = receita.ReceitaId,
+                    Receita = receita
+                };
+
+                receita.ReceitaEtiqueta.Add(receitaEtiqueta);
+                etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
+
+                ReceitaEtiqueta.Add(receitaEtiqueta);
+            }
+
+            // guardar alterações
+
+            await SaveChangesAsync();
+        }
+
+        public async Task AdicionarIngredienteAsync(Ingrediente ingrediente)
+        {
+
+        }
+
+        public DbSet<Administrador> Administrador { get; set; }
+
+        public DbSet<Cliente> Cliente { get; set; }
 
         //public DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
         //public DbSet<ClienteEmentaSemanal> ClientesEmentaSemanal { get; set; }

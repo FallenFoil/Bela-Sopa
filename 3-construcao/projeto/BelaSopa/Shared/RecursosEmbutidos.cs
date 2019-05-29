@@ -16,7 +16,7 @@ namespace BelaSopa.Shared
     {
         public static void CarregarReceitasDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", yamlReceita =>
+            CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", async yamlReceita =>
             {
                 Dificuldade dificuldade;
 
@@ -28,7 +28,7 @@ namespace BelaSopa.Shared
                     default: throw new Exception();
                 }
 
-                var receita = context.Receita.Add(new Receita
+                var receita = new Receita
                 {
                     Nome = yamlReceita.Nome,
                     Descricao = yamlReceita.Descricao,
@@ -36,39 +36,17 @@ namespace BelaSopa.Shared
                     MinutosPreparacao = yamlReceita.MinutosPreparacao,
                     NumeroDoses = yamlReceita.NumeroDoses,
                     Imagem = yamlReceita.Imagem
-                }).Entity;
+                };
 
-                foreach (var nomeEtiqueta in yamlReceita.Etiquetas)
-                {
-                    var etiqueta = context.Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta);
-
-                    if (etiqueta == null)
-                        etiqueta = context.Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
-
-                    var receitaEtiqueta = new ReceitaEtiqueta
-                    {
-                        EtiquetaId = etiqueta.EtiquetaId,
-                        Etiqueta = etiqueta,
-                        ReceitaId = receita.ReceitaId,
-                        Receita = receita
-                    };
-
-                    receita.ReceitaEtiqueta.Add(receitaEtiqueta);
-                    etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
-
-                    context.ReceitaEtiqueta.Add(receitaEtiqueta);
-                }
-
-                context.SaveChanges();
+                await context.AdicionarReceitaAsync(receita, yamlReceita.Etiquetas);
             });
         }
 
         public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
+            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", async ingrediente =>
             {
-                context.Ingrediente.Add(ingrediente);
-                context.SaveChanges();
+                await context.AdicionarIngredienteAsync(ingrediente);
             });
         }
 

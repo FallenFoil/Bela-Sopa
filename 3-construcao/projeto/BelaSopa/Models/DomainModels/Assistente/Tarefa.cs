@@ -7,37 +7,25 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Tarefa
     {
-
-        public Tarefa()
-        {
-            this.TarefaIngrediente = new HashSet<TarefaIngrediente>();
-            this.TarefaUtensilio = new HashSet<TarefaUtensilio>();
-            this.TarefaTecnica = new HashSet<TarefaTecnica>();
-            this.ProcessoTarefa = new HashSet<ProcessoTarefa>();
-        }
-
-        [Key]
         public int TarefaId { set; get; }
 
-        [Required]
-        [StringLength(200)]
+        [Required, StringLength(200)]
         public string Descricao { set; get; }
 
         [Required]
         public int Tempo { set; get; }
 
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<TarefaUtensilio> TarefaUtensilio { set; get; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<TarefaTecnica> TarefaTecnica { set; get; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<ProcessoTarefa> ProcessoTarefa { set; get; }
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; } = new List<TarefaIngrediente>();
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<TarefaUtensilio> TarefaUtensilio { set; get; } = new List<TarefaUtensilio>();
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<TarefaTecnica> TarefaTecnica { set; get; } = new List<TarefaTecnica>();
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ProcessoTarefa> ProcessoTarefa { set; get; } = new List<ProcessoTarefa>();
     }
 
     public class TarefaIngrediente

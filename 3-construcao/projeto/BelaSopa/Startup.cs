@@ -89,7 +89,7 @@ namespace BelaSopa
         {
             // criar conta de administrador
 
-            context.Administradores.Add(new Administrador
+            context.Administrador.Add(new Administrador
             {
                 NomeDeUtilizador = "root",
                 HashPalavraPasse = Utilizador.ComputarHashPalavraPasse("root")

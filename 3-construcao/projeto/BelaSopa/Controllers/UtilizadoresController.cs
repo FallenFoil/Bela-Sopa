@@ -22,8 +22,8 @@ namespace BelaSopa.Controllers
         public IActionResult Index()
         {
             var viewModel = (
-                Administradores: context.Administradores.ToList(),
-                Clientes: context.Clientes.ToList()
+                Administradores: context.Administrador.ToList(),
+                Clientes: context.Cliente.ToList()
             );
 
             return View(viewName: "ListaUtilizadores", model: viewModel);
@@ -83,7 +83,7 @@ namespace BelaSopa.Controllers
                 HashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse)
             };
 
-            context.Administradores.Add(administrador);
+            context.Administrador.Add(administrador);
             context.SaveChanges();
 
             // redirecionar para view de autenticação

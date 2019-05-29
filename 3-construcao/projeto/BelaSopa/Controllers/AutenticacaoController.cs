@@ -117,7 +117,7 @@ namespace BelaSopa.Controllers
                 Email = viewModel.Email
             };
 
-            this.context.Clientes.Add(cliente);
+            this.context.Cliente.Add(cliente);
             this.context.SaveChanges();
 
             // redirecionar para view de autenticação
