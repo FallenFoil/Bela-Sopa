@@ -81,40 +81,40 @@ namespace BelaSopa.Models
             Ingrediente.Add(ingrediente);
         }
 
-        public DbSet<Administrador> Administrador { get; set; }
+        public virtual DbSet<Administrador> Administrador { get; set; }
 
-        public DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
         
-        //public DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
-        public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-        //public DbSet<ClienteFavorito> ClientesFavorito { get; set; }
+        //public virtual DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
+        public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        //public virtual DbSet<ClienteFavorito> ClientesFavorito { get; set; }
 
-        public DbSet<Receita> Receita { get; set; }
+        public virtual DbSet<Receita> Receita { get; set; }
 
-        public DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
+        public virtual DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
-        public DbSet<ReceitaIngrediente> ReceitaIngrediente { get; set; }
+        public virtual DbSet<ReceitaIngrediente> ReceitaIngrediente { get; set; }
 
-        public DbSet<Etiqueta> Etiqueta { get; set; }
+        public virtual DbSet<Etiqueta> Etiqueta { get; set; }
 
-        public DbSet<Processo> Processo { get; set; }
+        public virtual DbSet<Processo> Processo { get; set; }
 
-        //public DbSet<ProcessoTarefa> ProcessoTarefa { get; set; }
+        //public virtual DbSet<ProcessoTarefa> ProcessoTarefa { get; set; }
 
-        public DbSet<Tarefa> Tarefa { get; set; }
+        public virtual DbSet<Tarefa> Tarefa { get; set; }
 
-        public DbSet<Ingrediente> Ingrediente { get; set; }
-
-
+        public virtual DbSet<Ingrediente> Ingrediente { get; set; }
 
 
-        //public DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
 
-        public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
-        public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
-        public DbSet<TarefaTecnica> TarefaTecnica { get; set; }
-        public DbSet<Utensilio> Utensilio { get; set; }
-        public DbSet<Tecnica> Tecnica { get; set; }
+
+        //public virtual DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
+
+        public virtual DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
+        public virtual DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
+        public virtual DbSet<TarefaTecnica> TarefaTecnica { get; set; }
+        public virtual DbSet<Utensilio> Utensilio { get; set; }
+        public virtual DbSet<Tecnica> Tecnica { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
