@@ -24,6 +24,6 @@ namespace BelaSopa.Models.ViewModels
 
         [Display(Name = "Endereço de e-mail (opcional)")]
         [DataType(DataType.EmailAddress, ErrorMessage = "O endereço de e-mail é inválido.")]
-        public string Email { set; get; }
+        public string Email { get; set; }
     }
 }

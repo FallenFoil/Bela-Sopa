@@ -7,25 +7,25 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Tarefa
     {
-        public int TarefaId { set; get; }
+        public int TarefaId { get; set; }
 
         [Required, StringLength(200)]
-        public string Descricao { set; get; }
+        public string Descricao { get; set; }
 
         [Required]
-        public int Tempo { set; get; }
+        public int Tempo { get; set; }
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; } = new List<TarefaIngrediente>();
+        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { get; set; } = new List<TarefaIngrediente>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<TarefaUtensilio> TarefaUtensilio { set; get; } = new List<TarefaUtensilio>();
+        public virtual ICollection<TarefaUtensilio> TarefaUtensilio { get; set; } = new List<TarefaUtensilio>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<TarefaTecnica> TarefaTecnica { set; get; } = new List<TarefaTecnica>();
+        public virtual ICollection<TarefaTecnica> TarefaTecnica { get; set; } = new List<TarefaTecnica>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ProcessoTarefa> ProcessoTarefa { set; get; } = new List<ProcessoTarefa>();
+        public virtual ICollection<ProcessoTarefa> ProcessoTarefa { get; set; } = new List<ProcessoTarefa>();
     }
 
     public class TarefaIngrediente
@@ -38,14 +38,14 @@ namespace BelaSopa.Models.DomainModels.Assistente
         }
 
         [Key]
-        public int TarefaId { set; get; }
+        public int TarefaId { get; set; }
         [NotMapped]
-        public virtual Tarefa Tarefa { set; get; }
+        public virtual Tarefa Tarefa { get; set; }
 
         [Key]
-        public int IngredienteId { set; get; }
+        public int IngredienteId { get; set; }
         [NotMapped]
-        public virtual Ingrediente Ingrediente { set; get; }
+        public virtual Ingrediente Ingrediente { get; set; }
     }
 
     public class TarefaUtensilio
@@ -58,14 +58,14 @@ namespace BelaSopa.Models.DomainModels.Assistente
         }
 
         [Key]
-        public int TarefaId { set; get; }
+        public int TarefaId { get; set; }
         [NotMapped]
-        public virtual Tarefa Tarefa { set; get; }
+        public virtual Tarefa Tarefa { get; set; }
 
         [Key]
-        public int UtensilioId { set; get; }
+        public int UtensilioId { get; set; }
         [NotMapped]
-        public virtual Utensilio Utensilio { set; get; }
+        public virtual Utensilio Utensilio { get; set; }
     }
 
     public class TarefaTecnica
@@ -78,13 +78,13 @@ namespace BelaSopa.Models.DomainModels.Assistente
         }
 
         [Key]
-        public int TarefaId { set; get; }
+        public int TarefaId { get; set; }
         [NotMapped]
-        public virtual Tarefa Tarefa { set; get; }
+        public virtual Tarefa Tarefa { get; set; }
 
         [Key]
-        public int TecnicaId { set; get; }
+        public int TecnicaId { get; set; }
         [NotMapped]
-        public virtual Tecnica Tecnica { set; get; }
+        public virtual Tecnica Tecnica { get; set; }
     }
 }

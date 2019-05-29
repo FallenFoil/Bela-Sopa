@@ -9,29 +9,29 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Ingrediente
     {
-        public int IngredienteId { set; get; }
+        public int IngredienteId { get; set; }
 
         [Required, StringLength(100)]
         [YamlMember(Alias = "nome")]
-        public string Nome { set; get; }
+        public string Nome { get; set; }
 
         [Required]
         [YamlMember(Alias = "descrição")]
-        public string Descricao { set; get; }
+        public string Descricao { get; set; }
 
         [Required]
         [YamlMember(Alias = "texto")]
-        public string Texto { set; get; }
+        public string Texto { get; set; }
 
         [Required]
         [YamlMember(Alias = "imagem")]
-        public byte[] Imagem { set; get; }
+        public byte[] Imagem { get; set; }
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { set; get; } = new List<TarefaIngrediente>();
+        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { get; set; } = new List<TarefaIngrediente>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { set; get; } = new List<ReceitaIngrediente>();
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
 
         public string GetImagemBase64()
         {

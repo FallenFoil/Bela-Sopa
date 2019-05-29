@@ -7,26 +7,26 @@ namespace BelaSopa.Models.DomainModels.Assistente
     public class Tecnica
     {
         [Key]
-        public int TecnicaId { set; get; }
+        public int TecnicaId { get; set; }
 
         [Required]
         [StringLength(20)]
-        public string Nome { set; get; }
+        public string Nome { get; set; }
 
         [Required]
         [StringLength(200)]
-        public string Descricao { set; get; }
+        public string Descricao { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string ImagePath { set; get; }
+        public string ImagePath { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Link { set; get; }
+        public string Link { get; set; }
 
         [NotMapped]
-        public virtual ICollection<TarefaTecnica> TarefaTecnica { set; get; }
+        public virtual ICollection<TarefaTecnica> TarefaTecnica { get; set; }
 
     }
 }

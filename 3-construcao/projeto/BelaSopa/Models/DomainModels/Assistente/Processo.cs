@@ -14,9 +14,9 @@ namespace BelaSopa.Models.DomainModels.Assistente
         }
 
         [Key]
-        public int ProcessoId { set; get; }
+        public int ProcessoId { get; set; }
         [Required]
-        public int Tempo { set; get; }
+        public int Tempo { get; set; }
         [NotMapped]
         [JsonIgnore]
         public virtual ICollection<ProcessoTarefa> ProcessoTarefa { get; set; }
@@ -35,17 +35,17 @@ namespace BelaSopa.Models.DomainModels.Assistente
         }
 
         [Key]
-        public int ProcessoId { set; get; }
+        public int ProcessoId { get; set; }
 
         [NotMapped]
         [JsonIgnore]
         public virtual Processo Processo { get; set; }
 
         [Key]
-        public int TarefaId { set; get; }
+        public int TarefaId { get; set; }
 
         [NotMapped]
         [JsonIgnore]
-        public virtual Tarefa Tarefa { set; get; }
+        public virtual Tarefa Tarefa { get; set; }
     }
 }

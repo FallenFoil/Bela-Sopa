@@ -27,7 +27,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int NumeroDoses { get; set; }
 
         [Required]
-        public byte[] Imagem { set; get; }
+        public byte[] Imagem { get; set; }
 
         //[NotMapped, JsonIgnore]
         //public virtual ICollection<QuantidadeIngrediente> QuantidadeIngredientes { get; set; }

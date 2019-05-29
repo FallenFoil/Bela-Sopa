@@ -7,13 +7,13 @@ namespace BelaSopa.Models.DomainModels.Assistente
     public class ReceitaEtiqueta
     {
         [Key]
-        public int ReceitaId { set; get; }
+        public int ReceitaId { get; set; }
 
         [Key]
-        public int EtiquetaId { set; get; }
+        public int EtiquetaId { get; set; }
 
         [NotMapped, JsonIgnore]
-        public Receita Receita { set; get; }
+        public Receita Receita { get; set; }
 
         [NotMapped, JsonIgnore]
         public Etiqueta Etiqueta { get; set; }

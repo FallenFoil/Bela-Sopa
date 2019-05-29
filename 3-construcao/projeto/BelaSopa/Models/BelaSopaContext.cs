@@ -76,22 +76,22 @@ namespace BelaSopa.Models
         //public DbSet<ClienteEmentaSemanal> ClientesEmentaSemanal { get; set; }
         //public DbSet<ClienteFavorito> ClientesFavorito { get; set; }
 
-        public DbSet<Receita> Receita { set; get; }
-        public DbSet<Etiqueta> Etiqueta { set; get; }
-        public DbSet<ReceitaEtiqueta> ReceitaEtiqueta { set; get; }
-        public DbSet<ReceitaIngrediente> ReceitaIngrediente { set; get; }
-        public DbSet<ReceitaProcesso> ReceitaProcesso { set; get; }
+        public DbSet<Receita> Receita { get; set; }
+        public DbSet<Etiqueta> Etiqueta { get; set; }
+        public DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
+        public DbSet<ReceitaIngrediente> ReceitaIngrediente { get; set; }
+        public DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
 
-        public DbSet<Processo> Processo { set; get; }
-        public DbSet<ProcessoTarefa> ProcessoTarefa { set; get; }
+        public DbSet<Processo> Processo { get; set; }
+        public DbSet<ProcessoTarefa> ProcessoTarefa { get; set; }
 
-        public DbSet<Tarefa> Tarefa { set; get; }
+        public DbSet<Tarefa> Tarefa { get; set; }
         public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
         public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
         public DbSet<TarefaTecnica> TarefaTecnica { get; set; }
-        public DbSet<Ingrediente> Ingrediente { set; get; }
-        public DbSet<Utensilio> Utensilio { set; get; }
-        public DbSet<Tecnica> Tecnica { set; get; }
+        public DbSet<Ingrediente> Ingrediente { get; set; }
+        public DbSet<Utensilio> Utensilio { get; set; }
+        public DbSet<Tecnica> Tecnica { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

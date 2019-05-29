@@ -15,16 +15,16 @@ namespace BelaSopa.Models.DomainModels.Assistente
             this.ReceitaId = idReceita;
         }
         [Key]
-        public int ClienteId { set; get; }
+        public int ClienteId { get; set; }
         [Key]
-        public int ReceitaId { set; get; }
+        public int ReceitaId { get; set; }
 
         [NotMapped]
         [JsonIgnore]
-        public virtual Cliente Cliente { set; get; }
+        public virtual Cliente Cliente { get; set; }
         [NotMapped]
         [JsonIgnore]
-        public virtual Receita Receita { set; get; }
+        public virtual Receita Receita { get; set; }
     }
 
 
@@ -33,7 +33,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public ClienteEmentaSemanal(int idCliente, int idReceita) : base(idCliente, idReceita) { }
         public ClienteEmentaSemanal() { }
         [Required]
-        public DateTime Horario { set; get; }
+        public DateTime Horario { get; set; }
     }
 
     public class ClienteFavorito : ClienteReceita
