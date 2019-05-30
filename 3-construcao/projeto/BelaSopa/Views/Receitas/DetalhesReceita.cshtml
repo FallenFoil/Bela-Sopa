@@ -10,10 +10,10 @@
 
 <p class="font-italic">@Model.Descricao</p>
 
-<p>Ingredientes:</p>
+<h4>Ingredientes</h4>
 
 <ul>
-    @foreach (var ingredienteUtilizado in Model.ReceitaIngrediente)
+    @foreach (var ingredienteUtilizado in Model.Ingredientes)
     {
         <li>
             @if (ingredienteUtilizado.Ingrediente != null)
@@ -34,8 +34,30 @@
     }
 </ul>
 
+<h4>Valores nutricionis</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Dose</th>
+            <th scope="col">% do VDR adulto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var valor in Model.ValoresNutricionais)
+        {
+            <tr>
+                <td>@valor.Nome</td>
+                <td>@valor.Dose</td>
+                <td>@if (@valor.PercentagemVdrAdulto != null) { @valor.PercentagemVdrAdulto<text>%</text> }</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 <img
-    src="data:image/*;base64,@Model.GetImagemBase64()"
+    src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"
     alt=""
     style="max-width: 100%; object-fit: cover;"
     />

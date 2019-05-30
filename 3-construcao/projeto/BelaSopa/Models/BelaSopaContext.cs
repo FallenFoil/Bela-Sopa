@@ -34,20 +34,15 @@ namespace BelaSopa.Models
 
             // descobrir relacionamentos com ingredientes
 
-            foreach (var ingredienteUtilizado in receita.ReceitaIngrediente)
+            foreach (var ingredienteUtilizado in receita.Ingredientes)
             {
                 // tentar encontrar ingrediente com nome semelhante
-
-                ingredienteUtilizado.ReceitaId = receita.ReceitaId;
-
-                ingredienteUtilizado.IngredienteId = Ingrediente.FirstOrDefault(
+                
+                ingredienteUtilizado.Ingrediente = Ingrediente.FirstOrDefault(
                     ingrediente => Util.TextoContemIngredienteFuzzy(ingredienteUtilizado.Nome, ingrediente.Nome)
-                    )?.IngredienteId;
+                    );
             }
-
-            //foreach (var ingredienteUtilizado in receita.IngredientesUtilizados)
-            //    IngredienteUtilizado.Add(ingredienteUtilizado);
-
+            
             // adicionar etiquetas e relacionamentos receita-etiqueta
 
             foreach (var nomeEtiqueta in nomesEtiquetas)

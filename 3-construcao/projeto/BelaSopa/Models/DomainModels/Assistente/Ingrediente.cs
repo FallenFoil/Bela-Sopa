@@ -1,5 +1,4 @@
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,12 +28,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<TarefaIngrediente> TarefaIngrediente { get; set; } = new List<TarefaIngrediente>();
-        
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
 
-        public string GetImagemBase64()
-        {
-            return Convert.ToBase64String(Imagem, Base64FormattingOptions.None);
-        }
+        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
     }
 }

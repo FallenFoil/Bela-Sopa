@@ -14,6 +14,14 @@ namespace BelaSopa.Shared
 {
     public class RecursosEmbutidos
     {
+        public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
+        {
+            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
+            {
+                context.AdicionarIngrediente(ingrediente);
+            });
+        }
+
         public static void CarregarReceitasDeExemplo(BelaSopaContext context)
         {
             CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", yamlReceita =>
@@ -35,27 +43,12 @@ namespace BelaSopa.Shared
                     Dificuldade = dificuldade,
                     MinutosPreparacao = yamlReceita.MinutosPreparacao,
                     NumeroDoses = yamlReceita.NumeroDoses,
-                    Imagem = yamlReceita.Imagem
+                    Imagem = yamlReceita.Imagem,
+                    Ingredientes = yamlReceita.Ingredientes,
+                    ValoresNutricionais = yamlReceita.ValoresNutricionais
                 };
-
-                foreach (var yamlIngrediente in yamlReceita.Ingredientes)
-                {
-                    receita.ReceitaIngrediente.Add(new ReceitaIngrediente
-                    {
-                        Nome = yamlIngrediente.Nome,
-                        Quantidade = yamlIngrediente.Quantidade
-                    });
-                }
-
+                
                 context.AdicionarReceita(receita, yamlReceita.Etiquetas);
-            });
-        }
-
-        public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
-        {
-            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
-            {
-                context.AdicionarIngrediente(ingrediente);
             });
         }
 
@@ -108,10 +101,10 @@ namespace BelaSopa.Shared
             public List<string> Etiquetas { get; set; }
 
             [YamlMember(Alias = "ingredientes")]
-            public List<YamlReceitaIngrediente> Ingredientes { get; set; }
+            public List<ReceitaIngrediente> Ingredientes { get; set; }
 
             [YamlMember(Alias = "valores-nutricionais")]
-            public List<YamlReceitaValorNutricional> ValoresNutricionais { get; set; }
+            public List<ValorNutricional> ValoresNutricionais { get; set; }
 
             [YamlMember(Alias = "passos")]
             public List<List<string>> Passos { get; set; }
@@ -119,28 +112,7 @@ namespace BelaSopa.Shared
             [YamlMember(Alias = "imagem")]
             public byte[] Imagem { get; set; }
         }
-
-        private class YamlReceitaIngrediente
-        {
-            [YamlMember(Alias = "nome")]
-            public string Nome { get; set; }
-
-            [YamlMember(Alias = "quantidade")]
-            public string Quantidade { get; set; }
-        }
-
-        private class YamlReceitaValorNutricional
-        {
-            [YamlMember(Alias = "nome")]
-            public string Nome { get; set; }
-
-            [YamlMember(Alias = "dose")]
-            public string Dose { get; set; }
-
-            [YamlMember(Alias = "percentagem-do-vdr-adulto")]
-            public int? PercentagemVdrAdulto { get; set; }
-        }
-
+        
         private class ByteArrayConverter : IYamlTypeConverter
         {
             public bool Accepts(Type type)

@@ -7,7 +7,7 @@
 <p class="font-italic">@Model.Ingrediente.Descricao</p>
 
 <img
-    src="data:image/*;base64,@Model.Ingrediente.GetImagemBase64()"
+    src="data:image/*;base64,@Util.BytesToBase64(Model.Ingrediente.Imagem)"
     alt=""
     style="max-width: 100%; object-fit: cover;"
     />

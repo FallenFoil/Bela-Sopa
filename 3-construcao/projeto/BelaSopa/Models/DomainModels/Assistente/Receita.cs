@@ -32,10 +32,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
 
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
+        public virtual ICollection<ReceitaIngrediente> Ingredientes { get; set; } = new List<ReceitaIngrediente>();
 
-        [NotMapped, JsonIgnore]
+        public virtual ICollection<ValorNutricional> ValoresNutricionais { get; set; } = new List<ValorNutricional>();
+
         public virtual ICollection<Processo> Processos { get; set; } = new List<Processo>();
 
         [NotMapped, JsonIgnore]
@@ -59,12 +59,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         //[Required]
         //[StringLength(50)]
         //public string Link { get; set; }
-
-        public string GetImagemBase64()
-        {
-            return Convert.ToBase64String(Imagem, Base64FormattingOptions.None);
-        }
-
+        
         public bool HasEtiqueta(int etiquetaId)
         {
             foreach (ReceitaEtiqueta re in this.ReceitaEtiqueta)

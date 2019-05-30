@@ -50,9 +50,12 @@ namespace BelaSopa.Controllers
 
             var seccoes = new List<(string Titulo, List<string> Paragrafos)>();
 
-            foreach (string parte in ingrediente.Texto.Split('\n'))
+            foreach (var parte in ingrediente.Texto.Split('\n'))
             {
                 var trimmed = parte.Trim();
+
+                if (trimmed.Length == 0)
+                    continue;
 
                 if (trimmed.First() == '[' && trimmed.Last() == ']')
                 {
