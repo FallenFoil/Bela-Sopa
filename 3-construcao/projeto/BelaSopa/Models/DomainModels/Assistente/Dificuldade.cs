@@ -4,7 +4,6 @@ namespace BelaSopa.Models.DomainModels.Assistente
     {
         Facil,
         Media,
-        Dificil,
-        All
+        Dificil
     }
 }
