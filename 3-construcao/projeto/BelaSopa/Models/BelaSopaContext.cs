@@ -149,15 +149,9 @@ namespace BelaSopa.Models
                     continue;
                 }
 
-<<<<<<< HEAD
-        public virtual DbSet<Cliente> Cliente { get; set; }
-        
-        public virtual DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
-        public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-        public virtual DbSet<ClienteFavorito> ClientesFavorito { get; set; }
-=======
+       
                 var utensilio = utensilios.FirstOrDefault(u => Util.FuzzyEquals(palavra, u.Nome));
->>>>>>> 18ad42c68667dba7c6239308f12cc4777648d45f
+
 
                 if (utensilio != null)
                 {
@@ -173,11 +167,12 @@ namespace BelaSopa.Models
 
         public DbSet<Administrador> Administrador { get; set; }
 
-        public DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
 
-        //public DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
-        public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-        //public DbSet<ClienteFavorito> ClientesFavorito { get; set; }
+        public virtual DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
+        public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        public virtual DbSet<ClienteFavorito> ClientesFavorito { get; set; }
+
 
         public DbSet<Receita> Receita { get; set; }
 
@@ -233,7 +228,7 @@ namespace BelaSopa.Models
                 .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
+                .HasKey(cr => new { cr.ClienteId, cr.Horario });
             modelBuilder.Entity<ClienteEmentaSemanal>()
               .HasOne(ti => ti.Cliente)
               .WithMany(t => t.ClienteEmentaSemanal)

@@ -28,12 +28,29 @@ namespace BelaSopa.Models.DomainModels.Assistente
     }
 
 
-    public class ClienteEmentaSemanal : ClienteReceita
+    public class ClienteEmentaSemanal
     {
-        public ClienteEmentaSemanal(int idCliente, int idReceita) : base(idCliente, idReceita) { }
-        public ClienteEmentaSemanal() { }
-        [Required]
+        [Key]
+        public int ClienteId { get; set; }
+        [Key]
         public TimeSpan Horario { get; set; }
+        [Required]
+        public int ReceitaId { get; set; }
+
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Cliente Cliente { get; set; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Receita Receita { get; set; }
+
+        public ClienteEmentaSemanal(int idCliente, int idReceita, TimeSpan horario) {
+            this.Horario = horario;
+            this.ClienteId = idCliente;
+            this.ReceitaId = idReceita;
+        }
+
+        public ClienteEmentaSemanal() { }
     }
 
     public class ClienteFavorito : ClienteReceita

@@ -46,6 +46,8 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
+       
+
         //[StringLength(50)]
         //public string Video { get; set; }
 

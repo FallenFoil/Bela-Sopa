@@ -23,37 +23,45 @@
                 <tr>
                     <th scope="row">Almoço</th>
                     @for (int i = 0; i < dias.Length; i++) {
-                        var almoco = new TimeSpan(i, 12, 0, 0);
+                            var almoco = new TimeSpan(i, 12, 0, 0);
+                    <td>
                         @if (Model.ContainsKey(almoco)) {
-                            <td>
-                                <span>@Model[almoco].Nome</span>
-                                <img class="ReceitaImg" src="data:image/*;base64,@Model[almoco].GetImagemBase64()" alt="" />
-                                <a asp-controller="EmentaSemanal"
-                                   asp-action="RemoverReceita"
-                                   asp-route-id="@almoco">Remover receita</a>
-                            </td>
+
+                            <span>@Model[almoco].Nome</span>
+                            <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model[almoco].Imagem)" alt="" />
+                            <a asp-controller="EmentaSemanal"
+                                asp-action="RemoverReceita"
+                                asp-route-id="@almoco">Remover receita</a>
+
                         } else {
                             <!-- Adicionar aqui algo para quando não há receita-->
+                            <a asp-controller="Receitas"
+                                asp-action="Index">Adicionar receita</a>
                         }
+                    </td>
                     }
                 </tr>
                 <tr>
                     <th scope="row">Jantar</th>
                     @for (int i = 0; i < dias.Length; i++) {
                         var jantar = new TimeSpan(i, 19, 0, 0);
-                        @if (Model.ContainsKey(jantar)) {
-                            <td>
-                                <span>@Model[jantar].Nome</span>
+                <td>
+                    @if (Model.ContainsKey(jantar)) {
 
-                                <a asp-controller="EmentaSemanal"
-                                   asp-action="RemoverReceita"
-                                   asp-route-id="@jantar">Remover receita</a>
-                            </td>
-                        } else {
-                            <!-- Adicionar aqui algo para quando não há receita-->
-                        }
+                        <span>@Model[jantar].Nome</span>
+
+                        <a asp-controller="Receitas"
+                           asp-action="Index"
+                           asp-route-id="@jantar">Remover receita</a>
+
+                    } else {
+                        <!-- Adicionar aqui algo para quando não há receita-->
+                        <a asp-controller="Receitas"
+                            asp-action="Index">Adicionar receita</a>
                     }
-                </tr>
+                </td>
+                            }
+                        </tr>
             </tbody>
         </table>
     </div>

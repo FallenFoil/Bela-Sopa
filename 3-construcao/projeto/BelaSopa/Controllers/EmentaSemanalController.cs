@@ -40,5 +40,11 @@ namespace BelaSopa.Controllers
             context.SaveChanges();
             return Index();
         }
+
+        public IActionResult AdicionarReceita([FromQuery] TimeSpan horario,[FromQuery] int idReceita) {
+                context.ClienteEmentaSemanal.Add(new ClienteEmentaSemanal(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId,
+                                                                    idReceita, horario));
+                return Index();
+        }
     }
 }
