@@ -4,9 +4,40 @@
     ViewData["Title"] = Model.Nome;
 }
 
-<p>Dificuldade: @Model.Dificuldade.ToString()</p>
-<p>Tempo de preparação: @Model.MinutosPreparacao minutos</p>
-<p>Número de doses: @Model.NumeroDoses</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"
+                 alt="@Model.Nome"
+                 style="max-width: 100%; object-fit: cover;" />
+            @if(false){
+                //Dentro Favoritos
+                <i class="fas fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+            }
+            else{
+                //Dos Favoritos
+                <i class="far fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+            }
+        </div>
+        <div class="col-sm-4" style="text-align:center;">
+            <h4>@Model.Nome</h4>
+            @if (Model.Dificuldade == Dificuldade.Facil)
+            {
+            <span><i class="fas fa-signal" style="color: green;"></i>Fácil</span>
+            }
+            @if (Model.Dificuldade == Dificuldade.Media)
+            {
+            <span><i class="fas fa-signal" style="color: orange;"></i>Média</span>
+            }
+            @if (Model.Dificuldade == Dificuldade.Dificil)
+            {
+            <span><i class="fas fa-signal" style="color: red;"></i>Difícil</span>
+            }
+            <span style="margin-left:5%;">@Model.MinutosPreparacao min <i class="fas fa-clock"></i></span>
+            <span style="margin-left:5%;">@Model.NumeroDoses doses</span>
+        </div>
+    </div>
+</div>
 
 <p>Etiquetas:</p>
 
@@ -75,13 +106,31 @@
         </tr>
     </thead>
     <tbody>
+        @{ var i = 0;}
         @foreach (var valor in Model.ValoresNutricionais)
         {
-            <tr>
+            if (i == 0)
+            {
+                <tr>
+                    <td>@valor.Nome</td>
+                    <td>@valor.Dose</td>
+                    <td>
+                        @if (@valor.PercentagemVdrAdulto != null)
+                        {@valor.PercentagemVdrAdulto<text>%</text>}
+                </td>
+            </tr>
+            i++;
+        }
+        else
+        {
+            <tr id="ValoresNut">
                 <td>@valor.Nome</td>
                 <td>@valor.Dose</td>
-                <td>@if (@valor.PercentagemVdrAdulto != null) { @valor.PercentagemVdrAdulto<text>%</text> }</td>
+                <td>@if (@valor.PercentagemVdrAdulto != null)
+                {@valor.PercentagemVdrAdulto<text>%</text>}</td>
             </tr>
+                i--;
+            }
         }
     </tbody>
 </table>

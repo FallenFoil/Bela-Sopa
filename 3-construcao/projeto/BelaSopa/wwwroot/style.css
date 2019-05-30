@@ -294,25 +294,10 @@ a.article:hover {
 }
 
 /* ---------------------------------------------------
-    Lista de Receitas
+    Detalhes Receitas
 ----------------------------------------------------- */
 
-#ValoresNut table {
-    border-collapse: collapse;
-    width: 110%;
-}
-
-#ValoresNut th {
-    text-align: left;
-    width: 80%;
-}
-
-#ValoresNut td {
-    text-align: left;
-    width: 20%;
-}
-
-#ValoresNut tr:nth-child(even) {
+#ValoresNut {
     background-color: #dddddd;
 }
 
