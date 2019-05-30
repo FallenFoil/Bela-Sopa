@@ -1,6 +1,4 @@
-using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
@@ -12,10 +10,8 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Key]
         public int EtiquetaId { get; set; }
 
-        [NotMapped, JsonIgnore]
         public virtual Receita Receita { get; set; }
 
-        [NotMapped, JsonIgnore]
         public virtual Etiqueta Etiqueta { get; set; }
     }
 }

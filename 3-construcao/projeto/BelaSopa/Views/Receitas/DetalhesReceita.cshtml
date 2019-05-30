@@ -8,36 +8,109 @@
 <p>Tempo de preparação: @Model.MinutosPreparacao minutos</p>
 <p>Número de doses: @Model.NumeroDoses</p>
 
-<p class="font-italic">@Model.Descricao</p>
-
-<p>Ingredientes:</p>
+<p>Etiquetas:</p>
 
 <ul>
-    @foreach (var ingredienteUtilizado in Model.ReceitaIngrediente)
+    @foreach (var etiqueta in Model.ReceitaEtiqueta)
     {
         <li>
-            @if (ingredienteUtilizado.Ingrediente != null)
-            {
-                <a
-                    asp-controller="Ingredientes"
-                    asp-action="Detalhes"
-                    asp-route-idReceita="@ingredienteUtilizado.Ingrediente.IngredienteId"
-                    >
-                    @ingredienteUtilizado.Nome (@ingredienteUtilizado.Quantidade)
-                </a>
-            }
-            else
-            {
-                <text>@ingredienteUtilizado.Nome (@ingredienteUtilizado.Quantidade)</text>
-            }
+            @etiqueta.Etiqueta.Nome
         </li>
     }
 </ul>
 
+<p class="font-italic">@Model.Descricao</p>
+
 <img
-    src="data:image/*;base64,@Model.GetImagemBase64()"
+    src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"
     alt=""
     style="max-width: 100%; object-fit: cover;"
     />
 
 <hr />
+<h4>Ingredientes</h4>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var utilizacaoIngrediente in Model.UtilizacoesIngredientes)
+        {
+            <tr>
+                <td>
+                    @if (utilizacaoIngrediente.Ingrediente != null)
+                    {
+                        <a
+                            asp-controller="Ingredientes"
+                            asp-action="Detalhes"
+                            asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId"
+                            >
+                            @utilizacaoIngrediente.Nome
+                        </a>
+                    }
+                    else
+                    {
+                        <text>@utilizacaoIngrediente.Nome</text>
+                    }
+                </td>
+                <td>@utilizacaoIngrediente.Quantidade</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+<h4>Valores nutricionais</h4>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Dose</th>
+            <th scope="col">% do VDR adulto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var valor in Model.ValoresNutricionais)
+        {
+            <tr>
+                <td>@valor.Nome</td>
+                <td>@valor.Dose</td>
+                <td>@if (@valor.PercentagemVdrAdulto != null) { @valor.PercentagemVdrAdulto<text>%</text> }</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+<h4>Passos</h4>
+
+<ul>
+    @foreach (var processo in Model.Processos)
+    {
+        <li>
+            <ul>
+                @foreach (var tarefa in processo.Tarefas)
+                {
+                    <li>
+                        @foreach ((string controller, int? id, string texto) in tarefa.GetPartesTexto())
+                        {
+                            if (controller == null)
+                            {
+                                <text>@texto</text>
+                            }
+                            else
+                            {
+                                <a asp-controller="@controller" asp-action="Detalhes" asp-route-id="@id">@texto</a>
+                            }
+                        }
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>

@@ -27,7 +27,7 @@ ingredientes:
   quantidade: 8 dl
 - nome: Polpa de tomate com cebola e alho
   quantidade: 5 dl
-- nome: Ovos s
+- nome: Ovos S
   quantidade: '2'
 - nome: Folhas de manjericão
   quantidade: qb
@@ -42,13 +42,13 @@ valores-nutricionais:
   nome: Gordura
   percentagem-do-vdr-adulto: 10
 - dose: 1,5 g
-  nome: Gordura | das quais saturadas
+  nome: Gordura, das quais saturadas
   percentagem-do-vdr-adulto: 7
 - dose: 21,4 g
   nome: Hidratos de carbono
   percentagem-do-vdr-adulto: null
 - dose: 6,9 g
-  nome: Hidratos de carbono | dos quais açúcares
+  nome: Hidratos de carbono, dos quais açúcares
   percentagem-do-vdr-adulto: 8
 - dose: 3,0 g
   nome: Fibra

@@ -13,7 +13,7 @@ etiquetas:
 - Sabores mediterrânicos
 
 ingredientes:
-- nome: Ovos m
+- nome: Ovos M
   quantidade: '3'
 - nome: Tomate com rama maduro
   quantidade: 1,5 kg
@@ -46,13 +46,13 @@ valores-nutricionais:
   nome: Gordura
   percentagem-do-vdr-adulto: 11
 - dose: 1,8 g
-  nome: Gordura | das quais saturadas
+  nome: Gordura, das quais saturadas
   percentagem-do-vdr-adulto: 9
 - dose: 42,4 g
   nome: Hidratos de carbono
   percentagem-do-vdr-adulto: null
 - dose: 9,8 g
-  nome: Hidratos de carbono | dos quais açúcares
+  nome: Hidratos de carbono, dos quais açúcares
   percentagem-do-vdr-adulto: 11
 - dose: 4,8 g
   nome: Fibra

@@ -78,8 +78,8 @@
             @for (; j < 3 && i < Model.Receitas.Count; j++, i++)
             {
                 <div class="col-sm Receita">
-                    <a asp-action="Detalhes" asp-route-idReceita="@Model.Receitas[i].ReceitaId">
-                        <img class="ReceitaImg" src="data:image/*;base64,@Model.Receitas[i].GetImagemBase64()" alt="" />
+                    <a asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
+                        <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
                         <p>@Model.Receitas[i].Nome</p>
                     </a>
                     @switch (Model.Receitas[i].Dificuldade)

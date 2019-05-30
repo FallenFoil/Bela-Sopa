@@ -1,12 +1,13 @@
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
+using YamlDotNet.Serialization;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
-    public class ReceitaIngrediente
+    public class UtilizacaoIngrediente
     {
-        public ReceitaIngrediente() { }
-        public ReceitaIngrediente(int idReceita, int idIngrediente) {
+        public UtilizacaoIngrediente() { }
+        public UtilizacaoIngrediente(int idReceita, int idIngrediente) {
             this.ReceitaId = idReceita;
             this.IngredienteId = idIngrediente;
         }
@@ -15,9 +16,11 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int ReceitaIngredienteId { get; set; }
 
         [Required, StringLength(100)]
+        [YamlMember(Alias = "nome")]
         public string Nome { get; set; }
 
         [Required, StringLength(50)]
+        [YamlMember(Alias = "quantidade")]
         public string Quantidade { get; set; }
 
         public int ReceitaId { get; set; }

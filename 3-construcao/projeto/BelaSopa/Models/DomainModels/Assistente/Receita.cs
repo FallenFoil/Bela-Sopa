@@ -1,5 +1,4 @@
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -32,10 +31,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
 
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
+        public virtual ICollection<UtilizacaoIngrediente> UtilizacoesIngredientes { get; set; } = new List<UtilizacaoIngrediente>();
 
-        [NotMapped, JsonIgnore]
+        public virtual ICollection<ValorNutricional> ValoresNutricionais { get; set; } = new List<ValorNutricional>();
+
         public virtual ICollection<Processo> Processos { get; set; } = new List<Processo>();
 
         [NotMapped, JsonIgnore]
@@ -47,31 +46,11 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
-        //[NotMapped, JsonIgnore]
-        //public virtual ICollection<QuantidadeIngrediente> QuantidadeIngredientes { get; set; }
-
-        //[NotMapped, JsonIgnore]
-        //public virtual ICollection<ValorNutricional> ValorNutricionais { get; set; }
-
         //[StringLength(50)]
         //public string Video { get; set; }
 
         //[Required]
         //[StringLength(50)]
         //public string Link { get; set; }
-
-        public string GetImagemBase64()
-        {
-            return Convert.ToBase64String(Imagem, Base64FormattingOptions.None);
-        }
-
-        public bool HasEtiqueta(int etiquetaId)
-        {
-            foreach (ReceitaEtiqueta re in this.ReceitaEtiqueta)
-                if (re.EtiquetaId == etiquetaId)
-                    return true;
-
-            return false;
-        }
     }
 }

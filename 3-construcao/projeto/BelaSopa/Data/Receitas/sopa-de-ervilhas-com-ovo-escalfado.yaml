@@ -31,7 +31,7 @@ ingredientes:
   quantidade: 225 g
 - nome: Coentros
   quantidade: 1 molho
-- nome: Ovos s
+- nome: Ovos S
   quantidade: '6'
 - nome: Vinagre
   quantidade: 2 c. sopa
@@ -46,13 +46,13 @@ valores-nutricionais:
   nome: Gordura
   percentagem-do-vdr-adulto: 29
 - dose: 4,4 g
-  nome: Gordura | das quais saturadas
+  nome: Gordura, das quais saturadas
   percentagem-do-vdr-adulto: 22
 - dose: 28,9 g
   nome: Hidratos de carbono
   percentagem-do-vdr-adulto: null
 - dose: 7,8 g
-  nome: Hidratos de carbono | dos quais açúcares
+  nome: Hidratos de carbono, dos quais açúcares
   percentagem-do-vdr-adulto: 9
 - dose: 7,7 g
   nome: Fibra

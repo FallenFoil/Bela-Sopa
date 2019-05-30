@@ -1,6 +1,5 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using YamlDotNet.Serialization;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
@@ -9,24 +8,21 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Key]
         public int TecnicaId { get; set; }
 
-        [Required]
-        [StringLength(20)]
+        [Required, StringLength(100)]
+        [YamlMember(Alias = "nome")]
         public string Nome { get; set; }
 
         [Required]
-        [StringLength(200)]
+        [YamlMember(Alias = "descrição")]
         public string Descricao { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string ImagePath { get; set; }
+        [YamlMember(Alias = "texto")]
+        public string Texto { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Link { get; set; }
-
-        [NotMapped]
-        public virtual ICollection<TarefaTecnica> TarefaTecnica { get; set; }
+        [YamlMember(Alias = "imagem")]
+        public byte[] Imagem { get; set; }
 
     }
 }

@@ -35,17 +35,14 @@ namespace BelaSopa.Shared
                     Dificuldade = dificuldade,
                     MinutosPreparacao = yamlReceita.MinutosPreparacao,
                     NumeroDoses = yamlReceita.NumeroDoses,
-                    Imagem = yamlReceita.Imagem
-                };
-
-                foreach (var yamlIngrediente in yamlReceita.Ingredientes)
-                {
-                    receita.ReceitaIngrediente.Add(new ReceitaIngrediente
+                    Imagem = yamlReceita.Imagem,
+                    UtilizacoesIngredientes = yamlReceita.Ingredientes,
+                    ValoresNutricionais = yamlReceita.ValoresNutricionais,
+                    Processos = yamlReceita.Passos.Select(p => new Processo
                     {
-                        Nome = yamlIngrediente.Nome,
-                        Quantidade = yamlIngrediente.Quantidade
-                    });
-                }
+                        Tarefas = p.Select(t => new Tarefa { Texto = t }).ToList()
+                    }).ToList()
+                };
 
                 context.AdicionarReceita(receita, yamlReceita.Etiquetas);
             });
@@ -56,6 +53,22 @@ namespace BelaSopa.Shared
             CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
             {
                 context.AdicionarIngrediente(ingrediente);
+            });
+        }
+
+        public static void CarregarTecnicasDeExemplo(BelaSopaContext context)
+        {
+            CarregarRecursosYaml<Tecnica>("BelaSopa.Data.Tecnicas.", ingrediente =>
+            {
+                context.AdicionarTecnica(ingrediente);
+            });
+        }
+
+        public static void CarregarUtensiliosDeExemplo(BelaSopaContext context)
+        {
+            CarregarRecursosYaml<Utensilio>("BelaSopa.Data.Utensilios.", ingrediente =>
+            {
+                context.AdicionarUtensilio(ingrediente);
             });
         }
 
@@ -108,37 +121,16 @@ namespace BelaSopa.Shared
             public List<string> Etiquetas { get; set; }
 
             [YamlMember(Alias = "ingredientes")]
-            public List<YamlReceitaIngrediente> Ingredientes { get; set; }
+            public List<UtilizacaoIngrediente> Ingredientes { get; set; }
 
             [YamlMember(Alias = "valores-nutricionais")]
-            public List<YamlReceitaValorNutricional> ValoresNutricionais { get; set; }
+            public List<ValorNutricional> ValoresNutricionais { get; set; }
 
             [YamlMember(Alias = "passos")]
             public List<List<string>> Passos { get; set; }
 
             [YamlMember(Alias = "imagem")]
             public byte[] Imagem { get; set; }
-        }
-
-        private class YamlReceitaIngrediente
-        {
-            [YamlMember(Alias = "nome")]
-            public string Nome { get; set; }
-
-            [YamlMember(Alias = "quantidade")]
-            public string Quantidade { get; set; }
-        }
-
-        private class YamlReceitaValorNutricional
-        {
-            [YamlMember(Alias = "nome")]
-            public string Nome { get; set; }
-
-            [YamlMember(Alias = "dose")]
-            public string Dose { get; set; }
-
-            [YamlMember(Alias = "percentagem-do-vdr-adulto")]
-            public int? PercentagemVdrAdulto { get; set; }
         }
 
         private class ByteArrayConverter : IYamlTypeConverter

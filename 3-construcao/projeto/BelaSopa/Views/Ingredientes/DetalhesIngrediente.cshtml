@@ -7,10 +7,25 @@
 <p class="font-italic">@Model.Ingrediente.Descricao</p>
 
 <img
-    src="data:image/*;base64,@Model.Ingrediente.GetImagemBase64()"
+    src="data:image/*;base64,@Util.BytesToBase64(Model.Ingrediente.Imagem)"
     alt=""
     style="max-width: 100%; object-fit: cover;"
     />
+
+@if (Model.Ingrediente.Utilizacoes.Count > 0)
+{
+    <hr />
+    <h4>Receitas que utilizam @Model.Ingrediente.Nome.ToLower()</h4>
+
+    <ul>
+        @foreach (var receita in Model.Ingrediente.GetReceitasUtilizacoes())
+        {
+            <li>
+                <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@receita.ReceitaId">@receita.Nome</a>
+            </li>
+        }
+    </ul>
+}
 
 <hr />
 

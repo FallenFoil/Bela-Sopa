@@ -3,7 +3,7 @@ using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -23,59 +23,43 @@ namespace BelaSopa.Controllers
         {
             ViewData["nome"] = nome;
 
+            // obter ingredientes
+
             IQueryable<Ingrediente> ingredientes = context.Ingrediente;
 
             if (nome != null)
-                ingredientes = ingredientes.Where(ingrediente => Util.FairlyFuzzyContains(ingrediente.Nome, nome));
+                ingredientes = ingredientes.Where(ingrediente => Util.FuzzyContains(ingrediente.Nome, nome));
 
             ingredientes = ingredientes.OrderBy(ingrediente => ingrediente.Nome);
 
             var viewModel = ingredientes.ToList();
 
+            // criar view model e devolver view
+
             return View(viewName: "ListaIngredientes", model: viewModel);
         }
 
         [HttpGet]
-        [Route("[controller]/[action]/{idIngrediente}")]
-        public IActionResult Detalhes([FromRoute] int idIngrediente)
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Detalhes([FromRoute] int id)
         {
             // obter ingrediente
 
-            var ingrediente = context.Ingrediente.Find(idIngrediente);
+            var ingrediente =
+                context
+                .Ingrediente
+                .Include(i => i.Utilizacoes)
+                .ThenInclude(ui => ui.Receita)
+                .SingleOrDefault(i => i.IngredienteId == id);
 
             if (ingrediente == null)
                 return NotFound();
 
-            // separar texto em secções
-
-            var seccoes = new List<(string Titulo, List<string> Paragrafos)>();
-
-            foreach (string parte in ingrediente.Texto.Split('\n'))
-            {
-                var trimmed = parte.Trim();
-
-                if (!trimmed.EndsWith('.') && !trimmed.EndsWith(':'))
-                {
-                    // título da secção
-
-                    seccoes.Add((trimmed, new List<string>()));
-                }
-                else
-                {
-                    // parágrafo
-
-                    if (seccoes.Count == 0)
-                        seccoes.Add((null, new List<string>()));
-
-                    seccoes.Last().Paragrafos.Add(trimmed);
-                }
-            }
-
             // criar view model e devolver view
 
             var viewModel = (
-                ingrediente: ingrediente,
-                seccoes: seccoes
+                Ingrediente: ingrediente,
+                Seccoes: Util.FormatarTextoComSeccoes(ingrediente.Texto)
                 );
 
             return View(viewName: "DetalhesIngrediente", model: viewModel);

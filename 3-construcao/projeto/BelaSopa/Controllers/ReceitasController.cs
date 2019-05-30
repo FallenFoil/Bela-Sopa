@@ -3,6 +3,7 @@ using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -31,7 +32,7 @@ namespace BelaSopa.Controllers
             IQueryable<Receita> receitas = context.Receita;
 
             if (nome != null)
-                receitas = receitas.Where(receita => Util.FairlyFuzzyContains(receita.Nome, nome));
+                receitas = receitas.Where(receita => Util.FuzzyContains(receita.Nome, nome));
 
             if (etiqueta != null)
                 receitas = receitas.Where(receita => receita.ReceitaEtiqueta.Any(e => e.EtiquetaId == etiqueta));
@@ -50,12 +51,22 @@ namespace BelaSopa.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/[action]/{idReceita}")]
-        public IActionResult Detalhes([FromRoute] int idReceita)
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Detalhes([FromRoute] int id)
         {
             // obter receita
 
-            var receita = context.Receita.Find(idReceita);
+            var receita =
+                context
+                .Receita
+                .Include(r => r.ReceitaEtiqueta)
+                .ThenInclude(re => re.Etiqueta)
+                .Include(r => r.UtilizacoesIngredientes)
+                .ThenInclude(ui => ui.Ingrediente)
+                .Include(r => r.ValoresNutricionais)
+                .Include(r => r.Processos)
+                .ThenInclude(p => p.Tarefas)
+                .SingleOrDefault(i => i.ReceitaId == id);
 
             if (receita == null)
                 return NotFound();

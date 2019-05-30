@@ -49,7 +49,7 @@ valores-nutricionais:
   nome: Gordura
   percentagem-do-vdr-adulto: 12
 - dose: 1,8 g
-  nome: Gordura | das quais saturadas
+  nome: Gordura, das quais saturadas
   percentagem-do-vdr-adulto: 9
 - dose: 1,3 g
   nome: Sal

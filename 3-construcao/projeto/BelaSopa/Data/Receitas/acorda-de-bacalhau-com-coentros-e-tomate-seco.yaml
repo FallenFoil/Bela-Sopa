@@ -31,7 +31,7 @@ ingredientes:
   quantidade: 40 g
 - nome: Pão de mistura trigo e centeio
   quantidade: 300 g
-- nome: Ovos s
+- nome: Ovos S
   quantidade: '4'
 
 valores-nutricionais:
@@ -42,13 +42,13 @@ valores-nutricionais:
   nome: Gordura
   percentagem-do-vdr-adulto: 31
 - dose: 3,9 g
-  nome: Gordura | das quais saturadas
+  nome: Gordura, das quais saturadas
   percentagem-do-vdr-adulto: 20
 - dose: 39,6 g
   nome: Hidratos de carbono
   percentagem-do-vdr-adulto: null
 - dose: 1,9 g
-  nome: Hidratos de carbono | dos quais açúcares
+  nome: Hidratos de carbono, dos quais açúcares
   percentagem-do-vdr-adulto: 2
 - dose: 2,7 g
   nome: Fibra

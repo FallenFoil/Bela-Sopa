@@ -1,0 +1,28 @@
+@model (Utensilio Utensilio, List<(string Titulo, List<string> Paragrafos)> Seccoes)
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = Model.Utensilio.Nome;
+}
+
+<p class="font-italic">@Model.Utensilio.Descricao</p>
+
+<img
+    src="data:image/*;base64,@Util.BytesToBase64(Model.Utensilio.Imagem)"
+    alt=""
+    style="max-width: 100%; object-fit: cover;"
+    />
+
+<hr />
+
+@foreach (var seccao in Model.Seccoes)
+{
+    if (seccao.Titulo != null)
+    {
+        <h4>@seccao.Titulo</h4>
+    }
+
+    foreach (var paragrafo in seccao.Paragrafos)
+    {
+        <p>@paragrafo</p>
+    }
+}

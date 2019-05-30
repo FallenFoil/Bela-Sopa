@@ -6,82 +6,82 @@ using System.Linq;
 
 namespace BelaSopa.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class TecnicaController : Controller
-    {
-        private readonly BelaSopaContext _context;
+    //[Route("api/[controller]")]
+    //[ApiController]
+    //public class TecnicaController : Controller
+    //{
+    //    private readonly BelaSopaContext _context;
 
-        public TecnicaController(BelaSopaContext context)
-        {
-            _context = context;
-        }
+    //    public TecnicaController(BelaSopaContext context)
+    //    {
+    //        _context = context;
+    //    }
 
-        // GET api/tecnica
-        [HttpGet]
-        public ActionResult Get()
-        {
-            Tecnica[] tecns = _context.Tecnica.ToArray<Tecnica>();
-            return Ok(tecns);
-        }
+    //    // GET api/tecnica
+    //    [HttpGet]
+    //    public ActionResult Get()
+    //    {
+    //        Tecnica[] tecns = _context.Tecnica.ToArray<Tecnica>();
+    //        return Ok(tecns);
+    //    }
 
-        // GET api/tecnica/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            Tecnica tecn = _context.Tecnica.Find(id);
-            if (tecn == null)
-                return NotFound();
+    //    // GET api/tecnica/5
+    //    [HttpGet("{id}")]
+    //    public ActionResult<string> Get(int id)
+    //    {
+    //        Tecnica tecn = _context.Tecnica.Find(id);
+    //        if (tecn == null)
+    //            return NotFound();
 
-            return Ok(tecn);
+    //        return Ok(tecn);
 
-        }
+    //    }
 
-        // POST api/tecnica
-        [HttpPost]
-        public IActionResult Post([FromBody] Tecnica tecn)
-        {
-            _context.Tecnica.Add(tecn);
-            _context.SaveChanges();
-            return new CreatedResult($"/api/Tecnica/{tecn.TecnicaId}", tecn);
-        }
+    //    // POST api/tecnica
+    //    [HttpPost]
+    //    public IActionResult Post([FromBody] Tecnica tecn)
+    //    {
+    //        _context.Tecnica.Add(tecn);
+    //        _context.SaveChanges();
+    //        return new CreatedResult($"/api/Tecnica/{tecn.TecnicaId}", tecn);
+    //    }
 
-        // PUT api/tecnica/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Tecnica tecn)
-        {
-            Tecnica toUpdate = _context.Tecnica.Find(id);
-            if (toUpdate == null)
-                return NotFound();
+    //    // PUT api/tecnica/5
+    //    [HttpPut("{id}")]
+    //    public IActionResult Put(int id, [FromBody] Tecnica tecn)
+    //    {
+    //        Tecnica toUpdate = _context.Tecnica.Find(id);
+    //        if (toUpdate == null)
+    //            return NotFound();
 
-            toUpdate.ImagePath = tecn.ImagePath;
-            toUpdate.Link = tecn.Link;
-            toUpdate.Nome = tecn.Nome;
-            toUpdate.Descricao = tecn.Descricao;
+    //        toUpdate.ImagePath = tecn.ImagePath;
+    //        toUpdate.Link = tecn.Link;
+    //        toUpdate.Nome = tecn.Nome;
+    //        toUpdate.Descricao = tecn.Descricao;
 
-            _context.SaveChanges();
+    //        _context.SaveChanges();
 
-            return Ok(tecn);
-        }
+    //        return Ok(tecn);
+    //    }
 
-        // DELETE api/tecnica/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            Tecnica a = _context.Tecnica.Find(id);
-            if (a == null)
-            {
-                return NotFound();
-            }
+    //    // DELETE api/tecnica/5
+    //    [HttpDelete("{id}")]
+    //    public IActionResult Delete(int id)
+    //    {
+    //        Tecnica a = _context.Tecnica.Find(id);
+    //        if (a == null)
+    //        {
+    //            return NotFound();
+    //        }
 
-            _context.Tecnica.Remove(a);
-            _context.SaveChanges();
-            return NoContent();
-        }
+    //        _context.Tecnica.Remove(a);
+    //        _context.SaveChanges();
+    //        return NoContent();
+    //    }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+    //    public IActionResult Index()
+    //    {
+    //        return View();
+    //    }
+    //}
 }

@@ -43,7 +43,7 @@ valores-nutricionais:
   nome: Gordura
   percentagem-do-vdr-adulto: 8
 - dose: 1,4 g
-  nome: Gordura | das quais saturadas
+  nome: Gordura, das quais saturadas
   percentagem-do-vdr-adulto: 7
 - dose: 7,7 g
   nome: Fibra
