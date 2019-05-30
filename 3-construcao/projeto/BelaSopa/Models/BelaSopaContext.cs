@@ -1,6 +1,5 @@
 using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
-using BelaSopa.Shared;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +31,7 @@ namespace BelaSopa.Models
             Receita.Add(receita);
 
             // descobrir relacionamentos com ingredientes
-            
+
             foreach (var utilizacaoIngrediente in receita.UtilizacoesIngredientes)
             {
                 // tentar encontrar ingrediente com nome semelhante
@@ -40,7 +39,7 @@ namespace BelaSopa.Models
                 var ingrediente =
                     Ingrediente
                     .Include(i => i.Utilizacoes)
-                    .FirstOrDefault(i => Util.TextoContemIngredienteFuzzy(utilizacaoIngrediente.Nome, i.Nome));
+                    .FirstOrDefault(i => TextoContemIngrediente(utilizacaoIngrediente.Nome, i));
 
                 if (ingrediente != null)
                     ingrediente.Utilizacoes.Add(utilizacaoIngrediente);
@@ -72,6 +71,11 @@ namespace BelaSopa.Models
             Ingrediente.Add(ingrediente);
 
             SaveChanges();
+        }
+
+        private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
+        {
+            return true;
         }
 
         public DbSet<Administrador> Administrador { get; set; }

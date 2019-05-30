@@ -27,7 +27,7 @@ namespace BelaSopa.Controllers
             IQueryable<Ingrediente> ingredientes = context.Ingrediente;
 
             if (nome != null)
-                ingredientes = ingredientes.Where(ingrediente => Util.FairlyFuzzyContains(ingrediente.Nome, nome));
+                ingredientes = ingredientes.Where(ingrediente => Util.FuzzyContains(ingrediente.Nome, nome));
 
             ingredientes = ingredientes.OrderBy(ingrediente => ingrediente.Nome);
 
