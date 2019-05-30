@@ -29,7 +29,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int ProcessoId { get; set; }
 
         public virtual Processo Processo { get; set; }
-        
+
         public List<(string Controller, int? Id, string Texto)> GetPartesTexto()
         {
             var partes = new List<(string Controller, int? Id, string Texto)>();
