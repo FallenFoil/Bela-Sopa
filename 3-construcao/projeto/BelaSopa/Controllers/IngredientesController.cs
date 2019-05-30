@@ -51,7 +51,7 @@ namespace BelaSopa.Controllers
 
             if (ingrediente == null)
                 return NotFound();
-            
+
             // separar texto em secções
 
             var seccoes = new List<(string Titulo, List<string> Paragrafos)>();
