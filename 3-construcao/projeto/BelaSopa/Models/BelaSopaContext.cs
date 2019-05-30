@@ -1,5 +1,6 @@
 using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
+using BelaSopa.Shared;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,19 +64,42 @@ namespace BelaSopa.Models
                 etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
             }
 
+            // guardar alterações
+
             SaveChanges();
         }
 
         public void AdicionarIngrediente(Ingrediente ingrediente)
         {
+            // adicionar ingrediente
+
             Ingrediente.Add(ingrediente);
+
+            // descobrir relacionamentos com receitas
+
+            foreach (var receita in Receita.Include(r => r.UtilizacoesIngredientes).ThenInclude(ui => ui.Ingrediente))
+            {
+                foreach (var utilizacaoIngrediente in receita.UtilizacoesIngredientes)
+                {
+                    if (utilizacaoIngrediente.Ingrediente == null)
+                    {
+                        if (TextoContemIngrediente(utilizacaoIngrediente.Nome, ingrediente))
+                            ingrediente.Utilizacoes.Add(utilizacaoIngrediente);
+                    }
+                }
+            }
+
+            // guardar alterações
 
             SaveChanges();
         }
 
         private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
         {
-            return true;
+            return
+                texto
+                .Split()
+                .Any(palavra => Util.FuzzyEquals(palavra, ingrediente.Nome));
         }
 
         public DbSet<Administrador> Administrador { get; set; }

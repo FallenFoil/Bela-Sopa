@@ -17,6 +17,15 @@ namespace BelaSopa.Shared
             return Convert.ToBase64String(bytes, Base64FormattingOptions.None);
         }
 
+        public static bool FuzzyEquals(string texto1, string texto2)
+        {
+            return CultureInfo.CurrentCulture.CompareInfo.Compare(
+                texto1,
+                texto2,
+                CompareOptions.IgnoreCase | CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreSymbols
+                ) == 0;
+        }
+
         public static bool FuzzyContains(string textoOrigem, string textoContido)
         {
             return CultureInfo.CurrentCulture.CompareInfo.IndexOf(
