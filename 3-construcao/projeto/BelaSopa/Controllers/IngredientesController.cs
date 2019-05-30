@@ -36,12 +36,12 @@ namespace BelaSopa.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/[action]/{idIngrediente}")]
-        public IActionResult Detalhes([FromRoute] int idIngrediente)
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Detalhes([FromRoute] int id)
         {
             // obter ingrediente
 
-            var ingrediente = context.Ingrediente.Find(idIngrediente);
+            var ingrediente = context.Ingrediente.Find(id);
 
             if (ingrediente == null)
                 return NotFound();
@@ -54,11 +54,11 @@ namespace BelaSopa.Controllers
             {
                 var trimmed = parte.Trim();
 
-                if (!trimmed.EndsWith('.') && !trimmed.EndsWith(':'))
+                if (trimmed.First() == '[' && trimmed.Last() == ']')
                 {
                     // título da secção
 
-                    seccoes.Add((trimmed, new List<string>()));
+                    seccoes.Add((trimmed.Substring(1, trimmed.Length - 2), new List<string>()));
                 }
                 else
                 {

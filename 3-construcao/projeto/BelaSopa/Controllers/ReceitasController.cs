@@ -50,12 +50,12 @@ namespace BelaSopa.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/[action]/{idReceita}")]
-        public IActionResult Detalhes([FromRoute] int idReceita)
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Detalhes([FromRoute] int id)
         {
             // obter receita
 
-            var receita = context.Receita.Find(idReceita);
+            var receita = context.Receita.Find(id);
 
             if (receita == null)
                 return NotFound();
