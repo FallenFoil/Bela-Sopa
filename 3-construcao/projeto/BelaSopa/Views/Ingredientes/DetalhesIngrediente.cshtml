@@ -15,7 +15,7 @@
 @if (Model.Ingrediente.Utilizacoes.Count > 0)
 {
     <hr />
-    <h4>Receitas que utilizam este ingrediente</h4>
+    <h4>Receitas que utilizam @Model.Ingrediente.Nome.ToLower()</h4>
 
     <ul>
         @foreach (var receita in Model.Ingrediente.GetReceitasUtilizacoes())

@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
@@ -31,7 +32,22 @@ namespace BelaSopa.Models.DomainModels.Assistente
         
         public List<(string Controller, int? Id, string Texto)> GetPartesTexto()
         {
-            return new List<(string Controller, int? Id, string Texto)> { (null, null, Texto) };
+            var partes = new List<(string Controller, int? Id, string Texto)>();
+
+            foreach (var parte in Texto.Split('|').Select(t => t.Trim()))
+            {
+                if (parte.StartsWith('$'))
+                {
+                    var split = parte.Substring(1).Split(',', 3);
+                    partes.Add((split[0], int.Parse(split[1]), split[2].Trim()));
+                }
+                else
+                {
+                    partes.Add((null, null, parte));
+                }
+            }
+
+            return partes;
         }
     }
 

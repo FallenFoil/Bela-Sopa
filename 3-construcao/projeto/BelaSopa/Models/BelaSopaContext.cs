@@ -50,6 +50,15 @@ namespace BelaSopa.Models
                     ingrediente.Utilizacoes.Add(utilizacaoIngrediente);
             }
 
+            // converter texto das tarefas
+
+            var todasTecnicas = Tecnica.ToArray();
+            var todosUtensilios = Utensilio.ToArray();
+
+            foreach (var processo in receita.Processos)
+                foreach (var tarefa in processo.Tarefas)
+                    tarefa.Texto = ConverterTextoTarefa(tarefa.Texto, todosIngredientes, todasTecnicas, todosUtensilios);
+
             // adicionar etiquetas e relacionamentos receita-etiqueta
 
             foreach (var nomeEtiqueta in nomesEtiquetas)
@@ -111,6 +120,47 @@ namespace BelaSopa.Models
         private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
         {
             return Util.FuzzyContains(texto, ingrediente.Nome);
+        }
+
+        private string ConverterTextoTarefa(
+            string texto,
+            IList<Ingrediente> ingredientes,
+            IList<Tecnica> tecnicas,
+            IList<Utensilio> utensilios
+            )
+        {
+            var convertido = "";
+
+            foreach (var palavra in texto.Split())
+            {
+                var ingrediente = ingredientes.FirstOrDefault(i => Util.FuzzyEquals(palavra, i.Nome));
+
+                if (ingrediente != null)
+                {
+                    convertido += $"|$Ingredientes,{ingrediente.IngredienteId},{palavra}|";
+                    continue;
+                }
+
+                var tecnica = tecnicas.FirstOrDefault(t => Util.FuzzyEquals(palavra, t.Nome));
+
+                if (tecnica != null)
+                {
+                    convertido += $"|$Tecnicas,{tecnica.TecnicaId},{palavra}|";
+                    continue;
+                }
+
+                var utensilio = utensilios.FirstOrDefault(u => Util.FuzzyEquals(palavra, u.Nome));
+
+                if (utensilio != null)
+                {
+                    convertido += $"|Utensilio,{utensilio.UtensilioId},{palavra}|";
+                    continue;
+                }
+
+                convertido += ' ' + palavra;
+            }
+
+            return convertido;
         }
 
         public DbSet<Administrador> Administrador { get; set; }
