@@ -33,7 +33,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public ClienteEmentaSemanal(int idCliente, int idReceita) : base(idCliente, idReceita) { }
         public ClienteEmentaSemanal() { }
         [Required]
-        public DateTime Horario { get; set; }
+        public TimeSpan Horario { get; set; }
     }
 
     public class ClienteFavorito : ClienteReceita
@@ -42,10 +42,13 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public ClienteFavorito(int idCliente, int idReceita) : base(idCliente, idReceita) { }
 
     }
-    public class ClienteFinalizado : ClienteReceita
-    {
+    public class ClienteFinalizado : ClienteReceita {
         public ClienteFinalizado() { }
-        public ClienteFinalizado(int idCliente, int idReceita) : base(idCliente, idReceita) { }
-    }
+        public ClienteFinalizado(int idCliente, int idReceita) : base(idCliente, idReceita) {
+            this.Data = DateTime.Now;
+        }
+        [Required]
+        public DateTime Data {get; set;}
+}
 
 }

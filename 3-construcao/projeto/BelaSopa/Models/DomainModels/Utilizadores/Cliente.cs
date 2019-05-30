@@ -9,8 +9,11 @@ namespace BelaSopa.Models.DomainModels.Utilizadores{
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
+        [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ClienteFavorito> ClienteFavorito { set; get; }
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ClienteFinalizado> ClienteFinalizado { set; get; }
     }
 }

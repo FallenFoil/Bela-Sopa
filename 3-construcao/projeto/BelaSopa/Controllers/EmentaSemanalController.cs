@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,16 +21,24 @@ namespace BelaSopa.Controllers
 
         public IActionResult Index()
         {
-            IDictionary<DateTime, Receita> Ementa = new Dictionary<DateTime, Receita>();
+            IDictionary<TimeSpan, Receita> Ementa = new Dictionary<TimeSpan, Receita>();
             ClienteEmentaSemanal[] receitas = context.ClienteEmentaSemanal
-                                                .Where(ces => ces.ClienteId == 1)
+                                                .Where(ces => ces.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
                                                 .ToArray<ClienteEmentaSemanal>();
             foreach(ClienteEmentaSemanal ces in receitas)
                 Ementa.Add(ces.Horario, ces.Receita);
 
-            ViewData["Ementa"] = Ementa;
+            return View(viewName: "EmentaSemanal", model: Ementa);
+        }
 
-            return View(viewName: "EmentaSemanal");
+        public IActionResult RemoverReceita(TimeSpan horario) {
+            ClienteEmentaSemanal toRemove = context.ClienteEmentaSemanal.Where(ces =>
+                ces.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId &&
+                ces.Horario.Equals(horario)
+                ).First();
+            context.ClienteEmentaSemanal.Remove(toRemove);
+            context.SaveChanges();
+            return Index();
         }
     }
 }

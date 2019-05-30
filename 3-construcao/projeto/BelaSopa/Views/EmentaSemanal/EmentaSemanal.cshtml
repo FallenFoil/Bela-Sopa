@@ -3,31 +3,88 @@
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "Ementa Semanal";
     string[] dias = { "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo" };
-    var Ementa = ViewData["Ementa"] as Dictionary<DateTime, Receita>;
 }
-    <div class="container">
-        <div class="row Refeiçoes">
-            @foreach (var dia in dias) {
-                <div class="col-sm diaDaSemana bordered">
-                    @dia
+@model  Dictionary<TimeSpan, Receita>
 
-                </div>
-            }
-        </div>
-        <div class="row">
-            @for (int i = 0; i < dias.Length; i++) {
-                <div class="col-sm almoco bordered ementaBox">
+    <div class="table-responsive-sm">
+        <table class="table">
+            <caption>Ementa Semanal</caption>
+            <thead>
+                <tr>
+                    <th> # </th>
+                    @foreach (var dia in dias) {
+                        <div class="col-sm diaDaSemana bordered">
+                            <th scope="col">@dia</th>
+                        </div>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Almoço</th>
+                    @for (int i = 0; i < dias.Length; i++) {
+                        var almoco = new TimeSpan(i, 12, 0, 0);
+                        @if (Model.ContainsKey(almoco)) {
+                            <td>
+                                <span>@Model[almoco].Nome</span>
+                                <img class="ReceitaImg" src="data:image/*;base64,@Model[almoco].GetImagemBase64()" alt="" />
+                                <a asp-controller="EmentaSemanal"
+                                   asp-action="RemoverReceita"
+                                   asp-route-id="@almoco">Remover receita</a>
+                            </td>
+                        } else {
+                            <!-- Adicionar aqui algo para quando não há receita-->
+                        }
+                    }
+                </tr>
+                <tr>
+                    <th scope="row">Jantar</th>
+                    @for (int i = 0; i < dias.Length; i++) {
+                        var jantar = new TimeSpan(i, 19, 0, 0);
+                        @if (Model.ContainsKey(jantar)) {
+                            <td>
+                                <span>@Model[jantar].Nome</span>
 
-
-                </div>
-            }
-        </div>
-        <div class="row">
-            @for (int i = 0; i < dias.Length; i++) {
-                <div class="col-sm jantar bordered ementaBox">
-
-
-                </div>
-            }
-        </div>
+                                <a asp-controller="EmentaSemanal"
+                                   asp-action="RemoverReceita"
+                                   asp-route-id="@jantar">Remover receita</a>
+                            </td>
+                        } else {
+                            <!-- Adicionar aqui algo para quando não há receita-->
+                        }
+                    }
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+    <!--
+        <div class="container">
+            <div class="row Refeiçoes">
+                @foreach (var dia in dias) {
+                    <div class="col-sm diaDaSemana bordered">
+                        @dia
+                    </div>
+                }
+            </div>
+            <div class="row">
+                @for (int i = 0; i < dias.Length; i++) {
+                    var almoco = new TimeSpan(i, 12, 0, 0);
+                <div class="col-sm almoco bordered ementaBox">
+                    @if (Model.ContainsKey(almoco)) {
+                        <span>@Model[almoco].Nome</span>
+
+                    }
+                </div>
+                }
+            </div>
+            <div class="row">
+                @for (int i = 0; i < dias.Length; i++) {
+                    <div class="col-sm jantar bordered ementaBox">
+
+
+                    </div>
+                }
+            </div>
+        </div>
+    -->
