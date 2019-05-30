@@ -3,6 +3,7 @@ using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -41,11 +42,16 @@ namespace BelaSopa.Controllers
         {
             // obter ingrediente
 
-            var ingrediente = context.Ingrediente.Find(id);
+            var ingrediente =
+                context
+                .Ingrediente
+                .Include(i => i.Utilizacoes)
+                .ThenInclude(ui => ui.Receita)
+                .SingleOrDefault(i => i.IngredienteId == id);
 
             if (ingrediente == null)
                 return NotFound();
-
+            
             // separar texto em secções
 
             var seccoes = new List<(string Titulo, List<string> Paragrafos)>();
@@ -77,8 +83,8 @@ namespace BelaSopa.Controllers
             // criar view model e devolver view
 
             var viewModel = (
-                ingrediente: ingrediente,
-                seccoes: seccoes
+                Ingrediente: ingrediente,
+                Seccoes: seccoes
                 );
 
             return View(viewName: "DetalhesIngrediente", model: viewModel);

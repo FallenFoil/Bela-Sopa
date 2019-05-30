@@ -4,7 +4,6 @@ using BelaSopa.Shared;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BelaSopa.Models
 {
@@ -33,83 +32,82 @@ namespace BelaSopa.Models
             Receita.Add(receita);
 
             // descobrir relacionamentos com ingredientes
-
-            foreach (var ingredienteUtilizado in receita.Ingredientes)
+            
+            foreach (var utilizacaoIngrediente in receita.UtilizacoesIngredientes)
             {
                 // tentar encontrar ingrediente com nome semelhante
-                
-                ingredienteUtilizado.Ingrediente = Ingrediente.FirstOrDefault(
-                    ingrediente => Util.TextoContemIngredienteFuzzy(ingredienteUtilizado.Nome, ingrediente.Nome)
-                    );
+
+                var ingrediente =
+                    Ingrediente
+                    .Include(i => i.Utilizacoes)
+                    .FirstOrDefault(i => Util.TextoContemIngredienteFuzzy(utilizacaoIngrediente.Nome, i.Nome));
+
+                if (ingrediente != null)
+                    ingrediente.Utilizacoes.Add(utilizacaoIngrediente);
             }
-            
+
             // adicionar etiquetas e relacionamentos receita-etiqueta
 
             foreach (var nomeEtiqueta in nomesEtiquetas)
             {
                 // adicionar etiqueta se não existir
 
-                var etiqueta = Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta);
-
-                if (etiqueta == null)
-                    etiqueta = Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
+                var etiqueta =
+                    Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta) ??
+                    Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
 
                 // adicionar relacionamento receita-etiqueta
 
-                var receitaEtiqueta = new ReceitaEtiqueta
-                {
-                    ReceitaId = receita.ReceitaId,
-                    //Receita = receita,
-                    EtiquetaId = etiqueta.EtiquetaId,
-                    //Etiqueta = etiqueta
-                };
+                var receitaEtiqueta = new ReceitaEtiqueta();
 
                 receita.ReceitaEtiqueta.Add(receitaEtiqueta);
                 etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
-
-                ReceitaEtiqueta.Add(receitaEtiqueta);
             }
+
+            SaveChanges();
         }
 
         public void AdicionarIngrediente(Ingrediente ingrediente)
         {
             Ingrediente.Add(ingrediente);
+
+            SaveChanges();
         }
 
-        public virtual DbSet<Administrador> Administrador { get; set; }
+        public DbSet<Administrador> Administrador { get; set; }
 
-        public virtual DbSet<Cliente> Cliente { get; set; }
-        
-        //public virtual DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
-        public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-        //public virtual DbSet<ClienteFavorito> ClientesFavorito { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
 
-        public virtual DbSet<Receita> Receita { get; set; }
+        //public DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
+        public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        //public DbSet<ClienteFavorito> ClientesFavorito { get; set; }
 
-        public virtual DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
+        public DbSet<Receita> Receita { get; set; }
 
-        public virtual DbSet<UtilizacaoIngrediente> UtilizacaoIngrediente { get; set; }
+        public DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
-        public virtual DbSet<Etiqueta> Etiqueta { get; set; }
+        public DbSet<UtilizacaoIngrediente> UtilizacaoIngrediente { get; set; }
 
-        public virtual DbSet<Processo> Processo { get; set; }
+        public DbSet<Etiqueta> Etiqueta { get; set; }
 
-        //public virtual DbSet<ProcessoTarefa> ProcessoTarefa { get; set; }
+        public DbSet<Processo> Processo { get; set; }
 
-        public virtual DbSet<Tarefa> Tarefa { get; set; }
+        //public DbSet<ProcessoTarefa> ProcessoTarefa { get; set; }
 
-        public virtual DbSet<Ingrediente> Ingrediente { get; set; }
+        public DbSet<Tarefa> Tarefa { get; set; }
 
-
+        public DbSet<Ingrediente> Ingrediente { get; set; }
 
 
-        //public virtual DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
 
-        //public virtual DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
-        //public virtual DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
-        //public virtual DbSet<TarefaTecnica> TarefaTecnica { get; set; }
-        public virtual DbSet<Utensilio> Utensilio { get; set; }
-        public virtual DbSet<Tecnica> Tecnica { get; set; }
+
+        //public DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
+
+        //public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
+        //public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
+        //public DbSet<TarefaTecnica> TarefaTecnica { get; set; }
+        public DbSet<Utensilio> Utensilio { get; set; }
+        public DbSet<Tecnica> Tecnica { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -180,7 +178,7 @@ namespace BelaSopa.Models
             //    .HasOne(ti => ti.Tecnica)
             //    .WithMany(i => i.TarefaTecnica)
             //    .HasForeignKey(ti => ti.TecnicaId);
-            
+
             //modelBuilder.Entity<ReceitaIngrediente>()
             //  .HasKey(pt => new { pt.ReceitaId, pt.IngredienteId });
             //modelBuilder.Entity<ReceitaIngrediente>()
@@ -191,17 +189,17 @@ namespace BelaSopa.Models
             //    .HasOne(ri => ri.Ingrediente)
             //    .WithMany(i => i.ReceitaIngrediente)
             //    .HasForeignKey(t => t.IngredienteId);
-            
+
             modelBuilder.Entity<ReceitaEtiqueta>()
-                .HasKey(rc => new { rc.ReceitaId, rc.EtiquetaId });
+                .HasKey(re => new { re.ReceitaId, re.EtiquetaId });
             modelBuilder.Entity<ReceitaEtiqueta>()
-                .HasOne(ri => ri.Receita)
-                .WithMany(i => i.ReceitaEtiqueta)
-                .HasForeignKey(t => t.ReceitaId);
+                .HasOne(re => re.Receita)
+                .WithMany(r => r.ReceitaEtiqueta)
+                .HasForeignKey(re => re.ReceitaId);
             modelBuilder.Entity<ReceitaEtiqueta>()
-               .HasOne(ri => ri.Etiqueta)
-               .WithMany(i => i.ReceitaEtiqueta)
-               .HasForeignKey(t => t.EtiquetaId);
+                .HasOne(re => re.Etiqueta)
+                .WithMany(e => e.ReceitaEtiqueta)
+                .HasForeignKey(re => re.EtiquetaId);
         }
     }
 }

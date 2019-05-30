@@ -3,6 +3,7 @@ using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -55,8 +56,16 @@ namespace BelaSopa.Controllers
         {
             // obter receita
 
-            var receita = context.Receita.Find(id);
-
+            var receita =
+                context
+                .Receita
+                .Include(r => r.UtilizacoesIngredientes)
+                .ThenInclude(ui => ui.Ingrediente)
+                .Include(r => r.ValoresNutricionais)
+                .Include(r => r.Processos)
+                .ThenInclude(p => p.Tarefas)
+                .SingleOrDefault(i => i.ReceitaId == id);
+            
             if (receita == null)
                 return NotFound();
 

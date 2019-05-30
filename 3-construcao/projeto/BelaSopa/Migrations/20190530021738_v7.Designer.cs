@@ -4,14 +4,16 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190530021738_v7")]
+    partial class v7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -341,7 +343,7 @@ namespace BelaSopa.Migrations
                         .HasForeignKey("IngredienteId");
 
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
-                        .WithMany("UtilizacoesIngredientes")
+                        .WithMany("Ingredientes")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

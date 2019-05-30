@@ -10,31 +10,50 @@
 
 <p class="font-italic">@Model.Descricao</p>
 
+<img
+    src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"
+    alt=""
+    style="max-width: 100%; object-fit: cover;"
+    />
+
+<hr />
 <h4>Ingredientes</h4>
 
-<ul>
-    @foreach (var ingredienteUtilizado in Model.Ingredientes)
-    {
-        <li>
-            @if (ingredienteUtilizado.Ingrediente != null)
-            {
-                <a
-                    asp-controller="Ingredientes"
-                    asp-action="Detalhes"
-                    asp-route-id="@ingredienteUtilizado.Ingrediente.IngredienteId"
-                    >
-                    @ingredienteUtilizado.Nome (@ingredienteUtilizado.Quantidade)
-                </a>
-            }
-            else
-            {
-                <text>@ingredienteUtilizado.Nome (@ingredienteUtilizado.Quantidade)</text>
-            }
-        </li>
-    }
-</ul>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var utilizacaoIngrediente in Model.UtilizacoesIngredientes)
+        {
+            <tr>
+                <td>
+                    @if (utilizacaoIngrediente.Ingrediente != null)
+                    {
+                        <a
+                            asp-controller="Ingredientes"
+                            asp-action="Detalhes"
+                            asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId"
+                            >
+                            @utilizacaoIngrediente.Nome
+                        </a>
+                    }
+                    else
+                    {
+                        <text>@utilizacaoIngrediente.Nome</text>
+                    }
+                </td>
+                <td>@utilizacaoIngrediente.Quantidade</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<h4>Valores nutricionis</h4>
+<hr />
+<h4>Valores nutricionais</h4>
 
 <table class="table">
     <thead class="thead-light">
@@ -56,6 +75,9 @@
     </tbody>
 </table>
 
+<hr />
+<h4>Passos</h4>
+
 <ul>
     @foreach (var processo in Model.Processos)
     {
@@ -69,11 +91,3 @@
         </li>
     }
 </ul>
-
-<img
-    src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"
-    alt=""
-    style="max-width: 100%; object-fit: cover;"
-    />
-
-<hr />

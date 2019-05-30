@@ -44,7 +44,7 @@ namespace BelaSopa.Shared
                     MinutosPreparacao = yamlReceita.MinutosPreparacao,
                     NumeroDoses = yamlReceita.NumeroDoses,
                     Imagem = yamlReceita.Imagem,
-                    Ingredientes = yamlReceita.Ingredientes,
+                    UtilizacoesIngredientes = yamlReceita.Ingredientes,
                     ValoresNutricionais = yamlReceita.ValoresNutricionais,
                     Processos = yamlReceita.Passos.Select(p => new Processo
                     {
