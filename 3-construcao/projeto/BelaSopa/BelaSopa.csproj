@@ -22,6 +22,7 @@
     <None Remove="Data\Ingredientes\morango.yaml" />
     <None Remove="Data\Ingredientes\pimento.yaml" />
     <None Remove="Data\Ingredientes\quinoa.yaml" />
+    <None Remove="Data\Ingredientes\sal.yaml" />
     <None Remove="Data\Ingredientes\tomate.yaml" />
     <None Remove="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <None Remove="Data\Receitas\arjamolho-com-pimentos.yaml" />
@@ -165,6 +166,7 @@
     <EmbeddedResource Include="Data\Ingredientes\morango.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\pimento.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\quinoa.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\sal.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\tomate.yaml" />
     <EmbeddedResource Include="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <EmbeddedResource Include="Data\Receitas\arjamolho-com-pimentos.yaml" />
