@@ -33,13 +33,17 @@ namespace BelaSopa.Models
 
             // descobrir relacionamentos com ingredientes
 
+            var todosIngredientes =
+                Ingrediente
+                .Include(i => i.Utilizacoes)
+                .ToArray();
+
             foreach (var utilizacaoIngrediente in receita.UtilizacoesIngredientes)
             {
                 // tentar encontrar ingrediente com nome semelhante
 
                 var ingrediente =
-                    Ingrediente
-                    .Include(i => i.Utilizacoes)
+                    todosIngredientes
                     .FirstOrDefault(i => TextoContemIngrediente(utilizacaoIngrediente.Nome, i));
 
                 if (ingrediente != null)
