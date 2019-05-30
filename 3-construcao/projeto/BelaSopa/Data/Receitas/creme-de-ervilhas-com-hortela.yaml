@@ -45,13 +45,13 @@ valores-nutricionais:
   nome: Gordura
   percentagem-do-vdr-adulto: 15
 - dose: 1,4 g
-  nome: Gordura | das quais saturadas
+  nome: Gordura, das quais saturadas
   percentagem-do-vdr-adulto: 7
 - dose: 15,2 g
   nome: Hidratos de carbono
   percentagem-do-vdr-adulto: null
 - dose: 6,1 g
-  nome: Hidratos de carbono | dos quais açúcares
+  nome: Hidratos de carbono, dos quais açúcares
   percentagem-do-vdr-adulto: 7
 - dose: 10,3 g
   nome: Fibra

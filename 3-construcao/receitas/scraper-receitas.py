@@ -125,7 +125,7 @@ def scrape_recipe(url: str) -> None:
             nome = tr.find('td', class_='').string.strip()
 
             if tr.get('class') == ['inside']:
-                nome = prev_categoria + ' | ' + nome
+                nome = prev_categoria + ', ' + nome
             else:
                 prev_categoria = nome
 
@@ -163,7 +163,7 @@ def scrape_recipe(url: str) -> None:
             elif nome == 'Açucar':
                 nome = 'Açúcar'
             elif nome == 'Saturada':
-                nome = 'Gordura | das quais saturadas'
+                nome = 'Gordura, da qual saturada'
             elif nome not in ('Gordura', 'Sal', 'Fibra', 'Proteínas', 'Açúcar'):
                 raise KeyError(nome)
 
