@@ -25,8 +25,8 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [StringLength(50)]
         public string Link { get; set; }
 
-        [NotMapped]
-        public virtual ICollection<TarefaTecnica> TarefaTecnica { get; set; }
+        //[NotMapped]
+        //public virtual ICollection<TarefaTecnica> TarefaTecnica { get; set; }
 
     }
 }

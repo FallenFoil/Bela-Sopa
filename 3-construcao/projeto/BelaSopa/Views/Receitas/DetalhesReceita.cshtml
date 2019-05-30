@@ -37,7 +37,7 @@
 <h4>Valores nutricionis</h4>
 
 <table class="table">
-    <thead>
+    <thead class="thead-light">
         <tr>
             <th scope="col"></th>
             <th scope="col">Dose</th>
@@ -55,6 +55,20 @@
         }
     </tbody>
 </table>
+
+<ul>
+    @foreach (var processo in Model.Processos)
+    {
+        <li>
+            <ul>
+                @foreach (var tarefa in processo.Tarefas)
+                {
+                    <li>@tarefa.Texto</li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
 
 <img
     src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"

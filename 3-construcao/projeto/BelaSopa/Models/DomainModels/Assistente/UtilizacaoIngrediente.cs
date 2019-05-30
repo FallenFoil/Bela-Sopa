@@ -4,10 +4,10 @@ using YamlDotNet.Serialization;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
-    public class ReceitaIngrediente
+    public class UtilizacaoIngrediente
     {
-        public ReceitaIngrediente() { }
-        public ReceitaIngrediente(int idReceita, int idIngrediente) {
+        public UtilizacaoIngrediente() { }
+        public UtilizacaoIngrediente(int idReceita, int idIngrediente) {
             this.ReceitaId = idReceita;
             this.IngredienteId = idIngrediente;
         }

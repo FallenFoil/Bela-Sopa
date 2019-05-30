@@ -1,5 +1,4 @@
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -32,7 +31,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
 
-        public virtual ICollection<ReceitaIngrediente> Ingredientes { get; set; } = new List<ReceitaIngrediente>();
+        public virtual ICollection<UtilizacaoIngrediente> Ingredientes { get; set; } = new List<UtilizacaoIngrediente>();
 
         public virtual ICollection<ValorNutricional> ValoresNutricionais { get; set; } = new List<ValorNutricional>();
 
@@ -47,26 +46,11 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
-        //[NotMapped, JsonIgnore]
-        //public virtual ICollection<QuantidadeIngrediente> QuantidadeIngredientes { get; set; }
-
-        //[NotMapped, JsonIgnore]
-        //public virtual ICollection<ValorNutricional> ValorNutricionais { get; set; }
-
         //[StringLength(50)]
         //public string Video { get; set; }
 
         //[Required]
         //[StringLength(50)]
         //public string Link { get; set; }
-        
-        public bool HasEtiqueta(int etiquetaId)
-        {
-            foreach (ReceitaEtiqueta re in this.ReceitaEtiqueta)
-                if (re.EtiquetaId == etiquetaId)
-                    return true;
-
-            return false;
-        }
     }
 }

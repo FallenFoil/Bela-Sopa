@@ -88,7 +88,7 @@ namespace BelaSopa.Models
 
         public virtual DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
-        public virtual DbSet<ReceitaIngrediente> ReceitaIngrediente { get; set; }
+        public virtual DbSet<UtilizacaoIngrediente> UtilizacaoIngrediente { get; set; }
 
         public virtual DbSet<Etiqueta> Etiqueta { get; set; }
 
@@ -105,9 +105,9 @@ namespace BelaSopa.Models
 
         //public virtual DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
 
-        public virtual DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
-        public virtual DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
-        public virtual DbSet<TarefaTecnica> TarefaTecnica { get; set; }
+        //public virtual DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
+        //public virtual DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
+        //public virtual DbSet<TarefaTecnica> TarefaTecnica { get; set; }
         public virtual DbSet<Utensilio> Utensilio { get; set; }
         public virtual DbSet<Tecnica> Tecnica { get; set; }
 
@@ -148,50 +148,39 @@ namespace BelaSopa.Models
                 .WithMany(i => i.ClienteEmentaSemanal)
                 .HasForeignKey(ti => ti.ReceitaId);
 
-            modelBuilder.Entity<TarefaIngrediente>()
-                .HasKey(ti => new { ti.TarefaId, ti.IngredienteId });
-            modelBuilder.Entity<TarefaIngrediente>()
-                .HasOne(ti => ti.Tarefa)
-                .WithMany(t => t.TarefaIngrediente)
-                .HasForeignKey(ti => ti.TarefaId);
-            modelBuilder.Entity<TarefaIngrediente>()
-                .HasOne(ti => ti.Ingrediente)
-                .WithMany(i => i.TarefaIngrediente)
-                .HasForeignKey(ti => ti.IngredienteId);
+            //modelBuilder.Entity<TarefaIngrediente>()
+            //    .HasKey(ti => new { ti.TarefaId, ti.IngredienteId });
+            //modelBuilder.Entity<TarefaIngrediente>()
+            //    .HasOne(ti => ti.Tarefa)
+            //    .WithMany(t => t.TarefaIngrediente)
+            //    .HasForeignKey(ti => ti.TarefaId);
+            //modelBuilder.Entity<TarefaIngrediente>()
+            //    .HasOne(ti => ti.Ingrediente)
+            //    .WithMany(i => i.TarefaIngrediente)
+            //    .HasForeignKey(ti => ti.IngredienteId);
 
-            modelBuilder.Entity<TarefaUtensilio>()
-               .HasKey(ti => new { ti.TarefaId, ti.UtensilioId });
-            modelBuilder.Entity<TarefaUtensilio>()
-                .HasOne(ti => ti.Tarefa)
-                .WithMany(t => t.TarefaUtensilio)
-                .HasForeignKey(ti => ti.TarefaId);
-            modelBuilder.Entity<TarefaUtensilio>()
-                .HasOne(ti => ti.Utensilio)
-                .WithMany(i => i.TarefaUtensilio)
-                .HasForeignKey(ti => ti.UtensilioId);
+            //modelBuilder.Entity<TarefaUtensilio>()
+            //   .HasKey(ti => new { ti.TarefaId, ti.UtensilioId });
+            //modelBuilder.Entity<TarefaUtensilio>()
+            //    .HasOne(ti => ti.Tarefa)
+            //    .WithMany(t => t.TarefaUtensilio)
+            //    .HasForeignKey(ti => ti.TarefaId);
+            //modelBuilder.Entity<TarefaUtensilio>()
+            //    .HasOne(ti => ti.Utensilio)
+            //    .WithMany(i => i.TarefaUtensilio)
+            //    .HasForeignKey(ti => ti.UtensilioId);
 
-            modelBuilder.Entity<TarefaTecnica>()
-               .HasKey(ti => new { ti.TarefaId, ti.TecnicaId });
-            modelBuilder.Entity<TarefaTecnica>()
-                .HasOne(ti => ti.Tarefa)
-                .WithMany(t => t.TarefaTecnica)
-                .HasForeignKey(ti => ti.TarefaId);
-            modelBuilder.Entity<TarefaTecnica>()
-                .HasOne(ti => ti.Tecnica)
-                .WithMany(i => i.TarefaTecnica)
-                .HasForeignKey(ti => ti.TecnicaId);
-
-            //modelBuilder.Entity<ProcessoTarefa>()
-            //   .HasKey(pt => new { pt.ProcessoId, pt.TarefaId });
-            //modelBuilder.Entity<ProcessoTarefa>()
-            //    .HasOne(p => p.Processo)
-            //    .WithMany(t => t.ProcessoTarefa)
-            //    .HasForeignKey(ti => ti.ProcessoId);
-            //modelBuilder.Entity<ProcessoTarefa>()
-            //    .HasOne(t => t.Tarefa)
-            //    .WithMany(pt => pt.ProcessoTarefa)
-            //    .HasForeignKey(t => t.TarefaId);
-
+            //modelBuilder.Entity<TarefaTecnica>()
+            //   .HasKey(ti => new { ti.TarefaId, ti.TecnicaId });
+            //modelBuilder.Entity<TarefaTecnica>()
+            //    .HasOne(ti => ti.Tarefa)
+            //    .WithMany(t => t.TarefaTecnica)
+            //    .HasForeignKey(ti => ti.TarefaId);
+            //modelBuilder.Entity<TarefaTecnica>()
+            //    .HasOne(ti => ti.Tecnica)
+            //    .WithMany(i => i.TarefaTecnica)
+            //    .HasForeignKey(ti => ti.TecnicaId);
+            
             //modelBuilder.Entity<ReceitaIngrediente>()
             //  .HasKey(pt => new { pt.ReceitaId, pt.IngredienteId });
             //modelBuilder.Entity<ReceitaIngrediente>()
@@ -202,18 +191,7 @@ namespace BelaSopa.Models
             //    .HasOne(ri => ri.Ingrediente)
             //    .WithMany(i => i.ReceitaIngrediente)
             //    .HasForeignKey(t => t.IngredienteId);
-
-            //modelBuilder.Entity<ReceitaProcesso>()
-            //    .HasKey(rc => new { rc.ReceitaId, rc.ProcessoId });
-            //modelBuilder.Entity<ReceitaProcesso>()
-            //    .HasOne(ri => ri.Receita)
-            //    .WithMany(i => i.ReceitaProcesso)
-            //    .HasForeignKey(t => t.ReceitaId);
-            //modelBuilder.Entity<ReceitaProcesso>()
-            //   .HasOne(ri => ri.Processo)
-            //   .WithMany(i => i.ReceitaProcesso)
-            //   .HasForeignKey(t => t.ProcessoId);
-
+            
             modelBuilder.Entity<ReceitaEtiqueta>()
                 .HasKey(rc => new { rc.ReceitaId, rc.EtiquetaId });
             modelBuilder.Entity<ReceitaEtiqueta>()

@@ -4,14 +4,16 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190530013923_v4")]
+    partial class v4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,6 +130,33 @@ namespace BelaSopa.Migrations
                     b.ToTable("ReceitaEtiqueta");
                 });
 
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaIngrediente", b =>
+                {
+                    b.Property<int>("ReceitaIngredienteId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("IngredienteId");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Quantidade")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<int>("ReceitaId");
+
+                    b.HasKey("ReceitaIngredienteId");
+
+                    b.HasIndex("IngredienteId");
+
+                    b.HasIndex("ReceitaId");
+
+                    b.ToTable("ReceitaIngrediente");
+                });
+
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tarefa", b =>
                 {
                     b.Property<int>("TarefaId")
@@ -198,33 +227,6 @@ namespace BelaSopa.Migrations
                     b.HasKey("UtensilioId");
 
                     b.ToTable("Utensilio");
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.UtilizacaoIngrediente", b =>
-                {
-                    b.Property<int>("ReceitaIngredienteId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("IngredienteId");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<string>("Quantidade")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<int>("ReceitaId");
-
-                    b.HasKey("ReceitaIngredienteId");
-
-                    b.HasIndex("IngredienteId");
-
-                    b.HasIndex("ReceitaId");
-
-                    b.ToTable("UtilizacaoIngrediente");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ValorNutricional", b =>
@@ -326,23 +328,23 @@ namespace BelaSopa.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tarefa", b =>
-                {
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Processo", "Processo")
-                        .WithMany("Tarefas")
-                        .HasForeignKey("ProcessoId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.UtilizacaoIngrediente", b =>
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaIngrediente", b =>
                 {
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Ingrediente", "Ingrediente")
-                        .WithMany("Utilizacoes")
+                        .WithMany()
                         .HasForeignKey("IngredienteId");
 
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
                         .WithMany("Ingredientes")
                         .HasForeignKey("ReceitaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tarefa", b =>
+                {
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Processo", "Processo")
+                        .WithMany("Tarefas")
+                        .HasForeignKey("ProcessoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

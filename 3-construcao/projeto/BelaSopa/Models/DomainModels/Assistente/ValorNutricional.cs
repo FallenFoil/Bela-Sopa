@@ -16,7 +16,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Required, StringLength(20)]
         [YamlMember(Alias = "dose")]
         public string Dose { get; set; }
-        
+
         [YamlMember(Alias = "percentagem-do-vdr-adulto")]
         public int? PercentagemVdrAdulto { get; set; }
 

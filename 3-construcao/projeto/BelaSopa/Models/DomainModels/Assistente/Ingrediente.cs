@@ -1,13 +1,13 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using YamlDotNet.Serialization;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class Ingrediente
     {
+        [Key]
         public int IngredienteId { get; set; }
 
         [Required, StringLength(100)]
@@ -26,9 +26,6 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [YamlMember(Alias = "imagem")]
         public byte[] Imagem { get; set; }
 
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<TarefaIngrediente> TarefaIngrediente { get; set; } = new List<TarefaIngrediente>();
-
-        public virtual ICollection<ReceitaIngrediente> ReceitaIngrediente { get; set; } = new List<ReceitaIngrediente>();
+        public virtual ICollection<UtilizacaoIngrediente> Utilizacoes { get; set; } = new List<UtilizacaoIngrediente>();
     }
 }
