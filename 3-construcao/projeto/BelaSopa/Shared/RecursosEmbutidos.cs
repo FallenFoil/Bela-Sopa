@@ -14,14 +14,6 @@ namespace BelaSopa.Shared
 {
     public class RecursosEmbutidos
     {
-        public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
-        {
-            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
-            {
-                context.AdicionarIngrediente(ingrediente);
-            });
-        }
-
         public static void CarregarReceitasDeExemplo(BelaSopaContext context)
         {
             CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", yamlReceita =>
@@ -53,6 +45,30 @@ namespace BelaSopa.Shared
                 };
 
                 context.AdicionarReceita(receita, yamlReceita.Etiquetas);
+            });
+        }
+
+        public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
+        {
+            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
+            {
+                context.AdicionarIngrediente(ingrediente);
+            });
+        }
+
+        public static void CarregarTecnicasDeExemplo(BelaSopaContext context)
+        {
+            CarregarRecursosYaml<Tecnica>("BelaSopa.Data.Tecnicas.", ingrediente =>
+            {
+                context.AdicionarTecnica(ingrediente);
+            });
+        }
+
+        public static void CarregarUtensiliosDeExemplo(BelaSopaContext context)
+        {
+            CarregarRecursosYaml<Utensilio>("BelaSopa.Data.Utensilios.", ingrediente =>
+            {
+                context.AdicionarUtensilio(ingrediente);
             });
         }
 

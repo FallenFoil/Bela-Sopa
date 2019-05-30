@@ -98,12 +98,19 @@ namespace BelaSopa.Models
             SaveChanges();
         }
 
+        public void AdicionarTecnica(Tecnica tecnica)
+        {
+            // TODO: implement
+        }
+
+        public void AdicionarUtensilio(Utensilio utensilio)
+        {
+            // TODO: implement
+        }
+
         private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
         {
-            return
-                texto
-                .Split()
-                .Any(palavra => Util.FuzzyEquals(palavra, ingrediente.Nome));
+            return Util.FuzzyContains(texto, ingrediente.Nome);
         }
 
         public DbSet<Administrador> Administrador { get; set; }

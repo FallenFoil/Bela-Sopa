@@ -96,7 +96,19 @@
             <ul>
                 @foreach (var tarefa in processo.Tarefas)
                 {
-                    <li>@tarefa.Texto</li>
+                    <li>
+                        @foreach ((string controller, int? id, string texto) in tarefa.GetPartesTexto())
+                        {
+                            if (controller == null)
+                            { 
+                                <text>@texto</text>
+                            }
+                            else
+                            {
+                                <a asp-controller="@controller" asp-action="Detalhes" asp-route-id="@id">@texto</a>
+                            }
+                        }
+                    </li>
                 }
             </ul>
         </li>

@@ -34,5 +34,36 @@ namespace BelaSopa.Shared
                 CompareOptions.IgnoreCase | CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreSymbols
                 ) >= 0;
         }
+
+        public static List<(string Titulo, List<string> Paragrafos)> FormatarTextoComSeccoes(string texto)
+        {
+            var seccoes = new List<(string Titulo, List<string> Paragrafos)>();
+
+            foreach (var parte in texto.Split('\n'))
+            {
+                var trimmed = parte.Trim();
+
+                if (trimmed.Length == 0)
+                    continue;
+
+                if (trimmed.First() == '[' && trimmed.Last() == ']')
+                {
+                    // título da secção
+
+                    seccoes.Add((trimmed.Substring(1, trimmed.Length - 2), new List<string>()));
+                }
+                else
+                {
+                    // parágrafo
+
+                    if (seccoes.Count == 0)
+                        seccoes.Add((null, new List<string>()));
+
+                    seccoes.Last().Paragrafos.Add(trimmed);
+                }
+            }
+
+            return seccoes;
+        }
     }
 }

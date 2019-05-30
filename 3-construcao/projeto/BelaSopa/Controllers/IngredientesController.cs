@@ -4,7 +4,6 @@ using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -24,6 +23,8 @@ namespace BelaSopa.Controllers
         {
             ViewData["nome"] = nome;
 
+            // obter ingredientes
+
             IQueryable<Ingrediente> ingredientes = context.Ingrediente;
 
             if (nome != null)
@@ -32,6 +33,8 @@ namespace BelaSopa.Controllers
             ingredientes = ingredientes.OrderBy(ingrediente => ingrediente.Nome);
 
             var viewModel = ingredientes.ToList();
+
+            // criar view model e devolver view
 
             return View(viewName: "ListaIngredientes", model: viewModel);
         }
@@ -52,39 +55,11 @@ namespace BelaSopa.Controllers
             if (ingrediente == null)
                 return NotFound();
 
-            // separar texto em secções
-
-            var seccoes = new List<(string Titulo, List<string> Paragrafos)>();
-
-            foreach (var parte in ingrediente.Texto.Split('\n'))
-            {
-                var trimmed = parte.Trim();
-
-                if (trimmed.Length == 0)
-                    continue;
-
-                if (trimmed.First() == '[' && trimmed.Last() == ']')
-                {
-                    // título da secção
-
-                    seccoes.Add((trimmed.Substring(1, trimmed.Length - 2), new List<string>()));
-                }
-                else
-                {
-                    // parágrafo
-
-                    if (seccoes.Count == 0)
-                        seccoes.Add((null, new List<string>()));
-
-                    seccoes.Last().Paragrafos.Add(trimmed);
-                }
-            }
-
             // criar view model e devolver view
 
             var viewModel = (
                 Ingrediente: ingrediente,
-                Seccoes: seccoes
+                Seccoes: Util.FormatarTextoComSeccoes(ingrediente.Texto)
                 );
 
             return View(viewName: "DetalhesIngrediente", model: viewModel);

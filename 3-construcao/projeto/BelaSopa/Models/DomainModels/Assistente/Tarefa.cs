@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BelaSopa.Models.DomainModels.Assistente
@@ -27,6 +28,11 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int ProcessoId { get; set; }
 
         public virtual Processo Processo { get; set; }
+        
+        public List<(string Controller, int? Id, string Texto)> GetPartesTexto()
+        {
+            return new List<(string Controller, int? Id, string Texto)> { (null, null, Texto) };
+        }
     }
 
     //public class TarefaIngrediente

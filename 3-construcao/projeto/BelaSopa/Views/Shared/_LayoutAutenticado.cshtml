@@ -57,6 +57,12 @@
                             <span>Técnicas</span>
                         </a>
                     </li>
+                    <li>
+                        <a asp-controller="Utensilios" asp-action="Index">
+                            <i class="fas fa-utensils"></i>
+                            <span>Utensílios</span>
+                        </a>
+                    </li>
                 }
                 else if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
                 {
@@ -66,22 +72,28 @@
                             <span>Em confeção</span>
                         </a>
                     </li>
-                    <li id="ReceitasMenu">
+                    <li>
                         <a asp-controller="Receitas" asp-action="Index">
                             <i class="fas fa-book"></i>
                             <span>Receitas</span>
                         </a>
                     </li>
-                    <li id="TecnicasMenu">
+                    <li>
+                        <a asp-controller="Ingredientes" asp-action="Index">
+                            <i class="fas fa-carrot"></i>
+                            <span>Ingredientes</span>
+                        </a>
+                    </li>
+                    <li>
                         <a asp-controller="Tecnicas" asp-action="Index">
                             <i class="fas fa-utensils"></i>
                             <span>Técnicas</span>
                         </a>
                     </li>
-                    <li id="IngredientesMenu">
-                        <a asp-controller="Ingredientes" asp-action="Index">
-                            <i class="fas fa-carrot"></i>
-                            <span>Ingredientes</span>
+                    <li>
+                        <a asp-controller="Utensilios" asp-action="Index">
+                            <i class="fas fa-utensils"></i>
+                            <span>Utensílios</span>
                         </a>
                     </li>
                     <li id="EmentaMenu">
