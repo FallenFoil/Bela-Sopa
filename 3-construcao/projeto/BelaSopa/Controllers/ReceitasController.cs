@@ -59,13 +59,15 @@ namespace BelaSopa.Controllers
             var receita =
                 context
                 .Receita
+                .Include(r => r.ReceitaEtiqueta)
+                .ThenInclude(re => re.Etiqueta)
                 .Include(r => r.UtilizacoesIngredientes)
                 .ThenInclude(ui => ui.Ingrediente)
                 .Include(r => r.ValoresNutricionais)
                 .Include(r => r.Processos)
                 .ThenInclude(p => p.Tarefas)
                 .SingleOrDefault(i => i.ReceitaId == id);
-            
+
             if (receita == null)
                 return NotFound();
 

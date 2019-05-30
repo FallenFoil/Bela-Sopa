@@ -8,6 +8,17 @@
 <p>Tempo de preparação: @Model.MinutosPreparacao minutos</p>
 <p>Número de doses: @Model.NumeroDoses</p>
 
+<p>Etiquetas:</p>
+
+<ul>
+    @foreach (var etiqueta in Model.ReceitaEtiqueta)
+    {
+        <li>
+            @etiqueta.Etiqueta.Nome
+        </li>
+    }
+</ul>
+
 <p class="font-italic">@Model.Descricao</p>
 
 <img
