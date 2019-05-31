@@ -1,4 +1,4 @@
-@model (Receita Receita, List<Tecnica> Tecnicas, List<Utensilio> Utensilios, bool Favorita)
+@model (Receita Receita, IEnumerable<Tecnica> Tecnicas, IEnumerable<Utensilio> Utensilios, bool Favorita)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Receita.Nome;
