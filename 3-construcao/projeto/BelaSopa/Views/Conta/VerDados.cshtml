@@ -44,9 +44,14 @@
             <div class="col-sm Receita">
                 <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
                     <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
-                 
                     <p>@Model.Receitas[i].Nome</p>
                 </a>
+             
+                <a asp-controller="Conta" asp-action="TggFav" asp-route-id="@Model.Receitas[i].ReceitaId">
+                    <i class="fas fa-trash"></i>
+       
+                </a>
+
                 @switch (Model.Receitas[i].Dificuldade)
                 {
                     case Dificuldade.Facil:
@@ -65,7 +70,7 @@
                 <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receitas[i].MinutosPreparacao min</span>
                 &nbsp;|&nbsp;
                 <span>@Model.Receitas[i].NumeroDoses doses</span>
-     
+
             </div>
             }
             @for (; j < 3; j++)

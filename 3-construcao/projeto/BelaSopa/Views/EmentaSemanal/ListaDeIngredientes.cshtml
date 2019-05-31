@@ -7,7 +7,6 @@
     <caption>Ementa Semanal</caption>
     <thead>
         <tr>
-            <th> # </th>
             <td>Ingrediente</td>
             <td>Quantidade</td>
         </tr>
@@ -16,10 +15,10 @@
         @foreach (var ingr in @Model) {
             <tr>
                 <td>
-                    ingr.Key
+                    @ingr.Key
                 </td>
                 <td>
-                    ingr.Value
+                    @ingr.Value
                 </td>
             </tr>
         }

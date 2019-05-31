@@ -37,15 +37,32 @@ namespace BelaSopa.Controllers
             return View(viewName: "VerDados", model: viewModel);
         }
 
+        public IActionResult TggFav(int? id)
+        {
+            if (id.HasValue)
+            {
+               
+                int idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+                ClienteFavorito cf = new ClienteFavorito(idCliente, id.Value);
+                context.ClienteFavorito.Remove(cf);
+                context.SaveChanges();
+
+                return Index();
+            }
+            else { return NotFound(); }
+        }
+
+        public bool IsFavorito(int idReceita)
+        {
+            bool Favorita = context.ClienteFavorito.Any(f => f.ReceitaId == idReceita &&
+                                                            f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
+            return Favorita;
+        }
+
         [HttpGet]
         public IActionResult AlterarPalavraPasse()
         {
             return View(viewName: "AlterarPalavraPasse");
-        }
-
-        private bool IsFavorito(int receitaId)
-        {
-            throw new NotImplementedException();
         }
 
         [HttpPost]

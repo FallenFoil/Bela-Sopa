@@ -95,6 +95,9 @@ namespace BelaSopa.Controllers
             return View(viewName: "DetalhesReceita", model: viewModel);
         }
 
+       
+
+
         public IActionResult ToggleFavorito(int? id)
         {
             if (id.HasValue)
