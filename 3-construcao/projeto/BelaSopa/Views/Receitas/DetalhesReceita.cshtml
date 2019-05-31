@@ -10,7 +10,7 @@
             <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
                  alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
-            @if (false)
+            @if (@Model.Favorita)
             {
                 //Dentro Favoritos
                 <i class="fas fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
@@ -22,8 +22,8 @@
             }
         </div>
         <div class="col-sm-4" style="text-align:center;border-left: 3px solid #4CAF50;">
-            <h4>@Model.Nome</h4>
-            @if (Model.Dificuldade == Dificuldade.Facil)
+            <h4>@Model.Receita.Nome</h4>
+            @if (Model.Receita.Dificuldade == Dificuldade.Facil)
             {
                 <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
             }
@@ -35,12 +35,12 @@
             {
                 <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
             }
-                <span style="margin-left:3%;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.MinutosPreparacao min</span>
-            <span style="margin-left:5%;">@Model.NumeroDoses doses</span>
+                <span style="margin-left:3%;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
+            <span style="margin-left:5%;">@Model.Receita.NumeroDoses doses</span>
             <div style="text-align:left;margin-top:5%;">
                 Etiquetas:
                 <ul class="CustomBullet" style="text-align:left;list-style: none">
-                    @foreach (var etiqueta in Model.ReceitaEtiqueta)
+                    @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta)
                     {
                         <li>
                             @etiqueta.Etiqueta.Nome
@@ -52,7 +52,7 @@
     </div>
 </div>
 
-<p class="font-italic" style="margin-top:5%">@Model.Descricao</p>
+<p class="font-italic" style="margin-top:5%">@Model.Receita.Descricao</p>
 
 <hr />
 <h4 style="margin-top:5%;">Ingredientes</h4>
@@ -66,7 +66,7 @@
     </thead>
     <tbody>
         @{ var j = 0;}
-        @foreach (var utilizacaoIngrediente in Model.UtilizacoesIngredientes)
+        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes)
         {
         <tr>
             <td>
@@ -134,7 +134,7 @@
 <h4 style="margin-top:5%;">Passos</h4>
 
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
-    @foreach (var processo in Model.Processos)
+    @foreach (var processo in Model.Receita.Processos)
     {
         <li>
             <ul style="text-align:left;">
