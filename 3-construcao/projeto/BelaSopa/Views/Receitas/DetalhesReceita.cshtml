@@ -1,7 +1,8 @@
-@model (Receita Receita, bool Favorita)
+@model (Receita Receita, IEnumerable<Tecnica> Tecnicas, IEnumerable<Utensilio> Utensilios, bool Favorita)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Receita.Nome;
+    ViewData["HideHeader"] = true;
 }
 
 <div class="container">
@@ -39,7 +40,7 @@
             <div style="text-align:left;margin-top:5%;">
                 Etiquetas:
                 <ul class="CustomBullet" style="text-align:left;list-style: none">
-                    @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta)
+                    @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.OrderBy(e => e.Etiqueta.Nome))
                     {
                         <li>
                             @etiqueta.Etiqueta.Nome
@@ -64,8 +65,7 @@
         </tr>
     </thead>
     <tbody>
-        @{ var j = 0;}
-        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes)
+        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
         {
         <tr>
             <td>
@@ -89,6 +89,30 @@
 </table>
 
 <hr />
+<h4 style="margin-top:5%;">Técnicas</h4>
+
+<ul>
+    @foreach (var tecnica in Model.Tecnicas)
+    {
+        <li>
+            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
+        </li>
+    }
+</ul>
+
+<hr />
+<h4 style="margin-top:5%;">Utensílios</h4>
+
+<ul>
+    @foreach (var utensilio in Model.Utensilios)
+    {
+        <li>
+            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
+        </li>
+    }
+</ul>
+
+<hr />
 <h4 style="margin-top:5%;">Valores nutricionais</h4>
 
 <table class="table">
@@ -101,7 +125,7 @@
     </thead>
     <tbody>
         @{ var i = 0;}
-        @foreach (var valor in Model.Receita.ValoresNutricionais)
+        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
         {
             if (i == 0)
             {
@@ -133,22 +157,30 @@
 <h4 style="margin-top:5%;">Passos</h4>
 
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
-    @foreach (var processo in Model.Receita.Processos)
+    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
     {
         <li>
             <ul style="text-align:left;">
-                @foreach (var tarefa in processo.Tarefas)
+                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
                 {
                     <li>
-                        @foreach ((string controller, int? id, string texto) in tarefa.GetPartesTexto())
+                        @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice))
                         {
-                            if (controller == null)
+                            if (texto.IngredienteId != null)
                             {
-                                <text>@texto</text>
+                                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+                            }
+                            else if (texto.TecnicaId != null)
+                            {
+                                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+                            }
+                            else if (texto.UtensilioId != null)
+                            {
+                                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
                             }
                             else
                             {
-                                <a asp-controller="@controller" asp-action="Detalhes" asp-route-id="@id">@texto</a>
+                                <text>@texto.Texto</text>
                             }
                         }
                     </li>

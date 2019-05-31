@@ -4,7 +4,6 @@ using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -57,25 +56,38 @@ namespace BelaSopa.Controllers
         {
             // obter receita
 
-            var Receita =
+            var receita =
                 context
                 .Receita
                 .Include(r => r.ReceitaEtiqueta)
-                .ThenInclude(re => re.Etiqueta)
+                    .ThenInclude(re => re.Etiqueta)
                 .Include(r => r.UtilizacoesIngredientes)
-                .ThenInclude(ui => ui.Ingrediente)
+                    .ThenInclude(ui => ui.Ingrediente)
                 .Include(r => r.ValoresNutricionais)
                 .Include(r => r.Processos)
-                .ThenInclude(p => p.Tarefas)
+                    .ThenInclude(p => p.Tarefas)
+                    .ThenInclude(t => t.Texto)
+                    .ThenInclude(t => t.Ingrediente)
+                .Include(r => r.Processos)
+                    .ThenInclude(p => p.Tarefas)
+                    .ThenInclude(t => t.Texto)
+                    .ThenInclude(t => t.Tecnica)
+                .Include(r => r.Processos)
+                    .ThenInclude(p => p.Tarefas)
+                    .ThenInclude(t => t.Texto)
+                    .ThenInclude(t => t.Utensilio)
                 .SingleOrDefault(i => i.ReceitaId == id);
 
-            if (Receita == null)
+            if (receita == null)
                 return NotFound();
 
-            bool Favorita = IsFavorito(Receita.ReceitaId);
+            var (tecnicas, utensilios) = receita.GetTecnicasUtensilios();
+
             var viewModel = (
-                Receita,
-                Favorita
+                Receita: receita,
+                Tecnicas: tecnicas,
+                Utensilios: utensilios,
+                Favorita: IsFavorito(receita.ReceitaId)
                 );
 
             // devolver view
@@ -83,14 +95,19 @@ namespace BelaSopa.Controllers
             return View(viewName: "DetalhesReceita", model: viewModel);
         }
 
-        public IActionResult ToggleFavorito(int? id) {
-            if (id.HasValue) {
+        public IActionResult ToggleFavorito(int? id)
+        {
+            if (id.HasValue)
+            {
                 bool Favorita = IsFavorito(id.Value);
                 int idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
                 ClienteFavorito cf = new ClienteFavorito(idCliente, id.Value);
-                if (Favorita) {
+                if (Favorita)
+                {
                     context.ClienteFavorito.Remove(cf);
-                } else {
+                }
+                else
+                {
                     context.ClienteFavorito.Add(cf);
                 }
                 context.SaveChanges();
@@ -99,7 +116,8 @@ namespace BelaSopa.Controllers
             else { return NotFound(); }
         }
 
-        public bool IsFavorito(int idReceita) {
+        public bool IsFavorito(int idReceita)
+        {
             bool Favorita = context.ClienteFavorito.Any(f => f.ReceitaId == idReceita &&
                                                             f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
             return Favorita;

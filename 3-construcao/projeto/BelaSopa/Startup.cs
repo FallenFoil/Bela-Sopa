@@ -28,12 +28,8 @@ namespace BelaSopa
         {
             // adicionar base de dados
 
-            //services.AddEntityFrameworkProxies();
-
             services.AddDbContext<BelaSopaContext>(options =>
-                options
-                    //.UseLazyLoadingProxies()
-                    .UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
+                options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
                 );
 
             // configurar autenticação por cookies
@@ -105,6 +101,7 @@ namespace BelaSopa
             RecursosEmbutidos.CarregarTecnicasDeExemplo(context);
             RecursosEmbutidos.CarregarUtensiliosDeExemplo(context);
             RecursosEmbutidos.CarregarReceitasDeExemplo(context);
+
             RecursosEmbutidos.CarregarDataRefeicao(context);
 
             // guardar alterações

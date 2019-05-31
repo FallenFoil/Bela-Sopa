@@ -29,12 +29,13 @@ namespace BelaSopa.Models
         {
             // adicionar receita
 
-            Receita.Add(receita);
+            Add(receita);
 
             // descobrir relacionamentos com ingredientes
 
             var todosIngredientes =
                 Ingrediente
+                .Include(i => i.NomesAlternativos)
                 .Include(i => i.Utilizacoes)
                 .ToArray();
 
@@ -52,12 +53,21 @@ namespace BelaSopa.Models
 
             // converter texto das tarefas
 
-            var todasTecnicas = Tecnica.ToArray();
-            var todosUtensilios = Utensilio.ToArray();
+            var todasTecnicas = Tecnica.Include(t => t.NomesAlternativos).ToArray();
+            var todosUtensilios = Utensilio.Include(u => u.NomesAlternativos).ToArray();
 
-            foreach (var processo in receita.Processos)
-                foreach (var tarefa in processo.Tarefas)
-                    tarefa.Texto = ConverterTextoTarefa(tarefa.Texto, todosIngredientes, todasTecnicas, todosUtensilios);
+            foreach (var processo in receita.Processos.OrderBy(p => p.Indice))
+            {
+                foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
+                {
+                    tarefa.Texto = ConverterTextoTarefa(
+                        string.Join(' ', tarefa.Texto.OrderBy(t => t.Indice).Select(t => t.Texto)),
+                        todosIngredientes,
+                        todasTecnicas,
+                        todosUtensilios
+                        );
+                }
+            }
 
             // adicionar etiquetas e relacionamentos receita-etiqueta
 
@@ -86,7 +96,7 @@ namespace BelaSopa.Models
         {
             // adicionar ingrediente
 
-            Ingrediente.Add(ingrediente);
+            Add(ingrediente);
 
             // descobrir relacionamentos com receitas
 
@@ -110,111 +120,160 @@ namespace BelaSopa.Models
         public void AdicionarTecnica(Tecnica tecnica)
         {
             // TODO: implement
+
+            Add(tecnica);
+            SaveChanges();
         }
 
         public void AdicionarUtensilio(Utensilio utensilio)
         {
             // TODO: implement
+
+            Add(utensilio);
+            SaveChanges();
         }
 
         private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
         {
-            return Util.FuzzyContains(texto, ingrediente.Nome);
+            var nomesIngrediente =
+                ingrediente
+                .NomesAlternativos
+                .Select(n => n.Nome)
+                .Prepend(ingrediente.Nome)
+                .ToArray();
+
+            foreach (var palavra in texto.Split())
+                if (nomesIngrediente.Any(nome => Util.FuzzyEquals(palavra, nome)))
+                    return true;
+
+            return false;
         }
 
-        private string ConverterTextoTarefa(
+        private List<TextoTarefa> ConverterTextoTarefa(
             string texto,
             IList<Ingrediente> ingredientes,
             IList<Tecnica> tecnicas,
             IList<Utensilio> utensilios
             )
         {
-            var convertido = "";
+            var resultado = new List<TextoTarefa>();
+            var listaPalavras = new List<string>();
+
+            void submeterListaPalavras()
+            {
+                if (listaPalavras.Count > 0)
+                {
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = string.Join(' ', listaPalavras) });
+                    listaPalavras.Clear();
+                }
+            }
 
             foreach (var palavra in texto.Split())
             {
-                var ingrediente = ingredientes.FirstOrDefault(i => Util.FuzzyEquals(palavra, i.Nome));
+                var ingrediente = ingredientes.FirstOrDefault(i =>
+                    i
+                    .NomesAlternativos
+                    .Select(n => n.Nome)
+                    .Prepend(i.Nome)
+                    .Any(n => Util.FuzzyEquals(palavra, n))
+                    );
 
                 if (ingrediente != null)
                 {
-                    convertido += $"|$Ingredientes,{ingrediente.IngredienteId},{palavra}|";
+                    submeterListaPalavras();
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = palavra, Ingrediente = ingrediente });
                     continue;
                 }
 
-                var tecnica = tecnicas.FirstOrDefault(t => Util.FuzzyEquals(palavra, t.Nome));
+                var tecnica = tecnicas.FirstOrDefault(t =>
+                    t
+                    .NomesAlternativos
+                    .Select(n => n.Nome)
+                    .Prepend(t.Nome)
+                    .Any(n => Util.FuzzyEquals(palavra, n))
+                    );
 
                 if (tecnica != null)
                 {
-                    convertido += $"|$Tecnicas,{tecnica.TecnicaId},{palavra}|";
+                    submeterListaPalavras();
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = palavra, Tecnica = tecnica });
                     continue;
                 }
 
-       
-                var utensilio = utensilios.FirstOrDefault(u => Util.FuzzyEquals(palavra, u.Nome));
-
+                var utensilio = utensilios.FirstOrDefault(u =>
+                    u
+                    .NomesAlternativos
+                    .Select(n => n.Nome)
+                    .Prepend(u.Nome)
+                    .Any(n => Util.FuzzyEquals(palavra, n))
+                    );
 
                 if (utensilio != null)
                 {
-                    convertido += $"|Utensilio,{utensilio.UtensilioId},{palavra}|";
+                    submeterListaPalavras();
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = palavra, Utensilio = utensilio });
                     continue;
                 }
 
-                convertido += ' ' + palavra;
+                listaPalavras.Add(palavra);
             }
 
-            return convertido;
+            submeterListaPalavras();
+
+            return resultado;
         }
 
         public DbSet<Administrador> Administrador { get; set; }
 
         public virtual DbSet<Cliente> Cliente { get; set; }
 
-        public virtual DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
         public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+
         public virtual DbSet<ClienteFavorito> ClienteFavorito { get; set; }
 
+        public virtual DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
+
+        public DbSet<DataRefeicao> DataRefeicao { get; set; }
+
+        public DbSet<Etiqueta> Etiqueta { get; set; }
+
+        public DbSet<Ingrediente> Ingrediente { get; set; }
+
+        public DbSet<NomeAlternativoIngrediente> NomeAlternativoIngrediente { get; set; }
+
+        public DbSet<NomeAlternativoTecnica> NomeAlternativoTecnica { get; set; }
+
+        public DbSet<NomeAlternativoUtensilio> NomeAlternativoUtensilio { get; set; }
+
+        public DbSet<Processo> Processo { get; set; }
 
         public DbSet<Receita> Receita { get; set; }
 
         public DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
-        public DbSet<UtilizacaoIngrediente> UtilizacaoIngrediente { get; set; }
-
-        public DbSet<Etiqueta> Etiqueta { get; set; }
-
-        public DbSet<Processo> Processo { get; set; }
-
-        //public DbSet<ProcessoTarefa> ProcessoTarefa { get; set; }
-
         public DbSet<Tarefa> Tarefa { get; set; }
 
-        public DbSet<Ingrediente> Ingrediente { get; set; }
-
-
-
-
-        //public DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
-
-        //public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
-        //public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
-        //public DbSet<TarefaTecnica> TarefaTecnica { get; set; }
-        public DbSet<Utensilio> Utensilio { get; set; }
         public DbSet<Tecnica> Tecnica { get; set; }
-        public DbSet<DataRefeicao> DataRefeicao { get; set; }
+
+        public DbSet<TextoTarefa> TextoTarefa { get; set; }
+
+        public DbSet<Utensilio> Utensilio { get; set; }
+
+        public DbSet<UtilizacaoIngrediente> UtilizacaoIngrediente { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ClienteFinalizado>()
-                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
-            modelBuilder.Entity<ClienteFinalizado>()
-               .HasOne(ti => ti.Cliente)
-               .WithMany(t => t.ClienteFinalizado)
-               .HasForeignKey(ti => ti.ClienteId);
-            modelBuilder.Entity<ClienteFinalizado>()
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+                .HasKey(cr => new { cr.ClienteId, cr.DataRefeicaoId });
+            modelBuilder.Entity<ClienteEmentaSemanal>()
+              .HasOne(ti => ti.Cliente)
+              .WithMany(t => t.ClienteEmentaSemanal)
+              .HasForeignKey(ti => ti.ClienteId);
+            modelBuilder.Entity<ClienteEmentaSemanal>()
                 .HasOne(ti => ti.Receita)
-                .WithMany(i => i.ClienteFinalizado)
+                .WithMany(i => i.ClienteEmentaSemanal)
                 .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<ClienteFavorito>()
@@ -228,60 +287,16 @@ namespace BelaSopa.Models
                 .WithMany(i => i.ClienteFavorito)
                 .HasForeignKey(ti => ti.ReceitaId);
 
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasKey(cr => new { cr.ClienteId, cr.DataRefeicaoId });
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-              .HasOne(ti => ti.Cliente)
-              .WithMany(t => t.ClienteEmentaSemanal)
-              .HasForeignKey(ti => ti.ClienteId);
-            modelBuilder.Entity<ClienteEmentaSemanal>()
+            modelBuilder.Entity<ClienteFinalizado>()
+                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
+            modelBuilder.Entity<ClienteFinalizado>()
+               .HasOne(ti => ti.Cliente)
+               .WithMany(t => t.ClienteFinalizado)
+               .HasForeignKey(ti => ti.ClienteId);
+            modelBuilder.Entity<ClienteFinalizado>()
                 .HasOne(ti => ti.Receita)
-                .WithMany(i => i.ClienteEmentaSemanal)
+                .WithMany(i => i.ClienteFinalizado)
                 .HasForeignKey(ti => ti.ReceitaId);
-
-            //modelBuilder.Entity<TarefaIngrediente>()
-            //    .HasKey(ti => new { ti.TarefaId, ti.IngredienteId });
-            //modelBuilder.Entity<TarefaIngrediente>()
-            //    .HasOne(ti => ti.Tarefa)
-            //    .WithMany(t => t.TarefaIngrediente)
-            //    .HasForeignKey(ti => ti.TarefaId);
-            //modelBuilder.Entity<TarefaIngrediente>()
-            //    .HasOne(ti => ti.Ingrediente)
-            //    .WithMany(i => i.TarefaIngrediente)
-            //    .HasForeignKey(ti => ti.IngredienteId);
-
-            //modelBuilder.Entity<TarefaUtensilio>()
-            //   .HasKey(ti => new { ti.TarefaId, ti.UtensilioId });
-            //modelBuilder.Entity<TarefaUtensilio>()
-            //    .HasOne(ti => ti.Tarefa)
-            //    .WithMany(t => t.TarefaUtensilio)
-            //    .HasForeignKey(ti => ti.TarefaId);
-            //modelBuilder.Entity<TarefaUtensilio>()
-            //    .HasOne(ti => ti.Utensilio)
-            //    .WithMany(i => i.TarefaUtensilio)
-            //    .HasForeignKey(ti => ti.UtensilioId);
-
-            //modelBuilder.Entity<TarefaTecnica>()
-            //   .HasKey(ti => new { ti.TarefaId, ti.TecnicaId });
-            //modelBuilder.Entity<TarefaTecnica>()
-            //    .HasOne(ti => ti.Tarefa)
-            //    .WithMany(t => t.TarefaTecnica)
-            //    .HasForeignKey(ti => ti.TarefaId);
-            //modelBuilder.Entity<TarefaTecnica>()
-            //    .HasOne(ti => ti.Tecnica)
-            //    .WithMany(i => i.TarefaTecnica)
-            //    .HasForeignKey(ti => ti.TecnicaId);
-
-            //modelBuilder.Entity<ReceitaIngrediente>()
-            //  .HasKey(pt => new { pt.ReceitaId, pt.IngredienteId });
-            //modelBuilder.Entity<ReceitaIngrediente>()
-            //    .HasOne(ri => ri.Receita)
-            //    .WithMany(r => r.ReceitaIngrediente)
-            //    .HasForeignKey(ti => ti.ReceitaId);
-            //modelBuilder.Entity<ReceitaIngrediente>()
-            //    .HasOne(ri => ri.Ingrediente)
-            //    .WithMany(i => i.ReceitaIngrediente)
-            //    .HasForeignKey(t => t.IngredienteId);
 
             modelBuilder.Entity<ReceitaEtiqueta>()
                 .HasKey(re => new { re.ReceitaId, re.EtiquetaId });

@@ -8,22 +8,37 @@
     <None Remove="Data\Ingredientes\abacate.yaml" />
     <None Remove="Data\Ingredientes\abobora.yaml" />
     <None Remove="Data\Ingredientes\agriao.yaml" />
+    <None Remove="Data\Ingredientes\aipo.yaml" />
+    <None Remove="Data\Ingredientes\alface.yaml" />
     <None Remove="Data\Ingredientes\alho.yaml" />
     <None Remove="Data\Ingredientes\azeite.yaml" />
+    <None Remove="Data\Ingredientes\bacon.yaml" />
     <None Remove="Data\Ingredientes\batata-doce.yaml" />
     <None Remove="Data\Ingredientes\beringela.yaml" />
+    <None Remove="Data\Ingredientes\brocolos.yaml" />
     <None Remove="Data\Ingredientes\cebola.yaml" />
+    <None Remove="Data\Ingredientes\cenoura.yaml" />
     <None Remove="Data\Ingredientes\citrinos.yaml" />
+    <None Remove="Data\Ingredientes\coentros.yaml" />
     <None Remove="Data\Ingredientes\cogumelos.yaml" />
+    <None Remove="Data\Ingredientes\cominho.yaml" />
+    <None Remove="Data\Ingredientes\courgette.yaml" />
     <None Remove="Data\Ingredientes\ervilhas.yaml" />
     <None Remove="Data\Ingredientes\espargos.yaml" />
     <None Remove="Data\Ingredientes\frutos-secos.yaml" />
+    <None Remove="Data\Ingredientes\grao-de-bico.yaml" />
+    <None Remove="Data\Ingredientes\lentilhas.yaml" />
     <None Remove="Data\Ingredientes\limao.yaml" />
     <None Remove="Data\Ingredientes\morango.yaml" />
+    <None Remove="Data\Ingredientes\ovo-de-galinha.yaml" />
+    <None Remove="Data\Ingredientes\pimenta.yaml" />
+    <None Remove="Data\Ingredientes\pimentao.yaml" />
     <None Remove="Data\Ingredientes\pimento.yaml" />
     <None Remove="Data\Ingredientes\quinoa.yaml" />
     <None Remove="Data\Ingredientes\sal.yaml" />
+    <None Remove="Data\Ingredientes\salsa.yaml" />
     <None Remove="Data\Ingredientes\tomate.yaml" />
+    <None Remove="Data\Ingredientes\vinagre.yaml" />
     <None Remove="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <None Remove="Data\Receitas\arjamolho-com-pimentos.yaml" />
     <None Remove="Data\Receitas\arjamolho.yaml" />
@@ -146,28 +161,48 @@
     <None Remove="Data\Receitas\sopa-picante-tomate.yaml" />
     <None Remove="Data\Receitas\sopa-rica-de-castanhas.yaml" />
     <None Remove="Data\Receitas\sopa-rica-de-feijao-e-carne.yaml" />
+    <None Remove="Data\Tecnicas\como-cozer-ovos-na-perfeicao.yaml" />
+    <None Remove="Data\Tecnicas\como-escalfar-ovos.yaml" />
+    <None Remove="Data\Utensilios\liquidificador.yaml" />
+    <None Remove="Data\Utensilios\microondas.yaml" />
+    <None Remove="Data\Utensilios\varinha-magica.yaml" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Ingredientes\abacate.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\abobora.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\agriao.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\aipo.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\alface.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\alho.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\azeite.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\bacon.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\batata-doce.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\beringela.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\brocolos.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\cebola.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\cenoura.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\citrinos.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\coentros.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\cogumelos.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\cominho.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\courgette.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\ervilhas.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\espargos.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\frutos-secos.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\grao-de-bico.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\lentilhas.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\limao.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\morango.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\ovo-de-galinha.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\pimenta.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\pimentao.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\pimento.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\quinoa.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\sal.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\salsa.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\tomate.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\vinagre.yaml" />
     <EmbeddedResource Include="Data\Receitas\acorda-de-bacalhau-com-coentros-e-tomate-seco.yaml" />
     <EmbeddedResource Include="Data\Receitas\arjamolho-com-pimentos.yaml" />
     <EmbeddedResource Include="Data\Receitas\arjamolho.yaml" />
@@ -289,6 +324,11 @@
     <EmbeddedResource Include="Data\Receitas\sopa-picante-tomate.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-rica-de-castanhas.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-rica-de-feijao-e-carne.yaml" />
+    <EmbeddedResource Include="Data\Tecnicas\como-cozer-ovos-na-perfeicao.yaml" />
+    <EmbeddedResource Include="Data\Tecnicas\como-escalfar-ovos.yaml" />
+    <EmbeddedResource Include="Data\Utensilios\liquidificador.yaml" />
+    <EmbeddedResource Include="Data\Utensilios\microondas.yaml" />
+    <EmbeddedResource Include="Data\Utensilios\varinha-magica.yaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -296,7 +336,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.11" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -304,11 +343,6 @@
     <PackageReference Include="Microsoft.NET.Sdk.Razor" Version="2.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="YamlDotNet" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\Utensilios\" />
-    <Folder Include="Data\Tecnicas\" />
   </ItemGroup>
 
 </Project>
