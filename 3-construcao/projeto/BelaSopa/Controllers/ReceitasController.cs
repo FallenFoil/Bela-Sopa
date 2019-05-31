@@ -125,5 +125,10 @@ namespace BelaSopa.Controllers
                                                             f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
             return Favorita;
         }
+
+        public IActionResult ConfecionarReceita()
+        {
+           return View(viewName: "ConfecionarReceita");
+        }
     }
 }

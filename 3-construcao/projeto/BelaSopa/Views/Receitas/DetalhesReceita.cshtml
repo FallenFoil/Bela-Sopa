@@ -213,13 +213,15 @@
         Tem todos os ingredientes?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary">Sim</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+          <form asp-controller="Receitas" asp-action="ConfecionarReceita" >
+              <button style="background-color:#4CAF50; border-color: #4CAF50;" type="submit" class="btn btn-primary">Sim</button>
+          </form>
       </div>
     </div>
   </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button style="background-color:#4CAF50; border-color: #4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
     Confecionar
 </button>

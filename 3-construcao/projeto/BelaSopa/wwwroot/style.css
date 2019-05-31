@@ -70,7 +70,6 @@ span {
     margin-top: 1%;
     position: fixed;
     margin-left: 20%;
-    background-color: #4CAF50;
     box-shadow: 0 1px 0 0 #4CAF50;
     border: 1px solid #4CAF50;
 }
@@ -82,7 +81,6 @@ span {
         margin-top: 1%;
         position: fixed;
         margin-left: 7%;
-        background-color: #4CAF50;
         box-shadow: 0 1px 0 0 #4CAF50;
         border: 1px solid #4CAF50;
     }
@@ -307,6 +305,7 @@ a.article:hover {
 .CustomBullet a {
     text-decoration: underline;
     padding-left: 0px !important;
+    color: blue;
 }
 
 #ValoresNut {
