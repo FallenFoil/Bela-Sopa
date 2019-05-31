@@ -44,7 +44,7 @@ namespace BelaSopa.Controllers
         }
 
         public IActionResult AdicionarReceita(int idDataRefeicao, int idReceita) {
-         
+
             context.ClienteEmentaSemanal.Add(new ClienteEmentaSemanal(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId,
                                                                 idReceita, idDataRefeicao ));
             context.SaveChanges();
@@ -83,6 +83,6 @@ namespace BelaSopa.Controllers
 
                 return View(viewName: "AdicionarReceita", model: viewModel);
             }
-        
+
     }
 }
