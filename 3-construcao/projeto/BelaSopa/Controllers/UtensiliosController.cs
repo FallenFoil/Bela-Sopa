@@ -3,6 +3,7 @@ using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -52,10 +53,21 @@ namespace BelaSopa.Controllers
             if (utensilio == null)
                 return NotFound();
 
+            var receitas =
+                context
+                .TextoTarefa
+                .Where(tt => tt.UtensilioId == id)
+                .Include(tt => tt.Tarefa.Processo.Receita)
+                .Select(tt => tt.Tarefa.Processo.Receita)
+                .DistinctBy(r => r.ReceitaId)
+                .OrderBy(r => r.Nome)
+                .ToArray();
+
             // criar view model e devolver view
 
             var viewModel = (
                 Utensilio: utensilio,
+                Receitas: receitas,
                 Seccoes: Util.FormatarTextoComSeccoes(utensilio.Texto)
                 );
 
