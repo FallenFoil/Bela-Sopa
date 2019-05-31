@@ -3,17 +3,18 @@
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "Receitas";
 }
- 
+<h2>Receitas</h2>
+
 <form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
     <h1>@ViewData["data"]</h1>
     <div class="container" style="border-bottom: 1px soli   d #717171;">
         <div class="row">
             <div class="col-sm">
                 <i class="fas fa-search" aria-hidden="true"></i>
-                <input type="text" name="nome" value="@ViewData["nome"]" onchange="this.form.submit()"
+                <input style="height:77%" type="text" name="nome" value="@ViewData["nome"]" onchange="this.form.submit()"
                        placeholder="Nome" aria-placeholder="Nome" class="form-control form-control-sm mr-3 w-75">
             </div>
-            <div class="col-sm">
+            <div class="col-sm" style="margin-bottom:1%">
                 <div class="form-group">
                     <select name="etiqueta" class="form-control" onchange="this.form.submit()">
                         <option value="">Qualquer etiqueta</option>

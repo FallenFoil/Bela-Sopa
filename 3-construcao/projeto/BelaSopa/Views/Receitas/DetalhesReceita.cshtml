@@ -1,17 +1,49 @@
-@model Receita
+@model (Receita Receita, bool Favorita)
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = Model.Nome;
+    ViewData["Title"] = Model.Receita.Nome;
 }
 
-<p>Dificuldade: @Model.Dificuldade.ToString()</p>
-<p>Tempo de preparação: @Model.MinutosPreparacao minutos</p>
-<p>Número de doses: @Model.NumeroDoses</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
+                 alt="@Model.Receita.Nome"
+                 style="max-width: 100%; object-fit: cover;" />
+            <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
+                @if (@Model.Favorita) {
+                    //Dentro Favoritos
+                    <i class="fas fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+                } else {
+                    //Dos Favoritos
+                    <i class="far fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+                }
+            </a>
+        </div>
+        <div class="col-sm-4" style="text-align:center;">
+            <h4>@Model.Receita.Nome</h4>
+            @if (Model.Receita.Dificuldade == Dificuldade.Facil)
+            {
+            <span><i class="fas fa-signal" style="color: green;"></i>Fácil</span>
+            }
+            @if (Model.Receita.Dificuldade == Dificuldade.Media)
+            {
+            <span><i class="fas fa-signal" style="color: orange;"></i>Média</span>
+            }
+            @if (Model.Receita.Dificuldade == Dificuldade.Dificil)
+            {
+            <span><i class="fas fa-signal" style="color: red;"></i>Difícil</span>
+            }
+            <span style="margin-left:5%;">@Model.Receita.MinutosPreparacao min <i class="fas fa-clock"></i></span>
+            <span style="margin-left:5%;">@Model.Receita.NumeroDoses doses</span>
+        </div>
+    </div>
+</div>
 
 <p>Etiquetas:</p>
 
 <ul>
-    @foreach (var etiqueta in Model.ReceitaEtiqueta)
+    @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta)
     {
         <li>
             @etiqueta.Etiqueta.Nome
@@ -19,10 +51,10 @@
     }
 </ul>
 
-<p class="font-italic">@Model.Descricao</p>
+<p class="font-italic">@Model.Receita.Descricao</p>
 
 <img
-    src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"
+    src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
     alt=""
     style="max-width: 100%; object-fit: cover;"
     />
@@ -38,7 +70,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var utilizacaoIngrediente in Model.UtilizacoesIngredientes)
+        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes)
         {
             <tr>
                 <td>
@@ -75,13 +107,31 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var valor in Model.ValoresNutricionais)
+        @{ var i = 0;}
+        @foreach (var valor in Model.Receita.ValoresNutricionais)
         {
-            <tr>
+            if (i == 0)
+            {
+                <tr>
+                    <td>@valor.Nome</td>
+                    <td>@valor.Dose</td>
+                    <td>
+                        @if (@valor.PercentagemVdrAdulto != null)
+                        {@valor.PercentagemVdrAdulto<text>%</text>}
+                </td>
+            </tr>
+            i++;
+        }
+        else
+        {
+            <tr id="ValoresNut">
                 <td>@valor.Nome</td>
                 <td>@valor.Dose</td>
-                <td>@if (@valor.PercentagemVdrAdulto != null) { @valor.PercentagemVdrAdulto<text>%</text> }</td>
+                <td>@if (@valor.PercentagemVdrAdulto != null)
+                {@valor.PercentagemVdrAdulto<text>%</text>}</td>
             </tr>
+                i--;
+            }
         }
     </tbody>
 </table>
@@ -90,7 +140,7 @@
 <h4>Passos</h4>
 
 <ul>
-    @foreach (var processo in Model.Processos)
+    @foreach (var processo in Model.Receita.Processos)
     {
         <li>
             <ul>

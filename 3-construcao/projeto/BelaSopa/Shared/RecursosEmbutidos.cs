@@ -100,6 +100,17 @@ namespace BelaSopa.Shared
             }
         }
 
+        public static void CarregarDataRefeicao(BelaSopaContext context) {
+            bool almoco = false;
+            for (int i = 0; i < 2; i++) {
+                almoco = !almoco;
+                for (int j = 0; j < 7; j++) {
+                    DataRefeicao dr = new DataRefeicao(j, almoco);
+                    context.DataRefeicao.Add(dr);
+                }
+            }
+        }
+
         private class YamlReceita
         {
             [YamlMember(Alias = "nome")]

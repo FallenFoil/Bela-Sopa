@@ -121,12 +121,12 @@ namespace BelaSopa.Migrations
                 columns: table => new
                 {
                     ClienteId = table.Column<int>(nullable: false),
-                    ReceitaId = table.Column<int>(nullable: false),
-                    Horario = table.Column<TimeSpan>(nullable: false)
+                    Horario = table.Column<TimeSpan>(nullable: false),
+                    ReceitaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClienteEmentaSemanal", x => new { x.ClienteId, x.ReceitaId });
+                    table.PrimaryKey("PK_ClienteEmentaSemanal", x => new { x.ClienteId, x.Horario });
                     table.ForeignKey(
                         name: "FK_ClienteEmentaSemanal_Cliente_ClienteId",
                         column: x => x.ClienteId,
@@ -142,7 +142,7 @@ namespace BelaSopa.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientesFavorito",
+                name: "ClienteFavorito",
                 columns: table => new
                 {
                     ClienteId = table.Column<int>(nullable: false),
@@ -150,15 +150,15 @@ namespace BelaSopa.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClientesFavorito", x => new { x.ClienteId, x.ReceitaId });
+                    table.PrimaryKey("PK_ClienteFavorito", x => new { x.ClienteId, x.ReceitaId });
                     table.ForeignKey(
-                        name: "FK_ClientesFavorito_Cliente_ClienteId",
+                        name: "FK_ClienteFavorito_Cliente_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
                         principalColumn: "UtilizadorId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ClientesFavorito_Receita_ReceitaId",
+                        name: "FK_ClienteFavorito_Receita_ReceitaId",
                         column: x => x.ReceitaId,
                         principalTable: "Receita",
                         principalColumn: "ReceitaId",
@@ -166,7 +166,7 @@ namespace BelaSopa.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientesFinalizado",
+                name: "ClienteFinalizado",
                 columns: table => new
                 {
                     ClienteId = table.Column<int>(nullable: false),
@@ -175,15 +175,15 @@ namespace BelaSopa.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClientesFinalizado", x => new { x.ClienteId, x.ReceitaId });
+                    table.PrimaryKey("PK_ClienteFinalizado", x => new { x.ClienteId, x.ReceitaId });
                     table.ForeignKey(
-                        name: "FK_ClientesFinalizado_Cliente_ClienteId",
+                        name: "FK_ClienteFinalizado_Cliente_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
                         principalColumn: "UtilizadorId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ClientesFinalizado_Receita_ReceitaId",
+                        name: "FK_ClienteFinalizado_Receita_ReceitaId",
                         column: x => x.ReceitaId,
                         principalTable: "Receita",
                         principalColumn: "ReceitaId",
@@ -310,13 +310,13 @@ namespace BelaSopa.Migrations
                 column: "ReceitaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientesFavorito_ReceitaId",
-                table: "ClientesFavorito",
+                name: "IX_ClienteFavorito_ReceitaId",
+                table: "ClienteFavorito",
                 column: "ReceitaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientesFinalizado_ReceitaId",
-                table: "ClientesFinalizado",
+                name: "IX_ClienteFinalizado_ReceitaId",
+                table: "ClienteFinalizado",
                 column: "ReceitaId");
 
             migrationBuilder.CreateIndex(
@@ -354,10 +354,10 @@ namespace BelaSopa.Migrations
                 name: "ClienteEmentaSemanal");
 
             migrationBuilder.DropTable(
-                name: "ClientesFavorito");
+                name: "ClienteFavorito");
 
             migrationBuilder.DropTable(
-                name: "ClientesFinalizado");
+                name: "ClienteFinalizado");
 
             migrationBuilder.DropTable(
                 name: "ReceitaEtiqueta");

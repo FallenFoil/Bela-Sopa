@@ -57,7 +57,7 @@ namespace BelaSopa.Controllers
         {
             // obter receita
 
-            var receita =
+            var Receita =
                 context
                 .Receita
                 .Include(r => r.ReceitaEtiqueta)
@@ -69,12 +69,40 @@ namespace BelaSopa.Controllers
                 .ThenInclude(p => p.Tarefas)
                 .SingleOrDefault(i => i.ReceitaId == id);
 
-            if (receita == null)
+            if (Receita == null)
                 return NotFound();
+
+            bool Favorita = IsFavorito(Receita.ReceitaId);
+            var viewModel = (
+                Receita,
+                Favorita
+                );
 
             // devolver view
 
-            return View(viewName: "DetalhesReceita", model: receita);
+            return View(viewName: "DetalhesReceita", model: viewModel);
+        }
+
+        public IActionResult ToggleFavorito(int? id) {
+            if (id.HasValue) {
+                bool Favorita = IsFavorito(id.Value);
+                int idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+                ClienteFavorito cf = new ClienteFavorito(idCliente, id.Value);
+                if (Favorita) {
+                    context.ClienteFavorito.Remove(cf);
+                } else {
+                    context.ClienteFavorito.Add(cf);
+                }
+                context.SaveChanges();
+                return Detalhes(id.Value);
+            }
+            else { return NotFound(); }
+        }
+
+        public bool IsFavorito(int idReceita) {
+            bool Favorita = context.ClienteFavorito.Any(f => f.ReceitaId == idReceita &&
+                                                            f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
+            return Favorita;
         }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    [Migration("20190530135529_v1")]
+    [Migration("20190530162206_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,11 +25,11 @@ namespace BelaSopa.Migrations
                 {
                     b.Property<int>("ClienteId");
 
-                    b.Property<int>("ReceitaId");
-
                     b.Property<TimeSpan>("Horario");
 
-                    b.HasKey("ClienteId", "ReceitaId");
+                    b.Property<int>("ReceitaId");
+
+                    b.HasKey("ClienteId", "Horario");
 
                     b.HasIndex("ReceitaId");
 
@@ -46,7 +46,7 @@ namespace BelaSopa.Migrations
 
                     b.HasIndex("ReceitaId");
 
-                    b.ToTable("ClientesFavorito");
+                    b.ToTable("ClienteFavorito");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteFinalizado", b =>
@@ -61,7 +61,7 @@ namespace BelaSopa.Migrations
 
                     b.HasIndex("ReceitaId");
 
-                    b.ToTable("ClientesFinalizado");
+                    b.ToTable("ClienteFinalizado");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>

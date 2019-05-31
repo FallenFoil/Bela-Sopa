@@ -23,11 +23,11 @@ namespace BelaSopa.Migrations
                 {
                     b.Property<int>("ClienteId");
 
-                    b.Property<TimeSpan>("Horario");
+                    b.Property<int>("DataRefeicaoId");
 
                     b.Property<int>("ReceitaId");
 
-                    b.HasKey("ClienteId", "Horario");
+                    b.HasKey("ClienteId", "DataRefeicaoId");
 
                     b.HasIndex("ReceitaId");
 
@@ -44,7 +44,7 @@ namespace BelaSopa.Migrations
 
                     b.HasIndex("ReceitaId");
 
-                    b.ToTable("ClientesFavorito");
+                    b.ToTable("ClienteFavorito");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteFinalizado", b =>
@@ -59,7 +59,22 @@ namespace BelaSopa.Migrations
 
                     b.HasIndex("ReceitaId");
 
-                    b.ToTable("ClientesFinalizado");
+                    b.ToTable("ClienteFinalizado");
+                });
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.DataRefeicao", b =>
+                {
+                    b.Property<int>("DataRefeicaoId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Almoco");
+
+                    b.Property<int>("Dia");
+
+                    b.HasKey("DataRefeicaoId");
+
+                    b.ToTable("DataRefeicao");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>

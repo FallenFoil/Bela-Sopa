@@ -62,6 +62,30 @@ span {
     align-items: stretch;
 }
 
+#sidebarCollapse {
+    z-index: 10;
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    margin-top: 1%;
+    position: fixed;
+    margin-left: 20%;
+    background-color: #4CAF50;
+    box-shadow: 0 1px 0 0 #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+    #sidebarCollapse.active {
+        z-index: 10;
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+        margin-top: 1%;
+        position: fixed;
+        margin-left: 7%;
+        background-color: #4CAF50;
+        box-shadow: 0 1px 0 0 #4CAF50;
+        border: 1px solid #4CAF50;
+    }
+
 #sidebar {
     min-width: 16em;
     max-width: 16em;
@@ -80,6 +104,7 @@ span {
     }
 
         #sidebar.active .sidebar-header h3,
+        #sidebar.active .sidebar-header p,
         #sidebar.active .CTAs {
             display: none;
         }
@@ -127,25 +152,14 @@ span {
 
     #sidebar .sidebar-header {
         text-align: center;
-        /*padding: 20px;*/
         background: #4CAF50;
         border-bottom: 1px solid #4CAF50;
     }
 
-        #sidebar .sidebar-header #logo {
-            /*margin-left: 15%;*/
-        }
-
         #sidebar .sidebar-header #logo_icon {
             width: 40%;
             /*margin-left: 25%;*/
-            padding-bottom: 0.8em;
-        }
-
-        #sidebar .sidebar-header #sidebarCollapse {
-            background-color: #4CAF50;
-            border-color: #4CAF50;
-            margin-top: 5%;
+            padding-bottom: 0.7em;
         }
 
         #sidebar .sidebar-header strong {
@@ -153,12 +167,8 @@ span {
             font-size: 1.8em;
         }
 
-    #sidebar ul.components {
-        padding: 3px 0;
-    }
-
     #sidebar ul li a {
-        padding: 10px;
+        padding: 8px;
         font-size: 1.1em;
         display: block;
     }
@@ -194,11 +204,11 @@ a[data-toggle="collapse"] {
     transform: translateY(-50%);
 }
 
-/*ul ul a {
+ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
-}*/
+}
 
 ul.CTAs {
     padding: 20px;
@@ -230,6 +240,7 @@ a.article:hover {
 #content {
     width: 100%;
     margin-left: 16em;
+    margin-top: 2%;
     padding: 3em;
     min-height: 100vh;
     transition: all 0.3s;
@@ -281,6 +292,15 @@ a.article:hover {
 .ReceitasLinha {
     margin-bottom: 3%;
 }
+
+/* ---------------------------------------------------
+    Detalhes Receitas
+----------------------------------------------------- */
+
+#ValoresNut {
+    background-color: #dddddd;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

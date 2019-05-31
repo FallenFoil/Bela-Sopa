@@ -169,9 +169,9 @@ namespace BelaSopa.Models
 
         public virtual DbSet<Cliente> Cliente { get; set; }
 
-        public virtual DbSet<ClienteFinalizado> ClientesFinalizado { get; set; }
+        public virtual DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
         public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-        public virtual DbSet<ClienteFavorito> ClientesFavorito { get; set; }
+        public virtual DbSet<ClienteFavorito> ClienteFavorito { get; set; }
 
 
         public DbSet<Receita> Receita { get; set; }
@@ -200,6 +200,7 @@ namespace BelaSopa.Models
         //public DbSet<TarefaTecnica> TarefaTecnica { get; set; }
         public DbSet<Utensilio> Utensilio { get; set; }
         public DbSet<Tecnica> Tecnica { get; set; }
+        public DbSet<DataRefeicao> DataRefeicao { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -228,7 +229,7 @@ namespace BelaSopa.Models
                 .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasKey(cr => new { cr.ClienteId, cr.Horario });
+                .HasKey(cr => new { cr.ClienteId, cr.DataRefeicaoId });
             modelBuilder.Entity<ClienteEmentaSemanal>()
               .HasOne(ti => ti.Cliente)
               .WithMany(t => t.ClienteEmentaSemanal)

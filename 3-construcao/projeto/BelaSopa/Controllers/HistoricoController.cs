@@ -20,7 +20,7 @@ namespace BelaSopa.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            List<ClienteFinalizado> receitasFinalizadas = context.ClientesFinalizado
+            List<ClienteFinalizado> receitasFinalizadas = context.ClienteFinalizado
                                                         .Where(cf => cf.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
                                                         .ToList();
 
