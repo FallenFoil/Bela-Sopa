@@ -38,11 +38,14 @@ namespace BelaSopa.Shared
                     Imagem = yamlReceita.Imagem,
                     UtilizacoesIngredientes = yamlReceita.Ingredientes,
                     ValoresNutricionais = yamlReceita.ValoresNutricionais,
-                    Processos = yamlReceita.Passos.Select(p => new Processo
+                    Processos = yamlReceita.Passos.Select((passos, i) => new Processo
                     {
-                        Tarefas = p.Select(
-                            t => new Tarefa { Texto = new List<TextoTarefa> { new TextoTarefa { Texto = t } } }
-                            ).ToList()
+                        Indice = i,
+                        Tarefas = passos.Select((passo, j) => new Tarefa
+                        {
+                            Indice = j,
+                            Texto = new List<TextoTarefa> { new TextoTarefa { Indice = 0, Texto = passo } }
+                        }).ToList()
                     }).ToList()
                 };
 

@@ -9,6 +9,9 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Key]
         public int TarefaId { get; set; }
 
+        [Required]
+        public int Indice { get; set; }
+
         public virtual ICollection<TextoTarefa> Texto { get; set; } = new List<TextoTarefa>();
 
         [Required]

@@ -9,6 +9,9 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Key]
         public int ProcessoId { get; set; }
 
+        [Required]
+        public int Indice { get; set; }
+
         //[Required]
         //public int Tempo { get; set; }
 

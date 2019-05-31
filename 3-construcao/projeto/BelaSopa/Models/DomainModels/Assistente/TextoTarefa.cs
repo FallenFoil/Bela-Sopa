@@ -8,6 +8,9 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int TextoTarefaId { get; set; }
 
         [Required]
+        public int Indice { get; set; }
+
+        [Required]
         public string Texto { get; set; }
 
         public int? IngredienteId { get; set; }
@@ -22,6 +25,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         public virtual Utensilio Utensilio { get; set; }
 
+        [Required]
         public int TarefaId { get; set; }
 
         public virtual Tarefa Tarefa { get; set; }
