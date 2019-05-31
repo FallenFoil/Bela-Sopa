@@ -1,4 +1,4 @@
-@model (Receita Receita, bool Favorita)
+@model (Receita Receita, List<Tecnica> Tecnicas, List<Utensilio> Utensilios, bool Favorita)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Receita.Nome;
@@ -66,7 +66,6 @@
         </tr>
     </thead>
     <tbody>
-        @{ var j = 0;}
         @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes)
         {
         <tr>
@@ -89,6 +88,30 @@
         }
     </tbody>
 </table>
+
+<hr />
+<h4 style="margin-top:5%;">Técnicas</h4>
+
+<ul>
+    @foreach (var tecnica in Model.Tecnicas)
+    {
+        <li>
+            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
+        </li>
+    }
+</ul>
+
+<hr />
+<h4 style="margin-top:5%;">Utensílios</h4>
+
+<ul>
+    @foreach (var utensilio in Model.Utensilios)
+    {
+        <li>
+            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
+        </li>
+    }
+</ul>
 
 <hr />
 <h4 style="margin-top:5%;">Valores nutricionais</h4>

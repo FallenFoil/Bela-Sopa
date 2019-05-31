@@ -1,7 +1,9 @@
+using BelaSopa.Shared;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace BelaSopa.Models.DomainModels.Assistente
 {
@@ -46,13 +48,26 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
-       
+        public (IEnumerable<Tecnica>, IEnumerable<Utensilio>) GetTecnicasUtensilios()
+        {
+            var textosTarefas =
+                Processos
+                .SelectMany(p => p.Tarefas)
+                .SelectMany(t => t.Texto)
+                .ToArray();
 
-        //[StringLength(50)]
-        //public string Video { get; set; }
-
-        //[Required]
-        //[StringLength(50)]
-        //public string Link { get; set; }
+            return (
+                textosTarefas
+                    .Select(texto => texto.Tecnica)
+                    .Where(t => t != null)
+                    .DistinctBy(t => t.TecnicaId)
+                    .OrderBy(t => t.Nome),
+                textosTarefas
+                    .Select(texto => texto.Utensilio)
+                    .Where(u => u != null)
+                    .DistinctBy(u => u.UtensilioId)
+                    .OrderBy(u => u.Nome)
+                );
+        }
     }
 }
