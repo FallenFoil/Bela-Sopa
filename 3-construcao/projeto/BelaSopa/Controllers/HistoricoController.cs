@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BelaSopa.Controllers
 {
+    [Authorize(Roles = Autenticacao.ROLE_CLIENTE)]
     public class HistoricoController : Controller {
         private readonly BelaSopaContext context;
 
