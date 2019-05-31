@@ -9,6 +9,7 @@
     <None Remove="Data\Ingredientes\abobora.yaml" />
     <None Remove="Data\Ingredientes\agriao.yaml" />
     <None Remove="Data\Ingredientes\aipo.yaml" />
+    <None Remove="Data\Ingredientes\alface.yaml" />
     <None Remove="Data\Ingredientes\alho.yaml" />
     <None Remove="Data\Ingredientes\azeite.yaml" />
     <None Remove="Data\Ingredientes\batata-doce.yaml" />
@@ -21,6 +22,7 @@
     <None Remove="Data\Ingredientes\frutos-secos.yaml" />
     <None Remove="Data\Ingredientes\limao.yaml" />
     <None Remove="Data\Ingredientes\morango.yaml" />
+    <None Remove="Data\Ingredientes\ovo-de-galinha.yaml" />
     <None Remove="Data\Ingredientes\pimento.yaml" />
     <None Remove="Data\Ingredientes\quinoa.yaml" />
     <None Remove="Data\Ingredientes\sal.yaml" />
@@ -157,6 +159,7 @@
     <EmbeddedResource Include="Data\Ingredientes\abobora.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\agriao.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\aipo.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\alface.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\alho.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\azeite.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\batata-doce.yaml" />
@@ -169,6 +172,7 @@
     <EmbeddedResource Include="Data\Ingredientes\frutos-secos.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\limao.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\morango.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\ovo-de-galinha.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\pimento.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\quinoa.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\sal.yaml" />
