@@ -1,9 +1,8 @@
 @model (List<Etiqueta> Etiquetas, List<Receita> Receitas, int Data)
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "Receitas";
+    ViewData["Title"] = "Adicionar receita à ementa semanal";
 }
-<h2>Receitas</h2>
 
 <form asp-controller="EmentaSemanal" asp-action="VerReceitas" asp-route-data=@Model.Data method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
     <div class="container" style="border-bottom: 1px soli   d #717171;">
