@@ -19,7 +19,9 @@
     <None Remove="Data\Ingredientes\cebola.yaml" />
     <None Remove="Data\Ingredientes\cenoura.yaml" />
     <None Remove="Data\Ingredientes\citrinos.yaml" />
+    <None Remove="Data\Ingredientes\coentros.yaml" />
     <None Remove="Data\Ingredientes\cogumelos.yaml" />
+    <None Remove="Data\Ingredientes\cominho.yaml" />
     <None Remove="Data\Ingredientes\courgette.yaml" />
     <None Remove="Data\Ingredientes\ervilhas.yaml" />
     <None Remove="Data\Ingredientes\espargos.yaml" />
@@ -180,7 +182,9 @@
     <EmbeddedResource Include="Data\Ingredientes\cebola.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\cenoura.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\citrinos.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\coentros.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\cogumelos.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\cominho.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\courgette.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\ervilhas.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\espargos.yaml" />
