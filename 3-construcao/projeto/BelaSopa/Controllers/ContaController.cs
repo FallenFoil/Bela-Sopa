@@ -1,9 +1,13 @@
 using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Models.ViewModels;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,7 +26,13 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var viewModel = (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email;
+            var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente).UtilizadorId).ToList<ClienteFavorito>();
+            List<Receita> receitas = new List<Receita>();
+            foreach(ClienteFavorito cf in favoritos)
+            {
+                receitas.Add(context.Receita.Find(cf.ReceitaId));
+            }
+            var viewModel = (receitas , (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
             return View(viewName: "VerDados", model: viewModel);
         }
@@ -31,6 +41,11 @@ namespace BelaSopa.Controllers
         public IActionResult AlterarPalavraPasse()
         {
             return View(viewName: "AlterarPalavraPasse");
+        }
+
+        private bool IsFavorito(int receitaId)
+        {
+            throw new NotImplementedException();
         }
 
         [HttpPost]
