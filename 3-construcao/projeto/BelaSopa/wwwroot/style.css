@@ -14,13 +14,14 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    /*color: #999;*/
 }
 
-a,
+a {
+    color: black;
+}
+
 a:hover,
 a:focus {
-    /*color: inherit;*/
     color: #007bff;
     text-decoration: none;
     transition: all 0.3s;
@@ -207,7 +208,6 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
 }
 
 ul.CTAs {
@@ -296,6 +296,18 @@ a.article:hover {
 /* ---------------------------------------------------
     Detalhes Receitas
 ----------------------------------------------------- */
+
+.CustomBullet>li::before {
+    content: "•";
+    color: #4CAF50;
+    width: 10em;
+    font-size: 200%;
+}
+
+.CustomBullet a {
+    text-decoration: underline;
+    padding-left: 0px !important;
+}
 
 #ValoresNut {
     background-color: #dddddd;
