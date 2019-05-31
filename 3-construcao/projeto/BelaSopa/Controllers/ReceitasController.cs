@@ -43,7 +43,7 @@ namespace BelaSopa.Controllers
             receitas = receitas.OrderBy(receita => receita.Nome);
 
             var viewModel = (
-                Etiquetas: context.Etiqueta.ToList(),
+                Etiquetas: context.Etiqueta.OrderBy(e => e.Nome).ToList(),
                 Receitas: receitas.ToList()
                 );
 

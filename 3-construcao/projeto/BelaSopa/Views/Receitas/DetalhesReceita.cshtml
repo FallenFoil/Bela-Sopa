@@ -184,6 +184,15 @@
                                 <text>@texto.Texto</text>
                             }
                         }
+
+                        @{
+                            var duracaoTemporizador = tarefa.GetDuracaoTemporizador();
+
+                            if (duracaoTemporizador != null)
+                            {
+                                <text><strong>(eu sou um temporizador de @duracaoTemporizador minutos)</strong></text>
+                            }
+                        }
                     </li>
                 }
             </ul>
