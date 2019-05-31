@@ -3,6 +3,7 @@ using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -53,11 +54,12 @@ namespace BelaSopa.Controllers
             return Index();
         }
 
+        [HttpGet("[controller]/[action]/{Data}")]
         public IActionResult VerReceitas(
            [FromQuery] string nome,
            [FromQuery] int? etiqueta,
            [FromQuery] Dificuldade? dificuldade,
-           [FromQuery(Name = "data")] int Data
+           [FromRoute] int Data
            )
         {
             ViewData["nome"] = nome;
@@ -93,24 +95,56 @@ namespace BelaSopa.Controllers
                                         .Join(context.Receita, ementa => ementa.ReceitaId, receita => receita.ReceitaId, (ementa, receita) => receita)
                                         .ToArray<Receita>();
             Dictionary<string, string> ingredientes = new Dictionary<string, string>();
-            foreach(Receita r in receitasEmenta) {
+            Dictionary<string, Dictionary<string, int>> ingrQuantidade = new Dictionary<string, Dictionary<string, int>>();
+            foreach (Receita r in receitasEmenta) {
                 ICollection<UtilizacaoIngrediente> ingrs = context.UtilizacaoIngrediente.Where(utilU => utilU.ReceitaId == r.ReceitaId).ToArray<UtilizacaoIngrediente>();
                 foreach(UtilizacaoIngrediente ui in ingrs) {
-                    if (ingredientes.ContainsKey(ui.Nome)) {
-                        string quant = ingredientes[ui.Nome];
-                        string[] splitUi = ui.Quantidade.Split(" ");
-                        string[] splitQuant = quant.Split(" ");
-                        if (splitQuant[1].Equals(splitUi[1])){
-                            splitQuant[0] = (Int32.Parse(splitQuant[0]) + Int32.Parse(splitUi[0])).ToString();
+                    string[] splitUI = ui.Quantidade.Split(" ");
+                    if (ingrQuantidade.ContainsKey(ui.Nome)) {
+                        Dictionary<string, int> units = ingrQuantidade[ui.Nome];
+                        string unit = "";
+                        for (int i = 1; i < splitUI.Length; i++) {
+                            unit += splitUI[i] + " ";
                         }
-                        string total = splitQuant[0] + splitQuant[1];
-                        ingredientes[ui.Nome] = total;
-                    } else {
-                        ingredientes.Add(ui.Nome, ui.Quantidade);
+                        if (splitUI[0].Equals("qb")) {
+                            units.Add(unit, 0);
+                        } else {
+                            int quantity = Int32.Parse(splitUI[0]);
+                            if (units.ContainsKey(unit)) {
+                                units[unit] += quantity;
+                            } else units.Add(unit, quantity);
+                        }
+                    }
+                    else {
+                        Dictionary<string, int> quantidades = new Dictionary<string, int>();
+                        if (splitUI.Length >= 2) {
+                            string key = "";
+                            for (int i = 1; i < splitUI.Length; i++) {
+                                key += splitUI[i] + " ";
+                            } 
+                            quantidades.Add(key, Int32.Parse(splitUI[0]));
+                        } else if (splitUI.Length == 1) {
+                            if (splitUI[0].Equals("qb")) {
+                                quantidades.Add("qb", 0);
+                            } else {
+                                quantidades.Add("", Int32.Parse(splitUI[0]));
+                            }
+                        }
+                        ingrQuantidade.Add(ui.Nome, quantidades);
                     }
                 }
             }
-
+            foreach(string ingrediente in ingrQuantidade.Keys) {
+                string total = "";
+                foreach (string unit in ingrQuantidade[ingrediente].Keys) {
+                    if (unit.Equals("qb")) {
+                        total += "qb + ";
+                    } else if (unit.Equals("")) total += ingrQuantidade[ingrediente][unit].ToString() + " un. + ";
+                    else total += ingrQuantidade[ingrediente][unit].ToString() + " " + unit + " + ";
+                }
+                total = total.Substring(0, total.Length - 2);
+                ingredientes.Add(ingrediente, total);
+            }
             return View(viewName: "ListaDeIngredientes", model: ingredientes);
         }
 
