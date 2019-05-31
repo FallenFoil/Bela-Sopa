@@ -1,7 +1,11 @@
+# ---------------------------------------------------------------------------- #
 
 nome: Creme de lentilhas com abóbora
 
-descrição: Uma sopa consistente preparada com lentilhas e abóbora. Toda a cremosidade e sabor de uma entrada perfeita, para refeição de Outono.
+descrição: >-
+
+  Uma sopa consistente preparada com lentilhas e abóbora. Toda a cremosidade e
+  sabor de uma entrada perfeita, para refeição de Outono.
 
 dificuldade: média
 
@@ -67,11 +71,23 @@ valores-nutricionais:
   percentagem-do-vdr-adulto: null
 
 passos:
-- - Lave o talo de aipo, corte-o em lâminas e leve ao lume numa panela com o azeite e a cebola.
-  - Junte a abóbora, cortada em cubos, a cenoura e a pasta de concentrado de tomate.
-  - Polvilhe com os cominhos e o sal e mexa para misturar bem. Tape e deixe suar cerca de 15 minutos.
-  - Passe as lentilhas por água, junte-as aos legumes e adicione a água a ferver. Tape e deixe cozinhar mais 15 minutos.
-  - Triture a sopa com a varinha mágica ou no copo liquidificador e sirva polvilhada com o pimentão-doce, a salsa picada e as sementes de abóbora.
+
+- - Lave o talo de aipo.
+  - Corte-o em lâminas.
+  - Leve ao lume numa panela com o azeite e a cebola.
+
+- - Corte a abóbora em cubos e junte à panela.
+  - Junte a cenoura e a pasta de concentrado de tomate.
+  - Polvilhe com os cominhos e o sal.
+  - Mexa para misturar bem.
+  - Tape e deixe suar durante cerca de 15 minutos.
+
+- - Passe as lentilhas por água.
+  - Junte-as aos legumes e adicione a água a ferver.
+  - Tape e deixe cozinhar mais 15 minutos.
+
+- - Triture a sopa com a varinha-mágica ou no copo liquidificador.
+  - Sirva polvilhada com o pimentão-doce, a salsa picada e as sementes de abóbora.
 
 imagem: !!binary |
   /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
@@ -989,3 +1005,5 @@ imagem: !!binary |
   qCHfRBH7goyqJ0o4jG5AVEVf7EIIwnJyf36p5KBPmoHe8oz5hH2RRvgUdjLZH2AQkhBDD2TumDqe
   aNuBTuiFQhsBWWUHEeGUdoZ4BDCwRwNOStyQV9vccDRZo2VfB3flb1xXBb8O6rf87PdlxW5bzs91
   w4Y8V3Rd2W8/C7ou7r//2Q==
+
+# ---------------------------------------------------------------------------- #

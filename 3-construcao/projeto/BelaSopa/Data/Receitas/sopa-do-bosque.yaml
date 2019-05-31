@@ -1,7 +1,11 @@
+# ---------------------------------------------------------------------------- #
 
 nome: Sopa do bosque
 
-descrição: Uma sopa rica preparada com abóbora, batata-doce, grão e brócolos. Uma viagem de sabores pelo bosque dos melhores legumes para as crianças.
+descrição: >-
+
+  Uma sopa rica preparada com abóbora, batata-doce, grão e brócolos. Uma viagem
+  de sabores pelo bosque dos melhores legumes para as crianças.
 
 dificuldade: fácil
 
@@ -59,14 +63,36 @@ valores-nutricionais:
   percentagem-do-vdr-adulto: null
 
 passos:
-- - Descasque a cebola e os dentes de alho, pique-os finamente e deite numa panela.
-  - Adicione as batatas e a abóbora cortadas em cubos. Reserve.
-  - Corte a abóbora em fatias finas e recorte pequenos animais com um corta-bolachas. Deite as aparas da abóbora na panela.
-  - Separe os ramos dos brócolos e lave-os em água abundante. Reserve a parte de cima dos ramos, pique os talos em pedaços pequenos e junte-os aos restantes legumes na panela.
-  - Regue com o azeite, salpique com o sal e cozinhe em lume brando cerca de 15 minutos.
-  - Escorra o grão, passe-o por água fria e coloque-o na panela. Adicione a água a ferver e deixe cozinhar mais 20 minutos.
-  - Junte as figuras de abóbora e os ramos de brócolos reservados numa taça de vidro, cubra com uma tampa própria para microondas ou com película aderente e coza no microondas 5 minutos na potência máxima.
-  - Triture a sopa na panela com a varinha mágica e distribua-a pelos pratos ou taças.
+
+- - Descasque a cebola e os dentes de alho.
+  - Pique-os finamente e deite numa panela.
+
+- - Corte as batatas-doces e a abóbora em cubos.
+  - Adicione-os à panela.
+
+- - Corte a abóbora em fatias finas.
+  - Recorte pequenos animais dessas fatias com um corta-bolachas e reserve.
+  - Deite as aparas da abóbora na panela.
+
+- - Separe os ramos dos brócolos.
+  - Lave-os em água abundante.
+  - Reserve a parte de cima dos ramos.
+  - Pique os talos em pedaços pequenos.
+  - Adicione os talos à panela.
+  - Regue com o azeite e salpique com o sal.
+  - Cozinhe em lume brando durante cerca de 15 minutos.
+
+- - Escorra o grão e passe-o por água fria.
+  - Coloque o grão na panela.
+  - Adicione a água a ferver.
+  - Deixe cozinhar mais 20 minutos.
+
+- - Junte as figuras de abóbora e os ramos de brócolos reservados numa taça de vidro.
+  - Cubra a taça com uma tampa própria para microondas ou com película aderente.
+  - Coza no microondas durante 5 minutos na potência máxima.
+
+- - Triture a sopa na panela com a varinha-mágica.
+  - Distribua-a pelos pratos ou taças.
   - Decore com os ramos de brócolos e as figuras de abóbora.
 
 imagem: !!binary |
@@ -872,3 +898,5 @@ imagem: !!binary |
   iFC0aJoJwFV5VeTyeP4nahdr3IVD3xouokI+VuWcFYNxWUqH0ui309xCYckcZtO0VpwcMQa6L7Uk
   +o4TO5M+Rv1O6DzgiXvxPQXc9NiZ6UTdHy8KKwq8m7FpI9Flw8YPbHe2rkvhw77XdHAc18NlBsB5
   FZLKD9BWRef0+q+HcddTfNMawaTWeEFlydDYD1TY4zO81m1IQGxX8r/yWZgNtGofkuJo9xtY2f/Z
+
+# ---------------------------------------------------------------------------- #
