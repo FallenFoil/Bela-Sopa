@@ -50,24 +50,57 @@ namespace BelaSopa.Shared
 
         public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<Ingrediente>("BelaSopa.Data.Ingredientes.", ingrediente =>
+            CarregarRecursosYaml<YamlItu>("BelaSopa.Data.Ingredientes.", yamlIngrediente =>
             {
+                var ingrediente = new Ingrediente
+                {
+                    Nome = yamlIngrediente.Nome,
+                    Descricao = yamlIngrediente.Descricao,
+                    Texto = yamlIngrediente.Texto,
+                    Imagem = yamlIngrediente.Imagem,
+                    NomesAlternativos = yamlIngrediente.NomesAlternativos.Select(
+                        n => new NomeAlternativoIngrediente { Valor = n }
+                        ).ToList()
+                };
+
                 context.AdicionarIngrediente(ingrediente);
             });
         }
 
         public static void CarregarTecnicasDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<Tecnica>("BelaSopa.Data.Tecnicas.", tecnica =>
+            CarregarRecursosYaml<YamlItu>("BelaSopa.Data.Tecnicas.", yamlTecnica =>
             {
+                var tecnica = new Tecnica
+                {
+                    Nome = yamlTecnica.Nome,
+                    Descricao = yamlTecnica.Descricao,
+                    Texto = yamlTecnica.Texto,
+                    Imagem = yamlTecnica.Imagem,
+                    NomesAlternativos = yamlTecnica.NomesAlternativos.Select(
+                        n => new NomeAlternativoTecnica { Valor = n }
+                        ).ToList()
+                };
+
                 context.AdicionarTecnica(tecnica);
             });
         }
 
         public static void CarregarUtensiliosDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<Utensilio>("BelaSopa.Data.Utensilios.", utensilio =>
+            CarregarRecursosYaml<YamlItu>("BelaSopa.Data.Utensilios.", yamlUtensilio =>
             {
+                var utensilio = new Utensilio
+                {
+                    Nome = yamlUtensilio.Nome,
+                    Descricao = yamlUtensilio.Descricao,
+                    Texto = yamlUtensilio.Texto,
+                    Imagem = yamlUtensilio.Imagem,
+                    NomesAlternativos = yamlUtensilio.NomesAlternativos.Select(
+                        n => new NomeAlternativoUtensilio { Valor = n }
+                        ).ToList()
+                };
+
                 context.AdicionarUtensilio(utensilio);
             });
         }
@@ -100,11 +133,14 @@ namespace BelaSopa.Shared
             }
         }
 
-        public static void CarregarDataRefeicao(BelaSopaContext context) {
+        public static void CarregarDataRefeicao(BelaSopaContext context)
+        {
             bool almoco = false;
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 2; i++)
+            {
                 almoco = !almoco;
-                for (int j = 0; j < 7; j++) {
+                for (int j = 0; j < 7; j++)
+                {
                     DataRefeicao dr = new DataRefeicao(j, almoco);
                     context.DataRefeicao.Add(dr);
                 }
@@ -139,6 +175,24 @@ namespace BelaSopa.Shared
 
             [YamlMember(Alias = "passos")]
             public List<List<string>> Passos { get; set; }
+
+            [YamlMember(Alias = "imagem")]
+            public byte[] Imagem { get; set; }
+        }
+
+        public class YamlItu
+        {
+            [YamlMember(Alias = "nome")]
+            public string Nome { get; set; }
+
+            [YamlMember(Alias = "nomes-alternativos")]
+            public List<string> NomesAlternativos { get; set; }
+
+            [YamlMember(Alias = "descrição")]
+            public string Descricao { get; set; }
+
+            [YamlMember(Alias = "texto")]
+            public string Texto { get; set; }
 
             [YamlMember(Alias = "imagem")]
             public byte[] Imagem { get; set; }

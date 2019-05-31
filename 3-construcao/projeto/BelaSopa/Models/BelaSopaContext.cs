@@ -29,12 +29,13 @@ namespace BelaSopa.Models
         {
             // adicionar receita
 
-            Receita.Add(receita);
+            Add(receita);
 
             // descobrir relacionamentos com ingredientes
 
             var todosIngredientes =
                 Ingrediente
+                .Include(i => i.NomesAlternativos)
                 .Include(i => i.Utilizacoes)
                 .ToArray();
 
@@ -52,8 +53,8 @@ namespace BelaSopa.Models
 
             // converter texto das tarefas
 
-            var todasTecnicas = Tecnica.ToArray();
-            var todosUtensilios = Utensilio.ToArray();
+            var todasTecnicas = Tecnica.Include(t => t.NomesAlternativos).ToArray();
+            var todosUtensilios = Utensilio.Include(u => u.NomesAlternativos).ToArray();
 
             foreach (var processo in receita.Processos)
                 foreach (var tarefa in processo.Tarefas)
@@ -86,7 +87,7 @@ namespace BelaSopa.Models
         {
             // adicionar ingrediente
 
-            Ingrediente.Add(ingrediente);
+            Add(ingrediente);
 
             // descobrir relacionamentos com receitas
 
@@ -139,7 +140,13 @@ namespace BelaSopa.Models
 
             foreach (var palavra in texto.Split())
             {
-                var ingrediente = ingredientes.FirstOrDefault(i => Util.FuzzyEquals(palavra, i.Nome));
+                var ingrediente = ingredientes.FirstOrDefault(i =>
+                    i
+                    .NomesAlternativos
+                    .Select(n => n.Valor)
+                    .Prepend(i.Nome)
+                    .Any(n => Util.FuzzyEquals(palavra, n))
+                    );
 
                 if (ingrediente != null)
                 {
@@ -147,7 +154,13 @@ namespace BelaSopa.Models
                     continue;
                 }
 
-                var tecnica = tecnicas.FirstOrDefault(t => Util.FuzzyEquals(palavra, t.Nome));
+                var tecnica = tecnicas.FirstOrDefault(t =>
+                    t
+                    .NomesAlternativos
+                    .Select(n => n.Valor)
+                    .Prepend(t.Nome)
+                    .Any(n => Util.FuzzyEquals(palavra, n))
+                    );
 
                 if (tecnica != null)
                 {
@@ -155,13 +168,17 @@ namespace BelaSopa.Models
                     continue;
                 }
 
-       
-                var utensilio = utensilios.FirstOrDefault(u => Util.FuzzyEquals(palavra, u.Nome));
-
+                var utensilio = utensilios.FirstOrDefault(u =>
+                    u
+                    .NomesAlternativos
+                    .Select(n => n.Valor)
+                    .Prepend(u.Nome)
+                    .Any(n => Util.FuzzyEquals(palavra, n))
+                    );
 
                 if (utensilio != null)
                 {
-                    convertido += $"|Utensilio,{utensilio.UtensilioId},{palavra}|";
+                    convertido += $"|$Utensilios,{utensilio.UtensilioId},{palavra}|";
                     continue;
                 }
 
@@ -190,22 +207,24 @@ namespace BelaSopa.Models
 
         public DbSet<Processo> Processo { get; set; }
 
-        //public DbSet<ProcessoTarefa> ProcessoTarefa { get; set; }
-
         public DbSet<Tarefa> Tarefa { get; set; }
 
         public DbSet<Ingrediente> Ingrediente { get; set; }
 
-
-
-
-        //public DbSet<ReceitaProcesso> ReceitaProcesso { get; set; }
+        public DbSet<NomeAlternativoIngrediente> NomeAlternativoIngrediente { get; set; }
 
         //public DbSet<TarefaIngrediente> TarefaIngrediente { get; set; }
         //public DbSet<TarefaUtensilio> TarefaUtensilio { get; set; }
         //public DbSet<TarefaTecnica> TarefaTecnica { get; set; }
-        public DbSet<Utensilio> Utensilio { get; set; }
+
         public DbSet<Tecnica> Tecnica { get; set; }
+
+        public DbSet<NomeAlternativoTecnica> NomeAlternativoTecnica { get; set; }
+
+        public DbSet<Utensilio> Utensilio { get; set; }
+
+        public DbSet<NomeAlternativoUtensilio> NomeAlternativoUtensilio { get; set; }
+
         public DbSet<DataRefeicao> DataRefeicao { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
