@@ -1,6 +1,10 @@
 # ---------------------------------------------------------------------------- #
 
-nome: Frutos-secos
+nome: Frutos secos
+
+nomes-alternativos:
+  - Fruto-seco
+  - Frutos-secos
 
 descrição: >-
 
