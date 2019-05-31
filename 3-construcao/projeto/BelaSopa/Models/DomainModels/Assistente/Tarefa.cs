@@ -22,21 +22,18 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public virtual Processo Processo { get; set; }
 
         private static readonly Regex REGEX_TEMPO = new Regex(
-            //@"(\d+)\s+minutos?",
             @"(\d+)\s+minutos?",
             RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase
             );
 
-        public int? GetDuracaoTemporizador()
+        public string GetDuracaoTemporizador()
         {
             var texto = string.Join(' ', Texto.OrderBy(t => t.Indice).Select(t => t.Texto));
 
-            var match = REGEX_TEMPO.Match("8 minutos");
+            var matches = REGEX_TEMPO.Matches(texto);
 
-            match = Regex.Match("10 minutos", @"\d+\s+minutos");
-
-            if (match.Success && int.TryParse(match.Groups[0].Value, out int minutos))
-                return minutos;
+            if (matches.Count == 1 && int.TryParse(matches[0].Groups[1].Value, out int minutos) && minutos > 0)
+                return minutos.ToString();
             else
                 return null;
         }
