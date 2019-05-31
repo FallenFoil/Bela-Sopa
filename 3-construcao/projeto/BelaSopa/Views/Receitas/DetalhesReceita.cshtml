@@ -11,17 +11,16 @@
             <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
                  alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
-            @if (@Model.Favorita)
-            {
-                //Dentro Favoritos
-                <i class="fas fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
-            }
-            else
-            {
-                //Dos Favoritos
-                <i class="far fa-star" style="color:gold;position:absolute; left:5%; top:5%; font-size:200%"></i>
-            }
-        </div>
+            <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
+                @if (@Model.Favorita) {
+                    //Dentro Favoritos
+                    <i class="fas fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+                } else {
+                    //Dos Favoritos
+                    <i class="far fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+                }
+            </a>
+        </div>      
         <div class="col-sm-4" style="text-align:center;border-left: 3px solid #4CAF50;">
             <h4>@Model.Receita.Nome</h4>
             @if (Model.Receita.Dificuldade == Dificuldade.Facil)

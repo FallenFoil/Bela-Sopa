@@ -87,5 +87,32 @@ namespace BelaSopa.Controllers
             return View(viewName: "AdicionarReceita", model: viewModel);
         }
 
+        public IActionResult GerarListaIngredientes() {
+            Receita[] receitasEmenta = context.ClienteEmentaSemanal
+                                        .Where(ces => ces.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
+                                        .Join(context.Receita, ementa => ementa.ReceitaId, receita => receita.ReceitaId, (ementa, receita) => receita)
+                                        .ToArray<Receita>();
+            Dictionary<string, string> ingredientes = new Dictionary<string, string>();
+            foreach(Receita r in receitasEmenta) {
+                ICollection<UtilizacaoIngrediente> ingrs = context.UtilizacaoIngrediente.Where(utilU => utilU.ReceitaId == r.ReceitaId).ToArray<UtilizacaoIngrediente>();
+                foreach(UtilizacaoIngrediente ui in ingrs) {
+                    if (ingredientes.ContainsKey(ui.Nome)) {
+                        string quant = ingredientes[ui.Nome];
+                        string[] splitUi = ui.Quantidade.Split(" ");
+                        string[] splitQuant = quant.Split(" ");
+                        if (splitQuant[1].Equals(splitUi[1])){
+                            splitQuant[0] = (Int32.Parse(splitQuant[0]) + Int32.Parse(splitUi[0])).ToString();
+                        }
+                        string total = splitQuant[0] + splitQuant[1];
+                        ingredientes[ui.Nome] = total;
+                    } else {
+                        ingredientes.Add(ui.Nome, ui.Quantidade);
+                    }
+                }
+            }
+
+            return View(viewName: "ListaDeIngredientes", model: ingredientes);
+        }
+
     }
 }
