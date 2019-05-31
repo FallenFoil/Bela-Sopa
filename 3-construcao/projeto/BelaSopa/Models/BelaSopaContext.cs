@@ -110,11 +110,17 @@ namespace BelaSopa.Models
         public void AdicionarTecnica(Tecnica tecnica)
         {
             // TODO: implement
+
+            Add(tecnica);
+            SaveChanges();
         }
 
         public void AdicionarUtensilio(Utensilio utensilio)
         {
             // TODO: implement
+
+            Add(utensilio);
+            SaveChanges();
         }
 
         private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)

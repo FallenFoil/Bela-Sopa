@@ -8,6 +8,7 @@
     <None Remove="Data\Ingredientes\abacate.yaml" />
     <None Remove="Data\Ingredientes\abobora.yaml" />
     <None Remove="Data\Ingredientes\agriao.yaml" />
+    <None Remove="Data\Ingredientes\aipo.yaml" />
     <None Remove="Data\Ingredientes\alho.yaml" />
     <None Remove="Data\Ingredientes\azeite.yaml" />
     <None Remove="Data\Ingredientes\batata-doce.yaml" />
@@ -146,12 +147,16 @@
     <None Remove="Data\Receitas\sopa-picante-tomate.yaml" />
     <None Remove="Data\Receitas\sopa-rica-de-castanhas.yaml" />
     <None Remove="Data\Receitas\sopa-rica-de-feijao-e-carne.yaml" />
+    <None Remove="Data\Tecnicas\como-cozer-ovos-na-perfeicao.yaml" />
+    <None Remove="Data\Utensilios\liquidificador.yaml" />
+    <None Remove="Data\Utensilios\varinha-magica.yaml" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Ingredientes\abacate.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\abobora.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\agriao.yaml" />
+    <EmbeddedResource Include="Data\Ingredientes\aipo.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\alho.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\azeite.yaml" />
     <EmbeddedResource Include="Data\Ingredientes\batata-doce.yaml" />
@@ -289,6 +294,9 @@
     <EmbeddedResource Include="Data\Receitas\sopa-picante-tomate.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-rica-de-castanhas.yaml" />
     <EmbeddedResource Include="Data\Receitas\sopa-rica-de-feijao-e-carne.yaml" />
+    <EmbeddedResource Include="Data\Tecnicas\como-cozer-ovos-na-perfeicao.yaml" />
+    <EmbeddedResource Include="Data\Utensilios\liquidificador.yaml" />
+    <EmbeddedResource Include="Data\Utensilios\varinha-magica.yaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -304,11 +312,6 @@
     <PackageReference Include="Microsoft.NET.Sdk.Razor" Version="2.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="YamlDotNet" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\Utensilios\" />
-    <Folder Include="Data\Tecnicas\" />
   </ItemGroup>
 
 </Project>
