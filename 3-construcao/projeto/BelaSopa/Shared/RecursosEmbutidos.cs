@@ -58,17 +58,17 @@ namespace BelaSopa.Shared
 
         public static void CarregarTecnicasDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<Tecnica>("BelaSopa.Data.Tecnicas.", ingrediente =>
+            CarregarRecursosYaml<Tecnica>("BelaSopa.Data.Tecnicas.", tecnica =>
             {
-                context.AdicionarTecnica(ingrediente);
+                context.AdicionarTecnica(tecnica);
             });
         }
 
         public static void CarregarUtensiliosDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<Utensilio>("BelaSopa.Data.Utensilios.", ingrediente =>
+            CarregarRecursosYaml<Utensilio>("BelaSopa.Data.Utensilios.", utensilio =>
             {
-                context.AdicionarUtensilio(ingrediente);
+                context.AdicionarUtensilio(utensilio);
             });
         }
 
