@@ -23,7 +23,7 @@ ingredientes:
 - nome: Talo de aipo
   quantidade: '1'
 - nome: Azeite
-  quantidade: 2 c. sopa
+  quantidade: 2 c. de sopa
 - nome: Cebola congelada picada
   quantidade: 100 g
 - nome: Abóbora limpa
@@ -31,21 +31,21 @@ ingredientes:
 - nome: Cenoura ripada
   quantidade: 300 g
 - nome: Pasta de concentrado de tomate
-  quantidade: 2 c. sopa
+  quantidade: 2 c. de sopa
 - nome: Cominhos em pó
-  quantidade: 1 c. chá
+  quantidade: 1 c. de chá
 - nome: Sal
-  quantidade: 1 c. sopa
+  quantidade: 1 c. de sopa
 - nome: Lentilhas vermelhas
   quantidade: 200 g
 - nome: Água
   quantidade: 1,4 l
 - nome: Pimentão-doce
-  quantidade: 1 c. sobremesa
+  quantidade: 1 c. de sobremesa
 - nome: Salsa picada
-  quantidade: 2 c. sopa
+  quantidade: 2 c. de sopa
 - nome: Sementes de abóbora
-  quantidade: 1 c. sopa
+  quantidade: 1 c. de sopa
 
 valores-nutricionais:
 - dose: 219 Kcal
