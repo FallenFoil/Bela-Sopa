@@ -4,14 +4,16 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190531083027_v4")]
+    partial class v4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,7 +277,7 @@ namespace BelaSopa.Migrations
 
                     b.Property<int?>("IngredienteId");
 
-                    b.Property<int>("TarefaId");
+                    b.Property<int?>("TarefaId");
 
                     b.Property<int?>("TecnicaId");
 
@@ -511,10 +513,9 @@ namespace BelaSopa.Migrations
                         .WithMany()
                         .HasForeignKey("IngredienteId");
 
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tarefa", "Tarefa")
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tarefa")
                         .WithMany("Texto")
-                        .HasForeignKey("TarefaId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TarefaId");
 
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Tecnica", "Tecnica")
                         .WithMany()

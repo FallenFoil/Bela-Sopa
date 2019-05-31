@@ -142,15 +142,23 @@
                 @foreach (var tarefa in processo.Tarefas)
                 {
                     <li>
-                        @foreach ((string controller, int? id, string texto) in tarefa.GetPartesTexto())
+                        @foreach (var texto in tarefa.Texto)
                         {
-                            if (controller == null)
+                            if (texto.IngredienteId != null)
                             {
-                                <text>@texto</text>
+                                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+                            }
+                            else if (texto.TecnicaId != null)
+                            {
+                                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+                            }
+                            else if (texto.UtensilioId != null)
+                            {
+                                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
                             }
                             else
                             {
-                                <a asp-controller="@controller" asp-action="Detalhes" asp-route-id="@id">@texto</a>
+                                <text>@texto.Texto</text>
                             }
                         }
                     </li>

@@ -8,7 +8,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int NomeAlternativoUtensilioId { get; set; }
 
         [Required, StringLength(100)]
-        public string Valor { get; set; }
+        public string Nome { get; set; }
 
         public int UtensilioId { get; set; }
 

@@ -57,7 +57,7 @@ namespace BelaSopa.Controllers
         {
             // obter receita
 
-            var Receita =
+            var receita =
                 context
                 .Receita
                 .Include(r => r.ReceitaEtiqueta)
@@ -67,15 +67,15 @@ namespace BelaSopa.Controllers
                 .Include(r => r.ValoresNutricionais)
                 .Include(r => r.Processos)
                 .ThenInclude(p => p.Tarefas)
+                .ThenInclude(t => t.Texto)
                 .SingleOrDefault(i => i.ReceitaId == id);
 
-            if (Receita == null)
+            if (receita == null)
                 return NotFound();
-
-            bool Favorita = IsFavorito(Receita.ReceitaId);
+            
             var viewModel = (
-                Receita,
-                Favorita
+                Receita: receita,
+                Favorita: IsFavorito(receita.ReceitaId)
                 );
 
             // devolver view

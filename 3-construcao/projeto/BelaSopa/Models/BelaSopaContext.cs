@@ -57,8 +57,14 @@ namespace BelaSopa.Models
             var todosUtensilios = Utensilio.Include(u => u.NomesAlternativos).ToArray();
 
             foreach (var processo in receita.Processos)
+            {
                 foreach (var tarefa in processo.Tarefas)
-                    tarefa.Texto = ConverterTextoTarefa(tarefa.Texto, todosIngredientes, todasTecnicas, todosUtensilios);
+                {
+                    tarefa.Texto = tarefa.Texto.SelectMany(
+                        t => ConverterTextoTarefa(t, todosIngredientes, todasTecnicas, todosUtensilios)
+                        ).ToList();
+                }
+            }
 
             // adicionar etiquetas e relacionamentos receita-etiqueta
 
@@ -126,71 +132,92 @@ namespace BelaSopa.Models
 
         private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
         {
-            return
+            var nomesIngrediente =
                 ingrediente
                 .NomesAlternativos
-                .Select(n => n.Valor)
+                .Select(n => n.Nome)
                 .Prepend(ingrediente.Nome)
-                .Any(n => Util.FuzzyContains(texto, n));
+                .ToArray();
+
+            foreach (var palavra in texto.Split())
+                if (nomesIngrediente.Any(nome => Util.FuzzyEquals(palavra, nome)))
+                    return true;
+
+            return false;
         }
 
-        private string ConverterTextoTarefa(
-            string texto,
+        private IEnumerable<TextoTarefa> ConverterTextoTarefa(
+            TextoTarefa texto,
             IList<Ingrediente> ingredientes,
             IList<Tecnica> tecnicas,
             IList<Utensilio> utensilios
             )
         {
-            var convertido = "";
+            var resultado = new List<TextoTarefa>();
+            var listaPalavras = new List<string>();
 
-            foreach (var palavra in texto.Split())
+            void submeterListaPalavras()
+            {
+                if (listaPalavras.Count > 0)
+                {
+                    resultado.Add(new TextoTarefa { Texto = string.Join(' ', listaPalavras) });
+                    listaPalavras.Clear();
+                }
+            }
+
+            foreach (var palavra in texto.Texto.Split())
             {
                 var ingrediente = ingredientes.FirstOrDefault(i =>
                     i
                     .NomesAlternativos
-                    .Select(n => n.Valor)
+                    .Select(n => n.Nome)
                     .Prepend(i.Nome)
                     .Any(n => Util.FuzzyEquals(palavra, n))
                     );
 
                 if (ingrediente != null)
                 {
-                    convertido += $"|$Ingredientes,{ingrediente.IngredienteId},{palavra}|";
+                    submeterListaPalavras();
+                    resultado.Add(new TextoTarefa { Texto = palavra, Ingrediente = ingrediente });
                     continue;
                 }
 
                 var tecnica = tecnicas.FirstOrDefault(t =>
                     t
                     .NomesAlternativos
-                    .Select(n => n.Valor)
+                    .Select(n => n.Nome)
                     .Prepend(t.Nome)
                     .Any(n => Util.FuzzyEquals(palavra, n))
                     );
 
                 if (tecnica != null)
                 {
-                    convertido += $"|$Tecnicas,{tecnica.TecnicaId},{palavra}|";
+                    submeterListaPalavras();
+                    resultado.Add(new TextoTarefa { Texto = palavra, Tecnica = tecnica });
                     continue;
                 }
 
                 var utensilio = utensilios.FirstOrDefault(u =>
                     u
                     .NomesAlternativos
-                    .Select(n => n.Valor)
+                    .Select(n => n.Nome)
                     .Prepend(u.Nome)
                     .Any(n => Util.FuzzyEquals(palavra, n))
                     );
 
                 if (utensilio != null)
                 {
-                    convertido += $"|$Utensilios,{utensilio.UtensilioId},{palavra}|";
+                    submeterListaPalavras();
+                    resultado.Add(new TextoTarefa { Texto = palavra, Utensilio = utensilio });
                     continue;
                 }
 
-                convertido += ' ' + palavra;
+                listaPalavras.Add(palavra);
             }
 
-            return convertido;
+            submeterListaPalavras();
+
+            return resultado;
         }
 
         public DbSet<Administrador> Administrador { get; set; }
@@ -213,6 +240,8 @@ namespace BelaSopa.Models
         public DbSet<Processo> Processo { get; set; }
 
         public DbSet<Tarefa> Tarefa { get; set; }
+
+        public DbSet<TextoTarefa> TextoTarefa { get; set; }
 
         public DbSet<Ingrediente> Ingrediente { get; set; }
 

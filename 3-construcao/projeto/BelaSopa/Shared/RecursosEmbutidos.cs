@@ -40,7 +40,9 @@ namespace BelaSopa.Shared
                     ValoresNutricionais = yamlReceita.ValoresNutricionais,
                     Processos = yamlReceita.Passos.Select(p => new Processo
                     {
-                        Tarefas = p.Select(t => new Tarefa { Texto = t }).ToList()
+                        Tarefas = p.Select(
+                            t => new Tarefa { Texto = new List<TextoTarefa> { new TextoTarefa { Texto = t } } }
+                            ).ToList()
                     }).ToList()
                 };
 
@@ -59,7 +61,7 @@ namespace BelaSopa.Shared
                     Texto = yamlIngrediente.Texto,
                     Imagem = yamlIngrediente.Imagem,
                     NomesAlternativos = yamlIngrediente.NomesAlternativos.Select(
-                        n => new NomeAlternativoIngrediente { Valor = n }
+                        n => new NomeAlternativoIngrediente { Nome = n }
                         ).ToList()
                 };
 
@@ -78,7 +80,7 @@ namespace BelaSopa.Shared
                     Texto = yamlTecnica.Texto,
                     Imagem = yamlTecnica.Imagem,
                     NomesAlternativos = yamlTecnica.NomesAlternativos.Select(
-                        n => new NomeAlternativoTecnica { Valor = n }
+                        n => new NomeAlternativoTecnica { Nome = n }
                         ).ToList()
                 };
 
@@ -97,7 +99,7 @@ namespace BelaSopa.Shared
                     Texto = yamlUtensilio.Texto,
                     Imagem = yamlUtensilio.Imagem,
                     NomesAlternativos = yamlUtensilio.NomesAlternativos.Select(
-                        n => new NomeAlternativoUtensilio { Valor = n }
+                        n => new NomeAlternativoUtensilio { Nome = n }
                         ).ToList()
                 };
 
