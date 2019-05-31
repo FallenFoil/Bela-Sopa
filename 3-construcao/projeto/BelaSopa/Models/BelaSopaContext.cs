@@ -56,13 +56,16 @@ namespace BelaSopa.Models
             var todasTecnicas = Tecnica.Include(t => t.NomesAlternativos).ToArray();
             var todosUtensilios = Utensilio.Include(u => u.NomesAlternativos).ToArray();
 
-            foreach (var processo in receita.Processos)
+            foreach (var processo in receita.Processos.OrderBy(p => p.Indice))
             {
-                foreach (var tarefa in processo.Tarefas)
+                foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
                 {
-                    tarefa.Texto = tarefa.Texto.SelectMany(
-                        t => ConverterTextoTarefa(t, todosIngredientes, todasTecnicas, todosUtensilios)
-                        ).ToList();
+                    tarefa.Texto = ConverterTextoTarefa(
+                        string.Join(' ', tarefa.Texto.OrderBy(t => t.Indice).Select(t => t.Texto)),
+                        todosIngredientes,
+                        todasTecnicas,
+                        todosUtensilios
+                        );
                 }
             }
 
@@ -146,8 +149,8 @@ namespace BelaSopa.Models
             return false;
         }
 
-        private IEnumerable<TextoTarefa> ConverterTextoTarefa(
-            TextoTarefa texto,
+        private List<TextoTarefa> ConverterTextoTarefa(
+            string texto,
             IList<Ingrediente> ingredientes,
             IList<Tecnica> tecnicas,
             IList<Utensilio> utensilios
@@ -160,12 +163,12 @@ namespace BelaSopa.Models
             {
                 if (listaPalavras.Count > 0)
                 {
-                    resultado.Add(new TextoTarefa { Texto = string.Join(' ', listaPalavras) });
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = string.Join(' ', listaPalavras) });
                     listaPalavras.Clear();
                 }
             }
 
-            foreach (var palavra in texto.Texto.Split())
+            foreach (var palavra in texto.Split())
             {
                 var ingrediente = ingredientes.FirstOrDefault(i =>
                     i
@@ -178,7 +181,7 @@ namespace BelaSopa.Models
                 if (ingrediente != null)
                 {
                     submeterListaPalavras();
-                    resultado.Add(new TextoTarefa { Texto = palavra, Ingrediente = ingrediente });
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = palavra, Ingrediente = ingrediente });
                     continue;
                 }
 
@@ -193,7 +196,7 @@ namespace BelaSopa.Models
                 if (tecnica != null)
                 {
                     submeterListaPalavras();
-                    resultado.Add(new TextoTarefa { Texto = palavra, Tecnica = tecnica });
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = palavra, Tecnica = tecnica });
                     continue;
                 }
 
@@ -208,7 +211,7 @@ namespace BelaSopa.Models
                 if (utensilio != null)
                 {
                     submeterListaPalavras();
-                    resultado.Add(new TextoTarefa { Texto = palavra, Utensilio = utensilio });
+                    resultado.Add(new TextoTarefa { Indice = resultado.Count, Texto = palavra, Utensilio = utensilio });
                     continue;
                 }
 
