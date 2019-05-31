@@ -126,7 +126,12 @@ namespace BelaSopa.Models
 
         private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
         {
-            return Util.FuzzyContains(texto, ingrediente.Nome);
+            return
+                ingrediente
+                .NomesAlternativos
+                .Select(n => n.Valor)
+                .Prepend(ingrediente.Nome)
+                .Any(n => Util.FuzzyContains(texto, n));
         }
 
         private string ConverterTextoTarefa(
