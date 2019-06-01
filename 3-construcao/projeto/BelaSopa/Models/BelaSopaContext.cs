@@ -19,45 +19,45 @@ namespace BelaSopa.Models
         {
         }
 
-        public virtual DbSet<Administrador> Administrador { get; set; }
+        public DbSet<Administrador> Administrador { get; set; }
 
-        public virtual DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
 
-        public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        public DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
-        public virtual DbSet<ClienteFavorito> ClienteFavorito { get; set; }
+        public DbSet<ClienteFavorito> ClienteFavorito { get; set; }
 
-        public virtual DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
+        public DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
 
-        public virtual DbSet<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; }
+        public DbSet<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; }
 
-        public virtual DbSet<DataRefeicao> DataRefeicao { get; set; }
+        public DbSet<DataRefeicao> DataRefeicao { get; set; }
 
-        public virtual DbSet<Etiqueta> Etiqueta { get; set; }
+        public DbSet<Etiqueta> Etiqueta { get; set; }
 
-        public virtual DbSet<Ingrediente> Ingrediente { get; set; }
+        public DbSet<Ingrediente> Ingrediente { get; set; }
 
-        public virtual DbSet<NomeAlternativoIngrediente> NomeAlternativoIngrediente { get; set; }
+        public DbSet<NomeAlternativoIngrediente> NomeAlternativoIngrediente { get; set; }
 
-        public virtual DbSet<NomeAlternativoTecnica> NomeAlternativoTecnica { get; set; }
+        public DbSet<NomeAlternativoTecnica> NomeAlternativoTecnica { get; set; }
 
-        public virtual DbSet<NomeAlternativoUtensilio> NomeAlternativoUtensilio { get; set; }
+        public DbSet<NomeAlternativoUtensilio> NomeAlternativoUtensilio { get; set; }
 
-        public virtual DbSet<Processo> Processo { get; set; }
+        public DbSet<Processo> Processo { get; set; }
 
-        public virtual DbSet<Receita> Receita { get; set; }
+        public DbSet<Receita> Receita { get; set; }
 
-        public virtual DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
+        public DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
-        public virtual DbSet<Tarefa> Tarefa { get; set; }
+        public DbSet<Tarefa> Tarefa { get; set; }
 
-        public virtual DbSet<Tecnica> Tecnica { get; set; }
+        public DbSet<Tecnica> Tecnica { get; set; }
 
-        public virtual DbSet<TextoTarefa> TextoTarefa { get; set; }
+        public DbSet<TextoTarefa> TextoTarefa { get; set; }
 
-        public virtual DbSet<Utensilio> Utensilio { get; set; }
+        public DbSet<Utensilio> Utensilio { get; set; }
 
-        public virtual DbSet<UtilizacaoIngrediente> UtilizacaoIngrediente { get; set; }
+        public DbSet<UtilizacaoIngrediente> UtilizacaoIngrediente { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -131,6 +131,7 @@ namespace BelaSopa.Models
             // adicionar receita
 
             Add(receita);
+            SaveChanges();
 
             var ituPorNome = GetItuPorNome();
 
@@ -170,6 +171,7 @@ namespace BelaSopa.Models
             // adicionar ingrediente
 
             Add(ingrediente);
+            SaveChanges();
 
             var ituPorNome = GetItuPorNome();
 
@@ -206,6 +208,7 @@ namespace BelaSopa.Models
             // adicionar técnica
 
             Add(tecnica);
+            SaveChanges();
 
             // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
 
@@ -230,6 +233,7 @@ namespace BelaSopa.Models
             // adicionar utensílio
 
             Add(utensilio);
+            SaveChanges();
 
             // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
 

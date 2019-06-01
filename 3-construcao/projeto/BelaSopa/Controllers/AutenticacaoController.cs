@@ -58,7 +58,7 @@ namespace BelaSopa.Controllers
 
             // verificar se palavra-passe está correta
 
-            var hashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse);
+            var hashPalavraPasse = Util.ComputarHashPalavraPasse(viewModel.PalavraPasse);
 
             if (!utilizador.HashPalavraPasse.SequenceEqual(hashPalavraPasse))
             {
@@ -113,7 +113,7 @@ namespace BelaSopa.Controllers
             var cliente = new Cliente
             {
                 NomeDeUtilizador = viewModel.NomeDeUtilizador,
-                HashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse),
+                HashPalavraPasse = Util.ComputarHashPalavraPasse(viewModel.PalavraPasse),
                 Email = viewModel.Email
             };
 

@@ -28,7 +28,7 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-          
+
             if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
             {
                var listaIngredientesExcluidos =
@@ -67,7 +67,7 @@ namespace BelaSopa.Controllers
         {
             if (id.HasValue)
             {
-               
+
                 int idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
                 ClienteFavorito cf = new ClienteFavorito(idCliente, id.Value);
                 context.ClienteFavorito.Remove(cf);
@@ -109,7 +109,7 @@ namespace BelaSopa.Controllers
 
             // validar palavra-passe atual
 
-            var hashPalavraPasseAtual = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasseAtual);
+            var hashPalavraPasseAtual = Util.ComputarHashPalavraPasse(viewModel.PalavraPasseAtual);
 
             if (!utilizador.HashPalavraPasse.SequenceEqual(hashPalavraPasseAtual))
             {
@@ -120,7 +120,7 @@ namespace BelaSopa.Controllers
 
             // alterar palavra-passe
 
-            utilizador.HashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.NovaPalavraPasse);
+            utilizador.HashPalavraPasse = Util.ComputarHashPalavraPasse(viewModel.NovaPalavraPasse);
             await context.SaveChangesAsync();
 
             // redirecionar
@@ -165,7 +165,7 @@ namespace BelaSopa.Controllers
 
             context.ClienteExcluiIngrediente.Add(aux);
             context.SaveChanges();
-            
+
 
             var listaIngredientesExcluidos =
                 context
@@ -176,7 +176,7 @@ namespace BelaSopa.Controllers
                 .ClienteExcluiIngrediente
                 .Select(cei => cei.Ingrediente);
 
-            
+
             List<string> ingredientes = new List<string>();
 
             foreach (Ingrediente x in listaIngredientesExcluidos)
@@ -205,7 +205,7 @@ namespace BelaSopa.Controllers
             ClienteExcluiIngrediente aux = new ClienteExcluiIngrediente();
 
             aux.ClienteId = idCliente;
-        
+
             aux.IngredienteId = context.Ingrediente.Where(ingr => ingr.Nome.Equals(id)).FirstOrDefault().IngredienteId;
 
             if (aux!=null)

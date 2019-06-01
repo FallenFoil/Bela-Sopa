@@ -92,7 +92,7 @@ namespace BelaSopa
             context.Administrador.Add(new Administrador
             {
                 NomeDeUtilizador = "root",
-                HashPalavraPasse = Utilizador.ComputarHashPalavraPasse("root")
+                HashPalavraPasse = Util.ComputarHashPalavraPasse("root")
             });
 
             // inserir dados de exemplo

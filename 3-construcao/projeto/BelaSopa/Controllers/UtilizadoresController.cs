@@ -80,7 +80,7 @@ namespace BelaSopa.Controllers
             var administrador = new Administrador
             {
                 NomeDeUtilizador = viewModel.NomeDeUtilizador,
-                HashPalavraPasse = Utilizador.ComputarHashPalavraPasse(viewModel.PalavraPasse)
+                HashPalavraPasse = Util.ComputarHashPalavraPasse(viewModel.PalavraPasse)
             };
 
             context.Administrador.Add(administrador);
