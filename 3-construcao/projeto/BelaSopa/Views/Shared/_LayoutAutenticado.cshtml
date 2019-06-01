@@ -129,9 +129,15 @@
         </nav>
         <!-- page content -->
         <div id="content">
-            <button type="button" id="sidebarCollapse" class="btn btn-primary" style="margin-left:-2em; margin-top:-4em; background-color:#4CAF50; box-shadow: 0 1px 0 0 #4CAF50; border: 1px solid #4CAF50;">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
                 <i class="fas fa-align-justify"></i>
             </button>
+            @if (ViewData["ShowBackButton"] as bool? == true)
+            {
+                <button type="button" id="backButton" onclick="window.history.back()" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            }
             @if (ViewData["HideHeader"] as bool? != true)
             {
                 <h2>@ViewData["Title"]</h2>
