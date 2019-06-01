@@ -54,21 +54,35 @@
                 <span asp-validation-for="@Model.ValorNutricionais[i].PercentagemVdrAdulto" class="text-danger"></span>
             </div>
         }
+
+
+
+        <div class="form-group">
+            <input asp-for="@Model.Input" type="submit" value="addValorNutricional" class="btn btn-primary" />
+        </div>
+
+        <!--
         <a asp-controller="Receitas" asp-action="AdicionarValorNutricional">
             <i class="fas fa-plus-circle"></i>
         </a>
 
-        @for (int i = 0; i < Model.ReceitaEtiqueta.Count; i++) {
-            <select asp-for="@Model.ReceitaEtiqueta[i].EtiquetaId" asp-items="Model.Etiquetas">
-                <option value="">Pick one</option>
-            </select>
-        }
-        <a asp-controller="Receitas" asp-action="AdicionarEtiqueta">
-            <i class="fas fa-plus-circle"></i>
-        </a>
-
+    for (int i = 0; i < Model.ReceitaEtiqueta.Count; i++) {
+        <select asp-for="Model.ReceitaEtiqueta[i].EtiquetaId" asp-items="Model.Etiquetas">
+            <option value="">Pick one</option>
+        </select>
+    }
+    <a asp-controller="Receitas" asp-action="AdicionarEtiqueta">
+        <i class="fas fa-plus-circle"></i>
+    </a>
+    -->
         <div class="form-group">
             <input type="submit" value="Adicionar Receita" class="btn btn-primary" />
         </div>
     </form>
-
+<script>
+    function forceSubmit() {
+        document.getElementsByClassName("forceSubmit").click(function () {
+            document.getElementById("receitaForm").submit();
+        })
+    }
+</script>

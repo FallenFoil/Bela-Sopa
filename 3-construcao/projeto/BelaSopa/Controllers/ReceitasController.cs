@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -136,31 +137,33 @@ namespace BelaSopa.Controllers
             }
 
             if (ModelState.IsValid) {
-                return Ok();
+                return View(viewName: "AdicionarNovaReceitaView", model: Receita);
             }
 
-            List<Etiqueta> ets = context.Etiqueta.ToList<Etiqueta>();
-            foreach(Etiqueta et in ets) {
-                Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
+            if(Receita.Etiquetas.Count == 0) {
+                List<Etiqueta> ets = context.Etiqueta.ToList<Etiqueta>();
+                foreach (Etiqueta et in ets) {
+                    Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
+                }
             }
+           
+            if(Receita.Input != null)
+                switch (Receita.Input) {
+                    case "": break;
+                    case "addValorNutricional": Receita.ValorNutricionais.Add(new ValorNutricional()); break;
+                    default: break;
+                }
             
             return View(viewName: "AdicionarNovaReceitaView", model: Receita);
         }
-
-        public IActionResult AdicionarValorNutricional(AdicionarNovaReceitaViewModel Receita) {
-            if (Receita == null) return NotFound();//AdicionarNovaReceita(Receita);
-            Receita.ValorNutricionais.Add(new ValorNutricional());
-            
-            
-            return AdicionarNovaReceita(Receita);
-        }
-
-        public IActionResult AdicionarEtiqueta(AdicionarNovaReceitaViewModel Receita) {
+        
+        /*
+        private IActionResult AdicionarEtiqueta(AdicionarNovaReceitaViewModel Receita) {
             if (Receita == null) return NotFound();//AdicionarNovaReceita(Receita);
             Receita.ReceitaEtiqueta.Add(new Etiqueta());
             return AdicionarNovaReceita(Receita);
         }
-
+        */
         public IActionResult ConfecionarReceita()
         {
            return View(viewName: "ConfecionarReceita");

@@ -9,7 +9,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Key]
         public int ValorNutricionalId { get; set; }
 
-        [Required, StringLength(50)]
+       // [Required, StringLength(50)]
         [YamlMember(Alias = "nome")]
         public string Nome { get; set; }
 
