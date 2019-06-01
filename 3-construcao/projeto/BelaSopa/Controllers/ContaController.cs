@@ -18,6 +18,7 @@ namespace BelaSopa.Controllers
     public class ContaController : Controller
     {
         private readonly BelaSopaContext context;
+        private bool r;
 
         public ContaController(BelaSopaContext context)
         {
@@ -36,11 +37,11 @@ namespace BelaSopa.Controllers
                 {
                     receitas.Add(context.Receita.Find(cf.ReceitaId));
                 }
-                var viewModel = (receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
+                var viewModel = (new List<string>(),receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
                 return View(viewName: "VerDados", model: viewModel);
             }else{
-                var viewModel = (new List<Receita>(), (Autenticacao.GetUtilizadorAutenticado(this, context) as Utilizador)?.NomeDeUtilizador);
+                var viewModel = (new List<string>, new List<Receita>(), (Autenticacao.GetUtilizadorAutenticado(this, context) as Utilizador)?.NomeDeUtilizador);
                 return View(viewName: "VerDados", model: viewModel);
             }
         }
@@ -110,6 +111,57 @@ namespace BelaSopa.Controllers
             TempData["Sucesso"] = "Palavra-passe alterada com sucesso.";
             return RedirectToAction(actionName: "Index");
         }
+
+        [HttpGet]
+        public IActionResult ListaIngredientes([FromQuery] string nome)
+        {
+            ViewData["nome"] = nome;
+
+            // obter ingredientes
+
+            IQueryable<Ingrediente> ingredientes = context.Ingrediente;
+
+            if (nome != null)
+                ingredientes = ingredientes.Where(ingrediente => Util.FuzzyContains(ingrediente.Nome, nome));
+
+            ingredientes = ingredientes.OrderBy(ingrediente => ingrediente.Nome);
+
+            var viewModel = ingredientes.ToList();
+
+            // criar view model e devolver view
+
+            return View(viewName: "ListaIngredientes", model: viewModel);
+        }
+
+
+        [HttpGet]
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Detalhes([FromRoute] int id)
+        {
+            // obter ingrediente
+            ClienteExcluiIngrediente ingr = new ClienteExcluiIngrediente();
+            ingr.ClienteId = (Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
+            ingr.IngredienteId = id;
+
+            context.ClienteExcluiIngrediente.Add(ingr);
+
+            //lista de id de ingredientes que o user quer remover
+            List<ClienteExcluiIngrediente> ingredientes_excluidos =
+                context.ClienteExcluiIngrediente.Where(cei => cei.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId).ToList<ClienteExcluiIngrediente>();
+
+            List<string> ingredientes = new List<string>();
+
+            foreach(ClienteExcluiIngrediente x in ingredientes_excluidos)
+            {
+               ingredientes.Add(context.Ingrediente.Include(r ==> r.Nome).SingleOrDefault(i => i.IngredienteId == x.IngredienteId));
+            }
+
+
+           
+
+            return View(viewName: "VerDados", model: viewModel);
+        }
+
 
         [Authorize(Roles = Autenticacao.ROLE_CLIENTE)]
         [HttpGet]

@@ -48,7 +48,7 @@
 
 @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
 {
-    <p>Ingredientes a remover das receitas </p>
+    <p style="color:blue"> <a asp-action="ListaIngredientes"> Ingredientes a remover das receitas</a> </p>
 }
 
 

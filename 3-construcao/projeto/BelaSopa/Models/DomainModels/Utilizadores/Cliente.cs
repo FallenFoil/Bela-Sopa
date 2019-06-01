@@ -15,5 +15,8 @@ namespace BelaSopa.Models.DomainModels.Utilizadores{
         public virtual ICollection<ClienteFavorito> ClienteFavorito { set; get; }
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteFinalizado> ClienteFinalizado { set; get; }
+
+        [NotMapped, JsonIgnore]
+        public virtual ICollection<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; }
     }
 }

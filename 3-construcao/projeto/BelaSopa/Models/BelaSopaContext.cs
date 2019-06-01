@@ -233,6 +233,8 @@ namespace BelaSopa.Models
 
         public virtual DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
 
+        public DbSet<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; }
+
         public DbSet<DataRefeicao> DataRefeicao { get; set; }
 
         public DbSet<Etiqueta> Etiqueta { get; set; }
@@ -275,6 +277,17 @@ namespace BelaSopa.Models
                 .HasOne(ti => ti.Receita)
                 .WithMany(i => i.ClienteEmentaSemanal)
                 .HasForeignKey(ti => ti.ReceitaId);
+
+            modelBuilder.Entity<ClienteExcluiIngrediente>()
+                .HasKey(cr => new { cr.ClienteId, cr.IngredienteId });
+            modelBuilder.Entity<ClienteExcluiIngrediente>()
+              .HasOne(ti => ti.Cliente)
+              .WithMany(t => t.ClienteExcluiIngrediente)
+              .HasForeignKey(ti => ti.ClienteId);
+            modelBuilder.Entity<ClienteExcluiIngrediente>()
+                .HasOne(ti => ti.Ingrediente)
+                .WithMany(i => i.ClienteExcluiIngrediente)
+                .HasForeignKey(ti => ti.IngredienteId);
 
             modelBuilder.Entity<ClienteFavorito>()
                 .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
