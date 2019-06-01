@@ -82,8 +82,6 @@ namespace BelaSopa
                     // base de dados acabou de ser criada, realizar povoamento inicial
                     PovoarBaseDeDados(context);
                 }
-
-               
             }
         }
 
