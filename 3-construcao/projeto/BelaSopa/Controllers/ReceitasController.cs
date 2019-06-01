@@ -129,6 +129,7 @@ namespace BelaSopa.Controllers
             return Favorita;
         }
 
+
         public IActionResult AdicionarNovaReceita([Bind]AdicionarNovaReceitaViewModel Receita) {
             if(Receita == null) {
                 Receita = new AdicionarNovaReceitaViewModel();
@@ -158,6 +159,12 @@ namespace BelaSopa.Controllers
             if (Receita == null) return NotFound();//AdicionarNovaReceita(Receita);
             Receita.ReceitaEtiqueta.Add(new Etiqueta());
             return AdicionarNovaReceita(Receita);
+        }
+
+        public IActionResult ConfecionarReceita()
+        {
+           return View(viewName: "ConfecionarReceita");
+
         }
     }
 }

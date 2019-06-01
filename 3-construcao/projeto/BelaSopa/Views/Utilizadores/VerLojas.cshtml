@@ -6,7 +6,7 @@
 
 <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
 
-<button id="search" type="submit" class="btn btn-success" onclick="gotaDoceSearch()">Procurar loja mais próxima</button>
+<button id="search" type="submit" class="btn btn-success" onclick="Search()">Procurar loja mais próxima</button>
 
 
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&branch=experimental&key=Ap3Fn5C1EGzEsXDN7UqrIoYqFKj5popAxjxJ7Mi-EgRa--bSfeDB7yMVR9154KXp' async defer></script>
@@ -20,9 +20,7 @@
 
     }
 
-    function gotaDoceSearch() {
-        geocodeQuery("Pingo Doce");
-    }
+
     function GetMap() {
         map = new Microsoft.Maps.Map('#myMap', {
             credentials: 'Your Bing Maps Key'
@@ -41,8 +39,7 @@
             map.entities.clear();
 
             //Get the users query and geocode it.
-            var query = document.getElementById('searchTbx').value;
-            geocodeQuery(query);
+            geocodeQuery("Pingo Doce");
         }
     }
 

@@ -16,17 +16,17 @@ etiquetas:
 
 ingredientes:
 - nome: Azeite
-  quantidade: 2 c. sopa
+  quantidade: 2 c. de sopa
 - nome: Cebola congelada picada
   quantidade: 100 g
 - nome: Alho picado
-  quantidade: 1 c. chá
+  quantidade: 1 c. de chá
 - nome: Cogumelos congelados
   quantidade: 400 g
 - nome: Couve-flor em ramos
   quantidade: 500 g
 - nome: Sal
-  quantidade: 1 c. sopa
+  quantidade: 1 c. de sopa
 - nome: Água
   quantidade: 5 dl
 - nome: Amêndoa laminada
@@ -38,7 +38,7 @@ ingredientes:
 - nome: Frango cozido desfiado
   quantidade: 125 g
 - nome: Cebolinho desfiado
-  quantidade: 2 c. sopa
+  quantidade: 2 c. de sopa
 
 valores-nutricionais:
 - dose: 111 Kcal

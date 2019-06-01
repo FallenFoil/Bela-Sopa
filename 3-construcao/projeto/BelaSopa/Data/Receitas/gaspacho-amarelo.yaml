@@ -29,7 +29,7 @@ ingredientes:
 - nome: Água
   quantidade: 7,5 dl
 - nome: Sal
-  quantidade: 1 c. chá
+  quantidade: 1 c. de chá
 - nome: Pimenta de moinho
   quantidade: qb
 - nome: Azeite
@@ -39,7 +39,7 @@ ingredientes:
 - nome: Hastes de coentros
   quantidade: '2'
 - nome: Orégãos
-  quantidade: 1 c. café
+  quantidade: 1 c. de café
 
 valores-nutricionais:
 - dose: 169 Kcal

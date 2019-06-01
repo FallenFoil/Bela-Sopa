@@ -14,10 +14,10 @@
             <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
                 @if (@Model.Favorita) {
                     //Dentro Favoritos
-                    <i class="fas fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+                    <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
                 } else {
                     //Dos Favoritos
-                    <i class="far fa-star" style="color:gold;position:absolute; left:7%; top:5%; font-size:200%"></i>
+                    <i class="far fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
                 }
             </a>
         </div>      
@@ -35,9 +35,9 @@
             {
                 <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
             }
-                <span style="margin-left:3%;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
-            <span style="margin-left:5%;">@Model.Receita.NumeroDoses doses</span>
-            <div style="text-align:left;margin-top:5%;">
+                <span style="margin-left:1em;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
+            <span style="margin-left:1em;">@Model.Receita.NumeroDoses doses</span>
+            <div style="text-align:left;margin-top:1em;">
                 Etiquetas:
                 <ul class="CustomBullet" style="text-align:left;list-style: none">
                     @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.OrderBy(e => e.Etiqueta.Nome))
@@ -52,10 +52,10 @@
     </div>
 </div>
 
-<p class="font-italic" style="margin-top:5%">@Model.Receita.Descricao</p>
+<p class="font-italic" style="margin-top:3em">@Model.Receita.Descricao</p>
 
 <hr />
-<h4 style="margin-top:5%;">Ingredientes</h4>
+<h4 style="margin-top:2em;">Ingredientes</h4>
 
 <table class="table">
     <thead class="thead-light">
@@ -89,7 +89,7 @@
 </table>
 
 <hr />
-<h4 style="margin-top:5%;">Técnicas</h4>
+<h4 style="margin-top:2em;">Técnicas</h4>
 
 <ul>
     @foreach (var tecnica in Model.Tecnicas)
@@ -101,7 +101,7 @@
 </ul>
 
 <hr />
-<h4 style="margin-top:5%;">Utensílios</h4>
+<h4 style="margin-top:2em;">Utensílios</h4>
 
 <ul>
     @foreach (var utensilio in Model.Utensilios)
@@ -113,7 +113,7 @@
 </ul>
 
 <hr />
-<h4 style="margin-top:5%;">Valores nutricionais</h4>
+<h4 style="margin-top:2em;">Valores nutricionais</h4>
 
 <table class="table">
     <thead class="thead-light">
@@ -154,7 +154,7 @@
 </table>
 
 <hr />
-<h4 style="margin-top:5%;">Passos</h4>
+<h4 style="margin-top:2em;">Passos</h4>
 
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
     @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
@@ -213,13 +213,15 @@
         Tem todos os ingredientes?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary">Sim</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+          <form asp-controller="Receitas" asp-action="ConfecionarReceita" >
+              <button style="background-color:#4CAF50; border-color: #4CAF50;" type="submit" class="btn btn-primary">Sim</button>
+          </form>
       </div>
     </div>
   </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button style="background-color:#4CAF50; border-color: #4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
     Confecionar
 </button>

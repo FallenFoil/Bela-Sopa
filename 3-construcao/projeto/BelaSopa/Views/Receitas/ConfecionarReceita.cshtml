@@ -1,0 +1,163 @@
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Confecionar";
+    ViewData["HideHeader"] = true;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <img src="~/logo.png"
+                 alt="Model.Receita.Nome"
+                 style="max-width: 100%; object-fit: cover;" />
+            <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
+        </div>
+        <div class="col-sm-4" style="text-align:center;border-left: 3px solid #4CAF50;">
+            <h4>Model.Receita.Nome</h4>
+            <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
+            <span style="margin-left:1em;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>10 min</span>
+            <span style="margin-left:1em;">2 doses</span>
+            <div style="text-align:left;margin-top:1em;">
+                Etiquetas:
+                <ul class="CustomBullet" style="text-align:left;list-style: none">
+                    <li>
+                        etiqueta.Etiqueta.Nome
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="font-italic" style="margin-top:3em">Model.Receita.Descricao</p>
+
+<hr />
+
+<h3>Processo</h3>
+
+<br />
+
+<button style="background-color:#4CAF50; border-color:#4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Processo Anterior
+</button>
+
+<button style="background-color:#4CAF50; border-color:#4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Processo Seguinte
+</button>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4 style="margin-top:2em;">Ingredientes</h4>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <text>utilizacaoIngrediente.Nome</text>
+                        </td>
+                        <td>Quantidade</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <text>utilizacaoIngrediente.Nome</text>
+                        </td>
+                        <td>Quantidade</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <text>utilizacaoIngrediente.Nome</text>
+                        </td>
+                        <td>Quantidade</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <text>utilizacaoIngrediente.Nome</text>
+                        </td>
+                        <td>Quantidade</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4 style="margin-top:2em;">Técnicas</h4>
+
+            <ul>
+                <li>
+                    tecnica.Nome
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <h4 style="margin-top:2em;">Utensílios</h4>
+
+            <ul>
+                <li>
+                    utensilio.Nome
+                </li>
+                <li>
+                    utensilio.Nome
+                </li>
+                <li>
+                    utensilio.Nome
+                </li>
+                <li>
+                    utensilio.Nome
+                </li>
+                <li>
+                    utensilio.Nome
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<h4 style="margin-top:2em;">Passos</h4>
+
+<ul style="text-align:left;">
+    <li>
+        <text>texto.Texto</text>
+    </li>
+    <li>
+        <text>texto.Texto</text><a onclick="startTimeOut(3000, 'Ola Puta', 0)"><i id="stopwatch0" class="fas fa-stopwatch"></i></a>
+    </li>
+    <li>
+        <text>texto.Texto</text>
+    </li>
+    <li>
+        <text>texto.Texto</text>
+    </li>
+</ul>
+
+<script>
+    var myVar;
+    function startTimeOut(time, str, id) {
+        var s = document.getElementById("stopwatch"+id);
+
+        if (s.classList.contains('fa-stopwatch')) {
+            s.classList.remove('fa-stopwatch');
+            s.classList.add('fa-stop');
+            s.style.color = "red";
+            myVar = setTimeout(function () {
+                s.classList.remove('fa-stop');
+                s.classList.add('fa-stopwatch');
+                s.style.color = "black";
+                alert(str);
+            }, time)
+        }
+        else {
+            clearTimeout(myVar);
+            s.classList.remove('fa-stop');
+            s.classList.add('fa-stopwatch');
+            s.style.color = "black";
+        }
+    }
+</script>

@@ -25,7 +25,7 @@ ingredientes:
 - nome: Cebola pequena
   quantidade: '1'
 - nome: Sal
-  quantidade: 1 c. sobremesa
+  quantidade: 1 c. de sobremesa
 - nome: Gelo
   quantidade: qb
 - nome: Salmão fumado
@@ -37,7 +37,7 @@ ingredientes:
 - nome: Aneto
   quantidade: qb
 - nome: Azeite
-  quantidade: 1 c. chá
+  quantidade: 1 c. de chá
 
 valores-nutricionais:
 - dose: 302 Kcal
