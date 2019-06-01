@@ -91,5 +91,9 @@ namespace BelaSopa.Controllers
             TempData["Sucesso"] = "Administrador criado com sucesso.";
             return RedirectToAction(actionName: "Index");
         }
+
+        public IActionResult VerLojas() {
+            return View(viewName: "VerLojas");
+        }
     }
 }

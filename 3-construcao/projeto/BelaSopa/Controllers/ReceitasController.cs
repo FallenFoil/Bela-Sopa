@@ -1,9 +1,12 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Models.ViewModels;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -124,6 +127,37 @@ namespace BelaSopa.Controllers
             bool Favorita = context.ClienteFavorito.Any(f => f.ReceitaId == idReceita &&
                                                             f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
             return Favorita;
+        }
+
+        public IActionResult AdicionarNovaReceita([Bind]AdicionarNovaReceitaViewModel Receita) {
+            if(Receita == null) {
+                Receita = new AdicionarNovaReceitaViewModel();
+            }
+
+            if (ModelState.IsValid) {
+                return Ok();
+            }
+
+            List<Etiqueta> ets = context.Etiqueta.ToList<Etiqueta>();
+            foreach(Etiqueta et in ets) {
+                Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
+            }
+            
+            return View(viewName: "AdicionarNovaReceitaView", model: Receita);
+        }
+
+        public IActionResult AdicionarValorNutricional(AdicionarNovaReceitaViewModel Receita) {
+            if (Receita == null) return NotFound();//AdicionarNovaReceita(Receita);
+            Receita.ValorNutricionais.Add(new ValorNutricional());
+            
+            
+            return AdicionarNovaReceita(Receita);
+        }
+
+        public IActionResult AdicionarEtiqueta(AdicionarNovaReceitaViewModel Receita) {
+            if (Receita == null) return NotFound();//AdicionarNovaReceita(Receita);
+            Receita.ReceitaEtiqueta.Add(new Etiqueta());
+            return AdicionarNovaReceita(Receita);
         }
     }
 }
