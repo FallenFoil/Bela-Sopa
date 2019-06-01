@@ -31,13 +31,30 @@ namespace BelaSopa.Controllers
           
             if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
             {
+               var listaIngredientesExcluidos =
+               context
+               .Cliente
+               .Include(c => c.ClienteExcluiIngrediente)
+                   .ThenInclude(cei => cei.Ingrediente)
+               .Single(c => c.UtilizadorId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
+               .ClienteExcluiIngrediente
+               .Select(cei => cei.Ingrediente);
+
+
+                List<string> ingredientes = new List<string>();
+
+                foreach (Ingrediente x in listaIngredientesExcluidos)
+                {
+                    ingredientes.Add(x.Nome);
+                }
+
                 var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente).UtilizadorId).ToList<ClienteFavorito>();
                 List<Receita> receitas = new List<Receita>();
                 foreach (ClienteFavorito cf in favoritos)
                 {
                     receitas.Add(context.Receita.Find(cf.ReceitaId));
                 }
-                var viewModel = (new List<string>(),receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
+                var viewModel = (ingredientes,receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
                 return View(viewName: "VerDados", model: viewModel);
             }else{
@@ -177,6 +194,56 @@ namespace BelaSopa.Controllers
 
 
             return View(viewName: "VerDados", model: viewModel);
+        }
+
+
+        [HttpGet]
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Remove([FromRoute] string id)
+        {
+            int idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+            ClienteExcluiIngrediente aux = new ClienteExcluiIngrediente();
+
+            aux.ClienteId = idCliente;
+        
+            aux.IngredienteId = context.Ingrediente.Where(ingr => ingr.Nome.Equals(id)).FirstOrDefault().IngredienteId;
+
+            if (aux!=null)
+            {
+                context.ClienteExcluiIngrediente.Remove(aux);
+                context.SaveChanges();
+            }
+
+
+            var listaIngredientesExcluidos =
+               context
+               .Cliente
+               .Include(c => c.ClienteExcluiIngrediente)
+                   .ThenInclude(cei => cei.Ingrediente)
+               .Single(c => c.UtilizadorId == idCliente)
+               .ClienteExcluiIngrediente
+               .Select(cei => cei.Ingrediente);
+
+
+            List<string> ingredientes = new List<string>();
+
+            foreach (Ingrediente x in listaIngredientesExcluidos)
+            {
+                ingredientes.Add(x.Nome);
+            }
+
+            var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente).UtilizadorId).ToList<ClienteFavorito>();
+            List<Receita> receitas = new List<Receita>();
+            foreach (ClienteFavorito cf in favoritos)
+            {
+                receitas.Add(context.Receita.Find(cf.ReceitaId));
+            }
+            var viewModel = (ingredientes, receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
+
+
+            return View(viewName: "VerDados", model: viewModel);
+
+
         }
 
 
