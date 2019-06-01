@@ -1,4 +1,4 @@
-@model (List<Receita> Receitas, string x)
+@model (List<string> ingredientes, List<Receita> Receitas, string x)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "A minha conta";
@@ -49,6 +49,14 @@
 @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
 {
     <p style="color:blue"> <a asp-action="ListaIngredientes"> Ingredientes a remover das receitas</a> </p>
+    @foreach (string ingrediente in Model.ingredientes)
+    {
+        <p>      -> @ingrediente </p>
+        <a asp-controller="Conta" asp-action="Remove" asp-route-id="@ingrediente">
+            <i class="fas fa-trash"></i>
+
+        </a>
+    }
 }
 
 
