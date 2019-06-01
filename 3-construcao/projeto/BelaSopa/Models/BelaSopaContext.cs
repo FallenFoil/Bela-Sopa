@@ -324,17 +324,26 @@ namespace BelaSopa.Models
                 Ingrediente
                 .Include(i => i.NomesAlternativos)
                 .Include(i => i.Utilizacoes)
-                .SelectMany(i => i.NomesAlternativos.Select(n => Tuple.Create(n.Nome, (object)i)).Prepend(Tuple.Create(i.Nome, (object)i)));
+                .SelectMany(i => i.NomesAlternativos.Select(n => Tuple.Create(n.Nome, (object)i)))
+                .ToArray()
+                .Union(Ingrediente.Select(i => Tuple.Create(i.Nome, (object)i)))
+                .ToArray();
 
             var tecnicasPorNome =
                 Tecnica
                 .Include(t => t.NomesAlternativos)
-                .SelectMany(t => t.NomesAlternativos.Select(n => Tuple.Create(n.Nome, (object)t)).Prepend(Tuple.Create(t.Nome, (object)t)));
+                .SelectMany(t => t.NomesAlternativos.Select(n => Tuple.Create(n.Nome, (object)t)))
+                .ToArray()
+                .Union(Tecnica.Select(t => Tuple.Create(t.Nome, (object)t)))
+                .ToArray();
 
             var utensiliosPorNome =
                 Utensilio
                 .Include(u => u.NomesAlternativos)
-                .SelectMany(u => u.NomesAlternativos.Select(n => Tuple.Create(n.Nome, (object)u)).Prepend(Tuple.Create(u.Nome, (object)u)));
+                .SelectMany(u => u.NomesAlternativos.Select(n => Tuple.Create(n.Nome, (object)u)))
+                .ToArray()
+                .Union(Utensilio.Select(u => Tuple.Create(u.Nome, (object)u)))
+                .ToArray();
 
             var ituPorNome =
                 ingredientesPorNome
