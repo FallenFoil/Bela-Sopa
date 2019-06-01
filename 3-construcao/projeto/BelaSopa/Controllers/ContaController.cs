@@ -138,6 +138,15 @@ namespace BelaSopa.Controllers
         [Route("[controller]/[action]/{id}")]
         public IActionResult Detalhes([FromRoute] int id)
         {
+            var listaIngredientesExcluidos =
+                context
+                .Cliente
+                .Include(c => c.ClienteExcluiIngrediente)
+                    .ThenInclude(cei => cei.Ingrediente)
+                .Single(c => c.UtilizadorId == idCliente)
+                .ClienteExcluiIngrediente
+                .Select(cei => cei.Ingrediente);
+
             // obter ingrediente
             ClienteExcluiIngrediente ingr = new ClienteExcluiIngrediente();
             ingr.ClienteId = (Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
