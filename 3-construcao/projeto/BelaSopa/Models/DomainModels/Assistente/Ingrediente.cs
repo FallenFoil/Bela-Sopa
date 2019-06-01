@@ -29,7 +29,6 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         public virtual ICollection<ClienteExcluiIngrediente> ClienteExcluiIngrediente { get; set; } = new List<ClienteExcluiIngrediente>();
 
-        
         public List<Receita> GetReceitasUtilizacoes()
         {
             return
