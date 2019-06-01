@@ -16,15 +16,15 @@ p {
     line-height: 1.7em;
 }
 
-a {
+/*a {
     color: black;
-}
+}*/
 
 a:hover,
 a:focus {
-    color: #007bff;
-    text-decoration: none;
-    transition: all 0.3s;
+    /*color: #007bff;*/
+    text-decoration: underline;
+    transition: all 0.2s;
 }
 
 .navbar {
@@ -129,12 +129,14 @@ span {
     #sidebar ul li a {
         text-align: left;
         color: white;
+        text-decoration: none;
     }
 
     #sidebar.active ul li a {
         padding: 10px 10px;
         text-align: center;
         font-size: 0.85em;
+        text-decoration: none;
     }
 
         #sidebar.active ul li a i {
@@ -185,9 +187,9 @@ span {
             background: #fff;
         }
 
-        #sidebar ul li a i {
-            /*margin-right: 10px;*/
-        }
+        /*#sidebar ul li a i {
+            margin-right: 10px;
+        }*/
 
     #sidebar.active ul li a span {
         display: none;
@@ -260,9 +262,9 @@ a.article:hover {
         transition: all 0.3s;
     }
 
-        #content.active h3 {
-            /*margin-left: 3%;*/
-        }
+        /*#content.active h3 {
+            margin-left: 3%;
+        }*/
 
 /* ---------------------------------------------------
     HOME STYLE
@@ -283,6 +285,10 @@ a.article:hover {
 
 .active-cyan .fa, .active-cyan-2 .fa {
     color: #4CAF50;
+}
+
+.Receita a {
+    text-decoration: none;
 }
 
 .Receita p {
@@ -311,9 +317,9 @@ a.article:hover {
 }
 
 .CustomBullet a {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     padding-left: 0px !important;
-    color: blue;
+    /*color: blue;*/
 }
 
 #ValoresNut {
@@ -323,7 +329,7 @@ a.article:hover {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     #sidebar {
         min-width: 5em;
         max-width: 5em;
@@ -381,4 +387,4 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
-}
+}*/

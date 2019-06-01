@@ -13,21 +13,6 @@
     style="max-width: 100%; object-fit: cover;"
     />
 
-@if (Model.Receitas.Length > 0)
-{
-    <hr />
-    <h4>Receitas que utilizam esta técnica</h4>
-
-    <ul>
-        @foreach (var receita in Model.Receitas)
-        {
-            <li>
-                <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@receita.ReceitaId">@receita.Nome</a>
-            </li>
-        }
-    </ul>
-}
-
 <hr />
 
 @foreach (var seccao in Model.Seccoes)
@@ -41,4 +26,19 @@
     {
         <p>@paragrafo</p>
     }
+}
+
+@if (Model.Receitas.Length > 0)
+{
+    <hr />
+    <h4>Receitas que utilizam esta técnica</h4>
+
+    <ul>
+        @foreach (var receita in Model.Receitas)
+        {
+            <li>
+                <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@receita.ReceitaId">@receita.Nome</a>
+            </li>
+        }
+    </ul>
 }
