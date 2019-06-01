@@ -16,7 +16,7 @@ namespace BelaSopa.Shared
     {
         public static void CarregarReceitasDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<YamlReceita>("BelaSopa.Data.Receitas.", yamlReceita =>
+            var receitas = CarregarRecursosYaml("BelaSopa.Data.Receitas.", (YamlReceita yamlReceita) =>
             {
                 Dificuldade dificuldade;
 
@@ -49,15 +49,17 @@ namespace BelaSopa.Shared
                     }).ToList()
                 };
 
-                context.AdicionarReceita(receita, yamlReceita.Etiquetas);
+                return (Receita: receita, NomesEtiquetas: (ISet<string>)yamlReceita.Etiquetas);
             });
+
+            context.AdicionarReceitas(receitas.ToList());
         }
 
         public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<YamlItu>("BelaSopa.Data.Ingredientes.", yamlIngrediente =>
+            var ingredientes = CarregarRecursosYaml("BelaSopa.Data.Ingredientes.", (YamlItu yamlIngrediente) =>
             {
-                var ingrediente = new Ingrediente
+                return new Ingrediente
                 {
                     Nome = yamlIngrediente.Nome,
                     Descricao = yamlIngrediente.Descricao,
@@ -67,16 +69,16 @@ namespace BelaSopa.Shared
                         n => new NomeAlternativoIngrediente { Nome = n }
                         ).ToList()
                 };
-
-                context.AdicionarIngrediente(ingrediente);
             });
+
+            context.AdicionarIngredientes(ingredientes);
         }
 
         public static void CarregarTecnicasDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<YamlItu>("BelaSopa.Data.Tecnicas.", yamlTecnica =>
+            var tecnicas = CarregarRecursosYaml("BelaSopa.Data.Tecnicas.", (YamlItu yamlTecnica) =>
             {
-                var tecnica = new Tecnica
+                return new Tecnica
                 {
                     Nome = yamlTecnica.Nome,
                     Descricao = yamlTecnica.Descricao,
@@ -86,16 +88,16 @@ namespace BelaSopa.Shared
                         n => new NomeAlternativoTecnica { Nome = n }
                         ).ToList()
                 };
-
-                context.AdicionarTecnica(tecnica);
             });
+
+            context.AdicionarTecnicas(tecnicas);
         }
 
         public static void CarregarUtensiliosDeExemplo(BelaSopaContext context)
         {
-            CarregarRecursosYaml<YamlItu>("BelaSopa.Data.Utensilios.", yamlUtensilio =>
+            var utensilios = CarregarRecursosYaml("BelaSopa.Data.Utensilios.", (YamlItu yamlUtensilio) =>
             {
-                var utensilio = new Utensilio
+                return new Utensilio
                 {
                     Nome = yamlUtensilio.Nome,
                     Descricao = yamlUtensilio.Descricao,
@@ -105,12 +107,12 @@ namespace BelaSopa.Shared
                         n => new NomeAlternativoUtensilio { Nome = n }
                         ).ToList()
                 };
-
-                context.AdicionarUtensilio(utensilio);
             });
+
+            context.AdicionarUtensilios(utensilios);
         }
 
-        private static void CarregarRecursosYaml<T>(string prefixoNome, Action<T> carregador)
+        private static IEnumerable<U> CarregarRecursosYaml<T, U>(string prefixoNome, Func<T, U> carregador)
         {
             var nomesRecursos =
                 Assembly
@@ -132,7 +134,7 @@ namespace BelaSopa.Shared
 
                         var recurso = deserializer.Deserialize<T>(reader);
 
-                        carregador(recurso);
+                        yield return carregador(recurso);
                     }
                 }
             }
@@ -170,7 +172,7 @@ namespace BelaSopa.Shared
             public int NumeroDoses { get; set; }
 
             [YamlMember(Alias = "etiquetas")]
-            public List<string> Etiquetas { get; set; }
+            public HashSet<string> Etiquetas { get; set; }
 
             [YamlMember(Alias = "ingredientes")]
             public List<UtilizacaoIngrediente> Ingredientes { get; set; }
@@ -191,7 +193,7 @@ namespace BelaSopa.Shared
             public string Nome { get; set; }
 
             [YamlMember(Alias = "nomes-alternativos")]
-            public List<string> NomesAlternativos { get; set; }
+            public HashSet<string> NomesAlternativos { get; set; }
 
             [YamlMember(Alias = "descrição")]
             public string Descricao { get; set; }

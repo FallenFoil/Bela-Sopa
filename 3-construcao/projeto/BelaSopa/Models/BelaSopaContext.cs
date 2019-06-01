@@ -126,39 +126,50 @@ namespace BelaSopa.Models
                 this.Administrador.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador) as Utilizador;
         }
 
-        public void AdicionarReceita(Receita receita, IEnumerable<string> nomesEtiquetas)
+        public void AdicionarReceitas(IList<(Receita Receita, ISet<string> NomesEtiquetas)> receitas)
         {
-            // adicionar receita
+            // adicionar receitas
 
-            Add(receita);
-            SaveChanges();
-
-            var ituPorNome = GetItuPorNome();
-
-            // descobrir relacionamentos da lista de ingredientes com ingredientes
-
-            AtualizarUtilizacoesIngredientesReceita(receita, ituPorNome);
-
-            // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
-
-            AtualizarTextoReceita(receita, ituPorNome);
+            Receita.AddRange(receitas.Select(r => r.Receita));
 
             // adicionar etiquetas e relacionamentos receita-etiqueta
 
-            foreach (var nomeEtiqueta in nomesEtiquetas)
+            foreach (var (receita, nomesEtiquetas) in receitas)
             {
-                // adicionar etiqueta se não existir
+                foreach (var nomeEtiqueta in nomesEtiquetas)
+                {
+                    // adicionar etiqueta se não existir
 
-                var etiqueta =
-                    Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta) ??
-                    Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
+                    var etiqueta =
+                        Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta) ??
+                        Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
 
-                // adicionar relacionamento receita-etiqueta
+                    // adicionar relacionamento receita-etiqueta
 
-                var receitaEtiqueta = new ReceitaEtiqueta();
+                    var receitaEtiqueta = new ReceitaEtiqueta();
 
-                receita.ReceitaEtiqueta.Add(receitaEtiqueta);
-                etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
+                    receita.ReceitaEtiqueta.Add(receitaEtiqueta);
+                    etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
+                }
+            }
+
+            // guardar alterações
+
+            SaveChanges();
+
+            // descobrir relacionamentos
+
+            var ituPorNome = GetItuPorNome();
+
+            foreach (var (receita, _) in receitas)
+            {
+                // descobrir relacionamentos da lista de ingredientes com ingredientes
+
+                AtualizarUtilizacoesIngredientesReceita(receita, ituPorNome);
+
+                // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
+
+                AtualizarTextoReceita(receita, ituPorNome);
             }
 
             // guardar alterações
@@ -166,14 +177,15 @@ namespace BelaSopa.Models
             SaveChanges();
         }
 
-        public void AdicionarIngrediente(Ingrediente ingrediente)
+        public void AdicionarIngredientes(IEnumerable<Ingrediente> ingredientes)
         {
-            // adicionar ingrediente
+            // adicionar ingredientes
 
-            Add(ingrediente);
+            Ingrediente.AddRange(ingredientes);
+
+            // guardar alterações
+
             SaveChanges();
-
-            var ituPorNome = GetItuPorNome();
 
             // descobrir relacionamentos
 
@@ -185,8 +197,12 @@ namespace BelaSopa.Models
                     .ThenInclude(p => p.Tarefas)
                     .ThenInclude(t => t.Texto);
 
+            Func<string, object> ituPorNome = null;
+
             foreach (var receita in receitas)
             {
+                ituPorNome = ituPorNome ?? GetItuPorNome();
+
                 // descobrir relacionamentos da lista de ingredientes com ingredientes
 
                 AtualizarUtilizacoesIngredientesReceita(receita, ituPorNome);
@@ -194,8 +210,6 @@ namespace BelaSopa.Models
                 // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
 
                 AtualizarTextoReceita(receita, ituPorNome);
-
-                // adicionar etiquetas e relacionamentos receita-etiqueta
             }
 
             // guardar alterações
@@ -203,16 +217,17 @@ namespace BelaSopa.Models
             SaveChanges();
         }
 
-        public void AdicionarTecnica(Tecnica tecnica)
+        public void AdicionarTecnicas(IEnumerable<Tecnica> tecnicas)
         {
             // adicionar técnica
 
-            Add(tecnica);
+            Tecnica.AddRange(tecnicas);
+
+            // guardar alterações
+
             SaveChanges();
 
             // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
-
-            var ituPorNome = GetItuPorNome();
 
             var receitas =
                 Receita
@@ -220,24 +235,30 @@ namespace BelaSopa.Models
                 .ThenInclude(p => p.Tarefas)
                 .ThenInclude(t => t.Texto);
 
+            Func<string, object> ituPorNome = null;
+
             foreach (var receita in receitas)
+            {
+                ituPorNome = ituPorNome ?? GetItuPorNome();
                 AtualizarTextoReceita(receita, ituPorNome);
+            }
 
             // guardar alterações
 
             SaveChanges();
         }
 
-        public void AdicionarUtensilio(Utensilio utensilio)
+        public void AdicionarUtensilios(IEnumerable<Utensilio> utensilios)
         {
             // adicionar utensílio
 
-            Add(utensilio);
+            Utensilio.AddRange(utensilios);
+
+            // guardar alterações
+
             SaveChanges();
 
             // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
-
-            var ituPorNome = GetItuPorNome();
 
             var receitas =
                 Receita
@@ -245,8 +266,13 @@ namespace BelaSopa.Models
                 .ThenInclude(p => p.Tarefas)
                 .ThenInclude(t => t.Texto);
 
+            Func<string, object> ituPorNome = null;
+
             foreach (var receita in receitas)
+            {
+                ituPorNome = ituPorNome ?? GetItuPorNome();
                 AtualizarTextoReceita(receita, ituPorNome);
+            }
 
             // guardar alterações
 
@@ -355,10 +381,8 @@ namespace BelaSopa.Models
             return nome =>
             {
                 foreach (var pair in ituPorNome)
-                {
                     if (Util.FuzzyEquals(nome, pair.Key))
                         return pair.Value;
-                }
 
                 return null;
             };
