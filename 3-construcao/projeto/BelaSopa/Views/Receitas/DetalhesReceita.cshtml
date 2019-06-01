@@ -9,7 +9,20 @@
     <div class="row">
         @*<div class="col-sm-6" style="border-right: 3px solid #4CAF50;">*@
         <div class="col-sm-7 border-right">
-            <h2>@Model.Receita.Nome</h2>
+            <h2>
+                @Model.Receita.Nome
+
+                <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
+                    @if (@Model.Favorita)
+                    {
+                        <i class="fas fa-star" style="color: gold;"></i>
+                    }
+                    else
+                    {
+                        <i class="far fa-star" style="color: silver;"></i>
+                    }
+                </a>
+            </h2>
             @switch (Model.Receita.Dificuldade)
             {
                 case Dificuldade.Facil:
@@ -65,7 +78,7 @@
             <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
                  alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
-            <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
+            @*<a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
                 @if (@Model.Favorita)
                 {
                     <i class="fas fa-star" style="color: gold; position: absolute; left: 1em; top: 0.5em; font-size: 2em"></i>
@@ -74,7 +87,7 @@
                 {
                     <i class="far fa-star" style="color: silver; position: absolute; left: 1em; top: 0.5em; font-size: 2em"></i>
                 }
-            </a>
+            </a>*@
         </div>
     </div>
 </div>
