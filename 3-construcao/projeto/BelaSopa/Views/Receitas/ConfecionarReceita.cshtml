@@ -210,6 +210,9 @@
 </script>
 
 <hr style="border-color:#4CAF50; border-width:4px;" />
+
+<!--===================================Informação completa===================================-->
+<h2>Informação Completa</h2>
 <h4 style="margin-top:2em;">Ingredientes</h4>
 <table class="table">
     <thead class="thead-light">
@@ -295,11 +298,11 @@
                     <td>
                         @if (@valor.PercentagemVdrAdulto != null)
                         {@valor.PercentagemVdrAdulto<text>%</text>}
-                </td>
-            </tr>
-            i--;
+                    </td>
+                </tr>
+                i--;
+            }
         }
-    }
     </tbody>
 </table>
 <hr />
