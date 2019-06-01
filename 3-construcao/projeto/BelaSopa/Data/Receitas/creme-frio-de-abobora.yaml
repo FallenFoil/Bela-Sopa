@@ -17,13 +17,13 @@ etiquetas:
 
 ingredientes:
 - nome: Alho-francês
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Azeite
   quantidade: 2 c. de sopa
 - nome: Cenouras
-  quantidade: '3'
+  quantidade: 3 un.
 - nome: Nabo
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Abóbora
   quantidade: 400 g
 - nome: Sal
@@ -33,7 +33,7 @@ ingredientes:
 - nome: Amêndoa laminada
   quantidade: 30 g
 - nome: Laranjas
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Coentros (ou rama de funcho fresco)
   quantidade: qb
 

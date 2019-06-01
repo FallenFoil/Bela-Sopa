@@ -15,13 +15,13 @@ etiquetas:
 
 ingredientes:
 - nome: Talo de aipo
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Folha de louro
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Cebola pequena
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Dente de alho
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Polpa de abóbora
   quantidade: 500 g
 - nome: Água
@@ -31,7 +31,7 @@ ingredientes:
 - nome: Azeite
   quantidade: 1 c. de sopa
 - nome: Alho-francês
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Raiz de gengibre
   quantidade: qb
 - nome: Leite evaporado
@@ -45,7 +45,7 @@ ingredientes:
 - nome: Cebolinho
   quantidade: qb
 - nome: Mini tortitas de milho pura vida
-  quantidade: '2'
+  quantidade: 2 un.
 
 valores-nutricionais:
 - dose: 73 Kcal

@@ -16,7 +16,7 @@ etiquetas:
 
 ingredientes:
 - nome: Ovos de codorniz
-  quantidade: '12'
+  quantidade: 12 un.
 - nome: Água
   quantidade: qb
 - nome: Sal
@@ -28,7 +28,7 @@ ingredientes:
 - nome: Batata-doce
   quantidade: 500 g
 - nome: Talos de aipo
-  quantidade: '3'
+  quantidade: 3 un.
 - nome: Legumes congelados para saltear
   quantidade: 400 g
 - nome: Folhas de hortelã

@@ -33,7 +33,7 @@ ingredientes:
 - nome: Coentros frescos
   quantidade: qb
 - nome: Cebola
-  quantidade: '1'
+  quantidade: 1 un.
 
 valores-nutricionais:
 - dose: 104 Kcal

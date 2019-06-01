@@ -48,7 +48,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
 
-        public (IEnumerable<Tecnica>, IEnumerable<Utensilio>) GetTecnicasUtensilios()
+        public (IList<Tecnica>, IList<Utensilio>) GetTecnicasUtensilios()
         {
             var textosTarefas =
                 Processos
@@ -61,12 +61,14 @@ namespace BelaSopa.Models.DomainModels.Assistente
                     .Select(texto => texto.Tecnica)
                     .Where(t => t != null)
                     .DistinctBy(t => t.TecnicaId)
-                    .OrderBy(t => t.Nome),
+                    .OrderBy(t => t.Nome)
+                    .ToArray(),
                 textosTarefas
                     .Select(texto => texto.Utensilio)
                     .Where(u => u != null)
                     .DistinctBy(u => u.UtensilioId)
                     .OrderBy(u => u.Nome)
+                    .ToArray()
                 );
         }
     }

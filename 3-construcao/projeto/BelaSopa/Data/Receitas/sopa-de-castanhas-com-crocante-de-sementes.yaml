@@ -33,9 +33,9 @@ ingredientes:
 - nome: Pimenta-preta
   quantidade: qb
 - nome: Vegem de cardamomo
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Chalotas
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Alho-francês
   quantidade: 1/2
 - nome: Castanhas congeladas
@@ -43,7 +43,7 @@ ingredientes:
 - nome: Azeite
   quantidade: 3 c. de sopa
 - nome: Courgettes
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Abóbora-manteiga
   quantidade: 400 g
 - nome: Noz moscada

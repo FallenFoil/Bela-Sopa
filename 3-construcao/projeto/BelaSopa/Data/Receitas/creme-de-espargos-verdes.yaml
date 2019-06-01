@@ -14,9 +14,9 @@ etiquetas:
 
 ingredientes:
 - nome: Cebola pequena
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Dente de alho
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Manteiga sem sal
   quantidade: 25 g
 - nome: Espargos verdes
@@ -32,11 +32,11 @@ ingredientes:
 - nome: Caril em pó
   quantidade: qb
 - nome: Folha de massa filo
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Azeite
   quantidade: 1 c. de sopa
 - nome: Pailtos
-  quantidade: '2'
+  quantidade: 2 un.
 
 valores-nutricionais:
 - dose: 365 Kcal

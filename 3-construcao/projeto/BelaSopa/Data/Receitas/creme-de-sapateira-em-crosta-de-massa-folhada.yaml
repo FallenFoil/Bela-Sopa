@@ -39,7 +39,7 @@ ingredientes:
 - nome: Polpa de tomate
   quantidade: 150 g
 - nome: Malagueta vermelha
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Água
   quantidade: 1,2 l
 - nome: Sal
@@ -51,7 +51,7 @@ ingredientes:
 - nome: Massa folhada
   quantidade: 300 g
 - nome: Ovo m
-  quantidade: '1'
+  quantidade: 1 un.
 
 valores-nutricionais:
 - dose: 159 Kcal

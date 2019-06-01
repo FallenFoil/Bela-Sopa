@@ -1,4 +1,4 @@
-@model (Receita Receita, IEnumerable<Tecnica> Tecnicas, IEnumerable<Utensilio> Utensilios, bool Favorita)
+@model (Receita Receita, IList<Tecnica> Tecnicas, IList<Utensilio> Utensilios, bool Favorita)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Receita.Nome;
@@ -56,60 +56,84 @@
 </div>
 <p class="font-italic" style="margin-top:3em">@Model.Receita.Descricao</p>
 <hr />
-<h4 style="margin-top:2em;">Ingredientes</h4>
-<table class="table">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">Quantidade</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
-        {
-            <tr>
-                <td>
-                    @if (utilizacaoIngrediente.Ingrediente != null)
+
+<div class="container" style="padding: 0px;">
+    <div class="row">
+        <div class="col-6 border-right">
+            <h4>Ingredientes</h4>
+            <table class="table table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
                     {
-                        <a asp-controller="Ingredientes"
-                           asp-action="Detalhes"
-                           asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
-                            @utilizacaoIngrediente.Nome
-                        </a>
+                        <tr>
+                            <td>
+                                @if (utilizacaoIngrediente.Ingrediente != null)
+                                {
+                                    <a asp-controller="Ingredientes"
+                                       asp-action="Detalhes"
+                                       asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
+                                        @utilizacaoIngrediente.Nome
+                                    </a>
+                                }
+                                else
+                                {
+                                    <text>@utilizacaoIngrediente.Nome</text>
+                                }
+                            </td>
+                            <td>@utilizacaoIngrediente.Quantidade</td>
+                        </tr>
                     }
-                    else
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3 border-right">
+            <h4>Técnicas</h4>
+            <ul>
+                @if (Model.Tecnicas.Count == 0)
+                {
+                    <li>(nenhuma)</li>
+                }
+                else
+                {
+                    foreach (var tecnica in Model.Tecnicas)
                     {
-                        <text>@utilizacaoIngrediente.Nome</text>
+                    <li>
+                        <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
+                    </li>
                     }
-                </td>
-                <td>@utilizacaoIngrediente.Quantidade</td>
-            </tr>
-        }
-    </tbody>
-</table>
+                }
+            </ul>
+        </div>
+        <div class="col-3">
+            <h4>Utensílios</h4>
+            <ul>
+                @if (Model.Utensilios.Count == 0)
+                {
+                    <li>(nenhum)</li>
+                }
+                else
+                {
+                    @foreach (var utensilio in Model.Utensilios)
+                    {
+                        <li>
+                            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
 <hr />
-<h4 style="margin-top:2em;">Técnicas</h4>
-<ul>
-    @foreach (var tecnica in Model.Tecnicas)
-    {
-        <li>
-            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
-        </li>
-    }
-</ul>
-<hr />
-<h4 style="margin-top:2em;">Utensílios</h4>
-<ul>
-    @foreach (var utensilio in Model.Utensilios)
-    {
-        <li>
-            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
-        </li>
-    }
-</ul>
-<hr />
-<h4 style="margin-top:2em;">Valores nutricionais</h4>
-<table class="table">
+<h4>Valores nutricionais</h4>
+<table class="table table-sm">
     <thead class="thead-light">
         <tr>
             <th scope="col"></th>
@@ -149,7 +173,7 @@
     </tbody>
 </table>
 <hr />
-<h4 style="margin-top:2em;">Processos</h4>
+<h4>Processos</h4>
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
     @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
     {

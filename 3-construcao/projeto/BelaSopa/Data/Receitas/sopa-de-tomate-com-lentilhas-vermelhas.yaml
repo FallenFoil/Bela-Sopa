@@ -18,11 +18,11 @@ ingredientes:
 - nome: Azeite
   quantidade: 2 c. de sopa
 - nome: Dentes de alho
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Cebola
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Lata de tomate de conserva em cubos
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Cominhos
   quantidade: ½ c. de café
 - nome: Água
@@ -32,11 +32,11 @@ ingredientes:
 - nome: Lentilhas vermelhas
   quantidade: 150 g
 - nome: Emb. espinafres em folha
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Manjericão fresco
   quantidade: qb
 - nome: Iogurte grego triplo zero
-  quantidade: '1'
+  quantidade: 1 un.
 
 valores-nutricionais:
 - dose: 157 Kcal

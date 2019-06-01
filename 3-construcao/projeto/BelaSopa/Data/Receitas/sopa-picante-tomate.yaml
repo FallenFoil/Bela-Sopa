@@ -19,9 +19,9 @@ ingredientes:
 - nome: Tomate maduro
   quantidade: 1,5 kg
 - nome: Chalota
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Malagueta
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Azeite
   quantidade: 2 c. de sopa
 - nome: Pimentão-doce
@@ -31,7 +31,7 @@ ingredientes:
 - nome: Gelo
   quantidade: qb
 - nome: Figos
-  quantidade: '6'
+  quantidade: 6 un.
 - nome: Fatias finas de presunto
   quantidade: 150 g
 - nome: Iogurte grego

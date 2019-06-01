@@ -19,11 +19,11 @@ ingredientes:
 - nome: Beterraba
   quantidade: 150 g
 - nome: Laranja
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Melão (limpo)
   quantidade: 300 g
 - nome: Talo de aipo
-  quantidade: '1'
+  quantidade: 1 un.
 
 valores-nutricionais:
 - dose: 47 Kcal

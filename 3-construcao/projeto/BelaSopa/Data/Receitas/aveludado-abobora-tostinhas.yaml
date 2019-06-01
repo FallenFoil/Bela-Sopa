@@ -17,7 +17,7 @@ ingredientes:
 - nome: Cebola
   quantidade: 50 g
 - nome: Folha de louro
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Água
   quantidade: 1,4 l
 - nome: Azeite
@@ -33,7 +33,7 @@ ingredientes:
 - nome: Leite meio-gordo
   quantidade: 2 dl
 - nome: Fatias pequenas pão de 8 cereias
-  quantidade: '4'
+  quantidade: 4 un.
 
 valores-nutricionais:
 - dose: 215 Kcal

@@ -57,8 +57,6 @@ def scrape_recipe(url: str) -> None:
 
     if not descricao_receita:
 
-        # sem valores nutritionais
-
         print('    SKIPPING - no description')
         return
 

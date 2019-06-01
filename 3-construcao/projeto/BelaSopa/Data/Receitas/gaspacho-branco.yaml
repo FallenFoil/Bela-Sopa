@@ -17,11 +17,11 @@ ingredientes:
 - nome: Miolo de amêndoa sem pele
   quantidade: 300 g
 - nome: Dentes de alho
-  quantidade: '3'
+  quantidade: 3 un.
 - nome: Água
   quantidade: 1 dl
 - nome: Fatias de pão de forma branco sem côdea
-  quantidade: '4'
+  quantidade: 4 un.
 - nome: Azeite
   quantidade: 4 c. de sopa
 - nome: Vinagre de vinho branco
@@ -31,11 +31,11 @@ ingredientes:
 - nome: Pimenta moída
   quantidade: qb
 - nome: Bagos de uva branca
-  quantidade: '30'
+  quantidade: 30 un.
 - nome: Bagos de uvas preta
-  quantidade: '20'
+  quantidade: 20 un.
 - nome: Amêndoas com pele
-  quantidade: '6'
+  quantidade: 6 un.
 
 valores-nutricionais:
 - dose: 428 Kcal

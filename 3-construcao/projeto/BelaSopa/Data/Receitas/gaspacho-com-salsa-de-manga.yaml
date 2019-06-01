@@ -17,11 +17,11 @@ etiquetas:
 
 ingredientes:
 - nome: Manga
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Courgette
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Cebola-roxa
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Azeite
   quantidade: 2 c. de sopa
 - nome: Vinagre de framboesa
@@ -31,7 +31,7 @@ ingredientes:
 - nome: Manjericão
   quantidade: qb
 - nome: Emb. gaspacho
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Amêndoas laminadas torradas
   quantidade: 60 g
 
