@@ -5,59 +5,83 @@
     ViewData["HideHeader"] = true;
     ViewData["ShowBackButton"] = true;
 }
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-8">
+        @*<div class="col-sm-6" style="border-right: 3px solid #4CAF50;">*@
+        <div class="col-sm-7 border-right">
+            <h2>@Model.Receita.Nome</h2>
+            @switch (Model.Receita.Dificuldade)
+            {
+                case Dificuldade.Facil:
+                    <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
+                    break;
+
+                case Dificuldade.Media:
+                    <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
+                    break;
+
+                case Dificuldade.Dificil:
+                    <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
+                    break;
+            }
+            &nbsp;|&nbsp;
+            <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
+            &nbsp;|&nbsp;
+            <span>@Model.Receita.NumeroDoses doses</span>
+            <p style="margin-top: 1em">@Model.Receita.Descricao</p>
+            <div style="text-align:left;margin-top: 1em;">
+                <strong>Etiquetas:</strong>&nbsp;
+                @{
+                    var first = true;
+
+                    foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.Select(e => e.Etiqueta.Nome).OrderBy(e => e))
+                    {
+                        if (!first)
+                        {
+                            <text>&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+                        }
+
+                        <text>@etiqueta</text>
+
+                        first = false;
+                    }
+
+                    if (first)
+                    {
+                        <text>(nenhuma)</text>
+                    }
+                }
+                @*<ul class="CustomBullet" style="text-align:left;list-style: none">
+            @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.OrderBy(e => e.Etiqueta.Nome))
+            {
+                <li>
+                    @etiqueta.Etiqueta.Nome
+                </li>
+            }
+        </ul>*@
+            </div>
+        </div>
+        <div class="col-sm-5">
             <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
                  alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
             <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
                 @if (@Model.Favorita)
                 {
-                    //Dentro Favoritos
-                    <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
+                    <i class="fas fa-star" style="color: gold; position: absolute; left: 1em; top: 0.5em; font-size: 2em"></i>
                 }
                 else
                 {
-                    //Dos Favoritos
-                    <i class="far fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
+                    <i class="far fa-star" style="color: silver; position: absolute; left: 1em; top: 0.5em; font-size: 2em"></i>
                 }
             </a>
         </div>
-        <div class="col-sm-4" style="text-align:center;border-left: 3px solid #4CAF50;">
-            <h4>@Model.Receita.Nome</h4>
-            @if (Model.Receita.Dificuldade == Dificuldade.Facil)
-            {
-                <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
-            }
-            @if (Model.Receita.Dificuldade == Dificuldade.Media)
-            {
-                <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
-            }
-            @if (Model.Receita.Dificuldade == Dificuldade.Dificil)
-            {
-                <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
-            }
-            <span style="margin-left:1em;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
-            <span style="margin-left:1em;">@Model.Receita.NumeroDoses doses</span>
-            <div style="text-align:left;margin-top:1em;">
-                Etiquetas:
-                <ul class="CustomBullet" style="text-align:left;list-style: none">
-                    @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.OrderBy(e => e.Etiqueta.Nome))
-                    {
-                        <li>
-                            @etiqueta.Etiqueta.Nome
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
     </div>
 </div>
-<p class="font-italic" style="margin-top:3em">@Model.Receita.Descricao</p>
+
 <hr />
 
-<div class="container" style="padding: 0px;">
+<div class="container-fluid" style="padding: 0px;">
     <div class="row">
         <div class="col-6 border-right">
             <h4>Ingredientes</h4>
@@ -142,38 +166,28 @@
         </tr>
     </thead>
     <tbody>
-        @{ var i = 0;}
         @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
         {
-            if (i == 0)
+        <tr>
+            @if (valor.Nome.Contains(','))
             {
-                <tr>
-                    <td>@valor.Nome</td>
-                    <td>@valor.Dose</td>
-                    <td>
-                        @if (@valor.PercentagemVdrAdulto != null)
-                        {@valor.PercentagemVdrAdulto<text>%</text>}
-                    </td>
-                </tr>
-                i++;
+                <td style="padding-left: 2em;"><i>@valor.Nome.Substring(valor.Nome.IndexOf(',') + 2)</i></td>
             }
             else
             {
-                <tr id="ValoresNut">
-                    <td>@valor.Nome</td>
-                    <td>@valor.Dose</td>
-                    <td>
-                        @if (@valor.PercentagemVdrAdulto != null)
-                        {@valor.PercentagemVdrAdulto<text>%</text>}
-                    </td>
-                </tr>
-                i--;
+                <td>@valor.Nome</td>
             }
+            <td>@valor.Dose</td>
+            <td>
+                @if (@valor.PercentagemVdrAdulto != null)
+                {@valor.PercentagemVdrAdulto<text>%</text>}
+            </td>
+        </tr>
         }
     </tbody>
 </table>
 <hr />
-<h4>Processos</h4>
+<h4>Passos</h4>
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
     @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
     {
