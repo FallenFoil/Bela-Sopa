@@ -37,12 +37,16 @@
 
 <br />
 
-<button style="background-color:#4CAF50; border-color:#4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
     Processo Anterior
 </button>
 
-<button style="background-color:#4CAF50; border-color:#4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
     Processo Seguinte
+</button>
+
+<button type="button" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
+    Cancelar
 </button>
 
 
@@ -88,7 +92,7 @@
         <div class="col">
             <h4 style="margin-top:2em;">Técnicas</h4>
 
-            <ul>
+            <ul class="CustomBullet" style="text-align:left;list-style: none">
                 <li>
                     tecnica.Nome
                 </li>
@@ -97,7 +101,7 @@
         <div class="col">
             <h4 style="margin-top:2em;">Utensílios</h4>
 
-            <ul>
+            <ul class="CustomBullet" style="text-align:left;list-style: none">
                 <li>
                     utensilio.Nome
                 </li>
@@ -122,30 +126,36 @@
 
 <h4 style="margin-top:2em;">Passos</h4>
 
-<ul style="text-align:left;">
+<ul class="CustomBullet" style="text-align:left;list-style: none;margin-bottom:2em;">
     <li>
-        <text>texto.Texto</text>
-    </li>
-    <li>
-        <text>texto.Texto</text>
-        <p id="TimeLeft0" style="display:none;"></p>
-        <a onclick="startTimeOut(10000, 'Passo', 0)">
+        <text>Passo1.</text>
+        <a onclick="startTimeOut(6000, 'Passo 1', 0)">
             <i id="stopwatch0" class="fas fa-stopwatch"></i>
         </a>
+        <span id="TimeLeft0" style="display:none;"></span>
     </li>
     <li>
-        <text>texto.Texto</text>
+        <text>Passo2.</text>
+        <a onclick="startTimeOut(7000, 'Passo 2', 1)">
+            <i id="stopwatch1" class="fas fa-stopwatch"></i>
+        </a>
+        <span id="TimeLeft1" style="display:none;"></span>
     </li>
     <li>
-        <text>texto.Texto</text>
+        <text>Passo3.</text>
+        <a onclick="startTimeOut(8000, 'Passo 3', 2)">
+            <i id="stopwatch2" class="fas fa-stopwatch"></i>
+        </a>
+        <span id="TimeLeft2" style="display:none;"></span>
     </li>
 </ul>
 
 <script>
-    var myVar;
-    var countDownDate;
+    var myVar = [];
+    var x = [];
 
     function startTimeOut(time, str, id) {
+        var countDownDate;
         var s = document.getElementById("stopwatch" + id);
 
         if (s.classList.contains('fa-stopwatch')) {
@@ -158,7 +168,7 @@
 
             countDownDate = now + aux;
 
-            var x = setInterval(function () {
+            x[id] = setInterval(function () {
 
                 var now = new Date().getTime();
 
@@ -172,14 +182,16 @@
 
                 // If the count down is finished, write some text
                 if (distance < 0) {
-                    clearInterval(x);
+                    clearInterval(x[id]);
                     document.getElementById("TimeLeft" + id).style.display = "none";
                     document.getElementById("TimeLeft" + id).innerHTML = "";
                 }
             }, 1000);
 
 
-            myVar = setTimeout(function () {
+            myVar[id] = setTimeout(function () {
+                clearInterval(x[id]);
+                document.getElementById("TimeLeft" + id).style.display = "none";
                 s.classList.remove('fa-stop');
                 s.classList.add('fa-stopwatch');
                 s.style.color = "black";
@@ -187,10 +199,149 @@
             }, time)
         }
         else {
-            clearTimeout(myVar);
+            clearInterval(x[id]);
+            clearTimeout(myVar[id]);
+            document.getElementById("TimeLeft" + id).style.display = "none";
             s.classList.remove('fa-stop');
             s.classList.add('fa-stopwatch');
             s.style.color = "black";
         }
     }
 </script>
+
+<hr style="border-color:#4CAF50; border-width:4px;" />
+<h4 style="margin-top:2em;">Ingredientes</h4>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
+        {
+            <tr>
+                <td>
+                    @if (utilizacaoIngrediente.Ingrediente != null)
+                    {
+                        <a asp-controller="Ingredientes"
+                           asp-action="Detalhes"
+                           asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
+                            @utilizacaoIngrediente.Nome
+                        </a>
+                    }
+                    else
+                    {
+                        <text>@utilizacaoIngrediente.Nome</text>
+                    }
+                </td>
+                <td>@utilizacaoIngrediente.Quantidade</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+<h4 style="margin-top:2em;">Técnicas</h4>
+<ul>
+    @foreach (var tecnica in Model.Tecnicas)
+    {
+        <li>
+            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
+        </li>
+    }
+</ul>
+<hr />
+<h4 style="margin-top:2em;">Utensílios</h4>
+<ul>
+    @foreach (var utensilio in Model.Utensilios)
+    {
+        <li>
+            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
+        </li>
+    }
+</ul>
+<hr />
+<h4 style="margin-top:2em;">Valores nutricionais</h4>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Dose</th>
+            <th scope="col">% do VDR adulto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ var i = 0;}
+        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
+        {
+            if (i == 0)
+            {
+                <tr>
+                    <td>@valor.Nome</td>
+                    <td>@valor.Dose</td>
+                    <td>
+                        @if (@valor.PercentagemVdrAdulto != null)
+                        {@valor.PercentagemVdrAdulto<text>%</text>}
+                    </td>
+                </tr>
+                i++;
+            }
+            else
+            {
+                <tr id="ValoresNut">
+                    <td>@valor.Nome</td>
+                    <td>@valor.Dose</td>
+                    <td>
+                        @if (@valor.PercentagemVdrAdulto != null)
+                        {@valor.PercentagemVdrAdulto<text>%</text>}
+                </td>
+            </tr>
+            i--;
+        }
+    }
+    </tbody>
+</table>
+<hr />
+<h4 style="margin-top:2em;">Passos</h4>
+<ul class="CustomBullet" style="text-align:left;list-style: none;">
+    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
+    {
+        <li>
+            <ul style="text-align:left;">
+                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
+                {
+                    <li>
+                        @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice))
+                        {
+                            if (texto.IngredienteId != null)
+                            {
+                                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+                            }
+                            else if (texto.TecnicaId != null)
+                            {
+                                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+                            }
+                            else if (texto.UtensilioId != null)
+                            {
+                                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
+                            }
+                            else
+                            {
+                                <text>@texto.Texto</text>
+                            }
+                        }
+                        @{
+                            var duracaoTemporizador = tarefa.GetDuracaoTemporizador();
+
+                            if (duracaoTemporizador != null)
+                            {
+                                <text><strong>(eu sou um temporizador de @duracaoTemporizador minutos)</strong></text>
+                            }
+                        }
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
