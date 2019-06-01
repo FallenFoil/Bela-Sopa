@@ -128,11 +128,11 @@ namespace BelaSopa.Models
 
         public void AdicionarReceita(Receita receita, IEnumerable<string> nomesEtiquetas)
         {
-            var ituPorNome = GetItuPorNome();
-
             // adicionar receita
 
             Add(receita);
+
+            var ituPorNome = GetItuPorNome();
 
             // descobrir relacionamentos da lista de ingredientes com ingredientes
 
@@ -167,11 +167,11 @@ namespace BelaSopa.Models
 
         public void AdicionarIngrediente(Ingrediente ingrediente)
         {
-            var ituPorNome = GetItuPorNome();
-
             // adicionar ingrediente
 
             Add(ingrediente);
+
+            var ituPorNome = GetItuPorNome();
 
             // descobrir relacionamentos
 
@@ -247,22 +247,6 @@ namespace BelaSopa.Models
             // guardar alterações
 
             SaveChanges();
-        }
-
-        private bool TextoContemIngrediente(string texto, Ingrediente ingrediente)
-        {
-            var nomesIngrediente =
-                ingrediente
-                .NomesAlternativos
-                .Select(n => n.Nome)
-                .Prepend(ingrediente.Nome)
-                .ToArray();
-
-            foreach (var palavra in texto.Split())
-                if (nomesIngrediente.Any(nome => Util.FuzzyEquals(palavra, nome)))
-                    return true;
-
-            return false;
         }
 
         private void AtualizarUtilizacoesIngredientesReceita(Receita receita, Func<string, object> ituPorNome)
