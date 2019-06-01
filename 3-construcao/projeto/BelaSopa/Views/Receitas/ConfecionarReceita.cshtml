@@ -128,8 +128,8 @@
     </li>
     <li>
         <text>texto.Texto</text>
-        <p id="TimeLeft0"></p>
-        <a onclick="startTimeOut(3000, 'Ola Puta', 0)">
+        <p id="TimeLeft0" style="display:none;"></p>
+        <a onclick="startTimeOut(10000, 'Passo', 0)">
             <i id="stopwatch0" class="fas fa-stopwatch"></i>
         </a>
     </li>
@@ -144,14 +144,41 @@
 <script>
     var myVar;
     var countDownDate;
+
     function startTimeOut(time, str, id) {
-        var s = document.getElementById("stopwatch"+id);
+        var s = document.getElementById("stopwatch" + id);
 
         if (s.classList.contains('fa-stopwatch')) {
             s.classList.remove('fa-stopwatch');
             s.classList.add('fa-stop');
             s.style.color = "red";
-            countDownDate =  = new Date("Jun 1, 2019 10:00:00").getTime();
+
+            var now = new Date().getTime();
+            var aux = new Date(time).getTime();
+
+            countDownDate = now + aux;
+
+            var x = setInterval(function () {
+
+                var now = new Date().getTime();
+
+                var distance = countDownDate - now;
+
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("TimeLeft" + id).style.display = "block";
+                document.getElementById("TimeLeft" + id).innerHTML = minutes + "m " + seconds + "s";
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("TimeLeft" + id).style.display = "none";
+                    document.getElementById("TimeLeft" + id).innerHTML = "";
+                }
+            }, 1000);
+
+
             myVar = setTimeout(function () {
                 s.classList.remove('fa-stop');
                 s.classList.add('fa-stopwatch');
