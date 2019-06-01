@@ -3,8 +3,8 @@
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Receita.Nome;
     ViewData["HideHeader"] = true;
+    ViewData["ShowBackButton"] = true;
 }
-
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
@@ -12,15 +12,18 @@
                  alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
             <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
-                @if (@Model.Favorita) {
+                @if (@Model.Favorita)
+                {
                     //Dentro Favoritos
                     <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
-                } else {
+                }
+                else
+                {
                     //Dos Favoritos
                     <i class="far fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
                 }
             </a>
-        </div>      
+        </div>
         <div class="col-sm-4" style="text-align:center;border-left: 3px solid #4CAF50;">
             <h4>@Model.Receita.Nome</h4>
             @if (Model.Receita.Dificuldade == Dificuldade.Facil)
@@ -35,7 +38,7 @@
             {
                 <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
             }
-                <span style="margin-left:1em;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
+            <span style="margin-left:1em;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
             <span style="margin-left:1em;">@Model.Receita.NumeroDoses doses</span>
             <div style="text-align:left;margin-top:1em;">
                 Etiquetas:
@@ -51,12 +54,9 @@
         </div>
     </div>
 </div>
-
 <p class="font-italic" style="margin-top:3em">@Model.Receita.Descricao</p>
-
 <hr />
 <h4 style="margin-top:2em;">Ingredientes</h4>
-
 <table class="table">
     <thead class="thead-light">
         <tr>
@@ -67,30 +67,28 @@
     <tbody>
         @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
         {
-        <tr>
-            <td>
-                @if (utilizacaoIngrediente.Ingrediente != null)
-                {
-                    <a asp-controller="Ingredientes"
-                       asp-action="Detalhes"
-                       asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
-                        @utilizacaoIngrediente.Nome
-                    </a>
-                }
-                else
-                {
-                    <text>@utilizacaoIngrediente.Nome</text>
-                }
-            </td>
-            <td>@utilizacaoIngrediente.Quantidade</td>
-        </tr>
+            <tr>
+                <td>
+                    @if (utilizacaoIngrediente.Ingrediente != null)
+                    {
+                        <a asp-controller="Ingredientes"
+                           asp-action="Detalhes"
+                           asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
+                            @utilizacaoIngrediente.Nome
+                        </a>
+                    }
+                    else
+                    {
+                        <text>@utilizacaoIngrediente.Nome</text>
+                    }
+                </td>
+                <td>@utilizacaoIngrediente.Quantidade</td>
+            </tr>
         }
     </tbody>
 </table>
-
 <hr />
 <h4 style="margin-top:2em;">Técnicas</h4>
-
 <ul>
     @foreach (var tecnica in Model.Tecnicas)
     {
@@ -99,10 +97,8 @@
         </li>
     }
 </ul>
-
 <hr />
 <h4 style="margin-top:2em;">Utensílios</h4>
-
 <ul>
     @foreach (var utensilio in Model.Utensilios)
     {
@@ -111,10 +107,8 @@
         </li>
     }
 </ul>
-
 <hr />
 <h4 style="margin-top:2em;">Valores nutricionais</h4>
-
 <table class="table">
     <thead class="thead-light">
         <tr>
@@ -135,27 +129,27 @@
                     <td>
                         @if (@valor.PercentagemVdrAdulto != null)
                         {@valor.PercentagemVdrAdulto<text>%</text>}
-                </td>
-            </tr>
-            i++;
-        }
-        else
-        {
-            <tr id="ValoresNut">
-                <td>@valor.Nome</td>
-                <td>@valor.Dose</td>
-                <td>@if (@valor.PercentagemVdrAdulto != null)
-                {@valor.PercentagemVdrAdulto<text>%</text>}</td>
-            </tr>
+                    </td>
+                </tr>
+                i++;
+            }
+            else
+            {
+                <tr id="ValoresNut">
+                    <td>@valor.Nome</td>
+                    <td>@valor.Dose</td>
+                    <td>
+                        @if (@valor.PercentagemVdrAdulto != null)
+                        {@valor.PercentagemVdrAdulto<text>%</text>}
+                    </td>
+                </tr>
                 i--;
             }
         }
     </tbody>
 </table>
-
 <hr />
-<h4 style="margin-top:2em;">Passos</h4>
-
+<h4 style="margin-top:2em;">Processos</h4>
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
     @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
     {
@@ -183,7 +177,6 @@
                                 <text>@texto.Texto</text>
                             }
                         }
-
                         @{
                             var duracaoTemporizador = tarefa.GetDuracaoTemporizador();
 
@@ -198,30 +191,31 @@
         </li>
     }
 </ul>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Confecionar</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Tem todos os ingredientes?
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-          <form asp-controller="Receitas" asp-action="ConfecionarReceita" >
-              <button style="background-color:#4CAF50; border-color: #4CAF50;" type="submit" class="btn btn-primary">Sim</button>
-          </form>
-      </div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confecionar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Tem todos os ingredientes?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                <form asp-controller="Receitas" asp-action="ConfecionarReceita">
+                    <button style="background-color:#4CAF50; border-color: #4CAF50;" type="submit" class="btn btn-primary">Sim</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-
-<button style="background-color:#4CAF50; border-color: #4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Confecionar
-</button>
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+{
+    <button style="background-color:#4CAF50; border-color: #4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Confecionar
+    </button>
+}

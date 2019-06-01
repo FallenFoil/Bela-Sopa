@@ -10,7 +10,7 @@
 
     <div class="wrapper">
         <!-- sidebar  -->
-        <nav id="sidebar">
+        <nav id="sidebar" style="overflow: auto;">
             <div class="sidebar-header">
                 <img id="logo_icon" src="~/logo.png" alt="Bela Sopa">
                 <h3 id="logo">Bela Sopa</h3>
@@ -58,7 +58,7 @@
                     </li>
                     <li>
                         <a asp-controller="Utensilios" asp-action="Index">
-                            <i class="fas fa-utensils"></i>
+                            <i class="fas fa-blender"></i>
                             <span>Utensílios</span>
                         </a>
                     </li>
@@ -70,7 +70,7 @@
                     </li>
                     <li>
                         <a asp-controller="Utilizadores" asp-action="VerLojas">
-                            <i class="fas fa-plus-square"></i>
+                            <i class="fas fa-store-alt"></i>
                             <span>Ver Lojas</span>
                         </a>
                     </li>
@@ -101,7 +101,7 @@
                     </li>
                     <li>
                         <a asp-controller="Utensilios" asp-action="Index">
-                            <i class="fas fa-utensils"></i>
+                            <i class="fas fa-blender"></i>
                             <span>Utensílios</span>
                         </a>
                     </li>
@@ -129,9 +129,15 @@
         </nav>
         <!-- page content -->
         <div id="content">
-            <button type="button" id="sidebarCollapse" class="btn btn-primary" style="margin-left:-2em; margin-top:-4em; background-color:#4CAF50; box-shadow: 0 1px 0 0 #4CAF50; border: 1px solid #4CAF50;">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
                 <i class="fas fa-align-justify"></i>
             </button>
+            @if (ViewData["ShowBackButton"] as bool? == true)
+            {
+                <button type="button" id="backButton" onclick="window.history.back()" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            }
             @if (ViewData["HideHeader"] as bool? != true)
             {
                 <h2>@ViewData["Title"]</h2>

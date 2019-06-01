@@ -70,6 +70,8 @@ span {
     position: fixed;
     box-shadow: 0 1px 0 0 #4CAF50;
     border: 1px solid #4CAF50;
+    margin-left: -2em;
+    margin-top: -4em;
 }
 
     #sidebarCollapse.active {
@@ -80,6 +82,17 @@ span {
         box-shadow: 0 1px 0 0 #4CAF50;
         border: 1px solid #4CAF50;
     }
+
+#backButton {
+    z-index: 10;
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    position: fixed;
+    box-shadow: 0 1px 0 0 #4CAF50;
+    border: 1px solid #4CAF50;
+    margin-left: 1em;
+    margin-top: -4em;
+}
 
 #sidebar {
     min-width: 16em;
