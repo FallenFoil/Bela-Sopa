@@ -1,4 +1,4 @@
-@{
+{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "Confecionar";
     ViewData["HideHeader"] = true;
@@ -212,6 +212,7 @@
 <hr style="border-color:#4CAF50; border-width:4px;" />
 
 <!--===================================Informação completa===================================-->
+<!--
 <h2>Informação Completa</h2>
 <h4 style="margin-top:2em;">Ingredientes</h4>
 <table class="table">
@@ -221,25 +222,26 @@
             <th scope="col">Quantidade</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
+    <tbody>()
+
+    foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
         {
             <tr>
                 <td>
-                    @if (utilizacaoIngrediente.Ingrediente != null)
+                    if (utilizacaoIngrediente.Ingrediente != null)
                     {
                         <a asp-controller="Ingredientes"
                            asp-action="Detalhes"
-                           asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
-                            @utilizacaoIngrediente.Nome
+                           asp-route-id="utilizacaoIngrediente.Ingrediente.IngredienteId">
+                            utilizacaoIngrediente.Nome
                         </a>
                     }
                     else
                     {
-                        <text>@utilizacaoIngrediente.Nome</text>
+                        <text>utilizacaoIngrediente.Nome</text>
                     }
                 </td>
-                <td>@utilizacaoIngrediente.Quantidade</td>
+                <td>utilizacaoIngrediente.Quantidade</td>
             </tr>
         }
     </tbody>
@@ -247,20 +249,20 @@
 <hr />
 <h4 style="margin-top:2em;">Técnicas</h4>
 <ul>
-    @foreach (var tecnica in Model.Tecnicas)
+    foreach (var tecnica in Model.Tecnicas)
     {
         <li>
-            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
+            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="tecnica.TecnicaId">tecnica.Nome</a>
         </li>
     }
 </ul>
 <hr />
 <h4 style="margin-top:2em;">Utensílios</h4>
 <ul>
-    @foreach (var utensilio in Model.Utensilios)
+    foreach (var utensilio in Model.Utensilios)
     {
         <li>
-            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
+            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="utensilio.UtensilioId">utensilio.Nome</a>
         </li>
     }
 </ul>
@@ -275,17 +277,17 @@
         </tr>
     </thead>
     <tbody>
-        @{ var i = 0;}
-        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
+        { var i = 0;}
+        foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
         {
             if (i == 0)
             {
                 <tr>
-                    <td>@valor.Nome</td>
-                    <td>@valor.Dose</td>
+                    <td>valor.Nome</td>
+                    <td>valor.Dose</td>
                     <td>
-                        @if (@valor.PercentagemVdrAdulto != null)
-                        {@valor.PercentagemVdrAdulto<text>%</text>}
+                        if (valor.PercentagemVdrAdulto != null)
+                        {valor.PercentagemVdrAdulto<text>%</text>}
                     </td>
                 </tr>
                 i++;
@@ -293,11 +295,11 @@
             else
             {
                 <tr id="ValoresNut">
-                    <td>@valor.Nome</td>
-                    <td>@valor.Dose</td>
+                    <td>valor.Nome</td>
+                    <td>valor.Dose</td>
                     <td>
-                        @if (@valor.PercentagemVdrAdulto != null)
-                        {@valor.PercentagemVdrAdulto<text>%</text>}
+                        if (valor.PercentagemVdrAdulto != null)
+                        {valor.PercentagemVdrAdulto<text>%</text>}
                     </td>
                 </tr>
                 i--;
@@ -308,38 +310,38 @@
 <hr />
 <h4 style="margin-top:2em;">Passos</h4>
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
-    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
+    foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
     {
         <li>
             <ul style="text-align:left;">
-                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
+                foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
                 {
                     <li>
-                        @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice))
+                        foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice))
                         {
                             if (texto.IngredienteId != null)
                             {
-                                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+                                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="texto.IngredienteId">texto.Texto</a>
                             }
                             else if (texto.TecnicaId != null)
                             {
-                                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+                                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="texto.TecnicaId">texto.Texto</a>
                             }
                             else if (texto.UtensilioId != null)
                             {
-                                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
+                                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="texto.UtensilioId">texto.Texto</a>
                             }
                             else
                             {
-                                <text>@texto.Texto</text>
+                                <text>texto.Texto</text>
                             }
                         }
-                        @{
+                        {
                             var duracaoTemporizador = tarefa.GetDuracaoTemporizador();
 
                             if (duracaoTemporizador != null)
                             {
-                                <text><strong>(eu sou um temporizador de @duracaoTemporizador minutos)</strong></text>
+                                <text><strong>(eu sou um temporizador de duracaoTemporizador minutos)</strong></text>
                             }
                         }
                     </li>
@@ -348,3 +350,5 @@
         </li>
     }
 </ul>
+    -->
+   

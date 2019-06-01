@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace BelaSopa.Controllers
@@ -26,15 +27,22 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente).UtilizadorId).ToList<ClienteFavorito>();
-            List<Receita> receitas = new List<Receita>();
-            foreach(ClienteFavorito cf in favoritos)
+          
+            if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
             {
-                receitas.Add(context.Receita.Find(cf.ReceitaId));
-            }
-            var viewModel = (receitas , (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
+                var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente).UtilizadorId).ToList<ClienteFavorito>();
+                List<Receita> receitas = new List<Receita>();
+                foreach (ClienteFavorito cf in favoritos)
+                {
+                    receitas.Add(context.Receita.Find(cf.ReceitaId));
+                }
+                var viewModel = (receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
-            return View(viewName: "VerDados", model: viewModel);
+                return View(viewName: "VerDados", model: viewModel);
+            }else{
+                var viewModel = (new List<Receita>(), (Autenticacao.GetUtilizadorAutenticado(this, context) as Utilizador)?.NomeDeUtilizador);
+                return View(viewName: "VerDados", model: viewModel);
+            }
         }
 
         public IActionResult TggFav(int? id)
