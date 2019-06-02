@@ -27,6 +27,7 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            int clienteId = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
 
             if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
             {
@@ -35,7 +36,7 @@ namespace BelaSopa.Controllers
                .Cliente
                .Include(c => c.ClienteExcluiIngrediente)
                    .ThenInclude(cei => cei.Ingrediente)
-               .Single(c => c.UtilizadorId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
+               .Single(c => c.UtilizadorId == clienteId)
                .ClienteExcluiIngrediente
                .Select(cei => cei.Ingrediente);
 
@@ -47,17 +48,17 @@ namespace BelaSopa.Controllers
                     ingredientes.Add(x.Nome);
                 }
 
-                var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente).UtilizadorId).ToList<ClienteFavorito>();
+                var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == clienteId).ToList<ClienteFavorito>();
                 List<Receita> receitas = new List<Receita>();
                 foreach (ClienteFavorito cf in favoritos)
                 {
                     receitas.Add(context.Receita.Find(cf.ReceitaId));
                 }
-                var viewModel = (ingredientes,receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
+                var viewModel = (clienteId,ingredientes,receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
                 return View(viewName: "VerDados", model: viewModel);
             }else{
-                var viewModel = (new List<string>(), new List<Receita>(), (Autenticacao.GetUtilizadorAutenticado(this, context) as Utilizador)?.NomeDeUtilizador);
+                var viewModel = (clienteId,new List<string>(), new List<Receita>(), (Autenticacao.GetUtilizadorAutenticado(this, context) as Utilizador)?.NomeDeUtilizador);
                 return View(viewName: "VerDados", model: viewModel);
             }
         }
@@ -189,7 +190,7 @@ namespace BelaSopa.Controllers
             {
                 receitas.Add(context.Receita.Find(cf.ReceitaId));
             }
-            var viewModel = (ingredientes, receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
+            var viewModel = (idCliente,ingredientes, receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
 
             return View(viewName: "VerDados", model: viewModel);
@@ -237,7 +238,7 @@ namespace BelaSopa.Controllers
             {
                 receitas.Add(context.Receita.Find(cf.ReceitaId));
             }
-            var viewModel = (ingredientes, receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
+            var viewModel = (idCliente,ingredientes, receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
 
             return View(viewName: "VerDados", model: viewModel);
