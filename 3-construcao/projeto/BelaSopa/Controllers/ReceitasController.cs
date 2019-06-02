@@ -121,8 +121,7 @@ namespace BelaSopa.Controllers {
         }
 
         [HttpPost("[controller]/[action]/{id}/{numProcesso}")]
-        public IActionResult ConfecionarReceita([FromRoute] int id, [FromRoute] int numProcesso)
-        {
+        public IActionResult ConfecionarReceita([FromRoute] int id, [FromRoute] int numProcesso) {
             var receita =
                context
                .Receita
@@ -145,13 +144,14 @@ namespace BelaSopa.Controllers {
                    .ThenInclude(t => t.Utensilio)
                .SingleOrDefault(i => i.ReceitaId == id);
 
-            if (receita == null)
+            if (receita == null) {
                 return NotFound();
-            if(((receita.Processos as List<Processo>).Count) <= numProcesso) {
+            }
+            if (((receita.Processos as List<Processo>).Count) <= numProcesso) {
                 return View(viewName: "TerminarConfecao");
             }
 
-            if(numProcesso < 0) {
+            if (numProcesso < 0) {
                 return Detalhes(id);
             }
 
@@ -166,6 +166,7 @@ namespace BelaSopa.Controllers {
                 );
 
             return View(viewName: "ConfecionarReceita", model: viewModel);
+            
         }
     }
 }

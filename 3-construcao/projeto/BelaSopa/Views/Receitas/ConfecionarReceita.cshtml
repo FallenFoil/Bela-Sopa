@@ -54,7 +54,7 @@
         <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
             Cancelar
         </button>
-    </form>     
+    </form>
 </div>
 
 <div class="container">
@@ -108,26 +108,40 @@
 
 <h4 style="margin-top:2em;">Passos</h4>
 
+
+@{
+    var cronometroID = 0;
+}
 @{ Processo processo = Model.Receita.Processos.OrderBy(p => p.Indice).ToList<Processo>()[@Model.Processo]; }
 <ul class="CustomBullet" style="text-align:left;list-style: none;margin-bottom:2em;">
     @foreach (var tar in processo.Tarefas) {
-    <li>
-        @foreach (var texto in tar.Texto.OrderBy(t => t.Indice)) {
-            if (texto.IngredienteId != null) {
-                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
-            } else if (texto.TecnicaId != null) {
-                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
-            } else if (texto.UtensilioId != null) {
-                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
-            } else {
-                <text>@texto.Texto</text>
+        <li>
+            @foreach (var texto in tar.Texto.OrderBy(t => t.Indice)) {
+                if (texto.IngredienteId != null) {
+                    <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+                } else if (texto.TecnicaId != null) {
+                    <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+                } else if (texto.UtensilioId != null) {
+                    <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
+                } else {
+                    <text>@texto.Texto</text>
+                }
             }
-        }
-        <a onclick="startTimeOut(@tar.GetDuracaoTemporizador(), 'Passo 1', 0)">
-            <i id="stopwatch0" class="fas fa-stopwatch"></i>
-        </a>
-        <span id="TimeLeft0" style="display:none;"></span>
-    </li>
+            @{
+                var duracaoTemporizador = tar.GetDuracaoTemporizador();
+
+                if (duracaoTemporizador != null) {
+                    <a onclick="startTimeOut(@tar.GetDuracaoTemporizador(), 'Passo 1', @cronometroID)">
+                        @{
+                            var strCronometroID = "stopwatch" + cronometroID;
+                            cronometroID++;
+                        }
+                        <i id=@strCronometroID class="fas fa-stopwatch"></i>
+                    </a>
+                    <span id="TimeLeft0" style="display:none;"></span>
+                }
+            }
+        </li>
     }
 </ul>
 
