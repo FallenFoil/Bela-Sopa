@@ -21,10 +21,16 @@ namespace BelaSopa.Controllers
 
         public IActionResult Index()
         {
+            var idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+
             IDictionary<int, Receita> Ementa = new Dictionary<int, Receita>();
-            ClienteEmentaSemanal[] receitas = context.ClienteEmentaSemanal
-                                                .Where(ces => ces.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
-                                                .ToArray<ClienteEmentaSemanal>();
+
+            var receitas =
+                context
+                .ClienteEmentaSemanal
+                .Where(ces => ces.ClienteId == idCliente)
+                .ToArray();
+
             foreach (ClienteEmentaSemanal ces in receitas)
             {
                 DataRefeicao dr = context.DataRefeicao.Find(ces.DataRefeicaoId);

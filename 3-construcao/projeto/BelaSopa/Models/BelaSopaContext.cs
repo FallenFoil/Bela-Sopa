@@ -178,6 +178,8 @@ namespace BelaSopa.Models
                     if (etiqueta == null)
                     {
                         etiqueta = new Etiqueta { Nome = nomeEtiqueta };
+                        Etiqueta.Add(etiqueta);
+
                         etiquetas.Add(etiqueta.Nome, etiqueta);
                     }
 
@@ -189,8 +191,6 @@ namespace BelaSopa.Models
                     etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
                 }
             }
-
-            Etiqueta.AddRange(etiquetas.Values);
 
             // guardar alterações
 

@@ -53,8 +53,9 @@ namespace BelaSopa.Controllers
                     form = new CriarReceitaViewModel();
                     TempData["Success"] = "Receita adicionada com sucesso.";
                     return Index(form);
-                } catch (Exception) {
+                } catch (Exception e) {
                     TempData["Error"] = "Não foi possivel adicionar a receita";
+                    throw e;
                     return Index(form);
                 }
             }

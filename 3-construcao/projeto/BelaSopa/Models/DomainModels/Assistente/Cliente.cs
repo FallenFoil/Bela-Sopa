@@ -26,29 +26,29 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [JsonIgnore]
         public virtual Receita Receita { get; set; }
     }
-
-
+    
     public class ClienteEmentaSemanal
     {
         [Key]
         public int ClienteId { get; set; }
+
         [Key]
         public int DataRefeicaoId { get; set; }
+
         [Required]
         public int ReceitaId { get; set; }
 
         [NotMapped]
         [JsonIgnore]
         public virtual Cliente Cliente { get; set; }
-        [NotMapped]
-        [JsonIgnore]
+
         public virtual Receita Receita { get; set; }
-        [NotMapped]
-        [JsonIgnore]
+
         public virtual DataRefeicao DataRefeicao { get; set; }
 
 
-        public ClienteEmentaSemanal(int idCliente, int idReceita, int idHorario) {
+        public ClienteEmentaSemanal(int idCliente, int idReceita, int idHorario)
+        {
             this.DataRefeicaoId = idHorario;
             this.ClienteId = idCliente;
             this.ReceitaId = idReceita;
@@ -63,28 +63,27 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public ClienteFavorito(int idCliente, int idReceita) : base(idCliente, idReceita) { }
 
     }
-    public class ClienteFinalizado : ClienteReceita {
+    public class ClienteFinalizado : ClienteReceita
+    {
         public ClienteFinalizado() { }
-        public ClienteFinalizado(int idCliente, int idReceita) : base(idCliente, idReceita) {
+        public ClienteFinalizado(int idCliente, int idReceita) : base(idCliente, idReceita)
+        {
             this.Data = DateTime.Now;
         }
         [Required]
         public DateTime Data { get; set; }
     }
 
-    public class ClienteExcluiIngrediente{
-        [Required]
+    public class ClienteExcluiIngrediente
+    {
+        [Key]
         public int ClienteId { set; get; }
-        [Required]
+
+        [Key]
         public int IngredienteId { set; get; }
 
-        [NotMapped]
-        [JsonIgnore]
         public virtual Cliente Cliente { get; set; }
-        [NotMapped]
-        [JsonIgnore]
+
         public virtual Ingrediente Ingrediente { get; set; }
     }
-
-
 }
