@@ -83,24 +83,26 @@
                         <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
                         <p>@Model.Receitas[i].Nome</p>
                     </a>
-                    @switch (Model.Receitas[i].Dificuldade)
-                    {
-                        case Dificuldade.Facil:
-                            <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
-                            break;
+                    <div style="margin-top:-0.7em;">
+                        @switch (Model.Receitas[i].Dificuldade)
+                        {
+                            case Dificuldade.Facil:
+                                <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
+                                break;
 
-                        case Dificuldade.Media:
-                            <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
-                            break;
+                            case Dificuldade.Media:
+                                <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
+                                break;
 
-                        case Dificuldade.Dificil:
-                            <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
-                            break;
-                    }
-                    &nbsp;|&nbsp;
-                    <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receitas[i].MinutosPreparacao min</span>
-                    &nbsp;|&nbsp;
-                    <span>@Model.Receitas[i].NumeroDoses doses</span>
+                            case Dificuldade.Dificil:
+                                <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
+                                break;
+                        }
+                        &nbsp;|&nbsp;
+                        <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receitas[i].MinutosPreparacao min</span>
+                        &nbsp;|&nbsp;
+                        <span>@Model.Receitas[i].NumeroDoses doses</span>
+                    </div>
                 </div>
             }
             @for (; j < 3; j++)
