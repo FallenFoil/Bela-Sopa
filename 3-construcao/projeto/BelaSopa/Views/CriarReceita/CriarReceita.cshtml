@@ -5,8 +5,13 @@
     ViewData["Title"] = "Criar Nova Receita";
 }
 
-@if (TempData["Erro"] != null) {
-    <p class="alert alert-danger">@TempData["Erro"]</p>
+@if (TempData["Error"] != null) {
+    <p class="alert alert-danger">@TempData["Error"]</p>
+}
+
+
+@if (TempData["Success"] != null) {
+    <p class="alert alert-success">@TempData["Success"]</p>
 }
 <form asp-controller="CriarReceita" method="post" id="receitaForm">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -48,35 +53,36 @@
             <span asp-validation-for="Descricao" class="text-danger"></span>
         </div>
 
-        <div class="row">
+        <div class="col form-group">
             <label>Etiquetas</label><br />
             @for (int i = 0; i < Model.ReceitaEtiqueta.Count; i++) {
-                <select asp-for="@Model.ReceitaEtiqueta[i].EtiquetaId" asp-items="Model.Etiquetas">
+                <select class="form-control" asp-for="@Model.ReceitaEtiqueta[i].EtiquetaId" asp-items="Model.Etiquetas">
                     <option>Selecione uma Etiqueta</option>
                 </select>
             }
         </div>
+        <div class="row">
+            <div class="form-group col">
+                <input asp-action="NovaEtiqueta" type="submit" value="Nova Etiqueta" class="btn btn-success" />
+            </div>
+            <br />
 
-        <div class="form-group">
-            <input asp-action="NovaEtiqueta" type="submit" value="Nova Etiqueta" class="btn btn-primary" />
-        </div>
-        <br />
-
-        <div class="form-group">
-                <input asp-action="Ingredientes" type="submit" value="Ingredientes" class="btn btn-primary" />
+            <div class="form-group col">
+                <input asp-action="Ingredientes" type="submit" value="Ingredientes" class="btn btn-success" />
             </div>
 
-            <div class="form-group">
-                <input asp-action="ProcessosETarefas" type="submit" value="Tarefas" class="btn btn-primary" />
+            <div class="form-group col">
+                <input asp-action="ProcessosETarefas" type="submit" value="Tarefas" class="btn btn-success" />
             </div>
 
-            <div class="form-group">
-                <input asp-action="ValoresNutricionais" type="submit" value="Valores Nutricionais" class="btn btn-primary" />
+            <div class="form-group col">
+                <input asp-action="ValoresNutricionais" type="submit" value="Valores Nutricionais" class="btn btn-success" />
             </div>
-        <br />
+            <br />
 
-        <div class="form-group">
-            <input asp-action="Index" type="submit" value="Submeter" class="btn btn-primary" />
+            <div class="form-group col">
+                <input asp-action="CriarReceita" type="submit" value="Submeter" class="btn btn-primary" />
+            </div>
         </div>
     </div>
 

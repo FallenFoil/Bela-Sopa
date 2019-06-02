@@ -15,5 +15,18 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
+
+
+        public override bool Equals(object etiqueta) {
+            Etiqueta eti = etiqueta as Etiqueta;
+            if (eti == null) return false;
+            if (eti == this) return true;
+            if(this.Nome == null || eti.Nome == null) return false;
+            return this.Nome.Equals(eti.Nome);
+        }
+
+        public override int GetHashCode() {
+            return Nome.GetHashCode();
+        }
     }
 }

@@ -18,25 +18,51 @@ namespace BelaSopa.Controllers
             this.context = context;
         }
 
-        private void CriarReceita(CriarReceitaViewModel form) {
-            Receita receita = new Receita();
-            switch (form.DificuldadeStr) {
-                case "Fácil": receita.Dificuldade = Dificuldade.Facil;  break;
-                case "Médio": receita.Dificuldade = Dificuldade.Media; break;
-                case "Dificil": receita.Dificuldade = Dificuldade.Dificil; break;
-                default: break;
+        public IActionResult CriarReceita(CriarReceitaViewModel form) {
+            if (ModelState.IsValid) { 
+                Receita receita = new Receita();
+                switch (form.DificuldadeStr) {
+                    case "Fácil": receita.Dificuldade = Dificuldade.Facil;  break;
+                    case "Médio": receita.Dificuldade = Dificuldade.Media; break;
+                    case "Dificil": receita.Dificuldade = Dificuldade.Dificil; break;
+                    default: break;
+                }
+                receita.Nome = form.NomeDeReceita;
+                receita.MinutosPreparacao = form.Minutos;
+                receita.NumeroDoses = form.Doses;
+                List<string> nomesEtiquetas = new List<String>();
+                foreach (Etiqueta rt in form.ReceitaEtiqueta) nomesEtiquetas.Add(rt.Nome);
+                IEnumerable<string> etiquetas = nomesEtiquetas.AsEnumerable();
+
+                Processo processo = new Processo();
+                foreach (TextoTarefa txtTarefa in form.Tarefas) {
+                    processo.Tarefas.Add(new Tarefa {
+                        Texto = new List<TextoTarefa> {
+                            new TextoTarefa{
+                                Texto = txtTarefa.Texto
+                            }
+                        }
+                    });      
+                }
+                if (form.Tarefas.Count > 0)
+                    receita.Processos.Add(processo);
+                receita.UtilizacoesIngredientes = form.UtilizacoesIngredientes;
+                receita.ValoresNutricionais = form.ValorNutricionais;
+                receita.Descricao = form.Descricao;
+                try {
+                    context.AdicionarReceita(receita, etiquetas);
+                    form = new CriarReceitaViewModel();
+                    TempData["Success"] = "Receita adicionada com sucesso.";
+                    return Index(form);
+                } catch (Exception e) {
+                    TempData["Error"] = "Não foi possivel adicionar a receita";
+                    return Index(form);
+                }
             }
-            receita.Nome = form.NomeDeReceita;
-            receita.MinutosPreparacao = form.Minutos;
-            receita.NumeroDoses = form.Doses;
-            List<string> nomesEtiquetas = new List<String>();
-            foreach (Etiqueta rt in form.ReceitaEtiqueta) nomesEtiquetas.Add(rt.Nome);
-            IEnumerable<string> etiquetas = nomesEtiquetas.AsEnumerable();
-
-            receita.ValoresNutricionais = form.ValorNutricionais;
-            receita.Descricao = form.Descricao;
-
-            context.AdicionarReceita(receita, etiquetas);
+            else {
+                TempData["Error"] = "Não foi possivel adicionar a receita, verifique todos os campos";
+                return Index(form);
+            }
         }
 
         public IActionResult Index(CriarReceitaViewModel Receita) {
@@ -44,16 +70,14 @@ namespace BelaSopa.Controllers
                 Receita = new CriarReceitaViewModel();
             }
 
-            if (ModelState.IsValid) {
-                //CriarReceita(Receita);
-                return View(viewName: "CriarReceita", model: Receita);
-            }
-
-           
+            if(Receita.Etiquetas.Count == 0) {
                 List<Etiqueta> ets = context.Etiqueta.ToList<Etiqueta>();
                 foreach (Etiqueta et in ets) {
-                    Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
+                    if(!Receita.ReceitaEtiqueta.Contains(et))
+                        Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
                 }
+            }
+
             
 
             return View(viewName: "CriarReceita", model: Receita);
@@ -96,6 +120,12 @@ namespace BelaSopa.Controllers
 
         public IActionResult NovoIngrediente(CriarReceitaViewModel Receita) {
             Receita.UtilizacoesIngredientes.Add(new UtilizacaoIngrediente());
+            return Ingredientes(Receita);
+        }
+
+        [HttpPost("[controller]/[action]/{num}")]
+        public IActionResult RemoverIngrediente(CriarReceitaViewModel Receita, [FromRoute] int num) {
+            Receita.UtilizacoesIngredientes.RemoveAt(num); 
             return Ingredientes(Receita);
         }
 
