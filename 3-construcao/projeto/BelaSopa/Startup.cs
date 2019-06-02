@@ -1,4 +1,5 @@
 using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -97,12 +98,19 @@ namespace BelaSopa
 
             // inserir dados de exemplo
 
-            RecursosEmbutidos.CarregarIngredientesDeExemplo(context);
-            RecursosEmbutidos.CarregarTecnicasDeExemplo(context);
-            RecursosEmbutidos.CarregarUtensiliosDeExemplo(context);
-            RecursosEmbutidos.CarregarReceitasDeExemplo(context);
+            var receitas = RecursosEmbutidos.CarregarReceitasDeExemplo();
+            var ingredientes = RecursosEmbutidos.CarregarIngredientesDeExemplo();
+            var tecnicas = RecursosEmbutidos.CarregarTecnicasDeExemplo();
+            var utensilios = RecursosEmbutidos.CarregarUtensiliosDeExemplo();
 
-            RecursosEmbutidos.CarregarDataRefeicao(context);
+            context.AdicionarIngredientesTecnicasUtensilios(ingredientes, tecnicas, utensilios);
+            context.AdicionarReceitas(receitas);
+
+            // inserir datas refeição
+
+            for (int i = 0; i < 2; i++)
+                for (int j = 0; j < 7; j++)
+                    context.DataRefeicao.Add(new DataRefeicao(j, i == 0));
 
             // guardar alterações
 

@@ -1,4 +1,3 @@
-using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
 using System;
 using System.Collections.Generic;
@@ -14,9 +13,9 @@ namespace BelaSopa.Shared
 {
     public class RecursosEmbutidos
     {
-        public static void CarregarReceitasDeExemplo(BelaSopaContext context)
+        public static IList<(Receita Receita, ISet<string> NomesEtiquetas)> CarregarReceitasDeExemplo()
         {
-            var receitas = CarregarRecursosYaml("BelaSopa.Data.Receitas.", (YamlReceita yamlReceita) =>
+            return CarregarRecursosYaml("BelaSopa.Data.Receitas.", (YamlReceita yamlReceita) =>
             {
                 Dificuldade dificuldade;
 
@@ -51,13 +50,11 @@ namespace BelaSopa.Shared
 
                 return (Receita: receita, NomesEtiquetas: (ISet<string>)yamlReceita.Etiquetas);
             });
-
-            context.AdicionarReceitas(receitas.ToList());
         }
 
-        public static void CarregarIngredientesDeExemplo(BelaSopaContext context)
+        public static IList<Ingrediente> CarregarIngredientesDeExemplo()
         {
-            var ingredientes = CarregarRecursosYaml("BelaSopa.Data.Ingredientes.", (YamlItu yamlIngrediente) =>
+            return CarregarRecursosYaml("BelaSopa.Data.Ingredientes.", (YamlItu yamlIngrediente) =>
             {
                 return new Ingrediente
                 {
@@ -70,13 +67,11 @@ namespace BelaSopa.Shared
                         ).ToList()
                 };
             });
-
-            context.AdicionarIngredientes(ingredientes);
         }
 
-        public static void CarregarTecnicasDeExemplo(BelaSopaContext context)
+        public static IList<Tecnica> CarregarTecnicasDeExemplo()
         {
-            var tecnicas = CarregarRecursosYaml("BelaSopa.Data.Tecnicas.", (YamlItu yamlTecnica) =>
+            return CarregarRecursosYaml("BelaSopa.Data.Tecnicas.", (YamlItu yamlTecnica) =>
             {
                 return new Tecnica
                 {
@@ -89,13 +84,11 @@ namespace BelaSopa.Shared
                         ).ToList()
                 };
             });
-
-            context.AdicionarTecnicas(tecnicas);
         }
 
-        public static void CarregarUtensiliosDeExemplo(BelaSopaContext context)
+        public static IList<Utensilio> CarregarUtensiliosDeExemplo()
         {
-            var utensilios = CarregarRecursosYaml("BelaSopa.Data.Utensilios.", (YamlItu yamlUtensilio) =>
+            return CarregarRecursosYaml("BelaSopa.Data.Utensilios.", (YamlItu yamlUtensilio) =>
             {
                 return new Utensilio
                 {
@@ -108,12 +101,12 @@ namespace BelaSopa.Shared
                         ).ToList()
                 };
             });
-
-            context.AdicionarUtensilios(utensilios);
         }
 
-        private static IEnumerable<U> CarregarRecursosYaml<T, U>(string prefixoNome, Func<T, U> carregador)
+        private static IList<U> CarregarRecursosYaml<T, U>(string prefixoNome, Func<T, U> carregador)
         {
+            var carregados = new List<U>();
+
             var nomesRecursos =
                 Assembly
                 .GetEntryAssembly()
@@ -134,24 +127,12 @@ namespace BelaSopa.Shared
 
                         var recurso = deserializer.Deserialize<T>(reader);
 
-                        yield return carregador(recurso);
+                        carregados.Add(carregador(recurso));
                     }
                 }
             }
-        }
 
-        public static void CarregarDataRefeicao(BelaSopaContext context)
-        {
-            bool almoco = false;
-            for (int i = 0; i < 2; i++)
-            {
-                almoco = !almoco;
-                for (int j = 0; j < 7; j++)
-                {
-                    DataRefeicao dr = new DataRefeicao(j, almoco);
-                    context.DataRefeicao.Add(dr);
-                }
-            }
+            return carregados;
         }
 
         private class YamlReceita

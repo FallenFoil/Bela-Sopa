@@ -126,6 +126,28 @@ namespace BelaSopa.Models
                 this.Administrador.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador) as Utilizador;
         }
 
+        public void AdicionarReceita(Receita receita, IEnumerable<string> nomesEtiquetas)
+        {
+            AdicionarReceitas(new[] {
+                (Receita: receita, NomesEtiquetas: (ISet<string>)new HashSet<string>(nomesEtiquetas))
+            });
+        }
+
+        public void AdicionarIngrediente(Ingrediente ingrediente)
+        {
+            AdicionarIngredientesTecnicasUtensilios(new[] { ingrediente }, new Tecnica[0], new Utensilio[0]);
+        }
+
+        public void AdicionarTecnica(Tecnica tecnica)
+        {
+            AdicionarIngredientesTecnicasUtensilios(new Ingrediente[0], new[] { tecnica }, new Utensilio[0]);
+        }
+
+        public void AdicionarUtensilio(Utensilio utensilio)
+        {
+            AdicionarIngredientesTecnicasUtensilios(new Ingrediente[0], new Tecnica[0], new[] { utensilio });
+        }
+
         public void AdicionarReceitas(IList<(Receita Receita, ISet<string> NomesEtiquetas)> receitas)
         {
             // adicionar receitas
@@ -134,15 +156,21 @@ namespace BelaSopa.Models
 
             // adicionar etiquetas e relacionamentos receita-etiqueta
 
+            var etiquetas = Etiqueta.ToDictionary(e => e.Nome, e => e);
+
             foreach (var (receita, nomesEtiquetas) in receitas)
             {
                 foreach (var nomeEtiqueta in nomesEtiquetas)
                 {
                     // adicionar etiqueta se não existir
 
-                    var etiqueta =
-                        Etiqueta.SingleOrDefault(e => e.Nome == nomeEtiqueta) ??
-                        Etiqueta.Add(new Etiqueta { Nome = nomeEtiqueta }).Entity;
+                    var etiqueta = etiquetas.GetValueOrDefault(nomeEtiqueta);
+
+                    if (etiqueta == null)
+                    {
+                        etiqueta = new Etiqueta { Nome = nomeEtiqueta };
+                        etiquetas.Add(etiqueta.Nome, etiqueta);
+                    }
 
                     // adicionar relacionamento receita-etiqueta
 
@@ -152,6 +180,8 @@ namespace BelaSopa.Models
                     etiqueta.ReceitaEtiqueta.Add(receitaEtiqueta);
                 }
             }
+
+            Etiqueta.AddRange(etiquetas.Values);
 
             // guardar alterações
 
@@ -177,11 +207,17 @@ namespace BelaSopa.Models
             SaveChanges();
         }
 
-        public void AdicionarIngredientes(IEnumerable<Ingrediente> ingredientes)
+        public void AdicionarIngredientesTecnicasUtensilios(
+            IList<Ingrediente> ingredientes,
+            IList<Tecnica> tecnicas,
+            IList<Utensilio> utensilios
+            )
         {
-            // adicionar ingredientes
+            // adicionar ingredientes, técnicas e utensílios
 
             Ingrediente.AddRange(ingredientes);
+            Tecnica.AddRange(tecnicas);
+            Utensilio.AddRange(utensilios);
 
             // guardar alterações
 
@@ -205,7 +241,8 @@ namespace BelaSopa.Models
 
                 // descobrir relacionamentos da lista de ingredientes com ingredientes
 
-                AtualizarUtilizacoesIngredientesReceita(receita, ituPorNome);
+                if (ingredientes.Count > 0)
+                    AtualizarUtilizacoesIngredientesReceita(receita, ituPorNome);
 
                 // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
 
@@ -214,69 +251,8 @@ namespace BelaSopa.Models
 
             // guardar alterações
 
-            SaveChanges();
-        }
-
-        public void AdicionarTecnicas(IEnumerable<Tecnica> tecnicas)
-        {
-            // adicionar técnica
-
-            Tecnica.AddRange(tecnicas);
-
-            // guardar alterações
-
-            SaveChanges();
-
-            // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
-
-            var receitas =
-                Receita
-                .Include(r => r.Processos)
-                .ThenInclude(p => p.Tarefas)
-                .ThenInclude(t => t.Texto);
-
-            Func<string, object> ituPorNome = null;
-
-            foreach (var receita in receitas)
-            {
-                ituPorNome = ituPorNome ?? GetItuPorNome();
-                AtualizarTextoReceita(receita, ituPorNome);
-            }
-
-            // guardar alterações
-
-            SaveChanges();
-        }
-
-        public void AdicionarUtensilios(IEnumerable<Utensilio> utensilios)
-        {
-            // adicionar utensílio
-
-            Utensilio.AddRange(utensilios);
-
-            // guardar alterações
-
-            SaveChanges();
-
-            // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios
-
-            var receitas =
-                Receita
-                .Include(r => r.Processos)
-                .ThenInclude(p => p.Tarefas)
-                .ThenInclude(t => t.Texto);
-
-            Func<string, object> ituPorNome = null;
-
-            foreach (var receita in receitas)
-            {
-                ituPorNome = ituPorNome ?? GetItuPorNome();
-                AtualizarTextoReceita(receita, ituPorNome);
-            }
-
-            // guardar alterações
-
-            SaveChanges();
+            if (ituPorNome != null)
+                SaveChanges();
         }
 
         private void AtualizarUtilizacoesIngredientesReceita(Receita receita, Func<string, object> ituPorNome)
