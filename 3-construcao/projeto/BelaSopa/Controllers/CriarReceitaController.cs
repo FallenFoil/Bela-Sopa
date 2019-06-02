@@ -32,7 +32,6 @@ namespace BelaSopa.Controllers
                 receita.NumeroDoses = form.Doses;
                 List<string> nomesEtiquetas = new List<String>();
                 foreach (Etiqueta rt in form.ReceitaEtiqueta) nomesEtiquetas.Add(rt.Nome);
-                IEnumerable<string> etiquetas = nomesEtiquetas.AsEnumerable();
 
                 Processo processo = new Processo();
                 foreach (TextoTarefa txtTarefa in form.Tarefas) {
@@ -50,7 +49,7 @@ namespace BelaSopa.Controllers
                 receita.ValoresNutricionais = form.ValorNutricionais;
                 receita.Descricao = form.Descricao;
                 try {
-                    context.AdicionarReceita(receita, etiquetas);
+                    context.AdicionarReceita(receita, nomesEtiquetas);
                     form = new CriarReceitaViewModel();
                     TempData["Success"] = "Receita adicionada com sucesso.";
                     return Index(form);
