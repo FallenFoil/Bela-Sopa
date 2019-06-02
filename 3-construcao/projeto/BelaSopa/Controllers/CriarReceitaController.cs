@@ -49,11 +49,11 @@ namespace BelaSopa.Controllers
                 receita.ValoresNutricionais = form.ValorNutricionais;
                 receita.Descricao = form.Descricao;
                 try {
-                    context.AdicionarReceita(receita, nomesEtiquetas);
+                    context.AdicionarReceita(receita, nomesEtiquetas, null);
                     form = new CriarReceitaViewModel();
                     TempData["Success"] = "Receita adicionada com sucesso.";
                     return Index(form);
-                } catch (Exception e) {
+                } catch (Exception) {
                     TempData["Error"] = "Não foi possivel adicionar a receita";
                     return Index(form);
                 }

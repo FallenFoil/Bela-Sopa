@@ -29,7 +29,7 @@
                             @if (@Model.ContainsKey(almoco)) {
 
                                 <span>@Model[almoco].Nome</span>
-                                <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model[almoco].Imagem)" alt="" />
+                                <img class="ReceitaImg" src="@GestorImagens.GetPathImagemReceita(Url, Model[almoco].ReceitaId)" alt="" />
                                 <a asp-controller="EmentaSemanal"
                                    asp-action="RemoverReceita"
                                    asp-route-id="@almoco">Remover receita</a>
@@ -51,7 +51,7 @@
                             @if (Model.ContainsKey(jantar)) {
 
                                 <span>@Model[jantar].Nome</span>
-                                <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model[jantar].Imagem)" alt="" />
+                                <img class="ReceitaImg" src="@GestorImagens.GetPathImagemReceita(Url, Model[jantar].ReceitaId)" alt="" />
                                 <a asp-controller="Receitas"
                                    asp-action="Index"
                                    asp-route-id="@jantar">Remover receita</a>

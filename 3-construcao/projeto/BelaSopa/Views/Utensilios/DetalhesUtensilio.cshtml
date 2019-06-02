@@ -6,14 +6,14 @@
     ViewData["ShowBackButton"] = true;
 }
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding: 0px;">
     <div class="row">
         <div class="col-sm-7 border-right">
             <h2>@Model.Utensilio.Nome</h2>
             <p style="margin-top: 1em">@Model.Utensilio.Descricao</p>
         </div>
         <div class="col-sm-5">
-            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Utensilio.Imagem)"
+            <img src="@GestorImagens.GetPathImagemUtensilio(Url, Model.Utensilio.UtensilioId)"
                  alt=""
                  style="max-width: 100%; object-fit: cover;"
                  />

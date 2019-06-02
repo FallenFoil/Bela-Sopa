@@ -13,7 +13,7 @@ namespace BelaSopa.Shared
 {
     public class RecursosEmbutidos
     {
-        public static IList<(Receita Receita, ISet<string> NomesEtiquetas)> CarregarReceitasDeExemplo()
+        public static IList<(Receita Receita, ISet<string> NomesEtiquetas, byte[] Imagem)> CarregarReceitasDeExemplo()
         {
             return CarregarRecursosYaml("BelaSopa.Data.Receitas.", (YamlReceita yamlReceita) =>
             {
@@ -34,7 +34,6 @@ namespace BelaSopa.Shared
                     Dificuldade = dificuldade,
                     MinutosPreparacao = yamlReceita.MinutosPreparacao,
                     NumeroDoses = yamlReceita.NumeroDoses,
-                    Imagem = yamlReceita.Imagem,
                     UtilizacoesIngredientes = yamlReceita.Ingredientes,
                     ValoresNutricionais = yamlReceita.ValoresNutricionais,
                     Processos = yamlReceita.Passos.Select((passos, i) => new Processo
@@ -48,58 +47,65 @@ namespace BelaSopa.Shared
                     }).ToList()
                 };
 
-                return (Receita: receita, NomesEtiquetas: (ISet<string>)yamlReceita.Etiquetas);
+                return (
+                    Receita: receita,
+                    NomesEtiquetas: (ISet<string>)yamlReceita.Etiquetas,
+                    Imagem: yamlReceita.Imagem
+                    );
             });
         }
 
-        public static IList<Ingrediente> CarregarIngredientesDeExemplo()
+        public static IList<(Ingrediente Ingrediente, byte[] Imagem)> CarregarIngredientesDeExemplo()
         {
             return CarregarRecursosYaml("BelaSopa.Data.Ingredientes.", (YamlItu yamlIngrediente) =>
             {
-                return new Ingrediente
+                var ingrediente = new Ingrediente
                 {
                     Nome = yamlIngrediente.Nome,
                     Descricao = yamlIngrediente.Descricao,
                     Texto = yamlIngrediente.Texto,
-                    Imagem = yamlIngrediente.Imagem,
                     NomesAlternativos = yamlIngrediente.NomesAlternativos.Select(
                         n => new NomeAlternativoIngrediente { Nome = n }
                         ).ToList()
                 };
+
+                return (Ingrediente: ingrediente, Imagem: yamlIngrediente.Imagem);
             });
         }
 
-        public static IList<Tecnica> CarregarTecnicasDeExemplo()
+        public static IList<(Tecnica Tecnica, byte[] Imagem)> CarregarTecnicasDeExemplo()
         {
             return CarregarRecursosYaml("BelaSopa.Data.Tecnicas.", (YamlItu yamlTecnica) =>
             {
-                return new Tecnica
+                var tecnica = new Tecnica
                 {
                     Nome = yamlTecnica.Nome,
                     Descricao = yamlTecnica.Descricao,
                     Texto = yamlTecnica.Texto,
-                    Imagem = yamlTecnica.Imagem,
                     NomesAlternativos = yamlTecnica.NomesAlternativos.Select(
                         n => new NomeAlternativoTecnica { Nome = n }
                         ).ToList()
                 };
+
+                return (Tecnica: tecnica, Imagem: yamlTecnica.Imagem);
             });
         }
 
-        public static IList<Utensilio> CarregarUtensiliosDeExemplo()
+        public static IList<(Utensilio Utensilio, byte[] Imagem)> CarregarUtensiliosDeExemplo()
         {
             return CarregarRecursosYaml("BelaSopa.Data.Utensilios.", (YamlItu yamlUtensilio) =>
             {
-                return new Utensilio
+                var utensilio = new Utensilio
                 {
                     Nome = yamlUtensilio.Nome,
                     Descricao = yamlUtensilio.Descricao,
                     Texto = yamlUtensilio.Texto,
-                    Imagem = yamlUtensilio.Imagem,
                     NomesAlternativos = yamlUtensilio.NomesAlternativos.Select(
                         n => new NomeAlternativoUtensilio { Nome = n }
                         ).ToList()
                 };
+
+                return (Utensilio: utensilio, Imagem: yamlUtensilio.Imagem);
             });
         }
 

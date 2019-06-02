@@ -90,7 +90,7 @@
         <div class="col-sm Receita">
             <a asp-action="AdicionarReceita" asp-route-idDataRefeicao="@Model.Data"
                asp-route-idReceita="@Model.Receitas[i].ReceitaId">
-                <img class="ReceitaImg opacity" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
+                <img class="ReceitaImg opacity" src="@GestorImagens.GetPathImagemReceita(Url, Model.Receitas[i].ReceitaId)" alt="" />
                 <p>@Model.Receitas[i].Nome</p>
             </a>
             @switch (Model.Receitas[i].Dificuldade)

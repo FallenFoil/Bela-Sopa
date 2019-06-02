@@ -80,7 +80,7 @@
             {
                 <div class="col-sm Receita">
                     <a asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
-                        <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
+                        <img class="ReceitaImg" src="@GestorImagens.GetPathImagemReceita(Url, Model.Receitas[i].ReceitaId)" alt="" />
                         <p>@Model.Receitas[i].Nome</p>
                     </a>
                     <div style="margin-top:-0.7em;">

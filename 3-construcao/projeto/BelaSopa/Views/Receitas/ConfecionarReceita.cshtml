@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
-            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
+            <img src="@GestorImagens.GetPathImagemReceita(Url, Model.Receita.ReceitaId)"
                  alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
             <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
@@ -77,7 +77,7 @@
             </table>
         </div>
         <div class="col">
-            <h4 style="margin-top:2em;">Técnicas</h4>           
+            <h4 style="margin-top:2em;">Técnicas</h4>
             <ul class="CustomBullet" style="text-align:left;list-style: none">
                 @foreach (var tecnica in Model.Tecnicas) {
                     <li>
@@ -85,7 +85,7 @@
                     </li>
                 }
             </ul>
-            
+
         </div>
         <div class="col">
             <h4 style="margin-top:2em;">Utensílios</h4>
@@ -93,7 +93,7 @@
                 @foreach (var utensilio in Model.Utensilios) {
                     <li>
                         @utensilio.Nome
-                    </li>                   
+                    </li>
                 }
             </ul>
         </div>

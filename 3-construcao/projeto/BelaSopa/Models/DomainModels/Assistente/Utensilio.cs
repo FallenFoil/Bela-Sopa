@@ -16,10 +16,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [Required]
         public string Texto { get; set; }
-
-        [Required]
-        public byte[] Imagem { get; set; }
-
+        
         public virtual ICollection<NomeAlternativoUtensilio> NomesAlternativos { get; set; } = new List<NomeAlternativoUtensilio>();
     }
 }

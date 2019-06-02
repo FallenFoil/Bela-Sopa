@@ -18,7 +18,6 @@ namespace BelaSopa.Controllers
     public class ContaController : Controller
     {
         private readonly BelaSopaContext context;
-        private bool r;
 
         public ContaController(BelaSopaContext context)
         {

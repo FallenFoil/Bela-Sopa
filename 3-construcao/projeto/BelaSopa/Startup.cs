@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -63,10 +62,9 @@ namespace BelaSopa
 
             InicializarBaseDeDados(app);
 
-            
             app.UseAuthentication();
             app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Autenticacao}/{action=Index}"));
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
         }
 
         private static void InicializarBaseDeDados(IApplicationBuilder app)

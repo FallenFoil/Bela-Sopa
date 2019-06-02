@@ -5,7 +5,7 @@
     ViewData["HideHeading"] = true;
     ViewData["ShowBackButton"] = true;
 }
-<div class="container-fluid">
+<div class="container-fluid" style="padding: 0px;">
     <div class="row">
         @*<div class="col-sm-6" style="border-right: 3px solid #4CAF50;">*@
         <div class="col-sm-7 border-right">
@@ -68,7 +68,7 @@
             </div>
         </div>
         <div class="col-sm-5">
-            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
+            <img src="@GestorImagens.GetPathImagemReceita(Url, Model.Receita.ReceitaId)"
                  alt=""
                  style="max-width: 100%; object-fit: cover;" />
             @*<a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
