@@ -55,7 +55,6 @@ namespace BelaSopa.Controllers
                     return Index(form);
                 } catch (Exception e) {
                     TempData["Error"] = "Não foi possivel adicionar a receita";
-                    throw e;
                     return Index(form);
                 }
             }
