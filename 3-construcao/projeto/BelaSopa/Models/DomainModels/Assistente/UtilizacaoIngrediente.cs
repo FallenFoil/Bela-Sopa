@@ -6,12 +6,6 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class UtilizacaoIngrediente
     {
-        public UtilizacaoIngrediente() { }
-        public UtilizacaoIngrediente(int idReceita, int idIngrediente) {
-            this.ReceitaId = idReceita;
-            this.IngredienteId = idIngrediente;
-        }
-
         [Key]
         public int ReceitaIngredienteId { get; set; }
 
