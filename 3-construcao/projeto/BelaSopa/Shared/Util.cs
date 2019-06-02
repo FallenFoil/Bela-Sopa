@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace BelaSopa.Shared
 {
@@ -10,6 +12,12 @@ namespace BelaSopa.Shared
         public static IEnumerable<T> DistinctBy<T, TKey>(this IEnumerable<T> enumerable, Func<T, TKey> keySelector)
         {
             return enumerable.GroupBy(keySelector).Select(grp => grp.First());
+        }
+
+        public static byte[] ComputarHashPalavraPasse(string palavraPasse)
+        {
+            using (var hash = SHA256.Create())
+                return hash.ComputeHash(Encoding.UTF8.GetBytes(palavraPasse));
         }
 
         public static string BytesToBase64(byte[] bytes)

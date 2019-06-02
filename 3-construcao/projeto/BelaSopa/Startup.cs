@@ -1,4 +1,5 @@
 using BelaSopa.Models;
+using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -49,9 +50,6 @@ namespace BelaSopa
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            // Configuração de sessões
-            services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
-            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure
@@ -69,7 +67,6 @@ namespace BelaSopa
             app.UseAuthentication();
             app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Autenticacao}/{action=Index}"));
             app.UseStaticFiles();
-            app.UseSession();
         }
 
         private static void InicializarBaseDeDados(IApplicationBuilder app)
@@ -89,8 +86,6 @@ namespace BelaSopa
                     // base de dados acabou de ser criada, realizar povoamento inicial
                     PovoarBaseDeDados(context);
                 }
-
-               
             }
         }
 
@@ -101,17 +96,24 @@ namespace BelaSopa
             context.Administrador.Add(new Administrador
             {
                 NomeDeUtilizador = "root",
-                HashPalavraPasse = Utilizador.ComputarHashPalavraPasse("root")
+                HashPalavraPasse = Util.ComputarHashPalavraPasse("root")
             });
 
             // inserir dados de exemplo
 
-            RecursosEmbutidos.CarregarIngredientesDeExemplo(context);
-            RecursosEmbutidos.CarregarTecnicasDeExemplo(context);
-            RecursosEmbutidos.CarregarUtensiliosDeExemplo(context);
-            RecursosEmbutidos.CarregarReceitasDeExemplo(context);
+            var receitas = RecursosEmbutidos.CarregarReceitasDeExemplo();
+            var ingredientes = RecursosEmbutidos.CarregarIngredientesDeExemplo();
+            var tecnicas = RecursosEmbutidos.CarregarTecnicasDeExemplo();
+            var utensilios = RecursosEmbutidos.CarregarUtensiliosDeExemplo();
 
-            RecursosEmbutidos.CarregarDataRefeicao(context);
+            context.AdicionarIngredientesTecnicasUtensilios(ingredientes, tecnicas, utensilios);
+            context.AdicionarReceitas(receitas);
+
+            // inserir datas refeição
+
+            for (int i = 0; i < 2; i++)
+                for (int j = 0; j < 7; j++)
+                    context.DataRefeicao.Add(new DataRefeicao(j, i == 0));
 
             // guardar alterações
 

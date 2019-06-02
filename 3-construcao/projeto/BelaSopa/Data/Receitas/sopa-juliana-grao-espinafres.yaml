@@ -25,13 +25,13 @@ ingredientes:
 - nome: Sal
   quantidade: 2 c. de chá
 - nome: Frasco de grão cozido em conserva
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Ovos de codorniz
-  quantidade: '8'
+  quantidade: 8 un.
 - nome: Água + 4 dl
   quantidade: 5 dl
 - nome: Emb. espinafres em folha
-  quantidade: '1'
+  quantidade: 1 un.
 
 valores-nutricionais:
 - dose: 125 Kcal

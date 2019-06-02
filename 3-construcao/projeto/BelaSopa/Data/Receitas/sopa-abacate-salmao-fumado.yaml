@@ -15,15 +15,15 @@ etiquetas:
 
 ingredientes:
 - nome: Abacates maduros
-  quantidade: '5'
+  quantidade: 5 un.
 - nome: Limas
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Pepino pequeno
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Meloa
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Cebola pequena
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Sal
   quantidade: 1 c. de sobremesa
 - nome: Gelo
@@ -31,7 +31,7 @@ ingredientes:
 - nome: Salmão fumado
   quantidade: 160 g
 - nome: Rabanetes
-  quantidade: '6'
+  quantidade: 6 un.
 - nome: Pimenta moídas
   quantidade: qb
 - nome: Aneto

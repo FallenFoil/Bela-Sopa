@@ -14,7 +14,7 @@ etiquetas:
 
 ingredientes:
 - nome: Peitos de frango
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Sal
   quantidade: 1 c. de sobremesa
 - nome: Cebola congelada
@@ -24,17 +24,17 @@ ingredientes:
 - nome: Azeite
   quantidade: 3 c. de sopa
 - nome: Malagueta vermelha picada
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Mistura chinesa
   quantidade: 1 emb.
 - nome: Frasco de molho de caril
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Lata de leite de coco
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Noodles de frango
   quantidade: 2 emb.
 - nome: Molho de coentros
-  quantidade: '1'
+  quantidade: 1 un.
 
 valores-nutricionais:
 - dose: 569 Kcal

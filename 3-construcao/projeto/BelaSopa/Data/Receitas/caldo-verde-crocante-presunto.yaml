@@ -16,9 +16,9 @@ ingredientes:
 - nome: Batata branca
   quantidade: 450 g
 - nome: Cebola
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Dentes de alho
-  quantidade: '3'
+  quantidade: 3 un.
 - nome: Sal
   quantidade: 1 c. de chá
 - nome: Água
@@ -36,7 +36,7 @@ ingredientes:
 - nome: Sal
   quantidade: 1 c. de café
 - nome: Dentes de alho
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Carcuma
   quantidade: 1 c. de café
 - nome: Couve galega em juliana (caldo-verde)

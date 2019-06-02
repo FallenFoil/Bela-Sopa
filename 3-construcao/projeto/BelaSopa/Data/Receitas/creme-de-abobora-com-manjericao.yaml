@@ -20,13 +20,13 @@ ingredientes:
 - nome: Azeite
   quantidade: 0,2 dl
 - nome: Folhas de manjericão fresco
-  quantidade: '4'
+  quantidade: 4 un.
 - nome: Abóbora
   quantidade: 950 g
 - nome: Cebolas
-  quantidade: '4'
+  quantidade: 4 un.
 - nome: Dentes de alho
-  quantidade: '2'
+  quantidade: 2 un.
 
 valores-nutricionais:
 - dose: 83 Kcal

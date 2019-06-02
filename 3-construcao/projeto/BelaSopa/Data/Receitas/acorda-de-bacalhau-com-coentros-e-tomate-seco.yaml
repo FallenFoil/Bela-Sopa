@@ -14,15 +14,15 @@ etiquetas:
 
 ingredientes:
 - nome: Emb. lombos de bacalhau congelados
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Água
   quantidade: 1,2 L
 - nome: Folha de louro
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Dentes de alho
-  quantidade: '4'
+  quantidade: 4 un.
 - nome: Molho de coentros
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Azeite
   quantidade: 4 c. de sopa
 - nome: Sal
@@ -32,7 +32,7 @@ ingredientes:
 - nome: Pão de mistura trigo e centeio
   quantidade: 300 g
 - nome: Ovos S
-  quantidade: '4'
+  quantidade: 4 un.
 
 valores-nutricionais:
 - dose: 443 Kcal

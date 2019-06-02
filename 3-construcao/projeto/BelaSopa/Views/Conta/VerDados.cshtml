@@ -1,4 +1,4 @@
-@model (List<Receita> Receitas, string x)
+@model (List<string> ingredientes, List<Receita> Receitas, string x)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "A minha conta";
@@ -11,9 +11,23 @@
 
 <p>Nome de utilizador: @User.Identity.Name</p>
 
-<p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+{
+    <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
 
-<p style="color:blue"> <a asp-action="AlterarEmail"> Alterar email</a></p>
+    <p style="color:blue"> <a asp-action="AlterarEmail"> Alterar email</a></p>
+
+
+}
+
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
+{
+    <p style="color:blue"> <a asp-action="AlterarEmail"> Administradores & Clientes</a></p>
+
+    <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
+
+}
+
 
 @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
 {
@@ -27,9 +41,24 @@
         {
             <text>@Model.x</text>
         }
- 
+
     </p>
 }
+
+
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+{
+    <p style="color:blue"> <a asp-action="ListaIngredientes"> Ingredientes a remover das receitas</a> </p>
+    @foreach (string ingrediente in Model.ingredientes)
+    {
+        <p>      -> @ingrediente </p>
+        <a asp-controller="Conta" asp-action="Remove" asp-route-id="@ingrediente">
+            <i class="fas fa-trash"></i>
+
+        </a>
+    }
+}
+
 
 
 
@@ -41,37 +70,37 @@
             @{ var j = 0;}
             @for (; j < 3 && i < Model.Receitas.Count; j++, i++)
             {
-            <div class="col-sm Receita">
-                <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
-                    <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
-                    <p>@Model.Receitas[i].Nome</p>
-                </a>
-             
-                <a asp-controller="Conta" asp-action="TggFav" asp-route-id="@Model.Receitas[i].ReceitaId">
-                    <i class="fas fa-trash"></i>
-       
-                </a>
+                <div class="col-sm Receita">
+                    <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
+                        <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
+                        <p>@Model.Receitas[i].Nome</p>
+                    </a>
 
-                @switch (Model.Receitas[i].Dificuldade)
-                {
-                    case Dificuldade.Facil:
-                        <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
-                        break;
+                    <a asp-controller="Conta" asp-action="TggFav" asp-route-id="@Model.Receitas[i].ReceitaId">
+                        <i class="fas fa-trash"></i>
 
-                    case Dificuldade.Media:
-                        <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
-                        break;
+                    </a>
 
-                    case Dificuldade.Dificil:
-                        <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
-                        break;
-                }
-                &nbsp;|&nbsp;
-                <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receitas[i].MinutosPreparacao min</span>
-                &nbsp;|&nbsp;
-                <span>@Model.Receitas[i].NumeroDoses doses</span>
+                    @switch (Model.Receitas[i].Dificuldade)
+                    {
+                        case Dificuldade.Facil:
+                            <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
+                            break;
 
-            </div>
+                        case Dificuldade.Media:
+                            <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
+                            break;
+
+                        case Dificuldade.Dificil:
+                            <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
+                            break;
+                    }
+                    &nbsp;|&nbsp;
+                    <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receitas[i].MinutosPreparacao min</span>
+                    &nbsp;|&nbsp;
+                    <span>@Model.Receitas[i].NumeroDoses doses</span>
+
+                </div>
             }
             @for (; j < 3; j++)
             {
@@ -79,6 +108,6 @@
                 </div>
             }
         </div>
-       
-                }
+
+    }
 </div>

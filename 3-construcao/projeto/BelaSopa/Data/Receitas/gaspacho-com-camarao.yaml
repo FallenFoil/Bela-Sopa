@@ -15,13 +15,13 @@ etiquetas:
 
 ingredientes:
 - nome: Tomates maduros
-  quantidade: '3'
+  quantidade: 3 un.
 - nome: Pimento verde
   quantidade: 1/2
 - nome: Pimento vermelho
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Dentes de alho
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Cebola
   quantidade: 1/2
 - nome: Vinagre de vinho branco
@@ -33,13 +33,13 @@ ingredientes:
 - nome: Coentros picados
   quantidade: 2 c. de sopa
 - nome: Pepino
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Água
   quantidade: 2 copos
 - nome: Camarão cozido
   quantidade: 120 g
 - nome: Fatias finas de pão
-  quantidade: '4'
+  quantidade: 4 un.
 - nome: Maionese
   quantidade: 2 c. de sopa
 - nome: Sal

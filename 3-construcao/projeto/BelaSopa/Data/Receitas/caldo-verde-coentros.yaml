@@ -16,25 +16,25 @@ etiquetas:
 
 ingredientes:
 - nome: Cebola
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Dentes alho
-  quantidade: '4'
+  quantidade: 4 un.
 - nome: Azeite
   quantidade: 3 c. de sopa
 - nome: Batata
   quantidade: 350 g
 - nome: Nabo pequeno
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Sal
   quantidade: 1 c. de sopa
 - nome: Água
   quantidade: 1,5 dl
 - nome: Molho coentros (só folhas)
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Caldo-verde
   quantidade: 300 g
 - nome: Rodelas chouriço
-  quantidade: '6'
+  quantidade: 6 un.
 
 valores-nutricionais:
 - dose: 139 Kcal

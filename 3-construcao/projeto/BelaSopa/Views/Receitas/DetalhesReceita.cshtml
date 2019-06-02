@@ -1,115 +1,157 @@
-@model (Receita Receita, IEnumerable<Tecnica> Tecnicas, IEnumerable<Utensilio> Utensilios, bool Favorita)
+@model (Receita Receita, IList<Tecnica> Tecnicas, IList<Utensilio> Utensilios, bool Favorita)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Receita.Nome;
-    ViewData["HideHeader"] = true;
+    ViewData["HideHeading"] = true;
     ViewData["ShowBackButton"] = true;
 }
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-8">
-            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
-                 alt="@Model.Receita.Nome"
-                 style="max-width: 100%; object-fit: cover;" />
-            <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
-                @if (@Model.Favorita)
-                {
-                    //Dentro Favoritos
-                    <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
-                }
-                else
-                {
-                    //Dos Favoritos
-                    <i class="far fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
-                }
-            </a>
-        </div>
-        <div class="col-sm-4" style="text-align:center;border-left: 3px solid #4CAF50;">
-            <h4>@Model.Receita.Nome</h4>
-            @if (Model.Receita.Dificuldade == Dificuldade.Facil)
-            {
-                <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
-            }
-            @if (Model.Receita.Dificuldade == Dificuldade.Media)
-            {
-                <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
-            }
-            @if (Model.Receita.Dificuldade == Dificuldade.Dificil)
-            {
-                <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
-            }
-            <span style="margin-left:1em;"><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
-            <span style="margin-left:1em;">@Model.Receita.NumeroDoses doses</span>
-            <div style="text-align:left;margin-top:1em;">
-                Etiquetas:
-                <ul class="CustomBullet" style="text-align:left;list-style: none">
-                    @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.OrderBy(e => e.Etiqueta.Nome))
-                    {
-                        <li>
-                            @etiqueta.Etiqueta.Nome
-                        </li>
+        @*<div class="col-sm-6" style="border-right: 3px solid #4CAF50;">*@
+        <div class="col-sm-7 border-right">
+            <h2>
+                @Model.Receita.Nome
+
+                <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
+                    @if (@Model.Favorita) {
+                        <i class="fas fa-star" style="color: gold;"></i>
+                    } else {
+                        <i class="far fa-star" style="color: silver;"></i>
                     }
-                </ul>
+                </a>
+            </h2>
+            @switch (Model.Receita.Dificuldade) {
+                case Dificuldade.Facil:
+                    <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
+                    break;
+
+                case Dificuldade.Media:
+                    <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
+                    break;
+
+                case Dificuldade.Dificil:
+                    <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
+                    break;
+            }
+            &nbsp;|&nbsp;
+            <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
+            &nbsp;|&nbsp;
+            <span>@Model.Receita.NumeroDoses doses</span>
+            <p style="margin-top: 1em">@Model.Receita.Descricao</p>
+            <div style="text-align:left;margin-top: 1em;">
+                <strong>Etiquetas:</strong>&nbsp;
+                @{
+                    var first = true;
+
+                    foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.Select(e => e.Etiqueta.Nome).OrderBy(e => e)) {
+                        if (!first) {
+                            <text>&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+                        }
+
+                        <text>@etiqueta</text>
+
+                        first = false;
+                    }
+
+                    if (first) {
+                        <text>(nenhuma)</text>
+                    }
+                }
+                @*<ul class="CustomBullet" style="text-align:left;list-style: none">
+                        @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.OrderBy(e => e.Etiqueta.Nome))
+                        {
+                            <li>
+                                @etiqueta.Etiqueta.Nome
+                            </li>
+                        }
+                    </ul>*@
             </div>
         </div>
-    </div>
-</div>
-<p class="font-italic" style="margin-top:3em">@Model.Receita.Descricao</p>
-<hr />
-<h4 style="margin-top:2em;">Ingredientes</h4>
-<table class="table">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">Quantidade</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
-        {
-            <tr>
-                <td>
-                    @if (utilizacaoIngrediente.Ingrediente != null)
+        <div class="col-sm-5">
+            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
+                 alt=""
+                 style="max-width: 100%; object-fit: cover;" />
+            @*<a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
+                    @if (@Model.Favorita)
                     {
-                        <a asp-controller="Ingredientes"
-                           asp-action="Detalhes"
-                           asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
-                            @utilizacaoIngrediente.Nome
-                        </a>
+                        <i class="fas fa-star" style="color: gold; position: absolute; left: 1em; top: 0.5em; font-size: 2em"></i>
                     }
                     else
                     {
-                        <text>@utilizacaoIngrediente.Nome</text>
+                        <i class="far fa-star" style="color: silver; position: absolute; left: 1em; top: 0.5em; font-size: 2em"></i>
                     }
-                </td>
-                <td>@utilizacaoIngrediente.Quantidade</td>
-            </tr>
-        }
-    </tbody>
-</table>
+                </a>*@
+        </div>
+    </div>
+</div>
+
 <hr />
-<h4 style="margin-top:2em;">Técnicas</h4>
-<ul>
-    @foreach (var tecnica in Model.Tecnicas)
-    {
-        <li>
-            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
-        </li>
-    }
-</ul>
+
+<div class="container-fluid" style="padding: 0px;">
+    <div class="row">
+        <div class="col-6 border-right">
+            <h4>Ingredientes <small class="text-muted">para @Model.Receita.NumeroDoses doses</small></h4>
+            <table class="table table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome)) {
+                        <tr>
+                            <td>
+                                @if (utilizacaoIngrediente.Ingrediente != null) {
+                                    <a asp-controller="Ingredientes"
+                                       asp-action="Detalhes"
+                                       asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
+                                        @utilizacaoIngrediente.Nome
+                                    </a>
+                                } else {
+                                    <text>@utilizacaoIngrediente.Nome</text>
+                                }
+                            </td>
+                            <td>@utilizacaoIngrediente.Quantidade</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3 border-right">
+            <h4>Técnicas</h4>
+            <ul>
+                @if (Model.Tecnicas.Count == 0) {
+                    <li>(nenhuma)</li>
+                } else {
+                    foreach (var tecnica in Model.Tecnicas) {
+                        <li>
+                            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-3">
+            <h4>Utensílios</h4>
+            <ul>
+                @if (Model.Utensilios.Count == 0) {
+                    <li>(nenhum)</li>
+                } else {
+                    @foreach (var utensilio in Model.Utensilios) {
+                        <li>
+                            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
 <hr />
-<h4 style="margin-top:2em;">Utensílios</h4>
-<ul>
-    @foreach (var utensilio in Model.Utensilios)
-    {
-        <li>
-            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
-        </li>
-    }
-</ul>
-<hr />
-<h4 style="margin-top:2em;">Valores nutricionais</h4>
-<table class="table">
+<h4>Valores nutricionais</h4>
+<table class="table table-sm">
     <thead class="thead-light">
         <tr>
             <th scope="col"></th>
@@ -118,71 +160,38 @@
         </tr>
     </thead>
     <tbody>
-        @{ var i = 0;}
-        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
-        {
-            if (i == 0)
-            {
-                <tr>
+        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome)) {
+            <tr>
+                @if (valor.Nome.Contains(',')) {
+                    <td style="padding-left: 2em;"><i>@valor.Nome.Substring(valor.Nome.IndexOf(',') + 2)</i></td>
+                } else {
                     <td>@valor.Nome</td>
-                    <td>@valor.Dose</td>
-                    <td>
-                        @if (@valor.PercentagemVdrAdulto != null)
-                        {@valor.PercentagemVdrAdulto<text>%</text>}
-                    </td>
-                </tr>
-                i++;
-            }
-            else
-            {
-                <tr id="ValoresNut">
-                    <td>@valor.Nome</td>
-                    <td>@valor.Dose</td>
-                    <td>
-                        @if (@valor.PercentagemVdrAdulto != null)
-                        {@valor.PercentagemVdrAdulto<text>%</text>}
-                    </td>
-                </tr>
-                i--;
-            }
+                }
+                <td>@valor.Dose</td>
+                <td>
+                    @if (@valor.PercentagemVdrAdulto != null) {@valor.PercentagemVdrAdulto<text>%</text>}
+                </td>
+            </tr>
         }
     </tbody>
 </table>
 <hr />
-<h4 style="margin-top:2em;">Processos</h4>
+<h4>Passos</h4>
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
-    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
-    {
+    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice)) {
         <li>
             <ul style="text-align:left;">
-                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
-                {
+                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice)) {
                     <li>
-                        @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice))
-                        {
-                            if (texto.IngredienteId != null)
-                            {
+                        @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice)) {
+                            if (texto.IngredienteId != null) {
                                 <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
-                            }
-                            else if (texto.TecnicaId != null)
-                            {
+                            } else if (texto.TecnicaId != null) {
                                 <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
-                            }
-                            else if (texto.UtensilioId != null)
-                            {
+                            } else if (texto.UtensilioId != null) {
                                 <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
-                            }
-                            else
-                            {
+                            } else {
                                 <text>@texto.Texto</text>
-                            }
-                        }
-                        @{
-                            var duracaoTemporizador = tarefa.GetDuracaoTemporizador();
-
-                            if (duracaoTemporizador != null)
-                            {
-                                <text><strong>(eu sou um temporizador de @duracaoTemporizador minutos)</strong></text>
                             }
                         }
                     </li>
@@ -213,9 +222,10 @@
         </div>
     </div>
 </div>
-@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
-{
-    <button style="background-color:#4CAF50; border-color: #4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Confecionar
-    </button>
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE)) {
+    <form asp-controller="Receitas" asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId">
+        <button style="background-color:#4CAF50; border-color: #4CAF50;" type="submit" class="btn btn-primary">
+            Confecionar
+        </button>
+    </form>
 }

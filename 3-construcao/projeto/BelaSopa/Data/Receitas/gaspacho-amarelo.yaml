@@ -17,15 +17,15 @@ etiquetas:
 
 ingredientes:
 - nome: Pimento amarelo
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Lata milho doce
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Cebola
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Dente de alho
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Pepino
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Água
   quantidade: 7,5 dl
 - nome: Sal
@@ -35,9 +35,9 @@ ingredientes:
 - nome: Azeite
   quantidade: 1 dl
 - nome: Hastes de manjericão
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Hastes de coentros
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Orégãos
   quantidade: 1 c. de café
 

@@ -17,7 +17,7 @@ ingredientes:
 - nome: Cebola
   quantidade: 100 g
 - nome: Dentes de alho
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Batata para cozer
   quantidade: 400 g
 - nome: Água
@@ -29,7 +29,7 @@ ingredientes:
 - nome: Azeite
   quantidade: 3 c. de sopa
 - nome: Fatias de broa (com chouriço) de milho
-  quantidade: '6'
+  quantidade: 6 un.
 
 valores-nutricionais:
 - dose: 163 Kcal

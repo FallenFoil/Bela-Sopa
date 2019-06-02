@@ -13,7 +13,7 @@ etiquetas: []
 
 ingredientes:
 - nome: Meloa
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Vinho do porto branco
   quantidade: 0,5 dl
 - nome: Limão
@@ -31,7 +31,7 @@ ingredientes:
 - nome: Cebolinho picado
   quantidade: qb
 - nome: Gressinos finos
-  quantidade: '8'
+  quantidade: 8 un.
 
 valores-nutricionais:
 - dose: 100 Kcal

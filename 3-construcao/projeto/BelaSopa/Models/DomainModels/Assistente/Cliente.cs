@@ -69,7 +69,22 @@ namespace BelaSopa.Models.DomainModels.Assistente
             this.Data = DateTime.Now;
         }
         [Required]
-        public DateTime Data {get; set;}
-}
+        public DateTime Data { get; set; }
+    }
+
+    public class ClienteExcluiIngrediente{
+        [Required]
+        public int ClienteId { set; get; }
+        [Required]
+        public int IngredienteId { set; get; }
+
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Cliente Cliente { get; set; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual Ingrediente Ingrediente { get; set; }
+    }
+
 
 }

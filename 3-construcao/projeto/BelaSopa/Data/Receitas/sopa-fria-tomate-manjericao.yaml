@@ -17,11 +17,11 @@ ingredientes:
 - nome: Tomate chucha
   quantidade: 500 g
 - nome: Pêssegos
-  quantidade: '2'
+  quantidade: 2 un.
 - nome: Melancia
   quantidade: 1/4
 - nome: Hastes manjericão
-  quantidade: '5'
+  quantidade: 5 un.
 - nome: Azeite
   quantidade: 2 c. de sopa
 - nome: Sal
@@ -29,7 +29,7 @@ ingredientes:
 - nome: Pimenta de moinho
   quantidade: qb
 - nome: Alho-francês médio
-  quantidade: '1'
+  quantidade: 1 un.
 
 valores-nutricionais:
 - dose: 178 Kcal

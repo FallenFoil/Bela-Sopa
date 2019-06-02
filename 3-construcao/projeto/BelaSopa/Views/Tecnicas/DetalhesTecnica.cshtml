@@ -1,17 +1,40 @@
-@model (Tecnica Tecnica, Receita[] Receitas, List<(string Titulo, List<string> Paragrafos)> Seccoes)
+@model (Tecnica Tecnica, Receita[] Receitas)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Tecnica.Nome;
+    ViewData["HideHeading"] = true;
     ViewData["ShowBackButton"] = true;
 }
 
-<p class="font-italic">@Model.Tecnica.Descricao</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-7 border-right">
+            <h2>@Model.Tecnica.Nome</h2>
+            <p style="margin-top: 1em">@Model.Tecnica.Descricao</p>
+        </div>
+        <div class="col-sm-5">
+            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Tecnica.Imagem)"
+                 alt=""
+                 style="max-width: 100%; object-fit: cover;"
+                 />
+        </div>
+    </div>
+</div>
 
-<img
-    src="data:image/*;base64,@Util.BytesToBase64(Model.Tecnica.Imagem)"
-    alt=""
-    style="max-width: 100%; object-fit: cover;"
-    />
+<hr />
+
+@foreach (var seccao in Util.FormatarTextoComSeccoes(Model.Tecnica.Texto))
+{
+    if (seccao.Titulo != null)
+    {
+        <h4>@seccao.Titulo</h4>
+    }
+
+    foreach (var paragrafo in seccao.Paragrafos)
+    {
+        <p>@paragrafo</p>
+    }
+}
 
 @if (Model.Receitas.Length > 0)
 {
@@ -26,19 +49,4 @@
             </li>
         }
     </ul>
-}
-
-<hr />
-
-@foreach (var seccao in Model.Seccoes)
-{
-    if (seccao.Titulo != null)
-    {
-        <h4>@seccao.Titulo</h4>
-    }
-
-    foreach (var paragrafo in seccao.Paragrafos)
-    {
-        <p>@paragrafo</p>
-    }
 }

@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -36,6 +37,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
                 return minutos.ToString();
             else
                 return null;
+        }
+
+        public IEnumerator GetEnumerator() {
+            return Texto.GetEnumerator();
         }
     }
 }

@@ -1,14 +1,15 @@
+@model (Receita Receita, IList<Tecnica> Tecnicas, IList<Utensilio> Utensilios, bool Favorita)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "Confecionar";
-    ViewData["HideHeader"] = true;
+    ViewData["HideHeading"] = true;
 }
 
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
-            <img src="~/logo.png"
-                 alt="Model.Receita.Nome"
+            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
+                 alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
             <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>
         </div>
@@ -20,16 +21,18 @@
             <div style="text-align:left;margin-top:1em;">
                 Etiquetas:
                 <ul class="CustomBullet" style="text-align:left;list-style: none">
-                    <li>
-                        etiqueta.Etiqueta.Nome
-                    </li>
+                    @foreach (var etiqueta in Model.Receita.ReceitaEtiqueta) {
+                        <li>
+                            @etiqueta.Etiqueta.Nome
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<p class="font-italic" style="margin-top:3em">Model.Receita.Descricao</p>
+<p class="font-italic" style="margin-top:3em">@Model.Receita.Descricao</p>
 
 <hr />
 
@@ -62,61 +65,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <text>utilizacaoIngrediente.Nome</text>
-                        </td>
-                        <td>Quantidade</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <text>utilizacaoIngrediente.Nome</text>
-                        </td>
-                        <td>Quantidade</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <text>utilizacaoIngrediente.Nome</text>
-                        </td>
-                        <td>Quantidade</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <text>utilizacaoIngrediente.Nome</text>
-                        </td>
-                        <td>Quantidade</td>
-                    </tr>
+                    @foreach (var ingrediente in Model.Receita.UtilizacoesIngredientes) {
+                        <tr>
+                            <td>
+                                <text>@ingrediente.Nome</text>
+                            </td>
+                            <td>@ingrediente.Quantidade</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
         <div class="col">
-            <h4 style="margin-top:2em;">Técnicas</h4>
-
+            <h4 style="margin-top:2em;">Técnicas</h4>           
             <ul class="CustomBullet" style="text-align:left;list-style: none">
-                <li>
-                    tecnica.Nome
-                </li>
+                @foreach (var tecnica in Model.Tecnicas) {
+                    <li>
+                        @tecnica.Nome
+                    </li>
+                }
             </ul>
+            
         </div>
         <div class="col">
             <h4 style="margin-top:2em;">Utensílios</h4>
-
             <ul class="CustomBullet" style="text-align:left;list-style: none">
-                <li>
-                    utensilio.Nome
-                </li>
-                <li>
-                    utensilio.Nome
-                </li>
-                <li>
-                    utensilio.Nome
-                </li>
-                <li>
-                    utensilio.Nome
-                </li>
-                <li>
-                    utensilio.Nome
-                </li>
+                @foreach (var utensilio in Model.Utensilios) {
+                    <li>
+                        @utensilio.Nome
+                    </li>                   
+                }
             </ul>
         </div>
     </div>
@@ -127,27 +105,31 @@
 <h4 style="margin-top:2em;">Passos</h4>
 
 <ul class="CustomBullet" style="text-align:left;list-style: none;margin-bottom:2em;">
-    <li>
-        <text>Passo1.</text>
-        <a onclick="startTimeOut(6000, 'Passo 1', 0)">
-            <i id="stopwatch0" class="fas fa-stopwatch"></i>
-        </a>
-        <span id="TimeLeft0" style="display:none;"></span>
-    </li>
-    <li>
-        <text>Passo2.</text>
-        <a onclick="startTimeOut(7000, 'Passo 2', 1)">
-            <i id="stopwatch1" class="fas fa-stopwatch"></i>
-        </a>
-        <span id="TimeLeft1" style="display:none;"></span>
-    </li>
-    <li>
-        <text>Passo3.</text>
-        <a onclick="startTimeOut(8000, 'Passo 3', 2)">
-            <i id="stopwatch2" class="fas fa-stopwatch"></i>
-        </a>
-        <span id="TimeLeft2" style="display:none;"></span>
-    </li>
+    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice)) {
+        <li>
+            <ul>
+                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice)) {
+                <li>
+                    @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice)) {
+                        if (texto.IngredienteId != null) {
+                            <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+                        } else if (texto.TecnicaId != null) {
+                            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+                        } else if (texto.UtensilioId != null) {
+                            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
+                        } else {
+                            <text>@texto.Texto</text>
+                            <a onclick="startTimeOut(6000, 'Passo 1', 0)">
+                                <i id="stopwatch0" class="fas fa-stopwatch"></i>
+                            </a>
+                            <span id="TimeLeft0" style="display:none;"></span>
+                        }
+                    }
+                </li>
+                }
+            </ul>
+        </li>
+    }
 </ul>
 
 <script>
@@ -210,3 +192,145 @@
 </script>
 
 <hr style="border-color:#4CAF50; border-width:4px;" />
+
+<!--===================================Informação completa===================================-->
+<!--
+<h2>Informação Completa</h2>
+<h4 style="margin-top:2em;">Ingredientes</h4>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>()
+
+    foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
+        {
+            <tr>
+                <td>
+                    if (utilizacaoIngrediente.Ingrediente != null)
+                    {
+                        <a asp-controller="Ingredientes"
+                           asp-action="Detalhes"
+                           asp-route-id="utilizacaoIngrediente.Ingrediente.IngredienteId">
+                            utilizacaoIngrediente.Nome
+                        </a>
+                    }
+                    else
+                    {
+                        <text>utilizacaoIngrediente.Nome</text>
+                    }
+                </td>
+                <td>utilizacaoIngrediente.Quantidade</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+<h4 style="margin-top:2em;">Técnicas</h4>
+<ul>
+    foreach (var tecnica in Model.Tecnicas)
+    {
+        <li>
+            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="tecnica.TecnicaId">tecnica.Nome</a>
+        </li>
+    }
+</ul>
+<hr />
+<h4 style="margin-top:2em;">Utensílios</h4>
+<ul>
+    foreach (var utensilio in Model.Utensilios)
+    {
+        <li>
+            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="utensilio.UtensilioId">utensilio.Nome</a>
+        </li>
+    }
+</ul>
+<hr />
+<h4 style="margin-top:2em;">Valores nutricionais</h4>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Dose</th>
+            <th scope="col">% do VDR adulto</th>
+        </tr>
+    </thead>
+    <tbody>
+        { var i = 0;}
+        foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
+        {
+            if (i == 0)
+            {
+                <tr>
+                    <td>valor.Nome</td>
+                    <td>valor.Dose</td>
+                    <td>
+                        if (valor.PercentagemVdrAdulto != null)
+                        {valor.PercentagemVdrAdulto<text>%</text>}
+                    </td>
+                </tr>
+                i++;
+            }
+            else
+            {
+                <tr id="ValoresNut">
+                    <td>valor.Nome</td>
+                    <td>valor.Dose</td>
+                    <td>
+                        if (valor.PercentagemVdrAdulto != null)
+                        {valor.PercentagemVdrAdulto<text>%</text>}
+                    </td>
+                </tr>
+                i--;
+            }
+        }
+    </tbody>
+</table>
+<hr />
+<h4 style="margin-top:2em;">Passos</h4>
+<ul class="CustomBullet" style="text-align:left;list-style: none;">
+    foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
+    {
+        <li>
+            <ul style="text-align:left;">
+                foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
+                {
+                    <li>
+                        foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice))
+                        {
+                            if (texto.IngredienteId != null)
+                            {
+                                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="texto.IngredienteId">texto.Texto</a>
+                            }
+                            else if (texto.TecnicaId != null)
+                            {
+                                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="texto.TecnicaId">texto.Texto</a>
+                            }
+                            else if (texto.UtensilioId != null)
+                            {
+                                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="texto.UtensilioId">texto.Texto</a>
+                            }
+                            else
+                            {
+                                <text>texto.Texto</text>
+                            }
+                        }
+                        {
+                            var duracaoTemporizador = tarefa.GetDuracaoTemporizador();
+
+                            if (duracaoTemporizador != null)
+                            {
+                                <text><strong>(eu sou um temporizador de duracaoTemporizador minutos)</strong></text>
+                            }
+                        }
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
+    -->
+

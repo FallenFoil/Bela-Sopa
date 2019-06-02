@@ -65,13 +65,7 @@ namespace BelaSopa.Controllers
 
             // criar view model e devolver view
 
-            var viewModel = (
-                Utensilio: utensilio,
-                Receitas: receitas,
-                Seccoes: Util.FormatarTextoComSeccoes(utensilio.Texto)
-                );
-
-            return View(viewName: "DetalhesUtensilio", model: viewModel);
+            return View(viewName: "DetalhesUtensilio", model: (Utensilio: utensilio, Receitas: receitas));
         }
     }
 }

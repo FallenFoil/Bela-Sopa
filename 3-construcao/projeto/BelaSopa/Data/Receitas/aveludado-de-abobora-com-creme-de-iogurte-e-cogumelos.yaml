@@ -18,7 +18,7 @@ ingredientes:
 - nome: Polpa de abóbora
   quantidade: 1 kg
 - nome: Batatas
-  quantidade: '3'
+  quantidade: 3 un.
 - nome: Sal
   quantidade: qb
 - nome: Azeite
@@ -28,7 +28,7 @@ ingredientes:
 - nome: Coentros
   quantidade: qb
 - nome: Dente de alho
-  quantidade: '1'
+  quantidade: 1 un.
 - nome: Iogurte grego
   quantidade: 200 g
 - nome: Lascas de queijo parmesão

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -96,7 +95,6 @@ namespace BelaSopa.Controllers {
 
 
 
-
         public IActionResult ToggleFavorito(int? id) {
             if (id.HasValue) {
                 bool Favorita = IsFavorito(id.Value);
@@ -116,6 +114,46 @@ namespace BelaSopa.Controllers {
             bool Favorita = context.ClienteFavorito.Any(f => f.ReceitaId == idReceita &&
                                                             f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
             return Favorita;
+        }
+
+        [HttpPost("[controller]/[action]/{id}")]
+        public IActionResult ConfecionarReceita(int id)
+        {
+            var receita =
+               context
+               .Receita
+               .Include(r => r.ReceitaEtiqueta)
+                   .ThenInclude(re => re.Etiqueta)
+               .Include(r => r.UtilizacoesIngredientes)
+                   .ThenInclude(ui => ui.Ingrediente)
+               .Include(r => r.ValoresNutricionais)
+               .Include(r => r.Processos)
+                   .ThenInclude(p => p.Tarefas)
+                   .ThenInclude(t => t.Texto)
+                   .ThenInclude(t => t.Ingrediente)
+               .Include(r => r.Processos)
+                   .ThenInclude(p => p.Tarefas)
+                   .ThenInclude(t => t.Texto)
+                   .ThenInclude(t => t.Tecnica)
+               .Include(r => r.Processos)
+                   .ThenInclude(p => p.Tarefas)
+                   .ThenInclude(t => t.Texto)
+                   .ThenInclude(t => t.Utensilio)
+               .SingleOrDefault(i => i.ReceitaId == id);
+
+            if (receita == null)
+                return NotFound();
+
+            var (tecnicas, utensilios) = receita.GetTecnicasUtensilios();
+
+            var viewModel = (
+                Receita: receita,
+                Tecnicas: tecnicas,
+                Utensilios: utensilios,
+                Favorita: IsFavorito(receita.ReceitaId)
+                );
+
+            return View(viewName: "ConfecionarReceita", model: viewModel);
         }
     }
 }
