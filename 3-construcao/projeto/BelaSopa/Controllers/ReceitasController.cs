@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -99,7 +98,7 @@ namespace BelaSopa.Controllers
             return View(viewName: "DetalhesReceita", model: viewModel);
         }
 
-       
+
 
 
         public IActionResult ToggleFavorito(int? id)
@@ -131,32 +130,38 @@ namespace BelaSopa.Controllers
         }
 
 
-        public IActionResult AdicionarNovaReceita([Bind]AdicionarNovaReceitaViewModel Receita) {
-            if(Receita == null) {
+        public IActionResult AdicionarNovaReceita([Bind]AdicionarNovaReceitaViewModel Receita)
+        {
+            if (Receita == null)
+            {
                 Receita = new AdicionarNovaReceitaViewModel();
             }
 
-            if (ModelState.IsValid) {
+            if (ModelState.IsValid)
+            {
                 return View(viewName: "AdicionarNovaReceitaView", model: Receita);
             }
 
-            if(Receita.Etiquetas.Count == 0) {
+            if (Receita.Etiquetas.Count == 0)
+            {
                 List<Etiqueta> ets = context.Etiqueta.ToList<Etiqueta>();
-                foreach (Etiqueta et in ets) {
+                foreach (Etiqueta et in ets)
+                {
                     Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
                 }
             }
-           
-            if(Receita.Input != null)
-                switch (Receita.Input) {
+
+            if (Receita.Input != null)
+                switch (Receita.Input)
+                {
                     case "": break;
                     case "addValorNutricional": Receita.ValorNutricionais.Add(new ValorNutricional()); break;
                     default: break;
                 }
-            
+
             return View(viewName: "AdicionarNovaReceitaView", model: Receita);
         }
-        
+
         /*
         private IActionResult AdicionarEtiqueta(AdicionarNovaReceitaViewModel Receita) {
             if (Receita == null) return NotFound();//AdicionarNovaReceita(Receita);
@@ -166,7 +171,7 @@ namespace BelaSopa.Controllers
         */
         public IActionResult ConfecionarReceita()
         {
-           return View(viewName: "ConfecionarReceita");
+            return View(viewName: "ConfecionarReceita");
 
         }
     }

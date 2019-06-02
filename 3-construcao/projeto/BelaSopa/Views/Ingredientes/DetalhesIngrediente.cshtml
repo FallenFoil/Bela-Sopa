@@ -1,21 +1,29 @@
-@model (Ingrediente Ingrediente, List<(string Titulo, List<string> Paragrafos)> Seccoes)
+@model Ingrediente
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = Model.Ingrediente.Nome;
+    ViewData["Title"] = Model.Nome;
+    ViewData["HideHeading"] = true;
     ViewData["ShowBackButton"] = true;
 }
 
-<p class="font-italic">@Model.Ingrediente.Descricao</p>
-
-<img
-    src="data:image/*;base64,@Util.BytesToBase64(Model.Ingrediente.Imagem)"
-    alt=""
-    style="max-width: 100%; object-fit: cover;"
-    />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-7 border-right">
+            <h2>@Model.Nome</h2>
+            <p style="margin-top: 1em">@Model.Descricao</p>
+        </div>
+        <div class="col-sm-5">
+            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Imagem)"
+                 alt=""
+                 style="max-width: 100%; object-fit: cover;"
+                 />
+        </div>
+    </div>
+</div>
 
 <hr />
 
-@foreach (var seccao in Model.Seccoes)
+@foreach (var seccao in Util.FormatarTextoComSeccoes(Model.Texto))
 {
     if (seccao.Titulo != null)
     {
@@ -28,13 +36,13 @@
     }
 }
 
-@if (Model.Ingrediente.Utilizacoes.Count > 0)
+@if (Model.Utilizacoes.Count > 0)
 {
     <hr />
-    <h4>Receitas que utilizam @Model.Ingrediente.Nome.ToLower()</h4>
+    <h4>Receitas que utilizam @Model.Nome.ToLower()</h4>
 
     <ul>
-        @foreach (var receita in Model.Ingrediente.GetReceitasUtilizacoes())
+        @foreach (var receita in Model.GetReceitasUtilizacoes())
         {
             <li>
                 <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@receita.ReceitaId">@receita.Nome</a>

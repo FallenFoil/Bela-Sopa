@@ -55,14 +55,9 @@ namespace BelaSopa.Controllers
             if (ingrediente == null)
                 return NotFound();
 
-            // criar view model e devolver view
+            // devolver view
 
-            var viewModel = (
-                Ingrediente: ingrediente,
-                Seccoes: Util.FormatarTextoComSeccoes(ingrediente.Texto)
-                );
-
-            return View(viewName: "DetalhesIngrediente", model: viewModel);
+            return View(viewName: "DetalhesIngrediente", model: ingrediente);
         }
     }
 }

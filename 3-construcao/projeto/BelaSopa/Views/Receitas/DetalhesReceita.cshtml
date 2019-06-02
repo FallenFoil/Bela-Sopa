@@ -2,7 +2,7 @@
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = Model.Receita.Nome;
-    ViewData["HideHeader"] = true;
+    ViewData["HideHeading"] = true;
     ViewData["ShowBackButton"] = true;
 }
 <div class="container-fluid">
@@ -76,7 +76,7 @@
         </div>
         <div class="col-sm-5">
             <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
-                 alt="@Model.Receita.Nome"
+                 alt=""
                  style="max-width: 100%; object-fit: cover;" />
             @*<a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
                 @if (@Model.Favorita)
