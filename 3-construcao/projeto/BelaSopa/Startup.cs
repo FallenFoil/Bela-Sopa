@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -47,6 +48,10 @@ namespace BelaSopa
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // Configuração de sessões
+            services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure
@@ -60,9 +65,11 @@ namespace BelaSopa
 
             InicializarBaseDeDados(app);
 
+            
             app.UseAuthentication();
             app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Autenticacao}/{action=Index}"));
             app.UseStaticFiles();
+            app.UseSession();
         }
 
         private static void InicializarBaseDeDados(IApplicationBuilder app)

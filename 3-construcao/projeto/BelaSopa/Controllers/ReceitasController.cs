@@ -10,15 +10,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BelaSopa.Controllers
-{
+namespace BelaSopa.Controllers {
     [Authorize]
-    public class ReceitasController : Controller
-    {
+    public class ReceitasController : Controller {
         private readonly BelaSopaContext context;
 
-        public ReceitasController(BelaSopaContext context)
-        {
+        public ReceitasController(BelaSopaContext context) {
             this.context = context;
         }
 
@@ -27,8 +24,7 @@ namespace BelaSopa.Controllers
             [FromQuery] string nome,
             [FromQuery] int? etiqueta,
             [FromQuery] Dificuldade? dificuldade
-            )
-        {
+            ) {
             ViewData["nome"] = nome;
             ViewData["etiqueta"] = etiqueta;
             ViewData["dificuldade"] = dificuldade;
@@ -56,8 +52,7 @@ namespace BelaSopa.Controllers
 
         [HttpGet]
         [Route("[controller]/[action]/{id}")]
-        public IActionResult Detalhes([FromRoute] int id)
-        {
+        public IActionResult Detalhes([FromRoute] int id) {
             // obter receita
 
             var receita =
@@ -99,75 +94,28 @@ namespace BelaSopa.Controllers
             return View(viewName: "DetalhesReceita", model: viewModel);
         }
 
-       
 
 
-        public IActionResult ToggleFavorito(int? id)
-        {
-            if (id.HasValue)
-            {
+
+        public IActionResult ToggleFavorito(int? id) {
+            if (id.HasValue) {
                 bool Favorita = IsFavorito(id.Value);
                 int idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
                 ClienteFavorito cf = new ClienteFavorito(idCliente, id.Value);
-                if (Favorita)
-                {
+                if (Favorita) {
                     context.ClienteFavorito.Remove(cf);
-                }
-                else
-                {
+                } else {
                     context.ClienteFavorito.Add(cf);
                 }
                 context.SaveChanges();
                 return Detalhes(id.Value);
-            }
-            else { return NotFound(); }
+            } else { return NotFound(); }
         }
 
-        public bool IsFavorito(int idReceita)
-        {
+        public bool IsFavorito(int idReceita) {
             bool Favorita = context.ClienteFavorito.Any(f => f.ReceitaId == idReceita &&
                                                             f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
             return Favorita;
-        }
-
-
-        public IActionResult AdicionarNovaReceita([Bind]AdicionarNovaReceitaViewModel Receita) {
-            if(Receita == null) {
-                Receita = new AdicionarNovaReceitaViewModel();
-            }
-
-            if (ModelState.IsValid) {
-                return View(viewName: "AdicionarNovaReceitaView", model: Receita);
-            }
-
-            if(Receita.Etiquetas.Count == 0) {
-                List<Etiqueta> ets = context.Etiqueta.ToList<Etiqueta>();
-                foreach (Etiqueta et in ets) {
-                    Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
-                }
-            }
-           
-            if(Receita.Input != null)
-                switch (Receita.Input) {
-                    case "": break;
-                    case "addValorNutricional": Receita.ValorNutricionais.Add(new ValorNutricional()); break;
-                    default: break;
-                }
-            
-            return View(viewName: "AdicionarNovaReceitaView", model: Receita);
-        }
-        
-        /*
-        private IActionResult AdicionarEtiqueta(AdicionarNovaReceitaViewModel Receita) {
-            if (Receita == null) return NotFound();//AdicionarNovaReceita(Receita);
-            Receita.ReceitaEtiqueta.Add(new Etiqueta());
-            return AdicionarNovaReceita(Receita);
-        }
-        */
-        public IActionResult ConfecionarReceita()
-        {
-           return View(viewName: "ConfecionarReceita");
-
         }
     }
 }
