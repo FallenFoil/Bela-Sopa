@@ -42,8 +42,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteFinalizado> ClienteFinalizado { get; set; }
 
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
+        public virtual ICollection<RefeicaoEmentaSemanal> RefeicaoEmentaSemanal { get; set; } = new List<RefeicaoEmentaSemanal>();
 
         public (IList<Tecnica>, IList<Utensilio>) GetTecnicasUtensilios()
         {

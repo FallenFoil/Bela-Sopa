@@ -1,5 +1,4 @@
 using BelaSopa.Models;
-using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -106,12 +105,6 @@ namespace BelaSopa
 
             context.AdicionarIngredientesTecnicasUtensilios(ingredientes, tecnicas, utensilios);
             context.AdicionarReceitas(receitas);
-
-            // inserir datas refeição
-
-            for (int i = 0; i < 2; i++)
-                for (int j = 0; j < 7; j++)
-                    context.DataRefeicao.Add(new DataRefeicao(j, i == 0));
 
             // guardar alterações
 

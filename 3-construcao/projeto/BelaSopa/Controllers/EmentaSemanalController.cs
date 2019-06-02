@@ -3,8 +3,10 @@ using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -19,61 +21,46 @@ namespace BelaSopa.Controllers
             this.context = context;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
 
-            IDictionary<int, Receita> Ementa = new Dictionary<int, Receita>();
-
-            var receitas =
+            var refeicoes =
                 context
-                .ClienteEmentaSemanal
-                .Where(ces => ces.ClienteId == idCliente)
-                .ToArray();
+                .RefeicaoEmentaSemanal
+                .Where(res => res.ClienteId == idCliente)
+                .Include(res => res.Receita)
+                .ToDictionary(res => (res.DiaDaSemana, res.RefeicaoDoDia), res => res.Receita);
 
-            foreach (ClienteEmentaSemanal ces in receitas)
-            {
-                DataRefeicao dr = context.DataRefeicao.Find(ces.DataRefeicaoId);
-                Receita r = context.Receita.Find(ces.ReceitaId);
-                Ementa.Add(dr.DataRefeicaoId, r);
-            }
-            return View(viewName: "EmentaSemanal", model: Ementa);
+            var viewModel = (
+                Refeicoes: refeicoes,
+                IngredientesNecessarios: GetIngredientesNecessarios()
+                );
+
+            return View(viewName: "EmentaSemanal", model: viewModel);
         }
 
-        public IActionResult RemoverReceita(int idHorario)
-        {
-            ClienteEmentaSemanal toRemove = context.ClienteEmentaSemanal.Where(ces =>
-                ces.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId &&
-                ces.DataRefeicaoId == ces.DataRefeicaoId
-                ).FirstOrDefault();
-            context.ClienteEmentaSemanal.Remove(toRemove);
-            context.SaveChanges();
-            return Index();
-        }
-
-        public IActionResult AdicionarReceita(int idDataRefeicao, int idReceita)
-        {
-
-            context.ClienteEmentaSemanal.Add(new ClienteEmentaSemanal(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId,
-                                                                idReceita, idDataRefeicao));
-            context.SaveChanges();
-            return Index();
-        }
-
-        [HttpGet("[controller]/[action]/{Data}")]
+        [HttpGet]
+        [Route("[controller]/[action]/{diaDaSemana}/{refeicaoDoDia}")]
         public IActionResult VerReceitas(
-           [FromQuery] string nome,
-           [FromQuery] int? etiqueta,
-           [FromQuery] Dificuldade? dificuldade,
-           [FromRoute] int Data
-           )
+            [FromRoute] DiaDaSemana diaDaSemana,
+            [FromRoute] RefeicaoDoDia refeicaoDoDia,
+            [FromQuery] string nome,
+            [FromQuery] int? etiqueta,
+            [FromQuery] Dificuldade? dificuldade
+            )
         {
+            ViewData["Title"] = "Adicionar refeição à ementa semanal";
+            ViewData["Action"] = "AdicionarRefeicao";
+            ViewData["DiaDaSemana"] = diaDaSemana;
+            ViewData["RefeicaoDoDia"] = refeicaoDoDia;
+
             ViewData["nome"] = nome;
             ViewData["etiqueta"] = etiqueta;
             ViewData["dificuldade"] = dificuldade;
 
             IQueryable<Receita> receitas = context.Receita;
-
 
             if (nome != null)
                 receitas = receitas.Where(receita => Util.FuzzyContains(receita.Nome, nome));
@@ -87,72 +74,156 @@ namespace BelaSopa.Controllers
             receitas = receitas.OrderBy(receita => receita.Nome);
 
             var viewModel = (
-                Etiquetas: context.Etiqueta.ToList(),
-                Receitas: receitas.ToList(),
-                Data
+                Etiquetas: context.Etiqueta.OrderBy(e => e.Nome).ToList(),
+                Receitas: receitas.ToList()
                 );
 
-            return View(viewName: "AdicionarReceita", model: viewModel);
+            return View(viewName: "~/Views/Receitas/ListaReceitas.cshtml", model: viewModel);
         }
 
-        public IActionResult GerarListaIngredientes() {
-            Receita[] receitasEmenta = context.ClienteEmentaSemanal
-                                        .Where(ces => ces.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
-                                        .Join(context.Receita, ementa => ementa.ReceitaId, receita => receita.ReceitaId, (ementa, receita) => receita)
-                                        .ToArray<Receita>();
-            Dictionary<string, string> ingredientes = new Dictionary<string, string>();
-            Dictionary<string, Dictionary<string, int>> ingrQuantidade = new Dictionary<string, Dictionary<string, int>>();
-            foreach (Receita r in receitasEmenta) {
-                ICollection<UtilizacaoIngrediente> ingrs = context.UtilizacaoIngrediente.Where(utilU => utilU.ReceitaId == r.ReceitaId).ToArray<UtilizacaoIngrediente>();
-                foreach(UtilizacaoIngrediente ui in ingrs) {
-                    string[] splitUI = ui.Quantidade.Split(" ");
-                    if (ingrQuantidade.ContainsKey(ui.Nome)) {
-                        Dictionary<string, int> units = ingrQuantidade[ui.Nome];
-                        string unit = "";
-                        for (int i = 1; i < splitUI.Length; i++) {
-                            unit += splitUI[i] + " ";
+        [HttpGet]
+        [Route("[controller]/[action]/{diaDaSemana}/{refeicaoDoDia}/{id}")]
+        public IActionResult AdicionarRefeicao(
+            [FromRoute] DiaDaSemana diaDaSemana,
+            [FromRoute] RefeicaoDoDia refeicaoDoDia,
+            [FromRoute] int id
+            )
+        {
+            var idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+
+            context.RefeicaoEmentaSemanal.Add(new RefeicaoEmentaSemanal
+            {
+                ClienteId = idCliente,
+                DiaDaSemana = diaDaSemana,
+                RefeicaoDoDia = refeicaoDoDia,
+                ReceitaId = id
+            });
+
+            context.SaveChanges();
+
+            return RedirectToAction(actionName: "Index");
+        }
+
+        [HttpGet]
+        [Route("[controller]/[action]/{diaDaSemana}/{refeicaoDoDia}")]
+        public IActionResult RemoverRefeicao(
+            [FromRoute] DiaDaSemana diaDaSemana,
+            [FromRoute] RefeicaoDoDia refeicaoDoDia
+            )
+        {
+            var idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+
+            var refeicao =
+                context
+                .RefeicaoEmentaSemanal
+                .Find(idCliente, diaDaSemana, refeicaoDoDia);
+
+            if (refeicao != null)
+            {
+                context.RefeicaoEmentaSemanal.Remove(refeicao);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction(actionName: "Index");
+        }
+
+        private Dictionary<string, string> GetIngredientesNecessarios()
+        {
+            var idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+
+            var utilizacoesIngredientes =
+                context
+                .RefeicaoEmentaSemanal
+                .Where(res => res.ClienteId == idCliente)
+                .Include(res => res.Receita)
+                    .ThenInclude(r => r.UtilizacoesIngredientes)
+                    .ThenInclude(ui => ui.Ingrediente)
+                .SelectMany(res => res.Receita.UtilizacoesIngredientes);
+
+            var ingrQuantidade = new Dictionary<string, Dictionary<string, double>>();
+
+            foreach (UtilizacaoIngrediente ui in utilizacoesIngredientes)
+            {
+                string[] splitUI = ui.Quantidade.Split(" ");
+                if (ingrQuantidade.ContainsKey(ui.Nome))
+                {
+                    Dictionary<string, double> units = ingrQuantidade[ui.Nome];
+                    string unit = "";
+                    for (int i = 1; i < splitUI.Length; i++)
+                    {
+                        unit += splitUI[i] + " ";
+                    }
+                    if (splitUI[0].Equals("qb"))
+                    {
+                        units.Add(unit, 0);
+                    }
+                    else
+                    {
+                        double quantity = double.Parse(splitUI[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture);
+                        if (units.ContainsKey(unit))
+                        {
+                            units[unit] += quantity;
                         }
-                        if (splitUI[0].Equals("qb")) {
-                            units.Add(unit, 0);
-                        } else {
-                            int quantity = Int32.Parse(splitUI[0]);
-                            if (units.ContainsKey(unit)) {
-                                units[unit] += quantity;
-                            } else units.Add(unit, quantity);
+                        else units.Add(unit, quantity);
+                    }
+                }
+                else
+                {
+                    var quantidades = new Dictionary<string, double>();
+
+                    if (splitUI.Length >= 2)
+                    {
+                        string key = "";
+                        for (int i = 1; i < splitUI.Length; i++)
+                        {
+                            key += splitUI[i] + " ";
+                        }
+                        try
+                        {
+                            quantidades.Add(key, double.Parse(splitUI[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture));
+                        }
+                        catch (Exception)
+                        {
+                            throw new Exception(splitUI[0].Replace(',', '.'));
                         }
                     }
-                    else {
-                        Dictionary<string, int> quantidades = new Dictionary<string, int>();
-                        if (splitUI.Length >= 2) {
-                            string key = "";
-                            for (int i = 1; i < splitUI.Length; i++) {
-                                key += splitUI[i] + " ";
-                            } 
-                            quantidades.Add(key, Int32.Parse(splitUI[0]));
-                        } else if (splitUI.Length == 1) {
-                            if (splitUI[0].Equals("qb")) {
-                                quantidades.Add("qb", 0);
-                            } else {
-                                quantidades.Add("", Int32.Parse(splitUI[0]));
-                            }
+                    else if (splitUI.Length == 1)
+                    {
+                        if (splitUI[0].Equals("qb"))
+                        {
+                            quantidades.Add("qb", 0);
                         }
-                        ingrQuantidade.Add(ui.Nome, quantidades);
+                        else
+                        {
+                            quantidades.Add("", double.Parse(splitUI[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture));
+                        }
                     }
+
+                    ingrQuantidade.Add(ui.Nome, quantidades);
                 }
             }
-            foreach(string ingrediente in ingrQuantidade.Keys) {
+
+            var ingredientes = new Dictionary<string, string>();
+
+            foreach (string ingrediente in ingrQuantidade.Keys)
+            {
                 string total = "";
-                foreach (string unit in ingrQuantidade[ingrediente].Keys) {
-                    if (unit.Equals("qb")) {
+
+                foreach (string unit in ingrQuantidade[ingrediente].Keys)
+                {
+                    if (unit.Equals("qb"))
                         total += "qb + ";
-                    } else if (unit.Equals("")) total += ingrQuantidade[ingrediente][unit].ToString() + " un. + ";
-                    else total += ingrQuantidade[ingrediente][unit].ToString() + " " + unit + " + ";
+                    else if (unit.Equals(""))
+                        total += ingrQuantidade[ingrediente][unit].ToString() + " un. + ";
+                    else
+                        total += ingrQuantidade[ingrediente][unit].ToString() + " " + unit + " + ";
                 }
+
                 total = total.Substring(0, total.Length - 2);
                 ingredientes.Add(ingrediente, total);
             }
-            return View(viewName: "ListaDeIngredientes", model: ingredientes);
-        }
 
+            return ingredientes;
+        }
     }
 }

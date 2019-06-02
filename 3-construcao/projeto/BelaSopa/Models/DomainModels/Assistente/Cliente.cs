@@ -26,36 +26,6 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [JsonIgnore]
         public virtual Receita Receita { get; set; }
     }
-    
-    public class ClienteEmentaSemanal
-    {
-        [Key]
-        public int ClienteId { get; set; }
-
-        [Key]
-        public int DataRefeicaoId { get; set; }
-
-        [Required]
-        public int ReceitaId { get; set; }
-
-        [NotMapped]
-        [JsonIgnore]
-        public virtual Cliente Cliente { get; set; }
-
-        public virtual Receita Receita { get; set; }
-
-        public virtual DataRefeicao DataRefeicao { get; set; }
-
-
-        public ClienteEmentaSemanal(int idCliente, int idReceita, int idHorario)
-        {
-            this.DataRefeicaoId = idHorario;
-            this.ClienteId = idCliente;
-            this.ReceitaId = idReceita;
-        }
-
-        public ClienteEmentaSemanal() { }
-    }
 
     public class ClienteFavorito : ClienteReceita
     {

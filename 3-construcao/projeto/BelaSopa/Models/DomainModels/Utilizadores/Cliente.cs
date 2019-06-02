@@ -11,8 +11,8 @@ namespace BelaSopa.Models.DomainModels.Utilizadores
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; } = new List<ClienteEmentaSemanal>();
+        public virtual ICollection<RefeicaoEmentaSemanal> RefeicaoEmentaSemanal { get; set; } = new List<RefeicaoEmentaSemanal>();
+
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteFavorito> ClienteFavorito { set; get; } = new List<ClienteFavorito>();
         [NotMapped, JsonIgnore]

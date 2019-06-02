@@ -30,15 +30,11 @@ namespace BelaSopa.Models
 
         public virtual DbSet<Cliente> Cliente { get; set; }
 
-        public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-
         public virtual DbSet<ClienteFavorito> ClienteFavorito { get; set; }
 
         public virtual DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
 
         public virtual DbSet<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; }
-
-        public virtual DbSet<DataRefeicao> DataRefeicao { get; set; }
 
         public virtual DbSet<Etiqueta> Etiqueta { get; set; }
 
@@ -56,6 +52,8 @@ namespace BelaSopa.Models
 
         public virtual DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
+        public virtual DbSet<RefeicaoEmentaSemanal> RefeicaoEmentaSemanal { get; set; }
+
         public virtual DbSet<Tarefa> Tarefa { get; set; }
 
         public virtual DbSet<Tecnica> Tecnica { get; set; }
@@ -69,17 +67,6 @@ namespace BelaSopa.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasKey(cr => new { cr.ClienteId, cr.DataRefeicaoId });
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasOne(ti => ti.Cliente)
-                .WithMany(t => t.ClienteEmentaSemanal)
-                .HasForeignKey(ti => ti.ClienteId);
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasOne(ti => ti.Receita)
-                .WithMany(i => i.ClienteEmentaSemanal)
-                .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<ClienteExcluiIngrediente>()
                 .HasKey(cr => new { cr.ClienteId, cr.IngredienteId });
@@ -124,6 +111,10 @@ namespace BelaSopa.Models
                 .HasOne(re => re.Etiqueta)
                 .WithMany(e => e.ReceitaEtiqueta)
                 .HasForeignKey(re => re.EtiquetaId);
+
+            modelBuilder
+                .Entity<RefeicaoEmentaSemanal>()
+                .HasKey(x => new { x.ClienteId, x.DiaDaSemana, x.RefeicaoDoDia });
         }
 
         public Utilizador GetUtilizador(string nomeDeUtilizador)

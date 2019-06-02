@@ -11,16 +11,22 @@
         <div class="col-sm-7 border-right">
             <h2>
                 @Model.Receita.Nome
-
-                <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
-                    @if (@Model.Favorita) {
-                        <i class="fas fa-star" style="color: gold;"></i>
-                    } else {
-                        <i class="far fa-star" style="color: silver;"></i>
-                    }
-                </a>
+                @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+                {
+                    <a asp-controller="Receitas" asp-action="ToggleFavorito" asp-route-id="@Model.Receita.ReceitaId">
+                        @if (@Model.Favorita)
+                        {
+                            <i class="fas fa-star" style="color: gold;"></i>
+                        }
+                        else
+                        {
+                            <i class="far fa-star" style="color: silver;"></i>
+                        }
+                    </a>
+                }
             </h2>
-            @switch (Model.Receita.Dificuldade) {
+            @switch (Model.Receita.Dificuldade)
+            {
                 case Dificuldade.Facil:
                     <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
                     break;
@@ -43,8 +49,10 @@
                 @{
                     var first = true;
 
-                    foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.Select(e => e.Etiqueta.Nome).OrderBy(e => e)) {
-                        if (!first) {
+                    foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.Select(e => e.Etiqueta.Nome).OrderBy(e => e))
+                    {
+                        if (!first)
+                        {
                             <text>&nbsp;&nbsp;|&nbsp;&nbsp;</text>
                         }
 
@@ -53,7 +61,8 @@
                         first = false;
                     }
 
-                    if (first) {
+                    if (first)
+                    {
                         <text>(nenhuma)</text>
                     }
                 }
@@ -84,9 +93,7 @@
         </div>
     </div>
 </div>
-
 <hr />
-
 <div class="container-fluid" style="padding: 0px;">
     <div class="row">
         <div class="col-6 border-right">
@@ -99,16 +106,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome)) {
+                    @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
+                    {
                         <tr>
                             <td>
-                                @if (utilizacaoIngrediente.Ingrediente != null) {
+                                @if (utilizacaoIngrediente.Ingrediente != null)
+                                {
                                     <a asp-controller="Ingredientes"
                                        asp-action="Detalhes"
                                        asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
                                         @utilizacaoIngrediente.Nome
                                     </a>
-                                } else {
+                                }
+                                else
+                                {
                                     <text>@utilizacaoIngrediente.Nome</text>
                                 }
                             </td>
@@ -121,10 +132,14 @@
         <div class="col-3 border-right">
             <h4>Técnicas</h4>
             <ul>
-                @if (Model.Tecnicas.Count == 0) {
+                @if (Model.Tecnicas.Count == 0)
+                {
                     <li>(nenhuma)</li>
-                } else {
-                    foreach (var tecnica in Model.Tecnicas) {
+                }
+                else
+                {
+                    foreach (var tecnica in Model.Tecnicas)
+                    {
                         <li>
                             <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
                         </li>
@@ -135,10 +150,14 @@
         <div class="col-3">
             <h4>Utensílios</h4>
             <ul>
-                @if (Model.Utensilios.Count == 0) {
+                @if (Model.Utensilios.Count == 0)
+                {
                     <li>(nenhum)</li>
-                } else {
-                    @foreach (var utensilio in Model.Utensilios) {
+                }
+                else
+                {
+                    @foreach (var utensilio in Model.Utensilios)
+                    {
                         <li>
                             <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
                         </li>
@@ -148,7 +167,6 @@
         </div>
     </div>
 </div>
-
 <hr />
 <h4>Valores nutricionais</h4>
 <table class="table table-sm">
@@ -160,16 +178,21 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome)) {
+        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
+        {
             <tr>
-                @if (valor.Nome.Contains(',')) {
+                @if (valor.Nome.Contains(','))
+                {
                     <td style="padding-left: 2em;"><i>@valor.Nome.Substring(valor.Nome.IndexOf(',') + 2)</i></td>
-                } else {
+                }
+                else
+                {
                     <td>@valor.Nome</td>
                 }
                 <td>@valor.Dose</td>
                 <td>
-                    @if (@valor.PercentagemVdrAdulto != null) {@valor.PercentagemVdrAdulto<text>%</text>}
+                    @if (@valor.PercentagemVdrAdulto != null)
+                    {@valor.PercentagemVdrAdulto<text>%</text>}
                 </td>
             </tr>
         }
@@ -178,19 +201,29 @@
 <hr />
 <h4>Passos</h4>
 <ul class="CustomBullet" style="text-align:left;list-style: none;">
-    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice)) {
+    @foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice))
+    {
         <li>
             <ul style="text-align:left;">
-                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice)) {
+                @foreach (var tarefa in processo.Tarefas.OrderBy(t => t.Indice))
+                {
                     <li>
-                        @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice)) {
-                            if (texto.IngredienteId != null) {
+                        @foreach (var texto in tarefa.Texto.OrderBy(t => t.Indice))
+                        {
+                            if (texto.IngredienteId != null)
+                            {
                                 <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
-                            } else if (texto.TecnicaId != null) {
+                            }
+                            else if (texto.TecnicaId != null)
+                            {
                                 <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
-                            } else if (texto.UtensilioId != null) {
+                            }
+                            else if (texto.UtensilioId != null)
+                            {
                                 <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
-                            } else {
+                            }
+                            else
+                            {
                                 <text>@texto.Texto</text>
                             }
                         }
@@ -222,7 +255,8 @@
         </div>
     </div>
 </div>
-@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE)) {
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+{
     <button style="background-color:#4CAF50; border-color: #4CAF50;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
         Confecionar
     </button>
