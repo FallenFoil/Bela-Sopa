@@ -120,8 +120,8 @@ namespace BelaSopa.Controllers {
             return Favorita;
         }
 
-        [HttpPost("[controller]/[action]/{id}/{idTarefa}")]
-        public IActionResult ConfecionarReceita([FromRoute] int id, [FromRoute] int idTarefa)
+        [HttpPost("[controller]/[action]/{id}/{numProcesso}")]
+        public IActionResult ConfecionarReceita([FromRoute] int id, [FromRoute] int numProcesso)
         {
             var receita =
                context
@@ -147,11 +147,11 @@ namespace BelaSopa.Controllers {
 
             if (receita == null)
                 return NotFound();
-            if(((receita.Processos as List<Processo>)[0].Tarefas.Count) >= idTarefa) {
+            if(((receita.Processos as List<Processo>).Count) <= numProcesso) {
                 return View(viewName: "TerminarConfecao");
             }
 
-            if(idTarefa < 0) {
+            if(numProcesso < 0) {
                 return Detalhes(id);
             }
 
@@ -162,7 +162,7 @@ namespace BelaSopa.Controllers {
                 Tecnicas: tecnicas,
                 Utensilios: utensilios,
                 Favorita: IsFavorito(receita.ReceitaId),
-                Tarefa: idTarefa
+                Processo: numProcesso
                 );
 
             return View(viewName: "ConfecionarReceita", model: viewModel);

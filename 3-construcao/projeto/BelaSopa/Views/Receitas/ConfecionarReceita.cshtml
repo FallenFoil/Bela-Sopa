@@ -1,4 +1,4 @@
-@model (Receita Receita, IList<Tecnica> Tecnicas, IList<Utensilio> Utensilios, bool Favorita, int Tarefa)
+@model (Receita Receita, IList<Tecnica> Tecnicas, IList<Utensilio> Utensilios, bool Favorita, int Processo)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "Confecionar";
@@ -40,12 +40,12 @@
 
 <br />
 <div class="row">
-    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-idTarefa="@(Model.Tarefa-1)">
+    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-numProcesso="@(Model.Processo-1)">
         <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
             Processo Anterior
         </button>
     </form>
-    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-idTarefa="@(Model.Tarefa+1)">
+    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-numProcesso="@(Model.Processo+1)">
         <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
             Processo Seguinte
         </button>
@@ -108,29 +108,28 @@
 
 <h4 style="margin-top:2em;">Passos</h4>
 
-
-@foreach (var processo in Model.Receita.Processos.OrderBy(p => p.Indice)) {
-    <ul class="CustomBullet" style="text-align:left;list-style: none;margin-bottom:2em;">
-        @{Tarefa tar = (processo.Tarefas as List<Tarefa>)[@Model.Tarefa];}
-        <li>
-            @foreach (var texto in tar.Texto.OrderBy(t => t.Indice)) {
-                if (texto.IngredienteId != null) {
-                    <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
-                } else if (texto.TecnicaId != null) {
-                    <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
-                } else if (texto.UtensilioId != null) {
-                    <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
-                } else {
-                    <text>@texto.Texto</text>
-                }
+@{ Processo processo = Model.Receita.Processos.OrderBy(p => p.Indice).ToList<Processo>()[@Model.Processo]; }
+<ul class="CustomBullet" style="text-align:left;list-style: none;margin-bottom:2em;">
+    @foreach (var tar in processo.Tarefas) {
+    <li>
+        @foreach (var texto in tar.Texto.OrderBy(t => t.Indice)) {
+            if (texto.IngredienteId != null) {
+                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+            } else if (texto.TecnicaId != null) {
+                <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+            } else if (texto.UtensilioId != null) {
+                <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
+            } else {
+                <text>@texto.Texto</text>
             }
-            <a onclick="startTimeOut(@tar.GetDuracaoTemporizador(), 'Passo 1', 0)">
-                <i id="stopwatch0" class="fas fa-stopwatch"></i>
-            </a>
-            <span id="TimeLeft0" style="display:none;"></span>
-        </li>
-    </ul>
-}
+        }
+        <a onclick="startTimeOut(@tar.GetDuracaoTemporizador(), 'Passo 1', 0)">
+            <i id="stopwatch0" class="fas fa-stopwatch"></i>
+        </a>
+        <span id="TimeLeft0" style="display:none;"></span>
+    </li>
+    }
+</ul>
 
 
 <script>
