@@ -146,12 +146,17 @@ namespace BelaSopa.Controllers {
                .SingleOrDefault(i => i.ReceitaId == id);
 
             if (receita == null)
+            {
                 return NotFound();
-            if(((receita.Processos as List<Processo>)[0].Tarefas.Count) >= idTarefa) {
+            }
+
+            if (idTarefa >= ((receita.Processos as List<Processo>)[0].Tarefas.Count))
+            {
                 return View(viewName: "TerminarConfecao");
             }
 
-            if(idTarefa < 0) {
+
+            if (idTarefa < 0) {
                 return Detalhes(id);
             }
 
