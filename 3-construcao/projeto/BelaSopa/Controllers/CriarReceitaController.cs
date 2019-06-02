@@ -20,10 +20,6 @@ namespace BelaSopa.Controllers
             this.context = context;
         }
 
-        /*
-        public byte[] getFileData(string filePath) {
-            return new byte[] = { };
-        }*/
 
         [HttpPost]
         public IActionResult CriarReceita(CriarReceitaViewModel form, List<IFormFile> imagem) {
@@ -56,13 +52,15 @@ namespace BelaSopa.Controllers
                 receita.ValoresNutricionais = form.ValorNutricionais;
                 receita.Descricao = form.Descricao;
 
-                using (var memoryStream = new MemoryStream()) {
-                    form.Imagem.CopyToAsync(memoryStream);
-                    receita.Imagem = memoryStream.ToArray();
+                if(imagem.Count> 0) { 
+                    using (var memoryStream = new MemoryStream()) {
+                        imagem[0].CopyToAsync(memoryStream);
+                        receita.Imagem = memoryStream.ToArray();
+                    }
                 }
 
                 //try {
-                    context.AdicionarReceita(receita, nomesEtiquetas);
+                context.AdicionarReceita(receita, nomesEtiquetas);
                     form = new CriarReceitaViewModel();
                     TempData["Success"] = "Receita adicionada com sucesso.";
                     return Index(form);

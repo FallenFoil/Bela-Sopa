@@ -64,7 +64,5 @@ namespace BelaSopa.Models.ViewModels {
 
         [Display(Name = "Processos")]
         public List<TextoTarefa> Tarefas { get; set; } = new List<TextoTarefa>();
-
-        public IFormFile Imagem { set; get; }
     }
 }
