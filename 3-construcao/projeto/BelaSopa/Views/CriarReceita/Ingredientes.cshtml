@@ -5,112 +5,106 @@
     ViewData["Title"] = "Ingredientes";
 }
 
-    <form asp-controller="CriarReceita" method="post" id="receitaForm">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @if (Model.UtilizacoesIngredientes.Count == 0) {
-            <div class="form-group col"></div>
-            <div class="form-group col"></div>
-        }
-        @for (int i = 0; i < Model.UtilizacoesIngredientes.Count; i++) {
-            <div class="container row">
-                <div class="form-group col">
-                    <label asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="control-label"></label>
-                    <input asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="form-control" />
-                    <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Nome" class="text-danger"></span>
-                </div>
-                <div class="form-group col">
-                    <label asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="control-label"></label>
-                    <input asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="form-control" />
-                    <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="text-danger"></span>
-                </div>
-                <div class="col">
-                    <button asp-action="RemoverIngrediente" asp-route-num="@i" type="submit" class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
-                </div>
+<form asp-controller="CriarReceita" method="post" id="receitaForm">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @if (Model.UtilizacoesIngredientes.Count == 0) {
+        <div class="form-group col"></div>
+        <div class="form-group col"></div>
+    }
+    @for (int i = 0; i < Model.UtilizacoesIngredientes.Count; i++) {
+        <div class="container row">
+            <div class="form-group col">
+                <label asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="control-label"></label>
+                <input asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="form-control" />
+                <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Nome" class="text-danger"></span>
             </div>
-        }
+            <div class="form-group col">
+                <label asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="control-label"></label>
+                <input asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="form-control" />
+                <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <button asp-action="RemoverIngrediente" asp-route-num="@i" type="submit" class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="form-group col-md-2">
+            <input asp-action="NovoIngrediente" type="submit" value="Novo ingrediente" class="btn btn-success" />
+        </div>
+        <div class="form-group col-md-2">
+            <input asp-action="Index" type="submit" value="Submeter" class="btn btn-success" />
+        </div>
+    </div>
 
+    <!-- THE BELLOW HTML IS HIDDEN-->
+    <div class="container" style="visibility:hidden">
         <div class="row">
-            <div class="form-group col-md-2">
-                <input asp-action="NovoIngrediente" type="submit" value="Novo ingrediente" class="btn btn-success" />
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="NomeDeReceita" class="control-label"></label>
+                    <input asp-for="NomeDeReceita" class="form-control" />
+                    <span asp-validation-for="NomeDeReceita" class="text-danger"></span>
+                </div>
             </div>
-
-            <div class="form-group col-md-2">
-                <input asp-action="Index" type="submit" value="Submeter" class="btn btn-success" />
+            <div class="col">
+                <div class="form-group">
+                    <label for="sel1">Dificuldade:</label>
+                    <select class="form-control" id="sel1" asp-for="DificuldadeStr" asp-items="Model.Dificuldades"></select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Minutos" class="control-label"></label>
+                    <input asp-for="Minutos" class="form-control" />
+                    <span asp-validation-for="Minutos" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Doses" class="control-label"></label>
+                    <input asp-for="Doses" class="form-control" />
+                    <span asp-validation-for="Doses" class="text-danger"></span>
+                </div>
             </div>
         </div>
-
-
-        <!-- THE BELLOW HTML IS HIDDEN-->
-        <div class="container" style="visibility:hidden">
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="NomeDeReceita" class="control-label"></label>
-                        <input asp-for="NomeDeReceita" class="form-control" />
-                        <span asp-validation-for="NomeDeReceita" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="sel1">Dificuldade:</label>
-                        <select class="form-control" id="sel1" asp-for="DificuldadeStr" asp-items="Model.Dificuldades"></select>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Minutos" class="control-label"></label>
-                        <input asp-for="Minutos" class="form-control" />
-                        <span asp-validation-for="Minutos" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Doses" class="control-label"></label>
-                        <input asp-for="Doses" class="form-control" />
-                        <span asp-validation-for="Doses" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="comment">Descricao</label>
-                <br />
-                <textarea class="form-control" rows="3" asp-for="Descricao" value="@Model.Descricao" form="receitaForm"> </textarea>
-                <br />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-
-            <div class="row">
-                <label>Etiquetas</label>
-                @for (int i = 0; i < Model.ReceitaEtiqueta.Count; i++) {
-                    <select asp-for="@Model.ReceitaEtiqueta[i].EtiquetaId" asp-items="Model.Etiquetas"></select>
-                }
-            </div>
-
-
-            <div class="form-group">
-                <input asp-action="Index" type="submit" value="Submeter" class="btn btn-primary" />
-            </div>
-            @for (int i = 0; i < Model.Tarefas.Count; i++) {
-                <div class="form-group">
-                    <label class="control-label"> Tarefa @i</label>
-                    <input asp-for="@Model.Tarefas[i].Texto" class="form-control" />
-                    <span asp-validation-for="@Model.Tarefas[i].Texto" class="text-danger"></span>
-                </div>
-            }
-
-
-            @for (int i = 0; i < Model.ValorNutricionais.Count; i++) {
-                <div class="form-group">
-                    <label asp-for="@Model.ValorNutricionais[i].Nome" class="control-label"></label>
-                    <input asp-for="@Model.ValorNutricionais[i].Nome" class="form-control" />
-                    <span asp-validation-for="@Model.ValorNutricionais[i].Nome" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="@Model.ValorNutricionais[i].PercentagemVdrAdulto" class="control-label"></label>
-                    <input asp-for="@Model.ValorNutricionais[i].PercentagemVdrAdulto" class="form-control" />
-                    <span asp-validation-for="@Model.ValorNutricionais[i].PercentagemVdrAdulto" class="text-danger"></span>
-                </div>
+        <div class="form-group">
+            <label for="comment">Descricao</label>
+            <br />
+            <textarea class="form-control" rows="3" asp-for="Descricao" value="@Model.Descricao" form="receitaForm"> </textarea>
+            <br />
+            <span asp-validation-for="Descricao" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <label>Etiquetas</label>
+            @for (int i = 0; i < Model.ReceitaEtiqueta.Count; i++) {
+                <select asp-for="@Model.ReceitaEtiqueta[i].EtiquetaId" asp-items="Model.Etiquetas"></select>
             }
         </div>
-        <!--THE HTML ABOVE IS HIDDEN-->
-    </form>
+
+        <div class="form-group">
+            <input asp-action="Index" type="submit" value="Submeter" class="btn btn-primary" />
+        </div>
+        @for (int i = 0; i < Model.Tarefas.Count; i++) {
+            <div class="form-group">
+                <label class="control-label"> Tarefa @i</label>
+                <input asp-for="@Model.Tarefas[i].Texto" class="form-control" />
+                <span asp-validation-for="@Model.Tarefas[i].Texto" class="text-danger"></span>
+            </div>
+        }
+
+        @for (int i = 0; i < Model.ValorNutricionais.Count; i++) {
+            <div class="form-group">
+                <label asp-for="@Model.ValorNutricionais[i].Nome" class="control-label"></label>
+                <input asp-for="@Model.ValorNutricionais[i].Nome" class="form-control" />
+                <span asp-validation-for="@Model.ValorNutricionais[i].Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.ValorNutricionais[i].PercentagemVdrAdulto" class="control-label"></label>
+                <input asp-for="@Model.ValorNutricionais[i].PercentagemVdrAdulto" class="form-control" />
+                <span asp-validation-for="@Model.ValorNutricionais[i].PercentagemVdrAdulto" class="text-danger"></span>
+            </div>
+        }
+    </div>
+    <!--THE HTML ABOVE IS HIDDEN-->
+</form>

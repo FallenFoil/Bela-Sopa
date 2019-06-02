@@ -20,11 +20,6 @@ namespace BelaSopa.Shared
                 return hash.ComputeHash(Encoding.UTF8.GetBytes(palavraPasse));
         }
 
-        public static string BytesToBase64(byte[] bytes)
-        {
-            return Convert.ToBase64String(bytes, Base64FormattingOptions.None);
-        }
-
         public static bool FuzzyEquals(string texto1, string texto2)
         {
             return CultureInfo.CurrentCulture.CompareInfo.Compare(

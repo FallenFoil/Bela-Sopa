@@ -1,72 +1,79 @@
-
+@model (Dictionary<(DiaDaSemana DiaDaSemana, RefeicaoDoDia RefeicaoDoDia), Receita> Refeicoes, Dictionary<string, string> IngredientesNecessarios)
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "Ementa Semanal";
-    string[] dias = { "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo" };
+    ViewData["Title"] = "Ementa semanal";
 }
-@model  Dictionary<int, Receita>
 
+<div class="table-responsive-sm">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                @foreach (var diaDaSemana in Enum.GetValues(typeof(DiaDaSemana)).Cast<DiaDaSemana>())
+                {
+                    <th scope="col">
+                        <div class="col-sm diaDaSemana bordered">@diaDaSemana.GetNome()</div>
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var refeicaoDoDia in Enum.GetValues(typeof(RefeicaoDoDia)).Cast<RefeicaoDoDia>())
+            {
+                <tr>
+                    <th scope="row">@refeicaoDoDia.GetNome()</th>
 
-    <div class="table-responsive-sm">
-        <table class="table">
-            <caption>Ementa Semanal</caption>
-            <thead>
-                <tr>
-                    <th> # </th>
-                    @foreach (var dia in dias) {
-                        <div class="col-sm diaDaSemana bordered">
-                            <th scope="col">@dia</th>
-                        </div>
-                    }
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Almoço</th>
-                    @for (int i = 0; i < dias.Length; i++) {
-                        var almoco = i + 1;
+                    @foreach (var diaDaSemana in Enum.GetValues(typeof(DiaDaSemana)).Cast<DiaDaSemana>())
+                    {
                         <td>
-                            @if (@Model.ContainsKey(almoco)) {
+                            @{
+                                var receita = Model.Refeicoes.GetValueOrDefault((diaDaSemana, refeicaoDoDia));
 
-                                <span>@Model[almoco].Nome</span>
-                                <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model[almoco].Imagem)" alt="" />
-                                <a asp-controller="EmentaSemanal"
-                                   asp-action="RemoverReceita"
-                                   asp-route-id="@almoco">Remover receita</a>
-
-                            } else {
-                                <!-- Adicionar aqui algo para quando não há receita-->
-                                <a asp-controller="EmentaSemanal"
-                                   asp-action="VerReceitas" asp-route-data="@almoco">Adicionar receita</a>
+                                if (receita == null)
+                                {
+                                    <a asp-action="VerReceitas"
+                                       asp-route-diaDaSemana="@diaDaSemana"
+                                       asp-route-refeicaoDoDia="@refeicaoDoDia">Adicionar receita</a>
+                                }
+                                else
+                                {
+                                    <span>@receita.Nome</span>
+                                    <img class="ReceitaImg"
+                                         src="@GestorImagens.GetPathImagemReceita(Url, receita.ReceitaId)"
+                                         alt="" />
+                                    <a asp-action="RemoverRefeicao"
+                                       asp-route-diaDaSemana="@diaDaSemana"
+                                       asp-route-refeicaoDoDia="@refeicaoDoDia">Remover receita</a>
+                                }
                             }
                         </td>
                     }
                 </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.IngredientesNecessarios.Count > 0)
+{
+    <hr />
+    <h4>Ingredientes necessários</h4>
+
+    <table class="table table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var (nome, quantidade) in Model.IngredientesNecessarios.OrderBy(p => p.Key))
+            {
                 <tr>
-                    <th scope="row">Jantar</th>
-                    @for (int i = 0; i < dias.Length; i++) {
-                        var jantar = i + 1 + dias.Length;
-
-                        <td>
-                            @if (Model.ContainsKey(jantar)) {
-
-                                <span>@Model[jantar].Nome</span>
-                                <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model[jantar].Imagem)" alt="" />
-                                <a asp-controller="Receitas"
-                                   asp-action="Index"
-                                   asp-route-id="@jantar">Remover receita</a>
-
-                            } else {
-                                <!-- Adicionar aqui algo para quando não há receita-->
-                                <a asp-controller="EmentaSemanal"
-                                   asp-action="VerReceitas" asp-route-data="@jantar">Adicionar receita</a>
-                            }
-                        </td>
-                    }
+                    <td>@nome</td>
+                    <td>@quantidade</td>
                 </tr>
-            </tbody>
-        </table>
-        <form asp-controller="EmentaSemanal" asp-action="GerarListaIngredientes">
-            <button type="submit" class="btn btn-success">Gerar Lista de Ingredientes</button>
-        </form>
-    </div>
+            }
+        </tbody>
+    </table>
+}

@@ -1,11 +1,9 @@
 @model (List<Etiqueta> Etiquetas, List<Receita> Receitas)
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "Receitas";
+    ViewData["Title"] = ViewData["Title"] ?? "Receitas";
 }
-
-<form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
-    <h1>@ViewData["data"]</h1>
+<form asp-action="@ViewContext.RouteData.Values["Action"]" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
     <div class="container" style="border-bottom: 1px solid #717171;">
         <div class="row">
             <div class="col-sm">
@@ -70,7 +68,6 @@
         </div>
     </div>
 </form>
-
 <div class="container" style="margin-top:1em;">
     @for (var i = 0; i < Model.Receitas.Count;)
     {
@@ -79,8 +76,11 @@
             @for (; j < 3 && i < Model.Receitas.Count; j++, i++)
             {
                 <div class="col-sm Receita">
-                    <a asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
-                        <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
+                    <a asp-action="@(ViewData["Action"] ?? "Detalhes")"
+                       asp-route-diaDaSemana="@ViewData["DiaDaSemana"]"
+                       asp-route-refeicaoDoDia="@ViewData["RefeicaoDoDia"]"
+                       asp-route-id="@Model.Receitas[i].ReceitaId">
+                        <img class="ReceitaImg" src="@GestorImagens.GetPathImagemReceita(Url, Model.Receitas[i].ReceitaId)" alt="" />
                         <p>@Model.Receitas[i].Nome</p>
                     </a>
                     <div style="margin-top:-0.7em;">

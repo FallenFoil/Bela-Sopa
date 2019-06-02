@@ -1,6 +1,7 @@
 using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Shared;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,23 +16,25 @@ namespace BelaSopa.Models
 
     public class BelaSopaContext : DbContext
     {
-        public BelaSopaContext(DbContextOptions<BelaSopaContext> options) : base(options)
+        private readonly GestorImagens gestorImagens;
+
+        public BelaSopaContext(
+            DbContextOptions<BelaSopaContext> options,
+            IHostingEnvironment hostingEnvironment
+            ) : base(options)
         {
+            gestorImagens = new GestorImagens(hostingEnvironment);
         }
 
         public virtual DbSet<Administrador> Administrador { get; set; }
 
         public virtual DbSet<Cliente> Cliente { get; set; }
 
-        public virtual DbSet<ClienteEmentaSemanal> ClienteEmentaSemanal { get; set; }
-
         public virtual DbSet<ClienteFavorito> ClienteFavorito { get; set; }
 
         public virtual DbSet<ClienteFinalizado> ClienteFinalizado { get; set; }
 
         public virtual DbSet<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; }
-
-        public virtual DbSet<DataRefeicao> DataRefeicao { get; set; }
 
         public virtual DbSet<Etiqueta> Etiqueta { get; set; }
 
@@ -49,6 +52,8 @@ namespace BelaSopa.Models
 
         public virtual DbSet<ReceitaEtiqueta> ReceitaEtiqueta { get; set; }
 
+        public virtual DbSet<RefeicaoEmentaSemanal> RefeicaoEmentaSemanal { get; set; }
+
         public virtual DbSet<Tarefa> Tarefa { get; set; }
 
         public virtual DbSet<Tecnica> Tecnica { get; set; }
@@ -62,17 +67,6 @@ namespace BelaSopa.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasKey(cr => new { cr.ClienteId, cr.DataRefeicaoId });
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasOne(ti => ti.Cliente)
-                .WithMany(t => t.ClienteEmentaSemanal)
-                .HasForeignKey(ti => ti.ClienteId);
-            modelBuilder.Entity<ClienteEmentaSemanal>()
-                .HasOne(ti => ti.Receita)
-                .WithMany(i => i.ClienteEmentaSemanal)
-                .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<ClienteExcluiIngrediente>()
                 .HasKey(cr => new { cr.ClienteId, cr.IngredienteId });
@@ -117,6 +111,10 @@ namespace BelaSopa.Models
                 .HasOne(re => re.Etiqueta)
                 .WithMany(e => e.ReceitaEtiqueta)
                 .HasForeignKey(re => re.EtiquetaId);
+
+            modelBuilder
+                .Entity<RefeicaoEmentaSemanal>()
+                .HasKey(x => new { x.ClienteId, x.DiaDaSemana, x.RefeicaoDoDia });
         }
 
         public Utilizador GetUtilizador(string nomeDeUtilizador)
@@ -126,29 +124,31 @@ namespace BelaSopa.Models
                 this.Administrador.SingleOrDefault(a => a.NomeDeUtilizador == nomeDeUtilizador) as Utilizador;
         }
 
-        public void AdicionarReceita(Receita receita, IEnumerable<string> nomesEtiquetas)
+        public void AdicionarReceita(Receita receita, IEnumerable<string> nomesEtiquetas, byte[] imagem)
         {
-            AdicionarReceitas(new[] {
-                (Receita: receita, NomesEtiquetas: (ISet<string>)new HashSet<string>(nomesEtiquetas))
-            });
+            AdicionarReceitas(new[] { (
+                Receita: receita,
+                NomesEtiquetas: (ISet<string>)new HashSet<string>(nomesEtiquetas),
+                Imagem: imagem
+                ) });
         }
 
-        public void AdicionarIngrediente(Ingrediente ingrediente)
+        public void AdicionarIngrediente(Ingrediente ingrediente, byte[] imagem)
         {
-            AdicionarIngredientesTecnicasUtensilios(new[] { ingrediente }, new Tecnica[0], new Utensilio[0]);
+            AdicionarIngredientesTecnicasUtensilios(new[] { (ingrediente, imagem) }, null, null);
         }
 
-        public void AdicionarTecnica(Tecnica tecnica)
+        public void AdicionarTecnica(Tecnica tecnica, byte[] imagem)
         {
-            AdicionarIngredientesTecnicasUtensilios(new Ingrediente[0], new[] { tecnica }, new Utensilio[0]);
+            AdicionarIngredientesTecnicasUtensilios(null, new[] { (tecnica, imagem) }, null);
         }
 
-        public void AdicionarUtensilio(Utensilio utensilio)
+        public void AdicionarUtensilio(Utensilio utensilio, byte[] imagem)
         {
-            AdicionarIngredientesTecnicasUtensilios(new Ingrediente[0], new Tecnica[0], new[] { utensilio });
+            AdicionarIngredientesTecnicasUtensilios(null, null, new[] { (utensilio, imagem) });
         }
 
-        public void AdicionarReceitas(IList<(Receita Receita, ISet<string> NomesEtiquetas)> receitas)
+        public void AdicionarReceitas(IList<(Receita Receita, ISet<string> NomesEtiquetas, byte[] Imagem)> receitas)
         {
             // adicionar receitas
 
@@ -158,7 +158,7 @@ namespace BelaSopa.Models
 
             var etiquetas = Etiqueta.ToDictionary(e => e.Nome, e => e);
 
-            foreach (var (receita, nomesEtiquetas) in receitas)
+            foreach (var (receita, nomesEtiquetas, _) in receitas)
             {
                 foreach (var nomeEtiqueta in nomesEtiquetas)
                 {
@@ -169,6 +169,8 @@ namespace BelaSopa.Models
                     if (etiqueta == null)
                     {
                         etiqueta = new Etiqueta { Nome = nomeEtiqueta };
+                        Etiqueta.Add(etiqueta);
+
                         etiquetas.Add(etiqueta.Nome, etiqueta);
                     }
 
@@ -181,17 +183,20 @@ namespace BelaSopa.Models
                 }
             }
 
-            Etiqueta.AddRange(etiquetas.Values);
-
             // guardar alterações
 
             SaveChanges();
+
+            // armazenar imagens
+
+            foreach (var (receita, _, imagem) in receitas)
+                gestorImagens.AdicionarImagemReceita(receita.ReceitaId, imagem);
 
             // descobrir relacionamentos
 
             var ituPorNome = GetItuPorNome();
 
-            foreach (var (receita, _) in receitas)
+            foreach (var (receita, _, _) in receitas)
             {
                 // descobrir relacionamentos da lista de ingredientes com ingredientes
 
@@ -208,20 +213,35 @@ namespace BelaSopa.Models
         }
 
         public void AdicionarIngredientesTecnicasUtensilios(
-            IList<Ingrediente> ingredientes,
-            IList<Tecnica> tecnicas,
-            IList<Utensilio> utensilios
+            IList<(Ingrediente Ingrediente, byte[] Imagem)> ingredientes,
+            IList<(Tecnica Tecnica, byte[] Imagem)> tecnicas,
+            IList<(Utensilio Utensilio, byte[] Imagem)> utensilios
             )
         {
+            ingredientes = ingredientes ?? new List<(Ingrediente Ingrediente, byte[] Imagem)>();
+            tecnicas = tecnicas ?? new List<(Tecnica Tecnica, byte[] Imagem)>();
+            utensilios = utensilios ?? new List<(Utensilio Utensilio, byte[] Imagem)>();
+
             // adicionar ingredientes, técnicas e utensílios
 
-            Ingrediente.AddRange(ingredientes);
-            Tecnica.AddRange(tecnicas);
-            Utensilio.AddRange(utensilios);
+            Ingrediente.AddRange(ingredientes.Select(i => i.Ingrediente));
+            Tecnica.AddRange(tecnicas.Select(t => t.Tecnica));
+            Utensilio.AddRange(utensilios.Select(u => u.Utensilio));
 
             // guardar alterações
 
             SaveChanges();
+
+            // armazenar imagens
+
+            foreach (var (ingrediente, imagem) in ingredientes)
+                gestorImagens.AdicionarImagemIngrediente(ingrediente.IngredienteId, imagem);
+
+            foreach (var (tecnica, imagem) in tecnicas)
+                gestorImagens.AdicionarImagemTecnica(tecnica.TecnicaId, imagem);
+
+            foreach (var (utensilio, imagem) in utensilios)
+                gestorImagens.AdicionarImagemUtensilio(utensilio.UtensilioId, imagem);
 
             // descobrir relacionamentos
 
@@ -241,7 +261,7 @@ namespace BelaSopa.Models
 
                 // descobrir relacionamentos da lista de ingredientes com ingredientes
 
-                if (ingredientes.Count > 0)
+                if (ingredientes != null && ingredientes.Count > 0)
                     AtualizarUtilizacoesIngredientesReceita(receita, ituPorNome);
 
                 // descobrir relacionamentos das tarefas com ingredientes, técnicas e utensílios

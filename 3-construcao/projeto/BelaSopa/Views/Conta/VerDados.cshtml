@@ -1,4 +1,5 @@
 @model (List<Ingrediente> Ingredientes, List<Receita> Receitas, string x)
+
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "A minha conta";
@@ -58,7 +59,7 @@
             @for (; j < 3 && i < Model.Ingredientes.Count; j++, i++) {
             <div class="col-sm Receita">
                 <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@Model.Ingredientes[i].IngredienteId">
-                    <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Ingredientes[i].Imagem)" alt="" />
+                    <img class="ReceitaImg"  src="@GestorImagens.GetPathImagemReceita(Url, Model.Receitas[i].ReceitaId)" alt="" />
 
                 </a>
                 <p>
@@ -89,7 +90,7 @@
             @for (; j < 3 && i < Model.Receitas.Count; j++, i++) {
                 <div class="col-sm Receita">
                     <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
-                        <img class="ReceitaImg" src="data:image/*;base64,@Util.BytesToBase64(Model.Receitas[i].Imagem)" alt="" />
+                        <img class="ReceitaImg" src="@GestorImagens.GetPathImagemReceita(Url, Model.Receitas[i].ReceitaId)" alt="" />
                         <p>@Model.Receitas[i].Nome</p>
                     </a>
 

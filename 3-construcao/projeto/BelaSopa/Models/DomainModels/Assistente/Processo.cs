@@ -22,9 +22,5 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int ReceitaId { get; set; }
 
         public virtual Receita Receita { get; set; }
-
-        public IEnumerator GetEnumerator() {
-            return Tarefas.GetEnumerator();
-        }
     }
 }

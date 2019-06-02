@@ -48,6 +48,25 @@ namespace BelaSopa.Controllers
             return RedirectToAction(actionName: "Index");
         }
 
+
+        [HttpGet]
+        [Route("[controller]/[action]/{utilizadorId}")]
+        public IActionResult RemoverUtil([FromRoute] int utilizadorId)
+        {
+            if (utilizadorId == Autenticacao.GetUtilizadorAutenticado(this,context).UtilizadorId)
+            {
+                Cliente aux = (Cliente) context.Cliente.Select(c => c.UtilizadorId == utilizadorId);
+
+                if (aux != null)
+                {
+                    context.Remove(aux);
+                    context.SaveChanges();
+                }
+            }
+
+            return View(viewName: "Entrar");
+        }
+
         [HttpGet]
         public IActionResult AdicionarAdministrador()
         {

@@ -4,20 +4,37 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190602174413_v9")]
+    partial class v9
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
+                {
+                    b.Property<int>("ClienteId");
+
+                    b.Property<int>("DataRefeicaoId");
+
+                    b.Property<int>("ReceitaId");
+
+                    b.HasKey("ClienteId", "DataRefeicaoId");
+
+                    b.HasIndex("ReceitaId");
+
+                    b.ToTable("ClienteEmentaSemanal");
+                });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteExcluiIngrediente", b =>
                 {
@@ -58,6 +75,21 @@ namespace BelaSopa.Migrations
                     b.HasIndex("ReceitaId");
 
                     b.ToTable("ClienteFinalizado");
+                });
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.DataRefeicao", b =>
+                {
+                    b.Property<int>("DataRefeicaoId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Almoco");
+
+                    b.Property<int>("Dia");
+
+                    b.HasKey("DataRefeicaoId");
+
+                    b.ToTable("DataRefeicao");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Etiqueta", b =>
@@ -205,23 +237,6 @@ namespace BelaSopa.Migrations
                     b.HasAlternateKey("EtiquetaId", "ReceitaId");
 
                     b.ToTable("ReceitaEtiqueta");
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.RefeicaoEmentaSemanal", b =>
-                {
-                    b.Property<int>("ClienteId");
-
-                    b.Property<int>("DiaDaSemana");
-
-                    b.Property<int>("RefeicaoDoDia");
-
-                    b.Property<int>("ReceitaId");
-
-                    b.HasKey("ClienteId", "DiaDaSemana", "RefeicaoDoDia");
-
-                    b.HasIndex("ReceitaId");
-
-                    b.ToTable("RefeicaoEmentaSemanal");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Tarefa", b =>
@@ -405,6 +420,19 @@ namespace BelaSopa.Migrations
                     b.ToTable("Cliente");
                 });
 
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteEmentaSemanal", b =>
+                {
+                    b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
+                        .WithMany("ClienteEmentaSemanal")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
+                        .WithMany("ClienteEmentaSemanal")
+                        .HasForeignKey("ReceitaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ClienteExcluiIngrediente", b =>
                 {
                     b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
@@ -485,19 +513,6 @@ namespace BelaSopa.Migrations
 
                     b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
                         .WithMany("ReceitaEtiqueta")
-                        .HasForeignKey("ReceitaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.RefeicaoEmentaSemanal", b =>
-                {
-                    b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
-                        .WithMany("RefeicaoEmentaSemanal")
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
-                        .WithMany("RefeicaoEmentaSemanal")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

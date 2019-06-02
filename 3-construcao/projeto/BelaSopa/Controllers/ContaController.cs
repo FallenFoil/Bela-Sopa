@@ -18,7 +18,6 @@ namespace BelaSopa.Controllers
     public class ContaController : Controller
     {
         private readonly BelaSopaContext context;
-        private bool r;
 
         public ContaController(BelaSopaContext context)
         {
@@ -28,6 +27,7 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            int clienteId = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
 
             if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
             {
@@ -36,7 +36,7 @@ namespace BelaSopa.Controllers
                .Cliente
                .Include(c => c.ClienteExcluiIngrediente)
                    .ThenInclude(cei => cei.Ingrediente)
-               .Single(c => c.UtilizadorId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
+               .Single(c => c.UtilizadorId == clienteId)
                .ClienteExcluiIngrediente
                .Select(cei => cei.Ingrediente);
 
@@ -48,7 +48,7 @@ namespace BelaSopa.Controllers
                     Ingredientes.Add(x);
                 }
 
-                var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente).UtilizadorId).ToList<ClienteFavorito>();
+                var favoritos = context.ClienteFavorito.Where(cf => cf.ClienteId == clienteId).ToList<ClienteFavorito>();
                 List<Receita> receitas = new List<Receita>();
                 foreach (ClienteFavorito cf in favoritos)
                 {
@@ -56,9 +56,10 @@ namespace BelaSopa.Controllers
                 }
                 var viewModel = (Ingredientes,receitas, (Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente)?.Email);
 
+
                 return View(viewName: "VerDados", model: viewModel);
             }else{
-                var viewModel = (new List<string>(), new List<Receita>(), (Autenticacao.GetUtilizadorAutenticado(this, context) as Utilizador)?.NomeDeUtilizador);
+                var viewModel = (clienteId,new List<string>(), new List<Receita>(), (Autenticacao.GetUtilizadorAutenticado(this, context) as Utilizador)?.NomeDeUtilizador);
                 return View(viewName: "VerDados", model: viewModel);
             }
         }

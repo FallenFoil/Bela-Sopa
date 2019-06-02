@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
-            <img src="data:image/*;base64,@Util.BytesToBase64(Model.Receita.Imagem)"
+            <img src="@GestorImagens.GetPathImagemReceita(Url, Model.Receita.ReceitaId)"
                  alt="@Model.Receita.Nome"
                  style="max-width: 100%; object-fit: cover;" />
             <i class="fas fa-star" style="color:gold;position:absolute; left:1em; top:0.5em; font-size:2em"></i>

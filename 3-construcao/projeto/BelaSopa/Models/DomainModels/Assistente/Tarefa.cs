@@ -38,9 +38,5 @@ namespace BelaSopa.Models.DomainModels.Assistente
             else
                 return null;
         }
-
-        public IEnumerator GetEnumerator() {
-            return Texto.GetEnumerator();
-        }
     }
 }

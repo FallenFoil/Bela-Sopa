@@ -20,7 +20,6 @@ namespace BelaSopa.Controllers
             this.context = context;
         }
 
-
         [HttpPost]
         public IActionResult CriarReceita(CriarReceitaViewModel form, List<IFormFile> imagem) {
             if (ModelState.IsValid) {
@@ -44,7 +43,7 @@ namespace BelaSopa.Controllers
                                 Texto = txtTarefa.Texto
                             }
                         }
-                    });      
+                    });
                 }
                 if (form.Tarefas.Count > 0)
                     receita.Processos.Add(processo);
@@ -52,18 +51,11 @@ namespace BelaSopa.Controllers
                 receita.ValoresNutricionais = form.ValorNutricionais;
                 receita.Descricao = form.Descricao;
 
-                if(imagem.Count> 0) { 
-                    using (var memoryStream = new MemoryStream()) {
-                        imagem[0].CopyToAsync(memoryStream);
-                        receita.Imagem = memoryStream.ToArray();
-                    }
-                }
-
-                //try {
-                context.AdicionarReceita(receita, nomesEtiquetas);
-                    form = new CriarReceitaViewModel();
-                    TempData["Success"] = "Receita adicionada com sucesso.";
-                    return Index(form);
+               // try {
+                context.AdicionarReceita(receita, nomesEtiquetas, new byte[0]);
+                form = new CriarReceitaViewModel();
+                TempData["Success"] = "Receita adicionada com sucesso.";
+                return Index(form);
                 //} catch (Exception e) {
                   //  TempData["Error"] = "Não foi possivel adicionar a receita";
                  //   return Index(form);
@@ -88,7 +80,7 @@ namespace BelaSopa.Controllers
                 }
             }
 
-            
+
 
             return View(viewName: "CriarReceita", model: Receita);
         }
@@ -97,6 +89,7 @@ namespace BelaSopa.Controllers
             Receita.ValorNutricionais.Add(new ValorNutricional());
             return ValoresNutricionais(Receita);
         }
+
 
         [HttpPost("[controller]/[action]/{num}")]
         public IActionResult RemoverValorNutricional(CriarReceitaViewModel Receita, [FromRoute] int num) {
