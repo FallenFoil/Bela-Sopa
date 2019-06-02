@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -18,8 +20,14 @@ namespace BelaSopa.Controllers
             this.context = context;
         }
 
-        public IActionResult CriarReceita(CriarReceitaViewModel form) {
-            if (ModelState.IsValid) { 
+        /*
+        public byte[] getFileData(string filePath) {
+            return new byte[] = { };
+        }*/
+
+        [HttpPost]
+        public IActionResult CriarReceita(CriarReceitaViewModel form, List<IFormFile> imagem) {
+            if (ModelState.IsValid) {
                 Receita receita = new Receita();
                 switch (form.DificuldadeStr) {
                     case "Fácil": receita.Dificuldade = Dificuldade.Facil;  break;
@@ -31,8 +39,6 @@ namespace BelaSopa.Controllers
                 receita.MinutosPreparacao = form.Minutos;
                 receita.NumeroDoses = form.Doses;
                 List<string> nomesEtiquetas = new List<String>();
-                foreach (Etiqueta rt in form.ReceitaEtiqueta) nomesEtiquetas.Add(rt.Nome);
-                IEnumerable<string> etiquetas = nomesEtiquetas.AsEnumerable();
 
                 Processo processo = new Processo();
                 foreach (TextoTarefa txtTarefa in form.Tarefas) {
@@ -49,15 +55,21 @@ namespace BelaSopa.Controllers
                 receita.UtilizacoesIngredientes = form.UtilizacoesIngredientes;
                 receita.ValoresNutricionais = form.ValorNutricionais;
                 receita.Descricao = form.Descricao;
-                try {
-                    context.AdicionarReceita(receita, etiquetas);
+
+                using (var memoryStream = new MemoryStream()) {
+                    form.Imagem.CopyToAsync(memoryStream);
+                    receita.Imagem = memoryStream.ToArray();
+                }
+
+                //try {
+                    context.AdicionarReceita(receita, nomesEtiquetas);
                     form = new CriarReceitaViewModel();
                     TempData["Success"] = "Receita adicionada com sucesso.";
                     return Index(form);
-                } catch (Exception e) {
-                    TempData["Error"] = "Não foi possivel adicionar a receita";
-                    return Index(form);
-                }
+                //} catch (Exception e) {
+                  //  TempData["Error"] = "Não foi possivel adicionar a receita";
+                 //   return Index(form);
+               // }
             }
             else {
                 TempData["Error"] = "Não foi possivel adicionar a receita, verifique todos os campos";
@@ -88,11 +100,33 @@ namespace BelaSopa.Controllers
             return ValoresNutricionais(Receita);
         }
 
-        
+        [HttpPost("[controller]/[action]/{num}")]
+        public IActionResult RemoverValorNutricional(CriarReceitaViewModel Receita, [FromRoute] int num) {
+            if (num < 0 || num >= Receita.ValorNutricionais.Count) {
+                TempData["Error"] = "Não foi possivel remover o valor nutricional";
+                return ValoresNutricionais(Receita);
+            }
+            Receita.ValorNutricionais.RemoveAt(num);
+            return ValoresNutricionais(Receita);
+        }
+
+
         public IActionResult NovaEtiqueta(CriarReceitaViewModel Receita) {
             Receita.ReceitaEtiqueta.Add(new Etiqueta());
             return Index(Receita);
         }
+
+        [HttpPost("[controller]/[action]/{num}")]
+        public IActionResult RemoverEtiqueta(CriarReceitaViewModel Receita, [FromRoute] int num) {
+            if (num < 0 || num >= Receita.ReceitaEtiqueta.Count) {
+                TempData["Error"] = "Não foi possivel remover a etiqueta";
+                return Index(Receita);
+            }
+            Receita.ReceitaEtiqueta.RemoveAt(num);
+            return Index(Receita);
+        }
+
+
 
         /*
         [HttpPost("[controller]/[action]/{idProcesso}")]
@@ -118,6 +152,16 @@ namespace BelaSopa.Controllers
             return ProcessosETarefas(Receita);
         }
 
+        [HttpPost("[controller]/[action]/{num}")]
+        public IActionResult RemoverTarefa(CriarReceitaViewModel Receita, [FromRoute] int num) {
+            if (num < 0 || num >= Receita.Tarefas.Count) {
+                TempData["Error"] = "Não foi possivel remover a tarefa";
+                return ProcessosETarefas(Receita);
+            }
+            Receita.Tarefas.RemoveAt(num);
+            return ProcessosETarefas(Receita);
+        }
+
         public IActionResult NovoIngrediente(CriarReceitaViewModel Receita) {
             Receita.UtilizacoesIngredientes.Add(new UtilizacaoIngrediente());
             return Ingredientes(Receita);
@@ -125,6 +169,10 @@ namespace BelaSopa.Controllers
 
         [HttpPost("[controller]/[action]/{num}")]
         public IActionResult RemoverIngrediente(CriarReceitaViewModel Receita, [FromRoute] int num) {
+            if(num < 0 || num >= Receita.UtilizacoesIngredientes.Count) {
+                TempData["Error"] = "Não foi possivel remover o ingrediente";
+                return Ingredientes(Receita);
+            }
             Receita.UtilizacoesIngredientes.RemoveAt(num); 
             return Ingredientes(Receita);
         }

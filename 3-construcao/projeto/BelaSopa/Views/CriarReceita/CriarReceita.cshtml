@@ -13,7 +13,7 @@
 @if (TempData["Success"] != null) {
     <p class="alert alert-success">@TempData["Success"]</p>
 }
-<form asp-controller="CriarReceita" method="post" id="receitaForm">
+<form asp-controller="CriarReceita" method="post" id="receitaForm" enctype="multipart/form-data">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="container">
         <div class="row">
@@ -82,6 +82,12 @@
 
             <div class="form-group col">
                 <input asp-action="CriarReceita" type="submit" value="Submeter" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <p>Imagem da Receita</p>
+                <input type="file" name="imagem" single>
             </div>
         </div>
     </div>

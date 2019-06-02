@@ -24,7 +24,7 @@
                     <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="text-danger"></span>
                 </div>
                 <div class="col">
-                    <button  asp-action="RemoverIngrediente" asp-route-num="@i" type="submit" class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+                    <button asp-action="RemoverIngrediente" asp-route-num="@i" type="submit" class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
                 </div>
             </div>
         }
@@ -112,6 +112,11 @@
                 </div>
             }
         </div>
-
+        <div class="form-group">
+            <div class="col-md-10">
+                <p>Imagem da Receita</p>
+                <input asp-for="@Model.Imagem" type="file" name="Imagem" single>
+            </div>
+        </div>
         <!--THE HTML ABOVE IS HIDDEN-->
     </form>

@@ -1,4 +1,5 @@
 using BelaSopa.Models.DomainModels.Assistente;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -63,5 +64,7 @@ namespace BelaSopa.Models.ViewModels {
 
         [Display(Name = "Processos")]
         public List<TextoTarefa> Tarefas { get; set; } = new List<TextoTarefa>();
+
+        public IFormFile Imagem { set; get; }
     }
 }
