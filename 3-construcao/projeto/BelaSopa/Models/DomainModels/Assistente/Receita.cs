@@ -26,7 +26,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [Required]
         public int NumeroDoses { get; set; }
-        
+
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
 

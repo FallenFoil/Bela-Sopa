@@ -19,7 +19,7 @@ namespace BelaSopa.Controllers
         }
 
         public IActionResult CriarReceita(CriarReceitaViewModel form) {
-            if (ModelState.IsValid) { 
+            if (ModelState.IsValid) {
                 Receita receita = new Receita();
                 switch (form.DificuldadeStr) {
                     case "Fácil": receita.Dificuldade = Dificuldade.Facil;  break;
@@ -41,7 +41,7 @@ namespace BelaSopa.Controllers
                                 Texto = txtTarefa.Texto
                             }
                         }
-                    });      
+                    });
                 }
                 if (form.Tarefas.Count > 0)
                     receita.Processos.Add(processo);
@@ -77,7 +77,7 @@ namespace BelaSopa.Controllers
                 }
             }
 
-            
+
 
             return View(viewName: "CriarReceita", model: Receita);
         }
@@ -87,7 +87,7 @@ namespace BelaSopa.Controllers
             return ValoresNutricionais(Receita);
         }
 
-        
+
         public IActionResult NovaEtiqueta(CriarReceitaViewModel Receita) {
             Receita.ReceitaEtiqueta.Add(new Etiqueta());
             return Index(Receita);
@@ -124,7 +124,7 @@ namespace BelaSopa.Controllers
 
         [HttpPost("[controller]/[action]/{num}")]
         public IActionResult RemoverIngrediente(CriarReceitaViewModel Receita, [FromRoute] int num) {
-            Receita.UtilizacoesIngredientes.RemoveAt(num); 
+            Receita.UtilizacoesIngredientes.RemoveAt(num);
             return Ingredientes(Receita);
         }
 

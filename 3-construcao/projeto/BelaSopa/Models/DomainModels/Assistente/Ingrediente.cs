@@ -19,7 +19,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [Required]
         public string Texto { get; set; }
-        
+
         public virtual ICollection<NomeAlternativoIngrediente> NomesAlternativos { get; set; } = new List<NomeAlternativoIngrediente>();
 
         public virtual ICollection<UtilizacaoIngrediente> Utilizacoes { get; set; } = new List<UtilizacaoIngrediente>();

@@ -34,29 +34,29 @@ namespace BelaSopa.Models.ViewModels {
         [MaxLength(5000)]
         [Required(ErrorMessage = "A Descrição é obrigatória.")]
         public string Descricao { get; set; }
-        
+
         [Display(Name = "Dificuldade")]
         [Required(ErrorMessage = "Dificuldade é obrigatória")]
         public Dificuldade Dificuldade { get; set; }
         public string DificuldadeStr { get; set; }
-        
+
         [Display(Name = "Minutos de preparação")]
         [Required(ErrorMessage = "A duração da receita é obrigatória")]
         public int Minutos { get; set; }
-        
+
         [Display(Name = "Doses")]
         [Required(ErrorMessage = "O número de doses é obrigatória")]
         public int Doses { get; set; }
-        
-        
+
+
         [Display(Name = "Valores Nutricionais")]
         public List<ValorNutricional> ValorNutricionais { set; get; } = new List<ValorNutricional>();
-        
-        
+
+
         [Display(Name = "Etiquetas")]
         public List<Etiqueta> ReceitaEtiqueta { get; set; } = new List<Etiqueta>();
 
-        
+
         [Display(Name = "Ingredientes")]
         public List<UtilizacaoIngrediente> UtilizacoesIngredientes { get; set; } = new List<UtilizacaoIngrediente>();
 
