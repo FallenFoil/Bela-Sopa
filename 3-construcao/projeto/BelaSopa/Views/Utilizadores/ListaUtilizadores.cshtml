@@ -9,31 +9,43 @@
     <p class="alert alert-success">@TempData["Sucesso"]</p>
 }
 
-<h4>Administradores</h4>
+<hr />
 
-<a asp-action="AdicionarAdministrador">Adicionar administrador</a>
-
-<ul>
-    @foreach (var administrador in Model.Administradores)
-    {
-        <li>
-            @administrador.NomeDeUtilizador |
-            @if (administrador.NomeDeUtilizador != User.Identity.Name)
-            {
-                <a asp-action="RemoverUtilizador" asp-route-nomeDeUtilizador="@administrador.NomeDeUtilizador">Remover</a>
-            }
-        </li>
-    }
-</ul>
-
-<h4>Clientes</h4>
-
-<ul>
-    @foreach (var cliente in Model.Clientes)
-    {
-        <li>
-            @cliente.NomeDeUtilizador
-            | <a asp-action="RemoverUtilizador" asp-route-nomeDeUtilizador="@cliente.NomeDeUtilizador">Remover</a>
-        </li>
-    }
-</ul>
+<div class="container-fluid" style="padding: 0px;">
+    <div class="row">
+        <div class="col-6 border-right">
+            <h4>Administradores</h4>
+            <a asp-action="AdicionarAdministrador">Adicionar administrador</a>
+            <ul>
+                @foreach (var administrador in Model.Administradores)
+                {
+                    <li>
+                        @administrador.NomeDeUtilizador
+                        @if (administrador.NomeDeUtilizador != User.Identity.Name)
+                        {
+                            <text>|</text>
+                            <a asp-action="RemoverUtilizador" asp-route-nomeDeUtilizador="@administrador.NomeDeUtilizador">Remover</a>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-6">
+            <h4>Clientes</h4>
+            <ul>
+                @foreach (var cliente in Model.Clientes)
+                {
+                    <li>
+                        @cliente.NomeDeUtilizador
+                        @if (cliente.Email != null)
+                        {
+                            <text>(@cliente.Email)</text>
+                        }
+                        |
+                        <a asp-action="RemoverUtilizador" asp-route-nomeDeUtilizador="@cliente.NomeDeUtilizador">Remover</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
