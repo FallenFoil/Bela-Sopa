@@ -1,4 +1,4 @@
-@model (List<string> ingredientes, List<Receita> Receitas, string x)
+@model (int idCliente,List<string> ingredientes, List<Receita> Receitas, string x)
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = "A minha conta";
@@ -10,24 +10,6 @@
 }
 
 <p>Nome de utilizador: @User.Identity.Name</p>
-
-@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
-{
-    <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
-
-    <p style="color:blue"> <a asp-action="AlterarEmail"> Alterar email</a></p>
-
-
-}
-
-@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
-{
-    <p style="color:blue"> <a asp-action="AlterarEmail"> Administradores & Clientes</a></p>
-
-    <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
-
-}
-
 
 @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
 {
@@ -43,6 +25,25 @@
         }
 
     </p>
+}
+
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+{
+    <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
+
+    <p style="color:blue"> <a asp-action="AlterarEmail"> Alterar email</a></p>
+
+    <!-- <p style="color:blue"> <a asp-controller="Utilizadores" asp-action="RemoverUtil" asp-route-utilizadorId="Model.idCliente"> Eliminar conta</a> </p> -->
+
+}
+
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
+{
+    <p style="color:blue"> <a asp-action="AlterarEmail"> Administradores & Clientes</a></p>
+
+    <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
+
+
 }
 
 
