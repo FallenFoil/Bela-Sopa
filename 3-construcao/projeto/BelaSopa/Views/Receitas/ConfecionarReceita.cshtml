@@ -39,6 +39,23 @@
 <h3>Processo</h3>
 
 <br />
+<div class="row">
+    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo-1)">
+        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
+            Processo Anterior
+        </button>
+    </form>
+    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo+1)">
+        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
+            Processo Seguinte
+        </button>
+    </form>
+    <form asp-action="Cancelar" asp-route-id="@Model.Receita.ReceitaId">
+        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
+            Cancelar
+        </button>
+    </form>
+</div>
 
 <div class="container">
     <div class="row">

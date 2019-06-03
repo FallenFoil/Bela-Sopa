@@ -12,7 +12,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         [Key]
         public int ReceitaId { get; set; }
 
-        [Required]
+        [Key]
         public DateTime DataInicio { get; set; }
 
         [Required]
@@ -21,5 +21,9 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public virtual Cliente Cliente { get; set; }
 
         public virtual Receita Receita { get; set; }
+
+        public double GetDuraçãoMinutos() {
+            return DataFim.Subtract(DataInicio).Minutes;
+        }
     }
 }
