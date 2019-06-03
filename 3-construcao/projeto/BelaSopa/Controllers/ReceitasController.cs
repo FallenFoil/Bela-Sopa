@@ -154,7 +154,6 @@ namespace BelaSopa.Controllers
 
             return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
         }
-
         
         [HttpGet]
         public IActionResult EmConfecao() {

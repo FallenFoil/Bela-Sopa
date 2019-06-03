@@ -16,7 +16,10 @@ namespace BelaSopa.Shared
         public const string ROLE_CLIENTE = "Cliente";
 
         private const string CONTROLLER_INICIAL_ADMINISTRADOR = "Utilizadores";
+        private const string ACTION_INICIAL_ADMINISTRADOR = "Index";
+
         private const string CONTROLLER_INICIAL_CLIENTE = "Receitas";
+        private const string ACTION_INICIAL_CLIENTE = "EmConfecao";
 
         public static async Task<IActionResult> AutenticarUtilizador(Controller controller, Utilizador utilizador)
         {
@@ -33,7 +36,7 @@ namespace BelaSopa.Shared
             // redirecionar para página de receitas ou administração (consoante tipo de utilizador)
 
             return controller.RedirectToAction(
-                actionName: "Index",
+                actionName: (utilizador is Cliente) ? ACTION_INICIAL_CLIENTE : ACTION_INICIAL_ADMINISTRADOR,
                 controllerName: (utilizador is Cliente) ? CONTROLLER_INICIAL_CLIENTE : CONTROLLER_INICIAL_ADMINISTRADOR
                 );
         }
@@ -88,7 +91,7 @@ namespace BelaSopa.Shared
                     // já autenticado, redirecionar
 
                     return controller.RedirectToAction(
-                        actionName: "Index",
+                        actionName: (utilizador is Cliente) ? ACTION_INICIAL_CLIENTE : ACTION_INICIAL_ADMINISTRADOR,
                         controllerName:
                             (utilizador is Cliente) ? CONTROLLER_INICIAL_CLIENTE : CONTROLLER_INICIAL_ADMINISTRADOR
                         );
