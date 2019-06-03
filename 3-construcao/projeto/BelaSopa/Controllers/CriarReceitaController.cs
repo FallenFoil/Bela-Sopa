@@ -1,5 +1,6 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Models.ViewModels;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
@@ -12,7 +13,7 @@ using System.Linq;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = Autenticacao.ROLE_ADMINISTRADOR)]
+    [Authorize]
     public class CriarReceitaController : Controller
     {
         private readonly BelaSopaContext context;
@@ -57,6 +58,9 @@ namespace BelaSopa.Controllers
                 receita.UtilizacoesIngredientes = form.UtilizacoesIngredientes;
                 receita.ValoresNutricionais = form.ValorNutricionais;
                 receita.Descricao = form.Descricao;
+
+                if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
+                    receita.ClienteId = cliente.UtilizadorId;
 
                 // try {
                 context.AdicionarReceita(receita, nomesEtiquetas, new byte[0]);

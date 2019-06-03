@@ -1,3 +1,4 @@
+using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Shared;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -26,6 +27,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         [Required]
         public int NumeroDoses { get; set; }
+
+        public int? ClienteId { get; set; }
+
+        public virtual Cliente Cliente { get; set; }
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ReceitaEtiqueta> ReceitaEtiqueta { get; set; } = new List<ReceitaEtiqueta>();
