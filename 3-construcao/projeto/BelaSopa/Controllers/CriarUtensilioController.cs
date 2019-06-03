@@ -22,16 +22,17 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(viewName: "CriarUtensilio");
+            ViewData["tipo"] = "utensílio";
+            return View(viewName: "/Views/CriarItu/Index.cshtml");
         }
 
         [HttpPost]
-        public IActionResult Index(CriarUtensilioViewModel viewModel, List<IFormFile> imagem)
+        public IActionResult Index(CriarItuViewModel viewModel, List<IFormFile> imagem)
         {
             if (!ModelState.IsValid)
             {
                 TempData["Error"] = "Dados inválidos.";
-                return View(viewName: "CriarUtensilio");
+                return Index();
             }
 
             var utensilio = new Utensilio
@@ -45,13 +46,14 @@ namespace BelaSopa.Controllers
 
             if (bytesImagem.Length == 0)
             {
-                TempData["Error"] = "Selecione uma imagem para o utensílio.";
-                return View(viewName: "CriarUtensilio");
+                TempData["Error"] = "Selecione uma imagem.";
+                return Index();
             }
 
             context.AdicionarUtensilio(utensilio, bytesImagem);
 
-            return RedirectToAction(actionName: "Index", controllerName: "Utensilios");
+            TempData["Success"] = "Utensílio criado com sucesso.";
+            return RedirectToAction();
         }
     }
 }

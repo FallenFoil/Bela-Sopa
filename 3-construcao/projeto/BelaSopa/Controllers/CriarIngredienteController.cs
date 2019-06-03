@@ -22,21 +22,21 @@ namespace BelaSopa.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(viewName: "CriarIngrediente");
+            ViewData["tipo"] = "ingrediente";
+            return View(viewName: "/Views/CriarItu/Index.cshtml");
         }
 
         [HttpPost]
-        public IActionResult Index(CriarIngredienteViewModel viewModel, List<IFormFile> imagem)
+        public IActionResult Index(CriarItuViewModel viewModel, List<IFormFile> imagem)
         {
             if (!ModelState.IsValid)
             {
                 TempData["Error"] = "Dados inválidos.";
-                return View(viewName: "CriarTecnica");
+                return Index();
             }
 
             var ingrediente = new Ingrediente
             {
-
                 Nome = viewModel.Nome,
                 Descricao = viewModel.Descricao,
                 Texto = viewModel.Texto
@@ -46,13 +46,14 @@ namespace BelaSopa.Controllers
 
             if (bytesImagem.Length == 0)
             {
-                TempData["Error"] = "Selecione uma imagem para o utensílio.";
-                return View(viewName: "CriarTecnica");
+                TempData["Error"] = "Selecione uma imagem.";
+                return Index();
             }
 
             context.AdicionarIngrediente(ingrediente, bytesImagem);
 
-            return RedirectToAction(actionName: "Index", controllerName: "Ingredientes");
+            TempData["Success"] = "Ingrediente criado com sucesso.";
+            return RedirectToAction();
         }
     }
 }
