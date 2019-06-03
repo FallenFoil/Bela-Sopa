@@ -4,17 +4,30 @@
     ViewData["Title"] = "Lojas próximas";
 }
 
+
+<div id='printoutPanel'>
+
+</div>
 <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
 
-<button id="search" type="submit" class="btn btn-success" onclick="Search()">Procurar loja mais próxima</button>
+<button id="search" type="submit" class="btn btn-success" onclick="search('Pingo Doce')">Procurar loja mais próxima</button>
 
 
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario&branch=experimental&key=Ap3Fn5C1EGzEsXDN7UqrIoYqFKj5popAxjxJ7Mi-EgRa--bSfeDB7yMVR9154KXp' async defer></script>
 <script type='text/javascript'>
-    var map, searchManager;
+    var map, searchManager, point, loc;
+
+    function createAnchorMorada(morada) {
+        var a = document.createElement('a');
+        var textnode = document.createTextNode(morada);
+        a.onclick = function () { searchWithoutPrint(morada); };
+        a.appendChild(textnode);
+        document.getElementById("printoutPanel").appendChild(a);
+        document.getElementById("printoutPanel").appendChild(document.createElement("br"));
+    }
 
     function loadMapScenario() {
-        var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+        map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
             credentials: 'Ap3Fn5C1EGzEsXDN7UqrIoYqFKj5popAxjxJ7Mi-EgRa--bSfeDB7yMVR9154KXp',
             mapTypeId: Microsoft.Maps.MapTypeId.aerial,
             zoom: 10
@@ -22,76 +35,94 @@
 
     }
 
-    function Search() {
-        if (searchManager == undefined) {
-            //Create an instance of the search manager and perform the search.
-            Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
-                searchManager = new Microsoft.Maps.Search.SearchManager(map);
-                Search()
-            });
-        } else {
-            //Remove any previous results from the map.
-            map.entities.clear();
-
-            //Get the users query and geocode it.
-            geocodeQuery("Pingo Doce");
-        }
+    function GoToLocation(x, y) {
+        var point = new Microsoft.Maps.Point(x, y);
+        myCoord = { x: x, y: y };
+        console.log(myCoord);
+        var loc = map.tryPixelToLocation(point, Microsoft.Maps.PixelReference.control);
+        document.getElementById('printoutPanel').innerHTML = '<b>Point to location</b> <br>' + loc + '<br>';
+        // location to point
+        loc = map.getCenter();
+        point = map.tryLocationToPixel(loc, Microsoft.Maps.PixelReference.control);
+        document.getElementById('printoutPanel').innerHTML += '<b>Location to point</b> <br>' + point;
     }
 
-    function geocodeQuery(query) {
-        var searchRequest = {
-            where: query,
-            callback: function (r) {
-                if (r && r.results && r.results.length > 0) {
-                    var pin, pins = [], locs = [], output = 'Results:<br/>';
+    function searchWithoutPrint(query) {
+        //Create an instance of the search manager and perform the search.
+    Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
+        searchManager = new Microsoft.Maps.Search.SearchManager(map);
+        geocodeQuery(map, query, false);
+    });
+     }
 
-                    for (var i = 0; i < r.results.length; i++) {
-                        //Create a pushpin for each result.
-                        pin = new Microsoft.Maps.Pushpin(r.results[i].location, {
-                            text: i + ''
-                        });
-                        pins.push(pin);
-                        locs.push(r.results[i].location);
+     function search(query) {
+    //Create an instance of the search manager and perform the search.
+    Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
+        searchManager = new Microsoft.Maps.Search.SearchManager(map);
+        geocodeQuery(map, query, true);
+    });
+     }
 
-                        output += i + ') ' + r.results[i].name + '<br/>';
-                    }
-
-                    //Add the pins to the map
-                    map.entities.push(pins);
-
-                    //Display list of results
-                    document.getElementById('output').innerHTML = output;
-
-                    //Determine a bounding box to best view the results.
-                    var bounds;
-
-                    if (r.results.length == 1) {
-                        bounds = r.results[0].bestView;
-                    } else {
-                        //Use the locations from the results to calculate a bounding box.
-                        bounds = Microsoft.Maps.LocationRect.fromLocations(locs);
-                    }
-
-                    map.setView({ bounds: bounds });
+function geocodeQuery(map, query, showResults) {
+    var searchRequest = {
+        where: query,
+        callback: function (r) {
+            if (r && r.results && r.results.length > 0) {
+                var pin, pins = [], locs = [], output = 'Results:<br/>';
+                for (var i = 0; i < r.results.length; i++) {
+                    //Create a pushpin for each result. 
+                    pin = new Microsoft.Maps.Pushpin(r.results[i].location, {
+                        text: i + ''
+                    });
+                    pins.push(pin);
+                    locs.push(r.results[i].location);
+                    if(showResults)
+                        createAnchorMorada(r.results[i].name);
+                    //output += i + ') ' + r.results[i].name + '<br/>';
                 }
-            },
-            errorCallback: function (e) {
-                //If there is an error, alert the user about it.
-                alert("No results found.");
+                //Add the pins to the map
+                map.entities.push(pins);
+                //Display list of results
+                //document.getElementById('printoutPanel').innerHTML = output;
+                //Determine a bounding box to best view the results.
+                var bounds;
+                if (r.results.length == 1) {
+                    bounds = r.results[0].bestView;
+                }
+                else {
+                    //Use the locations from the results to calculate a bounding box.
+                    //bounds = Microsoft.Maps.LocationRect.fromLocations(locs);
+                     bounds = r.results[0].bestView;
+                }
+                map.setView({ bounds: bounds });
             }
-        };
+        },
+        errorCallback: function (e) {
+            //If there is an error, alert the user about it.
+            document.getElementById('printoutPanel').innerHTML = 'No results found.';
+        }
+    };
+    //Make the geocode request.
+    searchManager.geocode(searchRequest);
+}
 
-        //Make the geocode request.
-        searchManager.geocode(searchRequest);
+    function GoToLocation(x, y) {
+        point = new Microsoft.Maps.Point(x, y);
+        myCoord = { x: x, y: y };
+        console.log(myCoord);
+        loc = map.tryPixelToLocation(point, Microsoft.Maps.PixelReference.control);
+        document.getElementById('printoutPanel').innerHTML = '<b>Point to location</b> <br>' + loc + '<br>';
+        // location to point
+        loc = map.getCenter();
+        point = map.tryLocationToPixel(loc, Microsoft.Maps.PixelReference.control);
+        document.getElementById('printoutPanel').innerHTML += '<b>Location to point</b> <br>' + point;
     }
 
-    window.addEventListener("load", function(){
-    navigator.geolocation.getCurrentPosition(function(position) {
-        loadMapScenario(position.coords);
+    window.addEventListener("load", function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            loadMapScenario(position.coords);
         });
     });
 
-    //window.onload = loadMapScenario;
-    //window.onload = Search;
 </script>
 
