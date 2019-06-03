@@ -1,5 +1,6 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Models.ViewModels;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -67,5 +68,16 @@ namespace BelaSopa.Controllers
 
             return View(viewName: "DetalhesUtensilio", model: (Utensilio: utensilio, Receitas: receitas));
         }
+
+        public IActionResult criarUtensilio(CriarUtensilioViewModel Utensilio)
+        {
+            if (Utensilio == null)
+            {
+                Utensilio = new CriarUtensilioViewModel();
+            }
+
+            return View(viewName: "CriarUtensilio");
+        }
+
     }
 }

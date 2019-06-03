@@ -1,0 +1,55 @@
+@model CriarUtensilioViewModel
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Criar Novo Utensilio";
+}
+
+@if (TempData["Error"] != null)
+{
+    <p class="alert alert-danger">@TempData["Error"]</p>
+}
+
+
+@if (TempData["Success"] != null)
+{
+    <p class="alert alert-success">@TempData["Success"]</p>
+}
+
+<form asp-controller="CriarUtensilio" method="post" id="utensilioForm" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="NomeDoUtensilio" class="control-label"></label>
+                    <input asp-for="NomeDoUtensilio" class="form-control" />
+                    <span asp-validation-for="NomeDoUtensilio" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="DescricaoDoUtensilio" class="control-label"></label>
+                    <input asp-for="DescricaoDoUtensilio" class="form-control" />
+                    <span asp-validation-for="DescricaoDoUtensilio" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="TextoDoUtensilio" class="control-label"></label>
+                    <input asp-for="TextoDoUtensilio" class="form-control" />
+                    <span asp-validation-for="TextoDoUtensilio" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <p>Imagem do Utensilio</p>
+            <input type="file" name="imagem" single>
+        </div>
+        <div class="form-group col">
+            <input asp-controller="CriarUtensilio" asp-action="adiciona" type="submit" value="Submeter" class="btn btn-primary" />
+        </div>
+    </div>
+    
+</form>
