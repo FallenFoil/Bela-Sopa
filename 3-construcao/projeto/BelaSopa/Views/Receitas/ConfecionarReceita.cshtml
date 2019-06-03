@@ -129,7 +129,7 @@
                 {
                     var duracaoTemporizador = int.Parse(tar.GetDuracaoTemporizador()) * 60 * 1000;
                     var str = "Temporixador do Passo " + cronometroID + " concluido";
-                    <a onclick="startTimeOut(@duracaoTemporizador, '@str', @cronometroID)">
+                    <a onclick="startTimeOut(@duracaoTemporizador, '@str', @cronometroID)" style="cursor:pointer;">
                         @{
                             var strCronometroID = "stopwatch" + cronometroID;
                             var strTimeLeft = "TimeLeft" + cronometroID;
