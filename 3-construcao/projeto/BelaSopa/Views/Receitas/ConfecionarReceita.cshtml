@@ -73,7 +73,7 @@
 </div>
 <hr />
 <h4>
-    Passos
+    Passos @(Model.IndiceProcesso+1) / @Model.Receita.Processos.Count
     <a asp-action="Confecionar"
        asp-route-id="@Model.Receita.ReceitaId"
        asp-route-indiceProcesso="@(Model.IndiceProcesso - 1)"
@@ -100,7 +100,7 @@
     var processo = Model.Receita.Processos.Single(p => p.Indice == Model.IndiceProcesso);
 }
 <ul class="CustomBullet" style="text-align:left;list-style: none;margin-bottom:2em;">
-    @foreach (var tar in processo.Tarefas)
+    @foreach (var tar in processo.Tarefas.OrderBy(t=>t.Indice))
     {
         <li>
             @foreach (var texto in tar.Texto.OrderBy(t => t.Indice))

@@ -176,6 +176,7 @@ namespace BelaSopa.Controllers
         [HttpPost("[controller]/[action]/{num}")]
         public IActionResult RemoverEtiqueta(CriarReceitaViewModel Receita, [FromRoute] int num)
         {
+            ModelState.Clear();
             if (num < 0 || num >= Receita.ReceitaEtiqueta.Count)
             {
                 TempData["Error"] = "Não foi possivel remover a etiqueta";

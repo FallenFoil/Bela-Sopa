@@ -54,11 +54,21 @@
         </div>
 
         <div class="col form-group">
+
             <label>Etiquetas</label><br />
-            @for (int i = 0; i < Model.ReceitaEtiqueta.Count; i++) {
-                <select class="form-control" asp-for="@Model.ReceitaEtiqueta[i]" asp-items="Model.Etiquetas">
-                </select>
-            }
+            <div class="container">
+                <div class="row">
+                    @for (int i = 0; i < Model.ReceitaEtiqueta.Count; i++)
+                    {
+                        <div class="col-10">
+                            <select class="form-control" asp-for="@Model.ReceitaEtiqueta[i]" asp-items="Model.Etiquetas"></select>
+                        </div>
+                        <div class="col-2" style="bottom:1.7em;">
+                            <button asp-action="RemoverEtiqueta" asp-route-num="@i" type="submit" class="btn btn-block btn-primary" style="background-color:#fafafa;margin-top:2em;border:none;outline:none;box-shadow: 0 1px 0 0 #fafafa;"><i class="fas fa-trash" style="color:red;"></i></button>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="form-group col">
@@ -132,15 +142,15 @@
                 <input asp-for="@Model.NomeValorNutricionais[i]" class="form-control" />
             </div>
             <div class="form-group col">
-                <label class="control-label"> Valor de referência </label>
+                <label class="control-label"> Valor de referÃªncia </label>
                 <input asp-for="@Model.PorDose[i]" class="form-control" />
             </div>
             <div class="form-group col">
-                <label class="control-label"> Valor de referência </label>
+                <label class="control-label"> Valor de referÃªncia </label>
                 <input asp-for="@Model.UnidadeValorNutricionais[i]" class="form-control" />
             </div>
             <div class="form-group col">
-                <label class="control-label"> Valor de referência </label>
+                <label class="control-label"> Valor de referÃªncia </label>
                 <input asp-for="@Model.PercentagemVdrAdulto[i]" class="form-control" />
             </div>
         }
