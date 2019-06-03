@@ -4,27 +4,29 @@
     ViewData["Title"] = "Lojas próximas";
 }
 
-
-<div id='printoutPanel'>
-
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+        </div>
+        <div class="col-4">
+            <div id='printoutPanel' style="display:none;overflow:auto;">
+                <p onclick="changeView(41.557140, -8.405205)" style="cursor: pointer;">BragaParque, Bairro da Quinta dos Congregados, 4710-427 Braga</a></p>
+                <p onclick="changeView(41.553350, -8.422605)" style="cursor: pointer;">Av. Central 33, 4710-308 Braga</p>
+                <p onclick="changeView(41.437989, -8.291936)" style="cursor: pointer;">R. Cmte. José Luis de Pina 577, 4810-225 Guimarães</p>
+                <p onclick="changeView(41.360849, -8.199334)" style="cursor: pointer;">R. Dr. Manuel de Faria e Sousa, 4610-108 Felgueiras</p>
+                <p onclick="changeView(41.178739, -8.614307)" style="cursor: pointer;">Rua do Amial 667/681 4200-062, 4200-056 Porto</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="myMap" style="position:relative;width:600px;height:400px;"></div>
 
-<button style="margin-top:2em;" id="search" type="submit" class="btn btn-success" onclick="search('Pingo Doce')">Procurar loja mais próxima</button>
+<button style="margin-top:2em;" id="search" type="submit" class="btn btn-success" onclick="showWaypoints()">Procurar lojas</button>
 
 
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario&branch=experimental&key=Ap3Fn5C1EGzEsXDN7UqrIoYqFKj5popAxjxJ7Mi-EgRa--bSfeDB7yMVR9154KXp' async defer></script>
 <script type='text/javascript'>
     var map, searchManager, point, loc;
-
-    function createAnchorMorada(morada) {
-        var a = document.createElement('a');
-        var textnode = document.createTextNode(morada);
-        a.onclick = function () { searchWithoutPrint(morada); };
-        a.appendChild(textnode);
-        document.getElementById("printoutPanel").appendChild(a);
-        document.getElementById("printoutPanel").appendChild(document.createElement("br"));
-    }
 
     function loadMapScenario() {
         map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
@@ -32,91 +34,54 @@
             mapTypeId: Microsoft.Maps.MapTypeId.aerial,
             zoom: 10
         });
-
-    }
-
-    function GoToLocation(x, y) {
-        var point = new Microsoft.Maps.Point(x, y);
-        myCoord = { x: x, y: y };
-        console.log(myCoord);
-        var loc = map.tryPixelToLocation(point, Microsoft.Maps.PixelReference.control);
-        document.getElementById('printoutPanel').innerHTML = '<b>Point to location</b> <br>' + loc + '<br>';
-        // location to point
-        loc = map.getCenter();
-        point = map.tryLocationToPixel(loc, Microsoft.Maps.PixelReference.control);
-        document.getElementById('printoutPanel').innerHTML += '<b>Location to point</b> <br>' + point;
-    }
-
-    function searchWithoutPrint(query) {
-        //Create an instance of the search manager and perform the search.
-    Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
-        searchManager = new Microsoft.Maps.Search.SearchManager(map);
-        geocodeQuery(map, query, false);
-    });
-     }
-
-     function search(query) {
-    //Create an instance of the search manager and perform the search.
-    Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
-        searchManager = new Microsoft.Maps.Search.SearchManager(map);
-        geocodeQuery(map, query, true);
-    });
-     }
-
-    function geocodeQuery(map, query, showResults) {
-        if (showResults) document.getElementById('printoutPanel').innerHTML = "";
-    var searchRequest = {
-        where: query,
-        callback: function (r) {
-            if (r && r.results && r.results.length > 0) {
-                var pin, pins = [], locs = [], output = 'Results:<br/>';
-                for (var i = 0; i < r.results.length; i++) {
-                    //Create a pushpin for each result. 
-                    pin = new Microsoft.Maps.Pushpin(r.results[i].location, {
-                        text: i + ''
-                    });
-                    pins.push(pin);
-                    locs.push(r.results[i].location);
-                    if(showResults)
-                        createAnchorMorada(r.results[i].name);
-                    //output += i + ') ' + r.results[i].name + '<br/>';
-                }
-                //Add the pins to the map
-                map.entities.push(pins);
-                //Display list of results
-                //document.getElementById('printoutPanel').innerHTML = output;
-                //Determine a bounding box to best view the results.
-                var bounds;
-                if (r.results.length == 1) {
-                    bounds = r.results[0].bestView;
-                }
-                else {
-                    //Use the locations from the results to calculate a bounding box.
-                    //bounds = Microsoft.Maps.LocationRect.fromLocations(locs);
-                     bounds = r.results[0].bestView;
-                }
-                map.setView({ bounds: bounds });
+        coords = {
+                "BragaParque": new Microsoft.Maps.Location(41.557140, -8.405205),
+                "Centro Braga": new Microsoft.Maps.Location(41.553350, -8.422605),
+                "Guimaraes": new Microsoft.Maps.Location(41.437989, -8.291936),
+                "Felgueiras": new Microsoft.Maps.Location(41.360849, -8.199334),
+                "Porto": new Microsoft.Maps.Location(41.178739, -8.614307)
             }
-        },
-        errorCallback: function (e) {
-            //If there is an error, alert the user about it.
-            document.getElementById('printoutPanel').innerHTML = 'No results found.';
-        }
-    };
-    //Make the geocode request.
-    searchManager.geocode(searchRequest);
-}
 
-    function GoToLocation(x, y) {
-        point = new Microsoft.Maps.Point(x, y);
-        myCoord = { x: x, y: y };
-        console.log(myCoord);
-        loc = map.tryPixelToLocation(point, Microsoft.Maps.PixelReference.control);
-        document.getElementById('printoutPanel').innerHTML = '<b>Point to location</b> <br>' + loc + '<br>';
-        // location to point
-        loc = map.getCenter();
-        point = map.tryLocationToPixel(loc, Microsoft.Maps.PixelReference.control);
-        document.getElementById('printoutPanel').innerHTML += '<b>Location to point</b> <br>' + point;
+            //Create custom Pushpin
+        var pins = [new Microsoft.Maps.Pushpin(coords["BragaParque"], {
+            title: 'Pingo Doce',
+            subTitle: 'BragaParque'
+        }),
+        new Microsoft.Maps.Pushpin(coords["Centro Braga"], {
+            title: 'Pingo Doce',
+            subTitle: 'Centro Braga'
+        }),
+        new Microsoft.Maps.Pushpin(coords["Guimaraes"], {
+            title: 'Pingo Doce',
+            subTitle: 'Guimaraes'
+        }),
+        new Microsoft.Maps.Pushpin(coords["Felgueiras"], {
+            title: 'Pingo Doce',
+            subTitle: 'Felgueiras'
+        }),
+        new Microsoft.Maps.Pushpin(coords["Porto"], {
+            title: 'Pingo Doce',
+            subTitle: 'Porto'
+        })];
+
+        //Add the pushpin to the map
+        pins.forEach(pin => {
+        	Microsoft.Maps.Events.addHandler(pin, 'click', () => directionsManager.addWaypoint(new Microsoft.Maps.Directions.Waypoint({ address: coords[pin.entity.subtitle] })));
+        	map.entities.push(pin)
+        });
+    }
+
+
+    function changeView(x,y) {
+        map.setView({
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+            center: new Microsoft.Maps.Location(x, y),
+            zoom: 15
+        });
+    }
+
+    function showWaypoints() {
+        document.getElementById("printoutPanel").style.display = "block";
     }
 
     window.addEventListener("load", function () {
