@@ -5,6 +5,10 @@
     ViewData["HideHeading"] = true;
 }
 
+@if (TempData["Message"] != null) {
+    <p class="alert alert-danger">@TempData["Message"]</p>
+}
+
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
