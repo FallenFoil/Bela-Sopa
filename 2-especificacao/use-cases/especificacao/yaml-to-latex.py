@@ -21,7 +21,7 @@ def _main() -> None:
 def _gen_latex(yaml_path: _p.Path) -> None:
 
     simple_name = yaml_path.stem
-    tex_path    = yaml_path.parent / (yaml_path.stem + '.tex')
+    tex_path    = _p.Path(yaml_path.stem + '.tex')
 
     with yaml_path.open('r', encoding='utf-8') as f:
         data = _yaml.safe_load(f.read())
