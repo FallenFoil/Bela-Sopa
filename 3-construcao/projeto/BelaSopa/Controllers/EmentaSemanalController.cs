@@ -178,7 +178,8 @@ namespace BelaSopa.Controllers
 
                     if (splitUi[0].ToLower() == "qb")
                     {
-                        units.Add(unit, 0);
+                        if(!units.ContainsKey("qb"))
+                            units.Add("qb", 0);
                     }
                     else
                     {
