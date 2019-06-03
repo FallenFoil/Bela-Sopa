@@ -39,23 +39,6 @@
 <h3>Processo</h3>
 
 <br />
-<div class="row">
-    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo-1)">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
-            Processo Anterior
-        </button>
-    </form>
-    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo+1)">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
-            Processo Seguinte
-        </button>
-    </form>
-    <form asp-action="Detalhes" asp-route-id="@Model.Receita.ReceitaId">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
-            Cancelar
-        </button>
-    </form>
-</div>
 
 <div class="container">
     <div class="row">
@@ -128,25 +111,44 @@
                 }
             }
             @{
-                    var duracaoTemporizador = tar.GetDuracaoTemporizador();
-                    var str = "Temporixador do Passo " + cronometroID + " concluido";
+                var temporizador = tar.GetDuracaoTemporizador();
 
-                    if (duracaoTemporizador != null) {
-                    <a onclick="startTimeOut(30000, @str, @cronometroID)">
-                            @{
+                if (temporizador != null) {
+
+                    var duracaoTemporizador = Int32.Parse(tar.GetDuracaoTemporizador()) * 60000;
+                    var str = "Temporixador do Passo " + cronometroID + " concluido";
+                    <a onclick="startTimeOut(@duracaoTemporizador, '@str', @cronometroID)">
+                        @{
                             var strCronometroID = "stopwatch" + cronometroID;
                             var strTimeLeft = "TimeLeft" + cronometroID;
                             cronometroID++;
                         }
                         <i id=@strCronometroID class="fas fa-stopwatch"></i>
+                        <span id=@strTimeLeft style="display:none;"></span>
                     </a>
-                    <span id=@strTimeLeft style="display:none;"></span>
                 }
             }
         </li>
     }
 </ul>
 
+<div class="row" style="margin-left:0.4em;">
+    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo-1)">
+        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
+            Processo Anterior
+        </button>
+    </form>
+    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo+1)">
+        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;margin-left:1em;">
+            Processo Seguinte
+        </button>
+    </form>
+    <form asp-action="Detalhes" asp-route-id="@Model.Receita.ReceitaId">
+        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;margin-left:1em;">
+            Cancelar
+        </button>
+    </form>
+</div>
 
 <script>
     var myVar = [];
