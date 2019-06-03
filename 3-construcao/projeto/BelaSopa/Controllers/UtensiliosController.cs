@@ -68,16 +68,5 @@ namespace BelaSopa.Controllers
 
             return View(viewName: "DetalhesUtensilio", model: (Utensilio: utensilio, Receitas: receitas));
         }
-
-        public IActionResult criarUtensilio(CriarUtensilioViewModel Utensilio)
-        {
-            if (Utensilio == null)
-            {
-                Utensilio = new CriarUtensilioViewModel();
-            }
-
-            return View(viewName: "CriarUtensilio");
-        }
-
     }
 }

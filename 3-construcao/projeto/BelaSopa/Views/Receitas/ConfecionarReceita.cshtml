@@ -9,7 +9,7 @@
         <div class="col-sm-7 border-right">
             <h2>
                 @Model.Receita.Nome
-                @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+                @*@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
                 {
                     @if (Model.Favorita)
                     {
@@ -19,7 +19,7 @@
                     {
                         <i class="far fa-star" style="color: silver;"></i>
                     }
-                }
+                }*@
             </h2>
             @switch (Model.Receita.Dificuldade)
             {
