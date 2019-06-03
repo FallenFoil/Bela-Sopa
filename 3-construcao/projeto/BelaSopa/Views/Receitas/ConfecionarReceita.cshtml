@@ -5,6 +5,10 @@
     ViewData["HideHeading"] = true;
 }
 
+@if (TempData["Message"] != null) {
+    <p class="alert alert-danger">@TempData["Message"]</p>
+}
+
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
@@ -128,12 +132,12 @@
                 }
             }
             @{
-                    var duracaoTemporizador = tar.GetDuracaoTemporizador();
-                    var str = "Temporixador do Passo " + cronometroID + " concluido";
+                var duracaoTemporizador = tar.GetDuracaoTemporizador();
+                var str = "Temporixador do Passo " + cronometroID + " concluido";
 
-                    if (duracaoTemporizador != null) {
+                if (duracaoTemporizador != null) {
                     <a onclick="startTimeOut(30000, @str, @cronometroID)">
-                            @{
+                        @{
                             var strCronometroID = "stopwatch" + cronometroID;
                             var strTimeLeft = "TimeLeft" + cronometroID;
                             cronometroID++;
