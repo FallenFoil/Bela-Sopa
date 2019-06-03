@@ -323,14 +323,14 @@ a.article:hover {
     /*color: blue;*/
 }
 
-#ValoresNut {
+#ValoresNut tr:nth-child(even) {
     background-color: #dddddd;
 }
 
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
     #sidebar {
         min-width: 5em;
         max-width: 5em;
@@ -388,4 +388,4 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
-}*/
+}

@@ -128,17 +128,19 @@
                 }
             }
             @{
-                var duracaoTemporizador = tar.GetDuracaoTemporizador();
+                    var duracaoTemporizador = tar.GetDuracaoTemporizador();
+                    var str = "Temporixador do Passo " + cronometroID + " concluido";
 
-                if (duracaoTemporizador != null) {
-                    <a onclick="startTimeOut(@tar.GetDuracaoTemporizador(), 'Passo 1', @cronometroID)">
-                        @{
+                    if (duracaoTemporizador != null) {
+                    <a onclick="startTimeOut(30000, @str, @cronometroID)">
+                            @{
                             var strCronometroID = "stopwatch" + cronometroID;
+                            var strTimeLeft = "TimeLeft" + cronometroID;
                             cronometroID++;
                         }
                         <i id=@strCronometroID class="fas fa-stopwatch"></i>
                     </a>
-                    <span id="TimeLeft0" style="display:none;"></span>
+                    <span id=@strTimeLeft style="display:none;"></span>
                 }
             }
         </li>

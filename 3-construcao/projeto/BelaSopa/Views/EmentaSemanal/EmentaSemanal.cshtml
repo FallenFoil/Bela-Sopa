@@ -37,13 +37,13 @@
                                 }
                                 else
                                 {
-                                    <span>@receita.Nome</span>
                                     <img class="ReceitaImg"
                                          src="@GestorImagens.GetPathImagemReceita(Url, receita.ReceitaId)"
                                          alt="" />
+                                    <p style="color:green;font-size:0.9em;">@receita.Nome</p>
                                     <a asp-action="RemoverRefeicao"
                                        asp-route-diaDaSemana="@diaDaSemana"
-                                       asp-route-refeicaoDoDia="@refeicaoDoDia">Remover receita</a>
+                                       asp-route-refeicaoDoDia="@refeicaoDoDia"><i style="color:red;" class="fas fa-trash"></i></a>
                                 }
                             }
                         </td>

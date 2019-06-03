@@ -161,7 +161,7 @@
             <th scope="col">% do VDR adulto</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="ValoresNut">
         @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
         {
             <tr>
