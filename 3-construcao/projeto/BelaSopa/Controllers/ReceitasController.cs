@@ -165,7 +165,6 @@ namespace BelaSopa.Controllers
         }
 
         [HttpGet("[controller]/[action]/{id}/{indiceProcesso}")]
-        [HttpPost("[controller]/[action]/{id}/{indiceProcesso}")]
         public IActionResult Confecionar([FromRoute] int id, [FromRoute] int indiceProcesso)
         {
             var receita =
