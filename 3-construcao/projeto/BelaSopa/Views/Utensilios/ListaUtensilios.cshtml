@@ -5,12 +5,12 @@
 }
 
 <form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
-    <div class="container" style="border-bottom: 1px solid #717171;">
+    <div class="container" style="padding-bottom:1em; border-bottom: 1px solid #717171;">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-12">
                 <i class="fas fa-search" aria-hidden="true"></i>
-                <input type="text" name="nome" value="@ViewData["nome"]" onchange="this.form.submit()"
-                       placeholder="Nome" aria-placeholder="Nome" class="form-control form-control-sm mr-3 w-75">
+                <input style="width:95%;height:2.6em;margin-top:0.1em;margin-left:0.4em;" type="text" name="nome" value="@ViewData["nome"]" onchange="this.form.submit()"
+                       placeholder="Nome" aria-placeholder="Nome" class="form-control form-control-sm">
             </div>
         </div>
     </div>
