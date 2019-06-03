@@ -1,20 +1,22 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
-using BelaSopa.Models.ViewModels;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BelaSopa.Controllers {
+namespace BelaSopa.Controllers
+{
     [Authorize]
-    public class ReceitasController : Controller {
+    public class ReceitasController : Controller
+    {
         private readonly BelaSopaContext context;
 
-        public ReceitasController(BelaSopaContext context) {
+        public ReceitasController(BelaSopaContext context)
+        {
             this.context = context;
         }
 
@@ -23,12 +25,33 @@ namespace BelaSopa.Controllers {
             [FromQuery] string nome,
             [FromQuery] int? etiqueta,
             [FromQuery] Dificuldade? dificuldade
-            ) {
+            )
+        {
             ViewData["nome"] = nome;
             ViewData["etiqueta"] = etiqueta;
             ViewData["dificuldade"] = dificuldade;
 
-            IQueryable<Receita> receitas = context.Receita;
+            IQueryable<Receita> receitas =
+                context
+                .Receita
+                .Include(r => r.ReceitaEtiqueta)
+                .Include(r => r.UtilizacoesIngredientes);
+
+            if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
+            {
+                var idsIngredientesExcluidos =
+                    context
+                    .ClienteExcluiIngrediente
+                    .Where(cei => cei.ClienteId == cliente.UtilizadorId)
+                    .Select(cei => cei.IngredienteId)
+                    .ToHashSet();
+
+                receitas = receitas.Where(
+                    receita => !receita.UtilizacoesIngredientes.Any(
+                        ui => ui.IngredienteId.HasValue && idsIngredientesExcluidos.Contains(ui.IngredienteId.Value)
+                        )
+                    );
+            }
 
             if (nome != null)
                 receitas = receitas.Where(receita => Util.FuzzyContains(receita.Nome, nome));
@@ -49,15 +72,10 @@ namespace BelaSopa.Controllers {
             return View(viewName: "ListaReceitas", model: viewModel);
         }
 
-
-        [HttpPost("[controller]/[action]/{id}")]
-        public IActionResult Cancelar([FromRoute] int id) {
-            return Detalhes(id);
-        }
-
         [HttpGet]
         [Route("[controller]/[action]/{id}")]
-        public IActionResult Detalhes([FromRoute] int id) {
+        public IActionResult Detalhes([FromRoute] int id)
+        {
             // obter receita
 
             var receita =
@@ -91,7 +109,7 @@ namespace BelaSopa.Controllers {
                 Receita: receita,
                 Tecnicas: tecnicas,
                 Utensilios: utensilios,
-                Favorita: IsFavorito(receita.ReceitaId)
+                Favorita: ReceitaIsFavorita(id)
                 );
 
             // devolver view
@@ -99,29 +117,36 @@ namespace BelaSopa.Controllers {
             return View(viewName: "DetalhesReceita", model: viewModel);
         }
 
-        public IActionResult ToggleFavorito(int? id) {
-            if (id.HasValue) {
-                bool Favorita = IsFavorito(id.Value);
-                int idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
-                ClienteFavorito cf = new ClienteFavorito(idCliente, id.Value);
-                if (Favorita) {
-                    context.ClienteFavorito.Remove(cf);
-                } else {
-                    context.ClienteFavorito.Add(cf);
-                }
-                context.SaveChanges();
-                return Detalhes(id.Value);
-            } else { return NotFound(); }
-        }
+        [HttpGet]
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Favorita([FromRoute] int id, [FromQuery] bool favorita)
+        {
+            if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
+            {
+                var favorito = context.ClienteReceitaFavorita.Find(cliente.UtilizadorId, id);
 
-        public bool IsFavorito(int idReceita) {
-            bool Favorita = context.ClienteFavorito.Any(f => f.ReceitaId == idReceita &&
-                                                            f.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
-            return Favorita;
+                if (favorito == null)
+                {
+                    context.ClienteReceitaFavorita.Add(new ClienteReceitaFavorita
+                    {
+                        ClienteId = cliente.UtilizadorId,
+                        ReceitaId = id
+                    });
+                }
+                else
+                {
+                    context.ClienteReceitaFavorita.Remove(favorito);
+                }
+
+                context.SaveChanges();
+            }
+
+            return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
         }
 
         [HttpPost("[controller]/[action]/{id}/{numProcesso}")]
-        public IActionResult ConfecionarReceita([FromRoute] int id, [FromRoute] int numProcesso) {
+        public IActionResult Confecionar([FromRoute] int id, [FromRoute] int indiceProcesso)
+        {
             var receita =
                context
                .Receita
@@ -144,16 +169,14 @@ namespace BelaSopa.Controllers {
                    .ThenInclude(t => t.Utensilio)
                .SingleOrDefault(i => i.ReceitaId == id);
 
-            if (receita == null) {
+            if (receita == null)
                 return NotFound();
-            }
-            if (((receita.Processos as List<Processo>).Count) <= numProcesso) {
-                return View(viewName: "TerminarConfecao");
-            }
 
-            if (numProcesso < 0) {
-                return Detalhes(id);
-            }
+            if (indiceProcesso < 0)
+                return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
+
+            if (indiceProcesso >= (receita.Processos as IList<Processo>).Count)
+                return View(viewName: "TerminarConfecao");
 
             var (tecnicas, utensilios) = receita.GetTecnicasUtensilios();
 
@@ -161,12 +184,18 @@ namespace BelaSopa.Controllers {
                 Receita: receita,
                 Tecnicas: tecnicas,
                 Utensilios: utensilios,
-                Favorita: IsFavorito(receita.ReceitaId),
-                Processo: numProcesso
+                Favorita: ReceitaIsFavorita(receita.ReceitaId),
+                Processo: indiceProcesso
                 );
 
             return View(viewName: "ConfecionarReceita", model: viewModel);
-            
+        }
+
+        private bool ReceitaIsFavorita(int idReceita)
+        {
+            return
+                Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente &&
+                context.ClienteReceitaFavorita.Find(cliente.UtilizadorId, idReceita) != null;
         }
     }
 }

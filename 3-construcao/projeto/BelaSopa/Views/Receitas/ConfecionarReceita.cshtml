@@ -40,17 +40,17 @@
 
 <br />
 <div class="row">
-    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-numProcesso="@(Model.Processo-1)">
+    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo-1)">
         <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
             Processo Anterior
         </button>
     </form>
-    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-numProcesso="@(Model.Processo+1)">
+    <form asp-action="ConfecionarReceita" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo+1)">
         <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
             Processo Seguinte
         </button>
     </form>
-    <form asp-action="Cancelar" asp-route-id="@Model.Receita.ReceitaId">
+    <form asp-action="Detalhes" asp-route-id="@Model.Receita.ReceitaId">
         <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
             Cancelar
         </button>

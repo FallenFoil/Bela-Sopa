@@ -1,7 +1,8 @@
 @model List<Ingrediente>
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "Ingredientes";
+    ViewData["Title"] = "Adicionar ingrediente a ser excluído";
+    ViewData["ShowBackButton"] = true;
 }
 
 <form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
@@ -24,7 +25,7 @@
             @for (; j < 3 && i < Model.Count; j++, i++)
             {
                 <div class="col-sm Receita">
-                    <a asp-action="Detalhes" asp-route-id="@Model[i].IngredienteId">
+                    <a asp-action="AdicionarIngredienteExcluido" asp-route-id="@Model[i].IngredienteId">
                         <img class="ReceitaImg" src="@GestorImagens.GetPathImagemIngrediente(Url, Model[i].IngredienteId)" alt="" />
                         <p>@Model[i].Nome</p>
                     </a>

@@ -14,9 +14,9 @@ namespace BelaSopa.Models.DomainModels.Utilizadores
         public virtual ICollection<RefeicaoEmentaSemanal> RefeicaoEmentaSemanal { get; set; } = new List<RefeicaoEmentaSemanal>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteFavorito> ClienteFavorito { set; get; } = new List<ClienteFavorito>();
+        public virtual ICollection<ClienteReceitaFavorita> ClienteFavorito { set; get; } = new List<ClienteReceitaFavorita>();
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteFinalizado> ClienteFinalizado { set; get; } = new List<ClienteFinalizado>();
+        public virtual ICollection<ClienteReceitaFinalizada> ClienteFinalizado { set; get; } = new List<ClienteReceitaFinalizada>();
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; } = new List<ClienteExcluiIngrediente>();

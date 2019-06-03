@@ -1,29 +1,26 @@
-
+@model List<ClienteReceitaFinalizada>
 @{
-    ViewData["Title"] = "Historico";
     Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Histórico";
 }
-@model List<ClienteFinalizado>
-
 <div class="table-responsive-sm">
     <table class="table">
         <caption>Historico</caption>
         <thead>
             <tr>
-                <th> # </th>
+                <th>#</th>
                 <th scope="col">Receita</th>
                 <th scope="col">Data</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var receitaFinalizada in @Model) {
-            <tr>
-                <td>@receitaFinalizada.Receita.Nome</td>
-                <td>@receitaFinalizada.Data.ToString()</td>
-            </tr>
+            @foreach (var receitaFinalizada in Model)
+            {
+                <tr>
+                    <td>@receitaFinalizada.Receita.Nome</td>
+                    <td>@receitaFinalizada.Data.ToString()</td>
+                </tr>
             }
         </tbody>
     </table>
 </div>
-
-

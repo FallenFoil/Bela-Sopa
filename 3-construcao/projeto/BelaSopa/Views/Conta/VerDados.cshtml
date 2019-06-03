@@ -1,129 +1,122 @@
-@model (List<Ingrediente> Ingredientes, List<Receita> Receitas, string x)
-
+@model (string Email, List<Receita> ReceitasFavoritas, List<Ingrediente> IngredientesExcluidos)
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "A minha conta";
+    ViewData["Title"] = "O meu perfil";
 }
 
-@if (TempData["Sucesso"] != null) {
+<hr />
+<h4>Dados da conta</h4>
+
+@if (TempData["Sucesso"] != null)
+{
     <p class="alert alert-success">@TempData["Sucesso"]</p>
 }
 
 <p>Nome de utilizador: @User.Identity.Name</p>
+<p><a asp-action="AlterarPalavraPasse">Alterar palavra-passe</a></p>
 
-<div class="row">
-    @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE)) {
-        <div class="col">
-            <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
-        </div>
-        <div class="col">
-            <p style="color:blue"> <a asp-action="AlterarEmail"> Alterar email</a></p>
-        </div>
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+{
+    var email = Model.Email ?? "(nenhum)";
+    <p>Email: @email <a asp-action="AlterarEmail">Alterar email</a></p>
+
+    <hr />
+    <h4>Receitas favoritas</h4>
+
+    @if (Model.ReceitasFavoritas.Count == 0)
+    {
+        <text>(nenhuma)</text>
     }
 
-    @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR)) {
-        <div class="col">
-            <p style="color:blue"> <a asp-action="AlterarEmail"> Administradores & Clientes</a></p>
-        </div>
-        <div class="col-ms-3">
-            <p style="color:blue"> <a asp-action="AlterarPalavraPasse">  Alterar palavra-passe</a></p>
-        </div>
-    }
+    <div class="container">
+        @for (var i = 0; i < Model.ReceitasFavoritas.Count;)
+        {
+            <div class="row ReceitasLinha">
+                @{ var j = 0;}
+                @for (; j < 3 && i < Model.ReceitasFavoritas.Count; j++, i++)
+                {
+                    <div class="col-sm Receita">
+                        <a asp-controller="Receitas"
+                           asp-action="Detalhes"
+                           asp-route-id="@Model.ReceitasFavoritas[i].ReceitaId">
+                            <img class="ReceitaImg" src="@GestorImagens.GetPathImagemReceita(Url, Model.ReceitasFavoritas[i].ReceitaId)" alt="" />
+                            <p>
+                                @Model.ReceitasFavoritas[i].Nome
+                                <a asp-action="RemoverReceitaFavorita" asp-route-id="@Model.ReceitasFavoritas[i].ReceitaId">
+                                    <i class="fas fa-trash" style="color: #dc3545;"></i>
+                                </a>
+                            </p>
+                        </a>
+                        <div style="margin-top:-0.7em;">
+                            @switch (Model.ReceitasFavoritas[i].Dificuldade)
+                            {
+                                case Dificuldade.Facil:
+                                    <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
+                                    break;
 
+                                case Dificuldade.Media:
+                                    <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
+                                    break;
 
-    @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE)) {
-        <div class="col">
-            <p>
-                Endereço de e-mail:
-                @if (Model.x == null) {
-                    <text>(nenhum)</text>
-                } else {
-                    <text>@Model.x</text>
+                                case Dificuldade.Dificil:
+                                    <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
+                                    break;
+                            }
+                            &nbsp;|&nbsp;
+                            <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.ReceitasFavoritas[i].MinutosPreparacao min</span>
+                            &nbsp;|&nbsp;
+                            <span>@Model.ReceitasFavoritas[i].NumeroDoses doses</span>
+                        </div>
+                    </div>
                 }
-
-            </p>
-        </div>
-    }
-</div>
-
-@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE)) {
-    <p style="color:blue"> <a asp-action="ListaIngredientes"> Excluir receitas com um certo ingrediente</a> </p>
-    <h4>Ingredientes Excluídos :</h4>
-    <br />
-    @if (Model.Ingredientes.Count == 0) {
-        <span>Nenhum ingrediente selecionado</span>
-    }
-    @for (var i = 0; i < Model.Ingredientes.Count;) {
-        <div class="row ReceitasLinha">
-            @{ var j = 0;}
-            @for (; j < 3 && i < Model.Ingredientes.Count; j++, i++) {
-            <div class="col-sm Receita">
-                <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@Model.Ingredientes[i].IngredienteId">
-                    <img class="ReceitaImg"  src="@GestorImagens.GetPathImagemReceita(Url, Model.Receitas[i].ReceitaId)" alt="" />
-
-                </a>
-                <p>
-                    @Model.Ingredientes[i].Nome
-                    <a asp-controller="Conta" asp-action="Remove" asp-route-id="@i">
-                        <i class="fas fa-trash"></i>
-                    </a>
-                </p>
-                
+                @for (; j < 3; j++)
+                {
+                    <div class="col-sm Receita">
+                    </div>
+                }
             </div>
-            }
-            @for (; j < 3; j++) {
-                <div class="col-sm Receita">
-                </div>
-            }
-        </div>
-    }   
+        }
+    </div>
 
-}
+    <hr />
+    <h4>Ingredientes excluídos <small class="text-muted">(receitas com estes ingredientes não serão exibidas)</small></h4>
 
+    <p><a asp-action="ListaIngredientes">Adicionar ingrediente a ser excluído</a></p>
 
-<div style="margin-top:2em;">
-    <h4> Favoritos : </h4>
-    <br />
-    @for (var i = 0; i < Model.Receitas.Count;) {
-        <div class="row ReceitasLinha">
-            @{ var j = 0;}
-            @for (; j < 3 && i < Model.Receitas.Count; j++, i++) {
-                <div class="col-sm Receita">
-                    <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@Model.Receitas[i].ReceitaId">
-                        <img class="ReceitaImg" src="@GestorImagens.GetPathImagemReceita(Url, Model.Receitas[i].ReceitaId)" alt="" />
-                        <p>@Model.Receitas[i].Nome</p>
-                    </a>
-
-                    <a asp-controller="Conta" asp-action="TggFav" asp-route-id="@Model.Receitas[i].ReceitaId">
-                        <i class="fas fa-trash"></i>
-
-                    </a>
-
-                    @switch (Model.Receitas[i].Dificuldade) {
-                        case Dificuldade.Facil:
-                            <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
-                            break;
-
-                        case Dificuldade.Media:
-                            <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
-                            break;
-
-                        case Dificuldade.Dificil:
-                            <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
-                            break;
-                    }
-                    &nbsp;|&nbsp;
-                    <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receitas[i].MinutosPreparacao min</span>
-                    &nbsp;|&nbsp;
-                    <span>@Model.Receitas[i].NumeroDoses doses</span>
-
-                </div>
-            }
-            @for (; j < 3; j++) {
-                <div class="col-sm Receita">
-                </div>
-            }
-        </div>
-
+    @if (Model.IngredientesExcluidos.Count == 0)
+    {
+        <text>(nenhuma)</text>
     }
-</div>
+
+    <div class="container">
+        @for (var i = 0; i < Model.IngredientesExcluidos.Count;)
+        {
+            <div class="row ReceitasLinha">
+                @{ var j = 0;}
+                @for (; j < 3 && i < Model.IngredientesExcluidos.Count; j++, i++)
+                {
+                    <div class="col-sm Receita">
+                        <a asp-controller="Ingredientes"
+                           asp-action="Detalhes"
+                           asp-route-id="@Model.IngredientesExcluidos[i].IngredienteId">
+                            <img class="ReceitaImg"
+                                 src="@GestorImagens.GetPathImagemIngrediente(Url, Model.IngredientesExcluidos[i].IngredienteId)"
+                                 alt="" />
+                            <p>
+                                @Model.IngredientesExcluidos[i].Nome
+                                <a asp-action="RemoverIngredienteExcluido" asp-route-id="@Model.IngredientesExcluidos[i].IngredienteId">
+                                    <i class="fas fa-trash" style="color: #dc3545;"></i>
+                                </a>
+                            </p>
+                        </a>
+                    </div>
+                }
+                @for (; j < 3; j++)
+                {
+                    <div class="col-sm Receita">
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

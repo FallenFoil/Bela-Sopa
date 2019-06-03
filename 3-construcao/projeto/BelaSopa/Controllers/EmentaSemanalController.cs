@@ -1,10 +1,10 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -55,12 +55,33 @@ namespace BelaSopa.Controllers
             ViewData["Action"] = "AdicionarRefeicao";
             ViewData["DiaDaSemana"] = diaDaSemana;
             ViewData["RefeicaoDoDia"] = refeicaoDoDia;
+            ViewData["ShowBackButton"] = true;
 
             ViewData["nome"] = nome;
             ViewData["etiqueta"] = etiqueta;
             ViewData["dificuldade"] = dificuldade;
 
-            IQueryable<Receita> receitas = context.Receita;
+            IQueryable<Receita> receitas =
+                context
+                .Receita
+                .Include(r => r.ReceitaEtiqueta)
+                .Include(r => r.UtilizacoesIngredientes);
+
+            if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
+            {
+                var idsIngredientesExcluidos =
+                    context
+                    .ClienteExcluiIngrediente
+                    .Where(cei => cei.ClienteId == cliente.UtilizadorId)
+                    .Select(cei => cei.IngredienteId)
+                    .ToHashSet();
+
+                receitas = receitas.Where(
+                    receita => !receita.UtilizacoesIngredientes.Any(
+                        ui => ui.IngredienteId.HasValue && idsIngredientesExcluidos.Contains(ui.IngredienteId.Value)
+                        )
+                    );
+            }
 
             if (nome != null)
                 receitas = receitas.Where(receita => Util.FuzzyContains(receita.Nome, nome));
@@ -144,26 +165,32 @@ namespace BelaSopa.Controllers
 
             foreach (UtilizacaoIngrediente ui in utilizacoesIngredientes)
             {
-                string[] splitUI = ui.Quantidade.Split(" ");
+                string[] splitUi = ui.Quantidade.Split();
+
                 if (ingrQuantidade.ContainsKey(ui.Nome))
                 {
-                    Dictionary<string, double> units = ingrQuantidade[ui.Nome];
-                    string unit = "";
-                    for (int i = 1; i < splitUI.Length; i++)
-                    {
-                        unit += splitUI[i] + " ";
-                    }
-                    if (splitUI[0].Equals("qb"))
+                    var units = ingrQuantidade[ui.Nome];
+
+                    var unit = "";
+
+                    for (int i = 1; i < splitUi.Length; i++)
+                        unit += splitUi[i] + " ";
+
+                    if (splitUi[0].ToLower() == "qb")
                     {
                         units.Add(unit, 0);
                     }
                     else
                     {
-                        double quantity = double.Parse(splitUI[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture);
+                        var quantity = double.Parse(
+                            splitUi[0].Replace(',', '.'),
+                            NumberStyles.Any,
+                            CultureInfo.InvariantCulture
+                            );
+
                         if (units.ContainsKey(unit))
-                        {
                             units[unit] += quantity;
-                        }
+
                         else units.Add(unit, quantity);
                     }
                 }
@@ -171,31 +198,34 @@ namespace BelaSopa.Controllers
                 {
                     var quantidades = new Dictionary<string, double>();
 
-                    if (splitUI.Length >= 2)
+                    if (splitUi.Length >= 2)
                     {
-                        string key = "";
-                        for (int i = 1; i < splitUI.Length; i++)
-                        {
-                            key += splitUI[i] + " ";
-                        }
-                        try
-                        {
-                            quantidades.Add(key, double.Parse(splitUI[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture));
-                        }
-                        catch (Exception)
-                        {
-                            throw new Exception(splitUI[0].Replace(',', '.'));
-                        }
+                        var key = "";
+
+                        for (int i = 1; i < splitUi.Length; i++)
+                            key += splitUi[i] + " ";
+
+                        quantidades.Add(
+                            key,
+                            double.Parse(splitUi[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture)
+                            );
                     }
-                    else if (splitUI.Length == 1)
+                    else if (splitUi.Length == 1)
                     {
-                        if (splitUI[0].Equals("qb"))
+                        if (splitUi[0].ToLower() == "qb")
                         {
                             quantidades.Add("qb", 0);
                         }
                         else
                         {
-                            quantidades.Add("", double.Parse(splitUI[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture));
+                            quantidades.Add(
+                                "",
+                                double.Parse(
+                                    splitUi[0].Replace(',', '.'),
+                                    NumberStyles.Any,
+                                    CultureInfo.InvariantCulture
+                                    )
+                                );
                         }
                     }
 
@@ -205,11 +235,11 @@ namespace BelaSopa.Controllers
 
             var ingredientes = new Dictionary<string, string>();
 
-            foreach (string ingrediente in ingrQuantidade.Keys)
+            foreach (var ingrediente in ingrQuantidade.Keys)
             {
                 string total = "";
 
-                foreach (string unit in ingrQuantidade[ingrediente].Keys)
+                foreach (var unit in ingrQuantidade[ingrediente].Keys)
                 {
                     if (unit.Equals("qb"))
                         total += "qb + ";

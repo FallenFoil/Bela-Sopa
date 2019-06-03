@@ -37,10 +37,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public virtual ICollection<Processo> Processos { get; set; } = new List<Processo>();
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteFavorito> ClienteFavorito { get; set; }
+        public virtual ICollection<ClienteReceitaFavorita> ClienteFavorito { get; set; }
 
         [NotMapped, JsonIgnore]
-        public virtual ICollection<ClienteFinalizado> ClienteFinalizado { get; set; }
+        public virtual ICollection<ClienteReceitaFinalizada> ClienteFinalizado { get; set; }
 
         public virtual ICollection<RefeicaoEmentaSemanal> RefeicaoEmentaSemanal { get; set; } = new List<RefeicaoEmentaSemanal>();
 
