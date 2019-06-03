@@ -26,7 +26,7 @@ comportamento-normal:
 
 comportamentos-alternativos:
 
-  - condição: Existe um próximo processo
+  - condição: Existe próximo processo
     passo-origem: 10
     passos:
       - (S) 10.1. Recebe o próximo processo e volta ao passo 6
@@ -36,7 +36,7 @@ comportamentos-alternativos:
     passos:
       - (S) 7.1. Recebe o processo anterior e volta ao passo 6
 
-  - condição: Não existe um processo anterior
+  - condição: Processo anterior não existe
     passo-origem: '8.1'
     passos:
       - (S) 8.1.1. Indica que não existe um processo anterior
@@ -44,7 +44,7 @@ comportamentos-alternativos:
       - (S) 8.1.3. Volta ao passo 6
 
 
-  - condição: Ator não quer responder
+  - condição: Ator não responde
     passo-origem: 13
     passos:
       - (S) 13.1. Termina Confecionar receita
