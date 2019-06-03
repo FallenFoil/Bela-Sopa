@@ -51,7 +51,7 @@ namespace BelaSopa.Controllers
             [FromQuery] Dificuldade? dificuldade
             )
         {
-            ViewData["Title"] = "Adicionar refeição à ementa semanal";
+            ViewData["Title"] = "Adicionar receita à ementa semanal";
             ViewData["Action"] = "AdicionarRefeicao";
             ViewData["DiaDaSemana"] = diaDaSemana;
             ViewData["RefeicaoDoDia"] = refeicaoDoDia;
