@@ -222,7 +222,7 @@ namespace BelaSopa.Controllers
             if (old != null && old.ReceitaId != ec.ReceitaId)
             {
                 indiceProcesso = old.NumProcesso;
-                TempData["Message"] = "Existe uma receita ainda em confeção, cancele ou termine a confeção desta receita";
+                TempData["Error"] = "Existe uma receita ainda em confeção, cancele ou termine a confeção desta receita.";
 
             }
             else
@@ -270,7 +270,7 @@ namespace BelaSopa.Controllers
                 Tecnicas: tecnicas,
                 Utensilios: utensilios,
                 Favorita: ReceitaIsFavorita(receita.ReceitaId),
-                Processo: indiceProcesso
+                IndiceProcesso: indiceProcesso
                 );
 
             return View(viewName: "ConfecionarReceita", model: viewModel);
