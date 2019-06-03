@@ -215,6 +215,8 @@
 
 }
 
-<a asp-controller="CriarReceita" asp-action="EditarReceita" asp-route-idReceita="@Model.Receita.ReceitaId" class="btn btn-primary" style="margin-left: 0.5em">
-    <i class="fas fa-plus-square" style="margin-right: 5px;"></i> Criar receita
-</a>
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR)) {
+    <a asp-controller="CriarReceita" asp-action="EditarReceita" asp-route-idReceita="@Model.Receita.ReceitaId" class="btn btn-primary" style="margin-left: 0.5em">
+        Editar Receita
+    </a>
+}

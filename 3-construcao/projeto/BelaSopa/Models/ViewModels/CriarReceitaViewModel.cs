@@ -28,7 +28,7 @@ namespace BelaSopa.Models.ViewModels {
 
         [Display(Name = "Nome da Receita")]
         [Required(ErrorMessage = "O nome da receita é obrigatório.")]
-        [StringLength(32, MinimumLength = 4, ErrorMessage = "O nome da receita deve ter entre 4 e 32 carateres.")]
+        [StringLength(120, MinimumLength = 4, ErrorMessage = "O nome da receita deve ter entre 4 e 32 carateres.")]
         public string NomeDeReceita { get; set; }
 
         [Display(Name = "Descrição")]
