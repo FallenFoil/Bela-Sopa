@@ -241,14 +241,26 @@ namespace BelaSopa.Controllers
             return View(viewName: "ProcessosETarefas", model: Receita);
         }
 
-        private void SaveViewModel(CriarReceitaViewModel Receita)
-        {
-            TempData["form"] = Receita;
-        }
+        [HttpGet("[controller]/[action]/{idReceita}")]
+        public IActionResult EditarReceita([FromRoute] int idReceita) {
+            Receita r = context.Receita.Find(idReceita);
+            if (r == null) return NotFound();
+            CriarReceitaViewModel crvm = new CriarReceitaViewModel();
 
-        private CriarReceitaViewModel GetViewModel()
-        {
-            return TempData["form"] as CriarReceitaViewModel;
+            crvm.NomeDeReceita = r.Nome;
+            crvm.Descricao = r.Descricao;
+            crvm.Minutos = r.MinutosPreparacao;
+            crvm.Doses = r.NumeroDoses;
+            if(r.Dificuldade == Dificuldade.Facil) {
+                crvm.DificuldadeStr = "Fácil";
+            } else if(r.Dificuldade == Dificuldade.Media){
+                crvm.DificuldadeStr = "Médio";
+            } else if(crvm.Dificuldade == Dificuldade.Dificil) {
+                crvm.DificuldadeStr = "Dificil";
+            }
+             
+            
+            return Index(crvm);
         }
 
     }

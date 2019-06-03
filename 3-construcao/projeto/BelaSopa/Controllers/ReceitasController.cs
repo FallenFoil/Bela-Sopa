@@ -1,6 +1,7 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
+using BelaSopa.Models.ViewModels;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -236,7 +237,7 @@ namespace BelaSopa.Controllers
                 {
                     return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
                 }
-                else if (indiceProcesso >= (receita.Processos as IList<Processo>).Count)
+                else if (indiceProcesso >= (receita.Processos as IList<Processo>).Count && old != null)
                 {
                     context.EstadoConfecao.Remove(old);
                     ClienteReceitaFinalizada crf = new ClienteReceitaFinalizada
@@ -248,7 +249,7 @@ namespace BelaSopa.Controllers
                     };
                     context.ClienteReceitaFinalizada.Add(crf);
                     context.SaveChanges();
-                    return View(viewName: "TerminarConfecao");
+                    return View(viewName: "TerminarConfecao", model: crf);
                 }
                 else
                 {
@@ -274,6 +275,22 @@ namespace BelaSopa.Controllers
                 );
 
             return View(viewName: "ConfecionarReceita", model: viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult SairConfecao([FromQuery] String dificuldade){
+            ClienteReceitaFinalizada ec = context.ClienteReceitaFinalizada.Where(crf =>
+                                                crf.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
+                                                .OrderByDescending(crf => crf.DataInicio)
+                                                .FirstOrDefault();
+            if (ec != null && ec.Avaliacao == null && dificuldade != null && dificuldade != "") {
+                context.ClienteReceitaFinalizada.Remove(ec);
+                context.SaveChanges();
+                ec.Avaliacao = dificuldade;
+                context.ClienteReceitaFinalizada.Add(ec);
+                context.SaveChanges();
+            }
+            return RedirectToAction(actionName: "Index");
         }
 
         [HttpGet]

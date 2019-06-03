@@ -10,6 +10,7 @@
                 <th scope="col">Receita</th>
                 <th scope="col">Data</th>
                 <th score="col">Duração (min)</th>
+                <th score="col">Dificuldade</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,9 @@
                     <td><a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@receitaFinalizada.ReceitaId">@receitaFinalizada.Receita.Nome</a></td>
                     <td>@receitaFinalizada.DataInicio.ToString()</td>
                     <td>@receitaFinalizada.GetDuraçãoMinutos() min</td>
+                    @if (receitaFinalizada.Avaliacao != null) {
+                    <td>receitaFinalizada.Avaliacao</td>
+                    } else {<td>---</td> }
                 </tr>
             }
         </tbody>

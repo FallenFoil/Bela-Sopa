@@ -6,17 +6,19 @@ namespace BelaSopa.Models.DomainModels.Assistente
 {
     public class ClienteReceitaFinalizada
     {
-        [Key]
+        [Required]
         public int ClienteId { get; set; }
 
-        [Key]
+        [Required]
         public int ReceitaId { get; set; }
 
-        [Key]
+        [Required]
         public DateTime DataInicio { get; set; }
 
         [Required]
         public DateTime DataFim { get; set; }
+
+        public String Avaliacao { set; get; }
 
         public virtual Cliente Cliente { get; set; }
 
