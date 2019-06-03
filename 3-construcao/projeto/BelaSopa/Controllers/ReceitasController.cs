@@ -52,6 +52,10 @@ namespace BelaSopa.Controllers
 
             if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
             {
+                receitas = receitas.Where(
+                    r => r.ClienteId == null || r.ClienteId == cliente.UtilizadorId
+                    );
+
                 var idsIngredientesExcluidos =
                     context
                     .ClienteExcluiIngrediente
@@ -64,6 +68,10 @@ namespace BelaSopa.Controllers
                         ui => ui.IngredienteId.HasValue && idsIngredientesExcluidos.Contains(ui.IngredienteId.Value)
                         )
                     );
+            }
+            else
+            {
+                receitas = receitas.Where(r => r.ClienteId == null);
             }
 
             if (nome != null)
@@ -115,6 +123,12 @@ namespace BelaSopa.Controllers
 
             if (receita == null)
                 return NotFound();
+
+            if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
+            {
+                if (receita.ClienteId != null && receita.ClienteId != cliente.UtilizadorId)
+                    return NotFound();
+            }
 
             var (tecnicas, utensilios) = receita.GetTecnicasUtensilios();
 
