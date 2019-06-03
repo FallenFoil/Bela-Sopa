@@ -243,7 +243,7 @@ namespace BelaSopa.Controllers
                                     NumberStyles.Any,
                                     CultureInfo.InvariantCulture
                                     );
-                            } catch (Exception e) {
+                            } catch (Exception) {
                                 quantity = 0;
                             }
                         }
