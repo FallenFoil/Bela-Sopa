@@ -51,16 +51,17 @@ namespace BelaSopa.Models.ViewModels {
 
 
         [Display(Name = "Valores Nutricionais")]
-        public List<ValorNutricional> ValorNutricionais { get; set; } = new List<ValorNutricional>();
-
+        public List<String> NomeValorNutricionais { get; set; } = new List<string>();
+        public List<String> UnidadeValorNutricionais { get; set; } = new List<string>();
+        public List<Int32> PercentagemVdrAdulto { get; set; } = new List<Int32>();
+        public List<Int32> PorDose { get; set; } = new List<Int32>();
 
         [Display(Name = "Etiquetas")]
-        public List<Etiqueta> ReceitaEtiqueta { get; set; } = new List<Etiqueta>();
+        public List<String> ReceitaEtiqueta { get; set; } = new List<String>();
 
 
         [Display(Name = "Ingredientes")]
         public List<UtilizacaoIngrediente> UtilizacoesIngredientes { get; set; } = new List<UtilizacaoIngrediente>();
-
         public List<Int32> Quantidades { set; get; } = new List<Int32>();
 
         /*

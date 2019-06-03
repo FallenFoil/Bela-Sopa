@@ -43,6 +43,11 @@ namespace BelaSopa.Controllers
                     return Index(form);
                 }
 
+                if(form.Processos.Count == 0) {
+                    TempData["Error"] = "Não pode adicionar uma receita sem processos";
+                    return Index(form);
+                }
+
                 switch (form.DificuldadeStr)
                 {
                     case "Fácil": receita.Dificuldade = Dificuldade.Facil; break;
@@ -55,42 +60,54 @@ namespace BelaSopa.Controllers
                 receita.NumeroDoses = form.Doses;
                 List<string> nomesEtiquetas = new List<String>();
 
-                Processo processo = new Processo();
-
-                
-                /*
-                foreach (TextoTarefa txtTarefa in form.Tarefas)
-                {
-                    processo.Tarefas.Add(new Tarefa
-                    {
-                        Texto = new List<TextoTarefa> {
-                            new TextoTarefa{
-                                Texto = txtTarefa.Texto
-                            }
+                for(int i = 0; i < form.Processos.Count; i++) {
+                    if (form.Processos[i].Count == 0) {
+                        TempData["Error"] = "Não pode adicionar um processo sem tarefas (Processo: " + (i+1).ToString() + " )" ;
+                        return Index(form);
+                    }
+                    for(int j = 0; j < form.Processos[i].Count; j++) { 
+                        if (form.Processos[i][j].Equals("")) {
+                            TempData["Error"] = "Não pode existir uma tarefa vazia (Processo: " + (i+1).ToString() + ", Tarefa:" + (j+1).ToString() + " )";
+                            return Index(form);
                         }
-                    });
+                        receita.Processos.Add(new Processo {
+                            Tarefas = new List<Tarefa> {
+                                new Tarefa {
+                                    Texto = new List<TextoTarefa> {
+                                    new TextoTarefa{
+                                        Texto = form.Processos[i][j]
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    }
                 }
-                if (form.Tarefas.Count > 0)
-                    receita.Processos.Add(processo);*/
+
+                if (form.UtilizacoesIngredientes.Count == 0) {
+                    TempData["Error"] = "Selecione um ingrediente no mínimo";
+                    return Index(form);
+                }
                 for(int i = 0; i < form.UtilizacoesIngredientes.Count; i++) {
                     form.UtilizacoesIngredientes[i].Quantidade = form.Quantidades[i].ToString() + " " + form.UtilizacoesIngredientes[i].Quantidade;
                 }
                 receita.UtilizacoesIngredientes = form.UtilizacoesIngredientes;
-                receita.ValoresNutricionais = form.ValorNutricionais;
+                for(int i = 0; i < form.NomeValorNutricionais.Count; i++) {
+                    receita.ValoresNutricionais.Add(new ValorNutricional {
+                        Nome = form.NomeValorNutricionais[i],
+                        Dose = form.PorDose[i].ToString() + " " + form.UnidadeValorNutricionais[i],
+                        PercentagemVdrAdulto = form.PercentagemVdrAdulto[i]
+                    });
+                }
                 receita.Descricao = form.Descricao;
 
                 if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
                     receita.ClienteId = cliente.UtilizadorId;
 
-                // try {
-                context.AdicionarReceita(receita, nomesEtiquetas, imageArr);
+                context.AdicionarReceita(receita, form.ReceitaEtiqueta, imageArr);
                 form = new CriarReceitaViewModel();
                 TempData["Success"] = "Receita adicionada com sucesso.";
-                return Index(form);
-                //} catch (Exception e) {
-                //  TempData["Error"] = "Não foi possivel adicionar a receita";
-                //   return Index(form);
-                // }
+                return RedirectToAction("Index", "Receitas");
             }
             else
             {
@@ -111,8 +128,7 @@ namespace BelaSopa.Controllers
                 List<Etiqueta> ets = context.Etiqueta.ToList<Etiqueta>();
                 foreach (Etiqueta et in ets)
                 {
-                    if (!Receita.ReceitaEtiqueta.Contains(et))
-                        Receita.Etiquetas.Add(new SelectListItem { Value = et.EtiquetaId.ToString(), Text = et.Nome });
+                    Receita.Etiquetas.Add(new SelectListItem { Value = et.Nome, Text = et.Nome });
                 }
             }
 
@@ -123,7 +139,11 @@ namespace BelaSopa.Controllers
 
         public IActionResult NovoValorNutricional(CriarReceitaViewModel Receita)
         {
-            Receita.ValorNutricionais.Add(new ValorNutricional());
+            Receita.NomeValorNutricionais.Add("");
+            Receita.PorDose.Add(0);
+            Receita.PercentagemVdrAdulto.Add(0);
+            Receita.UnidadeValorNutricionais.Add("");
+            
             return ValoresNutricionais(Receita);
         }
 
@@ -131,19 +151,25 @@ namespace BelaSopa.Controllers
         [HttpPost("[controller]/[action]/{num}")]
         public IActionResult RemoverValorNutricional(CriarReceitaViewModel Receita, [FromRoute] int num)
         {
-            if (num < 0 || num >= Receita.ValorNutricionais.Count)
-            {
-                TempData["Error"] = "Não foi possivel remover o valor nutricional";
-                return ValoresNutricionais(Receita);
-            }
-            Receita.ValorNutricionais.RemoveAt(num);
+            ModelState.Clear();
+            Receita.NomeValorNutricionais.RemoveAt(num);
+            Receita.PorDose.RemoveAt(num);
+            Receita.PercentagemVdrAdulto.RemoveAt(num);
+            Receita.UnidadeValorNutricionais.RemoveAt(num);
+
             return ValoresNutricionais(Receita);
         }
 
 
         public IActionResult NovaEtiqueta(CriarReceitaViewModel Receita)
         {
-            Receita.ReceitaEtiqueta.Add(new Etiqueta());
+            List<Etiqueta> etiquetas = context.Etiqueta.ToList<Etiqueta>();
+            if (Receita.ReceitaEtiqueta.Count == etiquetas.Count) {
+                TempData["Error"] = "Não existem mais etiquetas";
+            } else {
+                Receita.ReceitaEtiqueta.Add("");
+            } 
+
             return Index(Receita);
         }
 
@@ -179,25 +205,6 @@ namespace BelaSopa.Controllers
             Receita.Processos.Add(tarefa);
             return ProcessosETarefas(Receita);
         }
-
-        /*
-        public IActionResult NovaTarefa(CriarReceitaViewModel Receita)
-        {
-            Receita.Tarefas.Add(new TextoTarefa { Texto = "" });
-            return ProcessosETarefas(Receita);
-        }
-
-        [HttpPost("[controller]/[action]/{num}")]
-        public IActionResult RemoverTarefa(CriarReceitaViewModel Receita, [FromRoute] int num)
-        {
-            if (num < 0 || num >= Receita.Tarefas.Count)
-            {
-                TempData["Error"] = "Não foi possivel remover a tarefa";
-                return ProcessosETarefas(Receita);
-            }
-            Receita.Tarefas.RemoveAt(num);
-            return ProcessosETarefas(Receita);
-        }*/
 
         public IActionResult NovoIngrediente(CriarReceitaViewModel Receita)
         {
