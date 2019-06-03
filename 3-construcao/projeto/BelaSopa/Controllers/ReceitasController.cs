@@ -22,9 +22,11 @@ namespace BelaSopa.Controllers
         }
 
         [HttpPost("[controller]/[action]/{id}")]
-        public IActionResult Cancelar([FromRoute] int id) {
+        public IActionResult Cancelar([FromRoute] int id)
+        {
             EstadoConfecao ec = context.EstadoConfecao.Find(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
-            if(ec != null) {
+            if (ec != null)
+            {
                 context.EstadoConfecao.Remove(ec);
                 context.SaveChanges();
             }
@@ -154,11 +156,12 @@ namespace BelaSopa.Controllers
 
             return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
         }
-        
+
         [HttpGet]
-        public IActionResult EmConfecao() {
+        public IActionResult EmConfecao()
+        {
             EstadoConfecao ec = context.EstadoConfecao.Find(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
-            if(ec == null)
+            if (ec == null)
                 return RedirectToAction(actionName: "Index");
             return RedirectToAction(actionName: "Confecionar", routeValues: new { id = ec.ReceitaId, indiceProcesso = ec.NumProcesso });
         }
@@ -166,7 +169,8 @@ namespace BelaSopa.Controllers
         [HttpGet("[controller]/[action]/{id}/{indiceProcesso}")]
         public IActionResult Confecionar([FromRoute] int id, [FromRoute] int indiceProcesso)
         {
-            EstadoConfecao ec = new EstadoConfecao {
+            EstadoConfecao ec = new EstadoConfecao
+            {
                 ClienteId = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId,
                 ReceitaId = id,
                 Inicio = DateTime.Now,
@@ -201,19 +205,28 @@ namespace BelaSopa.Controllers
             if (receita == null)
                 return NotFound();
 
-            if(old != null && old.ReceitaId != ec.ReceitaId) {
+            if (old != null && old.ReceitaId != ec.ReceitaId)
+            {
                 indiceProcesso = old.NumProcesso;
                 TempData["Message"] = "Existe uma receita ainda em confeção, cancele ou termine a confeção desta receita";
 
-            } else {
-                if (old == null && indiceProcesso == 0) {
+            }
+            else
+            {
+                if (old == null && indiceProcesso == 0)
+                {
                     context.EstadoConfecao.Add(ec);
                     context.SaveChanges();
-                } else if (indiceProcesso < 0) {
+                }
+                else if (indiceProcesso < 0)
+                {
                     return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
-                } else if (indiceProcesso >= (receita.Processos as IList<Processo>).Count) {
+                }
+                else if (indiceProcesso >= (receita.Processos as IList<Processo>).Count)
+                {
                     context.EstadoConfecao.Remove(old);
-                    ClienteReceitaFinalizada crf = new ClienteReceitaFinalizada {
+                    ClienteReceitaFinalizada crf = new ClienteReceitaFinalizada
+                    {
                         ClienteId = old.ClienteId,
                         ReceitaId = old.ReceitaId,
                         DataFim = ec.Inicio,
@@ -222,8 +235,11 @@ namespace BelaSopa.Controllers
                     context.ClienteReceitaFinalizada.Add(crf);
                     context.SaveChanges();
                     return View(viewName: "TerminarConfecao");
-                } else {
-                    if (old != null) {
+                }
+                else
+                {
+                    if (old != null)
+                    {
                         context.EstadoConfecao.Remove(old);
                         context.SaveChanges();
                         old.NumProcesso = ec.NumProcesso;
@@ -244,6 +260,20 @@ namespace BelaSopa.Controllers
                 );
 
             return View(viewName: "ConfecionarReceita", model: viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult CancelarConfecao()
+        {
+            var ec = context.EstadoConfecao.Find(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
+
+            if (ec != null)
+            {
+                context.EstadoConfecao.Remove(ec);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction(actionName: "Detalhes", routeValues: new { id = ec.ReceitaId });
         }
 
         private bool ReceitaIsFavorita(int idReceita)
