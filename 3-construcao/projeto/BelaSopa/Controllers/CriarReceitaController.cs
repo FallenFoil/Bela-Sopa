@@ -200,10 +200,49 @@ namespace BelaSopa.Controllers
             return ProcessosETarefas(Receita);
         }
 
+        [HttpPost("[controller]/[action]/{processo}/{tarefa}")]
+        public IActionResult RemoverTarefa(CriarReceitaViewModel Receita, [FromRoute] int processo, [FromRoute] int tarefa)
+        {
+            ModelState.Clear();
+
+            if (processo < 0 || processo >= Receita.Processos.Count)
+            {
+                TempData["Error"] = "Não foi possivel remover a etiqueta";
+                return ProcessosETarefas(Receita);
+            }
+
+            List<string> p = Receita.Processos[processo];
+
+            if (tarefa < 0 || tarefa >= p.Count)
+            {
+                TempData["Error"] = "Não foi possivel remover a etiqueta";
+                return ProcessosETarefas(Receita);
+            }
+
+            p.RemoveAt(tarefa); ;
+
+            return ProcessosETarefas(Receita);
+        }
+
         public IActionResult NovoProcesso(CriarReceitaViewModel Receita) {
             List<string> tarefa = new List<string>();
             tarefa.Add("");
             Receita.Processos.Add(tarefa);
+            return ProcessosETarefas(Receita);
+        }
+
+        [HttpPost("[controller]/[action]/{processo}")]
+        public IActionResult RemoverProcesso(CriarReceitaViewModel Receita, [FromRoute] int processo)
+        {
+            ModelState.Clear();
+            if (processo < 0 || processo >= Receita.Processos.Count)
+            {
+                TempData["Error"] = "Não foi possivel remover a etiqueta";
+                return ProcessosETarefas(Receita);
+            }
+
+            Receita.Processos.RemoveAt(processo);
+
             return ProcessosETarefas(Receita);
         }
 
