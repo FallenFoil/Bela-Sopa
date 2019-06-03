@@ -5,6 +5,7 @@ using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -198,6 +199,7 @@ namespace BelaSopa.Controllers
                     }
                     else
                     {
+                      
                         var quantity = double.Parse(
                             splitUi[0].Replace(',', '.'),
                             NumberStyles.Any,
@@ -234,14 +236,16 @@ namespace BelaSopa.Controllers
                         }
                         else
                         {
-                            quantidades.Add(
-                                "",
-                                double.Parse(
+                            var quantity = 0.0;
+                            try {
+                                quantity = double.Parse(
                                     splitUi[0].Replace(',', '.'),
                                     NumberStyles.Any,
                                     CultureInfo.InvariantCulture
-                                    )
-                                );
+                                    );
+                            } catch (Exception e) {
+                                quantity = 0;
+                            }
                         }
                     }
 
@@ -265,7 +269,8 @@ namespace BelaSopa.Controllers
                         total += ingrQuantidade[ingrediente][unit].ToString() + " " + unit + " + ";
                 }
 
-                total = total.Substring(0, total.Length - 2);
+                if(total.Length - 2 > 0)
+                    total = total.Substring(0, total.Length - 2);
                 ingredientes.Add(ingrediente, total);
             }
 

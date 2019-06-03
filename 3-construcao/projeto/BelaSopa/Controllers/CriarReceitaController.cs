@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace BelaSopa.Controllers
 {
@@ -243,23 +245,97 @@ namespace BelaSopa.Controllers
 
         [HttpGet("[controller]/[action]/{idReceita}")]
         public IActionResult EditarReceita([FromRoute] int idReceita) {
-            Receita r = context.Receita.Find(idReceita);
-            if (r == null) return NotFound();
+
+
+            var receita =
+               context
+               .Receita
+               .Include(r => r.ReceitaEtiqueta)
+                   .ThenInclude(re => re.Etiqueta)
+               .Include(r => r.UtilizacoesIngredientes)
+                   .ThenInclude(ui => ui.Ingrediente)
+               .Include(r => r.ValoresNutricionais)
+               .Include(r => r.Processos)
+                   .ThenInclude(p => p.Tarefas)
+                   .ThenInclude(t => t.Texto)
+                   .ThenInclude(t => t.Ingrediente)
+               .Include(r => r.Processos)
+                   .ThenInclude(p => p.Tarefas)
+                   .ThenInclude(t => t.Texto)
+                   .ThenInclude(t => t.Tecnica)
+               .Include(r => r.Processos)
+                   .ThenInclude(p => p.Tarefas)
+                   .ThenInclude(t => t.Texto)
+                   .ThenInclude(t => t.Utensilio)
+               .SingleOrDefault(i => i.ReceitaId == idReceita);
+
+            if (receita == null) return NotFound();
             CriarReceitaViewModel crvm = new CriarReceitaViewModel();
 
-            crvm.NomeDeReceita = r.Nome;
-            crvm.Descricao = r.Descricao;
-            crvm.Minutos = r.MinutosPreparacao;
-            crvm.Doses = r.NumeroDoses;
-            if(r.Dificuldade == Dificuldade.Facil) {
+            crvm.NomeDeReceita = receita.Nome;
+            crvm.Descricao = receita.Descricao;
+            crvm.Minutos = receita.MinutosPreparacao;
+            crvm.Doses = receita.NumeroDoses;
+            if(receita.Dificuldade == Dificuldade.Facil) {
                 crvm.DificuldadeStr = "Fácil";
-            } else if(r.Dificuldade == Dificuldade.Media){
+            } else if(receita.Dificuldade == Dificuldade.Media){
                 crvm.DificuldadeStr = "Médio";
             } else if(crvm.Dificuldade == Dificuldade.Dificil) {
                 crvm.DificuldadeStr = "Dificil";
             }
-             
-            
+
+            foreach (Processo processo in receita.Processos.OrderBy(p => p.Indice)) {
+                List<string> tarefas = new List<String>();
+                foreach (Tarefa tarefa in processo.Tarefas.OrderBy(t => t.Indice)) {
+                    string txt = "";
+                    foreach(TextoTarefa txtTar in tarefa.Texto.OrderBy(t => t.Indice)) {
+                        txt += txtTar.Texto + " ";
+                    }
+                    tarefas.Add(txt);
+                }
+                crvm.Processos.Add(tarefas);
+            }
+
+            foreach(UtilizacaoIngrediente ui in receita.UtilizacoesIngredientes) {
+                string[] split = ui.Quantidade.Split(" ");
+                int quant = 0;
+                string unidade = "qb";
+                if (split.Length == 2) {
+                    quant = (int) double.Parse(
+                           split[0].Replace(',', '.'),
+                           NumberStyles.Any,
+                           CultureInfo.InvariantCulture
+                           ); ;
+                    unidade = split[1];
+                }
+                if(split.Length == 1) {
+                    if (!split[0].Equals("qb")) {
+                        quant = 0;
+                        unidade = "";
+                    }
+                }
+                crvm.UtilizacoesIngredientes.Add(new UtilizacaoIngrediente { Quantidade = unidade, Nome = ui.Nome });
+                crvm.Quantidades.Add(quant);
+            }
+
+            foreach(ValorNutricional cn in receita.ValoresNutricionais) {
+                string[] splitUnidades = cn.Dose.Split(" ");
+                crvm.UnidadeValorNutricionais.Add(splitUnidades[1]);
+                crvm.PorDose.Add((int)double.Parse(
+                           splitUnidades[0].Replace(',', '.'),
+                           NumberStyles.Any,
+                           CultureInfo.InvariantCulture
+                           ));
+                crvm.NomeValorNutricionais.Add(cn.Nome);
+                if(cn.PercentagemVdrAdulto.HasValue)
+                    crvm.PercentagemVdrAdulto.Add(cn.PercentagemVdrAdulto.Value);
+                else crvm.PercentagemVdrAdulto.Add(0);
+            }
+
+            foreach(ReceitaEtiqueta eti in receita.ReceitaEtiqueta) {
+                crvm.ReceitaEtiqueta.Add(eti.Etiqueta.Nome);
+            }
+
             return Index(crvm);
         }
 
