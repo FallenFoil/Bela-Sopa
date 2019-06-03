@@ -23,7 +23,12 @@ namespace BelaSopa.Controllers
         {
             List<ClienteReceitaFinalizada> receitasFinalizadas = context.ClienteReceitaFinalizada
                                                         .Where(cf => cf.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
+                                                        .OrderByDescending(cf => cf.DataInicio)
                                                         .ToList();
+            foreach(ClienteReceitaFinalizada crf in receitasFinalizadas) {
+                Receita r = context.Receita.Find(crf.ReceitaId);
+                crf.Receita = r;
+            }
 
             return View(viewName: "Historico", model: receitasFinalizadas);
         }

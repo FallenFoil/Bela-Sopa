@@ -21,6 +21,16 @@ namespace BelaSopa.Controllers
             this.context = context;
         }
 
+        [HttpPost("[controller]/[action]/{id}")]
+        public IActionResult Cancelar([FromRoute] int id) {
+            EstadoConfecao ec = context.EstadoConfecao.Find(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
+            if(ec != null) {
+                context.EstadoConfecao.Remove(ec);
+                context.SaveChanges();
+            }
+            return Detalhes(id);
+        }
+
         [HttpGet]
         public IActionResult Index(
             [FromQuery] string nome,
@@ -73,8 +83,8 @@ namespace BelaSopa.Controllers
             return View(viewName: "ListaReceitas", model: viewModel);
         }
 
-        [HttpGet]
-        [Route("[controller]/[action]/{id}")]
+        [HttpGet("[controller]/[action]/{id}")]
+        [HttpPost("[controller]/[action]/{id}")]
         public IActionResult Detalhes([FromRoute] int id)
         {
             // obter receita

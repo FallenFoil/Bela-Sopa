@@ -88,7 +88,7 @@ namespace BelaSopa.Models
                 .HasForeignKey(ti => ti.ReceitaId);
 
             modelBuilder.Entity<ClienteReceitaFinalizada>()
-                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId });
+                .HasKey(cr => new { cr.ClienteId, cr.ReceitaId, cr.DataInicio });
             modelBuilder.Entity<ClienteReceitaFinalizada>()
                 .HasOne(ti => ti.Cliente)
                 .WithMany(t => t.ClienteFinalizado)
