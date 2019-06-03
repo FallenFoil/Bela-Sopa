@@ -51,7 +51,7 @@ namespace BelaSopa.Controllers
             [FromQuery] Dificuldade? dificuldade
             )
         {
-            ViewData["Title"] = "Adicionar refeição à ementa semanal";
+            ViewData["Title"] = "Adicionar receita à ementa semanal";
             ViewData["Action"] = "AdicionarRefeicao";
             ViewData["DiaDaSemana"] = diaDaSemana;
             ViewData["RefeicaoDoDia"] = refeicaoDoDia;
@@ -178,7 +178,8 @@ namespace BelaSopa.Controllers
 
                     if (splitUi[0].ToLower() == "qb")
                     {
-                        units.Add(unit, 0);
+                        if(!units.ContainsKey("qb"))
+                            units.Add("qb", 0);
                     }
                     else
                     {

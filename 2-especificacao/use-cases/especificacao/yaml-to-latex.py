@@ -23,16 +23,17 @@ def _gen_latex(yaml_path: _p.Path) -> None:
     simple_name = yaml_path.stem
     tex_path    = yaml_path.parent / (yaml_path.stem + '.tex')
 
-    with yaml_path.open('r') as f:
-        data = _yaml.load(f.read())
+    with yaml_path.open('r', encoding='utf-8') as f:
+        data = _yaml.safe_load(f.read())
 
-    with tex_path.open('w') as f:
+    with tex_path.open('w', encoding='utf-8') as f:
 
         f.write(
 R'''% ---------------------------------------------------------------------------- %
 
 \begin{table}[ht]
   \centering
+  \tabelausecase
   \begin{tabularx}{\textwidth}{|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{2.5cm}|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|}
     \hline
 ''')

@@ -4,16 +4,14 @@
     ViewData["Title"] = "Ementa semanal";
 }
 
-<div class="table-responsive-sm">
-    <table class="table">
+<div class="container-fluid">
+    <table class="table-sm table-bordered" style="table-layout: fixed; width: 100%;">
         <thead>
             <tr>
-                <th>#</th>
+                <th></th>
                 @foreach (var diaDaSemana in Enum.GetValues(typeof(DiaDaSemana)).Cast<DiaDaSemana>())
                 {
-                    <th scope="col">
-                        <div class="col-sm diaDaSemana bordered">@diaDaSemana.GetNome()</div>
-                    </th>
+                    <th scope="col" style="text-align: center;">@diaDaSemana.GetNome()</th>
                 }
             </tr>
         </thead>
@@ -21,7 +19,7 @@
             @foreach (var refeicaoDoDia in Enum.GetValues(typeof(RefeicaoDoDia)).Cast<RefeicaoDoDia>())
             {
                 <tr>
-                    <th scope="row">@refeicaoDoDia.GetNome()</th>
+                    <th scope="row" style="text-align: center;">@refeicaoDoDia.GetNome()</th>
 
                     @foreach (var diaDaSemana in Enum.GetValues(typeof(DiaDaSemana)).Cast<DiaDaSemana>())
                     {
@@ -37,13 +35,18 @@
                                 }
                                 else
                                 {
-                                    <img class="ReceitaImg"
-                                         src="@GestorImagens.GetPathImagemReceita(Url, receita.ReceitaId)"
-                                         alt="" />
-                                    <p style="color:green;font-size:0.9em;">@receita.Nome</p>
-                                    <a asp-action="RemoverRefeicao"
-                                       asp-route-diaDaSemana="@diaDaSemana"
-                                       asp-route-refeicaoDoDia="@refeicaoDoDia"><i style="color:red;" class="fas fa-trash"></i></a>
+                                    <img src="@GestorImagens.GetPathImagemReceita(Url, receita.ReceitaId)"
+                                         alt=""
+                                         style="max-width: 100%; max-height: 100%;"
+                                         />
+                                    <p style="color: green; font-size: 0.9em;">
+                                        @receita.Nome
+                                        <a asp-action="RemoverRefeicao"
+                                           asp-route-diaDaSemana="@diaDaSemana"
+                                           asp-route-refeicaoDoDia="@refeicaoDoDia">
+                                            <i style="color: red;" class="fas fa-trash"></i>
+                                        </a>
+                                    </p>
                                 }
                             }
                         </td>
