@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    [Migration("20190603112322_v15")]
-    partial class v15
+    [Migration("20190603223656_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,6 +54,8 @@ namespace BelaSopa.Migrations
                     b.Property<int>("ReceitaId");
 
                     b.Property<DateTime>("DataInicio");
+
+                    b.Property<int?>("AvaliacaoDificuldade");
 
                     b.Property<DateTime>("DataFim");
 
@@ -199,6 +201,8 @@ namespace BelaSopa.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("ClienteId");
+
                     b.Property<string>("Descricao")
                         .IsRequired();
 
@@ -213,6 +217,8 @@ namespace BelaSopa.Migrations
                     b.Property<int>("NumeroDoses");
 
                     b.HasKey("ReceitaId");
+
+                    b.HasIndex("ClienteId");
 
                     b.ToTable("Receita");
                 });
@@ -510,6 +516,13 @@ namespace BelaSopa.Migrations
                         .WithMany("Processos")
                         .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.Receita", b =>
+                {
+                    b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId");
                 });
 
             modelBuilder.Entity("BelaSopa.Models.DomainModels.Assistente.ReceitaEtiqueta", b =>
