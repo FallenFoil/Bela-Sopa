@@ -1,7 +1,6 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
 using BelaSopa.Models.DomainModels.Utilizadores;
-using BelaSopa.Models.ViewModels;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -278,16 +277,15 @@ namespace BelaSopa.Controllers
         }
 
         [HttpPost]
-        public IActionResult SairConfecao([FromQuery] String dificuldade){
+        public IActionResult SairConfecao([Bind] ClienteReceitaFinalizada viewModel)
+        {
             ClienteReceitaFinalizada ec = context.ClienteReceitaFinalizada.Where(crf =>
                                                 crf.ClienteId == Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId)
                                                 .OrderByDescending(crf => crf.DataInicio)
                                                 .FirstOrDefault();
-            if (ec != null && ec.Avaliacao == null && dificuldade != null && dificuldade != "") {
-                context.ClienteReceitaFinalizada.Remove(ec);
-                context.SaveChanges();
-                ec.Avaliacao = dificuldade;
-                context.ClienteReceitaFinalizada.Add(ec);
+            if (ec != null && ec.AvaliacaoDificuldade == null && viewModel.AvaliacaoDificuldade != null)
+            {
+                ec.AvaliacaoDificuldade = viewModel.AvaliacaoDificuldade;
                 context.SaveChanges();
             }
             return RedirectToAction(actionName: "Index");

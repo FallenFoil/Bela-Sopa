@@ -1,13 +1,11 @@
 @model ClienteReceitaFinalizada
 @{
     Layout = "_LayoutAutenticado";
-    ViewData["Title"] = "Confecionar";
+    ViewData["Title"] = "Confeção concluída";
     ViewData["HideHeading"] = true;
 }
-<h2>Confeção Concluida</h2>
-<h5 style="margin-top:1.5em;">Tempo de Confeção : @Model.GetDuraçãoMinutos() min.</h5>
 
-
+<h5 style="margin-top:1.5em;">Tempo de confeção: @Model.GetDuraçãoMinutos() min.</h5>
 
 <div style="margin-top:2em;">
     <h5>Avaliação da Confeção</h5>
@@ -21,7 +19,7 @@
             <div class="row">
                 <div class="col-4">
                     <div class="form-group">
-                        <select name="dificuldade" class="form-control">
+                        <select asp-for="AvaliacaoDificuldade" class="form-control">
                             <option selected value=""></option>
                             <option value="@Dificuldade.Facil">Fácil</option>
                             <option value="@Dificuldade.Media">Média</option>
@@ -32,7 +30,7 @@
             </div>
         </div>
         <button style="background-color:#4CAF50; border-color: #4CAF50;" type="submit" class="btn btn-primary">
-            Finalizar
+            Guardar
         </button>
     </form>
 </div>
