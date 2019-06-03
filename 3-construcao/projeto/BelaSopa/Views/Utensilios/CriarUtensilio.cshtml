@@ -9,6 +9,11 @@
     <p class="alert alert-danger">@TempData["Error"]</p>
 }
 
+@if (TempData["Message"] != null)
+{
+    <p class="alert alert-danger">@TempData["Message"]</p>
+}
+
 
 @if (TempData["Success"] != null)
 {
@@ -42,14 +47,14 @@
             </div>
 
         </div>
-    <div class="form-group">
-        <div class="col-md-10">
-            <p>Imagem do Utensilio</p>
-            <input type="file" name="imagem" single>
+        <div class="form-group">
+            <div class="col-md-10">
+                <p>Imagem do Utensilio</p>
+                <input type="file" name="imagem" single>
+            </div>
+            <div class="form-group col">
+                <input asp-controller="CriarUtensilio" asp-action="adiciona" type="submit" value="Submeter" class="btn btn-primary" />
+            </div>
         </div>
-        <div class="form-group col">
-            <input asp-controller="CriarUtensilio" asp-action="adiciona" type="submit" value="Submeter" class="btn btn-primary" />
-        </div>
-    </div>
-    
+
 </form>

@@ -69,12 +69,6 @@
                             <span>Adicionar Utensilio</span>
                         </a>
                     </li>
-                    <li>
-                        <a asp-controller="CriarReceita" asp-action="Index">
-                            <i class="fas fa-plus-square"></i>
-                            <span>Adicionar Receita</span>
-                        </a>
-                    </li>
                 }
                 else if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
                 {

@@ -12,21 +12,27 @@
         <div class="form-group col"></div>
     }
     @for (int i = 0; i < Model.UtilizacoesIngredientes.Count; i++) {
-        <div class="container row">
-            <div class="form-group col">
-                <label asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="control-label"></label>
-                <input asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="form-control" />
-                <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group col">
-                <label asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="control-label"></label>
-                <input asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="form-control" />
-                <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="text-danger"></span>
-            </div>
-            <div class="col">
-                <button asp-action="RemoverIngrediente" asp-route-num="@i" type="submit" class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
-            </div>
+    <div class="container row">
+        <div class="form-group col">
+            <label asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="control-label"></label>
+            <input asp-for="@Model.UtilizacoesIngredientes[i].Nome" class="form-control" />
+            <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Nome" class="text-danger"></span>
         </div>
+        <div class="form-group col">
+            <label class="control-label"> Quantidade </label>
+            <input asp-for="@Model.Quantidades[i]" class="form-control" />
+        </div>
+        <div class="form-group col">
+            <label class="control-label"> Unidade </label>
+            <input asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="form-control" />
+            <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="text-danger"></span>
+           
+        </div>
+            <div class="col-1">
+                <button asp-action="RemoverIngrediente" asp-route-num="@i" type="submit" class="btn btn-block btn-primary" style="background-color:#fafafa;margin-top:2em;border:none;outline:none;box-shadow: 0 1px 0 0 #fafafa;"><i class="fas fa-trash" style="color:red;"></i></button>
+            </div>
+            
+    </div>
     }
     <div class="row">
         <div class="form-group col-md-2">
@@ -85,12 +91,18 @@
         <div class="form-group">
             <input asp-action="Index" type="submit" value="Submeter" class="btn btn-primary" />
         </div>
-        @for (int i = 0; i < Model.Tarefas.Count; i++) {
+        @for (int i = 0; i < Model.Processos.Count; i++) {
+            @for (int j = 0; j < Model.Processos[i].Count; j++) {
+                <div class="form-group">
+                    <label class="control-label"> Tarefa @i</label>
+                    <input asp-for="@Model.Processos[i][j]" class="form-control" />
+                    <span asp-validation-for="@Model.Processos[i][j]" class="text-danger"></span>
+                </div>
+            }
             <div class="form-group">
-                <label class="control-label"> Tarefa @i</label>
-                <input asp-for="@Model.Tarefas[i].Texto" class="form-control" />
-                <span asp-validation-for="@Model.Tarefas[i].Texto" class="text-danger"></span>
+                <input asp-action="NovaTarefa" type="submit" value="Adicionar tarefa" class="btn btn-primary" />
             </div>
+
         }
 
         @for (int i = 0; i < Model.ValorNutricionais.Count; i++) {

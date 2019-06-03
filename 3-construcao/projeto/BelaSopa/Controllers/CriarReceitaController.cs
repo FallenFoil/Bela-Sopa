@@ -1,5 +1,6 @@
 using BelaSopa.Models;
 using BelaSopa.Models.DomainModels.Assistente;
+using BelaSopa.Models.DomainModels.Utilizadores;
 using BelaSopa.Models.ViewModels;
 using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
@@ -9,10 +10,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 namespace BelaSopa.Controllers
 {
-    [Authorize(Roles = Autenticacao.ROLE_ADMINISTRADOR)]
+    [Authorize]
     public class CriarReceitaController : Controller
     {
         private readonly BelaSopaContext context;
@@ -28,6 +30,19 @@ namespace BelaSopa.Controllers
             if (ModelState.IsValid)
             {
                 Receita receita = new Receita();
+
+                byte[] imageArr = null;
+                if (imagem.Count > 0) {
+                    using (var memoryStream = new MemoryStream()) {
+                        imagem[0].CopyToAsync(memoryStream);
+                        imageArr = memoryStream.ToArray();
+                    }
+                }
+                if (imageArr == null) {
+                    TempData["Error"] = "Selecione uma imagem para a receita";
+                    return Index(form);
+                }
+
                 switch (form.DificuldadeStr)
                 {
                     case "Fácil": receita.Dificuldade = Dificuldade.Facil; break;
@@ -41,6 +56,9 @@ namespace BelaSopa.Controllers
                 List<string> nomesEtiquetas = new List<String>();
 
                 Processo processo = new Processo();
+
+                
+                /*
                 foreach (TextoTarefa txtTarefa in form.Tarefas)
                 {
                     processo.Tarefas.Add(new Tarefa
@@ -53,13 +71,19 @@ namespace BelaSopa.Controllers
                     });
                 }
                 if (form.Tarefas.Count > 0)
-                    receita.Processos.Add(processo);
+                    receita.Processos.Add(processo);*/
+                for(int i = 0; i < form.UtilizacoesIngredientes.Count; i++) {
+                    form.UtilizacoesIngredientes[i].Quantidade = form.Quantidades[i].ToString() + " " + form.UtilizacoesIngredientes[i].Quantidade;
+                }
                 receita.UtilizacoesIngredientes = form.UtilizacoesIngredientes;
                 receita.ValoresNutricionais = form.ValorNutricionais;
                 receita.Descricao = form.Descricao;
 
+                if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
+                    receita.ClienteId = cliente.UtilizadorId;
+
                 // try {
-                context.AdicionarReceita(receita, nomesEtiquetas, new byte[0]);
+                context.AdicionarReceita(receita, nomesEtiquetas, imageArr);
                 form = new CriarReceitaViewModel();
                 TempData["Success"] = "Receita adicionada com sucesso.";
                 return Index(form);
@@ -137,7 +161,7 @@ namespace BelaSopa.Controllers
 
 
 
-        /*
+        
         [HttpPost("[controller]/[action]/{idProcesso}")]
         public IActionResult NovaTarefa(CriarReceitaViewModel Receita, [FromRoute] int idProcesso) {
             if(idProcesso < 0 || Receita.Processos.Count-1 < idProcesso || Receita.Processos[idProcesso] == null) {
@@ -154,8 +178,9 @@ namespace BelaSopa.Controllers
             tarefa.Add("");
             Receita.Processos.Add(tarefa);
             return ProcessosETarefas(Receita);
-        }*/
+        }
 
+        /*
         public IActionResult NovaTarefa(CriarReceitaViewModel Receita)
         {
             Receita.Tarefas.Add(new TextoTarefa { Texto = "" });
@@ -172,11 +197,12 @@ namespace BelaSopa.Controllers
             }
             Receita.Tarefas.RemoveAt(num);
             return ProcessosETarefas(Receita);
-        }
+        }*/
 
         public IActionResult NovoIngrediente(CriarReceitaViewModel Receita)
         {
             Receita.UtilizacoesIngredientes.Add(new UtilizacaoIngrediente());
+            Receita.Quantidades.Add(new Int32());
             return Ingredientes(Receita);
         }
 
@@ -188,7 +214,9 @@ namespace BelaSopa.Controllers
                 TempData["Error"] = "Não foi possivel remover o ingrediente";
                 return Ingredientes(Receita);
             }
+            ModelState.Clear();
             Receita.UtilizacoesIngredientes.RemoveAt(num);
+            Receita.Quantidades.RemoveAt(num);
             return Ingredientes(Receita);
         }
 

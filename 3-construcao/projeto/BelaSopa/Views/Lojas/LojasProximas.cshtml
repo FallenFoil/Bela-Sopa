@@ -10,7 +10,7 @@
 </div>
 <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
 
-<button id="search" type="submit" class="btn btn-success" onclick="search('Pingo Doce')">Procurar loja mais próxima</button>
+<button style="margin-top:2em;" id="search" type="submit" class="btn btn-success" onclick="search('Pingo Doce')">Procurar loja mais próxima</button>
 
 
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario&branch=experimental&key=Ap3Fn5C1EGzEsXDN7UqrIoYqFKj5popAxjxJ7Mi-EgRa--bSfeDB7yMVR9154KXp' async defer></script>
@@ -63,7 +63,8 @@
     });
      }
 
-function geocodeQuery(map, query, showResults) {
+    function geocodeQuery(map, query, showResults) {
+        if (showResults) document.getElementById('printoutPanel').innerHTML = "";
     var searchRequest = {
         where: query,
         callback: function (r) {

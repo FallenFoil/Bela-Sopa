@@ -27,7 +27,7 @@ namespace BelaSopa.Models
 
         public virtual DbSet<EstadoConfecao> EstadoConfecao { get; set; }
 
-        public virtual DbSet<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; }
+        public virtual DbSet<ClienteExcluiIngrediente> ClienteExcluiIngrediente { get; set; }
 
         public virtual DbSet<ClienteReceitaFavorita> ClienteReceitaFavorita { get; set; }
 

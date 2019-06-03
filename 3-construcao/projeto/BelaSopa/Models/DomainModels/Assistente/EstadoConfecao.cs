@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 namespace BelaSopa.Models.DomainModels.Assistente {
     public class EstadoConfecao {
         [Required]
-        public int NumProcesso { set; get; }
+        public int NumProcesso { get; set; }
         [Required]
-        public DateTime Inicio { set; get; }
+        public DateTime Inicio { get; set; }
         [Key]
-        public int ClienteId { set; get; }
+        public int ClienteId { get; set; }
         [Required]
-        public int ReceitaId { set; get; }
+        public int ReceitaId { get; set; }
 
-        public virtual Receita Receita { set; get; }
+        public virtual Receita Receita { get; set; }
 
-        public virtual Cliente Cliente { set; get; } 
+        public virtual Cliente Cliente { get; set; }
     }
 }

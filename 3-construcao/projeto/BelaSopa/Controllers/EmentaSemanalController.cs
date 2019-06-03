@@ -51,7 +51,7 @@ namespace BelaSopa.Controllers
             [FromQuery] Dificuldade? dificuldade
             )
         {
-            ViewData["Title"] = "Adicionar refeição à ementa semanal";
+            ViewData["Title"] = "Adicionar receita à ementa semanal";
             ViewData["Action"] = "AdicionarRefeicao";
             ViewData["DiaDaSemana"] = diaDaSemana;
             ViewData["RefeicaoDoDia"] = refeicaoDoDia;
@@ -69,6 +69,10 @@ namespace BelaSopa.Controllers
 
             if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
             {
+                receitas = receitas.Where(
+                    r => r.ClienteId == null || r.ClienteId == cliente.UtilizadorId
+                    );
+
                 var idsIngredientesExcluidos =
                     context
                     .ClienteExcluiIngrediente
@@ -111,6 +115,17 @@ namespace BelaSopa.Controllers
             )
         {
             var idCliente = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId;
+
+            var receita = context.Receita.Find(id);
+
+            if (receita == null)
+                return NotFound();
+            
+            if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
+            {
+                if (receita.ClienteId != null && receita.ClienteId != cliente.UtilizadorId)
+                    return NotFound();
+            }
 
             context.RefeicaoEmentaSemanal.Add(new RefeicaoEmentaSemanal
             {
@@ -178,7 +193,8 @@ namespace BelaSopa.Controllers
 
                     if (splitUi[0].ToLower() == "qb")
                     {
-                        units.Add(unit, 0);
+                        if(!units.ContainsKey("qb"))
+                            units.Add("qb", 0);
                     }
                     else
                     {

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace BelaSopa.Controllers
@@ -33,8 +34,23 @@ namespace BelaSopa.Controllers
                 util.Descricao = form.DescricaoDoUtensilio;
                 util.Texto = form.TextoDoUtensilio;
 
+                byte[] imageArr = null;
+                if (imagem.Count > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        imagem[0].CopyToAsync(memoryStream);
+                        imageArr = memoryStream.ToArray();
+                    }
+                }
+                if (imageArr == null)
+                {
+                    TempData["Error"] = "Selecione uma imagem para a receita";
+                    return Index(form);
+                }
+
                 // try {
-                context.AdicionarUtensilio(util, new byte[0]);
+                context.AdicionarUtensilio(util,imageArr);
                 form = new CriarUtensilioViewModel();
                 TempData["Success"] = "Receita adicionada com sucesso.";
                 return Index(form);
