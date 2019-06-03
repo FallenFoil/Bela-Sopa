@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -18,6 +20,17 @@ namespace BelaSopa.Shared
         {
             using (var hash = SHA256.Create())
                 return hash.ComputeHash(Encoding.UTF8.GetBytes(palavraPasse));
+        }
+
+        public static byte[] FormFilesToByteArray(IEnumerable<IFormFile> formFiles)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                foreach (var file in formFiles)
+                    file.CopyTo(memoryStream);
+
+                return memoryStream.ToArray();
+            }
         }
 
         public static bool FuzzyEquals(string texto1, string texto2)

@@ -313,17 +313,32 @@ namespace BelaSopa.Models
                 {
                     case Ingrediente ingrediente:
                         submeterListaPalavras();
-                        novoTexto.Add(new TextoTarefa { Indice = novoTexto.Count, Texto = palavra, Ingrediente = ingrediente });
+                        novoTexto.Add(new TextoTarefa
+                        {
+                            Indice = novoTexto.Count,
+                            Texto = palavra,
+                            IngredienteId = ingrediente.IngredienteId
+                        });
                         break;
 
                     case Tecnica tecnica:
                         submeterListaPalavras();
-                        novoTexto.Add(new TextoTarefa { Indice = novoTexto.Count, Texto = palavra, Tecnica = tecnica });
+                        novoTexto.Add(new TextoTarefa
+                        {
+                            Indice = novoTexto.Count,
+                            Texto = palavra,
+                            TecnicaId = tecnica.TecnicaId
+                        });
                         break;
 
                     case Utensilio utensilio:
                         submeterListaPalavras();
-                        novoTexto.Add(new TextoTarefa { Indice = novoTexto.Count, Texto = palavra, Utensilio = utensilio });
+                        novoTexto.Add(new TextoTarefa
+                        {
+                            Indice = novoTexto.Count,
+                            Texto = palavra,
+                            UtensilioId = utensilio.UtensilioId
+                        });
                         break;
 
                     default:
