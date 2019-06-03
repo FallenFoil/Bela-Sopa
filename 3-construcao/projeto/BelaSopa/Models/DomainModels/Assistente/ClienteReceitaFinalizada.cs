@@ -13,7 +13,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public int ReceitaId { get; set; }
 
         [Required]
-        public DateTime Data { get; set; }
+        public DateTime DataInicio { get; set; }
+
+        [Required]
+        public DateTime DataFim { set; get; }
 
         public virtual Cliente Cliente { get; set; }
 

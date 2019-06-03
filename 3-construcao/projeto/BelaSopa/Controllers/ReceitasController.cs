@@ -5,6 +5,7 @@ using BelaSopa.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -144,7 +145,17 @@ namespace BelaSopa.Controllers
             return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
         }
 
-        [HttpPost("[controller]/[action]/{id}/{numProcesso}")]
+        
+        [HttpGet]
+        public IActionResult EmConfecao() {
+            EstadoConfecao ec = context.EstadoConfecao.Find(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
+            if(ec == null)
+                return RedirectToAction(actionName: "Index");
+            return RedirectToAction(actionName: "Confecionar", routeValues: new { id = ec.ReceitaId, indiceProcesso = ec.NumProcesso });
+        }
+
+        [HttpGet("[controller]/[action]/{id}/{indiceProcesso}")]
+        [HttpPost("[controller]/[action]/{id}/{indiceProcesso}")]
         public IActionResult Confecionar([FromRoute] int id, [FromRoute] int indiceProcesso)
         {
             var receita =
@@ -172,13 +183,53 @@ namespace BelaSopa.Controllers
             if (receita == null)
                 return NotFound();
 
-            if (indiceProcesso < 0)
-                return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
+            EstadoConfecao ec = new EstadoConfecao {
+                ClienteId = Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId,
+                ReceitaId = id,
+                Inicio = DateTime.Now,
+                NumProcesso = indiceProcesso
+            };
 
-            if (indiceProcesso >= (receita.Processos as IList<Processo>).Count)
+            EstadoConfecao old = context.EstadoConfecao.Find(Autenticacao.GetUtilizadorAutenticado(this, context).UtilizadorId);
+
+            if(old == null && indiceProcesso == 0) {
+                context.EstadoConfecao.Add(ec);
+                context.SaveChanges();
+            }
+
+            else if (indiceProcesso < 0) {
+                return RedirectToAction(actionName: "Detalhes", routeValues: new { id });
+            }
+               
+            else if (indiceProcesso >= (receita.Processos as IList<Processo>).Count) {
+                context.EstadoConfecao.Remove(old);
+                ClienteReceitaFinalizada crf = new ClienteReceitaFinalizada {
+                    ClienteId = old.ClienteId,
+                    ReceitaId = old.ReceitaId,
+                    DataFim = ec.Inicio,
+                    DataInicio = old.Inicio
+                };
+                context.ClienteReceitaFinalizada.Add(crf);
+                context.SaveChanges();
                 return View(viewName: "TerminarConfecao");
+            }
+
+            else {
+                if(old != null) {
+                    context.EstadoConfecao.Remove(old);
+                    context.SaveChanges();
+                    old.NumProcesso = ec.NumProcesso;
+                    context.Add(old);
+                    context.SaveChanges();
+                }
+            }
+
+
 
             var (tecnicas, utensilios) = receita.GetTecnicasUtensilios();
+
+           
+            
 
             var viewModel = (
                 Receita: receita,
