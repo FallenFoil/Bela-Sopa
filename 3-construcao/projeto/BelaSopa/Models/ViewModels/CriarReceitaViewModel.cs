@@ -61,8 +61,13 @@ namespace BelaSopa.Models.ViewModels {
         [Display(Name = "Ingredientes")]
         public List<UtilizacaoIngrediente> UtilizacoesIngredientes { get; set; } = new List<UtilizacaoIngrediente>();
 
+        public List<Int32> Quantidades { set; get; } = new List<Int32>();
 
+        /*
         [Display(Name = "Processos")]
         public List<TextoTarefa> Tarefas { get; set; } = new List<TextoTarefa>();
+        */
+
+        public List<List<string>> Processos { set; get; } = new List<List<string>>();
     }
 }

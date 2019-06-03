@@ -1,5 +1,6 @@
 using BelaSopa.Shared;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,8 +27,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
 
         public virtual ICollection<ClienteExcluiIngrediente> ClienteExcluiIngrediente { get; set; } = new List<ClienteExcluiIngrediente>();
 
-        public List<Receita> GetReceitasUtilizacoes()
-        {
+        public List<Receita> GetReceitasUtilizacoes() {
             return
                 Utilizacoes
                 .Select(ui => ui.Receita)
