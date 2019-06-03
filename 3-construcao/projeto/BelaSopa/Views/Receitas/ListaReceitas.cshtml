@@ -2,7 +2,23 @@
 @{
     Layout = "_LayoutAutenticado";
     ViewData["Title"] = ViewData["Title"] ?? "Receitas";
+    ViewData["HideHeading"] = true;
 }
+
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
+{
+    <h2>
+        @ViewData["Title"]
+        <a asp-controller="CriarReceita" asp-action="Index" class="btn btn-primary" style="margin-left: 0.5em">
+            <i class="fas fa-plus-square" style="margin-right: 5px;"></i> Criar receita
+        </a>
+    </h2>
+}
+else
+{
+    <h2>@ViewData["Title"]</h2>
+}
+
 <form asp-action="@ViewContext.RouteData.Values["Action"]" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
     <div class="container" style="padding-bottom:1em; border-bottom: 1px solid #717171;">
         <div class="row">
