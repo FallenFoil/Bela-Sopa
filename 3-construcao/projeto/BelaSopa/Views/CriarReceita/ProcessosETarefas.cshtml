@@ -12,23 +12,48 @@
 <form asp-controller="CriarReceita" method="post" id="receitaForm">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="container">
-        @for (int i = 0; i < Model.Processos.Count; i++) {
-            <label>Processo @i: </label>
-            @for (int j = 0; j < Model.Processos[i].Count; j++) {
-                <div class="form-group">
-                    <label class="control-label"> Tarefa @i</label>
+        @for (int i = 0; i < Model.Processos.Count; i++)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <label>Processo @i: </label>
+                    </div>
+                    <div class="col-1" style="bottom:2.3em;right:3em;">
+                        <button asp-action="RemoverProcesso" asp-route-processo="@i" type="submit" class="btn btn-block btn-primary" style="background-color:#fafafa;margin-top:2em;border:none;outline:none;box-shadow: 0 1px 0 0 #fafafa;"><i class="fas fa-trash" style="color:red;"></i></button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            @for (int j = 0; j < Model.Processos[i].Count; j++)
+            {
+            <div class="form-group">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2" style="top:2em;">
+                            <label class="control-label"> Tarefa @i:</label>
+                        </div>
+                        <div class="col-1" style="bottom:0.4em;right:5em;">
+                            <button asp-action="RemoverTarefa" asp-route-processo="@i" asp-route-tarefa="@j" type="submit" class="btn btn-block btn-primary" style="background-color:#fafafa;margin-top:2em;border:none;outline:none;box-shadow: 0 1px 0 0 #fafafa;"><i class="fas fa-trash" style="color:red;"></i></button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+                <div style="bottom:5em;">
                     <input asp-for="@Model.Processos[i][j]" class="form-control" />
                     <span asp-validation-for="@Model.Processos[i][j]" class="text-danger"></span>
                 </div>
+            </div>
+            <hr />
             }
             <div class="form-group">
                 <input asp-action="NovaTarefa" asp-route-idProcesso="@i" type="submit" value="Adicionar tarefa" class="btn btn-primary" />
             </div>
+            <hr style="border-color:#4CAF50; border-width:4px;"/>
         }
         <div class="form-group">
             <input asp-action="NovoProcesso" type="submit" value="Adicionar Processo" class="btn btn-primary" />
         </div>
-
 
         <div class="form-group">
             <input asp-action="Index" type="submit" value="Submeter" class="btn btn-primary" />
