@@ -22,12 +22,12 @@ namespace BelaSopa.Shared
                 return hash.ComputeHash(Encoding.UTF8.GetBytes(palavraPasse));
         }
 
-        public static byte[] FormFilesToByteArray(IEnumerable<IFormFile> formFiles)
+        public static byte[] FormFilesToByteArray(IList<IFormFile> formFiles)
         {
             using (var memoryStream = new MemoryStream())
             {
-                foreach (var file in formFiles)
-                    file.CopyTo(memoryStream);
+                if (formFiles.Count == 1)
+                    formFiles[0].CopyTo(memoryStream);
 
                 return memoryStream.ToArray();
             }
