@@ -51,7 +51,7 @@ namespace BelaSopa.Models.ViewModels {
 
 
         [Display(Name = "Valores Nutricionais")]
-        public List<ValorNutricional> ValorNutricionais { set; get; } = new List<ValorNutricional>();
+        public List<ValorNutricional> ValorNutricionais { get; set; } = new List<ValorNutricional>();
 
 
         [Display(Name = "Etiquetas")]

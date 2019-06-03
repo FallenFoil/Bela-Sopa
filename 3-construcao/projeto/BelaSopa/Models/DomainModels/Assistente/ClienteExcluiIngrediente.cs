@@ -6,10 +6,10 @@ namespace BelaSopa.Models.DomainModels.Assistente
     public class ClienteExcluiIngrediente
     {
         [Key]
-        public int ClienteId { set; get; }
+        public int ClienteId { get; set; }
 
         [Key]
-        public int IngredienteId { set; get; }
+        public int IngredienteId { get; set; }
 
         public virtual Cliente Cliente { get; set; }
 

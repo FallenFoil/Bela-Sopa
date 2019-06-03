@@ -16,7 +16,7 @@ namespace BelaSopa.Models.DomainModels.Assistente
         public DateTime DataInicio { get; set; }
 
         [Required]
-        public DateTime DataFim { set; get; }
+        public DateTime DataFim { get; set; }
 
         public virtual Cliente Cliente { get; set; }
 
