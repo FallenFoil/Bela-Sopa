@@ -4,14 +4,16 @@ using BelaSopa.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BelaSopa.Migrations
 {
     [DbContext(typeof(BelaSopaContext))]
-    partial class BelaSopaContextModelSnapshot : ModelSnapshot
+    [Migration("20190603083135_v12")]
+    partial class v12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,9 +53,7 @@ namespace BelaSopa.Migrations
 
                     b.Property<int>("ReceitaId");
 
-                    b.Property<DateTime>("DataFim");
-
-                    b.Property<DateTime>("DataInicio");
+                    b.Property<DateTime>("Data");
 
                     b.HasKey("ClienteId", "ReceitaId");
 
@@ -70,11 +70,7 @@ namespace BelaSopa.Migrations
 
                     b.Property<int>("NumProcesso");
 
-                    b.Property<int>("ReceitaId");
-
                     b.HasKey("ClienteId");
-
-                    b.HasIndex("ReceitaId");
 
                     b.ToTable("EstadoConfecao");
                 });
@@ -468,11 +464,6 @@ namespace BelaSopa.Migrations
                     b.HasOne("BelaSopa.Models.DomainModels.Utilizadores.Cliente", "Cliente")
                         .WithOne("EstadoConfecao")
                         .HasForeignKey("BelaSopa.Models.DomainModels.Assistente.EstadoConfecao", "ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("BelaSopa.Models.DomainModels.Assistente.Receita", "Receita")
-                        .WithMany()
-                        .HasForeignKey("ReceitaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

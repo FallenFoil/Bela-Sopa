@@ -6,8 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BelaSopa.Models.DomainModels.Utilizadores
 {
-    public class Cliente : Utilizador
-    {
+    public class Cliente : Utilizador {
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -20,5 +19,7 @@ namespace BelaSopa.Models.DomainModels.Utilizadores
 
         [NotMapped, JsonIgnore]
         public virtual ICollection<ClienteExcluiIngrediente> ClienteExcluiIngrediente { set; get; } = new List<ClienteExcluiIngrediente>();
+
+        public EstadoConfecao EstadoConfecao {set; get;}
     }
 }
