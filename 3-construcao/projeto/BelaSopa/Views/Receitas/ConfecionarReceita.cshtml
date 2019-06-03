@@ -44,21 +44,26 @@
 
 <br />
 <div class="row">
-    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo-1)">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
-            Processo Anterior
-        </button>
-    </form>
-    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo+1)">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
-            Processo Seguinte
-        </button>
-    </form>
-    <form asp-action="Cancelar" asp-route-id="@Model.Receita.ReceitaId">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
-            Cancelar
-        </button>
-    </form>
+    <a asp-action="Confecionar"
+       asp-route-id="@Model.Receita.ReceitaId"
+       asp-route-indiceProcesso="@(Model.Processo - 1)"
+       class="btn btn-primary"
+       style="background-color:#4CAF50; border-color:#4CAF50;">
+        Processo anterior
+    </a>
+    <a asp-action="Confecionar"
+       asp-route-id="@Model.Receita.ReceitaId"
+       asp-route-indiceProcesso="@(Model.Processo + 1)"
+       class="btn btn-primary"
+       style="background-color:#4CAF50; border-color:#4CAF50;">
+        Processo seguinte
+    </a>
+    <a asp-action="Detalhes"
+       asp-route-id="@Model.Receita.ReceitaId"
+       class="btn btn-primary"
+       style="background-color:#4CAF50; border-color:#4CAF50;">
+        Cancelar
+    </a>
 </div>
 
 <div class="container">
@@ -152,24 +157,6 @@
         </li>
     }
 </ul>
-
-<div class="row" style="margin-left:0.4em;">
-    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo-1)">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;">
-            Processo Anterior
-        </button>
-    </form>
-    <form asp-action="Confecionar" asp-route-id="@Model.Receita.ReceitaId" asp-route-indiceProcesso="@(Model.Processo+1)">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;margin-left:1em;">
-            Processo Seguinte
-        </button>
-    </form>
-    <form asp-action="Detalhes" asp-route-id="@Model.Receita.ReceitaId">
-        <button type="submit" class="btn btn-primary" style="background-color:#4CAF50; border-color:#4CAF50;margin-left:1em;">
-            Cancelar
-        </button>
-    </form>
-</div>
 
 <script>
     var myVar = [];
