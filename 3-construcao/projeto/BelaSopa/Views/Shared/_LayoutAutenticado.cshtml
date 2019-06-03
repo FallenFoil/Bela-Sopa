@@ -31,7 +31,8 @@
                         <span>O meu perfil</span>
                     </a>
                 </li>
-                @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR)) {
+                @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
+                {
                     <li>
                         <a asp-controller="Utilizadores" asp-action="Index">
                             <i class="fas fa-users"></i>
@@ -68,13 +69,9 @@
                             <span>Adicionar Receita</span>
                         </a>
                     </li>
-                    <li>
-                        <a asp-controller="Utilizadores" asp-action="VerLojas">
-                            <i class="fas fa-store-alt"></i>
-                            <span>Ver Lojas</span>
-                        </a>
-                    </li>
-                } else if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE)) {
+                }
+                else if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+                {
                     <li id="ConfeçaoMenu">
                         <a asp-controller="EmConfecao" asp-action="Index">
                             <i class="fas fa-play"></i>
@@ -118,6 +115,12 @@
                         </a>
                     </li>
                 }
+                <li>
+                    <a asp-controller="Lojas" asp-action="Index">
+                        <i class="fas fa-store-alt"></i>
+                        <span>Lojas próximas</span>
+                    </a>
+                </li>
                 <hr />
                 <li id="SairMenu">
                     <a asp-controller="Autenticacao" asp-action="Sair">
