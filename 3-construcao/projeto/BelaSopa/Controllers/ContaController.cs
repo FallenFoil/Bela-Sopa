@@ -70,7 +70,7 @@ namespace BelaSopa.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AlterarPalavraPasse([Bind] AlterarPalavraPasseViewModel viewModel)
+        public IActionResult AlterarPalavraPasse([Bind] AlterarPalavraPasseViewModel viewModel)
         {
             // validar dados
 
@@ -98,7 +98,7 @@ namespace BelaSopa.Controllers
             // alterar palavra-passe
 
             utilizador.HashPalavraPasse = Util.ComputarHashPalavraPasse(viewModel.NovaPalavraPasse);
-            await context.SaveChangesAsync();
+            context.SaveChanges();
 
             // redirecionar
 
@@ -116,7 +116,7 @@ namespace BelaSopa.Controllers
         [Authorize(Roles = Autenticacao.ROLE_CLIENTE)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AlterarEmail([Bind] AlterarEmailViewModel viewModel)
+        public IActionResult AlterarEmail([Bind] AlterarEmailViewModel viewModel)
         {
             // validar dados
 
@@ -133,12 +133,26 @@ namespace BelaSopa.Controllers
             // alterar email
 
             cliente.Email = viewModel.NovoEmail;
-            await context.SaveChangesAsync();
+            context.SaveChanges();
 
             // redirecionar
 
             TempData["Sucesso"] = "Endereço de e-mail alterado com sucesso.";
             return RedirectToAction(actionName: "Index");
+        }
+
+        [Authorize(Roles = Autenticacao.ROLE_CLIENTE)]
+        [HttpGet]
+        public async Task<IActionResult> RemoverConta()
+        {
+            var cliente = Autenticacao.GetUtilizadorAutenticado(this, context) as Cliente;
+
+            await Autenticacao.DesautenticarUtilizador(this);
+
+            context.Cliente.Remove(cliente);
+            context.SaveChanges();
+
+            return RedirectToAction(actionName: "Index", controllerName: "Autenticacao");
         }
 
         [HttpGet]
