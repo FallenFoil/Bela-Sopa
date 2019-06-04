@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <label>Processo @i: </label>
+                        <label>Processo @(i+1): </label>
                     </div>
                     <div class="col-1" style="bottom:2.3em;right:3em;">
                         <button asp-action="RemoverProcesso" asp-route-processo="@i" type="submit" class="btn btn-block btn-primary" style="background-color:#fafafa;margin-top:2em;border:none;outline:none;box-shadow: 0 1px 0 0 #fafafa;"><i class="fas fa-trash" style="color:red;"></i></button>
@@ -31,7 +31,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-2" style="top:1em;">
-                            <label class="control-label"> Tarefa @i:</label>
+                            <label class="control-label"> Tarefa @(j+1):</label>
                         </div>
                         <div class="col-1" style="bottom:1em;right:5em;">
                             <button asp-action="RemoverTarefa" asp-route-processo="@i" asp-route-tarefa="@j" type="submit" class="btn btn-block btn-primary" style="background-color:#fafafa;margin-top:2em;border:none;outline:none;box-shadow: 0 1px 0 0 #fafafa;"><i class="fas fa-trash" style="color:red;"></i></button>
