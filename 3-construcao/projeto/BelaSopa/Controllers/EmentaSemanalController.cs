@@ -223,10 +223,14 @@ namespace BelaSopa.Controllers
                         for (int i = 1; i < splitUi.Length; i++)
                             key += splitUi[i] + " ";
 
-                        quantidades.Add(
-                            key,
-                            double.Parse(splitUi[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture)
-                            );
+                        try {
+                            quantidades.Add(
+                                key,
+                                double.Parse(splitUi[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture)
+                                );
+                        } catch (Exception) {
+                            
+                        }
                     }
                     else if (splitUi.Length == 1)
                     {

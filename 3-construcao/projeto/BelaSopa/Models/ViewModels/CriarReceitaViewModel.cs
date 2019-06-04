@@ -11,12 +11,12 @@ namespace BelaSopa.Models.ViewModels {
     public class CriarReceitaViewModel {
         public List<SelectListItem> Dificuldades { get; } = new List<SelectListItem> {
             new SelectListItem {
-                Text = "Facil",
-                Value = "Facil",
+                Text = "Fácil",
+                Value = "Fácil",
             },
             new SelectListItem {
-                Text = "Medio",
-                Value = "Medio",
+                Text = "Médio",
+                Value = "Médio",
             },
             new SelectListItem {
                 Text = "Dificil",

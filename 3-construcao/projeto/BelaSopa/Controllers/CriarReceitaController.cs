@@ -19,7 +19,7 @@ namespace BelaSopa.Controllers
     [Authorize]
     public class CriarReceitaController : Controller
     {
-        private readonly BelaSopaContext context;
+        private readonly BelaSopaContext context;   
 
         public CriarReceitaController(BelaSopaContext context)
         {
