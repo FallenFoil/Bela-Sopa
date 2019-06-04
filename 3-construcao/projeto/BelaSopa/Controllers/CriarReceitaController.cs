@@ -67,23 +67,26 @@ namespace BelaSopa.Controllers
                         TempData["Error"] = "Não pode adicionar um processo sem tarefas (Processo: " + (i+1).ToString() + " )" ;
                         return Index(form);
                     }
+                    var processo = new Processo { Indice = i };
                     for(int j = 0; j < form.Processos[i].Count; j++) { 
                         if (form.Processos[i][j].Equals("")) {
                             TempData["Error"] = "Não pode existir uma tarefa vazia (Processo: " + (i+1).ToString() + ", Tarefa:" + (j+1).ToString() + " )";
                             return Index(form);
                         }
-                        receita.Processos.Add(new Processo {
-                            Tarefas = new List<Tarefa> {
-                                new Tarefa {
+                        processo.Tarefas.Add(
+                                new Tarefa
+                                {
+                                    Indice = j,
                                     Texto = new List<TextoTarefa> {
                                     new TextoTarefa{
+                                        Indice = 0,
                                         Texto = form.Processos[i][j]
                                         }
                                     }
                                 }
-                            }
-                        });
+                            );
                     }
+                    receita.Processos.Add(processo);
                 }
 
                 if (form.UtilizacoesIngredientes.Count == 0) {
