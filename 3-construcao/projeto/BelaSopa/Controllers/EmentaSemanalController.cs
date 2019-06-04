@@ -199,7 +199,8 @@ namespace BelaSopa.Controllers
                     }
                     else
                     {
-                      
+
+                        try { 
                         var quantity = double.Parse(
                             splitUi[0].Replace(',', '.'),
                             NumberStyles.Any,
@@ -208,8 +209,9 @@ namespace BelaSopa.Controllers
 
                         if (units.ContainsKey(unit))
                             units[unit] += quantity;
-
+                        
                         else units.Add(unit, quantity);
+                        } catch (Exception) { }
                     }
                 }
                 else
