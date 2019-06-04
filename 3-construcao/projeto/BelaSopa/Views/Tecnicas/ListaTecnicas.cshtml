@@ -5,6 +5,8 @@
     ViewData["HideHeading"] = true;
 }
 
+
+
 @if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
 {
     <h2>
