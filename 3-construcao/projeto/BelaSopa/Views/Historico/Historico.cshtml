@@ -21,7 +21,7 @@
                     <td>@receitaFinalizada.DataInicio.ToString()</td>
                     <td>@receitaFinalizada.GetDuraçãoMinutos() min</td>
                     @if (receitaFinalizada.AvaliacaoDificuldade != null) {
-                    <td>@receitaFinalizada.AvaliacaoDificuldade</td>
+                    <td>@receitaFinalizada.AvaliacaoDificuldade.Value.GetNome()</td>
                     } else {<td>---</td> }
                 </tr>
             }
