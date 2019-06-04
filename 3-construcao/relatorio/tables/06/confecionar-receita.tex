@@ -1,0 +1,40 @@
+% ---------------------------------------------------------------------------- %
+
+\begin{table}[ht]
+  \centering
+  \tabelausecase
+  \begin{tabularx}{\textwidth}{|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{2.5cm}|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|}
+    \hline
+    \emph{Use case}: & \multicolumn{2}{l|}{Confecionar receita} \\ \hline
+    Pré-condição: & \multicolumn{2}{l|}{Estar autenticado} \\ \hline
+    Pós-condição: & \multicolumn{2}{l|}{Receita confecionada} \\ \hline
+     & \textbf{Ator} & \textbf{Sistema} \\ \hline
+    \multirow[t]{14}{=}{Comportamento Normal} &  & 1. Pergunta se possui todos os ingredientes. \\ \cline{2-3}
+     & 2. Confirma &  \\ \cline{2-3}
+     &  & 3. Pergunta se possui todos os utencílios \\ \cline{2-3}
+     & 4. Confirma &  \\ \cline{2-3}
+     &  & 5. Recebe o primeiro processo \\ \cline{2-3}
+     &  & 6. Mostra o processo atual, as tarefas neste e os ingredientes, utensílios e técnicas nas respetivas tarefas \\ \cline{2-3}
+     & 7. Confirma a execução de todas as tarefas &  \\ \cline{2-3}
+     & 8. Avança &  \\ \cline{2-3}
+     &  & 9. Verifica próximo processo \\ \cline{2-3}
+     &  & 10. Não existe mais processos \\ \cline{2-3}
+     &  & 11. Guarda a conclusão da receita \\ \cline{2-3}
+     &  & 12. Pergunta a opinião sobre a conceção da receita \\ \cline{2-3}
+     & 13. Responde &  \\ \cline{2-3}
+     &  & 14. Guarda resposta \\ \hline
+    Comportamento Alternativo 1 [Existe próximo processo] (passo 10) &  & 10.1. Recebe o próximo processo e volta ao passo 6 \\ \hline
+    Comportamento Alternativo 2 [Utilizador retrocede o processo] (passo 7) &  & 7.1. Recebe o processo anterior e volta ao passo 6 \\ \hline
+    \multirow[t]{3}{=}{Comportamento Alternativo 3 [Processo anterior não existe] (passo 8.1)} &  & 8.1.1. Indica que não existe um processo anterior \\ \cline{2-3}
+     &  & 8.1.2. Mantêm o processo atual \\ \cline{2-3}
+     &  & 8.1.3. Volta ao passo 6 \\ \hline
+    Comportamento Alternativo 4 [Ator não responde] (passo 13) &  & 13.1. Termina Confecionar receita \\ \hline
+    \multirow[t]{2}{=}{Exceção 1 [Não confirma] (passo 2 ou 4)} &  & 2.1. Indica para voltar quando possuir tudo \\ \cline{2-3}
+     &  & 2.2. Sai do serviço Confecionar receita \\ \hline
+    Exceção 2 [Utilizador cancela Confecionar receita] (passo indeterminado) &  & 2.1. Sai do serviço Confecionar receita \\ \hline
+\end{tabularx}
+  \caption{Especificação do \emph{use case} ``confecionar receita''.}
+  \label{tab:uc-confecionar-receita}
+\end{table}
+
+% ---------------------------------------------------------------------------- %

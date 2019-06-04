@@ -1,0 +1,20 @@
+% ---------------------------------------------------------------------------- %
+
+\begin{table}[ht]
+  \centering
+  \tabelausecase
+  \begin{tabularx}{\textwidth}{|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{2.5cm}|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|}
+    \hline
+    \emph{Use case}: & \multicolumn{2}{l|}{Editar ementa semanal} \\ \hline
+    Pré-condição: & \multicolumn{2}{l|}{Estar autenticado} \\ \hline
+    Pós-condição: & \multicolumn{2}{l|}{Ementa semanal foi alterada} \\ \hline
+     & \textbf{Ator} & \textbf{Sistema} \\ \hline
+    \multirow[t]{2}{=}{Comportamento Normal} &  & 1. Mostra todas as receitas na ementa nos dias e refeições já escolhidas \\ \cline{2-3}
+     &  & 2. <<extends>> adicionar receita à ementa \\ \hline
+    Comportamento Alternativo 1 [Escolhe remover uma receita] (passo 2) &  & 2.1. <<extends>> remover receita da ementa \\ \hline
+\end{tabularx}
+  \caption{Especificação do \emph{use case} ``editar ementa semanal''.}
+  \label{tab:uc-editar-ementa-semanal}
+\end{table}
+
+% ---------------------------------------------------------------------------- %

@@ -1,0 +1,20 @@
+% ---------------------------------------------------------------------------- %
+
+\begin{table}[ht]
+  \centering
+  \tabelausecase
+  \begin{tabularx}{\textwidth}{|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{2.5cm}|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|}
+    \hline
+    \emph{Use case}: & \multicolumn{2}{l|}{Ver loja mais próxima} \\ \hline
+    Pré-condição: & \multicolumn{2}{l|}{Estar autenticado e existem lojas} \\ \hline
+    Pós-condição: & \multicolumn{2}{l|}{foi encontrada uma loja} \\ \hline
+     & \textbf{Ator} & \textbf{Sistema} \\ \hline
+    \multirow[t]{3}{=}{Comportamento Normal} & 1. Solicita ver a loja mais perto de uma determinada localização &  \\ \cline{2-3}
+     &  & 2. Calcula a loja mais perto das conhecidas \\ \cline{2-3}
+     &  & 3. Mostra loja \\ \hline
+\end{tabularx}
+  \caption{Especificação do \emph{use case} ``ver loja mais próxima''.}
+  \label{tab:uc-ver-loja-mais-proxima}
+\end{table}
+
+% ---------------------------------------------------------------------------- %

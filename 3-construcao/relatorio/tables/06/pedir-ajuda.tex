@@ -1,0 +1,21 @@
+% ---------------------------------------------------------------------------- %
+
+\begin{table}[ht]
+  \centering
+  \tabelausecase
+  \begin{tabularx}{\textwidth}{|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{2.5cm}|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|}
+    \hline
+    \emph{Use case}: & \multicolumn{2}{l|}{Pedir ajuda} \\ \hline
+    Pré-condição: & \multicolumn{2}{l|}{Estar autenticado} \\ \hline
+    Pós-condição: & \multicolumn{2}{l|}{} \\ \hline
+     & \textbf{Ator} & \textbf{Sistema} \\ \hline
+    \multirow[t]{3}{=}{Comportamento Normal} & 1. Solicita ajuda num certo conceito &  \\ \cline{2-3}
+     &  & 2. Procura conceito \\ \cline{2-3}
+     &  & 3. Mostra uma descrição, e possivelmente uma imagem e/ou video sobre o conceito \\ \hline
+    Exceção 1 [Não existe conceito] (passo 2) &  & 2.1. Informa que não é possível encontrar esse conceito \\ \hline
+\end{tabularx}
+  \caption{Especificação do \emph{use case} ``pedir ajuda''.}
+  \label{tab:uc-pedir-ajuda}
+\end{table}
+
+% ---------------------------------------------------------------------------- %

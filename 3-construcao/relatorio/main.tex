@@ -1,0 +1,246 @@
+% ---------------------------------------------------------------------------- %
+
+\documentclass[10pt,dvipsnames]{article}
+\usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=3.25cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\usepackage{url}
+\usepackage{suffix}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{minted}
+\usepackage{tabularx}
+\usepackage{etoolbox}
+\usepackage{xpatch}
+\usepackage{xspace}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage[htt]{hyphenat}
+\usepackage[section]{placeins} % keep floats in the section where they are decl.
+\usepackage[labelfont=bf]{caption}
+\usepackage[tocfullflat]{tocstyle}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=bibtex,style=authoryear,dashed=false]{biblatex}
+
+% ---------------------------------------------------------------------------- %
+% prerequisites
+
+% This template works great on Overleaf!
+
+% This template requires XeTeX and the Arial and Courier New fonts. On
+% Debian-based systems (e.g., Ubuntu), these can be installed by typing the
+% following commands:
+
+%   $ sudo apt update
+%   $ sudo apt install ttf-mscorefonts-installer
+%   $ wget http://ftp.us.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.6_all.deb
+%   $ sudo dpkg -i ttf-mscorefonts-installer_3.6_all.deb
+
+% ---------------------------------------------------------------------------- %
+% conform to word template
+
+\setmainfont{Arial}
+\setmonofont{Courier New}
+
+\linespread{1.5}
+\setlength{\parskip}{\baselineskip}
+
+\raggedbottom
+
+\titlelabel{\thetitle.\quad}
+
+\titleformat*{\section}{\fontsize{18pt}{\baselineskip}\bfseries}
+\titleformat*{\subsection}{\fontsize{16pt}{\baselineskip}\bfseries}
+\titleformat*{\subsubsection}{\fontsize{14pt}{\baselineskip}\bfseries}
+
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+
+\let\oldsection\section
+\let\oldsubsection\subsection
+\let\oldsubsubsection\subsubsection
+
+\newcommand{\mysection}[1]{
+  \clearpage
+  \vspace*{2.25cm}
+  \oldsection{#1}
+  \vspace{0.42cm}
+}
+
+\newcommand{\mysectionstar}[1]{
+  \clearpage
+  \vspace*{2.25cm}
+  \oldsection*{#1}
+  \vspace{0.42cm}
+}
+
+\makeatletter
+\renewcommand{\section}{\@ifstar{\mysectionstar}{\mysection}}
+\makeatother
+
+\renewcommand{\subsection}[1]{\vspace{1.06cm}\oldsubsection{#1}\vspace{0.11cm}}
+\renewcommand{\subsubsection}[1]{\vspace{0.85cm}\oldsubsubsection{#1}\vspace{0.11cm}}
+
+\setdefaultlanguage{portuges}
+
+\addto\captionsportuges{
+  \renewcommand{\contentsname}{Índice}
+  \renewcommand{\listfigurename}{Índice de Figuras}
+  \renewcommand{\listtablename}{Índice de Tabelas}
+}
+
+\usetocstyle{standard}
+\newcommand{\autodot}{.}
+
+\setenumerate{noitemsep}
+\setitemize{noitemsep}
+
+\renewcommand{\arraystretch}{1.25}
+
+% maintain definition order between figures and tables in output
+\makeatletter
+\let\ftype@table\ftype@figure
+\makeatother
+
+\addbibresource{bibliography.bib}
+\setlength\bibitemsep{\baselineskip}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+\DeclareMathSizes{10}{10}{10}{10}
+
+% ---------------------------------------------------------------------------- %
+% small optional style configurations
+
+\renewcommand\labelitemi{--}
+
+\definecolor[named]{ACMDarkBlue}{cmyk}{1,0.58,0,0.21}
+
+\hypersetup{
+    hidelinks,
+    colorlinks,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=ACMDarkBlue,
+    filecolor=ACMDarkBlue
+    }
+
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.4}
+
+\setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
+\setlength{\floatsep}{20.0pt plus 2.0pt minus 2.0pt}
+\setlength{\intextsep}{20.0pt plus 2.0pt minus 2.0pt}
+
+\newcommand{\tabelausecase}{\small}
+
+% ---------------------------------------------------------------------------- %
+% utilities
+
+\newcommand{\itemizedpar}[1]{\vspace*{-\baselineskip}\paragraph{\emph{#1}}}
+% \newcommand{\rubric}[1]{\noindent{\textbf{#1}}}
+\newcommand{\inlineenum}[1]{(#1)}
+
+\newcommand{\verttext}[1]{\parbox[t]{2mm}{\rotatebox[origin=c]{90}{\ \ #1\ \ }}}
+
+\newcommand{\refcap}[1]{\hyperref[#1]{Capítulo~\ref*{#1}}}
+\newcommand{\refsec}[1]{\hyperref[#1]{Secção~\ref*{#1}}}
+\newcommand{\refane}[1]{\ref{#1}}
+\newcommand{\reffig}[1]{\hyperref[#1]{Figura~\ref*{#1}}}
+\newcommand{\reftab}[1]{\hyperref[#1]{Tabela~\ref*{#1}}}
+
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
+\makeatother
+
+\setminted{
+  autogobble,
+  breaklines,
+  baselinestretch=1.2,
+  frame=leftline,
+  framesep=8pt,
+  xleftmargin=7pt
+  }
+
+% ---------------------------------------------------------------------------- %
+% comments
+
+\newcommand{\mynote}[3]{
+   \fbox{\bfseries\sffamily\scriptsize#1}
+   {\small$\blacktriangleright$\textsf{\emph{\color{#2}{#3}}}$\blacktriangleleft$}}
+
+\newcommand{\alberto}[1]{\mynote{alberto}{red}{#1}}
+\newcommand{\cesar}[1]{\mynote{cesar}{red}{#1}}
+\newcommand{\fabio}[1]{\mynote{fabio}{red}{#1}}
+\newcommand{\guilherme}[1]{\mynote{guilherme}{red}{#1}}
+\newcommand{\luis}[1]{\mynote{luis}{red}{#1}}
+
+% ---------------------------------------------------------------------------- %
+% document
+
+\begin{document}
+
+\includepdf[pages=-]{cover/cover.pdf}
+
+\include{body/00-resumo}
+
+\tableofcontents
+
+{
+  \usetocstyle{allwithdot}
+  \renewcommand{\baselinestretch}{0.9}
+  \normalsize
+  \listoffigures
+  \listoftables
+}
+
+\renewcommand{\mysectionstar}[1]{
+  \clearpage
+  \vspace*{2.25cm}
+  \phantomsection
+  \oldsection*{#1}
+  \addcontentsline{toc}{section}{#1}
+  \vspace{0.42cm}
+}
+
+\include{body/01-introducao}
+\include{body/02-fundamentacao}
+\include{body/03-planeamento}
+\include{body/04-dominio}
+\include{body/05-requisitos}
+\include{body/06-use-cases}
+\include{body/07-interface}
+\include{body/08-arquitetura}
+\include{body/09-dados}
+\include{body/10-negocio}
+\include{body/11-construcao}
+\include{body/12-conclusao}
+
+\printbibliography
+
+\include{body/13-siglas-e-acronimos}
+
+\appendix
+\renewcommand{\thesection}{Anexo \Roman{section}}
+
+\include{body/14-use-cases-spec}
+\include{body/15-negocio-diag-seq}
+
+\end{document}
+
+% ---------------------------------------------------------------------------- %

@@ -1,0 +1,82 @@
+% ---------------------------------------------------------------------------- %
+
+\section{Modelação de \emph{Use Cases}}
+\label{cap:use-cases}
+
+Uma vez terminados os processos de modelação de domínio e de levantamento de requisitos, procedeu-se à modelação de \emph{use cases}. Neste capítulo são apresentados os resultados dessa fase.
+
+% ---------------------------------------------------------------------------- %
+
+\subsection{Identificação dos \emph{use cases}}
+\label{sec:use-cases:identificacao}
+
+Os use cases foram identificados através da análise dos requisitos de utilizador, de forma a satisfazer todas as funcionalidades desejadas. Deste modo, os use cases identificados podem corresponder a uma ou mais funcionalidades, oferecidas pelo sistema, visto que, algumas delas correspondem a cenários alternativos de outras.
+
+Foram subentendidos e omitidos no diagrama de use cases, use cases acessórios relativos à conta do utilizador, tais como, \emph{logout} e \emph{editar informações de conta}, por já possuírem um comportamento normalizado. Apenas foi mencionado o use case \emph{Autenticar} pelo facto dos outros use cases possuírem como pré-condição a autentificarão do utilizador, no entanto, não é apresentada a especificação deste.
+
+% ---------------------------------------------------------------------------- %
+
+\subsection{Especificação dos \emph{use cases}}
+\label{sec:use-cases:especificacao}
+
+Apresentam-se nesta secção alguns exemplos representativos de especificações de \emph{use cases}. As especificações completas dos restantes \emph{use cases} identificados são incluídas no \refane{ane:use-cases-spec}.
+
+\input{tables/06/registar-conta.tex}
+\input{tables/06/procurar-receitas.tex}
+\input{tables/06/confecionar-receita.tex}
+
+% ---------------------------------------------------------------------------- %
+
+%  Cliente/Administrador
+% - Autenticar
+% - Sair
+% - Consultar/Editar informação da conta.
+% - Registar conta
+% \guilherme{Registar conta deveria se global visto que os dados são os mesmos} - Registar conta de administrador
+% - Apagar Conta.
+% - Remover Conta
+
+% - Procurar receitas
+% - Consultar receita
+% - Adiciona/remove receita aos favoritos.
+
+% - Iniciar Confeção da receita
+% % Acho que isto tudo faz parte do confecionar receita.
+% %- Avançar/Retroceder nos processos
+% %- Iniciar temporizador
+% %- Parar temporizador
+% %- Concluir Confeção
+% %- Cancelar Confeção da receita
+
+% - Gerar ementa semanal
+% - Editar ementa semanal
+% - Adicionar/remover receita à ementa semanal.
+% - Gerar lista de ingredientes
+
+% - Aceder a serviços externos (ao domicilio).
+
+% ---------------------------------------------------------------------------- %
+
+% Luís:
+%     -Aceder a serviçoes externos;
+%     -Adicionar receita favoritos;
+%     -Remover receita favoritos.
+
+% Fábio:
+%     -Gerar ementa semanal;
+%     -Editar ementa semanal;
+%     -Registar conta administrador;
+
+% César:
+%     -Gerar lista ingredientes;
+%     -Procurar receitas;
+%     -Consultar receita.
+
+% Guilherme:
+
+%     - Consultar/Editar informação da conta.
+%     - Registar conta de cliente
+%     - Registar conta de administrador
+%     - Apagar Conta.
+
+% ---------------------------------------------------------------------------- %

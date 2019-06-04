@@ -1,0 +1,24 @@
+% ---------------------------------------------------------------------------- %
+
+\begin{table}[ht]
+  \centering
+  \tabelausecase
+  \begin{tabularx}{\textwidth}{|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{2.5cm}|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X|}
+    \hline
+    \emph{Use case}: & \multicolumn{2}{l|}{Apagar conta} \\ \hline
+    Pré-condição: & \multicolumn{2}{l|}{Estar autenticado} \\ \hline
+    Pós-condição: & \multicolumn{2}{l|}{Conta eliminada} \\ \hline
+     & \textbf{Ator} & \textbf{Sistema} \\ \hline
+    \multirow[t]{3}{=}{Comportamento Normal} & 1. Fornece o email da conta que pretende ser apaga. &  \\ \cline{2-3}
+     &  & 2. Valida email \\ \cline{2-3}
+     &  & 3. Elimina conta \\ \hline
+    \multirow[t]{2}{=}{Comportamento Alternativo 1 [Ator é cliente] (passo 2)} &  & 2.1. Valida se a conta é do próprio \\ \cline{2-3}
+     &  & 2.2. Elimina conta \\ \hline
+    Exceção 1 [Email de cliente inválido] (passo 2) &  & 2.1. Informa que o email é inválido \\ \hline
+    Exceção 2 [Dados inválidos] (passo 2) &  & 2.1. Informa que o email é invalido \\ \hline
+\end{tabularx}
+  \caption{Especificação do \emph{use case} ``apagar conta''.}
+  \label{tab:uc-apagar-conta}
+\end{table}
+
+% ---------------------------------------------------------------------------- %
