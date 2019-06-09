@@ -26,12 +26,12 @@
             <label class="control-label"> Unidade </label>
             <input asp-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="form-control" />
             <span asp-validation-for="@Model.UtilizacoesIngredientes[i].Quantidade" class="text-danger"></span>
-           
+
         </div>
             <div class="col-1">
                 <button asp-action="RemoverIngrediente" asp-route-num="@i" type="submit" class="btn btn-block btn-primary" style="background-color:#fafafa;margin-top:2em;border:none;outline:none;box-shadow: 0 1px 0 0 #fafafa;"><i class="fas fa-trash" style="color:red;"></i></button>
             </div>
-            
+
     </div>
     }
     <div class="row">

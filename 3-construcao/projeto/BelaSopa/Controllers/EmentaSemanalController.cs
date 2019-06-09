@@ -121,7 +121,7 @@ namespace BelaSopa.Controllers
 
             if (receita == null)
                 return NotFound();
-            
+
             if (Autenticacao.GetUtilizadorAutenticado(this, context) is Cliente cliente)
             {
                 if (receita.ClienteId != null && receita.ClienteId != cliente.UtilizadorId)
@@ -200,7 +200,7 @@ namespace BelaSopa.Controllers
                     else
                     {
 
-                        try { 
+                        try {
                         var quantity = double.Parse(
                             splitUi[0].Replace(',', '.'),
                             NumberStyles.Any,
@@ -209,7 +209,7 @@ namespace BelaSopa.Controllers
 
                         if (units.ContainsKey(unit))
                             units[unit] += quantity;
-                        
+
                         else units.Add(unit, quantity);
                         } catch (Exception) { }
                     }
@@ -231,7 +231,7 @@ namespace BelaSopa.Controllers
                                 double.Parse(splitUi[0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture)
                                 );
                         } catch (Exception) {
-                            
+
                         }
                     }
                     else if (splitUi.Length == 1)

@@ -19,7 +19,7 @@ namespace BelaSopa.Controllers
     [Authorize]
     public class CriarReceitaController : Controller
     {
-        private readonly BelaSopaContext context;   
+        private readonly BelaSopaContext context;
 
         public CriarReceitaController(BelaSopaContext context)
         {
@@ -68,7 +68,7 @@ namespace BelaSopa.Controllers
                         return Index(form);
                     }
                     var processo = new Processo { Indice = i };
-                    for(int j = 0; j < form.Processos[i].Count; j++) { 
+                    for(int j = 0; j < form.Processos[i].Count; j++) {
                         if (form.Processos[i][j].Equals("")) {
                             TempData["Error"] = "Não pode existir uma tarefa vazia (Processo: " + (i+1).ToString() + ", Tarefa:" + (j+1).ToString() + " )";
                             return Index(form);
@@ -148,7 +148,7 @@ namespace BelaSopa.Controllers
             Receita.PorDose.Add(0);
             Receita.PercentagemVdrAdulto.Add(0);
             Receita.UnidadeValorNutricionais.Add("");
-            
+
             return ValoresNutricionais(Receita);
         }
 
@@ -173,7 +173,7 @@ namespace BelaSopa.Controllers
                 TempData["Error"] = "Não existem mais etiquetas";
             } else {
                 Receita.ReceitaEtiqueta.Add("");
-            } 
+            }
 
             return Index(Receita);
         }
@@ -193,7 +193,7 @@ namespace BelaSopa.Controllers
 
 
 
-        
+
         [HttpPost("[controller]/[action]/{idProcesso}")]
         public IActionResult NovaTarefa(CriarReceitaViewModel Receita, [FromRoute] int idProcesso) {
             if(idProcesso < 0 || Receita.Processos.Count-1 < idProcesso || Receita.Processos[idProcesso] == null) {
