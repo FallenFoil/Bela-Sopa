@@ -1,0 +1,47 @@
+@model (Utensilio Utensilio, Receita[] Receitas)
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = Model.Utensilio.Nome;
+    ViewData["HideHeading"] = true;
+    ViewData["ShowBackButton"] = true;
+}
+
+
+<div class="container-fluid" style="padding: 0px;">
+    <div class="row">
+        <div class="col-sm-7 border-right">
+            <h2>@Model.Utensilio.Nome</h2>
+            <p style="margin-top: 1em">@Model.Utensilio.Descricao</p>
+        </div>
+        <div class="col-sm-5">
+            <img src="@GestorImagens.GetPathImagemUtensilio(Url, Model.Utensilio.UtensilioId)"
+                 alt=""
+                 style="max-width: 100%; object-fit: cover;" />
+        </div>
+    </div>
+</div>
+
+<hr />
+
+@foreach (var seccao in Util.FormatarTextoComSeccoes(Model.Utensilio.Texto)) {
+    if (seccao.Titulo != null) {
+        <h4>@seccao.Titulo</h4>
+    }
+
+    foreach (var paragrafo in seccao.Paragrafos) {
+        <p>@paragrafo</p>
+    }
+}
+
+@if (Model.Receitas.Length > 0) {
+    <hr />
+    <h4>Receitas que utilizam este utensílio</h4>
+
+    <ul>
+        @foreach (var receita in Model.Receitas) {
+            <li>
+                <a asp-controller="Receitas" asp-action="Detalhes" asp-route-id="@receita.ReceitaId">@receita.Nome</a>
+            </li>
+        }
+    </ul>
+}

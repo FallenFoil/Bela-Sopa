@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Confecionar receita
+pré-condição: Estar autenticado
+pós-condição: Receita confecionada
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (S) 1. Pergunta se possui todos os ingredientes.
+  - (A) 2. Confirma
+  - (S) 3. Pergunta se possui todos os utencílios
+  - (A) 4. Confirma
+  - (S) 5. Recebe o primeiro processo
+  - (S) 6. Mostra o processo atual, as tarefas neste e os ingredientes, utensílios e técnicas nas respetivas tarefas
+  - (A) 7. Confirma a execução de todas as tarefas
+  - (A) 8. Avança
+  - (S) 9. Verifica próximo processo
+  - (S) 10. Não existe mais processos
+  - (S) 11. Guarda a conclusão da receita
+  - (S) 12. Pergunta a opinião sobre a conceção da receita
+  - (A) 13. Responde
+  - (S) 14. Guarda resposta
+
+# ---------------------------------------------------------------------------- #
+
+comportamentos-alternativos:
+
+  - condição: Existe próximo processo
+    passo-origem: 10
+    passos:
+      - (S) 10.1. Recebe o próximo processo e volta ao passo 6
+
+  - condição: Utilizador retrocede o processo
+    passo-origem: 7
+    passos:
+      - (S) 7.1. Recebe o processo anterior e volta ao passo 6
+
+  - condição: Processo anterior não existe
+    passo-origem: '8.1'
+    passos:
+      - (S) 8.1.1. Indica que não existe um processo anterior
+      - (S) 8.1.2. Mantêm o processo atual
+      - (S) 8.1.3. Volta ao passo 6
+
+
+  - condição: Ator não responde
+    passo-origem: 13
+    passos:
+      - (S) 13.1. Termina Confecionar receita
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Não confirma
+    passo-origem: 2 ou 4
+    passos:
+      - (S) 2.1. Indica para voltar quando possuir tudo
+      - (S) 2.2. Sai do serviço Confecionar receita
+
+  - condição: Utilizador cancela Confecionar receita
+    passo-origem: indeterminado
+    passos:
+      - (S) 2.1. Sai do serviço Confecionar receita
+
+# ---------------------------------------------------------------------------- #

@@ -1,0 +1,44 @@
+@{
+    Layout = "_Layout";
+}
+
+@section AppendToHead
+{
+    <style>
+        body {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+        }
+
+        #logo_icon {
+            width: 170px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #logo_title {
+            margin-top: 10px;
+            text-align: center;
+            margin-bottom: 27px;
+        }
+
+        #content {
+            max-width: 35em;
+            padding: 2em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+}
+
+<div id="content">
+
+    <img id="logo_icon" src="~/logo.png" alt="">
+    <p />
+    <h1 id="logo_title">Bela Sopa</h1>
+
+    <h2>@ViewData["Title"]</h2>
+    @RenderBody()
+    <hr />
+    <footer><p>&copy; 2019 &ndash; Bela Sopa</p></footer>
+</div>

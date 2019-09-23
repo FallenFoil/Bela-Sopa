@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Adicionar receita à ementa
+pré-condição: Estar autenticado, receita existe
+pós-condição: Receita adicionada
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Escolhe dia e refeição
+  - (S) 2. Valida escolha
+  - (S) 3. Adiciona receita à ementa
+
+# ---------------------------------------------------------------------------- #
+
+comportamentos-alternativos:
+
+  - condição: Já existe receita para aquela refeição e dia
+    passo-origem: 2
+    passos:
+      - (S) 2.1. Indica que já existe uma receita
+      - (S) 2.2. Pergunta se quer substituir receita
+      - (A) 2.3. Confirma
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Não confirma
+    passo-origem: '2.3'
+    passos:
+      - (S) 2.3.1. Informa que não foi adiciona a receita
+
+# ---------------------------------------------------------------------------- #

@@ -1,0 +1,82 @@
+@model (Dictionary<(DiaDaSemana DiaDaSemana, RefeicaoDoDia RefeicaoDoDia), Receita> Refeicoes, Dictionary<string, string> IngredientesNecessarios)
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Ementa semanal";
+}
+
+<div class="container-fluid">
+    <table class="table-sm table-bordered" style="table-layout: fixed; width: 100%;">
+        <thead>
+            <tr>
+                <th></th>
+                @foreach (var diaDaSemana in Enum.GetValues(typeof(DiaDaSemana)).Cast<DiaDaSemana>())
+                {
+                    <th scope="col" style="text-align: center;">@diaDaSemana.GetNome()</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var refeicaoDoDia in Enum.GetValues(typeof(RefeicaoDoDia)).Cast<RefeicaoDoDia>())
+            {
+                <tr>
+                    <th scope="row" style="text-align: center;">@refeicaoDoDia.GetNome()</th>
+
+                    @foreach (var diaDaSemana in Enum.GetValues(typeof(DiaDaSemana)).Cast<DiaDaSemana>())
+                    {
+                        <td>
+                            @{
+                                var receita = Model.Refeicoes.GetValueOrDefault((diaDaSemana, refeicaoDoDia));
+
+                                if (receita == null)
+                                {
+                                    <a asp-action="VerReceitas"
+                                       asp-route-diaDaSemana="@diaDaSemana"
+                                       asp-route-refeicaoDoDia="@refeicaoDoDia">Adicionar receita</a>
+                                }
+                                else
+                                {
+                                    <img src="@GestorImagens.GetPathImagemReceita(Url, receita.ReceitaId)"
+                                         alt=""
+                                         style="max-width: 100%; max-height: 100%;"
+                                         />
+                                    <p style="color: green; font-size: 0.9em;">
+                                        @receita.Nome
+                                        <a asp-action="RemoverRefeicao"
+                                           asp-route-diaDaSemana="@diaDaSemana"
+                                           asp-route-refeicaoDoDia="@refeicaoDoDia">
+                                            <i style="color: red;" class="fas fa-trash"></i>
+                                        </a>
+                                    </p>
+                                }
+                            }
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.IngredientesNecessarios.Count > 0)
+{
+    <hr />
+    <h4>Ingredientes necessários</h4>
+
+    <table class="table table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var (nome, quantidade) in Model.IngredientesNecessarios.OrderBy(p => p.Key))
+            {
+                <tr>
+                    <td>@nome</td>
+                    <td>@quantidade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

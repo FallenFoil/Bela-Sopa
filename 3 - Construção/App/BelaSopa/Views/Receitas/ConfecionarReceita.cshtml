@@ -1,0 +1,311 @@
+@model (Receita Receita, IList<Tecnica> Tecnicas, IList<Utensilio> Utensilios, bool Favorita, int IndiceProcesso)
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Em confeção - " + Model.Receita.Nome;
+    ViewData["HideHeading"] = true;
+}
+<div class="container-fluid" style="padding: 0px;">
+    <div class="row">
+        <div class="col-sm-7 border-right">
+            <h2>
+                @Model.Receita.Nome
+                @*@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_CLIENTE))
+                {
+                    @if (Model.Favorita)
+                    {
+                        <i class="fas fa-star" style="color: gold;"></i>
+                    }
+                    else
+                    {
+                        <i class="far fa-star" style="color: silver;"></i>
+                    }
+                }*@
+            </h2>
+            @switch (Model.Receita.Dificuldade)
+            {
+                case Dificuldade.Facil:
+                    <span><i class="fas fa-signal" style="color: green; margin-right: 0.5em;"></i>Fácil</span>
+                    break;
+
+                case Dificuldade.Media:
+                    <span><i class="fas fa-signal" style="color: orange; margin-right: 0.5em;"></i>Média</span>
+                    break;
+
+                case Dificuldade.Dificil:
+                    <span><i class="fas fa-signal" style="color: red; margin-right: 0.5em;"></i>Difícil</span>
+                    break;
+            }
+            &nbsp;|&nbsp;
+            <span><i class="fas fa-clock" style="margin-right: 0.5em;"></i>@Model.Receita.MinutosPreparacao min</span>
+            &nbsp;|&nbsp;
+            <span>@Model.Receita.NumeroDoses doses</span>
+            <p style="margin-top: 1em">@Model.Receita.Descricao</p>
+            <div style="text-align:left;margin-top: 1em;">
+                <strong>Etiquetas:</strong>&nbsp;
+                @{
+                    var first = true;
+
+                    foreach (var etiqueta in Model.Receita.ReceitaEtiqueta.Select(e => e.Etiqueta.Nome).OrderBy(e => e))
+                    {
+                        if (!first)
+                        {
+                            <text>&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+                        }
+
+                        <text>@etiqueta</text>
+
+                        first = false;
+                    }
+
+                    if (first)
+                    {
+                        <text>(nenhuma)</text>
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <img src="@GestorImagens.GetPathImagemReceita(Url, Model.Receita.ReceitaId)"
+                 alt=""
+                 style="max-width: 100%; object-fit: cover;" />
+        </div>
+    </div>
+</div>
+<hr />
+<h4>
+    Processo @(Model.IndiceProcesso+1) / @Model.Receita.Processos.Count
+    <a asp-action="Confecionar"
+       asp-route-id="@Model.Receita.ReceitaId"
+       asp-route-indiceProcesso="@(Model.IndiceProcesso - 1)"
+       class="btn btn-primary"
+       style="background-color:#4CAF50; border-color:#4CAF50;">
+        Processo anterior
+    </a>
+    <a asp-action="Confecionar"
+       asp-route-id="@Model.Receita.ReceitaId"
+       asp-route-indiceProcesso="@(Model.IndiceProcesso + 1)"
+       class="btn btn-primary"
+       style="background-color:#4CAF50; border-color:#4CAF50;">
+        Processo seguinte
+    </a>
+    <a asp-action="CancelarConfecao"
+       class="btn btn-primary"
+       style="background-color:#4CAF50; border-color:#4CAF50;">
+        Cancelar
+    </a>
+</h4>
+
+@{
+    var cronometroID = 0;
+    var processo = Model.Receita.Processos.Single(p => p.Indice == Model.IndiceProcesso);
+}
+<ul class="CustomBullet" style="text-align:left;list-style: none;margin-bottom:2em;">
+    @foreach (var tar in processo.Tarefas.OrderBy(t=>t.Indice))
+    {
+        <li>
+            @foreach (var texto in tar.Texto.OrderBy(t => t.Indice))
+            {
+                if (texto.IngredienteId != null)
+                {
+                    <a asp-controller="Ingredientes" asp-action="Detalhes" asp-route-id="@texto.IngredienteId">@texto.Texto</a>
+                }
+                else if (texto.TecnicaId != null)
+                {
+                    <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@texto.TecnicaId">@texto.Texto</a>
+                }
+                else if (texto.UtensilioId != null)
+                {
+                    <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@texto.UtensilioId">@texto.Texto</a>
+                }
+                else
+                {
+                    <text>@texto.Texto</text>
+                }
+            }
+            @{
+                var temporizador = tar.GetDuracaoTemporizador();
+
+                if (temporizador != null)
+                {
+                    var duracaoTemporizador = int.Parse(tar.GetDuracaoTemporizador()) * 60 * 1000;
+                    var str = "Temporixador do Passo " + cronometroID + " concluido";
+                    <a onclick="startTimeOut(10000, '@str', @cronometroID)" style="cursor:pointer;">
+                        @{
+                            var strCronometroID = "stopwatch" + cronometroID;
+                            var strTimeLeft = "TimeLeft" + cronometroID;
+                            cronometroID++;
+                        }
+                        <i id=@strCronometroID class="fas fa-stopwatch"></i>
+                        <span id=@strTimeLeft style="display:none;"></span>
+                    </a>
+                }
+            }
+        </li>
+    }
+</ul>
+
+<hr />
+<div class="container-fluid" style="padding: 0px;">
+    <div class="row">
+        <div class="col-6 border-right">
+            <h4>Ingredientes <small class="text-muted">para @Model.Receita.NumeroDoses doses</small></h4>
+            <table class="table table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var utilizacaoIngrediente in Model.Receita.UtilizacoesIngredientes.OrderBy(ui => ui.Nome))
+                    {
+                        <tr>
+                            <td>
+                                @if (utilizacaoIngrediente.Ingrediente != null)
+                                {
+                                    <a asp-controller="Ingredientes"
+                                       asp-action="Detalhes"
+                                       asp-route-id="@utilizacaoIngrediente.Ingrediente.IngredienteId">
+                                        @utilizacaoIngrediente.Nome
+                                    </a>
+                                }
+                                else
+                                {
+                                    <text>@utilizacaoIngrediente.Nome</text>
+                                }
+                            </td>
+                            <td>@utilizacaoIngrediente.Quantidade</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3 border-right">
+            <h4>Técnicas</h4>
+            <ul>
+                @if (Model.Tecnicas.Count == 0)
+                {
+                    <li>(nenhuma)</li>
+                }
+                else
+                {
+                    foreach (var tecnica in Model.Tecnicas)
+                    {
+                        <li>
+                            <a asp-controller="Tecnicas" asp-action="Detalhes" asp-route-id="@tecnica.TecnicaId">@tecnica.Nome</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-3">
+            <h4>Utensílios</h4>
+            <ul>
+                @if (Model.Utensilios.Count == 0)
+                {
+                    <li>(nenhum)</li>
+                }
+                else
+                {
+                    @foreach (var utensilio in Model.Utensilios)
+                    {
+                        <li>
+                            <a asp-controller="Utensilios" asp-action="Detalhes" asp-route-id="@utensilio.UtensilioId">@utensilio.Nome</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<hr />
+<h4>Valores nutricionais</h4>
+<table class="table table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Por dose</th>
+            <th scope="col">% do VDR adulto</th>
+        </tr>
+    </thead>
+    <tbody id="ValoresNut">
+        @foreach (var valor in Model.Receita.ValoresNutricionais.OrderBy(vn => vn.Nome))
+        {
+            <tr>
+                @if (valor.Nome.Contains(','))
+                {
+                    <td style="padding-left: 2em;"><i>@valor.Nome.Substring(valor.Nome.IndexOf(',') + 2)</i></td>
+                }
+                else
+                {
+                    <td>@valor.Nome</td>
+                }
+                <td>@valor.Dose</td>
+                <td>
+                    @if (@valor.PercentagemVdrAdulto != null)
+                    {@valor.PercentagemVdrAdulto<text>%</text>}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+
+<script>
+    var myVar = [];
+    var x = [];
+
+    function startTimeOut(time, str, id) {
+        var countDownDate;
+        var s = document.getElementById("stopwatch" + id);
+
+        if (s.classList.contains('fa-stopwatch')) {
+            s.classList.remove('fa-stopwatch');
+            s.classList.add('fa-stop');
+            s.style.color = "red";
+
+            var now = new Date().getTime();
+            var aux = new Date(time).getTime();
+
+            countDownDate = now + aux;
+
+            x[id] = setInterval(function () {
+
+                var now = new Date().getTime();
+
+                var distance = countDownDate - now;
+
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("TimeLeft" + id).style.display = "block";
+                document.getElementById("TimeLeft" + id).innerHTML = minutes + "m " + seconds + "s";
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x[id]);
+                    document.getElementById("TimeLeft" + id).style.display = "none";
+                    document.getElementById("TimeLeft" + id).innerHTML = "";
+                }
+            }, 1000);
+
+
+            myVar[id] = setTimeout(function () {
+                clearInterval(x[id]);
+                document.getElementById("TimeLeft" + id).style.display = "none";
+                s.classList.remove('fa-stop');
+                s.classList.add('fa-stopwatch');
+                s.style.color = "black";
+                alert(str);
+            }, time)
+        }
+        else {
+            clearInterval(x[id]);
+            clearTimeout(myVar[id]);
+            document.getElementById("TimeLeft" + id).style.display = "none";
+            s.classList.remove('fa-stop');
+            s.classList.add('fa-stopwatch');
+            s.style.color = "black";
+        }
+    }
+</script>

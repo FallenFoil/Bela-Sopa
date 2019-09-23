@@ -1,0 +1,56 @@
+@model List<Ingrediente>
+@{
+    Layout = "_LayoutAutenticado";
+    ViewData["Title"] = "Ingredientes";
+    ViewData["HideHeading"] = true;
+}
+
+
+@if (User.HasClaim(ClaimTypes.Role, Autenticacao.ROLE_ADMINISTRADOR))
+{
+    <h2>
+        @ViewData["Title"]
+        <a asp-controller="CriarIngrediente" asp-action="Index" class="btn btn-primary" style="margin-left: 0.5em">
+            <i class="fas fa-plus-square" style="margin-right: 5px;"></i> Criar ingrediente
+        </a>
+    </h2>
+}
+else
+{
+    <h2>@ViewData["Title"]</h2>
+}
+
+<form asp-action="Index" method="get" class="form-inline md-form form-sm active-cyan-2 mt-2">
+    <div class="container" style="padding-bottom:1em; border-bottom: 1px solid #717171;">
+        <div class="row">
+            <div class="col-12">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input style="width:95%;height:2.6em;margin-top:0.1em;margin-left:0.4em;" type="text" name="nome" value="@ViewData["nome"]" onchange="this.form.submit()"
+                       placeholder="Nome" aria-placeholder="Nome" class="form-control form-control-sm">
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container" style="margin-top:2em;">
+    @for (var i = 0; i < Model.Count;)
+    {
+        <div class="row ReceitasLinha">
+            @{ var j = 0;}
+            @for (; j < 3 && i < Model.Count; j++, i++)
+            {
+                <div class="col-sm Receita">
+                    <a asp-action="Detalhes" asp-route-id="@Model[i].IngredienteId">
+                        <img class="ReceitaImg" src="@GestorImagens.GetPathImagemIngrediente(Url, Model[i].IngredienteId)" alt="" />
+                        <p>@Model[i].Nome</p>
+                    </a>
+                </div>
+            }
+            @for (; j < 3; j++)
+            {
+                <div class="col-sm Receita">
+                </div>
+            }
+        </div>
+    }
+</div>

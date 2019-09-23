@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Pedir ajuda
+pré-condição: Estar autenticado
+pós-condição:
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (A) 1. Solicita ajuda num certo conceito
+  - (S) 2. Procura conceito
+  - (S) 3. Mostra uma descrição, e possivelmente uma imagem e/ou video sobre o conceito
+
+# ---------------------------------------------------------------------------- #
+
+exceções:
+
+  - condição: Não existe conceito
+    passo-origem: 2
+    passos:
+      - (S) 2.1. Informa que não é possível encontrar esse conceito
+
+# ---------------------------------------------------------------------------- #

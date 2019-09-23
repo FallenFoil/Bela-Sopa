@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------------------- #
+
+nome: Editar ementa semanal
+pré-condição: Estar autenticado
+pós-condição: Ementa semanal foi alterada
+
+# ---------------------------------------------------------------------------- #
+
+comportamento-normal:
+  - (S) 1. Mostra todas as receitas na ementa nos dias e refeições já escolhidas
+  - (S) 2. <<extends>> adicionar receita à ementa
+
+# ---------------------------------------------------------------------------- #
+
+comportamentos-alternativos:
+
+  - condição: Escolhe remover uma receita
+    passo-origem: 2
+    passos:
+      - (S) 2.1. <<extends>> remover receita da ementa
+
+# ---------------------------------------------------------------------------- #
